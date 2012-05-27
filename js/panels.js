@@ -36,11 +36,55 @@ function convertPawn() {
 
 function startGame() {
 	'use strict';
-	var blackplayer = $('input:radio[name=blackPlayer]:checked').val(),
-		whiteplayer = $('input:radio[name=whitePlayer]:checked').val();
-	game.blackAI = blackplayer === 'bAI' ? true : false;
-	game.whiteAI = whiteplayer === 'wAI' ? true : false;
+	// Grab player selections
+	var blackPlayer = $('#blackPlayer').val(),
+		whitePlayer = $('#whitePlayer').val();
+
+	// Set variables used for switching turns
+	game.blackAI = blackPlayer !== 'Player' ? true : false;
+	game.whiteAI = whitePlayer !== 'Player' ? true : false;
+
+	// Save difficulties chosen to AI
+	switch (whitePlayer) {
+	case 'Player':
+		// No AI to save, do nothing
+		break;
+	case 'AI - Very Easy':
+		AI.whiteIntelligence = 1;
+		break;
+	case 'AI - Easy':
+		AI.whiteIntelligence = 2;
+		break;
+	case 'AI - Medium':
+		AI.whiteIntelligence = 3;
+		break;
+	default:
+		console.log('Error: Did not select a valid white player!');
+		break;
+	}
+
+	switch (blackPlayer) {
+	case 'Player':
+		// No AI to save, do nothing
+		break;
+	case 'AI - Very Easy':
+		AI.blackIntelligence = 1;
+		break;
+	case 'AI - Easy':
+		AI.blackIntelligence = 2;
+		break;
+	case 'AI - Medium':
+		AI.blackIntelligence = 3;
+		break;
+	default:
+		console.log('Error: Did not select a valid white player!');
+		break;
+	}
+
+	// Remove start menu
 	$('#background').addClass('hidden');
+
+	// Go!
 	switchTurn();
 }
 function endGame(checkmate) {

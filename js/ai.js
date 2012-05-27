@@ -3,6 +3,77 @@ var AI = {};
 // This var is just used to make sure that we do not return value on top level of decision tree
 AI.plyUsed = 100;
 
+// Piece Square Tables, numbers found in nice chessbin C# guide:
+// http://www.chessbin.com/post/Chess-Board-Evaluation.aspx
+AI.pawnTable = [
+	875, 875, 875, 875, 875, 875, 875, 875,
+	50,   50,  50,  50,  50,  50,  50,  50,
+	10,   10,  20,  30,  30,  20,  10,  10,
+	5,     5,  10,  27,  27,  10,   5,   5,
+	0,     0,   0,  25,  25,   0,   0,   0,
+	5,    -5, -10,   0,   0, -10,  -5,   5,
+	5,    10,  10, -25, -25,  10,  10,   5,
+	0,     0,   0,   0,   0,   0,   0,   0
+];
+
+AI.knightTable = [
+	-50, -40, -30, -30, -30, -30, -40, -50,
+	-40, -20,   0,   0,   0,   0, -20, -40,
+	-30,   0,  10,  15,  15,  10,   0, -30,
+	-30,   5,  15,  20,  20,  15,   5, -30,
+	-30,   0,  15,  20,  20,  15,   0, -30,
+	-30,   5,  10,  15,  15,  10,   5, -30,
+	-40, -20,   0,   5,   5,   0, -20, -40,
+	-50, -40, -20, -30, -30, -20, -40, -50
+];
+
+AI.bishopTable = [
+	-20, -10, -10, -10, -10, -10, -10, -20,
+	-10,   0,   0,   0,   0,   0,   0, -10,
+	-10,   0,   5,  10,  10,   5,   0, -10,
+	-10,   5,   5,  10,  10,   5,   5, -10,
+	-10,   0,  10,  10,  10,  10,   0, -10,
+	-10,  10,  10,  10,  10,  10,  10, -10,
+	-10,   5,   0,   0,   0,   0,   5, -10,
+	-20, -10, -40, -10, -10, -40, -10, -20
+];
+
+AI.kingTable = [
+	-30, -40, -40, -50, -50, -40, -40, -30,
+	-30, -40, -40, -50, -50, -40, -40, -30,
+	-30, -40, -40, -50, -50, -40, -40, -30,
+	-30, -40, -40, -50, -50, -40, -40, -30,
+	-20, -30, -30, -40, -40, -30, -30, -20,
+	-10, -20, -20, -20, -20, -20, -20, -10,
+	20,   20,   0,   0,   0,   0,  20,  20,
+	20,   30,  10,   0,   0,  10,  30,  20
+];
+
+AI.kingTableEndGame = [
+	-50, -40, -30, -20, -20, -30, -40, -50,
+	-30, -20, -10,   0,   0, -10, -20, -30,
+	-30, -10,  20,  30,  30,  20, -10, -30,
+	-30, -10,  30,  40,  40,  30, -10, -30,
+	-30, -10,  30,  40,  40,  30, -10, -30,
+	-30, -10,  20,  30,  30,  20, -10, -30,
+	-30, -30,   0,   0,   0,   0, -30, -30,
+	-50, -30, -30, -30, -30, -30, -30, -50
+];
+
+/*  Difficulty 
+	1 = Very easy. Original AI with more randomness, increase salt to AI breaking number.
+	2 = Easy. The original AI.
+	3 = Medium. Piece value + Strategic Positions
+	4 = Hard. On my to-do list
+*/
+
+// These are set at the start of the game, depending on player selection.
+AI.whiteIntelligence = -1;
+AI.blackIntelligence = -1;
+// This value is the one actually used by the evaluation function
+// It is set by AI.makeMove depending on current turn
+AI.intelligence = -1;
+
 // Evaluates the value of a state of a board
 AI.evaluate = function (aBoard, color) {
 	'use strict';
@@ -13,13 +84,13 @@ AI.evaluate = function (aBoard, color) {
 		i = 0,
 		bIndex = game.boardIndex,
 		salt = Math.random() * 0.1,
-		// For King valids
-		whiteIndex = bIndex.indexOf(aBoard.indexOf('k')),
-		blackIndex = bIndex.indexOf(aBoard.indexOf('K')),
-		whiteKingMoves = [],
-		blackKingMoves = [],
 		whiteSilverLining,
 		blackSilverLining;
+
+	if (AI.intelligence === 1) {
+		// Herp derp
+		salt = salt * 10000;
+	}
 
 	// Grab all pieces.
 	whitePieces = getPieces(aBoard, 'white');
@@ -30,27 +101,40 @@ AI.evaluate = function (aBoard, color) {
 		switch (aBoard[bIndex[whitePieces[i]]]) {
 		// Pawns
 		case 'p':
-			whiteValue += 1;
+			whiteValue += 100;
+			//console.log('The white pawn at position', whitePieces[i], 'gets the position value', AI.pawnTable[whitePieces[i]]);
+			if (AI.intelligence === 3) {
+				whiteValue += AI.pawnTable[whitePieces[i]];
+			}
 			break;
 		// Rooks
 		case 'r':
-			whiteValue += 5;
+			whiteValue += 500;
 			break;
 		// Knights
 		case 'n':
-			whiteValue += 3;
+			whiteValue += 320;
+			if (AI.intelligence === 3) {
+				whiteValue += AI.knightTable[whitePieces[i]];
+			}
 			break;
 		// Bishops
 		case 'b':
-			whiteValue += 3;
+			whiteValue += 325;
+			if (AI.intelligence === 3) {
+				whiteValue += AI.bishopTable[whitePieces[i]];
+			}
 			break;
 		// Queens
 		case 'q':
-			whiteValue += 9;
+			whiteValue += 975;
 			break;
 		// Kings, worth more than all other pieces together
 		case 'k':
-			whiteValue += 1000;
+			whiteValue += 32767;
+			if (AI.intelligence === 3) {
+				whiteValue += AI.kingTable[whitePieces[i]];
+			}
 			break;
 		default:
 			console.log('Error: Tried to evaluate invalid white piece!');
@@ -63,27 +147,40 @@ AI.evaluate = function (aBoard, color) {
 		switch (aBoard[bIndex[blackPieces[i]]]) {
 		// Pawns
 		case 'P':
-			blackValue += 1;
+			blackValue += 100;
+			//console.log('The black pawn at position', blackPieces[i], 'gets the position value', AI.pawnTable[(63 - blackPieces[i])]);
+			if (AI.intelligence === 3) {
+				blackValue += AI.pawnTable[(63 - blackPieces[i])];
+			}
 			break;
 		// Rooks
 		case 'R':
-			blackValue += 5;
+			blackValue += 500;
 			break;
 		// Knights
 		case 'N':
-			blackValue += 3;
+			blackValue += 320;
+			if (AI.intelligence === 3) {
+				blackValue += AI.knightTable[(63 - blackPieces[i])];
+			}
 			break;
 		// Bishops
 		case 'B':
-			blackValue += 3;
+			blackValue += 325;
+			if (AI.intelligence === 3) {
+				blackValue += AI.bishopTable[(63 - blackPieces[i])];
+			}
 			break;
 		// Queens
 		case 'Q':
-			blackValue += 9;
+			blackValue += 975;
 			break;
 		// Kings, worth more than all other pieces together
 		case 'K':
-			blackValue += 1000;
+			blackValue += 32767;
+			if (AI.intelligence === 3) {
+				blackValue += AI.kingTable[(63 - blackPieces[i])];
+			}
 			break;
 		default:
 			console.log('Error: Tried to evaluate invalid black piece!');
@@ -154,6 +251,7 @@ AI.maxMove = function (boardState, player, ply, alpha, beta) {
 		for (i; i < pieces.length; i += 1) {
 			j = 0;
 			for (j; j < moves[i].length; j += 1) {
+				console.log('If I move from', arrayToReadable(pieces[i].valueOf()), 'to', arrayToReadable(moves[i][j].valueOf()) + ',');
 				// Update the state of the child board by making current move
 				tempBoardRef = kindaMakeMove(childBoardState, pieces[i].valueOf(), moves[i][j].valueOf());
 				childBoardState = tempBoardRef.slice();
@@ -256,11 +354,13 @@ AI.minMove = function (boardState, player, ply, alpha, beta) {
 
 				// alphaBeta optimizing like a boss
 				if (beta < alpha) {
+					console.log('opponent will move from', arrayToReadable(localBestMoveStart), 'to', arrayToReadable(localBestMoveGoal), 'giving a board valued', Math.floor(beta));
 					returnArray = [localBestMoveStart, localBestMoveGoal, beta];
 					return returnArray;
 				}
 			}
 		}
+		console.log('opponent will move from', arrayToReadable(localBestMoveStart), 'to', arrayToReadable(localBestMoveGoal), 'giving a board valued', Math.floor(beta));
 		// In case there was no alpha beta cut-off and all moves were evaluated, we return here
 		returnArray = [localBestMoveStart, localBestMoveGoal, beta];
 		return returnArray;
@@ -291,6 +391,15 @@ AI.makeMove = function (ply) {
 
 	// Note down which ply you are using
 	AI.plyUsed = ply;
+
+	// Set the evaluation difficulty
+	if (turn === 'white') {
+		AI.intelligence = AI.whiteIntelligence;
+	} else {
+		AI.intelligence = AI.blackIntelligence;
+	}
+
+	console.log('AI is thinking through', turn + "'s possibilities");
 
 	// Call best move lookup function
 	bestMove = AI.maxMove(game.board, turn, ply, alpha, beta);

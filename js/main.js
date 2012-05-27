@@ -1,8 +1,6 @@
 $(document).ready(function () {
 	'use strict';
-	console.time('init');
 	initChess();
-	console.timeEnd('init');
 });
 var game = {};
 game.castle = {
@@ -121,34 +119,34 @@ function reallyMakeMove(origin, destination, IAmAI) {
 				//White king moving
 				game.castle.whiteLongCastle = false;
 				game.castle.whiteShortCastle = false;
-				console.log("disabled wlc");
-				console.log("disabled wsc");
+				//console.log("disabled wlc");
+				//console.log("disabled wsc");
 			} else if ((blc || bsc) && origin === 4) {
 				//Black king moving
 				game.castle.blackLongCastle = false;
 				game.castle.blackShortCastle = false;
-				console.log("disabled blc");
-				console.log("disabled bsc");
+				//console.log("disabled blc");
+				//console.log("disabled bsc");
 			}
 			//White short rook
 			if (wsc && (origin === 63 || destID === 63)) {
 				game.castle.whiteShortCastle = false;
-				console.log("disabled wsc");
+				//console.log("disabled wsc");
 			}
 			//White long rook
 			if (wlc && (origin === 56 || destID === 56)) {
 				game.castle.whiteLongCastle = false;
-				console.log("disabled wlc");
+				//console.log("disabled wlc");
 			}
 			//Black short rook
 			if (bsc && (origin === 7 || destID === 7)) {
 				game.castle.blackShortCastle = false;
-				console.log("disabled bsc");
+				//console.log("disabled bsc");
 			}
 			//Black long rook
 			if (blc && (origin === 0 || destID === 0)) {
 				game.castle.blackLongCastle = false;
-				console.log("disabled blc");
+				//console.log("disabled blc");
 			}
 
 			//Check to see if the actual castling move is being made
@@ -190,7 +188,7 @@ function reallyMakeMove(origin, destination, IAmAI) {
 			if (game.board[game.boardIndex[destID]].toLowerCase() === 'p') {
 				if (turn === 'white' && destID < 8 && destID >= 0) {
 					//if it's white making a pawn move, check if the destination is on the top row
-					console.log('White is totally about to convert a pawn!');
+					//console.log('White is totally about to convert a pawn!');
 					game.pawn.pawnToConvert = destID;
 					if (game.whiteAI) {
 						convertPawn();
@@ -198,7 +196,7 @@ function reallyMakeMove(origin, destination, IAmAI) {
 						$('#conversion').removeClass('hidden');
 					}
 				} else if (turn === 'black' && destID > 55 && destID < 64) {
-					console.log('Black is totally about to convert a pawn!');
+					//console.log('Black is totally about to convert a pawn!');
 					game.pawn.pawnToConvert = destID;
 					if (game.blackAI) {
 						convertPawn();
@@ -257,9 +255,9 @@ function switchTurn() {
 			endGame(false);
 		}
 	} else if (turn === 'black' && game.blackAI) {
-		setTimeout(function () {AI.makeMove(3); }, 100);
+		setTimeout(function () {AI.makeMove(3); }, 10);
 	} else if (turn === 'white' && game.whiteAI) {
-		setTimeout(function () {AI.makeMove(3); }, 100);
+		setTimeout(function () {AI.makeMove(3); }, 10);
 	}
 }
 function kindaMakeMove(aboard, originIndex, destIndex) {

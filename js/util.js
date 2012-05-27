@@ -1,3 +1,10 @@
+// If a browser does not support console, create a global console object to catch calls 
+var console = console || {
+	log: function () {},
+	warn: function () {},
+	error: function () {}
+};
+
 /* 
 This file contains various utility functions
 
@@ -189,4 +196,17 @@ function getAllValidMoves(notGlobalBoard, pieces) {
 		allValidMoves[i] = getValid(pieces[i], notGlobalBoard);
 	}
 	return allValidMoves;
+}
+
+function arrayToReadable(arrayPosition) {
+	'use strict';
+	var row = 8 - Math.floor(arrayPosition / 8),
+		column = intToCol(arrayPosition % 8),
+		readable = 'INVALID POSITION';
+
+	if (arrayPosition > -1 && arrayPosition < 64) {
+		readable = column + row;
+	}
+
+	return readable;
 }
