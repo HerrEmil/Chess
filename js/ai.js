@@ -251,7 +251,7 @@ AI.maxMove = function (boardState, player, ply, alpha, beta) {
 		for (i; i < pieces.length; i += 1) {
 			j = 0;
 			for (j; j < moves[i].length; j += 1) {
-				console.log('If I move from', arrayToReadable(pieces[i].valueOf()), 'to', arrayToReadable(moves[i][j].valueOf()) + ',');
+				// console.log('If I move from', arrayToReadable(pieces[i].valueOf()), 'to', arrayToReadable(moves[i][j].valueOf()) + ',');
 				// Update the state of the child board by making current move
 				tempBoardRef = kindaMakeMove(childBoardState, pieces[i].valueOf(), moves[i][j].valueOf());
 				childBoardState = tempBoardRef.slice();
@@ -259,9 +259,8 @@ AI.maxMove = function (boardState, player, ply, alpha, beta) {
 				// Calling sister method
 				childMove = AI.minMove(childBoardState, player, (ply - 1), alpha, beta);
 
-				// Restore the state of the child board by unmaking current move
-				tempBoardRef = kindaMakeMove(childBoardState, moves[i][j].valueOf(), pieces[i].valueOf());
-				childBoardState = tempBoardRef.slice();
+				// Restore the state of the child board
+				childBoardState = boardState.slice();
 
 				// Check if minMove returned the value of a board
 				if (childMove.length === 3) {
@@ -338,9 +337,8 @@ AI.minMove = function (boardState, player, ply, alpha, beta) {
 				// Calling sister method
 				childMove = AI.maxMove(childBoardState, player, (ply - 1), alpha, beta);
 
-				// Restore the state of the child board by unmaking current move
-				tempBoardRef = kindaMakeMove(childBoardState, moves[i][j].valueOf(), pieces[i].valueOf());
-				childBoardState = tempBoardRef.slice();
+				// Restore the state of the child board
+				childBoardState = boardState.slice();
 
 				// Check if minMove returned the value of a board
 				if (childMove.length === 3) {
@@ -354,13 +352,13 @@ AI.minMove = function (boardState, player, ply, alpha, beta) {
 
 				// alphaBeta optimizing like a boss
 				if (beta < alpha) {
-					console.log('opponent will move from', arrayToReadable(localBestMoveStart), 'to', arrayToReadable(localBestMoveGoal), 'giving a board valued', Math.floor(beta));
+					// console.log('opponent will move from', arrayToReadable(localBestMoveStart), 'to', arrayToReadable(localBestMoveGoal), 'giving a board valued', Math.floor(beta));
 					returnArray = [localBestMoveStart, localBestMoveGoal, beta];
 					return returnArray;
 				}
 			}
 		}
-		console.log('opponent will move from', arrayToReadable(localBestMoveStart), 'to', arrayToReadable(localBestMoveGoal), 'giving a board valued', Math.floor(beta));
+		// console.log('opponent will move from', arrayToReadable(localBestMoveStart), 'to', arrayToReadable(localBestMoveGoal), 'giving a board valued', Math.floor(beta));
 		// In case there was no alpha beta cut-off and all moves were evaluated, we return here
 		returnArray = [localBestMoveStart, localBestMoveGoal, beta];
 		return returnArray;
@@ -399,7 +397,9 @@ AI.makeMove = function (ply) {
 		AI.intelligence = AI.blackIntelligence;
 	}
 
-	console.log('AI is thinking through', turn + "'s possibilities");
+	// console.log('********************************************');
+	// console.log('AI is thinking through', turn + "'s possibilities");
+	// console.log('********************************************');
 
 	// Call best move lookup function
 	bestMove = AI.maxMove(game.board, turn, ply, alpha, beta);
