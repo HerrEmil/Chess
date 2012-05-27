@@ -1,0 +1,19 @@
+{
+  "name": "Chess!",
+  "description": "An HTML5 chess app!",
+  "version": "1",
+  "app": {
+    "urls": [
+      "http://herremil.com/chess/",
+      "http://www.herremil.com/chess/",
+      "http://herremil.com/chess",
+      "http://www.herremil.com/chess"
+    ],
+    "launch": {
+      "web_url": "http://herremil.com/chess/"
+    }
+  },
+  "icons": {
+    "128": "icon_128.png"
+  }
+}
