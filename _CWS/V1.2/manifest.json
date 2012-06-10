@@ -1,0 +1,19 @@
+{
+  "name": "Chess!",
+  "description": "Chess! is a free light-weight HTML5 app. Play against one of the three different AI opponents or local multiplayer :)",
+  "version": "1.2",
+  "app": {
+    "urls": [
+      "http://herremil.com/chess/",
+      "http://www.herremil.com/chess/",
+      "http://herremil.com/chess",
+      "http://www.herremil.com/chess"
+    ],
+    "launch": {
+      "web_url": "http://herremil.com/chess/"
+    }
+  },
+  "icons": {
+    "128": "icon_128.png"
+  }
+}

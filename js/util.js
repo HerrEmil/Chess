@@ -1,63 +1,7 @@
-// If a browser does not support console, create a global console object to catch calls 
-var console = console || {
-	log: function () {},
-	warn: function () {},
-	error: function () {}
-};
+// This file contains various utility functions
 
-/* 
-This file contains various utility functions
-
-CharCodeAt(0):
-BLACKS:
-A = 65
-R = 82
-
-WHITES:
-a = 97
-r = 114
-
-EMPTY
-- = 45
-
-PADDING:
-* = 42
-
-
-*/
-function colToInt(char) {
-	'use strict';
-	var charInt = -1;
-	switch (char) {
-	case 'A':
-		charInt = 0;
-		break;
-	case 'B':
-		charInt = 1;
-		break;
-	case 'C':
-		charInt = 2;
-		break;
-	case 'D':
-		charInt = 3;
-		break;
-	case 'E':
-		charInt = 4;
-		break;
-	case 'F':
-		charInt = 5;
-		break;
-	case 'G':
-		charInt = 6;
-		break;
-	case 'H':
-		charInt = 7;
-		break;
-	default:
-		break;
-	}
-	return charInt;
-}
+// Takes a column (0-7) and returns column label (A-H)
+// Used when drawing the column labels on the edges of the board
 function intToCol(charInt) {
 	'use strict';
 	var intChar = '';
@@ -91,54 +35,6 @@ function intToCol(charInt) {
 	}
 	return intChar;
 }
-function getPosArray(id) {
-	'use strict';
-	var posArray = [];
-	posArray[0] = colToInt(id.charAt(0));
-	posArray[1] = parseInt(id.charAt(1), 10) - 1;
-	return posArray;
-}
-
-function validateBoard(someBoard) {
-	'use strict';
-	if (someBoard.length !== 120) {
-		console.log("Board is the wrong length");
-		return;
-	} else if ($.grep(board, function (c) {return c === '-'; }).length < 32) {
-		console.log("Too few empty spaces on the board");
-		return;
-	} else {
-		console.log("Board seems to be fine");
-	}
-	return;
-}
-
-function logBoard(aboard) {
-	'use strict';
-	var theBoard,
-		line,
-		i,
-		counter = 0,
-		j;
-	if (typeof aboard === 'undefined') {
-		theBoard = game.board.slice();
-		console.log(turn + ' to move on this board:');
-	} else {
-		theBoard = aboard;
-	}
-	i = 0;
-	for (i; i < 12; i += 1) {
-		line = '';
-		j = 0;
-		for (j; j < 10; j += 1) {
-			line = line + theBoard[counter] + ' ';
-			counter += 1;
-		}
-		console.log(line);
-	}
-}
-
-
 
 // Function that returns an array with all pieces on a board of a certain color
 function getPieces(aBoard, color) {
@@ -184,7 +80,6 @@ function getPieces(aBoard, color) {
 	return piecesArray;
 }
 
-
 // Takes a board and an array of piece positions
 function getAllValidMoves(notGlobalBoard, pieces) {
 	'use strict';
@@ -196,17 +91,4 @@ function getAllValidMoves(notGlobalBoard, pieces) {
 		allValidMoves[i] = getValid(pieces[i], notGlobalBoard);
 	}
 	return allValidMoves;
-}
-
-function arrayToReadable(arrayPosition) {
-	'use strict';
-	var row = 8 - Math.floor(arrayPosition / 8),
-		column = intToCol(arrayPosition % 8),
-		readable = 'INVALID POSITION';
-
-	if (arrayPosition > -1 && arrayPosition < 64) {
-		readable = column + row;
-	}
-
-	return readable;
 }

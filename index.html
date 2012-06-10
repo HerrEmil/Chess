@@ -5,36 +5,42 @@
 		<link rel="ICON" href="favicon.ico">
 		<link rel="SHORTCUT ICON" href="favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
+
+		<!-- Libraries -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+		<!-- Chess! -->
 		<script src="js/util.js"></script>
 		<script src="js/panels.js"></script>
 		<script src="js/board.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/ai.js"></script>
 		<script src="js/moveGen.js"></script>
-		<script src="js/debugShizz.js"></script>
-		<!-- Google Analytics script -->
+
+		<!-- Google Analytics -->
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-29130252-1']);
 			_gaq.push(['_trackPageview']);
-
 			(function () {
 				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
+
 	</head>
 	<body>
+
+		<!-- Content -->
 		<div id="main">
-		<!-- Content! -->
 			<table id="board"></table>
 			<p id="blackTurn2">&#8592;</p>
 			<p id="whiteTurn2" class="hidden">&#8592;</p>
-		<!-- Content ends -->
 		</div>
+
+		<!-- Pawn promotion dialog -->
 		<div id="conversion" class="overlay hidden" >
 			<h1>Convert pawn to?</h1>
 			<input type="radio" name="convert" value="queen" checked>&#9819;
@@ -44,6 +50,8 @@
 			<br />
 			<a href="javascript:void(0)" onclick="convertPawn()">Accept</a>
 		</div>
+
+		<!-- Start menu -->
 		<div id="background" class="nothidden">
 			<div id="startMenu">
 				<h2 id="menuHeading">Welcome! Please set players</h2>
@@ -67,5 +75,6 @@
 				<input type="button" value="Play Chess!" onclick="startGame()">
 			</div>
 		</div>
+
 	</body>
 </html>

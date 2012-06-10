@@ -2,6 +2,15 @@ $(document).ready(function () {
 	'use strict';
 	initChess();
 });
+
+// If a browser does not support console,
+// create a global console object to catch calls 
+var console = console || {
+	log: function () {},
+	warn: function () {},
+	error: function () {}
+};
+
 var game = {};
 game.castle = {
 	blackLongCastle : true,
@@ -50,41 +59,8 @@ function initChess() {
 	document.onselectstart = function () { return false; };
 }
 
-function makeMove(piece, sender) {
-	'use strict';
-	//clear the highlighted cells
-	if (piece !== '') {
-		/*if(sender != ''){
-			var senderID = sender.attr('id');
-			var senderClasses = ($('#'+senderID).attr('class') + '').split(' ');
-			var pieceObject = $('#'+piece).children('a');
-			if ($.inArray('valid',senderClasses) >= 0){
-				if ($('#'+senderID).html() !== ''){
-					//Put the captured piece in the tray.
-					var capColor = $($('#'+senderID).html()).attr('class').split(' ');
-					var caps = $('#'+capColor[0]+'Controls div.tray').html();
-					$('#'+capColor[0]+'Controls div.tray').html(caps + $($('#'+senderID).html()).html());
-				}
-
-				//if move is valid, do it, else snap back
-				$('#'+senderID).html(pieceObject.attr('style','position: relative;'));
-				board = kindaMakeMove(board, inHand,senderID);
-				switchTurn();
-			} else {
-				pieceObject.attr('style','position: relative;');
-			}
-		}*/
-		inHand = '';
-	}
-	$('.valid').removeClass('valid');
-	$('.attack').removeClass('attack');
-	$('.origin').removeClass('origin');
-}
-
-/*
-This function is pretty overkill and needs to be either split up or optimized a bit.
-*/
-function reallyMakeMove(origin, destination, IAmAI) {
+// Move function that interacts with the main board and updates DOM
+function makeMove(origin, destination, IAmAI) {
 	var destID,
 		wlc,
 		isValid,
@@ -109,7 +85,7 @@ function reallyMakeMove(origin, destination, IAmAI) {
 		if (isValid > -1) {
 			//Do something here to move the captured piece, if any, to the tray. See the old makeMove for inspiration, or do it properly.
 			$('#' + destID).html(piece.attr('style', 'position: relative;'));
-			game.board = kindaMakeMove(game.board, origin, destID).slice();
+			game.board = boardAfterMove(game.board, origin, destID).slice();
 
 			/*===================================================
 			Castling related shizz
@@ -152,24 +128,24 @@ function reallyMakeMove(origin, destination, IAmAI) {
 			//Check to see if the actual castling move is being made
 			if ((wlc || wsc) && origin === 60) {
 				if (wlc && destID === 58) {
-					game.board = kindaMakeMove(game.board, 56, 59).slice();
+					game.board = boardAfterMove(game.board, 56, 59).slice();
 					theRook = $('#56').children('a');
 					$('#59').html(theRook);
 				}
 				if (wsc && destID === 62) {
-					game.board = kindaMakeMove(game.board, 63, 61).slice();
+					game.board = boardAfterMove(game.board, 63, 61).slice();
 					theRook = $('#63').children('a');
 					$('#61').html(theRook);
 				}
 			}
 			if ((blc || bsc) && origin === 4) {
 				if (blc && destID === 2) {
-					game.board = kindaMakeMove(game.board, 0, 3).slice();
+					game.board = boardAfterMove(game.board, 0, 3).slice();
 					theRook = $('#0').children('a');
 					$('#3').html(theRook);
 				}
 				if (bsc && destID === 6) {
-					game.board = kindaMakeMove(game.board, 7, 5).slice();
+					game.board = boardAfterMove(game.board, 7, 5).slice();
 					theRook = $('#7').children('a');
 					$('#5').html(theRook);
 				}
@@ -178,8 +154,12 @@ function reallyMakeMove(origin, destination, IAmAI) {
 			/*===================================================
 			En passant related shizz
 			===================================================*/
-			//The moveGenerator needs to mark the attack cell as valid, while this function needs to remove the killed pawn from play - both in internal representation and in the visual (the a).
-			//For the internal representation, kindaMakeMove should probably handle it, so the AI can do the move aswell.
+			//The moveGenerator needs to mark the attack cell as valid, while 
+			// this function needs to remove the killed pawn from play - both 
+			// in internal representation and in the visual (the a).
+
+			//For the internal representation, kindaMakeMove should probably 
+			// handle it, so the AI can do the move as well.
 			//Same goes for the pawn conversion aswell I guess.
 
 			/*===================================================
@@ -217,10 +197,10 @@ function reallyMakeMove(origin, destination, IAmAI) {
 		}
 	}
 	$('.valid').removeClass('valid');
-	//$('.attack').removeClass('attack');
 	$('.origin').removeClass('origin');
 	inHand = '';
 }
+
 function switchTurn() {
 	'use strict';
 	var currentPlayerPieces,
@@ -260,7 +240,8 @@ function switchTurn() {
 		setTimeout(function () {AI.makeMove(3); }, 10);
 	}
 }
-function kindaMakeMove(aboard, originIndex, destIndex) {
+
+/*function kindaMakeMove(aboard, originIndex, destIndex) {
 	'use strict';
 	var bIndex = game.boardIndex,
 		indexOfOrigin = bIndex[originIndex],
@@ -270,4 +251,19 @@ function kindaMakeMove(aboard, originIndex, destIndex) {
 	newBoard[indexOfDest] = oldPiece;
 	newBoard[indexOfOrigin] = '-';
 	return newBoard;
-}
+}*/
+
+// Takes board state and move, applies move to board state, returns resulting board
+// Does not check validity of move, so use with care.
+var boardAfterMove = function (board, moveStart, moveGoal) {
+	'use strict';
+	// The move we get are indexes of a regular board (0-63), but our boards
+	// are in mailbox format, so we need the mailbox index to update the board.
+	var mailboxIndex = game.boardIndex.slice();
+
+	// Copy piece from start to goal and clear start
+	board[mailboxIndex[moveGoal]] = board[mailboxIndex[moveStart]];
+	board[mailboxIndex[moveStart]] = '-';
+
+	return board;
+};

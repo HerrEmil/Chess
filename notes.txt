@@ -1,0 +1,12 @@
+Add possibility of en passant moves in moveGen
+ - If pawn is in 5th rank, and en passant is true, and en passant pawn is next to pawn, it is a valid move
+
+In switchTurn, handle en passant state
+
+
+In make move, turn on possibility of en passant when making pawn move from 2nd to 4th rank
+ - AI is not affected by stuff in really make move, only kinda make move, so kinda make move should be rule complete
+
+En Passant Object
+ - Contains position of pawn that is up for the taking
+ - 

@@ -75,15 +75,12 @@ function scaleBoard() {
 	$('#board').css('font-size', fontSize + 'em');
 	$('td').css('width', '').css('height', '').width(tdSize).height(tdSize); //Apply square dimensions to all TD elements
 }
+
 function bindEvents() {
 	'use strict';
-	/* Get board dimensions */
 	var board = $('#board');
-	/*board = {
-		width : board.width(),
-		height : board.height()
-	}*/
-	/* Make pieces draggable */
+
+	// Make pieces draggable
 	$('#board a').on('mousedown', function () {
 		var location = parseInt($(this).parent().attr('id'), 10);
 		inHand = location;
@@ -96,30 +93,29 @@ function bindEvents() {
 		grid: [$('table tr:nth(1)').height(), $('table tr:nth(1)').height()],
 		zIndex: 1000
 	});
-	$('#board td').on('mouseup', function () {
-		//makeMove(inHand, mousePos); //Old function.
-		reallyMakeMove(inHand, $(this), false);
 
+	// Make move on mouse up
+	$('#board td').on('mouseup', function () {
+		makeMove(inHand, $(this), false);
 	});
-	/*
-	$('#board td').on('mouseenter', function(){
-		
-		if(inHand != ''){
-			mousePos = $(this);
-			console.log(mousePos.attr('id'));
-		}
-		
-	});
-	*/
+
+	// Return piece in hand and clear highlights when cursor leaves board
 	$('#board').on('mouseleave', function () {
 		$(document).mouseup();
 		if (inHand !== '') {
 			$('#' + inHand).children('a').attr('style', 'position: relative;');
 		}
-		makeMove(inHand, '');
+		// Clear hand
+		if (inHand !== '') {
+			inHand = '';
+		}
+		// Clear square highlights
+		$('.valid').removeClass('valid');
+		$('.attack').removeClass('attack');
+		$('.origin').removeClass('origin');
 	});
 
-	/* Re-scale on window resize */
+	// Re-scale on window resize
 	$(window).resize(function () {
 		scaleBoard();
 		setLabels();
@@ -179,14 +175,9 @@ function setLabels() {
 
 }
 
+// Adds 'valid' CSS class to squares, i.e. turns on highlights
 function markValids(array) {
 	'use strict';
 	var selector = '#' + array.join(',#');
 	$(selector).addClass('valid');
-	/* Pure JS attempt. Kills the checkered cells at the moment
-	var i = 0;
-	for(i; i < array.length; i++){
-		document.getElementById(array[i]).setAttribute("class","valid");
-	}
-	*/
 }

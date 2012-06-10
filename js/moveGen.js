@@ -43,7 +43,7 @@ function getValid(index, aBoard) {
 	//Remove all the valids that cause check
 	i = 0;
 	for (i; i < valids.length; i += 1) {
-		potentialBoard = kindaMakeMove(curBoard.slice(), index, valids[i]);
+		potentialBoard = boardAfterMove(curBoard.slice(), index, valids[i]);
 		checked = isInCheck(potentialBoard.slice(), color);
 		if (checked) {
 			valids.splice(i, 1);

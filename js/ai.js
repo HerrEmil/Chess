@@ -253,7 +253,7 @@ AI.maxMove = function (boardState, player, ply, alpha, beta) {
 			for (j; j < moves[i].length; j += 1) {
 				// console.log('If I move from', arrayToReadable(pieces[i].valueOf()), 'to', arrayToReadable(moves[i][j].valueOf()) + ',');
 				// Update the state of the child board by making current move
-				tempBoardRef = kindaMakeMove(childBoardState, pieces[i].valueOf(), moves[i][j].valueOf());
+				tempBoardRef = boardAfterMove(childBoardState, pieces[i].valueOf(), moves[i][j].valueOf());
 				childBoardState = tempBoardRef.slice();
 
 				// Calling sister method
@@ -331,7 +331,7 @@ AI.minMove = function (boardState, player, ply, alpha, beta) {
 			j = 0;
 			for (j; j < moves[i].length; j += 1) {
 				// Update the state of the child board by making current move
-				tempBoardRef = kindaMakeMove(childBoardState, pieces[i].valueOf(), moves[i][j].valueOf());
+				tempBoardRef = boardAfterMove(childBoardState, pieces[i].valueOf(), moves[i][j].valueOf());
 				childBoardState = tempBoardRef.slice();
 
 				// Calling sister method
@@ -407,7 +407,7 @@ AI.makeMove = function (ply) {
 	// Check that the lookup function returned a useful move
 	if (bestMove[0] !== -1 && bestMove[1] !== -1) {
 		// Make the move!
-		reallyMakeMove(bestMove[0], bestMove[1], true);
+		makeMove(bestMove[0], bestMove[1], true);
 	} else {
 		console.log('Error: AI did not pick a move!');
 	}
