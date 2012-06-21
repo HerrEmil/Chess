@@ -241,18 +241,6 @@ function switchTurn() {
 	}
 }
 
-/*function kindaMakeMove(aboard, originIndex, destIndex) {
-	'use strict';
-	var bIndex = game.boardIndex,
-		indexOfOrigin = bIndex[originIndex],
-		indexOfDest = bIndex[destIndex],
-		newBoard = aboard.slice(),
-		oldPiece = aboard[indexOfOrigin];
-	newBoard[indexOfDest] = oldPiece;
-	newBoard[indexOfOrigin] = '-';
-	return newBoard;
-}*/
-
 // Takes board state and move, applies move to board state, returns resulting board
 // Does not check validity of move, so use with care.
 var boardAfterMove = function (board, moveStart, moveGoal) {

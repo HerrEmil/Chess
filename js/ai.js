@@ -85,7 +85,9 @@ AI.evaluate = function (aBoard, color) {
 		bIndex = game.boardIndex,
 		salt = Math.random() * 0.1,
 		whiteSilverLining,
-		blackSilverLining;
+		blackSilverLining,
+		whitePiecesLength,
+		blackPiecesLength;
 
 	if (AI.intelligence === 1) {
 		// Herp derp
@@ -95,9 +97,11 @@ AI.evaluate = function (aBoard, color) {
 	// Grab all pieces.
 	whitePieces = getPieces(aBoard, 'white');
 	blackPieces = getPieces(aBoard, 'black');
+	whitePiecesLength = whitePieces.length;
+	blackPiecesLength = blackPieces.length;
 
 	// Add up the value of all white pieces
-	for (i = 0; i < whitePieces.length; i += 1) {
+	for (i = 0; i < whitePiecesLength; i += 1) {
 		switch (aBoard[bIndex[whitePieces[i]]]) {
 		// Pawns
 		case 'p':
@@ -143,7 +147,7 @@ AI.evaluate = function (aBoard, color) {
 	}
 
 	// Add up the value of all black pieces
-	for (i = 0; i < blackPieces.length; i += 1) {
+	for (i = 0; i < blackPiecesLength; i += 1) {
 		switch (aBoard[bIndex[blackPieces[i]]]) {
 		// Pawns
 		case 'P':
@@ -228,8 +232,8 @@ AI.maxMove = function (boardState, player, ply, alpha, beta) {
 		j = 0,
 		localBestValue = -1,
 		tempBoardRef = [],
-		moveSetOnce = false,
-		hasSetOnce;
+		piecesLength,
+		movesILength;
 
 	// Copy the board received, the childBoardState is the 'working board' that we try out moves on
 	childBoardState = boardState.slice();
@@ -247,10 +251,13 @@ AI.maxMove = function (boardState, player, ply, alpha, beta) {
 		nodeValue[2] = AI.evaluate(childBoardState, player);
 		return nodeValue;
 	} else {
+		// We store array lengths to speed up loops
+		piecesLength = pieces.length;
 		// Iterate through all moves
-		for (i; i < pieces.length; i += 1) {
+		for (i; i < piecesLength; i += 1) {
 			j = 0;
-			for (j; j < moves[i].length; j += 1) {
+			movesILength = moves[i].length;
+			for (j; j < movesILength; j += 1) {
 				// console.log('If I move from', arrayToReadable(pieces[i].valueOf()), 'to', arrayToReadable(moves[i][j].valueOf()) + ',');
 				// Update the state of the child board by making current move
 				tempBoardRef = boardAfterMove(childBoardState, pieces[i].valueOf(), moves[i][j].valueOf());
@@ -303,9 +310,8 @@ AI.minMove = function (boardState, player, ply, alpha, beta) {
 		j = 0,
 		localBestValue = -1,
 		tempBoardRef = [],
-		randomPieces = [],
-		randomPiecesAdded = 0,
-		randomMoves = [];
+		piecesLength,
+		movesILength;
 
 	// Save the opposing player, in this sister method, the evaluation method is called with it
 	minPlayer = player === 'white' ? 'black' : 'white';
@@ -326,10 +332,13 @@ AI.minMove = function (boardState, player, ply, alpha, beta) {
 		nodeValue[2] = AI.evaluate(childBoardState, minPlayer);
 		return nodeValue;
 	} else {
+		// We store array lengths to speed up loops
+		piecesLength = pieces.length;
 		// Iterate through all moves
-		for (i; i < pieces.length; i += 1) {
+		for (i; i < piecesLength; i += 1) {
 			j = 0;
-			for (j; j < moves[i].length; j += 1) {
+			movesILength = moves[i].length;
+			for (j; j < movesILength; j += 1) {
 				// Update the state of the child board by making current move
 				tempBoardRef = boardAfterMove(childBoardState, pieces[i].valueOf(), moves[i][j].valueOf());
 				childBoardState = tempBoardRef.slice();
@@ -367,6 +376,9 @@ AI.minMove = function (boardState, player, ply, alpha, beta) {
 
 // This is the main AI function that is called from the game
 // The ply value has to be 2 or higher for the AI to behave
+
+// Note: There is something broken that causes the AI to only work when
+//  given odd numbers, effectively limiting it to just accepting 3
 AI.makeMove = function (ply) {
 	'use strict';
 	var bestMove = [],
