@@ -40,17 +40,6 @@ function getValid(index, aBoard) {
 		//Pawns
 		valids = pawnValids(curBoard, bIndex, index, type, color);
 	}
-	//Remove all the valids that cause check
-	i = 0;
-	for (i; i < valids.length; i += 1) {
-		potentialBoard = boardAfterMove(curBoard.slice(), index, valids[i]);
-		checked = isInCheck(potentialBoard.slice(), color);
-		if (checked) {
-			valids.splice(i, 1);
-			i -= 1;
-			//the array is now shorter by one, so take the counter down one!
-		}
-	}
 	//Is castling possible?
 	//Note, these will fail pretty early
 	if (type === 'k' && color === 'black' && (game.castle.blackShortCastle || game.castle.blackLongCastle)) {
@@ -75,6 +64,17 @@ function getValid(index, aBoard) {
 			if (curBoard[bIndex[58]] === '-' && curBoard[bIndex[57]] === '-') {
 				valids.push(58);
 			}
+		}
+	}
+	//Remove all the valids that cause check
+	i = 0;
+	for (i; i < valids.length; i += 1) {
+		potentialBoard = boardAfterMove(curBoard.slice(), index, valids[i]);
+		checked = isInCheck(potentialBoard.slice(), color);
+		if (checked) {
+			valids.splice(i, 1);
+			i -= 1;
+			//the array is now shorter by one, so take the counter down one!
 		}
 	}
 	return valids;
