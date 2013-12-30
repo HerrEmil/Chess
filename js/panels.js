@@ -19,7 +19,7 @@ function convertPawn() {
 		aPiece.removeClass('pawn').addClass('bishop').html('&#9821;');
 		internalChoice = 'b';
 	} else {
-		console.log('PAWN CONVERSION UNSUCCESFULL!');
+		console.log('PAWN CONVERSION UNSUCCESFUL!');
 	}
 
 	if (turn === 'black') {
@@ -83,6 +83,9 @@ function startGame() {
 
 	// Remove start menu
 	$('#background').addClass('hidden');
+
+	// For testing only!
+	// castleCheckTest();
 
 	// Go!
 	switchTurn();
