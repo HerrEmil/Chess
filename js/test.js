@@ -284,12 +284,12 @@ function castleCheckTest() {
     // $('#54').html('<a href="#" class="white pawn">&#9823;</a>');
     // $('#55').html('<a href="#" class="white pawn">&#9823;</a>');
     // $('#0').html('<a href="#" class="black rook">&#9820;</a>');
-    $('#43').html('<a href="#" class="black knight">&#9822;</a>');
+    $('#41').html('<a href="#" class="black knight">&#9822;</a>');
     // $('#2').html('<a href="#" class="black bishop">&#9821;</a>');
     // $('#3').html('<a href="#" class="black queen">&#9819;</a>');
     $('#4').html('<a href="#" class="black king">&#9818;</a>');
     // $('#5').html('<a href="#" class="black bishop">&#9821;</a>');
-    $('#45').html('<a href="#" class="black knight">&#9822;</a>');
+    // $('#45').html('<a href="#" class="black knight">&#9822;</a>');
     // $('#7').html('<a href="#" class="black rook">&#9820;</a>');
     // $('#8').html('<a href="#" class="black pawn">&#9823;</a>');
     // $('#9').html('<a href="#" class="black pawn">&#9823;</a>');
@@ -307,7 +307,7 @@ function castleCheckTest() {
         '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
         '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
         '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
-        '*', '-', '-', '-', 'N', '-', 'N', '-', '-', '*',
+        '*', '-', 'N', '-', '-', '-', '-', '-', '-', '*',
         '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
         '*', 'r', '-', '-', '-', 'k', '-', '-', 'r', '*',
         '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
