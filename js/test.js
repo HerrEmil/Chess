@@ -273,6 +273,7 @@ function castleCheckTest() {
     $('#63').html('<a href="#" class="white rook">&#9820;</a>');
 
     $('#60').html('<a href="#" class="white king">&#9818;</a>');
+    // $('#61').html('<a href="#" class="white pawn">&#9823;</a>');
 
     $('#0').html('<a href="#" class="black rook">&#9820;</a>');
     $('#7').html('<a href="#" class="black rook">&#9820;</a>');
