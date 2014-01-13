@@ -6,90 +6,7 @@ Move generator based on the mailbox design
 //NB: still missing the fancy pawns (Conversion + en passant)
 //NB: This is being called by the AI, so need to update that aswell when fixing this one.
 //PS: It's fairly optimized, just long and ugly.
-function getValid(index, aBoard) {
-    'use strict';
-    var curBoard = aBoard.slice(),
-        bIndex = game.boardIndex,
-        valids = [],
-        piece = curBoard[bIndex[index]],
-        type = piece.toLowerCase(),
-        color = type === piece ? "white" : "black",
-        i,
-        potentialBoard,
-        checked;
-    if (piece === '-' || piece === '_') {
-        console.log("Silly you: Not a piece:", index);
-        return valids;
-    }
-    if (type === 'r') {
-        //Rooks
-        valids = rookValids(curBoard, bIndex, index, type, color);
-    } else if (type === 'n') {
-        //Knights
-        valids = knightValids(curBoard, bIndex, index, type, color);
-    } else if (type === 'b') {
-        //Bishops
-        valids = bishopValids(curBoard, bIndex, index, type, color);
-    } else if (type === 'q') {
-        //Queens
-        valids = rookValids(curBoard, bIndex, index, type, color).concat(bishopValids(curBoard, bIndex, index, type, color));
-    } else if (type === 'k') {
-        //Kings
-        valids = kingValids(curBoard, bIndex, index, type, color);
-    } else if (type === 'p') {
-        //Pawns
-        valids = pawnValids(curBoard, bIndex, index, type, color);
-    }
-    // Evaluate if castling is possible
-    // 1 - check if castling flags are true (these are set to false when kings or rooks are moved)
-    // 2 - check if spaces directly to the left and right of the king are in the valids array
-    // 3 - check if resulting positions for king and rook are empty
-    // 4 - check that king does not move over a position that is in check
-    if (type === 'k' && color === 'black' && (game.castle.blackShortCastle || game.castle.blackLongCastle)) {
-        if (game.castle.blackShortCastle && valids.indexOf(5) > -1) {
-            if (curBoard[bIndex[6]] === '-') {
-                valids.push(6);
-            }
-        }
-        if (game.castle.blackLongCastle && valids.indexOf(3) > -1) {
-            if (curBoard[bIndex[2]] === '-' && curBoard[bIndex[1]] === '-') {
-                valids.push(2);
-            }
-        }
 
-    } else if (type === 'k' && color === 'white' && (game.castle.whiteShortCastle || game.castle.whiteLongCastle)) {
-        if (game.castle.whiteShortCastle && valids.indexOf(61) > -1) {
-            // Check that G1 is empty
-            if (curBoard[bIndex[62]] === '-') {
-                // Check that white king in F1 would not cause check
-                if (!isInCheck(boardAfterMove(curBoard.slice(), 60, 61), color)) {
-                    valids.push(62);
-                }
-            }
-        }
-        if (game.castle.whiteLongCastle && valids.indexOf(59) > -1) {
-            // Check that B1 and C1 are empty
-            if (curBoard[bIndex[58]] === '-' && curBoard[bIndex[57]] === '-') {
-                // Check that white King in D1 would not cause check
-                if (!isInCheck(boardAfterMove(curBoard.slice(), 60, 59), color)) {
-                    valids.push(58);
-                }
-            }
-        }
-    }
-    //Remove all the valids that cause check
-    i = 0;
-    for (i; i < valids.length; i += 1) {
-        potentialBoard = boardAfterMove(curBoard.slice(), index, valids[i]);
-        checked = isInCheck(potentialBoard.slice(), color);
-        if (checked) {
-            valids.splice(i, 1);
-            i -= 1;
-            //the array is now shorter by one, so take the counter down one!
-        }
-    }
-    return valids;
-}
 function rookValids(curBoard, bIndex, index, type, color) {
     'use strict';
     var up = true,
@@ -527,27 +444,7 @@ function pawnValids(curBoard, bIndex, index, type, color) {
     }
     return valids;
 }
-function isInCheck(aBoard, color) {
-    'use strict';
-    var bIndex = game.boardIndex,
-        enemy = color === 'white' ? 'black' : 'white',
-        enemyPieces = getPieces(aBoard, enemy),
-        enemyValids2D = getAllValidMovesNoCheck(aBoard, enemyPieces),
-        enemyValidsFlat = [].concat.apply([], enemyValids2D),
-        friendlyKing = color === 'white' ? 'k' : 'K',
-        friendlyKingPos = bIndex.indexOf(aBoard.indexOf(friendlyKing)),
-        inThere = enemyValidsFlat.indexOf(friendlyKingPos);
-    return inThere === -1 ? false : true;
-}
-function getAllValidMovesNoCheck(aBoard, pieces) {
-    'use strict';
-    var allValidMoves = [],
-        i = 0;
-    for (i; i < pieces.length; i += 1) {
-        allValidMoves[i] = getValidNoCheck(aBoard, pieces[i]);
-    }
-    return allValidMoves;
-}
+
 function getValidNoCheck(aBoard, index) {
     'use strict';
     var curBoard = aBoard.slice(),
@@ -581,5 +478,133 @@ function getValidNoCheck(aBoard, index) {
     }
     //No check in this one.
     //Stop the timer and return
+    return valids;
+}
+
+function getAllValidMovesNoCheck(aBoard, pieces) {
+    'use strict';
+    var allValidMoves = [],
+        i = 0;
+    for (i; i < pieces.length; i += 1) {
+        allValidMoves[i] = getValidNoCheck(aBoard, pieces[i]);
+    }
+    return allValidMoves;
+}
+
+function isInCheck(aBoard, color) {
+    'use strict';
+    var bIndex = game.boardIndex,
+        enemy = color === 'white' ? 'black' : 'white',
+        enemyPieces = getPieces(aBoard, enemy),
+        enemyValids2D = getAllValidMovesNoCheck(aBoard, enemyPieces),
+        enemyValidsFlat = [].concat.apply([], enemyValids2D),
+        friendlyKing = color === 'white' ? 'k' : 'K',
+        friendlyKingPos = bIndex.indexOf(aBoard.indexOf(friendlyKing)),
+        inThere = enemyValidsFlat.indexOf(friendlyKingPos);
+    return inThere === -1 ? false : true;
+}
+
+function getValid(index, aBoard) {
+    'use strict';
+    var curBoard = aBoard.slice(),
+        bIndex = game.boardIndex,
+        valids = [],
+        piece = curBoard[bIndex[index]],
+        type = piece.toLowerCase(),
+        color = type === piece ? "white" : "black",
+        i,
+        potentialBoard,
+        checked;
+    if (piece === '-' || piece === '_') {
+        console.log("Silly you: Not a piece:", index);
+        return valids;
+    }
+    if (type === 'r') {
+        //Rooks
+        valids = rookValids(curBoard, bIndex, index, type, color);
+    } else if (type === 'n') {
+        //Knights
+        valids = knightValids(curBoard, bIndex, index, type, color);
+    } else if (type === 'b') {
+        //Bishops
+        valids = bishopValids(curBoard, bIndex, index, type, color);
+    } else if (type === 'q') {
+        //Queens
+        valids = rookValids(curBoard, bIndex, index, type, color).concat(bishopValids(curBoard, bIndex, index, type, color));
+    } else if (type === 'k') {
+        //Kings
+        valids = kingValids(curBoard, bIndex, index, type, color);
+    } else if (type === 'p') {
+        //Pawns
+        valids = pawnValids(curBoard, bIndex, index, type, color);
+    }
+    // Evaluate if castling is possible
+    // 1 - check if castling flags are true (these are set to false when kings or rooks are moved)
+    // 2 - check if spaces directly to the left and right of the king are in the valids array
+    // 3 - check if resulting positions for king and rook are empty
+    // 4 - check that king does not move over a position that is in check
+    if (type === 'k' && color === 'black' && (game.castle.blackShortCastle || game.castle.blackLongCastle)) {
+        if (game.castle.blackShortCastle && valids.indexOf(5) > -1) {
+            // Check that G8 is empty
+            if (curBoard[bIndex[6]] === '-') {
+                // Check that black king is not checked
+                if (!isInCheck(curBoard.slice(), "black")) {
+                    // Check that black king in F8 would not be checked
+                    if (!isInCheck(boardAfterMove(curBoard.slice(), 4, 5), "black")) {
+                        valids.push(6);
+                    }
+                }
+            }
+        }
+        if (game.castle.blackLongCastle && valids.indexOf(3) > -1) {
+            // Check that B8 and C8 are empty
+            if (curBoard[bIndex[2]] === '-' && curBoard[bIndex[1]] === '-') {
+                // Check that black king is not checked
+                if (!isInCheck(curBoard.slice(), "black")) {
+                    // Check that black king in D8 would not be checked
+                    if (!isInCheck(boardAfterMove(curBoard.slice(), 4, 3), "black")) {
+                        valids.push(2);
+                    }
+                }
+            }
+        }
+
+    } else if (type === 'k' && color === 'white' && (game.castle.whiteShortCastle || game.castle.whiteLongCastle)) {
+        if (game.castle.whiteShortCastle && valids.indexOf(61) > -1) {
+            // Check that G1 is empty
+            if (curBoard[bIndex[62]] === '-') {
+                // Check that white king is not checked
+                if (!isInCheck(curBoard.slice(), "white")) {
+                    // Check that white king in F1 would not be checked
+                    if (!isInCheck(boardAfterMove(curBoard.slice(), 60, 61), "white")) {
+                        valids.push(62);
+                    }
+                }
+            }
+        }
+        if (game.castle.whiteLongCastle && valids.indexOf(59) > -1) {
+            // Check that B1 and C1 are empty
+            if (curBoard[bIndex[58]] === '-' && curBoard[bIndex[57]] === '-') {
+                // Check that white king is not checked
+                if (!isInCheck(curBoard.slice(), "white")) {
+                    // Check that white King in D1 would not be checked
+                    if (!isInCheck(boardAfterMove(curBoard.slice(), 60, 59), "white")) {
+                        valids.push(58);
+                    }
+                }
+            }
+        }
+    }
+    //Remove all the valids that cause check
+    i = 0;
+    for (i; i < valids.length; i += 1) {
+        potentialBoard = boardAfterMove(curBoard.slice(), index, valids[i]);
+        checked = isInCheck(potentialBoard.slice(), color);
+        if (checked) {
+            valids.splice(i, 1);
+            i -= 1;
+            //the array is now shorter by one, so take the counter down one!
+        }
+    }
     return valids;
 }
