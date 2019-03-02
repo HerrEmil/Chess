@@ -48,17 +48,17 @@ td {
 /*Fix links to not look like links, and choose the proper font for pieces*/
 #board a {
 	text-decoration: none;
-	font-family: "MS Mincho";
+	font-family: 'Arial Unicode MS', sans-serif;
 }
 /*Make the black pieces black and shiny*/
 #board a.black {
 	color: #000;
-	text-shadow: 0 0 30px #000, 0 0 5px #000;
+	text-shadow: 0 0 30px #000;
 }
 /*Make the white pieces white and shiny*/
 #board a.white {
 	color: #fff;
-	text-shadow: 0 0 30px #fff, 0 0 5px #fff;
+	text-shadow: 0 0 30px #fff;
 }
 
 /*
@@ -200,7 +200,6 @@ div.pinned div.pin {
 	display: block;
 	font-size: 37px;
 	word-wrap: break-word;
-	font-family: "MS Mincho";
 }
 #whiteControls div.tray{
 	left: 53px;
