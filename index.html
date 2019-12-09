@@ -1,83 +1,69 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Chess!</title>
-		<meta name="description" content="Chess! is a free light-weight HTML5 app. Play against one of the three different AI opponents or local multiplayer :)">
-		<link rel="ICON" href="favicon.ico">
-		<link rel="SHORTCUT ICON" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/default.css" />
+  <head>
+    <title>Chess!</title>
+    <meta
+      name="description"
+      content="Chess! is a free light-weight HTML5 app. Play against one of the three different AI opponents or local multiplayer :)"
+    />
+    <link rel="ICON" href="favicon.ico" />
+    <link rel="SHORTCUT ICON" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
 
-		<!-- Libraries -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <!-- Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 
-		<!-- Chess! -->
-		<script src="js/util.js"></script>
-		<script src="js/panels.js"></script>
-		<script src="js/board.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/ai.js"></script>
-		<script src="js/moveGen.js"></script>
-		<!-- <script src="js/test.js"></script>
-		<script src="js/disposable.js"></script> -->
+    <!-- Chess! -->
+    <script src="js/util.js"></script>
+    <script src="js/panels.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/moveGen.js"></script>
+  </head>
+  <body>
+    <!-- Content -->
+    <div id="main">
+      <table id="board"></table>
+      <p id="blackTurn2">&#8592;</p>
+      <p id="whiteTurn2" class="hidden">&#8592;</p>
+    </div>
 
-		<!-- Google Analytics -->
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-29130252-1']);
-			_gaq.push(['_trackPageview']);
-			(function () {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script>
+    <!-- Pawn promotion dialog -->
+    <div id="conversion" class="overlay hidden">
+      <h1>Convert pawn to?</h1>
+      <input type="radio" name="convert" value="queen" checked />&#9819;
+      <input type="radio" name="convert" value="rook" />&#9820;
+      <input type="radio" name="convert" value="knight" />&#9822;
+      <input type="radio" name="convert" value="bishop" />&#9821;
+      <br />
+      <a href="javascript:void(0)" onclick="convertPawn()">Accept</a>
+    </div>
 
-	</head>
-	<body>
-
-		<!-- Content -->
-		<div id="main">
-			<table id="board"></table>
-			<p id="blackTurn2">&#8592;</p>
-			<p id="whiteTurn2" class="hidden">&#8592;</p>
-		</div>
-
-		<!-- Pawn promotion dialog -->
-		<div id="conversion" class="overlay hidden" >
-			<h1>Convert pawn to?</h1>
-			<input type="radio" name="convert" value="queen" checked>&#9819;
-			<input type="radio" name="convert" value="rook">&#9820;
-			<input type="radio" name="convert" value="knight">&#9822;
-			<input type="radio" name="convert" value="bishop">&#9821;
-			<br />
-			<a href="javascript:void(0)" onclick="convertPawn()">Accept</a>
-		</div>
-
-		<!-- Start menu -->
-		<div id="background" class="nothidden">
-			<div id="startMenu">
-				<h2 id="menuHeading">Welcome! Please set players</h2>
-				<h3>White player</h3>
-				<select id="whitePlayer">
-					<option selected>Player</option>
-					<option>AI - Very Easy</option>
-					<option>AI - Easy</option>
-					<option>AI - Medium</option>
-				</select>
-				<br>
-				<h3>Black player</h3>
-				<select id="blackPlayer">
-					<option>Player</option>
-					<option>AI - Very Easy</option>
-					<option>AI - Easy</option>
-					<option selected>AI - Medium</option>
-				</select>
-				<br />
-				<br />
-				<input type="button" value="Play Chess!" onclick="startGame()">
-			</div>
-		</div>
-
-	</body>
+    <!-- Start menu -->
+    <div id="background" class="nothidden">
+      <div id="startMenu">
+        <h2 id="menuHeading">Welcome! Please set players</h2>
+        <h3>White player</h3>
+        <select id="whitePlayer">
+          <option selected>Player</option>
+          <option>AI - Very Easy</option>
+          <option>AI - Easy</option>
+          <option>AI - Medium</option>
+        </select>
+        <br />
+        <h3>Black player</h3>
+        <select id="blackPlayer">
+          <option>Player</option>
+          <option>AI - Very Easy</option>
+          <option>AI - Easy</option>
+          <option selected>AI - Medium</option>
+        </select>
+        <br />
+        <br />
+        <input type="button" value="Play Chess!" onclick="startGame()" />
+      </div>
+    </div>
+  </body>
 </html>
