@@ -1,24 +1,16 @@
-$(document).ready(function () {
-	'use strict';
-	initChess();
+$(document).ready(() => {
+  initChess();
 });
 
-// If a browser does not support console,
-// create a global console object to catch calls 
-var console = console || {
-	log: function () {},
-	warn: function () {},
-	error: function () {}
-};
-
-var game = {};
+const game = {};
 game.castle = {
-	blackLongCastle : true,
-	blackShortCastle : true,
-	whiteLongCastle : true,
-	whiteShortCastle : true
+  blackLongCastle: true,
+  blackShortCastle: true,
+  whiteLongCastle: true,
+  whiteShortCastle: true
 };
-game.pawn = {pawnToConvert : -1};
+game.pawn = { pawnToConvert: -1 };
+// prettier-ignore
 game.board = [
 	'*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
 	'*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
@@ -33,6 +25,7 @@ game.board = [
 	'*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
 	'*', '*', '*', '*', '*', '*', '*', '*', '*', '*'
 ];
+// prettier-ignore
 game.boardIndex = [
 	21, 22, 23, 24, 25, 26, 27, 28,
 	31, 32, 33, 34, 35, 36, 37, 38,
@@ -45,213 +38,204 @@ game.boardIndex = [
 ];
 
 function initChess() {
-	//Initialization function.
-	inHand = '';
-	mousePos = '';
-	buildBoard();
-	setBoard();
-	bindEvents();
-	setLabels();
+  //Initialization function.
+  inHand = '';
+  mousePos = '';
+  buildBoard();
+  setBoard();
+  bindEvents();
+  setLabels();
 
-	//Init the turn counter on black and switch turn to white
-	turn = 'black';
-	// Makes no text selectable.
-	document.onselectstart = function () { return false; };
+  //Init the turn counter on black and switch turn to white
+  turn = 'black';
+  // Makes no text selectable.
+  document.onselectstart = () => false;
 }
 
 // Move function that interacts with the main board and updates DOM
 function makeMove(origin, destination, IAmAI) {
-	var destID,
-		wlc,
-		isValid,
-		piece,
-		theRook;
-	if (typeof destination !== 'number') {
-		destID = parseInt(destination.attr('id'), 10);
-	} else {
-		destID = destination;
-	}
+  const destID =
+    typeof destination === 'number'
+      ? destination
+      : parseInt(destination.attr('id'), 10);
 
-	if (origin >= 0 && destID >= 0) {
-		wlc = game.castle.whiteLongCastle;
-		wsc = game.castle.whiteShortCastle;
-		blc = game.castle.blackLongCastle;
-		bsc = game.castle.blackShortCastle;
-		isValid = $.inArray('valid', ($('#' + destID).attr('class')).split(' '));
-		// The AI does not mark cells with the 'valid' class, but we trust it to only make valid moves *knocks on wood*
-		// Notice how the variable is a palindrome, palindromes are cool.
-		if (IAmAI) {isValid = 1; }
-		piece = $('#' + origin).children('a');
-		if (isValid > -1) {
-			//Do something here to move the captured piece, if any, to the tray. See the old makeMove for inspiration, or do it properly.
-			$('#' + destID).html(piece.attr('style', 'position: relative;'));
-			game.board = boardAfterMove(game.board, origin, destID).slice();
+  if (origin >= 0 && destID >= 0) {
+    const wlc = game.castle.whiteLongCastle;
+    const wsc = game.castle.whiteShortCastle;
+    const blc = game.castle.blackLongCastle;
+    const bsc = game.castle.blackShortCastle;
 
-			/*===================================================
+    // The AI does not mark cells with the 'valid' class, but we trust it to only make valid moves *knocks on wood*
+    // Notice how the variable is a palindrome, palindromes are cool.
+    const isValid = IAmAI
+      ? 1
+      : $.inArray(
+          'valid',
+          $(`#${destID}`)
+            .attr('class')
+            .split(' ')
+        );
+
+    const piece = $(`#${origin}`).children('a');
+    if (isValid > -1) {
+      //Do something here to move the captured piece, if any, to the tray. See the old makeMove for inspiration, or do it properly.
+      $(`#${destID}`).html(piece.attr('style', 'position: relative;'));
+      game.board = boardAfterMove(game.board, origin, destID).slice();
+
+      /*===================================================
 			Castling related shizz
 			===================================================*/
-			//Check if it's a move that disallows future castling
-			if ((wlc || wsc) && origin === 60) {
-				//White king moving
-				game.castle.whiteLongCastle = false;
-				game.castle.whiteShortCastle = false;
-				//console.log("disabled wlc");
-				//console.log("disabled wsc");
-			} else if ((blc || bsc) && origin === 4) {
-				//Black king moving
-				game.castle.blackLongCastle = false;
-				game.castle.blackShortCastle = false;
-				//console.log("disabled blc");
-				//console.log("disabled bsc");
-			}
-			//White short rook
-			if (wsc && (origin === 63 || destID === 63)) {
-				game.castle.whiteShortCastle = false;
-				//console.log("disabled wsc");
-			}
-			//White long rook
-			if (wlc && (origin === 56 || destID === 56)) {
-				game.castle.whiteLongCastle = false;
-				//console.log("disabled wlc");
-			}
-			//Black short rook
-			if (bsc && (origin === 7 || destID === 7)) {
-				game.castle.blackShortCastle = false;
-				//console.log("disabled bsc");
-			}
-			//Black long rook
-			if (blc && (origin === 0 || destID === 0)) {
-				game.castle.blackLongCastle = false;
-				//console.log("disabled blc");
-			}
+      //Check if it's a move that disallows future castling
+      if ((wlc || wsc) && origin === 60) {
+        //White king moving
+        game.castle.whiteLongCastle = false;
+        game.castle.whiteShortCastle = false;
+      } else if ((blc || bsc) && origin === 4) {
+        //Black king moving
+        game.castle.blackLongCastle = false;
+        game.castle.blackShortCastle = false;
+      }
+      //White short rook
+      if (wsc && (origin === 63 || destID === 63)) {
+        game.castle.whiteShortCastle = false;
+      }
+      //White long rook
+      if (wlc && (origin === 56 || destID === 56)) {
+        game.castle.whiteLongCastle = false;
+      }
+      //Black short rook
+      if (bsc && (origin === 7 || destID === 7)) {
+        game.castle.blackShortCastle = false;
+      }
+      //Black long rook
+      if (blc && (origin === 0 || destID === 0)) {
+        game.castle.blackLongCastle = false;
+      }
 
-			//Check to see if the actual castling move is being made
-			if ((wlc || wsc) && origin === 60) {
-				if (wlc && destID === 58) {
-					game.board = boardAfterMove(game.board, 56, 59).slice();
-					theRook = $('#56').children('a');
-					$('#59').html(theRook);
-				}
-				if (wsc && destID === 62) {
-					game.board = boardAfterMove(game.board, 63, 61).slice();
-					theRook = $('#63').children('a');
-					$('#61').html(theRook);
-				}
-			}
-			if ((blc || bsc) && origin === 4) {
-				if (blc && destID === 2) {
-					game.board = boardAfterMove(game.board, 0, 3).slice();
-					theRook = $('#0').children('a');
-					$('#3').html(theRook);
-				}
-				if (bsc && destID === 6) {
-					game.board = boardAfterMove(game.board, 7, 5).slice();
-					theRook = $('#7').children('a');
-					$('#5').html(theRook);
-				}
-			}
+      //Check to see if the actual castling move is being made
+      if ((wlc || wsc) && origin === 60) {
+        if (wlc && destID === 58) {
+          game.board = boardAfterMove(game.board, 56, 59).slice();
+          const theRook = $('#56').children('a');
+          $('#59').html(theRook);
+        }
+        if (wsc && destID === 62) {
+          game.board = boardAfterMove(game.board, 63, 61).slice();
+          const theRook = $('#63').children('a');
+          $('#61').html(theRook);
+        }
+      }
+      if ((blc || bsc) && origin === 4) {
+        if (blc && destID === 2) {
+          game.board = boardAfterMove(game.board, 0, 3).slice();
+          const theRook = $('#0').children('a');
+          $('#3').html(theRook);
+        }
+        if (bsc && destID === 6) {
+          game.board = boardAfterMove(game.board, 7, 5).slice();
+          const theRook = $('#7').children('a');
+          $('#5').html(theRook);
+        }
+      }
 
-			/*===================================================
+      /*===================================================
 			En passant related shizz
 			===================================================*/
-			//The moveGenerator needs to mark the attack cell as valid, while 
-			// this function needs to remove the killed pawn from play - both 
-			// in internal representation and in the visual (the a).
+      //The moveGenerator needs to mark the attack cell as valid, while
+      // this function needs to remove the killed pawn from play - both
+      // in internal representation and in the visual (the a).
 
-			//For the internal representation, kindaMakeMove should probably 
-			// handle it, so the AI can do the move as well.
-			//Same goes for the pawn conversion aswell I guess.
+      //For the internal representation, kindaMakeMove should probably
+      // handle it, so the AI can do the move as well.
+      //Same goes for the pawn conversion aswell I guess.
 
-			/*===================================================
+      /*===================================================
 			Pawn Conversion related shizz
 			===================================================*/
-			if (game.board[game.boardIndex[destID]].toLowerCase() === 'p') {
-				if (turn === 'white' && destID < 8 && destID >= 0) {
-					//if it's white making a pawn move, check if the destination is on the top row
-					//console.log('White is totally about to convert a pawn!');
-					game.pawn.pawnToConvert = destID;
-					if (game.whiteAI) {
-						convertPawn();
-					} else {
-						$('#conversion').removeClass('hidden');
-					}
-				} else if (turn === 'black' && destID > 55 && destID < 64) {
-					//console.log('Black is totally about to convert a pawn!');
-					game.pawn.pawnToConvert = destID;
-					if (game.blackAI) {
-						convertPawn();
-					} else {
-						$('#conversion').removeClass('hidden');
-					}
-				} else {
-					switchTurn();
-				}
-			} else {
-				switchTurn();
-			}
-			//Finally switch the turn
-			//Note that this switch happens before anyone humanly possible can select which piece they wish to convert a pawn to.
-			//However, the AI is not human, so that may or may happen beforehand.
-		} else {
-			piece.attr('style', 'position: relative;');
-		}
-	}
-	$('.valid').removeClass('valid');
-	$('.origin').removeClass('origin');
-	inHand = '';
+      if (game.board[game.boardIndex[destID]].toLowerCase() === 'p') {
+        if (turn === 'white' && destID < 8 && destID >= 0) {
+          //if it's white making a pawn move, check if the destination is on the top row
+          game.pawn.pawnToConvert = destID;
+          if (game.whiteAI) {
+            convertPawn();
+          } else {
+            $('#conversion').removeClass('hidden');
+          }
+        } else if (turn === 'black' && destID > 55 && destID < 64) {
+          game.pawn.pawnToConvert = destID;
+          if (game.blackAI) {
+            convertPawn();
+          } else {
+            $('#conversion').removeClass('hidden');
+          }
+        } else {
+          switchTurn();
+        }
+      } else {
+        switchTurn();
+      }
+      //Finally switch the turn
+      //Note that this switch happens before anyone humanly possible can select which piece they wish to convert a pawn to.
+      //However, the AI is not human, so that may or may happen beforehand.
+    } else {
+      piece.attr('style', 'position: relative;');
+    }
+  }
+  $('.valid').removeClass('valid');
+  $('.origin').removeClass('origin');
+  inHand = '';
 }
 
 function switchTurn() {
-	'use strict';
-	var currentPlayerPieces,
-		currentPlayerValids,
-		currentPlayerValidsFlat;
-	//Hide the turn for the one that just moved
-	$('.' + turn).addClass('notYourTurn');
-	$('#' + turn + 'Turn2').addClass('hidden');
+  //Hide the turn for the one that just moved
+  $(`.${turn}`).addClass('notYourTurn');
+  $(`#${turn}Turn2`).addClass('hidden');
 
-	//Switch the turn
-	turn = turn === 'white' ? 'black' : 'white';
+  //Switch the turn
+  turn = turn === 'white' ? 'black' : 'white';
 
-	//Show the turn for the one to move next
-	$('.' + turn).removeClass('notYourTurn');
-	$('#' + turn + 'Turn2').removeClass('hidden');
+  //Show the turn for the one to move next
+  $(`.${turn}`).removeClass('notYourTurn');
+  $(`#${turn}Turn2`).removeClass('hidden');
 
-	// After every turn switch, check if the game has ended
-	// First grab all pieces
-	currentPlayerPieces = getPieces(game.board, turn);
-	// Get all valid moves
-	currentPlayerValids = getAllValidMoves(game.board, currentPlayerPieces);
-	// Flatten 2D array
-	currentPlayerValidsFlat = [].concat.apply([], currentPlayerValids);
-	// If none of those pieces can move...
-	if (!currentPlayerValidsFlat.length) {
-		// Check if the game ended because of stalemate or checkmate
-		if (isInCheck(game.board, turn)) {
-			// Checkmate!
-			endGame(true);
-		} else {
-			// Stalemate!
-			endGame(false);
-		}
-	} else if (turn === 'black' && game.blackAI) {
-		setTimeout(function () {AI.makeMove(3); }, 10);
-	} else if (turn === 'white' && game.whiteAI) {
-		setTimeout(function () {AI.makeMove(3); }, 10);
-	}
+  // After every turn switch, check if the game has ended
+  // First grab all pieces
+  const currentPlayerPieces = getPieces(game.board, turn);
+  // Get all valid moves
+  const currentPlayerValids = getAllValidMoves(game.board, currentPlayerPieces);
+  // Flatten 2D array
+  const currentPlayerValidsFlat = [].concat(...currentPlayerValids);
+  // If none of those pieces can move...
+  if (!currentPlayerValidsFlat.length) {
+    // Check if the game ended because of stalemate or checkmate
+    if (isInCheck(game.board, turn)) {
+      // Checkmate!
+      endGame(true);
+    } else {
+      // Stalemate!
+      endGame(false);
+    }
+  } else if (turn === 'black' && game.blackAI) {
+    setTimeout(() => {
+      AI.makeMove(3);
+    }, 10);
+  } else if (turn === 'white' && game.whiteAI) {
+    setTimeout(() => {
+      AI.makeMove(3);
+    }, 10);
+  }
 }
 
 // Takes board state and move, applies move to board state, returns resulting board
 // Does not check validity of move, so use with care.
-var boardAfterMove = function (board, moveStart, moveGoal) {
-	'use strict';
-	// The move we get are indexes of a regular board (0-63), but our boards
-	// are in mailbox format, so we need the mailbox index to update the board.
-	var mailboxIndex = game.boardIndex.slice();
+var boardAfterMove = (board, moveStart, moveGoal) => {
+  // The move we get are indexes of a regular board (0-63), but our boards
+  // are in mailbox format, so we need the mailbox index to update the board.
+  const mailboxIndex = game.boardIndex.slice();
 
-	// Copy piece from start to goal and clear start
-	board[mailboxIndex[moveGoal]] = board[mailboxIndex[moveStart]];
-	board[mailboxIndex[moveStart]] = '-';
+  // Copy piece from start to goal and clear start
+  board[mailboxIndex[moveGoal]] = board[mailboxIndex[moveStart]];
+  board[mailboxIndex[moveStart]] = '-';
 
-	return board;
+  return board;
 };

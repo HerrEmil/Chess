@@ -3,14 +3,14 @@
 
 // Used for testing specific board state, copy regular setup and change
 function setTestBoard() {
-	'use strict';
-	$('td').html('');
-	/*$('#56').html('<a href="#" class="white rook">&#9820;</a>');
+  'use strict';
+  $('td').html('');
+  /*$('#56').html('<a href="#" class="white rook">&#9820;</a>');
 	$('#57').html('<a href="#" class="white knight">&#9822;</a>');
 	$('#58').html('<a href="#" class="white bishop">&#9821;</a>');*/
-	$('#11').html('<a href="#" class="white queen">&#9819;</a>');
-	$('#60').html('<a href="#" class="white king">&#9818;</a>');
-	/*$('#61').html('<a href="#" class="white bishop">&#9821;</a>');
+  $('#11').html('<a href="#" class="white queen">&#9819;</a>');
+  $('#60').html('<a href="#" class="white king">&#9818;</a>');
+  /*$('#61').html('<a href="#" class="white bishop">&#9821;</a>');
 	$('#62').html('<a href="#" class="white knight">&#9822;</a>');
 	$('#63').html('<a href="#" class="white rook">&#9820;</a>');
 	$('#48').html('<a href="#" class="white pawn">&#9823;</a>');
@@ -25,8 +25,8 @@ function setTestBoard() {
 	$('#1').html('<a href="#" class="black knight">&#9822;</a>');
 	$('#2').html('<a href="#" class="black bishop">&#9821;</a>');
 	$('#3').html('<a href="#" class="black queen">&#9819;</a>');*/
-	$('#6').html('<a href="#" class="black king">&#9818;</a>');
-	/*$('#5').html('<a href="#" class="black bishop">&#9821;</a>');
+  $('#6').html('<a href="#" class="black king">&#9818;</a>');
+  /*$('#5').html('<a href="#" class="black bishop">&#9821;</a>');
 	$('#6').html('<a href="#" class="black knight">&#9822;</a>');
 	$('#7').html('<a href="#" class="black rook">&#9820;</a>');
 	$('#8').html('<a href="#" class="black pawn">&#9823;</a>');
@@ -37,7 +37,8 @@ function setTestBoard() {
 	$('#13').html('<a href="#" class="black pawn">&#9823;</a>');
 	$('#14').html('<a href="#" class="black pawn">&#9823;</a>');
 	$('#15').html('<a href="#" class="black pawn">&#9823;</a>');*/
-	game.board = [
+  // prettier-ignore
+  game.board = [
 		'*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
 		'*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
 		'*', '-', '-', '-', '-', '-', '-', 'K', '-', '*',
@@ -51,11 +52,8 @@ function setTestBoard() {
 		'*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
 		'*', '*', '*', '*', '*', '*', '*', '*', '*', '*'
 	];
-	bindEvents();
+  bindEvents();
 }
-
-
-
 
 /* 
 CharCodeAt(0):
