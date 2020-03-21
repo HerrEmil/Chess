@@ -2,7 +2,7 @@
   "name": "chess",
   "version": "1.0.0",
   "scripts": {
-    "start": "http-server -o"
+    "start": "watch-http-server -a localhost -o"
   },
   "repository": {
     "type": "git",
@@ -13,6 +13,10 @@
   },
   "homepage": "https://github.com/HerrEmil/Chess#readme",
   "devDependencies": {
-    "http-server": "^0.12.1"
+    "watch-http-server": "^0.7.6"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.3.33",
+    "@types/jqueryui": "^1.12.10"
   }
 }
