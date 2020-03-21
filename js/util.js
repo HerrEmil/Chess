@@ -1,8 +1,9 @@
+import { getValid } from './moveGen.js';
 // This file contains various utility functions
 
 // Takes a column (0-7) and returns column label (A-H)
 // Used when drawing the column labels on the edges of the board
-function intToCol(charInt) {
+export function intToCol(charInt) {
   let intChar = '';
   switch (charInt) {
     case 0:
@@ -36,7 +37,7 @@ function intToCol(charInt) {
 }
 
 // Function that returns an array with all pieces on a board of a certain color
-function getPieces(aBoard, color) {
+export function getPieces(aBoard, color) {
   // Create variables first to remind myself that they are always on top of scope
   let bIndex;
 
@@ -89,7 +90,7 @@ function getPieces(aBoard, color) {
 }
 
 // Takes a board and an array of piece positions
-function getAllValidMoves(notGlobalBoard, pieces) {
+export function getAllValidMoves(notGlobalBoard, pieces) {
   // Create an array with all pieces of one color, and a counter for the loop
   const allValidMoves = [];
 

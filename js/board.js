@@ -1,7 +1,11 @@
+import { makeMove } from './main.js';
+import { getValid } from './moveGen.js';
+import { intToCol } from './util.js';
+
 /* 
 This file deals with functions building, scaling and modifying the board
 */
-function buildBoard() {
+export function buildBoard() {
   const rows = 8;
   const cols = 8;
   const table = $('<table />'); //Initialize an empty table
@@ -24,7 +28,7 @@ function buildBoard() {
   scaleBoard(); //Scale it.
 }
 //Fill board with chess setup.
-function setBoard() {
+export function setBoard() {
   $('td').html('');
   $('#56').html('<a href="#" class="white rook">&#9820;</a>');
   $('#57').html('<a href="#" class="white knight">&#9822;</a>');
@@ -73,9 +77,7 @@ function scaleBoard() {
     .height(tdSize); //Apply square dimensions to all TD elements
 }
 
-function bindEvents() {
-  const board = $('#board');
-
+export function bindEvents() {
   // Make pieces draggable
   $('#board a')
     .on('mousedown', function() {
@@ -128,7 +130,7 @@ function bindEvents() {
 }
 
 //Horribly long function for creating and positioning the A-H and 1-8 Labels
-function setLabels() {
+export function setLabels() {
   // Delete old edgeLabels (for resize)
   $('.edgeLabel').remove();
 

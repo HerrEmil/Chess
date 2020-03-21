@@ -1,3 +1,5 @@
+import { boardAfterMove } from './main.js';
+import { getPieces } from './util.js';
 /*
 Move generator based on the mailbox design
 */
@@ -480,7 +482,7 @@ function getValidNoCheck(aBoard, index) {
   return [];
 }
 
-function getAllValidMovesNoCheck(aBoard, pieces) {
+export function getAllValidMovesNoCheck(aBoard, pieces) {
   const allValidMoves = [];
   for (let i = 0; i < pieces.length; i += 1) {
     allValidMoves[i] = getValidNoCheck(aBoard, pieces[i]);
@@ -488,7 +490,7 @@ function getAllValidMovesNoCheck(aBoard, pieces) {
   return allValidMoves;
 }
 
-function isInCheck(aBoard, color) {
+export function isInCheck(aBoard, color) {
   const bIndex = game.boardIndex;
   const enemy = color === 'white' ? 'black' : 'white';
   const enemyPieces = getPieces(aBoard, enemy);
@@ -500,7 +502,7 @@ function isInCheck(aBoard, color) {
   return inThere === -1 ? false : true;
 }
 
-function getValid(index, aBoard) {
+export function getValid(index, aBoard) {
   const curBoard = aBoard.slice();
   const bIndex = game.boardIndex;
   let valids = [];

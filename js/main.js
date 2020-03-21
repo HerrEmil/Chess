@@ -1,8 +1,21 @@
+import { AI } from './ai.js';
+import { buildBoard, setBoard, bindEvents, setLabels } from './board.js';
+import { isInCheck } from './moveGen.js';
+import { convertPawn, endGame, startGame } from './panels.js';
+import { getAllValidMoves, getPieces } from './util.js';
+
 $(document).ready(() => {
   initChess();
 });
 
-const game = {};
+window.inHand = '';
+window.mousePos = '';
+window.turn = '';
+
+window.AI = AI;
+window.startGame = startGame;
+
+window.game = {};
 game.castle = {
   blackLongCastle: true,
   blackShortCastle: true,
@@ -53,7 +66,7 @@ function initChess() {
 }
 
 // Move function that interacts with the main board and updates DOM
-function makeMove(origin, destination, IAmAI) {
+export function makeMove(origin, destination, IAmAI) {
   const destID =
     typeof destination === 'number'
       ? destination
@@ -186,7 +199,7 @@ function makeMove(origin, destination, IAmAI) {
   inHand = '';
 }
 
-function switchTurn() {
+export function switchTurn() {
   //Hide the turn for the one that just moved
   $(`.${turn}`).addClass('notYourTurn');
   $(`#${turn}Turn2`).addClass('hidden');
@@ -228,7 +241,7 @@ function switchTurn() {
 
 // Takes board state and move, applies move to board state, returns resulting board
 // Does not check validity of move, so use with care.
-var boardAfterMove = (board, moveStart, moveGoal) => {
+export const boardAfterMove = (board, moveStart, moveGoal) => {
   // The move we get are indexes of a regular board (0-63), but our boards
   // are in mailbox format, so we need the mailbox index to update the board.
   const mailboxIndex = game.boardIndex.slice();

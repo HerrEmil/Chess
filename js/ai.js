@@ -1,4 +1,8 @@
-const AI = {};
+import { boardAfterMove, makeMove } from './main.js';
+import { getAllValidMovesNoCheck, isInCheck } from './moveGen.js';
+import { getAllValidMoves, getPieces } from './util.js';
+
+export const AI = {};
 
 // This var is just used to make sure that we do not return value on top level of decision tree
 AI.plyUsed = 100;
@@ -87,7 +91,7 @@ AI.evaluate = (aBoard, color) => {
 
   // Add up the value of all white pieces
   const whitePieces = getPieces(aBoard, 'white');
-  for (piece of whitePieces) {
+  for (let piece of whitePieces) {
     switch (aBoard[bIndex[piece]]) {
       // Pawns
       case 'p':
@@ -132,7 +136,7 @@ AI.evaluate = (aBoard, color) => {
 
   // Add up the value of all black pieces
   const blackPieces = getPieces(aBoard, 'black');
-  for (piece of blackPieces) {
+  for (let piece of blackPieces) {
     switch (aBoard[bIndex[piece]]) {
       // Pawns
       case 'P':

@@ -1,7 +1,9 @@
+import { switchTurn } from './main.js';
+
 /*
 Handler for user interface (Control panels, counters and so on)
 */
-function convertPawn() {
+export function convertPawn() {
   const textualChoice = $('input:radio[name=convert]:checked').val();
   let internalChoice;
   const aPiece = $(`#${game.pawn.pawnToConvert}`).children('a');
@@ -44,8 +46,9 @@ function convertPawn() {
   game.pawn.pawnToConvert = -1;
   switchTurn();
 }
+window.convertPawn = convertPawn;
 
-function startGame() {
+export function startGame() {
   // Grab player selections
   const blackPlayer = $('#blackPlayer').val();
 
@@ -99,7 +102,8 @@ function startGame() {
   // Go!
   switchTurn();
 }
-function endGame(checkmate) {
+
+export function endGame(checkmate) {
   const outcome = checkmate ? 'Checkmate!' : 'Stalemate!';
   const theMenu = $('#startMenu');
   const playerWhoWon = turn === 'black' ? 'White' : 'Black';
