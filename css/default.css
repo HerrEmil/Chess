@@ -4,308 +4,182 @@
 2. Board controls
 3. Checkered board
 4. Board labels
-5. Control Panel
-6. Miscellaneous
+5. Miscellaneous
 
 Note that when we implement classic and futuristic styles, another section should be added in the bottom that overrides the necesarry settings.
 
 */
 
-
 /* 
 =========== General setup ===========
 */
 html {
-	background-color: #999;
-	overflow-x: hidden;
+  background-color: #999;
+  overflow-x: hidden;
 }
 /* 
 =========== Board controls ===========
 */
 table {
-	border-spacing: 0px;
-	border-collapse: collapse;
-	margin: 0 auto;
-	user-select: none;
-	-webkit-user-select: none;
-	cursor: default !important;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default !important;
 }
 td {
-	text-align: center;
-	border: solid black 1px;
-	/* default settings removed due to auto-size on startup
-	line-heigth: 25px;
-	height: 25px;
-	width: 25px;
-	*/
+  text-align: center;
+  border: solid black 1px;
 }
 /* Style the whole board with shadow and margin */
 #board {
-	border: solid;
-	box-shadow: 0 0 2px 40px #000;
-	margin-top: 42px;
+  border: solid;
+  box-shadow: 0 0 2px 40px #000;
+  margin-top: 42px;
 }
 /*Fix links to not look like links, and choose the proper font for pieces*/
 #board a {
-	text-decoration: none;
-	font-family: 'Arial Unicode MS', sans-serif;
+  text-decoration: none;
+  font-family: 'Arial Unicode MS', sans-serif;
 }
 /*Make the black pieces black and shiny*/
 #board a.black {
-	color: #000;
-	text-shadow: 0 0 30px #000;
+  color: #000;
+  text-shadow: 0 0 30px #000;
 }
 /*Make the white pieces white and shiny*/
 #board a.white {
-	color: #fff;
-	text-shadow: 0 0 30px #fff;
+  color: #fff;
+  text-shadow: 0 0 30px #fff;
 }
 
 /*
 =========== Checkered board ===========
 Note that white cells are first, black are second
-*/
-/*
-Old CSS3 selectors for checkered board.
-
-tr:nth-child(odd) td:nth-child(odd), tr:nth-child(even) td:nth-child(even) {
-	background:-webkit-gradient(linear,0 0, 0 100%, from(#ddccbb), to(#777));
-	-webkit-box-shadow:inset 0 0 20px 5px rgba(255,255,255,.7); 
-
-}
-tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
-	background:-webkit-gradient(linear,0 0, 0 100%, from(#333), to(#777));
-	-webkit-box-shadow:inset 0 0 20px rgba(0,0,0,.7);
-}
-*/
-/*
 New plain CSS selectors for checkered board:
 */
 .wc {
-	background:-webkit-gradient(linear,0 0, 0 100%, from(#ddccbb), to(#777));
-	background: gradient(linear,0 0, 0 100%, from(#ddccbb), to(#777));
-	-webkit-box-shadow:inset 0 0 20px 5px rgba(255,255,255,.7); 
-	box-shadow:inset 0 0 20px 5px rgba(255,255,255,.7); 
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ddccbb), to(#777));
+  background: gradient(linear, 0 0, 0 100%, from(#ddccbb), to(#777));
+  -webkit-box-shadow: inset 0 0 20px 5px rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 0 20px 5px rgba(255, 255, 255, 0.7);
 }
 .bc {
-	background:-webkit-gradient(linear,0 0, 0 100%, from(#333), to(#777));
-	-webkit-box-shadow:inset 0 0 20px rgba(0,0,0,.7);
-	background:gradient(linear,0 0, 0 100%, from(#333), to(#777));
-	box-shadow:inset 0 0 20px rgba(0,0,0,.7);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#777));
+  -webkit-box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7);
+  background: gradient(linear, 0 0, 0 100%, from(#333), to(#777));
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7);
 }
 .valid {
-	-webkit-box-shadow: inset 0 0 20px #0F0 !important;
-	box-shadow: inset 0 0 20px #0F0 !important;
+  -webkit-box-shadow: inset 0 0 20px #0f0 !important;
+  box-shadow: inset 0 0 20px #0f0 !important;
 }
-.valid a.black{
-	text-shadow: 0 0 30px #000, 0 0 5px #000, 0px 0px 20px #f00,0px 0px 20px #f00 !important;
+.valid a.black {
+  text-shadow: 0 0 30px #000, 0 0 5px #000, 0px 0px 20px #f00, 0px 0px 20px #f00 !important;
 }
-.valid a.white{
-	text-shadow: 0 0 5px #fff, 0px 0px 20px #f00,0px 0px 20px #f00 !important;
+.valid a.white {
+  text-shadow: 0 0 5px #fff, 0px 0px 20px #f00, 0px 0px 20px #f00 !important;
 }
 .origin {
-	-webkit-box-shadow: inset 0 0 20px #00F !important;	
+  -webkit-box-shadow: inset 0 0 20px #00f !important;
 }
 /*
 =========== Board labels (A-H, 1-8) ============
 */
 p {
-	position: absolute;
-	font-family: Consolas;
-	color: #FFF;
-	text-shadow: 0 0 5px #fff;
-	margin: auto;
+  position: absolute;
+  font-family: Consolas;
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
+  margin: auto;
 }
 .invis {
-	color: #000;
+  color: #000;
 }
-/*
-=========== Control Panels ============
-*/
-#whiteControls {
-	position: absolute;
-	top: 50px;
-	width: 250px;
-	height: 500px;
 
-	background-color: #333;
-	box-shadow: 10px 10px 5px 0px #000, inset 0px 0px 20px rgba(0,0,0,1.0);
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-
-	left: -240px;
-	-webkit-transition-duration: 0.5s;
-	transition-duration: 0.5s;
+#whiteTurn2,
+#blackTurn2 {
+  text-align: center;
 }
-#blackControls {
-	position: absolute;
-
-	top: 50px;
-	width: 250px;
-	height: 500px;
-
-	background-color: #333;
-	box-shadow: 10px 10px 5px 0px #000, inset 0px 0px 20px rgba(0,0,0,1.0);
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-
-	right: -240px;
-	-webkit-transition-duration: 0.5s;
-	transition-duration: 0.5s;
-}
-#whiteControls:hover {
-	left: -50px;
-}
-#blackControls:hover {
-	right: -50px;
-}
-#whiteControls div.pin {
-	position: relative;
-	font-size: 2em;
-	color: white;
-	cursor: pointer;
-	left: 215px;
-	top:5px;
-	width: 33px;
-	-webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
-#blackControls div.pin {
-	position: relative;
-	left: 2px;
-	font-size: 2em;
-	color: white;
-	cursor: pointer;
-	top:5px;
-	width: 33px;
-}
-#whiteControls.pinned{
-	left: -50px !important;
-}
-#blackControls.pinned{
-	right: -50px !important;
-}
-div.pinned div.pin {
-	text-shadow: 0 0 5px #fff;
-}
-.tray {
-	width: 190px;
-	height: 130px;
-	background-color: #aaa;
-	border: solid 1px #111;
-	box-shadow: inset 0px 0px 10px #000;
-	position: absolute;
-	top: 363px;
-	border-radius: 5px;
-	display: block;
-	font-size: 37px;
-	word-wrap: break-word;
-}
-#whiteControls div.tray{
-	left: 53px;
-	color: white;
-	text-shadow: 1px 1px 1px black;
-}
-#blackControls div.tray{
-	left: 5px;
-	text-shadow: 1px 1px 1px #DDD;
-}
-#whiteTurn2, #blackTurn2 {
-	text-align: center;
-}
-#whiteTurn2{
-	text-shadow: 0 0 5px #fff;
-	color: #FFF;
+#whiteTurn2 {
+  text-shadow: 0 0 5px #fff;
+  color: #fff;
 }
 #blackTurn2 {
-	text-shadow: 0 0 5px #000;
-	color: #000;
+  text-shadow: 0 0 5px #000;
+  color: #000;
 }
 #conversion {
-	position: fixed;
-	width: 300px;
-	height: 150px;
-	top: 50%;
-	left: 50%;
-	margin-top: -75px;
-	margin-left: -150px;
-	border: solid black 1px;
-	background-color: #DDD;
-	text-align: center;
-	border-radius: 5px;
+  position: fixed;
+  width: 300px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  margin-top: -75px;
+  margin-left: -150px;
+  border: solid black 1px;
+  background-color: #ddd;
+  text-align: center;
+  border-radius: 5px;
 }
 #startMenu {
-	position: fixed;
-	width: 300px;
-	height: 250px;
-	top: 40%;
-	left: 50%;
-	margin-top: -75px;
-	margin-left: -150px;
-	border: solid 1px #333;
-	background-color: #DDD;
-	text-align: center;
-	border-radius: 5px;
-	-webkit-box-shadow: 0px 5px 80px #505050;
+  position: fixed;
+  width: 300px;
+  height: 250px;
+  top: 40%;
+  left: 50%;
+  margin-top: -75px;
+  margin-left: -150px;
+  border: solid 1px #333;
+  background-color: #ddd;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 80px #505050;
 }
-#background{
-	-webkit-box-align: center;
-	-webkit-box-orient: vertical;
-	-webkit-box-pack: center;
-	-webkit-transition: 0.25s opacity;
-	background: -webkit-radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, rgba(0, 0, 0, 0.7));
-	bottom: 0;
-	display: -webkit-box;
-	left: 0;
-	overflow: auto;
-	padding: 20px;
-	padding-bottom: 130px;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: 10;
+#background {
+  -webkit-box-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-transition: 0.25s opacity;
+  background: -webkit-radial-gradient(
+    rgba(127, 127, 127, 0.5),
+    rgba(127, 127, 127, 0.5) 35%,
+    rgba(0, 0, 0, 0.7)
+  );
+  bottom: 0;
+  display: -webkit-box;
+  left: 0;
+  overflow: auto;
+  padding: 20px;
+  padding-bottom: 130px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
 }
-h2{
-	font-size: 23px;
-	margin-bottom: 5px;
-
+h2 {
+  font-size: 23px;
+  margin-bottom: 5px;
 }
-h3{
-	font-size: 19px;
-	margin-bottom: 5px;
+h3 {
+  font-size: 19px;
+  margin-bottom: 5px;
 }
-
 
 /*
 =========== Miscellaneous ============
 */
 
 .hidden {
-	display: none !important;
+  display: none !important;
 }
 .notYourTurn {
-	pointer-events:none;
+  pointer-events: none;
 }
 /*
 Fix-it-all for mouseposition shizz. This ensures that while mouse is being dragged, no events will be fired from the <a>
 */
 a.ui-draggable-dragging {
-	pointer-events: none;
-}
-/*
-Add this class to transform the letters into:
----------------------------
-&#235; = pin
-% = trophy
-& = medal
-7 = rewind
-8 = fastforward
-9 = full rewind (back to start)
-: = full forward (skip to end)
-; = pause
-< = stop
-i = info
----------------------------*/
-.webdings {
-	font-family: Webdings; 
+  pointer-events: none;
 }
