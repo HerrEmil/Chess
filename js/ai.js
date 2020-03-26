@@ -97,16 +97,22 @@ const getPieceValueSum = ({
   return pieces.reduce((sum, piece) => {
     switch (board[boardIndex[piece]]) {
       case 'p':
+      case 'P':
         return sum + 100 + (AILevel === 3 && AI.pawnTable[piece]);
       case 'r':
+      case 'R':
         return sum + 500;
       case 'n':
+      case 'N':
         return sum + 320 + (AILevel === 3 && AI.knightTable[piece]);
       case 'b':
+      case 'B':
         return sum + 325 + (AILevel === 3 && AI.bishopTable[piece]);
       case 'q':
+      case 'Q':
         return sum + 975;
       case 'k':
+      case 'K':
         return sum + 32767 + (AILevel === 3 && AI.kingTable[piece]);
       default:
         return sum;
