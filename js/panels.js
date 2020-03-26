@@ -1,43 +1,38 @@
 import { switchTurn } from './main.js';
 
-/*
-Handler for user interface (Control panels, counters and so on)
-*/
-export function convertPawn() {
-  const textualChoice = $('input:radio[name=convert]:checked').val();
-  let internalChoice;
-  const aPiece = $(`#${game.pawn.pawnToConvert}`).children('a');
-  if (textualChoice === 'queen') {
-    aPiece
-      .removeClass('pawn')
-      .addClass('queen')
-      .html('&#9819;');
-    internalChoice = 'q';
-  } else if (textualChoice === 'rook') {
-    aPiece
-      .removeClass('pawn')
-      .addClass('rook')
-      .html('&#9820;');
-    internalChoice = 'r';
-  } else if (textualChoice === 'knight') {
-    aPiece
-      .removeClass('pawn')
-      .addClass('knight')
-      .html('&#9822;');
-    internalChoice = 'n';
-  } else if (textualChoice === 'bishop') {
-    aPiece
-      .removeClass('pawn')
-      .addClass('bishop')
-      .html('&#9821;');
-    internalChoice = 'b';
-  }
+const pieceChar = new Map(
+  Object.entries({
+    bishop: 'b',
+    knight: 'n',
+    queen: 'q',
+    rook: 'r'
+  })
+);
 
-  if (turn === 'black') {
-    //Black use upper case, but the turn have already been switched.
-    internalChoice = internalChoice.toUpperCase();
-  }
-  game.board[game.boardIndex[game.pawn.pawnToConvert]] = internalChoice;
+const pieceHTML = new Map(
+  Object.entries({
+    bishop: '&#9821;',
+    knight: '&#9822;',
+    queen: '&#9819;',
+    rook: '&#9820;'
+  })
+);
+
+export const convertPawn = () => {
+  const piece = $('input:radio[name=convert]:checked').val();
+
+  // Update DOM board
+  $(`#${game.pawn.pawnToConvert}`)
+    .children('a')
+    .removeClass('pawn')
+    .addClass(piece)
+    .html(pieceHTML.get(piece));
+
+  // Update JS board
+  game.board[game.boardIndex[game.pawn.pawnToConvert]] =
+    turn === 'white'
+      ? pieceChar.get(piece)
+      : pieceChar.get(piece).toUpperCase();
 
   $('#conversion').addClass('hidden');
   $('input:radio[name=convert]')
@@ -45,24 +40,21 @@ export function convertPawn() {
     .attr('checked', 'checked');
   game.pawn.pawnToConvert = -1;
   switchTurn();
-}
+};
 window.convertPawn = convertPawn;
 
-export function startGame() {
+export const startGame = () => {
   // Grab player selections
   const blackPlayer = $('#blackPlayer').val();
 
   const whitePlayer = $('#whitePlayer').val();
 
   // Set variables used for switching turns
-  game.blackAI = blackPlayer !== 'Player' ? true : false;
-  game.whiteAI = whitePlayer !== 'Player' ? true : false;
+  game.blackAI = blackPlayer !== 'Player';
+  game.whiteAI = whitePlayer !== 'Player';
 
   // Save difficulties chosen to AI
   switch (whitePlayer) {
-    case 'Player':
-      // No AI to save, do nothing
-      break;
     case 'AI - Very Easy':
       AI.whiteIntelligence = 1;
       break;
@@ -77,9 +69,6 @@ export function startGame() {
   }
 
   switch (blackPlayer) {
-    case 'Player':
-      // No AI to save, do nothing
-      break;
     case 'AI - Very Easy':
       AI.blackIntelligence = 1;
       break;
@@ -96,20 +85,17 @@ export function startGame() {
   // Remove start menu
   $('#background').addClass('hidden');
 
-  // For testing only!
-  // castleCheckTest();
-
   // Go!
   switchTurn();
-}
+};
 
-export function endGame(checkmate) {
+export const endGame = checkmate => {
   const outcome = checkmate ? 'Checkmate!' : 'Stalemate!';
   const theMenu = $('#startMenu');
   const playerWhoWon = turn === 'black' ? 'White' : 'Black';
-  //Empty the startmenu
+  // Empty the startmenu
   theMenu.html('');
-  //Build new contents
+  // Build new contents
   theMenu.append(`<br/><br/><h2>${outcome}</h2>`);
   if (checkmate) {
     theMenu.append(`<h3>${playerWhoWon} won the game!</h3><br/><br/>`);
@@ -119,6 +105,6 @@ export function endGame(checkmate) {
   theMenu.append(
     '<input type="button" value="Restart Chess!" onclick="window.location.reload()">'
   );
-  //Show it
+  // Show it
   $('#background').removeClass('hidden');
-}
+};

@@ -1,12 +1,8 @@
-import { AI } from './ai.js';
-import { buildBoard, setBoard, bindEvents, setLabels } from './board.js';
-import { isInCheck } from './moveGen.js';
+import { bindEvents, buildBoard, setBoard, setLabels } from './board.js';
 import { convertPawn, endGame, startGame } from './panels.js';
 import { getAllValidMoves, getPieces } from './util.js';
-
-$(document).ready(() => {
-  initChess();
-});
+import { AI } from './ai.js';
+import { isInCheck } from './moveGen.js';
 
 window.inHand = '';
 window.mousePos = '';
@@ -50,184 +46,58 @@ game.boardIndex = [
 	91, 92, 93, 94, 95, 96, 97, 98
 ];
 
-function initChess() {
-  //Initialization function.
-  inHand = '';
-  mousePos = '';
+const initChess = () => {
   buildBoard();
   setBoard();
   bindEvents();
   setLabels();
 
-  //Init the turn counter on black and switch turn to white
+  // Init the turn counter on black and switch turn to white
   turn = 'black';
   // Makes no text selectable.
   document.onselectstart = () => false;
-}
+};
 
-// Move function that interacts with the main board and updates DOM
-export function makeMove(origin, destination, IAmAI) {
-  const destID =
-    typeof destination === 'number'
-      ? destination
-      : parseInt(destination.attr('id'), 10);
+/*
+ * Takes board state and move, applies move to board state, returns resulting board
+ * Does not check validity of move, so use with care.
+ */
+export const boardAfterMove = (board, moveStart, moveGoal) => {
+  /*
+   * The move we get are indexes of a regular board (0-63), but our boards
+   * are in mailbox format, so we need the mailbox index to update the board.
+   */
+  const mailboxIndex = game.boardIndex.slice();
 
-  if (origin >= 0 && destID >= 0) {
-    const wlc = game.castle.whiteLongCastle;
-    const wsc = game.castle.whiteShortCastle;
-    const blc = game.castle.blackLongCastle;
-    const bsc = game.castle.blackShortCastle;
+  // Copy piece from start to goal and clear start
+  board[mailboxIndex[moveGoal]] = board[mailboxIndex[moveStart]];
+  board[mailboxIndex[moveStart]] = '-';
 
-    // The AI does not mark cells with the 'valid' class, but we trust it to only make valid moves *knocks on wood*
-    // Notice how the variable is a palindrome, palindromes are cool.
-    const isValid = IAmAI
-      ? 1
-      : $.inArray(
-          'valid',
-          $(`#${destID}`)
-            .attr('class')
-            .split(' ')
-        );
+  return board;
+};
 
-    const piece = $(`#${origin}`).children('a');
-    if (isValid > -1) {
-      //Do something here to move the captured piece, if any, to the tray. See the old makeMove for inspiration, or do it properly.
-      $(`#${destID}`).html(piece.attr('style', 'position: relative;'));
-      game.board = boardAfterMove(game.board, origin, destID).slice();
-
-      /*===================================================
-			Castling related shizz
-			===================================================*/
-      //Check if it's a move that disallows future castling
-      if ((wlc || wsc) && origin === 60) {
-        //White king moving
-        game.castle.whiteLongCastle = false;
-        game.castle.whiteShortCastle = false;
-      } else if ((blc || bsc) && origin === 4) {
-        //Black king moving
-        game.castle.blackLongCastle = false;
-        game.castle.blackShortCastle = false;
-      }
-      //White short rook
-      if (wsc && (origin === 63 || destID === 63)) {
-        game.castle.whiteShortCastle = false;
-      }
-      //White long rook
-      if (wlc && (origin === 56 || destID === 56)) {
-        game.castle.whiteLongCastle = false;
-      }
-      //Black short rook
-      if (bsc && (origin === 7 || destID === 7)) {
-        game.castle.blackShortCastle = false;
-      }
-      //Black long rook
-      if (blc && (origin === 0 || destID === 0)) {
-        game.castle.blackLongCastle = false;
-      }
-
-      //Check to see if the actual castling move is being made
-      if ((wlc || wsc) && origin === 60) {
-        if (wlc && destID === 58) {
-          game.board = boardAfterMove(game.board, 56, 59).slice();
-          const theRook = $('#56').children('a');
-          $('#59').html(theRook);
-        }
-        if (wsc && destID === 62) {
-          game.board = boardAfterMove(game.board, 63, 61).slice();
-          const theRook = $('#63').children('a');
-          $('#61').html(theRook);
-        }
-      }
-      if ((blc || bsc) && origin === 4) {
-        if (blc && destID === 2) {
-          game.board = boardAfterMove(game.board, 0, 3).slice();
-          const theRook = $('#0').children('a');
-          $('#3').html(theRook);
-        }
-        if (bsc && destID === 6) {
-          game.board = boardAfterMove(game.board, 7, 5).slice();
-          const theRook = $('#7').children('a');
-          $('#5').html(theRook);
-        }
-      }
-
-      /*===================================================
-			En passant related shizz
-			===================================================*/
-      //The moveGenerator needs to mark the attack cell as valid, while
-      // this function needs to remove the killed pawn from play - both
-      // in internal representation and in the visual (the a).
-
-      //For the internal representation, kindaMakeMove should probably
-      // handle it, so the AI can do the move as well.
-      //Same goes for the pawn conversion aswell I guess.
-
-      /*===================================================
-			Pawn Conversion related shizz
-			===================================================*/
-      if (game.board[game.boardIndex[destID]].toLowerCase() === 'p') {
-        if (turn === 'white' && destID < 8 && destID >= 0) {
-          //if it's white making a pawn move, check if the destination is on the top row
-          game.pawn.pawnToConvert = destID;
-          if (game.whiteAI) {
-            convertPawn();
-          } else {
-            $('#conversion').removeClass('hidden');
-          }
-        } else if (turn === 'black' && destID > 55 && destID < 64) {
-          game.pawn.pawnToConvert = destID;
-          if (game.blackAI) {
-            convertPawn();
-          } else {
-            $('#conversion').removeClass('hidden');
-          }
-        } else {
-          switchTurn();
-        }
-      } else {
-        switchTurn();
-      }
-      //Finally switch the turn
-      //Note that this switch happens before anyone humanly possible can select which piece they wish to convert a pawn to.
-      //However, the AI is not human, so that may or may happen beforehand.
-    } else {
-      piece.attr('style', 'position: relative;');
-    }
-  }
-  $('.valid').removeClass('valid');
-  $('.origin').removeClass('origin');
-  inHand = '';
-}
-
-export function switchTurn() {
-  //Hide the turn for the one that just moved
+export const switchTurn = () => {
+  // Hide the turn for the one that just moved
   $(`.${turn}`).addClass('notYourTurn');
   $(`#${turn}Turn2`).addClass('hidden');
 
-  //Switch the turn
+  // Switch the turn
   turn = turn === 'white' ? 'black' : 'white';
 
-  //Show the turn for the one to move next
+  // Show the turn for the one to move next
   $(`.${turn}`).removeClass('notYourTurn');
   $(`#${turn}Turn2`).removeClass('hidden');
 
   // After every turn switch, check if the game has ended
-  // First grab all pieces
-  const currentPlayerPieces = getPieces(game.board, turn);
-  // Get all valid moves
-  const currentPlayerValids = getAllValidMoves(game.board, currentPlayerPieces);
-  // Flatten 2D array
-  const currentPlayerValidsFlat = [].concat(...currentPlayerValids);
+  const currentPlayerValids = getAllValidMoves(
+    game.board,
+    getPieces(game.board, turn)
+  );
+
   // If none of those pieces can move...
-  if (!currentPlayerValidsFlat.length) {
-    // Check if the game ended because of stalemate or checkmate
-    if (isInCheck(game.board, turn)) {
-      // Checkmate!
-      endGame(true);
-    } else {
-      // Stalemate!
-      endGame(false);
-    }
+  if (![].concat(...currentPlayerValids).length) {
+    // End the game, with checkmat/stalemate flag
+    endGame(isInCheck(game.board, turn));
   } else if (turn === 'black' && game.blackAI) {
     setTimeout(() => {
       AI.makeMove(3);
@@ -237,18 +107,132 @@ export function switchTurn() {
       AI.makeMove(3);
     }, 10);
   }
-}
-
-// Takes board state and move, applies move to board state, returns resulting board
-// Does not check validity of move, so use with care.
-export const boardAfterMove = (board, moveStart, moveGoal) => {
-  // The move we get are indexes of a regular board (0-63), but our boards
-  // are in mailbox format, so we need the mailbox index to update the board.
-  const mailboxIndex = game.boardIndex.slice();
-
-  // Copy piece from start to goal and clear start
-  board[mailboxIndex[moveGoal]] = board[mailboxIndex[moveStart]];
-  board[mailboxIndex[moveStart]] = '-';
-
-  return board;
 };
+
+const updateCastlingAllowedState = (moveOrigin, moveDestination) => {
+  // King or rook moved
+  switch (moveOrigin) {
+    case 60:
+      game.castle.whiteLongCastle = false;
+      game.castle.whiteShortCastle = false;
+      break;
+    case 4:
+      game.castle.blackLongCastle = false;
+      game.castle.blackShortCastle = false;
+      break;
+    case 63:
+      game.castle.whiteShortCastle = false;
+      break;
+    case 56:
+      game.castle.whiteLongCastle = false;
+      break;
+    case 7:
+      game.castle.blackShortCastle = false;
+      break;
+    case 0:
+      game.castle.blackLongCastle = false;
+      break;
+    default:
+      break;
+  }
+
+  // Rook captured
+  switch (moveDestination) {
+    case 63:
+      game.castle.whiteShortCastle = false;
+      break;
+    case 56:
+      game.castle.whiteLongCastle = false;
+      break;
+    case 7:
+      game.castle.blackShortCastle = false;
+      break;
+    case 0:
+      game.castle.blackLongCastle = false;
+      break;
+    default:
+      break;
+  }
+};
+
+const movePiece = (moveOrigin, moveDestination) => {
+  game.board = boardAfterMove(game.board, moveOrigin, moveDestination).slice();
+  const destinationElement = document.getElementById(`${moveDestination}`);
+  destinationElement.innerHTML = '';
+  destinationElement.appendChild(
+    document.getElementById(`${moveOrigin}`).querySelector('a')
+  );
+};
+
+const moveRookIfCastling = (moveOrigin, moveDestination) => {
+  if (moveOrigin === 60) {
+    if (game.castle.whiteLongCastle && moveDestination === 58) {
+      movePiece(56, 59);
+    }
+    if (game.castle.whiteShortCastle && moveDestination === 62) {
+      movePiece(63, 61);
+    }
+  }
+  if (moveOrigin === 4) {
+    if (game.castle.blackLongCastle && moveDestination === 2) {
+      movePiece(0, 3);
+    }
+    if (game.castle.blackShortCastle && moveDestination === 6) {
+      movePiece(7, 5);
+    }
+  }
+};
+
+// eslint-disable-next-line max-statements
+const pawnConversion = pawnPosition => {
+  if (game.board[game.boardIndex[pawnPosition]].toLowerCase() === 'p') {
+    if (turn === 'white' && pawnPosition < 8 && pawnPosition >= 0) {
+      game.pawn.pawnToConvert = pawnPosition;
+      if (game.whiteAI) {
+        convertPawn();
+      } else {
+        $('#conversion').removeClass('hidden');
+      }
+    } else if (turn === 'black' && pawnPosition > 55 && pawnPosition < 64) {
+      game.pawn.pawnToConvert = pawnPosition;
+      if (game.blackAI) {
+        convertPawn();
+      } else {
+        $('#conversion').removeClass('hidden');
+      }
+    } else {
+      switchTurn();
+    }
+  } else {
+    switchTurn();
+  }
+};
+
+export const makeMove = (origin, destination, AIMove) => {
+  if (origin >= 0 && destination >= 0) {
+    $(`#${origin}`)
+      .children('a')
+      .attr('style', 'position: relative;');
+
+    if (
+      AIMove ||
+      document.getElementById(destination).classList.contains('valid')
+    ) {
+      movePiece(origin, destination);
+
+      moveRookIfCastling(origin, destination);
+
+      updateCastlingAllowedState(origin, destination);
+
+      pawnConversion(destination);
+    }
+  }
+
+  $('.valid').removeClass('valid');
+  $('.origin').removeClass('origin');
+  inHand = '';
+};
+
+$(document).ready(() => {
+  initChess();
+});
