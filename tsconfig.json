@@ -1,0 +1,9 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "outDir": "./build/chess",
+    "allowJs": true,
+    "target": "esnext"
+  },
+  "include": ["./src/chess/*"]
+}

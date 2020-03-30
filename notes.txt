@@ -10,3 +10,18 @@ In make move, turn on possibility of en passant when making pawn move from 2nd t
 En Passant Object
  - Contains position of pawn that is up for the taking
  - 
+
+
+
+
+
+Wishlist
+ - Immutable and functional style - eslint tslint rules
+ - Minimal build/publish process
+ - Strict tooling, prettify, lint
+ - Full test coverage, component style or unit test or e2e?
+
+
+Todo
+ - Set up typescript
+ - scripts to prettify, lint, test
