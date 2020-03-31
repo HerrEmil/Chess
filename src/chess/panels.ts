@@ -26,13 +26,13 @@ export const convertPawn = (): void => {
     .children('a')
     .removeClass('pawn')
     .addClass(piece)
-    .html(pieceHTML.get(piece));
+    .html(pieceHTML.get(piece) as string);
 
   // Update JS board
   window.game.board[window.game.boardIndex[window.game.pawn.pawnToConvert]] =
     window.turn === 'white'
-      ? pieceChar.get(piece)
-      : pieceChar.get(piece).toUpperCase();
+      ? (pieceChar.get(piece) as string)
+      : (pieceChar.get(piece) as string).toUpperCase();
 
   $('#conversion').addClass('hidden');
   $('input:radio[name=convert]')

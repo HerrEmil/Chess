@@ -115,7 +115,7 @@ export const switchTurn = (): void => {
   );
 
   // If none of those pieces can move...
-  if (![].concat(...currentPlayerValids).length) {
+  if (!currentPlayerValids.length) {
     // End the game, with checkmat/stalemate flag
     endGame(isInCheck(window.game.board, window.turn));
   } else if (window.turn === 'black' && window.game.blackAI) {
@@ -184,10 +184,14 @@ const movePiece = (moveOrigin: number, moveDestination: number): void => {
     moveOrigin,
     moveDestination
   ).slice();
-  const destinationElement = document.getElementById(`${moveDestination}`);
+  const destinationElement = document.getElementById(
+    `${moveDestination}`
+  ) as HTMLElement;
   destinationElement.innerHTML = '';
   destinationElement.appendChild(
-    document.getElementById(`${moveOrigin}`).querySelector('a')
+    (document.getElementById(`${moveOrigin}`) as HTMLElement).querySelector(
+      'a'
+    ) as HTMLAnchorElement
   );
 };
 
@@ -214,7 +218,7 @@ const moveRookIfCastling = (
 };
 
 // eslint-disable-next-line max-statements
-const pawnConversion = (pawnPosition): void => {
+const pawnConversion = (pawnPosition: number): void => {
   if (
     window.game.board[window.game.boardIndex[pawnPosition]].toLowerCase() ===
     'p'
@@ -257,7 +261,9 @@ export const makeMove = (
 
     if (
       AIMove ||
-      document.getElementById(`${destination}`).classList.contains('valid')
+      (document.getElementById(
+        `${destination}`
+      ) as HTMLElement).classList.contains('valid')
     ) {
       movePiece(origin, destination);
 

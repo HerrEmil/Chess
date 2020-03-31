@@ -120,31 +120,31 @@ AI.blackIntelligence = -1;
 AI.intelligence = -1;
 
 const getPieceValueSum = ({
-  board = [],
-  boardIndex = [],
-  pieces = [],
+  board = [] as string[],
+  boardIndex = [] as number[],
+  pieces = [] as number[],
   AILevel = 1
 }): number => {
   return pieces.reduce((sum, piece) => {
     switch (board[boardIndex[piece]]) {
       case 'p':
       case 'P':
-        return sum + 100 + (AILevel === 3 && AI.pawnTable[piece]);
+        return sum + 100 + (AILevel === 3 ? AI.pawnTable[piece] : 0);
       case 'r':
       case 'R':
         return sum + 500;
       case 'n':
       case 'N':
-        return sum + 320 + (AILevel === 3 && AI.knightTable[piece]);
+        return sum + 320 + (AILevel === 3 ? AI.knightTable[piece] : 0);
       case 'b':
       case 'B':
-        return sum + 325 + (AILevel === 3 && AI.bishopTable[piece]);
+        return sum + 325 + (AILevel === 3 ? AI.bishopTable[piece] : 0);
       case 'q':
       case 'Q':
         return sum + 975;
       case 'k':
       case 'K':
-        return sum + 32767 + (AILevel === 3 && AI.kingTable[piece]);
+        return sum + 32767 + (AILevel === 3 ? AI.kingTable[piece] : 0);
       default:
         return sum;
     }
@@ -159,7 +159,7 @@ AI.evaluate = (board, color): number => {
       board,
       boardIndex: window.game.boardIndex,
       pieces: getPieces(board, 'white')
-    }) + (isInCheck(board, 'black') && 0.5);
+    }) + (isInCheck(board, 'black') ? 0.5 : 0);
 
   const blackValue =
     getPieceValueSum({
@@ -167,7 +167,7 @@ AI.evaluate = (board, color): number => {
       board,
       boardIndex: window.game.boardIndex,
       pieces: getPieces(board, 'black')
-    }) + (isInCheck(board, 'white') && 0.5);
+    }) + (isInCheck(board, 'white') ? 0.5 : 0);
 
   const difference =
     color === 'white' ? whiteValue - blackValue : blackValue - whiteValue;
@@ -186,15 +186,15 @@ AI.maxMove = (board, player, ply, alpha, beta): number[] => {
   let childBoardState = board.slice();
   if (ply === 1) {
     // eslint-disable-next-line no-sparse-arrays
-    return [, , AI.evaluate(childBoardState, player)];
+    return [, , AI.evaluate(childBoardState, player)] as number[];
   }
 
   const pieces = getPieces(childBoardState, player);
   const moves = getAllValidMoves(childBoardState, pieces);
 
-  if ([].concat(...moves).length === 0) {
+  if (moves.length === 0) {
     // eslint-disable-next-line no-sparse-arrays
-    return [, , AI.evaluate(childBoardState, player)];
+    return [, , AI.evaluate(childBoardState, player)] as number[];
   }
 
   let localBestMoveStart = -1;
@@ -237,16 +237,16 @@ AI.minMove = (board, player, ply, alpha, beta): number[] => {
   let childBoardState = board.slice();
   if (ply === 1) {
     // eslint-disable-next-line no-sparse-arrays
-    return [, , AI.evaluate(childBoardState, player)];
+    return [, , AI.evaluate(childBoardState, player)] as number[];
   }
 
   const minPlayer = player === 'white' ? 'black' : 'white';
   const pieces = getPieces(childBoardState, minPlayer);
   const moves: number[][] = getAllValidMovesNoCheck(childBoardState, pieces);
 
-  if ([].concat(...moves).length === 0) {
+  if (moves.length === 0) {
     // eslint-disable-next-line no-sparse-arrays
-    return [, , AI.evaluate(childBoardState, minPlayer)];
+    return [, , AI.evaluate(childBoardState, minPlayer)] as number[];
   }
 
   let localBestMoveStart = -1;

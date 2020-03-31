@@ -5,7 +5,8 @@ import { makeMove } from './main.js';
 // Simple function to scale a square board.
 const scaleBoard = (): void => {
   // Get the lowest of document height and width and substract space for the borders.
-  const pik = Math.min($(window).height(), $(window).width()) - 109;
+  const pik =
+    Math.min($(window).height() as number, $(window).width() as number) - 109;
   // Divide by the number of rows, and round down to int.
   const tdSize = Math.floor(pik / $('tr').length);
   const fontSize = tdSize / 25;
@@ -85,7 +86,7 @@ export const setBoard = (): void => {
 };
 
 // Adds 'valid' CSS class to squares, i.e. turns on highlights
-const markValids = (array): void => {
+const markValids = (array: number[]): void => {
   const selector = `#${array.join(',#')}`;
   $(selector).addClass('valid');
 };
@@ -96,7 +97,7 @@ export const setLabels = (): void => {
   // Delete old edgeLabels (for resize)
   $('.edgeLabel').remove();
 
-  const cellSize = $('table tr:nth(1)').height();
+  const cellSize = $('table tr:nth(1)').height() as number;
   const leftPos = parseInt(($('#0').position().left as unknown) as string, 10);
   const topPosLet1 = parseInt(
     ($('#0').position().top as unknown) as string,
@@ -165,13 +166,14 @@ export const setLabels = (): void => {
   });
 };
 
+// eslint-disable-next-line max-lines-per-function
 export const bindEvents = (): void => {
   $('#board a')
     .on('mousedown', ({ target }) => {
       const location = parseInt(
         $(target)
           .parent()
-          .attr('id'),
+          .attr('id') as string,
         10
       );
       window.inHand = location;
@@ -183,14 +185,17 @@ export const bindEvents = (): void => {
     })
     .draggable({
       containment: $('#board'),
-      grid: [$('table tr:nth(1)').height(), $('table tr:nth(1)').height()],
+      grid: [
+        $('table tr:nth(1)').height() as number,
+        $('table tr:nth(1)').height() as number
+      ],
       zIndex: 1000
     });
 
   $('#board td').on('mouseup', ({ target }) => {
     makeMove(
       window.inHand as number,
-      parseInt($(target).attr('id'), 10),
+      parseInt($(target).attr('id') as string, 10),
       false
     );
   });

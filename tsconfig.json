@@ -3,6 +3,7 @@
   "compilerOptions": {
     "outDir": "./build/chess",
     "allowJs": true,
+    "strict": true,
     "target": "esnext"
   },
   "include": ["global.d.ts", "./src/chess/*"]

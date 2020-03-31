@@ -1,5 +1,6 @@
 /* eslint-disable max-lines */
 import { boardAfterMove } from './main.js';
+import { color as chessColor } from './ai.js';
 import { getPieces } from './util.js';
 
 const getValidPositionsInDirection = ({
@@ -8,6 +9,12 @@ const getValidPositionsInDirection = ({
   color,
   direction,
   startPosition
+}: {
+  board: string[];
+  boardIndex: number[];
+  color: chessColor;
+  direction: number;
+  startPosition: number;
 }): number[] => {
   const positions = [];
 
@@ -29,7 +36,17 @@ const getValidPositionsInDirection = ({
   }
 };
 
-const rookValids = ({ board, boardIndex, index, color }): number[] => {
+const rookValids = ({
+  board,
+  boardIndex,
+  index,
+  color
+}: {
+  board: string[];
+  boardIndex: number[];
+  color: chessColor;
+  index: number;
+}): number[] => {
   const startPosition = boardIndex[index];
   return [
     ...getValidPositionsInDirection({
@@ -63,7 +80,17 @@ const rookValids = ({ board, boardIndex, index, color }): number[] => {
   ];
 };
 
-const bishopValids = ({ board, boardIndex, index, color }): number[] => {
+const bishopValids = ({
+  board,
+  boardIndex,
+  index,
+  color
+}: {
+  board: string[];
+  boardIndex: number[];
+  color: chessColor;
+  index: number;
+}): number[] => {
   const startPosition = boardIndex[index];
   return [
     ...getValidPositionsInDirection({
@@ -97,13 +124,23 @@ const bishopValids = ({ board, boardIndex, index, color }): number[] => {
   ];
 };
 
-const colorCanStepOnPiece = (color, piece): boolean =>
+const colorCanStepOnPiece = (color: chessColor, piece: number): boolean =>
   piece !== 42 &&
   (piece === 45 ||
     (piece > 96 && color === 'black') ||
     (piece < 96 && color === 'white'));
 
-const knightValids = ({ board, boardIndex, index, color }): number[] => {
+const knightValids = ({
+  board,
+  boardIndex,
+  index,
+  color
+}: {
+  board: string[];
+  boardIndex: number[];
+  color: chessColor;
+  index: number;
+}): number[] => {
   const startPosition = boardIndex[index];
   return [
     startPosition - 8,
@@ -121,7 +158,17 @@ const knightValids = ({ board, boardIndex, index, color }): number[] => {
     .map(position => boardIndex.indexOf(position));
 };
 
-const kingValids = ({ board, boardIndex, index, color }): number[] => {
+const kingValids = ({
+  board,
+  boardIndex,
+  index,
+  color
+}: {
+  board: string[];
+  boardIndex: number[];
+  color: chessColor;
+  index: number;
+}): number[] => {
   const startPosition = boardIndex[index];
   return [
     startPosition - 1,
@@ -139,7 +186,17 @@ const kingValids = ({ board, boardIndex, index, color }): number[] => {
     .map(position => boardIndex.indexOf(position));
 };
 
-const pawnValids = ({ board, boardIndex, index, color }): number[] => {
+const pawnValids = ({
+  board,
+  boardIndex,
+  index,
+  color
+}: {
+  board: string[];
+  boardIndex: number[];
+  color: chessColor;
+  index: number;
+}): number[] => {
   const pos = boardIndex[index];
   const valids = [];
   const forward = color === 'black' ? pos + 10 : pos - 10;
@@ -175,6 +232,12 @@ const getStandardMoves = ({
   boardIndex,
   piecePosition: index,
   pieceColor: color
+}: {
+  pieceType: string;
+  board: string[];
+  boardIndex: number[];
+  piecePosition: number;
+  pieceColor: chessColor;
 }): number[] => {
   const boardPayload = {
     board,
@@ -200,7 +263,7 @@ const getStandardMoves = ({
   }
 };
 
-const getValidNoCheck = (board, piecePosition): number[] => {
+const getValidNoCheck = (board: string[], piecePosition: number): number[] => {
   const { boardIndex } = window.game;
   const piece = board[boardIndex[piecePosition]];
   const pieceType = piece.toLowerCase();
@@ -214,29 +277,37 @@ const getValidNoCheck = (board, piecePosition): number[] => {
   });
 };
 
-export const getAllValidMovesNoCheck = (board, pieces): number[][] =>
-  pieces.map(piece => getValidNoCheck(board, piece));
+export const getAllValidMovesNoCheck = (
+  board: string[],
+  pieces: number[]
+): number[][] => pieces.map(piece => getValidNoCheck(board, piece));
 
-export const isInCheck = (board, color): boolean => {
-  const opponentMoves = [].concat(
-    ...getAllValidMovesNoCheck(
-      board,
-      getPieces(board, color === 'white' ? 'black' : 'white')
-    )
-  );
-  const friendlyKingPos = window.game.boardIndex.indexOf(
+export const isInCheck = (board: string[], color: chessColor): boolean => {
+  const positionsOpponentCanMoveTo = getAllValidMovesNoCheck(
+    board,
+    getPieces(board, color === 'white' ? 'black' : 'white')
+  ).map((move: number[]) => move[1]);
+
+  const kingPosition = window.game.boardIndex.indexOf(
     board.indexOf(color === 'white' ? 'k' : 'K')
   );
-  return opponentMoves.includes(friendlyKingPos);
+
+  return positionsOpponentCanMoveTo.includes(kingPosition);
 };
 
-// eslint-disable-next-line complexity, max-statements
+// eslint-disable-next-line complexity, max-statements, max-lines-per-function
 const getCastlingMoves = ({
   type,
   color,
   valids,
   board,
   boardIndex
+}: {
+  type: string;
+  color: chessColor;
+  valids: number[];
+  board: string[];
+  boardIndex: number[];
 }): number[] => {
   const castlingMoves = [];
   if (type === 'k' && color === 'black' && !isInCheck(board, 'black')) {
@@ -279,7 +350,7 @@ const getCastlingMoves = ({
   return castlingMoves;
 };
 
-export const getValid = (piecePosition: number, board): number[] => {
+export const getValid = (piecePosition: number, board: string[]): number[] => {
   const { boardIndex } = window.game;
   const piece = board[boardIndex[piecePosition]];
   const type = piece.toLowerCase();
