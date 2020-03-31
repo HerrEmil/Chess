@@ -1,8 +1,39 @@
+/* eslint-disable max-lines */
 import { boardAfterMove, makeMove } from './main.js';
 import { getAllValidMoves, getPieces } from './util.js';
 import { getAllValidMovesNoCheck, isInCheck } from './moveGen.js';
 
-export const AI = {};
+export type color = 'white' | 'black';
+
+export interface ChessAI {
+  bishopTable: number[];
+  kingTable: number[];
+  kingTableEndGame: number[];
+  knightTable: number[];
+  pawnTable: number[];
+  plyUsed: number;
+  whiteIntelligence: number;
+  intelligence: number;
+  blackIntelligence: number;
+  evaluate: (board: string[], color: color) => number;
+  maxMove: (
+    board: string[],
+    player: color,
+    ply: number,
+    alpha: number,
+    beta: number
+  ) => number[];
+  minMove: (
+    board: string[],
+    player: color,
+    ply: number,
+    alpha: number,
+    beta: number
+  ) => number[];
+  makeMove: (ply: number) => void;
+}
+
+export const AI = {} as ChessAI;
 
 // This var is just used to make sure that we do not return value on top level of decision tree
 AI.plyUsed = 100;
@@ -93,7 +124,7 @@ const getPieceValueSum = ({
   boardIndex = [],
   pieces = [],
   AILevel = 1
-}) => {
+}): number => {
   return pieces.reduce((sum, piece) => {
     switch (board[boardIndex[piece]]) {
       case 'p':
@@ -121,12 +152,12 @@ const getPieceValueSum = ({
 };
 
 // Evaluates the value of a state of a board
-AI.evaluate = (board, color) => {
+AI.evaluate = (board, color): number => {
   const whiteValue =
     getPieceValueSum({
       AILevel: AI.intelligence,
       board,
-      boardIndex: game.boardIndex,
+      boardIndex: window.game.boardIndex,
       pieces: getPieces(board, 'white')
     }) + (isInCheck(board, 'black') && 0.5);
 
@@ -134,7 +165,7 @@ AI.evaluate = (board, color) => {
     getPieceValueSum({
       AILevel: AI.intelligence,
       board,
-      boardIndex: game.boardIndex,
+      boardIndex: window.game.boardIndex,
       pieces: getPieces(board, 'black')
     }) + (isInCheck(board, 'white') && 0.5);
 
@@ -151,7 +182,7 @@ AI.evaluate = (board, color) => {
  * Given ply 1, return array will contain a value of the boardState, on index 2
  */
 // eslint-disable-next-line max-statements, max-params
-AI.maxMove = (board, player, ply, alpha, beta) => {
+AI.maxMove = (board, player, ply, alpha, beta): number[] => {
   let childBoardState = board.slice();
   if (ply === 1) {
     // eslint-disable-next-line no-sparse-arrays
@@ -202,7 +233,7 @@ AI.maxMove = (board, player, ply, alpha, beta) => {
 };
 
 // eslint-disable-next-line max-statements, max-params
-AI.minMove = (board, player, ply, alpha, beta) => {
+AI.minMove = (board, player, ply, alpha, beta): number[] => {
   let childBoardState = board.slice();
   if (ply === 1) {
     // eslint-disable-next-line no-sparse-arrays
@@ -211,7 +242,7 @@ AI.minMove = (board, player, ply, alpha, beta) => {
 
   const minPlayer = player === 'white' ? 'black' : 'white';
   const pieces = getPieces(childBoardState, minPlayer);
-  const moves = getAllValidMovesNoCheck(childBoardState, pieces);
+  const moves: number[][] = getAllValidMovesNoCheck(childBoardState, pieces);
 
   if ([].concat(...moves).length === 0) {
     // eslint-disable-next-line no-sparse-arrays
@@ -259,7 +290,7 @@ AI.minMove = (board, player, ply, alpha, beta) => {
  * Note: There is something broken that causes the AI to only work when
  * given odd numbers, effectively limiting it to just accepting 3
  */
-AI.makeMove = ply => {
+AI.makeMove = (ply): void => {
   const alpha = -100000;
   const beta = 100000;
 
@@ -273,10 +304,10 @@ AI.makeMove = ply => {
 
   // Set the evaluation difficulty
   AI.intelligence =
-    turn === 'white' ? AI.whiteIntelligence : AI.blackIntelligence;
+    window.turn === 'white' ? AI.whiteIntelligence : AI.blackIntelligence;
 
   // Call best move lookup function
-  const bestMove = AI.maxMove(game.board, turn, ply, alpha, beta);
+  const bestMove = AI.maxMove(window.game.board, window.turn, ply, alpha, beta);
 
   // Check that the lookup function returned a useful move
   if (bestMove[0] !== -1 && bestMove[1] !== -1) {

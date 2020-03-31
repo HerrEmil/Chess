@@ -3,7 +3,7 @@ import { intToCol } from './util.js';
 import { makeMove } from './main.js';
 
 // Simple function to scale a square board.
-const scaleBoard = () => {
+const scaleBoard = (): void => {
   // Get the lowest of document height and width and substract space for the borders.
   const pik = Math.min($(window).height(), $(window).width()) - 109;
   // Divide by the number of rows, and round down to int.
@@ -19,7 +19,7 @@ const scaleBoard = () => {
 
 // This file deals with functions building, scaling and modifying the board
 // eslint-disable-next-line max-statements
-export const buildBoard = () => {
+export const buildBoard = (): void => {
   // Initialize an empty table
   const tableElement = $('<table />');
   let cellId = 0;
@@ -48,7 +48,7 @@ export const buildBoard = () => {
 
 // Fill board with chess setup.
 // eslint-disable-next-line max-statements
-export const setBoard = () => {
+export const setBoard = (): void => {
   $('td').html('');
   $('#56').html('<a href="#" class="white rook">&#9820;</a>');
   $('#57').html('<a href="#" class="white knight">&#9822;</a>');
@@ -85,21 +85,25 @@ export const setBoard = () => {
 };
 
 // Adds 'valid' CSS class to squares, i.e. turns on highlights
-const markValids = array => {
+const markValids = (array): void => {
   const selector = `#${array.join(',#')}`;
   $(selector).addClass('valid');
 };
 
 // Horribly long function for creating and positioning the A-H and 1-8 Labels
 // eslint-disable-next-line max-statements, max-lines-per-function
-export const setLabels = () => {
+export const setLabels = (): void => {
   // Delete old edgeLabels (for resize)
   $('.edgeLabel').remove();
 
   const cellSize = $('table tr:nth(1)').height();
-  const leftPos = parseInt($('#0').position().left, 10);
-  const topPosLet1 = parseInt($('#0').position().top, 10);
-  const topPosLet2 = parseInt($('#56').position().top, 10) + cellSize + 1;
+  const leftPos = parseInt(($('#0').position().left as unknown) as string, 10);
+  const topPosLet1 = parseInt(
+    ($('#0').position().top as unknown) as string,
+    10
+  );
+  const topPosLet2 =
+    parseInt(($('#56').position().top as unknown) as string, 10) + cellSize + 1;
   const fontSize = cellSize / 50;
 
   for (let index = 0; index < 8; index += 1) {
@@ -161,8 +165,7 @@ export const setLabels = () => {
   });
 };
 
-export const bindEvents = () => {
-  // Make pieces draggable
+export const bindEvents = (): void => {
   $('#board a')
     .on('mousedown', ({ target }) => {
       const location = parseInt(
@@ -171,11 +174,11 @@ export const bindEvents = () => {
           .attr('id'),
         10
       );
-      inHand = location;
-      mousePos = $(target)
+      window.inHand = location;
+      window.mousePos = $(target)
         .parent()
         .addClass('origin');
-      markValids(getValid(location, game.board));
+      markValids(getValid(location, window.game.board));
       return false;
     })
     .draggable({
@@ -184,22 +187,23 @@ export const bindEvents = () => {
       zIndex: 1000
     });
 
-  // Make move on mouse up
   $('#board td').on('mouseup', ({ target }) => {
-    makeMove(inHand, parseInt($(target).attr('id'), 10), false);
+    makeMove(
+      window.inHand as number,
+      parseInt($(target).attr('id'), 10),
+      false
+    );
   });
 
-  // Return piece in hand and clear highlights when cursor leaves board
   $('#board').on('mouseleave', () => {
     $(document).mouseup();
-    if (inHand !== '') {
-      $(`#${inHand}`)
+    if (window.inHand !== '') {
+      $(`#${window.inHand}`)
         .children('a')
         .attr('style', 'position: relative;');
-      inHand = '';
+      window.inHand = '';
     }
 
-    // Clear square highlights
     $('.valid').removeClass('valid');
     $('.attack').removeClass('attack');
     $('.origin').removeClass('origin');

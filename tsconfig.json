@@ -5,5 +5,5 @@
     "allowJs": true,
     "target": "esnext"
   },
-  "include": ["./src/chess/*"]
+  "include": ["global.d.ts", "./src/chess/*"]
 }

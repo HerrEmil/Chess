@@ -1,8 +1,9 @@
+import { color as ChessColor } from './ai';
 import { getValid } from './moveGen.js';
 // This file contains various utility functions
 
 // Takes a column (0-7) and returns column label (A-H)
-export const intToCol = charInt => {
+export const intToCol = (charInt: number): string => {
   let intChar = '';
   switch (charInt) {
     case 0:
@@ -36,8 +37,8 @@ export const intToCol = charInt => {
 };
 
 // Function that returns an array with all piece positions on a board of a certain color
-export const getPieces = (board, color) => {
-  const { boardIndex } = game;
+export const getPieces = (board: string[], color: ChessColor): number[] => {
+  const { boardIndex } = window.game;
   const pieces = [];
 
   const charCodeLowerBound = color === 'white' ? 97 : 65;
@@ -53,5 +54,7 @@ export const getPieces = (board, color) => {
 };
 
 // Takes a board and an array of piece positions
-export const getAllValidMoves = (notGlobalBoard, pieces) =>
-  pieces.map(piece => getValid(piece, notGlobalBoard));
+export const getAllValidMoves = (
+  notGlobalBoard: string[],
+  pieces: number[]
+): number[][] => pieces.map(piece => getValid(piece, notGlobalBoard));

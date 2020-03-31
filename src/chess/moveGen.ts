@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { boardAfterMove } from './main.js';
 import { getPieces } from './util.js';
 
@@ -7,7 +8,7 @@ const getValidPositionsInDirection = ({
   color,
   direction,
   startPosition
-}) => {
+}): number[] => {
   const positions = [];
 
   // eslint-disable-next-line no-constant-condition
@@ -28,7 +29,7 @@ const getValidPositionsInDirection = ({
   }
 };
 
-const rookValids = ({ board, boardIndex, index, color }) => {
+const rookValids = ({ board, boardIndex, index, color }): number[] => {
   const startPosition = boardIndex[index];
   return [
     ...getValidPositionsInDirection({
@@ -62,7 +63,7 @@ const rookValids = ({ board, boardIndex, index, color }) => {
   ];
 };
 
-const bishopValids = ({ board, boardIndex, index, color }) => {
+const bishopValids = ({ board, boardIndex, index, color }): number[] => {
   const startPosition = boardIndex[index];
   return [
     ...getValidPositionsInDirection({
@@ -96,13 +97,13 @@ const bishopValids = ({ board, boardIndex, index, color }) => {
   ];
 };
 
-const colorCanStepOnPiece = (color, piece) =>
+const colorCanStepOnPiece = (color, piece): boolean =>
   piece !== 42 &&
   (piece === 45 ||
     (piece > 96 && color === 'black') ||
     (piece < 96 && color === 'white'));
 
-const knightValids = ({ board, boardIndex, index, color }) => {
+const knightValids = ({ board, boardIndex, index, color }): number[] => {
   const startPosition = boardIndex[index];
   return [
     startPosition - 8,
@@ -120,7 +121,7 @@ const knightValids = ({ board, boardIndex, index, color }) => {
     .map(position => boardIndex.indexOf(position));
 };
 
-const kingValids = ({ board, boardIndex, index, color }) => {
+const kingValids = ({ board, boardIndex, index, color }): number[] => {
   const startPosition = boardIndex[index];
   return [
     startPosition - 1,
@@ -138,7 +139,7 @@ const kingValids = ({ board, boardIndex, index, color }) => {
     .map(position => boardIndex.indexOf(position));
 };
 
-const pawnValids = ({ board, boardIndex, index, color }) => {
+const pawnValids = ({ board, boardIndex, index, color }): number[] => {
   const pos = boardIndex[index];
   const valids = [];
   const forward = color === 'black' ? pos + 10 : pos - 10;
@@ -174,7 +175,7 @@ const getStandardMoves = ({
   boardIndex,
   piecePosition: index,
   pieceColor: color
-}) => {
+}): number[] => {
   const boardPayload = {
     board,
     boardIndex,
@@ -199,8 +200,8 @@ const getStandardMoves = ({
   }
 };
 
-const getValidNoCheck = (board, piecePosition) => {
-  const { boardIndex } = game;
+const getValidNoCheck = (board, piecePosition): number[] => {
+  const { boardIndex } = window.game;
   const piece = board[boardIndex[piecePosition]];
   const pieceType = piece.toLowerCase();
 
@@ -213,28 +214,34 @@ const getValidNoCheck = (board, piecePosition) => {
   });
 };
 
-export const getAllValidMovesNoCheck = (board, pieces) =>
+export const getAllValidMovesNoCheck = (board, pieces): number[][] =>
   pieces.map(piece => getValidNoCheck(board, piece));
 
-export const isInCheck = (board, color) => {
+export const isInCheck = (board, color): boolean => {
   const opponentMoves = [].concat(
     ...getAllValidMovesNoCheck(
       board,
       getPieces(board, color === 'white' ? 'black' : 'white')
     )
   );
-  const friendlyKingPos = game.boardIndex.indexOf(
+  const friendlyKingPos = window.game.boardIndex.indexOf(
     board.indexOf(color === 'white' ? 'k' : 'K')
   );
   return opponentMoves.includes(friendlyKingPos);
 };
 
 // eslint-disable-next-line complexity, max-statements
-const getCastlingMoves = ({ type, color, valids, board, boardIndex }) => {
+const getCastlingMoves = ({
+  type,
+  color,
+  valids,
+  board,
+  boardIndex
+}): number[] => {
   const castlingMoves = [];
   if (type === 'k' && color === 'black' && !isInCheck(board, 'black')) {
     if (
-      game.castle.blackShortCastle &&
+      window.game.castle.blackShortCastle &&
       valids.includes(5) &&
       board[boardIndex[6]] === '-' &&
       !isInCheck(boardAfterMove(board.slice(), 4, 5), 'black')
@@ -242,7 +249,7 @@ const getCastlingMoves = ({ type, color, valids, board, boardIndex }) => {
       castlingMoves.push(6);
     }
     if (
-      game.castle.blackLongCastle &&
+      window.game.castle.blackLongCastle &&
       valids.includes(3) &&
       board[boardIndex[2]] === '-' &&
       board[boardIndex[1]] === '-' &&
@@ -252,7 +259,7 @@ const getCastlingMoves = ({ type, color, valids, board, boardIndex }) => {
     }
   } else if (type === 'k' && color === 'white' && !isInCheck(board, 'white')) {
     if (
-      game.castle.whiteShortCastle &&
+      window.game.castle.whiteShortCastle &&
       valids.includes(61) &&
       board[boardIndex[62]] === '-' &&
       !isInCheck(boardAfterMove(board.slice(), 60, 61), 'white')
@@ -260,7 +267,7 @@ const getCastlingMoves = ({ type, color, valids, board, boardIndex }) => {
       castlingMoves.push(62);
     }
     if (
-      game.castle.whiteLongCastle &&
+      window.game.castle.whiteLongCastle &&
       valids.includes(59) &&
       board[boardIndex[58]] === '-' &&
       board[boardIndex[57]] === '-' &&
@@ -272,8 +279,8 @@ const getCastlingMoves = ({ type, color, valids, board, boardIndex }) => {
   return castlingMoves;
 };
 
-export const getValid = (piecePosition, board) => {
-  const { boardIndex } = game;
+export const getValid = (piecePosition: number, board): number[] => {
+  const { boardIndex } = window.game;
   const piece = board[boardIndex[piecePosition]];
   const type = piece.toLowerCase();
   const color = type === piece ? 'white' : 'black';
