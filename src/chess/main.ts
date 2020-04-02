@@ -1,24 +1,44 @@
-import { AI, color } from './ai.js';
+import { AI, color, makeAIMove } from './ai.js';
 import { bindEvents, buildBoard, setBoard, setLabels } from './board.js';
 import { convertPawn, endGame, startGame } from './panels.js';
-import { getAllValidMoves, getPieces } from './util.js';
+import { getAllValidMoves, getPiecesOfColor } from './util.js';
 import { isInCheck } from './moveGen.js';
 
-export interface GlobalChess {
-  castle: {
+export type GlobalChess = {
+  readonly castle: {
     blackLongCastle: boolean;
     blackShortCastle: boolean;
     whiteLongCastle: boolean;
     whiteShortCastle: boolean;
   };
-  pawn: {
+  readonly pawn: {
     pawnToConvert: number;
   };
   board: string[];
-  boardIndex: number[];
+  readonly boardIndex: readonly number[];
   blackAI: boolean;
   whiteAI: boolean;
-}
+};
+
+// prettier-ignore
+export const mailboxIndex = [
+  21, 22, 23, 24, 25, 26, 27, 28,
+  31, 32, 33, 34, 35, 36, 37, 38,
+  41, 42, 43, 44, 45, 46, 47, 48,
+  51, 52, 53, 54, 55, 56, 57, 58,
+  61, 62, 63, 64, 65, 66, 67, 68,
+  71, 72, 73, 74, 75, 76, 77, 78,
+  81, 82, 83, 84, 85, 86, 87, 88,
+  91, 92, 93, 94, 95, 96, 97, 98
+];
+
+export const pieceOnIndex = ({
+  board,
+  pieceIndex
+}: {
+  readonly board: readonly string[];
+  readonly pieceIndex: number;
+}): string => board[mailboxIndex[pieceIndex]];
 
 window.inHand = '';
 window.mousePos = '';
@@ -27,40 +47,30 @@ window.turn = '' as color;
 window.AI = AI;
 window.startGame = startGame;
 
-window.game = {} as GlobalChess;
-window.game.castle = {
-  blackLongCastle: true,
-  blackShortCastle: true,
-  whiteLongCastle: true,
-  whiteShortCastle: true
-};
-window.game.pawn = { pawnToConvert: -1 };
-// prettier-ignore
-window.game.board = [
-	'*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
-	'*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
-	'*', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R', '*',
-	'*', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', '*',
-	'*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
-	'*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
-	'*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
-	'*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
-	'*', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', '*',
-	'*', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r', '*',
-	'*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
-	'*', '*', '*', '*', '*', '*', '*', '*', '*', '*'
-];
-// prettier-ignore
-window.game.boardIndex = [
-	21, 22, 23, 24, 25, 26, 27, 28,
-	31, 32, 33, 34, 35, 36, 37, 38,
-	41, 42, 43, 44, 45, 46, 47, 48,
-	51, 52, 53, 54, 55, 56, 57, 58,
-	61, 62, 63, 64, 65, 66, 67, 68,
-	71, 72, 73, 74, 75, 76, 77, 78,
-	81, 82, 83, 84, 85, 86, 87, 88,
-	91, 92, 93, 94, 95, 96, 97, 98
-];
+window.game = ({
+  // prettier-ignore
+  board: [
+    '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
+    '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
+    '*', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R', '*',
+    '*', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', '*',
+    '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
+    '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
+    '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
+    '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
+    '*', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', '*',
+    '*', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r', '*',
+    '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
+    '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'
+  ],
+  castle: {
+    blackLongCastle: true,
+    blackShortCastle: true,
+    whiteLongCastle: true,
+    whiteShortCastle: true
+  },
+  pawn: { pawnToConvert: -1 }
+} as Partial<GlobalChess>) as GlobalChess;
 
 const initChess = (): void => {
   buildBoard();
@@ -79,21 +89,25 @@ const initChess = (): void => {
  * Does not check validity of move, so use with care.
  */
 export const boardAfterMove = (
-  board: string[],
+  board: readonly string[],
   moveStart: number,
   moveGoal: number
-): string[] => {
+): readonly string[] => {
   /*
    * The move we get are indexes of a regular board (0-63), but our boards
    * are in mailbox format, so we need the mailbox index to update the board.
    */
-  const mailboxIndex = window.game.boardIndex.slice();
+  const boardIndexGoal = mailboxIndex[moveGoal];
+  const boardIndexStart = mailboxIndex[moveStart];
 
   // Copy piece from start to goal and clear start
-  board[mailboxIndex[moveGoal]] = board[mailboxIndex[moveStart]];
-  board[mailboxIndex[moveStart]] = '-';
-
-  return board;
+  return board.map((piece, index) =>
+    index === boardIndexGoal
+      ? board[boardIndexStart]
+      : index === boardIndexStart
+      ? '-'
+      : piece
+  );
 };
 
 export const switchTurn = (): void => {
@@ -111,8 +125,8 @@ export const switchTurn = (): void => {
   // After every turn switch, check if the game has ended
   const currentPlayerValids = getAllValidMoves(
     window.game.board,
-    getPieces(window.game.board, window.turn)
-  );
+    getPiecesOfColor(window.game.board, window.turn)
+  ).flat();
 
   // If none of those pieces can move...
   if (!currentPlayerValids.length) {
@@ -120,11 +134,11 @@ export const switchTurn = (): void => {
     endGame(isInCheck(window.game.board, window.turn));
   } else if (window.turn === 'black' && window.game.blackAI) {
     setTimeout(() => {
-      AI.makeMove(3);
+      makeAIMove(3);
     }, 10);
   } else if (window.turn === 'white' && window.game.whiteAI) {
     setTimeout(() => {
-      AI.makeMove(3);
+      makeAIMove(3);
     }, 10);
   }
 };
@@ -183,7 +197,7 @@ const movePiece = (moveOrigin: number, moveDestination: number): void => {
     window.game.board,
     moveOrigin,
     moveDestination
-  ).slice();
+  ) as string[];
   const destinationElement = document.getElementById(
     `${moveDestination}`
   ) as HTMLElement;
@@ -220,8 +234,10 @@ const moveRookIfCastling = (
 // eslint-disable-next-line max-statements
 const pawnConversion = (pawnPosition: number): void => {
   if (
-    window.game.board[window.game.boardIndex[pawnPosition]].toLowerCase() ===
-    'p'
+    pieceOnIndex({
+      board: window.game.board,
+      pieceIndex: pawnPosition
+    }).toLowerCase() === 'p'
   ) {
     if (window.turn === 'white' && pawnPosition < 8 && pawnPosition >= 0) {
       window.game.pawn.pawnToConvert = pawnPosition;
@@ -280,6 +296,4 @@ export const makeMove = (
   window.inHand = '';
 };
 
-$(document).ready(() => {
-  initChess();
-});
+$(document).ready(initChess);

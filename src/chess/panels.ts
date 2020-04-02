@@ -1,4 +1,4 @@
-import { switchTurn } from './main.js';
+import { mailboxIndex, switchTurn } from './main.js';
 
 const pieceChar = new Map(
   Object.entries({
@@ -29,7 +29,7 @@ export const convertPawn = (): void => {
     .html(pieceHTML.get(piece) as string);
 
   // Update JS board
-  window.game.board[window.game.boardIndex[window.game.pawn.pawnToConvert]] =
+  window.game.board[mailboxIndex[window.game.pawn.pawnToConvert]] =
     window.turn === 'white'
       ? (pieceChar.get(piece) as string)
       : (pieceChar.get(piece) as string).toUpperCase();
@@ -97,11 +97,11 @@ export const endGame = (checkmate: boolean): void => {
   theMenu.html('');
   // Build new contents
   theMenu.append(`<br/><br/><h2>${outcome}</h2>`);
-  if (checkmate) {
-    theMenu.append(`<h3>${playerWhoWon} won the game!</h3><br/><br/>`);
-  } else {
-    theMenu.append('<h3>Nobody won the game!</h3><br/><br/>');
-  }
+  theMenu.append(
+    checkmate
+      ? `<h3>${playerWhoWon} won the game!</h3><br/><br/>`
+      : '<h3>Nobody won the game!</h3><br/><br/>'
+  );
   theMenu.append(
     '<input type="button" value="Restart Chess!" onclick="window.location.reload()">'
   );

@@ -1,6 +1,8 @@
 import { getValid } from './moveGen.js';
-import { intToCol } from './util.js';
 import { makeMove } from './main.js';
+
+// Takes a column (0-7) and returns column label (A-H)
+export const intToCol = (charInt: number): string => 'ABCDEFGH'.charAt(charInt);
 
 // Simple function to scale a square board.
 const scaleBoard = (): void => {
@@ -86,7 +88,7 @@ export const setBoard = (): void => {
 };
 
 // Adds 'valid' CSS class to squares, i.e. turns on highlights
-const markValids = (array: number[]): void => {
+const markValids = (array: readonly number[]): void => {
   const selector = `#${array.join(',#')}`;
   $(selector).addClass('valid');
 };

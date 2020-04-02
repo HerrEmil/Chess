@@ -10,7 +10,8 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
-    'prettier/@typescript-eslint'
+    'prettier/@typescript-eslint',
+    'plugin:functional/all'
   ],
   globals: {
     AI: 'writable',
@@ -26,13 +27,22 @@ module.exports = {
     sourceType: 'module',
     tsconfigRootDir: __dirname
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'functional'],
   root: true,
   rules: {
     'capitalized-comments': 'off',
     'linebreak-style': 'off',
     'no-magic-numbers': 'off',
+    'no-nested-ternary': 'off',
     'no-ternary': 'off',
-    'one-var': 'off'
+    'one-var': 'off',
+    'functional/prefer-readonly-type': 'off',
+    'functional/no-conditional-statement': 'off',
+    'functional/no-let': 'off',
+    'functional/no-loop-statement': 'off',
+    'functional/no-expression-statement': 'off',
+    'functional/no-return-void': 'off',
+    'functional/immutable-data': 'off',
+    'functional/functional-parameters': 'off'
   }
 };

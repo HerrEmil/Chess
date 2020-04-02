@@ -1,21 +1,19 @@
 /* eslint-disable max-lines */
-import { boardAfterMove } from './main.js';
+import { boardAfterMove, mailboxIndex } from './main.js';
 import { color as chessColor } from './ai.js';
-import { getPieces } from './util.js';
+import { getPiecesOfColor } from './util.js';
 
 const getValidPositionsInDirection = ({
   board,
-  boardIndex,
   color,
   direction,
   startPosition
 }: {
-  board: string[];
-  boardIndex: number[];
-  color: chessColor;
-  direction: number;
-  startPosition: number;
-}): number[] => {
+  readonly board: readonly string[];
+  readonly color: chessColor;
+  readonly direction: number;
+  readonly startPosition: number;
+}): readonly number[] => {
   const positions = [];
 
   // eslint-disable-next-line no-constant-condition
@@ -23,12 +21,12 @@ const getValidPositionsInDirection = ({
     const piece = board[position].charCodeAt(0);
 
     if (piece === 45) {
-      positions.push(boardIndex.indexOf(position));
+      positions.push(mailboxIndex.indexOf(position));
     } else if (
       (piece > 96 && color === 'black') ||
       (piece < 96 && color === 'white')
     ) {
-      positions.push(boardIndex.indexOf(position));
+      positions.push(mailboxIndex.indexOf(position));
       return positions;
     } else {
       return positions;
@@ -38,41 +36,35 @@ const getValidPositionsInDirection = ({
 
 const rookValids = ({
   board,
-  boardIndex,
   index,
   color
 }: {
-  board: string[];
-  boardIndex: number[];
-  color: chessColor;
-  index: number;
-}): number[] => {
-  const startPosition = boardIndex[index];
+  readonly board: readonly string[];
+  readonly color: chessColor;
+  readonly index: number;
+}): readonly number[] => {
+  const startPosition = mailboxIndex[index];
   return [
     ...getValidPositionsInDirection({
       board,
-      boardIndex,
       color,
       direction: -10,
       startPosition
     }),
     ...getValidPositionsInDirection({
       board,
-      boardIndex,
       color,
       direction: 10,
       startPosition
     }),
     ...getValidPositionsInDirection({
       board,
-      boardIndex,
       color,
       direction: -1,
       startPosition
     }),
     ...getValidPositionsInDirection({
       board,
-      boardIndex,
       color,
       direction: 1,
       startPosition
@@ -82,41 +74,35 @@ const rookValids = ({
 
 const bishopValids = ({
   board,
-  boardIndex,
   index,
   color
 }: {
-  board: string[];
-  boardIndex: number[];
-  color: chessColor;
-  index: number;
-}): number[] => {
-  const startPosition = boardIndex[index];
+  readonly board: readonly string[];
+  readonly color: chessColor;
+  readonly index: number;
+}): readonly number[] => {
+  const startPosition = mailboxIndex[index];
   return [
     ...getValidPositionsInDirection({
       board,
-      boardIndex,
       color,
       direction: -9,
       startPosition
     }),
     ...getValidPositionsInDirection({
       board,
-      boardIndex,
       color,
       direction: 9,
       startPosition
     }),
     ...getValidPositionsInDirection({
       board,
-      boardIndex,
       color,
       direction: -11,
       startPosition
     }),
     ...getValidPositionsInDirection({
       board,
-      boardIndex,
       color,
       direction: 11,
       startPosition
@@ -136,11 +122,11 @@ const knightValids = ({
   index,
   color
 }: {
-  board: string[];
-  boardIndex: number[];
-  color: chessColor;
-  index: number;
-}): number[] => {
+  readonly board: readonly string[];
+  readonly boardIndex: readonly number[];
+  readonly color: chessColor;
+  readonly index: number;
+}): readonly number[] => {
   const startPosition = boardIndex[index];
   return [
     startPosition - 8,
@@ -164,11 +150,11 @@ const kingValids = ({
   index,
   color
 }: {
-  board: string[];
-  boardIndex: number[];
-  color: chessColor;
-  index: number;
-}): number[] => {
+  readonly board: readonly string[];
+  readonly boardIndex: readonly number[];
+  readonly color: chessColor;
+  readonly index: number;
+}): readonly number[] => {
   const startPosition = boardIndex[index];
   return [
     startPosition - 1,
@@ -192,11 +178,11 @@ const pawnValids = ({
   index,
   color
 }: {
-  board: string[];
-  boardIndex: number[];
-  color: chessColor;
-  index: number;
-}): number[] => {
+  readonly board: readonly string[];
+  readonly boardIndex: readonly number[];
+  readonly color: chessColor;
+  readonly index: number;
+}): readonly number[] => {
   const pos = boardIndex[index];
   const valids = [];
   const forward = color === 'black' ? pos + 10 : pos - 10;
@@ -233,12 +219,12 @@ const getStandardMoves = ({
   piecePosition: index,
   pieceColor: color
 }: {
-  pieceType: string;
-  board: string[];
-  boardIndex: number[];
-  piecePosition: number;
-  pieceColor: chessColor;
-}): number[] => {
+  readonly pieceType: string;
+  readonly board: readonly string[];
+  readonly boardIndex: readonly number[];
+  readonly piecePosition: number;
+  readonly pieceColor: chessColor;
+}): readonly number[] => {
   const boardPayload = {
     board,
     boardIndex,
@@ -263,14 +249,16 @@ const getStandardMoves = ({
   }
 };
 
-const getValidNoCheck = (board: string[], piecePosition: number): number[] => {
-  const { boardIndex } = window.game;
-  const piece = board[boardIndex[piecePosition]];
+const getValidNoCheck = (
+  board: readonly string[],
+  piecePosition: number
+): readonly number[] => {
+  const piece = board[mailboxIndex[piecePosition]];
   const pieceType = piece.toLowerCase();
 
   return getStandardMoves({
     board,
-    boardIndex,
+    boardIndex: mailboxIndex,
     pieceColor: pieceType === piece ? 'white' : 'black',
     piecePosition,
     pieceType
@@ -278,17 +266,21 @@ const getValidNoCheck = (board: string[], piecePosition: number): number[] => {
 };
 
 export const getAllValidMovesNoCheck = (
-  board: string[],
-  pieces: number[]
-): number[][] => pieces.map(piece => getValidNoCheck(board, piece));
+  board: readonly string[],
+  pieces: readonly number[]
+): readonly (readonly number[])[] =>
+  pieces.map(piece => getValidNoCheck(board, piece));
 
-export const isInCheck = (board: string[], color: chessColor): boolean => {
+export const isInCheck = (
+  board: readonly string[],
+  color: chessColor
+): boolean => {
   const positionsOpponentCanMoveTo = getAllValidMovesNoCheck(
     board,
-    getPieces(board, color === 'white' ? 'black' : 'white')
-  ).map((move: number[]) => move[1]);
+    getPiecesOfColor(board, color === 'white' ? 'black' : 'white')
+  ).flat();
 
-  const kingPosition = window.game.boardIndex.indexOf(
+  const kingPosition = mailboxIndex.indexOf(
     board.indexOf(color === 'white' ? 'k' : 'K')
   );
 
@@ -303,19 +295,19 @@ const getCastlingMoves = ({
   board,
   boardIndex
 }: {
-  type: string;
-  color: chessColor;
-  valids: number[];
-  board: string[];
-  boardIndex: number[];
-}): number[] => {
+  readonly type: string;
+  readonly color: chessColor;
+  readonly valids: readonly number[];
+  readonly board: readonly string[];
+  readonly boardIndex: readonly number[];
+}): readonly number[] => {
   const castlingMoves = [];
   if (type === 'k' && color === 'black' && !isInCheck(board, 'black')) {
     if (
       window.game.castle.blackShortCastle &&
       valids.includes(5) &&
       board[boardIndex[6]] === '-' &&
-      !isInCheck(boardAfterMove(board.slice(), 4, 5), 'black')
+      !isInCheck(boardAfterMove(board, 4, 5), 'black')
     ) {
       castlingMoves.push(6);
     }
@@ -324,7 +316,7 @@ const getCastlingMoves = ({
       valids.includes(3) &&
       board[boardIndex[2]] === '-' &&
       board[boardIndex[1]] === '-' &&
-      !isInCheck(boardAfterMove(board.slice(), 4, 3), 'black')
+      !isInCheck(boardAfterMove(board, 4, 3), 'black')
     ) {
       castlingMoves.push(2);
     }
@@ -333,7 +325,7 @@ const getCastlingMoves = ({
       window.game.castle.whiteShortCastle &&
       valids.includes(61) &&
       board[boardIndex[62]] === '-' &&
-      !isInCheck(boardAfterMove(board.slice(), 60, 61), 'white')
+      !isInCheck(boardAfterMove(board, 60, 61), 'white')
     ) {
       castlingMoves.push(62);
     }
@@ -342,7 +334,7 @@ const getCastlingMoves = ({
       valids.includes(59) &&
       board[boardIndex[58]] === '-' &&
       board[boardIndex[57]] === '-' &&
-      !isInCheck(boardAfterMove(board.slice(), 60, 59), 'white')
+      !isInCheck(boardAfterMove(board, 60, 59), 'white')
     ) {
       castlingMoves.push(58);
     }
@@ -350,8 +342,11 @@ const getCastlingMoves = ({
   return castlingMoves;
 };
 
-export const getValid = (piecePosition: number, board: string[]): number[] => {
-  const { boardIndex } = window.game;
+export const getValid = (
+  piecePosition: number,
+  board: readonly string[]
+): readonly number[] => {
+  const boardIndex = mailboxIndex;
   const piece = board[boardIndex[piecePosition]];
   const type = piece.toLowerCase();
   const color = type === piece ? 'white' : 'black';
@@ -371,7 +366,6 @@ export const getValid = (piecePosition: number, board: string[]): number[] => {
   });
 
   return [...standardMoves, ...castlingMoves].filter(
-    move =>
-      !isInCheck(boardAfterMove(board.slice(), piecePosition, move), color)
+    move => !isInCheck(boardAfterMove(board, piecePosition, move), color)
   );
 };

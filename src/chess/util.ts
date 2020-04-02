@@ -1,60 +1,22 @@
 import { color as ChessColor } from './ai';
 import { getValid } from './moveGen.js';
-// This file contains various utility functions
+import { mailboxIndex } from './main.js';
 
-// Takes a column (0-7) and returns column label (A-H)
-export const intToCol = (charInt: number): string => {
-  let intChar = '';
-  switch (charInt) {
-    case 0:
-      intChar = 'A';
-      break;
-    case 1:
-      intChar = 'B';
-      break;
-    case 2:
-      intChar = 'C';
-      break;
-    case 3:
-      intChar = 'D';
-      break;
-    case 4:
-      intChar = 'E';
-      break;
-    case 5:
-      intChar = 'F';
-      break;
-    case 6:
-      intChar = 'G';
-      break;
-    case 7:
-      intChar = 'H';
-      break;
-    default:
-      break;
-  }
-  return intChar;
-};
-
-// Function that returns an array with all piece positions on a board of a certain color
-export const getPieces = (board: string[], color: ChessColor): number[] => {
-  const { boardIndex } = window.game;
-  const pieces = [];
-
+export const getPiecesOfColor = (
+  board: readonly string[],
+  color: ChessColor
+): readonly number[] => {
   const charCodeLowerBound = color === 'white' ? 97 : 65;
   const charCodeUpperBound = color === 'white' ? 114 : 82;
 
-  for (let piecePosition = 0; piecePosition < 64; piecePosition += 1) {
-    const charCode = board[boardIndex[piecePosition]].charCodeAt(0);
-    if (charCodeLowerBound <= charCode && charCode <= charCodeUpperBound) {
-      pieces.push(piecePosition);
-    }
-  }
-  return pieces;
+  return Array.from(Array(64).keys()).filter((never, piecePosition) => {
+    const charCode = board[mailboxIndex[piecePosition]].charCodeAt(0);
+    return charCodeLowerBound <= charCode && charCode <= charCodeUpperBound;
+  });
 };
 
-// Takes a board and an array of piece positions
 export const getAllValidMoves = (
-  notGlobalBoard: string[],
-  pieces: number[]
-): number[][] => pieces.map(piece => getValid(piece, notGlobalBoard));
+  board: readonly string[],
+  pieces: readonly number[]
+): readonly (readonly number[])[] =>
+  pieces.map(piece => getValid(piece, board));

@@ -5,7 +5,7 @@
     "build": "rimraf build && tsc && cpy \"src/*\" build",
     "lint": "eslint src/chess/*",
     "serve": "watch-http-server build -a localhost -o",
-    "start": "yarn build && yarn serve"
+    "start": "npm run build && npm run serve"
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,11 @@
   "homepage": "https://github.com/HerrEmil/Chess#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.24.0",
-    "@typescript-eslint/parser": "^2.24.0",
+    "@typescript-eslint/parser": "^2.26.0",
     "cpy-cli": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-functional": "^3.0.1",
     "rimraf": "^3.0.2",
     "typescript": "^3.8.3",
     "watch-http-server": "^0.7.6"
