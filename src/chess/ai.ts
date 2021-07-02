@@ -101,8 +101,8 @@ const getPieceValueSum = ({
   board = [] as readonly string[],
   pieces = [] as readonly number[],
   AILevel = 1
-}): number => {
-  return pieces.reduce((sum, piece) => {
+}): number => 
+  pieces.reduce((sum, piece) => {
     switch (pieceOnIndex({ board, pieceIndex: piece })) {
       case 'p':
       case 'P':
@@ -126,10 +126,10 @@ const getPieceValueSum = ({
         return sum;
     }
   }, 0);
-};
+
 
 // Evaluates the value of a state of a board
-const evaluate = (board: readonly string[], color: color): number => {
+const evaluate = (board: readonly string[], currentColor: color): number => {
   const whiteValue =
     getPieceValueSum({
       AILevel: AI.intelligence,
@@ -145,7 +145,7 @@ const evaluate = (board: readonly string[], color: color): number => {
     }) + (isInCheck(board, 'white') ? 0.5 : 0);
 
   const difference =
-    color === 'white' ? whiteValue - blackValue : blackValue - whiteValue;
+    currentColor === 'white' ? whiteValue - blackValue : blackValue - whiteValue;
 
   const salt = Math.random() * (AI.intelligence === 1 ? 1000 : 0.1);
   return salt + difference;
@@ -184,7 +184,7 @@ const maxMove = (
   let localAlpha = alpha;
   for (let pieceIndex = 0; pieceIndex < pieces.length; pieceIndex += 1) {
     for (const move of moves[pieceIndex]) {
-      // eslint-disable-next-line @typescript-eslint/no-use-before-define
+      // eslint-disable-next-line no-use-before-define
       const childMove = minMove(
         boardAfterMove(board, pieces[pieceIndex].valueOf(), move.valueOf()),
         player,
