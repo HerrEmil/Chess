@@ -287,7 +287,7 @@ export const isInCheck = (
   return positionsOpponentCanMoveTo.includes(kingPosition);
 };
 
-// eslint-disable-next-line complexity, max-statements, max-lines-per-function
+// eslint-disable-next-line max-statements, max-lines-per-function
 const getCastlingMoves = ({
   type,
   color,
@@ -300,6 +300,7 @@ const getCastlingMoves = ({
   readonly valids: readonly number[];
   readonly board: readonly string[];
   readonly boardIndex: readonly number[];
+  // eslint-disable-next-line complexity
 }): readonly number[] => {
   const castlingMoves = [];
   if (type === 'k' && color === 'black' && !isInCheck(board, 'black')) {

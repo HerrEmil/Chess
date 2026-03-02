@@ -1,4 +1,3 @@
-/* eslint-disable max-lines */
 import {
   boardAfterMove,
   mailboxIndex,
@@ -210,7 +209,7 @@ const maxMove = (
   return [localBestMoveStart, localBestMoveGoal, localAlpha];
 };
 
-// eslint-disable-next-line max-statements, max-params, max-lines-per-function
+// eslint-disable-next-line max-statements, max-lines-per-function
 const minMove = (
   board: readonly string[],
   player: color,
