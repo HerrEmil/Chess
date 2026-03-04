@@ -1,6 +1,6 @@
 import { color as ChessColor } from './ai';
 import { getValid } from './moveGen.js';
-import { mailboxIndex } from './main.js';
+import { mailboxIndex, type CastleState } from './main.js';
 
 export const getPiecesOfColor = (
   board: readonly string[],
@@ -19,5 +19,6 @@ export const getAllValidMoves = (
   board: readonly string[],
   pieces: readonly number[],
   enPassantTarget: number | null = null,
+  castle?: CastleState,
 ): readonly (readonly number[])[] =>
-  pieces.map((piece) => getValid(piece, board, enPassantTarget));
+  pieces.map((piece) => getValid(piece, board, enPassantTarget, castle));

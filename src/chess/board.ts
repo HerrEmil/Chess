@@ -169,7 +169,12 @@ export const bindEvents = (): void => {
       window.inHand = location;
       window.mousePos = $(target).parent().addClass('origin');
       markValids(
-        getValid(location, window.game.board, window.game.enPassantTarget),
+        getValid(
+          location,
+          window.game.board,
+          window.game.enPassantTarget,
+          window.game.castle,
+        ),
       );
       return false;
     })

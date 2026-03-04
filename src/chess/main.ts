@@ -10,13 +10,15 @@ export type GameResult =
   | 'fifty-move'
   | 'repetition';
 
+export type CastleState = {
+  blackLongCastle: boolean;
+  blackShortCastle: boolean;
+  whiteLongCastle: boolean;
+  whiteShortCastle: boolean;
+};
+
 export type GlobalChess = {
-  readonly castle: {
-    blackLongCastle: boolean;
-    blackShortCastle: boolean;
-    whiteLongCastle: boolean;
-    whiteShortCastle: boolean;
-  };
+  readonly castle: CastleState;
   readonly pawn: {
     pawnToConvert: number;
   };
@@ -315,6 +317,7 @@ export const checkTurnEnd = (
     game.board,
     getPiecesOfColor(game.board, newTurn),
     game.enPassantTarget,
+    game.castle,
   ).flat();
 
   if (!currentPlayerValids.length) {

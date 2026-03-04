@@ -1,4 +1,4 @@
-import { boardAfterMove, mailboxIndex } from './main.js';
+import { boardAfterMove, mailboxIndex, type CastleState } from './main.js';
 import { color as chessColor } from './ai.js';
 import { getPiecesOfColor } from './util.js';
 
@@ -187,18 +187,20 @@ const pawnValids = ({
   readonly enPassantTarget?: number | null;
 }): readonly number[] => {
   const pos = boardIndex[index];
-  const valids = [];
   const forward = color === 'black' ? pos + 10 : pos - 10;
-  if (board[forward].charCodeAt(0) === 45) {
-    valids.push(boardIndex.indexOf(forward));
-    const doubleForward = color === 'black' ? pos + 20 : pos - 20;
-    if (
-      (color === 'black' ? pos < 39 && pos > 30 : pos < 89 && pos > 80) &&
-      board[doubleForward].charCodeAt(0) === 45
-    ) {
-      valids.push(boardIndex.indexOf(doubleForward));
-    }
-  }
+  const doubleForward = color === 'black' ? pos + 20 : pos - 20;
+  const canMoveForward = board[forward].charCodeAt(0) === 45;
+  const canDoubleMove =
+    canMoveForward &&
+    (color === 'black' ? pos < 39 && pos > 30 : pos < 89 && pos > 80) &&
+    board[doubleForward].charCodeAt(0) === 45;
+
+  const forwardMoves = canMoveForward
+    ? [
+        boardIndex.indexOf(forward),
+        ...(canDoubleMove ? [boardIndex.indexOf(doubleForward)] : []),
+      ]
+    : [];
 
   const diagonals = [
     color === 'black' ? pos + 9 : pos - 9,
@@ -214,15 +216,12 @@ const pawnValids = ({
     })
     .map((position) => boardIndex.indexOf(position));
 
-  // Add en passant capture if the target square is a valid diagonal
-  if (enPassantTarget !== null) {
-    const epMailbox = boardIndex[enPassantTarget];
-    if (diagonals.includes(epMailbox)) {
-      captures.push(enPassantTarget);
-    }
-  }
+  const epCaptures =
+    enPassantTarget !== null && diagonals.includes(boardIndex[enPassantTarget])
+      ? [enPassantTarget]
+      : [];
 
-  return [...valids, ...captures];
+  return [...forwardMoves, ...captures, ...epCaptures];
 };
 
 const getStandardMoves = ({
@@ -311,59 +310,68 @@ const getCastlingMoves = ({
   valids,
   board,
   boardIndex,
+  castle,
 }: {
   readonly type: string;
   readonly color: chessColor;
   readonly valids: readonly number[];
   readonly board: readonly string[];
   readonly boardIndex: readonly number[];
-  // eslint-disable-next-line complexity
+  readonly castle: CastleState;
 }): readonly number[] => {
-  const castlingMoves = [];
-  if (type === 'k' && color === 'black' && !isInCheck(board, 'black')) {
-    if (
-      window.game.castle.blackShortCastle &&
-      valids.includes(5) &&
-      board[boardIndex[6]] === '-' &&
-      !isInCheck(boardAfterMove(board, 4, 5), 'black')
-    ) {
-      castlingMoves.push(6);
-    }
-    if (
-      window.game.castle.blackLongCastle &&
-      valids.includes(3) &&
-      board[boardIndex[2]] === '-' &&
-      board[boardIndex[1]] === '-' &&
-      !isInCheck(boardAfterMove(board, 4, 3), 'black')
-    ) {
-      castlingMoves.push(2);
-    }
-  } else if (type === 'k' && color === 'white' && !isInCheck(board, 'white')) {
-    if (
-      window.game.castle.whiteShortCastle &&
-      valids.includes(61) &&
-      board[boardIndex[62]] === '-' &&
-      !isInCheck(boardAfterMove(board, 60, 61), 'white')
-    ) {
-      castlingMoves.push(62);
-    }
-    if (
-      window.game.castle.whiteLongCastle &&
-      valids.includes(59) &&
-      board[boardIndex[58]] === '-' &&
-      board[boardIndex[57]] === '-' &&
-      !isInCheck(boardAfterMove(board, 60, 59), 'white')
-    ) {
-      castlingMoves.push(58);
-    }
-  }
-  return castlingMoves;
+  if (type !== 'k' || isInCheck(board, color)) return [];
+
+  const candidates =
+    color === 'black'
+      ? [
+          {
+            allowed: castle.blackShortCastle,
+            emptySquares: [6],
+            kingPos: 4,
+            target: 6,
+            throughSquare: 5,
+          },
+          {
+            allowed: castle.blackLongCastle,
+            emptySquares: [2, 1],
+            kingPos: 4,
+            target: 2,
+            throughSquare: 3,
+          },
+        ]
+      : [
+          {
+            allowed: castle.whiteShortCastle,
+            emptySquares: [62],
+            kingPos: 60,
+            target: 62,
+            throughSquare: 61,
+          },
+          {
+            allowed: castle.whiteLongCastle,
+            emptySquares: [58, 57],
+            kingPos: 60,
+            target: 58,
+            throughSquare: 59,
+          },
+        ];
+
+  return candidates
+    .filter(
+      (c) =>
+        c.allowed &&
+        valids.includes(c.throughSquare) &&
+        c.emptySquares.every((sq) => board[boardIndex[sq]] === '-') &&
+        !isInCheck(boardAfterMove(board, c.kingPos, c.throughSquare), color),
+    )
+    .map((c) => c.target);
 };
 
 export const getValid = (
   piecePosition: number,
   board: readonly string[],
   enPassantTarget: number | null = null,
+  castle: CastleState = window.game.castle,
 ): readonly number[] => {
   const boardIndex = mailboxIndex;
   const piece = board[boardIndex[piecePosition]];
@@ -380,6 +388,7 @@ export const getValid = (
   const castlingMoves = getCastlingMoves({
     board,
     boardIndex,
+    castle,
     color,
     type,
     valids: standardMoves,
