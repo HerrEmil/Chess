@@ -1,6 +1,11 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { getValid, isInCheck, getAllValidMovesNoCheck } from '../moveGen.js';
-import { boardWithPieces, emptyBoard, STARTING_BOARD, setupCastleState } from './helpers.js';
+import {
+  boardWithPieces,
+  emptyBoard,
+  STARTING_BOARD,
+  setupCastleState,
+} from './helpers.js';
 import { mailboxIndex } from '../main.js';
 
 /*
@@ -25,7 +30,7 @@ describe('pawn moves', () => {
     const board = boardWithPieces([
       { piece: 'p', index: 52 }, // e2
       { piece: 'k', index: 60 }, // white king e1
-      { piece: 'K', index: 4 },  // black king e8
+      { piece: 'K', index: 4 }, // black king e8
     ]);
     const moves = getAllValidMovesNoCheck(board, [52])[0];
     expect(moves).toContain(44); // e3
@@ -313,7 +318,7 @@ describe('isInCheck', () => {
   it('black king in check from white bishop', () => {
     const board = boardWithPieces([
       { piece: 'k', index: 60 },
-      { piece: 'K', index: 4 },  // e8
+      { piece: 'K', index: 4 }, // e8
       { piece: 'b', index: 31 }, // h5 - diagonal to e8
     ]);
     expect(isInCheck(board, 'black')).toBe(true);
@@ -349,8 +354,8 @@ describe('getValid (with check filtering)', () => {
     const board = boardWithPieces([
       { piece: 'k', index: 60 }, // e1
       { piece: 'r', index: 52 }, // e2 (pinned by rook on e8)
-      { piece: 'R', index: 4 },  // e8 black rook
-      { piece: 'K', index: 0 },  // a8 black king (out of the way)
+      { piece: 'R', index: 4 }, // e8 black rook
+      { piece: 'K', index: 0 }, // a8 black king (out of the way)
     ]);
     const moves = getValid(52, board);
     // The rook can only move along the e-file (not off it)
@@ -362,8 +367,8 @@ describe('getValid (with check filtering)', () => {
   it('king cannot move into check', () => {
     const board = boardWithPieces([
       { piece: 'k', index: 60 }, // e1
-      { piece: 'R', index: 3 },  // d8 black rook (controls d-file)
-      { piece: 'K', index: 0 },  // a8 black king
+      { piece: 'R', index: 3 }, // d8 black rook (controls d-file)
+      { piece: 'K', index: 0 }, // a8 black king
     ]);
     const moves = getValid(60, board);
     // King should not be able to go to d1(59) or d2(51) as those are on the d-file
@@ -423,8 +428,8 @@ describe('castling', () => {
     const board = boardWithPieces([
       { piece: 'k', index: 60 }, // e1
       { piece: 'r', index: 63 }, // h1
-      { piece: 'R', index: 4 },  // e8 attacks e-file (king in check)
-      { piece: 'K', index: 0 },  // a8
+      { piece: 'R', index: 4 }, // e8 attacks e-file (king in check)
+      { piece: 'K', index: 0 }, // a8
     ]);
     const moves = getValid(60, board);
     expect(moves).not.toContain(62);
@@ -434,8 +439,8 @@ describe('castling', () => {
     const board = boardWithPieces([
       { piece: 'k', index: 60 }, // e1
       { piece: 'r', index: 63 }, // h1
-      { piece: 'R', index: 5 },  // f8 attacks f-file (f1 is in path)
-      { piece: 'K', index: 0 },  // a8
+      { piece: 'R', index: 5 }, // f8 attacks f-file (f1 is in path)
+      { piece: 'K', index: 0 }, // a8
     ]);
     const moves = getValid(60, board);
     expect(moves).not.toContain(62);
@@ -443,8 +448,8 @@ describe('castling', () => {
 
   it('black can castle kingside', () => {
     const board = boardWithPieces([
-      { piece: 'K', index: 4 },  // e8
-      { piece: 'R', index: 7 },  // h8
+      { piece: 'K', index: 4 }, // e8
+      { piece: 'R', index: 7 }, // h8
       { piece: 'k', index: 60 }, // e1
     ]);
     const moves = getValid(4, board);
@@ -453,8 +458,8 @@ describe('castling', () => {
 
   it('black can castle queenside', () => {
     const board = boardWithPieces([
-      { piece: 'K', index: 4 },  // e8
-      { piece: 'R', index: 0 },  // a8
+      { piece: 'K', index: 4 }, // e8
+      { piece: 'R', index: 0 }, // a8
       { piece: 'k', index: 60 }, // e1
     ]);
     const moves = getValid(4, board);

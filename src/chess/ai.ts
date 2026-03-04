@@ -1,4 +1,9 @@
-import { boardAfterMove, mailboxIndex, makeMove, pieceOnIndex } from './main.js';
+import {
+  boardAfterMove,
+  mailboxIndex,
+  makeMove,
+  pieceOnIndex,
+} from './main.js';
 import { getPiecesOfColor } from './util.js';
 import { getAllValidMovesNoCheck, isInCheck } from './moveGen.js';
 
