@@ -43,9 +43,12 @@ export const mailboxIndex = [
   91, 92, 93, 94, 95, 96, 97, 98
 ];
 
-export const positionKey = (turn?: color): string => {
-  const { board, castle, enPassantTarget } = window.game;
-  const activeTurn = turn ?? window.turn;
+export const positionKey = (
+  board: readonly string[],
+  turn: color,
+  castle: CastleState,
+  enPassantTarget: number | null,
+): string => {
   const squares = mailboxIndex.map((i) => board[i]).join('');
   const c =
     (castle.whiteShortCastle ? 'K' : '') +
@@ -53,7 +56,7 @@ export const positionKey = (turn?: color): string => {
       (castle.blackShortCastle ? 'k' : '') +
       (castle.blackLongCastle ? 'q' : '') || '-';
   const ep = enPassantTarget === null ? '-' : String(enPassantTarget);
-  return `${squares} ${activeTurn} ${c} ${ep}`;
+  return `${squares} ${turn} ${c} ${ep}`;
 };
 
 export const pieceOnIndex = ({
@@ -300,7 +303,12 @@ export const checkTurnEnd = (
   const newTurn: color = currentTurn === 'white' ? 'black' : 'white';
 
   // Record position and check draw rules
-  const key = positionKey(newTurn);
+  const key = positionKey(
+    game.board,
+    newTurn,
+    game.castle,
+    game.enPassantTarget,
+  );
   const count = (game.positionHistory.get(key) ?? 0) + 1;
   game.positionHistory.set(key, count);
 

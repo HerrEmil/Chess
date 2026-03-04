@@ -18,7 +18,7 @@ export const getPiecesOfColor = (
 export const getAllValidMoves = (
   board: readonly string[],
   pieces: readonly number[],
-  enPassantTarget: number | null = null,
-  castle?: CastleState,
+  enPassantTarget: number | null,
+  castle: CastleState,
 ): readonly (readonly number[])[] =>
   pieces.map((piece) => getValid(piece, board, enPassantTarget, castle));

@@ -5,7 +5,8 @@
     "allowJs": true,
     "strict": true,
     "target": "esnext",
+    "moduleResolution": "bundler",
     "skipLibCheck": true
   },
-  "include": ["global.d.ts", "./src/chess/*"]
+  "include": ["global.d.ts", "./src/chess/**/*"]
 }

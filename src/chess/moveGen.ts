@@ -370,8 +370,8 @@ const getCastlingMoves = ({
 export const getValid = (
   piecePosition: number,
   board: readonly string[],
-  enPassantTarget: number | null = null,
-  castle: CastleState = window.game.castle,
+  enPassantTarget: number | null,
+  castle: CastleState,
 ): readonly number[] => {
   const boardIndex = mailboxIndex;
   const piece = board[boardIndex[piecePosition]];

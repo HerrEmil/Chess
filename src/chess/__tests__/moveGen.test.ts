@@ -1,11 +1,6 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { getValid, isInCheck, getAllValidMovesNoCheck } from '../moveGen.js';
-import {
-  boardWithPieces,
-  emptyBoard,
-  STARTING_BOARD,
-  setupCastleState,
-} from './helpers.js';
+import { boardWithPieces, STARTING_BOARD, ALL_CASTLE } from './helpers.js';
 import { mailboxIndex } from '../main.js';
 
 /*
@@ -344,10 +339,6 @@ describe('isInCheck', () => {
 });
 
 describe('getValid (with check filtering)', () => {
-  beforeEach(() => {
-    setupCastleState();
-  });
-
   it('cannot move pinned piece away from pin line', () => {
     // White rook on e2 is pinned to king on e1 by black rook on e8.
     // It can only move along the e-file.
@@ -357,7 +348,7 @@ describe('getValid (with check filtering)', () => {
       { piece: 'R', index: 4 }, // e8 black rook
       { piece: 'K', index: 0 }, // a8 black king (out of the way)
     ]);
-    const moves = getValid(52, board);
+    const moves = getValid(52, board, null, ALL_CASTLE);
     // The rook can only move along the e-file (not off it)
     for (const move of moves) {
       expect(move % 8).toBe(4); // column e = index%8 == 4
@@ -370,7 +361,7 @@ describe('getValid (with check filtering)', () => {
       { piece: 'R', index: 3 }, // d8 black rook (controls d-file)
       { piece: 'K', index: 0 }, // a8 black king
     ]);
-    const moves = getValid(60, board);
+    const moves = getValid(60, board, null, ALL_CASTLE);
     // King should not be able to go to d1(59) or d2(51) as those are on the d-file
     expect(moves).not.toContain(59);
     expect(moves).not.toContain(51);
@@ -378,17 +369,13 @@ describe('getValid (with check filtering)', () => {
 });
 
 describe('castling', () => {
-  beforeEach(() => {
-    setupCastleState();
-  });
-
   it('white can castle kingside when path is clear', () => {
     const board = boardWithPieces([
       { piece: 'k', index: 60 }, // e1
       { piece: 'r', index: 63 }, // h1
       { piece: 'K', index: 4 },
     ]);
-    const moves = getValid(60, board);
+    const moves = getValid(60, board, null, ALL_CASTLE);
     expect(moves).toContain(62); // g1 (kingside castle)
   });
 
@@ -398,18 +385,18 @@ describe('castling', () => {
       { piece: 'r', index: 56 }, // a1
       { piece: 'K', index: 4 },
     ]);
-    const moves = getValid(60, board);
+    const moves = getValid(60, board, null, ALL_CASTLE);
     expect(moves).toContain(58); // c1 (queenside castle)
   });
 
   it('cannot castle when flag is false', () => {
-    setupCastleState({ whiteShortCastle: false });
+    const castle = { ...ALL_CASTLE, whiteShortCastle: false };
     const board = boardWithPieces([
       { piece: 'k', index: 60 },
       { piece: 'r', index: 63 },
       { piece: 'K', index: 4 },
     ]);
-    const moves = getValid(60, board);
+    const moves = getValid(60, board, null, castle);
     expect(moves).not.toContain(62);
   });
 
@@ -420,7 +407,7 @@ describe('castling', () => {
       { piece: 'b', index: 61 }, // f1 blocks
       { piece: 'K', index: 4 },
     ]);
-    const moves = getValid(60, board);
+    const moves = getValid(60, board, null, ALL_CASTLE);
     expect(moves).not.toContain(62);
   });
 
@@ -431,7 +418,7 @@ describe('castling', () => {
       { piece: 'R', index: 4 }, // e8 attacks e-file (king in check)
       { piece: 'K', index: 0 }, // a8
     ]);
-    const moves = getValid(60, board);
+    const moves = getValid(60, board, null, ALL_CASTLE);
     expect(moves).not.toContain(62);
   });
 
@@ -442,7 +429,7 @@ describe('castling', () => {
       { piece: 'R', index: 5 }, // f8 attacks f-file (f1 is in path)
       { piece: 'K', index: 0 }, // a8
     ]);
-    const moves = getValid(60, board);
+    const moves = getValid(60, board, null, ALL_CASTLE);
     expect(moves).not.toContain(62);
   });
 
@@ -452,7 +439,7 @@ describe('castling', () => {
       { piece: 'R', index: 7 }, // h8
       { piece: 'k', index: 60 }, // e1
     ]);
-    const moves = getValid(4, board);
+    const moves = getValid(4, board, null, ALL_CASTLE);
     expect(moves).toContain(6); // g8 (kingside castle)
   });
 
@@ -462,32 +449,28 @@ describe('castling', () => {
       { piece: 'R', index: 0 }, // a8
       { piece: 'k', index: 60 }, // e1
     ]);
-    const moves = getValid(4, board);
+    const moves = getValid(4, board, null, ALL_CASTLE);
     expect(moves).toContain(2); // c8 (queenside castle)
   });
 });
 
 describe('starting position moves', () => {
-  beforeEach(() => {
-    setupCastleState();
-  });
-
   it('white pawns on starting position each have 2 moves', () => {
     for (let i = 48; i <= 55; i++) {
-      const moves = getValid(i, STARTING_BOARD);
+      const moves = getValid(i, STARTING_BOARD, null, ALL_CASTLE);
       expect(moves).toHaveLength(2);
     }
   });
 
   it('white knights have 2 moves each from starting position', () => {
     // b1 knight (57) -> a3(40), c3(42)
-    const b1Moves = getValid(57, STARTING_BOARD);
+    const b1Moves = getValid(57, STARTING_BOARD, null, ALL_CASTLE);
     expect(b1Moves).toHaveLength(2);
     expect(b1Moves).toContain(40);
     expect(b1Moves).toContain(42);
 
     // g1 knight (62) -> f3(45), h3(47)
-    const g1Moves = getValid(62, STARTING_BOARD);
+    const g1Moves = getValid(62, STARTING_BOARD, null, ALL_CASTLE);
     expect(g1Moves).toHaveLength(2);
     expect(g1Moves).toContain(45);
     expect(g1Moves).toContain(47);
@@ -496,7 +479,7 @@ describe('starting position moves', () => {
   it('white bishops, rooks, queen, king have 0 valid moves from starting position', () => {
     // All blocked by pawns. Filter out -1 (known sliding-piece border bug).
     const validMoves = (i: number) =>
-      getValid(i, STARTING_BOARD).filter((m) => m >= 0);
+      getValid(i, STARTING_BOARD, null, ALL_CASTLE).filter((m) => m >= 0);
     expect(validMoves(56)).toHaveLength(0); // a1 rook
     expect(validMoves(58)).toHaveLength(0); // c1 bishop
     expect(validMoves(59)).toHaveLength(0); // d1 queen
@@ -508,7 +491,9 @@ describe('starting position moves', () => {
   it('total white valid moves from starting position is 20', () => {
     let totalMoves = 0;
     for (let i = 48; i <= 63; i++) {
-      totalMoves += getValid(i, STARTING_BOARD).filter((m) => m >= 0).length;
+      totalMoves += getValid(i, STARTING_BOARD, null, ALL_CASTLE).filter(
+        (m) => m >= 0,
+      ).length;
     }
     expect(totalMoves).toBe(20);
   });

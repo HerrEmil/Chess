@@ -1,4 +1,4 @@
-import { mailboxIndex } from '../main.js';
+import { mailboxIndex, type CastleState } from '../main.js';
 
 /**
  * Creates a 120-element mailbox board from a simplified 64-square representation.
@@ -43,22 +43,9 @@ export const boardWithPieces = (
   return board;
 };
 
-/**
- * Mock window.game.castle for castling tests.
- */
-export const setupCastleState = (
-  overrides: Partial<{
-    blackLongCastle: boolean;
-    blackShortCastle: boolean;
-    whiteLongCastle: boolean;
-    whiteShortCastle: boolean;
-  }> = {},
-): void => {
-  (globalThis as any).window.game.castle = {
-    blackLongCastle: true,
-    blackShortCastle: true,
-    whiteLongCastle: true,
-    whiteShortCastle: true,
-    ...overrides,
-  };
+export const ALL_CASTLE: CastleState = {
+  whiteShortCastle: true,
+  whiteLongCastle: true,
+  blackShortCastle: true,
+  blackLongCastle: true,
 };
