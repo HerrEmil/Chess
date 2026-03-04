@@ -14,6 +14,7 @@ export type GlobalChess = {
   readonly pawn: {
     pawnToConvert: number;
   };
+  enPassantTarget: number | null;
   board: string[];
   readonly boardIndex: readonly number[];
   blackAI: boolean;
@@ -34,7 +35,7 @@ export const mailboxIndex = [
 
 export const pieceOnIndex = ({
   board,
-  pieceIndex
+  pieceIndex,
 }: {
   readonly board: readonly string[];
   readonly pieceIndex: number;
@@ -47,7 +48,7 @@ window.turn = '' as color;
 window.AI = AI;
 window.startGame = startGame;
 
-window.game = ({
+window.game = {
   // prettier-ignore
   board: [
     '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
@@ -67,10 +68,11 @@ window.game = ({
     blackLongCastle: true,
     blackShortCastle: true,
     whiteLongCastle: true,
-    whiteShortCastle: true
+    whiteShortCastle: true,
   },
-  pawn: { pawnToConvert: -1 }
-} as Partial<GlobalChess>) as GlobalChess;
+  enPassantTarget: null,
+  pawn: { pawnToConvert: -1 },
+} as Partial<GlobalChess> as GlobalChess;
 
 const initChess = (): void => {
   buildBoard();
@@ -91,7 +93,8 @@ const initChess = (): void => {
 export const boardAfterMove = (
   board: readonly string[],
   moveStart: number,
-  moveGoal: number
+  moveGoal: number,
+  enPassantTarget: number | null = null,
 ): readonly string[] => {
   /*
    * The move we get are indexes of a regular board (0-63), but our boards
@@ -100,13 +103,28 @@ export const boardAfterMove = (
   const boardIndexGoal = mailboxIndex[moveGoal];
   const boardIndexStart = mailboxIndex[moveStart];
 
-  // Copy piece from start to goal and clear start
+  // Detect en passant capture: pawn moves diagonally to the en passant target square
+  const movingPiece = board[boardIndexStart].toLowerCase();
+  const isEnPassant =
+    movingPiece === 'p' &&
+    enPassantTarget !== null &&
+    moveGoal === enPassantTarget &&
+    board[boardIndexGoal] === '-';
+
+  // The captured pawn is behind the target square (same file, capturer's rank)
+  const capturedPawnMailbox = isEnPassant
+    ? mailboxIndex[moveGoal + (moveGoal > moveStart ? -8 : 8)]
+    : -1;
+
+  // Copy piece from start to goal, clear start, and remove captured pawn if en passant
   return board.map((piece, index) =>
     index === boardIndexGoal
       ? board[boardIndexStart]
       : index === boardIndexStart
-      ? '-'
-      : piece
+        ? '-'
+        : isEnPassant && index === capturedPawnMailbox
+          ? '-'
+          : piece,
   );
 };
 
@@ -125,7 +143,8 @@ export const switchTurn = (): void => {
   // After every turn switch, check if the game has ended
   const currentPlayerValids = getAllValidMoves(
     window.game.board,
-    getPiecesOfColor(window.game.board, window.turn)
+    getPiecesOfColor(window.game.board, window.turn),
+    window.game.enPassantTarget,
   ).flat();
 
   // If none of those pieces can move...
@@ -134,18 +153,18 @@ export const switchTurn = (): void => {
     endGame(isInCheck(window.game.board, window.turn));
   } else if (window.turn === 'black' && window.game.blackAI) {
     setTimeout(() => {
-      makeAIMove(3);
+      makeAIMove();
     }, 10);
   } else if (window.turn === 'white' && window.game.whiteAI) {
     setTimeout(() => {
-      makeAIMove(3);
+      makeAIMove();
     }, 10);
   }
 };
 
 const updateCastlingAllowedState = (
   moveOrigin: number,
-  moveDestination: number
+  moveDestination: number,
 ): void => {
   // King or rook moved
   switch (moveOrigin) {
@@ -196,22 +215,22 @@ const movePiece = (moveOrigin: number, moveDestination: number): void => {
   window.game.board = boardAfterMove(
     window.game.board,
     moveOrigin,
-    moveDestination
+    moveDestination,
   ) as string[];
   const destinationElement = document.getElementById(
-    `${moveDestination}`
+    `${moveDestination}`,
   ) as HTMLElement;
   destinationElement.innerHTML = '';
   destinationElement.appendChild(
     (document.getElementById(`${moveOrigin}`) as HTMLElement).querySelector(
-      'a'
-    ) as HTMLAnchorElement
+      'a',
+    ) as HTMLAnchorElement,
   );
 };
 
 const moveRookIfCastling = (
   moveOrigin: number,
-  moveDestination: number
+  moveDestination: number,
 ): void => {
   if (moveOrigin === 60) {
     if (window.game.castle.whiteLongCastle && moveDestination === 58) {
@@ -231,12 +250,11 @@ const moveRookIfCastling = (
   }
 };
 
-// eslint-disable-next-line max-statements
 const pawnConversion = (pawnPosition: number): void => {
   if (
     pieceOnIndex({
       board: window.game.board,
-      pieceIndex: pawnPosition
+      pieceIndex: pawnPosition,
     }).toLowerCase() === 'p'
   ) {
     if (window.turn === 'white' && pawnPosition < 8 && pawnPosition >= 0) {
@@ -268,24 +286,68 @@ const pawnConversion = (pawnPosition: number): void => {
 export const makeMove = (
   origin: number,
   destination: number,
-  AIMove: boolean
+  AIMove: boolean,
 ): void => {
   if (origin >= 0 && destination >= 0) {
-    $(`#${origin}`)
-      .children('a')
-      .attr('style', 'position: relative;');
+    $(`#${origin}`).children('a').attr('style', 'position: relative;');
 
     if (
       AIMove ||
-      (document.getElementById(
-        `${destination}`
-      ) as HTMLElement).classList.contains('valid')
+      (
+        document.getElementById(`${destination}`) as HTMLElement
+      ).classList.contains('valid')
     ) {
-      movePiece(origin, destination);
+      const piece = pieceOnIndex({
+        board: window.game.board,
+        pieceIndex: origin,
+      });
+      const isPawn = piece.toLowerCase() === 'p';
+
+      // Detect en passant capture before moving
+      const isEnPassant =
+        isPawn &&
+        window.game.enPassantTarget !== null &&
+        destination === window.game.enPassantTarget &&
+        pieceOnIndex({
+          board: window.game.board,
+          pieceIndex: destination,
+        }) === '-';
+
+      // Remove captured pawn's DOM element for en passant
+      if (isEnPassant) {
+        const capturedPawnIndex = destination + (destination > origin ? -8 : 8);
+        (
+          document.getElementById(`${capturedPawnIndex}`) as HTMLElement
+        ).innerHTML = '';
+      }
+
+      // Apply en passant-aware board update and move DOM piece
+      window.game.board = boardAfterMove(
+        window.game.board,
+        origin,
+        destination,
+        window.game.enPassantTarget,
+      ) as string[];
+      const destinationElement = document.getElementById(
+        `${destination}`,
+      ) as HTMLElement;
+      destinationElement.innerHTML = '';
+      destinationElement.appendChild(
+        (document.getElementById(`${origin}`) as HTMLElement).querySelector(
+          'a',
+        ) as HTMLAnchorElement,
+      );
 
       moveRookIfCastling(origin, destination);
 
       updateCastlingAllowedState(origin, destination);
+
+      // Update en passant target: set when pawn double-moves, clear otherwise
+      if (isPawn && Math.abs(destination - origin) === 16) {
+        window.game.enPassantTarget = (origin + destination) / 2;
+      } else {
+        window.game.enPassantTarget = null;
+      }
 
       pawnConversion(destination);
     }

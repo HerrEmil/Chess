@@ -1,13 +1,10 @@
-import {
-  boardAfterMove,
-  mailboxIndex,
-  makeMove,
-  pieceOnIndex
-} from './main.js';
-import { getAllValidMoves, getPiecesOfColor } from './util.js';
+import { boardAfterMove, mailboxIndex, makeMove, pieceOnIndex } from './main.js';
+import { getPiecesOfColor } from './util.js';
 import { getAllValidMovesNoCheck, isInCheck } from './moveGen.js';
 
 export type color = 'white' | 'black';
+
+const oppositeColor = (c: color): color => (c === 'white' ? 'black' : 'white');
 
 export type ChessAI = {
   readonly bishopTable: readonly number[];
@@ -16,8 +13,10 @@ export type ChessAI = {
   readonly knightTable: readonly number[];
   readonly pawnTable: readonly number[];
   whiteIntelligence: number;
+  whitePly: number;
   intelligence: number;
   blackIntelligence: number;
+  blackPly: number;
 };
 
 /*
@@ -27,9 +26,9 @@ export type ChessAI = {
 
 /*
  * Difficulty
- * 1 = Very easy. Original AI with more randomness, increase salt to AI breaking number.
- * 2 = Easy. The original AI.
- * 3 = Medium. Piece value + Strategic Positions
+ * 1 = Very Easy (ply 2). High randomness.
+ * 2 = Easy (ply 3). Piece value only.
+ * 3 = Medium (ply 4). Piece value + positional tables.
  */
 export const AI = {
   // prettier-ignore
@@ -44,10 +43,7 @@ export const AI = {
     -20, -10, -40, -10, -10, -40, -10, -20
   ],
   blackIntelligence: -1,
-  /*
-   * This value is the one actually used by the evaluation function
-   * It is set by makeMove depending on current turn
-   */
+  blackPly: 3,
   intelligence: -1,
   // prettier-ignore
   kingTable : [
@@ -93,14 +89,15 @@ export const AI = {
     5,    10,  10, -25, -25,  10,  10,   5,
     0,     0,   0,   0,   0,   0,   0,   0
   ],
-  whiteIntelligence: -1
+  whiteIntelligence: -1,
+  whitePly: 3,
 };
 
 const getPieceValueSum = ({
   board = [] as readonly string[],
   pieces = [] as readonly number[],
-  AILevel = 1
-}): number => 
+  AILevel = 1,
+}): number =>
   pieces.reduce((sum, piece) => {
     switch (pieceOnIndex({ board, pieceIndex: piece })) {
       case 'p':
@@ -126,173 +123,114 @@ const getPieceValueSum = ({
     }
   }, 0);
 
-
-// Evaluates the value of a state of a board
+// Evaluates the board relative to `currentColor`
 const evaluate = (board: readonly string[], currentColor: color): number => {
-  const whiteValue =
+  const currentValue =
     getPieceValueSum({
       AILevel: AI.intelligence,
       board,
-      pieces: getPiecesOfColor(board, 'white')
-    }) + (isInCheck(board, 'black') ? 0.5 : 0);
+      pieces: getPiecesOfColor(board, currentColor),
+    }) + (isInCheck(board, oppositeColor(currentColor)) ? 0.5 : 0);
 
-  const blackValue =
+  const opponentValue =
     getPieceValueSum({
       AILevel: AI.intelligence,
       board,
-      pieces: getPiecesOfColor(board, 'black')
-    }) + (isInCheck(board, 'white') ? 0.5 : 0);
-
-  const difference =
-    currentColor === 'white' ? whiteValue - blackValue : blackValue - whiteValue;
+      pieces: getPiecesOfColor(board, oppositeColor(currentColor)),
+    }) + (isInCheck(board, currentColor) ? 0.5 : 0);
 
   const salt = Math.random() * (AI.intelligence === 1 ? 1000 : 0.1);
-  return salt + difference;
+  return salt + (currentValue - opponentValue);
 };
 
 /*
- * Best move lookup function
- * Given ply >1, return array will contain move with start position and end position, on index 0 and 1 respectively
- * Given ply 1, return array will contain a value of the boardState, on index 2
+ * Negamax with alpha-beta pruning.
+ * Returns [bestMoveStart, bestMoveGoal, score].
+ * Score is always from the perspective of the current player.
  */
-// eslint-disable-next-line max-statements, max-lines-per-function
-const maxMove = (
+const computeEnPassantTarget = (
   board: readonly string[],
-  player: color,
-  ply: number,
+  moveStart: number,
+  moveGoal: number,
+): number | null => {
+  const piece = board[mailboxIndex[moveStart]].toLowerCase();
+  if (piece === 'p' && Math.abs(moveGoal - moveStart) === 16) {
+    return (moveStart + moveGoal) / 2;
+  }
+  return null;
+};
+
+const negamax = (
+  board: readonly string[],
+  currentPlayer: color,
+  depth: number,
   alpha: number,
   beta: number,
-  boardIndex: readonly number[]
-  // eslint-disable-next-line max-params
+  enPassantTarget: number | null = null,
 ): readonly number[] => {
-  if (ply === 1) {
-    // eslint-disable-next-line no-sparse-arrays
-    return [, , evaluate(board, player)] as readonly number[];
+  if (depth === 0) {
+    return [-1, -1, evaluate(board, currentPlayer)];
   }
 
-  const pieces = getPiecesOfColor(board, player);
-  const moves = getAllValidMoves(board, pieces);
+  const pieces = getPiecesOfColor(board, currentPlayer);
+  const moves = getAllValidMovesNoCheck(board, pieces, enPassantTarget);
 
-  if (moves.length === 0) {
-    // eslint-disable-next-line no-sparse-arrays
-    return [, , evaluate(board, player)] as readonly number[];
+  if (moves.flat().length === 0) {
+    return [-1, -1, evaluate(board, currentPlayer)];
   }
 
-  let localBestMoveStart = -1;
-  let localBestMoveGoal = -1;
+  let bestStart = -1;
+  let bestGoal = -1;
   let localAlpha = alpha;
+
   for (let pieceIndex = 0; pieceIndex < pieces.length; pieceIndex += 1) {
     for (const move of moves[pieceIndex]) {
-      // eslint-disable-next-line no-use-before-define
-      const childMove = minMove(
-        boardAfterMove(board, pieces[pieceIndex].valueOf(), move.valueOf()),
-        player,
-        ply - 1,
-        localAlpha,
-        beta,
-        boardIndex
+      const start = pieces[pieceIndex].valueOf();
+      const goal = move.valueOf();
+      const childBoard = boardAfterMove(board, start, goal, enPassantTarget);
+      const childEp = computeEnPassantTarget(board, start, goal);
+
+      const childResult = negamax(
+        childBoard,
+        oppositeColor(currentPlayer),
+        depth - 1,
+        -beta,
+        -localAlpha,
+        childEp,
       );
 
-      if (childMove.length === 3) {
-        if (childMove[2].valueOf() > localAlpha) {
-          localAlpha = childMove[2].valueOf();
-          localBestMoveStart = pieces[pieceIndex].valueOf();
-          localBestMoveGoal = move.valueOf();
-        }
+      const score = -childResult[2];
+
+      if (score > localAlpha) {
+        localAlpha = score;
+        bestStart = start;
+        bestGoal = goal;
       }
 
-      if (beta < localAlpha) {
-        return [localBestMoveStart, localBestMoveGoal, localAlpha];
+      if (localAlpha >= beta) {
+        return [bestStart, bestGoal, localAlpha];
       }
     }
   }
-  return [localBestMoveStart, localBestMoveGoal, localAlpha];
-};
 
-// eslint-disable-next-line max-statements, max-lines-per-function
-const minMove = (
-  board: readonly string[],
-  player: color,
-  ply: number,
-  alpha: number,
-  beta: number,
-  boardIndex: readonly number[]
-  // eslint-disable-next-line max-params
-): readonly number[] => {
-  if (ply === 1) {
-    // eslint-disable-next-line no-sparse-arrays
-    return [, , evaluate(board, player)] as readonly number[];
-  }
-
-  const minPlayer = player === 'white' ? 'black' : 'white';
-  const pieces = getPiecesOfColor(board, minPlayer);
-  const moves: readonly (readonly number[])[] = getAllValidMovesNoCheck(
-    board,
-    pieces
-  );
-
-  if (moves.length === 0) {
-    // eslint-disable-next-line no-sparse-arrays
-    return [, , evaluate(board, minPlayer)] as readonly number[];
-  }
-
-  let localBestMoveStart = -1;
-  let localBestMoveGoal = -1;
-  let localBeta = beta;
-  for (let pieceIndex = 0; pieceIndex < pieces.length; pieceIndex += 1) {
-    for (const move of moves[pieceIndex]) {
-      const childMove = maxMove(
-        boardAfterMove(board, pieces[pieceIndex].valueOf(), move.valueOf()),
-        player,
-        ply - 1,
-        alpha,
-        localBeta,
-        boardIndex
-      );
-
-      if (childMove.length === 3) {
-        if (childMove[2].valueOf() < localBeta) {
-          localBeta = childMove[2].valueOf();
-          localBestMoveStart = pieces[pieceIndex].valueOf();
-          localBestMoveGoal = move.valueOf();
-        }
-      }
-
-      if (localBeta < alpha) {
-        return [localBestMoveStart, localBestMoveGoal, localBeta];
-      }
-    }
-  }
-  return [localBestMoveStart, localBestMoveGoal, localBeta];
+  return [bestStart, bestGoal, localAlpha];
 };
 
 /*
- * This is the main AI function that is called from the game
- * The ply value has to be 2 or higher for the AI to behave
- * Note: There is something broken that causes the AI to only work when
- * given odd numbers, effectively limiting it to just accepting 3
+ * Main AI entry point. Ply depth is determined by difficulty level.
  */
-export const makeAIMove = (ply: number): void => {
-  const alpha = -100000;
-  const beta = 100000;
-
-  // Make sure that ply is 2 or higher
-  if (ply <= 2) {
-    return;
-  }
-
-  // Set the evaluation difficulty
+export const makeAIMove = (): void => {
   AI.intelligence =
     window.turn === 'white' ? AI.whiteIntelligence : AI.blackIntelligence;
+  const ply = window.turn === 'white' ? AI.whitePly : AI.blackPly;
 
-  // Call best move lookup function
-  const bestMove = maxMove(
+  const bestMove = negamax(
     window.game.board,
     window.turn,
     ply,
-    alpha,
-    beta,
-    mailboxIndex
+    -100000,
+    100000,
+    window.game.enPassantTarget,
   );
 
   makeMove(bestMove[0], bestMove[1], true);

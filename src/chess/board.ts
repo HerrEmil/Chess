@@ -13,15 +13,10 @@ const scaleBoard = (): void => {
   const tdSize = Math.floor(pik / $('tr').length);
   const fontSize = tdSize / 25;
   $('#board').css('font-size', `${fontSize}em`);
-  $('td')
-    .css('width', '')
-    .css('height', '')
-    .width(tdSize)
-    .height(tdSize);
+  $('td').css('width', '').css('height', '').width(tdSize).height(tdSize);
 };
 
 // This file deals with functions building, scaling and modifying the board
-// eslint-disable-next-line max-statements
 export const buildBoard = (): void => {
   // Initialize an empty table
   const tableElement = $('<table />');
@@ -50,7 +45,6 @@ export const buildBoard = (): void => {
 };
 
 // Fill board with chess setup.
-// eslint-disable-next-line max-statements
 export const setBoard = (): void => {
   $('td').html('');
   $('#56').html('<a href="#" class="white rook">&#9820;</a>');
@@ -94,19 +88,15 @@ const markValids = (array: readonly number[]): void => {
 };
 
 // Horribly long function for creating and positioning the A-H and 1-8 Labels
-// eslint-disable-next-line max-statements, max-lines-per-function
 export const setLabels = (): void => {
   // Delete old edgeLabels (for resize)
   $('.edgeLabel').remove();
 
   const cellSize = $('table tr:nth(1)').height() as number;
-  const leftPos = parseInt(($('#0').position().left as unknown) as string, 10);
-  const topPosLet1 = parseInt(
-    ($('#0').position().top as unknown) as string,
-    10
-  );
+  const leftPos = parseInt($('#0').position().left as unknown as string, 10);
+  const topPosLet1 = parseInt($('#0').position().top as unknown as string, 10);
   const topPosLet2 =
-    parseInt(($('#56').position().top as unknown) as string, 10) + cellSize + 1;
+    parseInt($('#56').position().top as unknown as string, 10) + cellSize + 1;
   const fontSize = cellSize / 50;
 
   for (let index = 0; index < 8; index += 1) {
@@ -117,34 +107,38 @@ export const setLabels = (): void => {
     // Set the two numbered cols
     $('#main').append(
       $(
-        `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:40px;top:${topPos}px;left:${leftPos -
-          40}px;line-height:${cellSize}px;font-size:${fontSize}em">${9 -
-          (index + 1)}</p>`
-      )
+        `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:40px;top:${topPos}px;left:${
+          leftPos - 40
+        }px;line-height:${cellSize}px;font-size:${fontSize}em">${
+          9 - (index + 1)
+        }</p>`,
+      ),
     );
     $('#main').append(
       $(
-        `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:40px;top:${topPos}px;left:${leftPos +
-          cellSize *
-            8}px;line-height:${cellSize}px;font-size:${fontSize}em">${9 -
-          (index + 1)}</p>`
-      )
+        `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:40px;top:${topPos}px;left:${
+          leftPos + cellSize * 8
+        }px;line-height:${cellSize}px;font-size:${fontSize}em">${
+          9 - (index + 1)
+        }</p>`,
+      ),
     );
     // Set the two lettered rows
     $('#main').append(
       $(
         `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:40px;top:${topPosLet2}px;left:${leftPosLet}px;line-height:40px;font-size:${fontSize}em;width:${cellSize}px">${intToCol(
-          index
-        )}</p>`
-      )
+          index,
+        )}</p>`,
+      ),
     );
     $('#main').append(
       $(
-        `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:40px;top:${topPosLet1 -
-          40}px;left:${leftPosLet}px;line-height:40px;font-size:${fontSize}em;width:${cellSize}px">${intToCol(
-          index
-        )}</p>`
-      )
+        `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:40px;top:${
+          topPosLet1 - 40
+        }px;left:${leftPosLet}px;line-height:40px;font-size:${fontSize}em;width:${cellSize}px">${intToCol(
+          index,
+        )}</p>`,
+      ),
     );
   }
   const blackTopPos = topPosLet1 + cellSize / 2;
@@ -156,7 +150,7 @@ export const setLabels = (): void => {
     left: `${bothLeftPos}px`,
     'line-height': `${cellSize}px`,
     top: `${blackTopPos}px`,
-    width: `${cellSize}px`
+    width: `${cellSize}px`,
   });
   $('#whiteTurn2').css({
     'font-size': `${fontSize * 2}em`,
@@ -164,50 +158,42 @@ export const setLabels = (): void => {
     left: `${bothLeftPos}px`,
     'line-height': `${cellSize}px`,
     top: `${whiteTopPos}px`,
-    width: `${cellSize}px`
+    width: `${cellSize}px`,
   });
 };
 
-// eslint-disable-next-line max-lines-per-function
 export const bindEvents = (): void => {
   $('#board a')
     .on('mousedown', ({ target }) => {
-      const location = parseInt(
-        $(target)
-          .parent()
-          .attr('id') as string,
-        10
-      );
+      const location = parseInt($(target).parent().attr('id') as string, 10);
       window.inHand = location;
-      window.mousePos = $(target)
-        .parent()
-        .addClass('origin');
-      markValids(getValid(location, window.game.board));
+      window.mousePos = $(target).parent().addClass('origin');
+      markValids(
+        getValid(location, window.game.board, window.game.enPassantTarget),
+      );
       return false;
     })
     .draggable({
       containment: $('#board'),
       grid: [
         $('table tr:nth(1)').height() as number,
-        $('table tr:nth(1)').height() as number
+        $('table tr:nth(1)').height() as number,
       ],
-      zIndex: 1000
+      zIndex: 1000,
     });
 
   $('#board td').on('mouseup', ({ target }) => {
     makeMove(
       window.inHand as number,
       parseInt($(target).attr('id') as string, 10),
-      false
+      false,
     );
   });
 
   $('#board').on('mouseleave', () => {
     $(document).mouseup();
     if (window.inHand !== '') {
-      $(`#${window.inHand}`)
-        .children('a')
-        .attr('style', 'position: relative;');
+      $(`#${window.inHand}`).children('a').attr('style', 'position: relative;');
       window.inHand = '';
     }
 

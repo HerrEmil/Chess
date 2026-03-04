@@ -1,4 +1,3 @@
-/* eslint-disable max-lines */
 import { boardAfterMove, mailboxIndex } from './main.js';
 import { color as chessColor } from './ai.js';
 import { getPiecesOfColor } from './util.js';
@@ -7,7 +6,7 @@ const getValidPositionsInDirection = ({
   board,
   color,
   direction,
-  startPosition
+  startPosition,
 }: {
   readonly board: readonly string[];
   readonly color: chessColor;
@@ -37,7 +36,7 @@ const getValidPositionsInDirection = ({
 const rookValids = ({
   board,
   index,
-  color
+  color,
 }: {
   readonly board: readonly string[];
   readonly color: chessColor;
@@ -49,33 +48,33 @@ const rookValids = ({
       board,
       color,
       direction: -10,
-      startPosition
+      startPosition,
     }),
     ...getValidPositionsInDirection({
       board,
       color,
       direction: 10,
-      startPosition
+      startPosition,
     }),
     ...getValidPositionsInDirection({
       board,
       color,
       direction: -1,
-      startPosition
+      startPosition,
     }),
     ...getValidPositionsInDirection({
       board,
       color,
       direction: 1,
-      startPosition
-    })
+      startPosition,
+    }),
   ];
 };
 
 const bishopValids = ({
   board,
   index,
-  color
+  color,
 }: {
   readonly board: readonly string[];
   readonly color: chessColor;
@@ -87,26 +86,26 @@ const bishopValids = ({
       board,
       color,
       direction: -9,
-      startPosition
+      startPosition,
     }),
     ...getValidPositionsInDirection({
       board,
       color,
       direction: 9,
-      startPosition
+      startPosition,
     }),
     ...getValidPositionsInDirection({
       board,
       color,
       direction: -11,
-      startPosition
+      startPosition,
     }),
     ...getValidPositionsInDirection({
       board,
       color,
       direction: 11,
-      startPosition
-    })
+      startPosition,
+    }),
   ];
 };
 
@@ -120,7 +119,7 @@ const knightValids = ({
   board,
   boardIndex,
   index,
-  color
+  color,
 }: {
   readonly board: readonly string[];
   readonly boardIndex: readonly number[];
@@ -136,19 +135,19 @@ const knightValids = ({
     startPosition + 8,
     startPosition + 12,
     startPosition + 19,
-    startPosition + 21
+    startPosition + 21,
   ]
-    .filter(position =>
-      colorCanStepOnPiece(color, board[position].charCodeAt(0))
+    .filter((position) =>
+      colorCanStepOnPiece(color, board[position].charCodeAt(0)),
     )
-    .map(position => boardIndex.indexOf(position));
+    .map((position) => boardIndex.indexOf(position));
 };
 
 const kingValids = ({
   board,
   boardIndex,
   index,
-  color
+  color,
 }: {
   readonly board: readonly string[];
   readonly boardIndex: readonly number[];
@@ -164,24 +163,26 @@ const kingValids = ({
     startPosition + 1,
     startPosition + 9,
     startPosition + 10,
-    startPosition + 11
+    startPosition + 11,
   ]
-    .filter(position =>
-      colorCanStepOnPiece(color, board[position].charCodeAt(0))
+    .filter((position) =>
+      colorCanStepOnPiece(color, board[position].charCodeAt(0)),
     )
-    .map(position => boardIndex.indexOf(position));
+    .map((position) => boardIndex.indexOf(position));
 };
 
 const pawnValids = ({
   board,
   boardIndex,
   index,
-  color
+  color,
+  enPassantTarget = null,
 }: {
   readonly board: readonly string[];
   readonly boardIndex: readonly number[];
   readonly color: chessColor;
   readonly index: number;
+  readonly enPassantTarget?: number | null;
 }): readonly number[] => {
   const pos = boardIndex[index];
   const valids = [];
@@ -196,20 +197,30 @@ const pawnValids = ({
       valids.push(boardIndex.indexOf(doubleForward));
     }
   }
-  return [
-    ...valids,
-    ...[
-      color === 'black' ? pos + 9 : pos - 9,
-      color === 'black' ? pos + 11 : pos - 11
-    ]
-      .filter(position => {
-        const piece = board[position].charCodeAt(0);
-        return color === 'black'
-          ? piece > 96 && piece < 115
-          : piece > 64 && piece < 83;
-      })
-      .map(position => boardIndex.indexOf(position))
+
+  const diagonals = [
+    color === 'black' ? pos + 9 : pos - 9,
+    color === 'black' ? pos + 11 : pos - 11,
   ];
+
+  const captures = diagonals
+    .filter((position) => {
+      const piece = board[position].charCodeAt(0);
+      return color === 'black'
+        ? piece > 96 && piece < 115
+        : piece > 64 && piece < 83;
+    })
+    .map((position) => boardIndex.indexOf(position));
+
+  // Add en passant capture if the target square is a valid diagonal
+  if (enPassantTarget !== null) {
+    const epMailbox = boardIndex[enPassantTarget];
+    if (diagonals.includes(epMailbox)) {
+      captures.push(enPassantTarget);
+    }
+  }
+
+  return [...valids, ...captures];
 };
 
 const getStandardMoves = ({
@@ -217,19 +228,21 @@ const getStandardMoves = ({
   board,
   boardIndex,
   piecePosition: index,
-  pieceColor: color
+  pieceColor: color,
+  enPassantTarget = null,
 }: {
   readonly pieceType: string;
   readonly board: readonly string[];
   readonly boardIndex: readonly number[];
   readonly piecePosition: number;
   readonly pieceColor: chessColor;
+  readonly enPassantTarget?: number | null;
 }): readonly number[] => {
   const boardPayload = {
     board,
     boardIndex,
     color,
-    index
+    index,
   };
   switch (pieceType) {
     case 'r':
@@ -243,7 +256,7 @@ const getStandardMoves = ({
     case 'k':
       return kingValids(boardPayload);
     case 'p':
-      return pawnValids(boardPayload);
+      return pawnValids({ ...boardPayload, enPassantTarget });
     default:
       return [];
   }
@@ -251,7 +264,8 @@ const getStandardMoves = ({
 
 const getValidNoCheck = (
   board: readonly string[],
-  piecePosition: number
+  piecePosition: number,
+  enPassantTarget: number | null = null,
 ): readonly number[] => {
   const piece = board[mailboxIndex[piecePosition]];
   const pieceType = piece.toLowerCase();
@@ -259,41 +273,42 @@ const getValidNoCheck = (
   return getStandardMoves({
     board,
     boardIndex: mailboxIndex,
+    enPassantTarget,
     pieceColor: pieceType === piece ? 'white' : 'black',
     piecePosition,
-    pieceType
+    pieceType,
   });
 };
 
 export const getAllValidMovesNoCheck = (
   board: readonly string[],
-  pieces: readonly number[]
+  pieces: readonly number[],
+  enPassantTarget: number | null = null,
 ): readonly (readonly number[])[] =>
-  pieces.map(piece => getValidNoCheck(board, piece));
+  pieces.map((piece) => getValidNoCheck(board, piece, enPassantTarget));
 
 export const isInCheck = (
   board: readonly string[],
-  color: chessColor
+  color: chessColor,
 ): boolean => {
   const positionsOpponentCanMoveTo = getAllValidMovesNoCheck(
     board,
-    getPiecesOfColor(board, color === 'white' ? 'black' : 'white')
+    getPiecesOfColor(board, color === 'white' ? 'black' : 'white'),
   ).flat();
 
   const kingPosition = mailboxIndex.indexOf(
-    board.indexOf(color === 'white' ? 'k' : 'K')
+    board.indexOf(color === 'white' ? 'k' : 'K'),
   );
 
   return positionsOpponentCanMoveTo.includes(kingPosition);
 };
 
-// eslint-disable-next-line max-statements, max-lines-per-function
 const getCastlingMoves = ({
   type,
   color,
   valids,
   board,
-  boardIndex
+  boardIndex,
 }: {
   readonly type: string;
   readonly color: chessColor;
@@ -345,7 +360,8 @@ const getCastlingMoves = ({
 
 export const getValid = (
   piecePosition: number,
-  board: readonly string[]
+  board: readonly string[],
+  enPassantTarget: number | null = null,
 ): readonly number[] => {
   const boardIndex = mailboxIndex;
   const piece = board[boardIndex[piecePosition]];
@@ -354,19 +370,24 @@ export const getValid = (
   const standardMoves = getStandardMoves({
     board,
     boardIndex,
+    enPassantTarget,
     pieceColor: color,
     piecePosition,
-    pieceType: type
+    pieceType: type,
   });
   const castlingMoves = getCastlingMoves({
     board,
     boardIndex,
     color,
     type,
-    valids: standardMoves
+    valids: standardMoves,
   });
 
   return [...standardMoves, ...castlingMoves].filter(
-    move => !isInCheck(boardAfterMove(board, piecePosition, move), color)
+    (move) =>
+      !isInCheck(
+        boardAfterMove(board, piecePosition, move, enPassantTarget),
+        color,
+      ),
   );
 };

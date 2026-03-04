@@ -4,7 +4,7 @@ import { mailboxIndex } from './main.js';
 
 export const getPiecesOfColor = (
   board: readonly string[],
-  color: ChessColor
+  color: ChessColor,
 ): readonly number[] => {
   const charCodeLowerBound = color === 'white' ? 97 : 65;
   const charCodeUpperBound = color === 'white' ? 114 : 82;
@@ -17,6 +17,7 @@ export const getPiecesOfColor = (
 
 export const getAllValidMoves = (
   board: readonly string[],
-  pieces: readonly number[]
+  pieces: readonly number[],
+  enPassantTarget: number | null = null,
 ): readonly (readonly number[])[] =>
-  pieces.map(piece => getValid(piece, board));
+  pieces.map((piece) => getValid(piece, board, enPassantTarget));
