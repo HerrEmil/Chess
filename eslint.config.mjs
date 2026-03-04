@@ -37,7 +37,7 @@ export default tseslint.config(
       "one-var": "off",
       "prefer-const": "error",
       "no-var": "error",
-      "no-param-reassign": "warn",
+      "no-param-reassign": "error",
       "no-loop-func": "error",
     },
   },

@@ -18,7 +18,7 @@ export type CastleState = {
 };
 
 export type GlobalChess = {
-  readonly castle: CastleState;
+  castle: CastleState;
   readonly pawn: {
     pawnToConvert: number;
   };
@@ -156,52 +156,58 @@ export const boardAfterMove = (
 // --- Pure game logic functions ---
 
 export type MoveResult = {
+  board: string[];
+  castle: CastleState;
   castlingRookMove: [number, number] | null;
   enPassantCaptureIndex: number | null;
+  enPassantTarget: number | null;
+  halfMoveClock: number;
 };
 
 const computeCastlingRookMove = (
-  game: GlobalChess,
+  castle: CastleState,
   origin: number,
   destination: number,
 ): [number, number] | null => {
   if (origin === 60) {
-    if (game.castle.whiteLongCastle && destination === 58) return [56, 59];
-    if (game.castle.whiteShortCastle && destination === 62) return [63, 61];
+    if (castle.whiteLongCastle && destination === 58) return [56, 59];
+    if (castle.whiteShortCastle && destination === 62) return [63, 61];
   }
   if (origin === 4) {
-    if (game.castle.blackLongCastle && destination === 2) return [0, 3];
-    if (game.castle.blackShortCastle && destination === 6) return [7, 5];
+    if (castle.blackLongCastle && destination === 2) return [0, 3];
+    if (castle.blackShortCastle && destination === 6) return [7, 5];
   }
   return null;
 };
 
-const updateCastlingAllowedState = (
-  game: GlobalChess,
+const computeCastleState = (
+  castle: CastleState,
   moveOrigin: number,
   moveDestination: number,
-): void => {
+): CastleState => {
+  const updated = { ...castle };
+
   // King or rook moved
   switch (moveOrigin) {
     case 60:
-      game.castle.whiteLongCastle = false;
-      game.castle.whiteShortCastle = false;
+      updated.whiteLongCastle = false;
+      updated.whiteShortCastle = false;
       break;
     case 4:
-      game.castle.blackLongCastle = false;
-      game.castle.blackShortCastle = false;
+      updated.blackLongCastle = false;
+      updated.blackShortCastle = false;
       break;
     case 63:
-      game.castle.whiteShortCastle = false;
+      updated.whiteShortCastle = false;
       break;
     case 56:
-      game.castle.whiteLongCastle = false;
+      updated.whiteLongCastle = false;
       break;
     case 7:
-      game.castle.blackShortCastle = false;
+      updated.blackShortCastle = false;
       break;
     case 0:
-      game.castle.blackLongCastle = false;
+      updated.blackLongCastle = false;
       break;
     default:
       break;
@@ -210,20 +216,22 @@ const updateCastlingAllowedState = (
   // Rook captured
   switch (moveDestination) {
     case 63:
-      game.castle.whiteShortCastle = false;
+      updated.whiteShortCastle = false;
       break;
     case 56:
-      game.castle.whiteLongCastle = false;
+      updated.whiteLongCastle = false;
       break;
     case 7:
-      game.castle.blackShortCastle = false;
+      updated.blackShortCastle = false;
       break;
     case 0:
-      game.castle.blackLongCastle = false;
+      updated.blackLongCastle = false;
       break;
     default:
       break;
   }
+
+  return updated;
 };
 
 export const applyMove = (
@@ -253,10 +261,14 @@ export const applyMove = (
   const isCapture = destPiece !== '-' || isEnPassant;
 
   // Compute castling rook move before updating castling state
-  const castlingRookMove = computeCastlingRookMove(game, origin, destination);
+  const castlingRookMove = computeCastlingRookMove(
+    game.castle,
+    origin,
+    destination,
+  );
 
   // Apply main piece move to board
-  game.board = boardAfterMove(
+  let board = boardAfterMove(
     game.board,
     origin,
     destination,
@@ -265,35 +277,38 @@ export const applyMove = (
 
   // Apply castling rook move to board
   if (castlingRookMove) {
-    game.board = boardAfterMove(
-      game.board,
+    board = boardAfterMove(
+      board,
       castlingRookMove[0],
       castlingRookMove[1],
     ) as string[];
   }
 
-  updateCastlingAllowedState(game, origin, destination);
+  const castle = computeCastleState(game.castle, origin, destination);
 
   // Update en passant target: set when pawn double-moves, clear otherwise
-  if (isPawn && Math.abs(destination - origin) === 16) {
-    game.enPassantTarget = (origin + destination) / 2;
-  } else {
-    game.enPassantTarget = null;
-  }
+  const enPassantTarget =
+    isPawn && Math.abs(destination - origin) === 16
+      ? (origin + destination) / 2
+      : null;
 
   // Update half-move clock: reset on pawn move or capture, increment otherwise
-  if (isPawn || isCapture) {
-    game.halfMoveClock = 0;
-  } else {
-    game.halfMoveClock += 1;
-  }
+  const halfMoveClock = isPawn || isCapture ? 0 : game.halfMoveClock + 1;
 
-  return { castlingRookMove, enPassantCaptureIndex };
+  return {
+    board,
+    castle,
+    castlingRookMove,
+    enPassantCaptureIndex,
+    enPassantTarget,
+    halfMoveClock,
+  };
 };
 
 export type TurnEndResult = {
   gameEnd: GameResult | null;
   newTurn: color;
+  positionEntry: { key: string; count: number };
   shouldTriggerAI: boolean;
 };
 
@@ -303,7 +318,7 @@ export const checkTurnEnd = (
 ): TurnEndResult => {
   const newTurn: color = currentTurn === 'white' ? 'black' : 'white';
 
-  // Record position and check draw rules
+  // Compute position key and count (without mutating positionHistory)
   const key = positionKey(
     game.board,
     newTurn,
@@ -311,14 +326,24 @@ export const checkTurnEnd = (
     game.enPassantTarget,
   );
   const count = (game.positionHistory.get(key) ?? 0) + 1;
-  game.positionHistory.set(key, count);
+  const positionEntry = { count, key };
 
   if (count >= 3) {
-    return { gameEnd: 'repetition', newTurn, shouldTriggerAI: false };
+    return {
+      gameEnd: 'repetition',
+      newTurn,
+      positionEntry,
+      shouldTriggerAI: false,
+    };
   }
 
   if (game.halfMoveClock >= 100) {
-    return { gameEnd: 'fifty-move', newTurn, shouldTriggerAI: false };
+    return {
+      gameEnd: 'fifty-move',
+      newTurn,
+      positionEntry,
+      shouldTriggerAI: false,
+    };
   }
 
   // Check if the next player has any valid moves
@@ -331,14 +356,14 @@ export const checkTurnEnd = (
 
   if (!currentPlayerValids.length) {
     const result = isInCheck(game.board, newTurn) ? 'checkmate' : 'stalemate';
-    return { gameEnd: result, newTurn, shouldTriggerAI: false };
+    return { gameEnd: result, newTurn, positionEntry, shouldTriggerAI: false };
   }
 
   const shouldTriggerAI =
     (newTurn === 'black' && game.blackAI) ||
     (newTurn === 'white' && game.whiteAI);
 
-  return { gameEnd: null, newTurn, shouldTriggerAI };
+  return { gameEnd: null, newTurn, positionEntry, shouldTriggerAI };
 };
 
 export type PawnConversionAction =
@@ -381,6 +406,10 @@ const renderPieceMove = (origin: number, destination: number): void => {
 
 export const switchTurn = (): void => {
   const result = checkTurnEnd(appState.game, appState.turn);
+  appState.game.positionHistory.set(
+    result.positionEntry.key,
+    result.positionEntry.count,
+  );
 
   // Hide the turn for the one that just moved
   $(`.${appState.turn}`).addClass('notYourTurn');
@@ -445,11 +474,13 @@ export const makeMove = (
         document.getElementById(`${destination}`) as HTMLElement
       ).classList.contains('valid')
     ) {
-      const { enPassantCaptureIndex, castlingRookMove } = applyMove(
-        appState.game,
-        origin,
-        destination,
-      );
+      const result = applyMove(appState.game, origin, destination);
+      appState.game.board = result.board;
+      appState.game.castle = result.castle;
+      appState.game.enPassantTarget = result.enPassantTarget;
+      appState.game.halfMoveClock = result.halfMoveClock;
+
+      const { enPassantCaptureIndex, castlingRookMove } = result;
 
       // Remove captured pawn's DOM element for en passant
       if (enPassantCaptureIndex !== null) {

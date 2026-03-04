@@ -30,8 +30,8 @@ const makeGame = (overrides: Partial<GlobalChess> = {}): GlobalChess => ({
 describe('applyMove', () => {
   it('resets half-move clock on pawn move', () => {
     const game = makeGame({ halfMoveClock: 5 });
-    applyMove(game, 52, 44); // e2-e4
-    expect(game.halfMoveClock).toBe(0);
+    const result = applyMove(game, 52, 44); // e2-e4
+    expect(result.halfMoveClock).toBe(0);
   });
 
   it('resets half-move clock on capture', () => {
@@ -42,8 +42,8 @@ describe('applyMove', () => {
       ]),
       halfMoveClock: 7,
     });
-    applyMove(game, 40, 33); // knight captures
-    expect(game.halfMoveClock).toBe(0);
+    const result = applyMove(game, 40, 33); // knight captures
+    expect(result.halfMoveClock).toBe(0);
   });
 
   it('increments half-move clock on quiet move', () => {
@@ -54,8 +54,8 @@ describe('applyMove', () => {
       ]),
       halfMoveClock: 3,
     });
-    applyMove(game, 57, 42); // Ng1-f3
-    expect(game.halfMoveClock).toBe(4);
+    const result = applyMove(game, 57, 42); // Ng1-f3
+    expect(result.halfMoveClock).toBe(4);
   });
 
   it('returns en passant capture index', () => {
@@ -95,15 +95,15 @@ describe('applyMove', () => {
         { piece: 'r', index: 56 },
       ]),
     });
-    applyMove(game, 60, 61);
-    expect(game.castle.whiteLongCastle).toBe(false);
-    expect(game.castle.whiteShortCastle).toBe(false);
+    const result = applyMove(game, 60, 61);
+    expect(result.castle.whiteLongCastle).toBe(false);
+    expect(result.castle.whiteShortCastle).toBe(false);
   });
 
   it('sets en passant target on double pawn push', () => {
     const game = makeGame();
-    applyMove(game, 52, 36); // e2-e4
-    expect(game.enPassantTarget).toBe(44);
+    const result = applyMove(game, 52, 36); // e2-e4
+    expect(result.enPassantTarget).toBe(44);
   });
 });
 
@@ -143,14 +143,22 @@ describe('checkTurnEnd', () => {
 
   it('detects threefold repetition', () => {
     const game = makeGame();
-    const key = 'test-key';
-    game.positionHistory.set(key, 999); // won't match positionKey
 
-    // First two calls record position
-    checkTurnEnd(game, 'white');
-    checkTurnEnd(game, 'white');
-    // Third triggers repetition
-    const result = checkTurnEnd(game, 'white');
+    // Simulate caller applying positionEntry between calls
+    let result = checkTurnEnd(game, 'white');
+    game.positionHistory.set(
+      result.positionEntry.key,
+      result.positionEntry.count,
+    );
+
+    result = checkTurnEnd(game, 'white');
+    game.positionHistory.set(
+      result.positionEntry.key,
+      result.positionEntry.count,
+    );
+
+    // Third call triggers repetition
+    result = checkTurnEnd(game, 'white');
     expect(result.gameEnd).toBe('repetition');
   });
 
