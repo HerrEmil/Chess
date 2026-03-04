@@ -18,12 +18,11 @@ export type ChessAI = {
   readonly knightTable: readonly number[];
   readonly pawnTable: readonly number[];
   whiteIntelligence: number;
-  intelligence: number;
   blackIntelligence: number;
 };
 
 /*
- * Piece Square Tables, numbers found in nice chessbin C# guide:
+ * Piece Square Tables, numbers found in nice chess bin C# guide:
  * http://www.chessbin.com/post/Chess-Board-Evaluation.aspx
  */
 
@@ -46,7 +45,6 @@ export const AI = {
     -20, -10, -40, -10, -10, -40, -10, -20
   ],
   blackIntelligence: -1,
-  intelligence: -1,
   // prettier-ignore
   kingTable : [
     -30, -40, -40, -50, -50, -40, -40, -30,
@@ -125,22 +123,26 @@ const getPieceValueSum = ({
   }, 0);
 
 // Evaluates the board relative to `currentColor`
-const evaluate = (board: readonly string[], currentColor: color): number => {
+const evaluate = (
+  board: readonly string[],
+  currentColor: color,
+  intelligence: number,
+): number => {
   const currentValue =
     getPieceValueSum({
-      AILevel: AI.intelligence,
+      AILevel: intelligence,
       board,
       pieces: getPiecesOfColor(board, currentColor),
     }) + (isInCheck(board, oppositeColor(currentColor)) ? 0.5 : 0);
 
   const opponentValue =
     getPieceValueSum({
-      AILevel: AI.intelligence,
+      AILevel: intelligence,
       board,
       pieces: getPiecesOfColor(board, oppositeColor(currentColor)),
     }) + (isInCheck(board, currentColor) ? 0.5 : 0);
 
-  const salt = Math.random() * (AI.intelligence === 1 ? 1000 : 0.1);
+  const salt = Math.random() * (intelligence === 1 ? 1000 : 0.1);
   return salt + (currentValue - opponentValue);
 };
 
@@ -167,17 +169,18 @@ const negamax = (
   depth: number,
   alpha: number,
   beta: number,
-  enPassantTarget: number | null = null,
+  enPassantTarget: number | null,
+  intelligence: number,
 ): readonly number[] => {
   if (depth === 0) {
-    return [-1, -1, evaluate(board, currentPlayer)];
+    return [-1, -1, evaluate(board, currentPlayer, intelligence)];
   }
 
   const pieces = getPiecesOfColor(board, currentPlayer);
   const moves = getAllValidMovesNoCheck(board, pieces, enPassantTarget);
 
   if (moves.every((m) => m.length === 0)) {
-    return [-1, -1, evaluate(board, currentPlayer)];
+    return [-1, -1, evaluate(board, currentPlayer, intelligence)];
   }
 
   let bestStart = -1;
@@ -198,6 +201,7 @@ const negamax = (
         -beta,
         -localAlpha,
         childEp,
+        intelligence,
       );
 
       const score = -childResult[2];
@@ -220,18 +224,23 @@ const negamax = (
 /*
  * Main AI entry point. Ply depth is determined by difficulty level.
  */
-export const makeAIMove = (): void => {
-  AI.intelligence =
-    window.turn === 'white' ? AI.whiteIntelligence : AI.blackIntelligence;
-  const ply = AI.intelligence + 1;
+export const makeAIMove = (
+  board: readonly string[],
+  turn: color,
+  enPassantTarget: number | null,
+): void => {
+  const intelligence =
+    turn === 'white' ? AI.whiteIntelligence : AI.blackIntelligence;
+  const ply = intelligence + 1;
 
   const bestMove = negamax(
-    window.game.board,
-    window.turn,
+    board,
+    turn,
     ply,
     -100000,
     100000,
-    window.game.enPassantTarget,
+    enPassantTarget,
+    intelligence,
   );
 
   makeMove(bestMove[0], bestMove[1], true);

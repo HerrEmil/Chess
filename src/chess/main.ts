@@ -391,7 +391,7 @@ export const switchTurn = (): void => {
 
   if (result.shouldTriggerAI) {
     setTimeout(() => {
-      makeAIMove();
+      makeAIMove(window.game.board, window.turn, window.game.enPassantTarget);
     }, 10);
   }
 };
