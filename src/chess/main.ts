@@ -41,8 +41,9 @@ export const mailboxIndex = [
   91, 92, 93, 94, 95, 96, 97, 98
 ];
 
-export const positionKey = (): string => {
+export const positionKey = (turn?: color): string => {
   const { board, castle, enPassantTarget } = window.game;
+  const activeTurn = turn ?? window.turn;
   const squares = mailboxIndex.map((i) => board[i]).join('');
   const c =
     (castle.whiteShortCastle ? 'K' : '') +
@@ -50,7 +51,7 @@ export const positionKey = (): string => {
       (castle.blackShortCastle ? 'k' : '') +
       (castle.blackLongCastle ? 'q' : '') || '-';
   const ep = enPassantTarget === null ? '-' : String(enPassantTarget);
-  return `${squares} ${window.turn} ${c} ${ep}`;
+  return `${squares} ${activeTurn} ${c} ${ep}`;
 };
 
 export const pieceOnIndex = ({
@@ -146,81 +147,55 @@ export const boardAfterMove = (
   return newBoard;
 };
 
-export const switchTurn = (): void => {
-  // Hide the turn for the one that just moved
-  $(`.${window.turn}`).addClass('notYourTurn');
-  $(`#${window.turn}Turn2`).addClass('hidden');
+// --- Pure game logic functions ---
 
-  // Switch the turn
-  window.turn = window.turn === 'white' ? 'black' : 'white';
+export type MoveResult = {
+  castlingRookMove: [number, number] | null;
+  enPassantCaptureIndex: number | null;
+};
 
-  // Show the turn for the one to move next
-  $(`.${window.turn}`).removeClass('notYourTurn');
-  $(`#${window.turn}Turn2`).removeClass('hidden');
-
-  // Record position and check draw rules
-  const key = positionKey();
-  const count = (window.game.positionHistory.get(key) ?? 0) + 1;
-  window.game.positionHistory.set(key, count);
-
-  if (count >= 3) {
-    endGame('repetition');
-    return;
+const computeCastlingRookMove = (
+  game: GlobalChess,
+  origin: number,
+  destination: number,
+): [number, number] | null => {
+  if (origin === 60) {
+    if (game.castle.whiteLongCastle && destination === 58) return [56, 59];
+    if (game.castle.whiteShortCastle && destination === 62) return [63, 61];
   }
-
-  if (window.game.halfMoveClock >= 100) {
-    endGame('fifty-move');
-    return;
+  if (origin === 4) {
+    if (game.castle.blackLongCastle && destination === 2) return [0, 3];
+    if (game.castle.blackShortCastle && destination === 6) return [7, 5];
   }
-
-  // After every turn switch, check if the game has ended
-  const currentPlayerValids = getAllValidMoves(
-    window.game.board,
-    getPiecesOfColor(window.game.board, window.turn),
-    window.game.enPassantTarget,
-  ).flat();
-
-  // If none of those pieces can move...
-  if (!currentPlayerValids.length) {
-    endGame(
-      isInCheck(window.game.board, window.turn) ? 'checkmate' : 'stalemate',
-    );
-  } else if (window.turn === 'black' && window.game.blackAI) {
-    setTimeout(() => {
-      makeAIMove();
-    }, 10);
-  } else if (window.turn === 'white' && window.game.whiteAI) {
-    setTimeout(() => {
-      makeAIMove();
-    }, 10);
-  }
+  return null;
 };
 
 const updateCastlingAllowedState = (
+  game: GlobalChess,
   moveOrigin: number,
   moveDestination: number,
 ): void => {
   // King or rook moved
   switch (moveOrigin) {
     case 60:
-      window.game.castle.whiteLongCastle = false;
-      window.game.castle.whiteShortCastle = false;
+      game.castle.whiteLongCastle = false;
+      game.castle.whiteShortCastle = false;
       break;
     case 4:
-      window.game.castle.blackLongCastle = false;
-      window.game.castle.blackShortCastle = false;
+      game.castle.blackLongCastle = false;
+      game.castle.blackShortCastle = false;
       break;
     case 63:
-      window.game.castle.whiteShortCastle = false;
+      game.castle.whiteShortCastle = false;
       break;
     case 56:
-      window.game.castle.whiteLongCastle = false;
+      game.castle.whiteLongCastle = false;
       break;
     case 7:
-      window.game.castle.blackShortCastle = false;
+      game.castle.blackShortCastle = false;
       break;
     case 0:
-      window.game.castle.blackLongCastle = false;
+      game.castle.blackLongCastle = false;
       break;
     default:
       break;
@@ -229,96 +204,214 @@ const updateCastlingAllowedState = (
   // Rook captured
   switch (moveDestination) {
     case 63:
-      window.game.castle.whiteShortCastle = false;
+      game.castle.whiteShortCastle = false;
       break;
     case 56:
-      window.game.castle.whiteLongCastle = false;
+      game.castle.whiteLongCastle = false;
       break;
     case 7:
-      window.game.castle.blackShortCastle = false;
+      game.castle.blackShortCastle = false;
       break;
     case 0:
-      window.game.castle.blackLongCastle = false;
+      game.castle.blackLongCastle = false;
       break;
     default:
       break;
   }
 };
 
-const movePiece = (
-  moveOrigin: number,
-  moveDestination: number,
-  enPassantTarget: number | null = null,
-): void => {
-  window.game.board = boardAfterMove(
-    window.game.board,
-    moveOrigin,
-    moveDestination,
-    enPassantTarget,
+export const applyMove = (
+  game: GlobalChess,
+  origin: number,
+  destination: number,
+): MoveResult => {
+  const piece = pieceOnIndex({ board: game.board, pieceIndex: origin });
+  const isPawn = piece.toLowerCase() === 'p';
+  const destPiece = pieceOnIndex({
+    board: game.board,
+    pieceIndex: destination,
+  });
+
+  // Detect en passant capture before moving
+  const isEnPassant =
+    isPawn &&
+    game.enPassantTarget !== null &&
+    destination === game.enPassantTarget &&
+    destPiece === '-';
+
+  const enPassantCaptureIndex = isEnPassant
+    ? destination + (destination > origin ? -8 : 8)
+    : null;
+
+  // Detect capture before moving the piece
+  const isCapture = destPiece !== '-' || isEnPassant;
+
+  // Compute castling rook move before updating castling state
+  const castlingRookMove = computeCastlingRookMove(game, origin, destination);
+
+  // Apply main piece move to board
+  game.board = boardAfterMove(
+    game.board,
+    origin,
+    destination,
+    game.enPassantTarget,
   ) as string[];
+
+  // Apply castling rook move to board
+  if (castlingRookMove) {
+    game.board = boardAfterMove(
+      game.board,
+      castlingRookMove[0],
+      castlingRookMove[1],
+    ) as string[];
+  }
+
+  updateCastlingAllowedState(game, origin, destination);
+
+  // Update en passant target: set when pawn double-moves, clear otherwise
+  if (isPawn && Math.abs(destination - origin) === 16) {
+    game.enPassantTarget = (origin + destination) / 2;
+  } else {
+    game.enPassantTarget = null;
+  }
+
+  // Update half-move clock: reset on pawn move or capture, increment otherwise
+  if (isPawn || isCapture) {
+    game.halfMoveClock = 0;
+  } else {
+    game.halfMoveClock += 1;
+  }
+
+  return { castlingRookMove, enPassantCaptureIndex };
+};
+
+export type TurnEndResult = {
+  gameEnd: GameResult | null;
+  newTurn: color;
+  shouldTriggerAI: boolean;
+};
+
+export const checkTurnEnd = (
+  game: GlobalChess,
+  currentTurn: color,
+): TurnEndResult => {
+  const newTurn: color = currentTurn === 'white' ? 'black' : 'white';
+
+  // Record position and check draw rules
+  const key = positionKey(newTurn);
+  const count = (game.positionHistory.get(key) ?? 0) + 1;
+  game.positionHistory.set(key, count);
+
+  if (count >= 3) {
+    return { gameEnd: 'repetition', newTurn, shouldTriggerAI: false };
+  }
+
+  if (game.halfMoveClock >= 100) {
+    return { gameEnd: 'fifty-move', newTurn, shouldTriggerAI: false };
+  }
+
+  // Check if the next player has any valid moves
+  const currentPlayerValids = getAllValidMoves(
+    game.board,
+    getPiecesOfColor(game.board, newTurn),
+    game.enPassantTarget,
+  ).flat();
+
+  if (!currentPlayerValids.length) {
+    const result = isInCheck(game.board, newTurn) ? 'checkmate' : 'stalemate';
+    return { gameEnd: result, newTurn, shouldTriggerAI: false };
+  }
+
+  const shouldTriggerAI =
+    (newTurn === 'black' && game.blackAI) ||
+    (newTurn === 'white' && game.whiteAI);
+
+  return { gameEnd: null, newTurn, shouldTriggerAI };
+};
+
+export type PawnConversionAction =
+  | 'convert_ai'
+  | 'convert_human'
+  | 'switch_turn';
+
+export const shouldConvertPawn = (
+  game: GlobalChess,
+  turn: color,
+  pos: number,
+): PawnConversionAction => {
+  const piece = pieceOnIndex({ board: game.board, pieceIndex: pos });
+  if (piece.toLowerCase() !== 'p') return 'switch_turn';
+
+  if (turn === 'white' && pos < 8) {
+    return game.whiteAI ? 'convert_ai' : 'convert_human';
+  }
+  if (turn === 'black' && pos > 55) {
+    return game.blackAI ? 'convert_ai' : 'convert_human';
+  }
+  return 'switch_turn';
+};
+
+// --- DOM helpers ---
+
+const renderPieceMove = (origin: number, destination: number): void => {
   const destinationElement = document.getElementById(
-    `${moveDestination}`,
+    `${destination}`,
   ) as HTMLElement;
   destinationElement.innerHTML = '';
   destinationElement.appendChild(
-    (document.getElementById(`${moveOrigin}`) as HTMLElement).querySelector(
+    (document.getElementById(`${origin}`) as HTMLElement).querySelector(
       'a',
     ) as HTMLAnchorElement,
   );
 };
 
-const moveRookIfCastling = (
-  moveOrigin: number,
-  moveDestination: number,
-): void => {
-  if (moveOrigin === 60) {
-    if (window.game.castle.whiteLongCastle && moveDestination === 58) {
-      movePiece(56, 59);
-    }
-    if (window.game.castle.whiteShortCastle && moveDestination === 62) {
-      movePiece(63, 61);
-    }
+// --- DOM wrappers ---
+
+export const switchTurn = (): void => {
+  const result = checkTurnEnd(window.game, window.turn);
+
+  // Hide the turn for the one that just moved
+  $(`.${window.turn}`).addClass('notYourTurn');
+  $(`#${window.turn}Turn2`).addClass('hidden');
+
+  // Apply new turn
+  window.turn = result.newTurn;
+
+  // Show the turn for the one to move next
+  $(`.${window.turn}`).removeClass('notYourTurn');
+  $(`#${window.turn}Turn2`).removeClass('hidden');
+
+  if (result.gameEnd) {
+    endGame(result.gameEnd);
+    return;
   }
-  if (moveOrigin === 4) {
-    if (window.game.castle.blackLongCastle && moveDestination === 2) {
-      movePiece(0, 3);
-    }
-    if (window.game.castle.blackShortCastle && moveDestination === 6) {
-      movePiece(7, 5);
-    }
+
+  if (result.shouldTriggerAI) {
+    setTimeout(() => {
+      makeAIMove();
+    }, 10);
   }
 };
 
 const pawnConversion = (pawnPosition: number): void => {
-  if (
-    pieceOnIndex({
-      board: window.game.board,
-      pieceIndex: pawnPosition,
-    }).toLowerCase() === 'p'
-  ) {
-    if (window.turn === 'white' && pawnPosition < 8 && pawnPosition >= 0) {
-      window.game.pawn.pawnToConvert = pawnPosition;
-      if (window.game.whiteAI) {
-        convertPawn();
-      } else {
-        $('#conversion').removeClass('hidden');
-      }
-    } else if (
-      window.turn === 'black' &&
-      pawnPosition > 55 &&
-      pawnPosition < 64
-    ) {
-      window.game.pawn.pawnToConvert = pawnPosition;
-      if (window.game.blackAI) {
-        convertPawn();
-      } else {
-        $('#conversion').removeClass('hidden');
-      }
-    } else {
+  const action = shouldConvertPawn(window.game, window.turn, pawnPosition);
+
+  if (action === 'convert_ai' || action === 'convert_human') {
+    window.game.pawn.pawnToConvert = pawnPosition;
+  }
+
+  switch (action) {
+    case 'convert_ai':
+      convertPawn();
+      break;
+    case 'convert_human':
+      $('#conversion').removeClass('hidden');
+      break;
+    case 'switch_turn':
       switchTurn();
-    }
-  } else {
-    switchTurn();
+      break;
+    default:
+      break;
   }
 };
 
@@ -336,53 +429,25 @@ export const makeMove = (
         document.getElementById(`${destination}`) as HTMLElement
       ).classList.contains('valid')
     ) {
-      const piece = pieceOnIndex({
-        board: window.game.board,
-        pieceIndex: origin,
-      });
-      const isPawn = piece.toLowerCase() === 'p';
-
-      // Detect en passant capture before moving
-      const isEnPassant =
-        isPawn &&
-        window.game.enPassantTarget !== null &&
-        destination === window.game.enPassantTarget &&
-        pieceOnIndex({
-          board: window.game.board,
-          pieceIndex: destination,
-        }) === '-';
+      const { enPassantCaptureIndex, castlingRookMove } = applyMove(
+        window.game,
+        origin,
+        destination,
+      );
 
       // Remove captured pawn's DOM element for en passant
-      if (isEnPassant) {
-        const capturedPawnIndex = destination + (destination > origin ? -8 : 8);
+      if (enPassantCaptureIndex !== null) {
         (
-          document.getElementById(`${capturedPawnIndex}`) as HTMLElement
+          document.getElementById(`${enPassantCaptureIndex}`) as HTMLElement
         ).innerHTML = '';
       }
 
-      // Detect capture before moving the piece
-      const isCapture =
-        pieceOnIndex({ board: window.game.board, pieceIndex: destination }) !==
-          '-' || isEnPassant;
+      // Render main piece move
+      renderPieceMove(origin, destination);
 
-      movePiece(origin, destination, window.game.enPassantTarget);
-
-      moveRookIfCastling(origin, destination);
-
-      updateCastlingAllowedState(origin, destination);
-
-      // Update en passant target: set when pawn double-moves, clear otherwise
-      if (isPawn && Math.abs(destination - origin) === 16) {
-        window.game.enPassantTarget = (origin + destination) / 2;
-      } else {
-        window.game.enPassantTarget = null;
-      }
-
-      // Update half-move clock: reset on pawn move or capture, increment otherwise
-      if (isPawn || isCapture) {
-        window.game.halfMoveClock = 0;
-      } else {
-        window.game.halfMoveClock += 1;
+      // Render castling rook move
+      if (castlingRookMove) {
+        renderPieceMove(castlingRookMove[0], castlingRookMove[1]);
       }
 
       pawnConversion(destination);
