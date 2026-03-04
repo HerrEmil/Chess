@@ -1,15 +1,11 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import {
   applyMove,
   checkTurnEnd,
   shouldConvertPawn,
   type GlobalChess,
 } from '../main.js';
-import {
-  STARTING_BOARD,
-  boardWithPieces,
-  boardFromSquares,
-} from './helpers.js';
+import { STARTING_BOARD, boardWithPieces } from './helpers.js';
 
 const makeGame = (overrides: Partial<GlobalChess> = {}): GlobalChess => ({
   board: STARTING_BOARD.slice(),
@@ -114,14 +110,8 @@ describe('applyMove', () => {
 // --- checkTurnEnd ---
 
 describe('checkTurnEnd', () => {
-  beforeEach(() => {
-    // positionKey reads window.game
-    window.game = makeGame() as any;
-    window.turn = 'white';
-  });
-
   it('returns opposite color', () => {
-    const result = checkTurnEnd(window.game, 'white');
+    const result = checkTurnEnd(makeGame(), 'white');
     expect(result.newTurn).toBe('black');
   });
 
@@ -134,8 +124,8 @@ describe('checkTurnEnd', () => {
       { piece: 'r', index: 0 },
       { piece: 'k', index: 60 },
     ]);
-    window.game = makeGame({ board }) as any;
-    const result = checkTurnEnd(window.game, 'white');
+    const game = makeGame({ board });
+    const result = checkTurnEnd(game, 'white');
     expect(result.gameEnd).toBe('checkmate');
   });
 
@@ -146,8 +136,8 @@ describe('checkTurnEnd', () => {
       { piece: 'q', index: 17 },
       { piece: 'k', index: 2 },
     ]);
-    window.game = makeGame({ board }) as any;
-    const result = checkTurnEnd(window.game, 'white');
+    const game = makeGame({ board });
+    const result = checkTurnEnd(game, 'white');
     expect(result.gameEnd).toBe('stalemate');
   });
 
@@ -155,7 +145,6 @@ describe('checkTurnEnd', () => {
     const game = makeGame();
     const key = 'test-key';
     game.positionHistory.set(key, 999); // won't match positionKey
-    window.game = game as any;
 
     // First two calls record position
     checkTurnEnd(game, 'white');
@@ -167,21 +156,18 @@ describe('checkTurnEnd', () => {
 
   it('detects fifty-move rule', () => {
     const game = makeGame({ halfMoveClock: 100 });
-    window.game = game as any;
     const result = checkTurnEnd(game, 'white');
     expect(result.gameEnd).toBe('fifty-move');
   });
 
   it('sets shouldTriggerAI when next player is AI', () => {
     const game = makeGame({ blackAI: true });
-    window.game = game as any;
     const result = checkTurnEnd(game, 'white');
     expect(result.shouldTriggerAI).toBe(true);
   });
 
   it('does not trigger AI for human player', () => {
     const game = makeGame({ blackAI: false });
-    window.game = game as any;
     const result = checkTurnEnd(game, 'white');
     expect(result.shouldTriggerAI).toBe(false);
   });

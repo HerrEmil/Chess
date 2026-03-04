@@ -5,7 +5,7 @@
     "build": "rm -rf build && tsc && mkdir -p build && cp src/index.html src/default.css src/favicon.ico build/",
     "format": "prettier --write src/",
     "format:check": "prettier --check src/",
-    "lint": "eslint src/chess/*.ts",
+    "lint": "eslint 'src/chess/**/*.ts'",
     "serve": "npx -y http-server build -o",
     "start": "npm run build && npm run serve",
     "test": "vitest run",

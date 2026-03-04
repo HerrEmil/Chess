@@ -6,7 +6,7 @@ import { mailboxIndex, type CastleState } from '../main.js';
  * Pieces: lowercase=white (p,r,n,b,q,k), uppercase=black (P,R,N,B,Q,K), '-'=empty.
  */
 export const boardFromSquares = (squares: string[]): string[] => {
-  const board: string[] = Array(120).fill('*');
+  const board: string[] = Array(120).fill('*') as string[];
   for (let i = 0; i < 64; i++) {
     board[mailboxIndex[i]] = squares[i];
   }
@@ -28,9 +28,8 @@ export const STARTING_SQUARES: string[] = [
 export const STARTING_BOARD = boardFromSquares(STARTING_SQUARES);
 
 /** Create an empty board (all '-' on valid squares, '*' borders). */
-export const emptyBoard = (): string[] => {
-  return boardFromSquares(Array(64).fill('-'));
-};
+export const emptyBoard = (): string[] =>
+  boardFromSquares(Array(64).fill('-') as string[]);
 
 /** Place multiple pieces on an empty board. */
 export const boardWithPieces = (

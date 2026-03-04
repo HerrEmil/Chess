@@ -46,4 +46,30 @@ export default tseslint.config(
       "no-loop-func": "error",
     },
   },
+  {
+    files: ["src/chess/__tests__/**/*.ts"],
+    rules: {
+      "init-declarations": "off",
+      "no-duplicate-imports": "off",
+      "no-inline-comments": "off",
+      "no-plusplus": "off",
+      "prefer-destructuring": "off",
+      "sort-keys": "off",
+    },
+  },
+  {
+    files: ["src/chess/__tests__/setup.ts"],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "func-names": "off",
+      "no-empty-function": "off",
+      "no-undefined": "off",
+      "no-use-before-define": "off",
+      "prefer-arrow-callback": "off",
+    },
+  },
 );

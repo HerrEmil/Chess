@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { boardAfterMove, mailboxIndex } from '../main.js';
-import { STARTING_BOARD, boardWithPieces, emptyBoard } from './helpers.js';
+import { STARTING_BOARD, boardWithPieces } from './helpers.js';
 
 describe('mailboxIndex', () => {
   it('has 64 entries mapping to the 120-element board', () => {

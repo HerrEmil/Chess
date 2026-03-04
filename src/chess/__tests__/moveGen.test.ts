@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { getValid, isInCheck, getAllValidMovesNoCheck } from '../moveGen.js';
 import { boardWithPieces, STARTING_BOARD, ALL_CASTLE } from './helpers.js';
-import { mailboxIndex } from '../main.js';
 
 /*
  * Board index reference (0-63):
