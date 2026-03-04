@@ -4,5 +4,5 @@ Outstanding
  - Minimal publish process
 
 Tech debt
- - jQuery dependency: removed from non-drag-drop code; remains in bindEvents() (drag-drop, resize)
+ - jQuery dependency: fully removed
  - No game persistence (state lost on refresh)

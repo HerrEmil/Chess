@@ -207,54 +207,105 @@ export const setLabels = (): void => {
 };
 
 export const bindEvents = (): void => {
-  $('#board a')
-    .on('mousedown', ({ target }) => {
-      const location = parseInt($(target).parent().attr('id') as string, 10);
-      appState.inHand = location;
-      appState.mousePos = $(target).parent().addClass('origin');
-      markValids(
-        getValid(
-          location,
-          appState.game.board,
-          appState.game.enPassantTarget,
-          appState.game.castle,
-        ),
-      );
-      return false;
-    })
-    .draggable({
-      containment: $('#board'),
-      grid: [
-        $('table tr:nth(1)').height() as number,
-        $('table tr:nth(1)').height() as number,
-      ],
-      zIndex: 1000,
-    });
+  const board = document.getElementById('board')!;
 
-  $('#board td').on('mouseup', ({ target }) => {
-    makeMove(
-      appState.inHand as number,
-      parseInt($(target).attr('id') as string, 10),
-      false,
+  // Prevent native browser drag on <a> elements so mousemove fires during drag
+  board.addEventListener('dragstart', (e) => e.preventDefault());
+
+  board.addEventListener('mousedown', (e) => {
+    const anchor = (e.target as HTMLElement).closest('#board a');
+    if (!(anchor instanceof HTMLAnchorElement)) return;
+    e.preventDefault();
+
+    const cell = anchor.parentElement as HTMLElement;
+    const location = parseInt(cell.id, 10);
+    appState.inHand = location;
+    cell.classList.add('origin');
+    markValids(
+      getValid(
+        location,
+        appState.game.board,
+        appState.game.enPassantTarget,
+        appState.game.castle,
+      ),
     );
-  });
 
-  $('#board').on('mouseleave', () => {
-    $(document).mouseup();
-    if (appState.inHand !== '') {
-      $(`#${appState.inHand}`)
-        .children('a')
-        .attr('style', 'position: relative;');
+    const boardRect = board.getBoundingClientRect();
+    const cellRect = cell.getBoundingClientRect();
+    const cellSize = boardRect.width / 8;
+    const startX = e.clientX;
+    const startY = e.clientY;
+    const ac = new AbortController();
+
+    anchor.classList.add('dragging');
+    anchor.style.position = 'relative';
+    anchor.style.zIndex = '1000';
+
+    const onMove = (ev: MouseEvent): void => {
+      let dx = ev.clientX - startX;
+      let dy = ev.clientY - startY;
+
+      // Clamp so the anchor stays within board bounds
+      const minDx = boardRect.left - cellRect.left;
+      const maxDx = boardRect.right - cellRect.right;
+      const minDy = boardRect.top - cellRect.top;
+      const maxDy = boardRect.bottom - cellRect.bottom;
+      dx = Math.max(minDx, Math.min(maxDx, dx));
+      dy = Math.max(minDy, Math.min(maxDy, dy));
+
+      // Snap to grid
+      dx = Math.round(dx / cellSize) * cellSize;
+      dy = Math.round(dy / cellSize) * cellSize;
+
+      anchor.style.left = `${dx}px`;
+      anchor.style.top = `${dy}px`;
+    };
+
+    const resetAnchor = (): void => {
+      ac.abort();
+      anchor.classList.remove('dragging');
+      anchor.style.position = '';
+      anchor.style.zIndex = '';
+      anchor.style.left = '';
+      anchor.style.top = '';
+    };
+
+    const cancelDrag = (): void => {
+      resetAnchor();
+      document
+        .querySelectorAll('.valid')
+        .forEach((el) => el.classList.remove('valid'));
+      document
+        .querySelectorAll('.origin')
+        .forEach((el) => el.classList.remove('origin'));
       appState.inHand = '';
-    }
+    };
 
-    $('.valid').removeClass('valid');
-    $('.attack').removeClass('attack');
-    $('.origin').removeClass('origin');
+    const onUp = (ev: MouseEvent): void => {
+      resetAnchor();
+
+      // Find the drop target cell under the pointer
+      const dropEl = document.elementFromPoint(ev.clientX, ev.clientY);
+      const targetTd = dropEl?.closest('#board td') as HTMLElement | null;
+      if (targetTd) {
+        makeMove(appState.inHand as number, parseInt(targetTd.id, 10), false);
+      } else {
+        cancelDrag();
+      }
+    };
+
+    document.addEventListener('mousemove', onMove, { signal: ac.signal });
+    document.addEventListener('mouseup', onUp, {
+      once: true,
+      signal: ac.signal,
+    });
+    board.addEventListener('mouseleave', cancelDrag, {
+      once: true,
+      signal: ac.signal,
+    });
   });
 
-  // Re-scale on window resize
-  $(window).resize(() => {
+  window.addEventListener('resize', () => {
     scaleBoard();
     setLabels();
   });

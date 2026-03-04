@@ -96,7 +96,6 @@ export const appState = {
     positionHistory: new Map(),
   } as Partial<GlobalChess> as GlobalChess,
   inHand: '' as number | string,
-  mousePos: '' as JQuery | string,
   turn: '' as color,
 };
 
