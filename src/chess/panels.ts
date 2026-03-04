@@ -1,4 +1,4 @@
-import { mailboxIndex, switchTurn } from './main.js';
+import { mailboxIndex, switchTurn, type GameResult } from './main.js';
 
 const pieceChar = new Map(
   Object.entries({
@@ -87,22 +87,24 @@ export const startGame = (): void => {
   switchTurn();
 };
 
-export const endGame = (checkmate: boolean): void => {
-  const outcome = checkmate ? 'Checkmate!' : 'Stalemate!';
+export const endGame = (result: GameResult): void => {
+  const titles: Record<GameResult, string> = {
+    checkmate: 'Checkmate!',
+    'fifty-move': 'Draw — 50-move rule!',
+    repetition: 'Draw — threefold repetition!',
+    stalemate: 'Stalemate!',
+  };
   const theMenu = $('#startMenu');
   const playerWhoWon = window.turn === 'black' ? 'White' : 'Black';
-  // Empty the startmenu
   theMenu.html('');
-  // Build new contents
-  theMenu.append(`<br/><br/><h2>${outcome}</h2>`);
+  theMenu.append(`<br/><br/><h2>${titles[result]}</h2>`);
   theMenu.append(
-    checkmate
+    result === 'checkmate'
       ? `<h3>${playerWhoWon} won the game!</h3><br/><br/>`
       : '<h3>Nobody won the game!</h3><br/><br/>',
   );
   theMenu.append(
     '<input type="button" value="Restart Chess!" onclick="window.location.reload()">',
   );
-  // Show it
   $('#background').removeClass('hidden');
 };

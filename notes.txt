@@ -2,12 +2,11 @@ Outstanding
  - Immutable/functional style refactoring (lint rules added, code not yet refactored)
  - User-configurable search depth (currently hardcoded per difficulty)
  - Full test coverage (67 unit tests exist, no DOM/integration tests)
- - Close GitHub issue #1 after pushing AI fix
  - Minimal publish process
 
 Tech debt
  - jQuery dependency, no modern framework
  - Game state stored in window globals
  - No game persistence (state lost on refresh)
- - No 50-move rule or threefold repetition
+
  - DOM updates tightly coupled to game logic (standalone expressions)

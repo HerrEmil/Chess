@@ -4,6 +4,12 @@ import { convertPawn, endGame, startGame } from './panels.js';
 import { getAllValidMoves, getPiecesOfColor } from './util.js';
 import { isInCheck } from './moveGen.js';
 
+export type GameResult =
+  | 'checkmate'
+  | 'stalemate'
+  | 'fifty-move'
+  | 'repetition';
+
 export type GlobalChess = {
   readonly castle: {
     blackLongCastle: boolean;
@@ -19,6 +25,8 @@ export type GlobalChess = {
   readonly boardIndex: readonly number[];
   blackAI: boolean;
   whiteAI: boolean;
+  halfMoveClock: number;
+  positionHistory: Map<string, number>;
 };
 
 // prettier-ignore
@@ -32,6 +40,18 @@ export const mailboxIndex = [
   81, 82, 83, 84, 85, 86, 87, 88,
   91, 92, 93, 94, 95, 96, 97, 98
 ];
+
+export const positionKey = (): string => {
+  const { board, castle, enPassantTarget } = window.game;
+  const squares = mailboxIndex.map((i) => board[i]).join('');
+  const c =
+    (castle.whiteShortCastle ? 'K' : '') +
+      (castle.whiteLongCastle ? 'Q' : '') +
+      (castle.blackShortCastle ? 'k' : '') +
+      (castle.blackLongCastle ? 'q' : '') || '-';
+  const ep = enPassantTarget === null ? '-' : String(enPassantTarget);
+  return `${squares} ${window.turn} ${c} ${ep}`;
+};
 
 export const pieceOnIndex = ({
   board,
@@ -71,7 +91,9 @@ window.game = {
     whiteShortCastle: true,
   },
   enPassantTarget: null,
+  halfMoveClock: 0,
   pawn: { pawnToConvert: -1 },
+  positionHistory: new Map(),
 } as Partial<GlobalChess> as GlobalChess;
 
 const initChess = (): void => {
@@ -136,6 +158,21 @@ export const switchTurn = (): void => {
   $(`.${window.turn}`).removeClass('notYourTurn');
   $(`#${window.turn}Turn2`).removeClass('hidden');
 
+  // Record position and check draw rules
+  const key = positionKey();
+  const count = (window.game.positionHistory.get(key) ?? 0) + 1;
+  window.game.positionHistory.set(key, count);
+
+  if (count >= 3) {
+    endGame('repetition');
+    return;
+  }
+
+  if (window.game.halfMoveClock >= 100) {
+    endGame('fifty-move');
+    return;
+  }
+
   // After every turn switch, check if the game has ended
   const currentPlayerValids = getAllValidMoves(
     window.game.board,
@@ -145,8 +182,9 @@ export const switchTurn = (): void => {
 
   // If none of those pieces can move...
   if (!currentPlayerValids.length) {
-    // End the game, with checkmat/stalemate flag
-    endGame(isInCheck(window.game.board, window.turn));
+    endGame(
+      isInCheck(window.game.board, window.turn) ? 'checkmate' : 'stalemate',
+    );
   } else if (window.turn === 'black' && window.game.blackAI) {
     setTimeout(() => {
       makeAIMove();
@@ -322,6 +360,11 @@ export const makeMove = (
         ).innerHTML = '';
       }
 
+      // Detect capture before moving the piece
+      const isCapture =
+        pieceOnIndex({ board: window.game.board, pieceIndex: destination }) !==
+          '-' || isEnPassant;
+
       movePiece(origin, destination, window.game.enPassantTarget);
 
       moveRookIfCastling(origin, destination);
@@ -333,6 +376,13 @@ export const makeMove = (
         window.game.enPassantTarget = (origin + destination) / 2;
       } else {
         window.game.enPassantTarget = null;
+      }
+
+      // Update half-move clock: reset on pawn move or capture, increment otherwise
+      if (isPawn || isCapture) {
+        window.game.halfMoveClock = 0;
+      } else {
+        window.game.halfMoveClock += 1;
       }
 
       pawnConversion(destination);
