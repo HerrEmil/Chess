@@ -13,10 +13,8 @@ export type ChessAI = {
   readonly knightTable: readonly number[];
   readonly pawnTable: readonly number[];
   whiteIntelligence: number;
-  whitePly: number;
   intelligence: number;
   blackIntelligence: number;
-  blackPly: number;
 };
 
 /*
@@ -43,7 +41,6 @@ export const AI = {
     -20, -10, -40, -10, -10, -40, -10, -20
   ],
   blackIntelligence: -1,
-  blackPly: 3,
   intelligence: -1,
   // prettier-ignore
   kingTable : [
@@ -90,7 +87,6 @@ export const AI = {
     0,     0,   0,   0,   0,   0,   0,   0
   ],
   whiteIntelligence: -1,
-  whitePly: 3,
 };
 
 const getPieceValueSum = ({
@@ -175,7 +171,7 @@ const negamax = (
   const pieces = getPiecesOfColor(board, currentPlayer);
   const moves = getAllValidMovesNoCheck(board, pieces, enPassantTarget);
 
-  if (moves.flat().length === 0) {
+  if (moves.every((m) => m.length === 0)) {
     return [-1, -1, evaluate(board, currentPlayer)];
   }
 
@@ -222,7 +218,7 @@ const negamax = (
 export const makeAIMove = (): void => {
   AI.intelligence =
     window.turn === 'white' ? AI.whiteIntelligence : AI.blackIntelligence;
-  const ply = window.turn === 'white' ? AI.whitePly : AI.blackPly;
+  const ply = AI.intelligence + 1;
 
   const bestMove = negamax(
     window.game.board,

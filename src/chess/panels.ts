@@ -51,19 +51,16 @@ export const startGame = (): void => {
   window.game.blackAI = blackPlayer !== 'Player';
   window.game.whiteAI = whitePlayer !== 'Player';
 
-  // Save difficulties and ply depths chosen to AI
+  // Save difficulties chosen to AI
   switch (whitePlayer) {
     case 'AI - Very Easy':
       window.AI.whiteIntelligence = 1;
-      window.AI.whitePly = 2;
       break;
     case 'AI - Easy':
       window.AI.whiteIntelligence = 2;
-      window.AI.whitePly = 3;
       break;
     case 'AI - Medium':
       window.AI.whiteIntelligence = 3;
-      window.AI.whitePly = 4;
       break;
     default:
       break;
@@ -72,15 +69,12 @@ export const startGame = (): void => {
   switch (blackPlayer) {
     case 'AI - Very Easy':
       window.AI.blackIntelligence = 1;
-      window.AI.blackPly = 2;
       break;
     case 'AI - Easy':
       window.AI.blackIntelligence = 2;
-      window.AI.blackPly = 3;
       break;
     case 'AI - Medium':
       window.AI.blackIntelligence = 3;
-      window.AI.blackPly = 4;
       break;
     default:
       break;

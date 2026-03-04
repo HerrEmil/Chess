@@ -117,15 +117,11 @@ export const boardAfterMove = (
     : -1;
 
   // Copy piece from start to goal, clear start, and remove captured pawn if en passant
-  return board.map((piece, index) =>
-    index === boardIndexGoal
-      ? board[boardIndexStart]
-      : index === boardIndexStart
-        ? '-'
-        : isEnPassant && index === capturedPawnMailbox
-          ? '-'
-          : piece,
-  );
+  const newBoard = board.slice();
+  newBoard[boardIndexGoal] = board[boardIndexStart];
+  newBoard[boardIndexStart] = '-';
+  if (isEnPassant) newBoard[capturedPawnMailbox] = '-';
+  return newBoard;
 };
 
 export const switchTurn = (): void => {
@@ -211,11 +207,16 @@ const updateCastlingAllowedState = (
   }
 };
 
-const movePiece = (moveOrigin: number, moveDestination: number): void => {
+const movePiece = (
+  moveOrigin: number,
+  moveDestination: number,
+  enPassantTarget: number | null = null,
+): void => {
   window.game.board = boardAfterMove(
     window.game.board,
     moveOrigin,
     moveDestination,
+    enPassantTarget,
   ) as string[];
   const destinationElement = document.getElementById(
     `${moveDestination}`,
@@ -321,22 +322,7 @@ export const makeMove = (
         ).innerHTML = '';
       }
 
-      // Apply en passant-aware board update and move DOM piece
-      window.game.board = boardAfterMove(
-        window.game.board,
-        origin,
-        destination,
-        window.game.enPassantTarget,
-      ) as string[];
-      const destinationElement = document.getElementById(
-        `${destination}`,
-      ) as HTMLElement;
-      destinationElement.innerHTML = '';
-      destinationElement.appendChild(
-        (document.getElementById(`${origin}`) as HTMLElement).querySelector(
-          'a',
-        ) as HTMLAnchorElement,
-      );
+      movePiece(origin, destination, window.game.enPassantTarget);
 
       moveRookIfCastling(origin, destination);
 

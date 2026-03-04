@@ -32,13 +32,6 @@ export const emptyBoard = (): string[] => {
   return boardFromSquares(Array(64).fill('-'));
 };
 
-/** Place a piece on an empty board at the given 0-63 index. */
-export const boardWithPiece = (piece: string, index: number): string[] => {
-  const board = emptyBoard();
-  board[mailboxIndex[index]] = piece;
-  return board;
-};
-
 /** Place multiple pieces on an empty board. */
 export const boardWithPieces = (
   pieces: { piece: string; index: number }[],
