@@ -1,8 +1,2 @@
-Outstanding
- - User-configurable search depth (currently hardcoded per difficulty)
- - Full test coverage (67 unit tests exist, no DOM/integration tests)
- - Minimal publish process
-
-Tech debt
- - jQuery dependency: fully removed
- - No game persistence (state lost on refresh)
+Wishlist
+ - Game persistence (state lost on refresh)

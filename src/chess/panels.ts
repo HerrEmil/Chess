@@ -59,34 +59,12 @@ export const startGame = (): void => {
   appState.game.blackAI = blackPlayer !== 'Player';
   appState.game.whiteAI = whitePlayer !== 'Player';
 
-  // Save difficulties chosen to AI
-  switch (whitePlayer) {
-    case 'AI - Very Easy':
-      AI.whiteIntelligence = 1;
-      break;
-    case 'AI - Easy':
-      AI.whiteIntelligence = 2;
-      break;
-    case 'AI - Medium':
-      AI.whiteIntelligence = 3;
-      break;
-    default:
-      break;
-  }
+  // Parse ply depth from dropdown selection
+  const plyMatch = whitePlayer.match(/(?<depth>\d+) ply/u);
+  if (plyMatch?.groups) AI.whitePly = Number(plyMatch.groups.depth);
 
-  switch (blackPlayer) {
-    case 'AI - Very Easy':
-      AI.blackIntelligence = 1;
-      break;
-    case 'AI - Easy':
-      AI.blackIntelligence = 2;
-      break;
-    case 'AI - Medium':
-      AI.blackIntelligence = 3;
-      break;
-    default:
-      break;
-  }
+  const plyMatchBlack = blackPlayer.match(/(?<depth>\d+) ply/u);
+  if (plyMatchBlack?.groups) AI.blackPly = Number(plyMatchBlack.groups.depth);
 
   // Remove start menu
   document.getElementById('background')!.classList.add('hidden');

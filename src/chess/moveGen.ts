@@ -1,4 +1,9 @@
-import { boardAfterMove, mailboxIndex, type CastleState } from './main.js';
+import {
+  boardAfterMove,
+  mailboxIndex,
+  reverseMailbox,
+  type CastleState,
+} from './main.js';
 import { color as chessColor } from './ai.js';
 import { getPiecesOfColor } from './util.js';
 
@@ -22,12 +27,12 @@ const getValidPositionsInDirection = ({
     if (piece === 42) {
       return positions;
     } else if (piece === 45) {
-      positions.push(mailboxIndex.indexOf(position));
+      positions.push(reverseMailbox[position]);
     } else if (
       (piece > 96 && color === 'black') ||
       (piece < 96 && color === 'white')
     ) {
-      positions.push(mailboxIndex.indexOf(position));
+      positions.push(reverseMailbox[position]);
       return positions;
     } else {
       return positions;
@@ -142,7 +147,7 @@ const knightValids = ({
     .filter((position) =>
       colorCanStepOnPiece(color, board[position].charCodeAt(0)),
     )
-    .map((position) => boardIndex.indexOf(position));
+    .map((position) => reverseMailbox[position]);
 };
 
 const kingValids = ({
@@ -170,7 +175,7 @@ const kingValids = ({
     .filter((position) =>
       colorCanStepOnPiece(color, board[position].charCodeAt(0)),
     )
-    .map((position) => boardIndex.indexOf(position));
+    .map((position) => reverseMailbox[position]);
 };
 
 const pawnValids = ({
@@ -197,8 +202,8 @@ const pawnValids = ({
 
   const forwardMoves = canMoveForward
     ? [
-        boardIndex.indexOf(forward),
-        ...(canDoubleMove ? [boardIndex.indexOf(doubleForward)] : []),
+        reverseMailbox[forward],
+        ...(canDoubleMove ? [reverseMailbox[doubleForward]] : []),
       ]
     : [];
 
@@ -214,7 +219,7 @@ const pawnValids = ({
         ? piece > 96 && piece < 115
         : piece > 64 && piece < 83;
     })
-    .map((position) => boardIndex.indexOf(position));
+    .map((position) => reverseMailbox[position]);
 
   const epCaptures =
     enPassantTarget !== null && diagonals.includes(boardIndex[enPassantTarget])
@@ -297,9 +302,8 @@ export const isInCheck = (
     getPiecesOfColor(board, color === 'white' ? 'black' : 'white'),
   ).flat();
 
-  const kingPosition = mailboxIndex.indexOf(
-    board.indexOf(color === 'white' ? 'k' : 'K'),
-  );
+  const kingPosition =
+    reverseMailbox[board.indexOf(color === 'white' ? 'k' : 'K')];
 
   return positionsOpponentCanMoveTo.includes(kingPosition);
 };

@@ -61,15 +61,15 @@ describe('AI piece-square tables', () => {
 });
 
 describe('AI difficulty settings', () => {
-  it('default intelligence values are -1 (unset)', () => {
-    expect(AI.whiteIntelligence).toBe(-1);
-    expect(AI.blackIntelligence).toBe(-1);
+  it('default ply values are -1 (unset)', () => {
+    expect(AI.whitePly).toBe(-1);
+    expect(AI.blackPly).toBe(-1);
   });
 
-  it('intelligence can be set to valid difficulty levels', () => {
-    const original = AI.whiteIntelligence;
-    AI.whiteIntelligence = 3;
-    expect(AI.whiteIntelligence).toBe(3);
-    AI.whiteIntelligence = original;
+  it('ply can be set to valid depth levels', () => {
+    const original = AI.whitePly;
+    AI.whitePly = 3;
+    expect(AI.whitePly).toBe(3);
+    AI.whitePly = original;
   });
 });

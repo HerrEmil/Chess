@@ -6,13 +6,14 @@ export const getPiecesOfColor = (
   board: readonly string[],
   color: ChessColor,
 ): readonly number[] => {
-  const charCodeLowerBound = color === 'white' ? 97 : 65;
-  const charCodeUpperBound = color === 'white' ? 114 : 82;
-
-  return Array.from(Array(64).keys()).filter((never, piecePosition) => {
-    const charCode = board[mailboxIndex[piecePosition]].charCodeAt(0);
-    return charCodeLowerBound <= charCode && charCode <= charCodeUpperBound;
-  });
+  const pieces: number[] = [];
+  const lo = color === 'white' ? 97 : 65;
+  const hi = color === 'white' ? 114 : 82;
+  for (let i = 0; i < 64; i += 1) {
+    const c = board[mailboxIndex[i]].charCodeAt(0);
+    if (lo <= c && c <= hi) pieces.push(i);
+  }
+  return pieces;
 };
 
 export const getAllValidMoves = (

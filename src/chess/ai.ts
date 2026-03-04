@@ -17,8 +17,8 @@ export type ChessAI = {
   readonly kingTableEndGame: readonly number[];
   readonly knightTable: readonly number[];
   readonly pawnTable: readonly number[];
-  whiteIntelligence: number;
-  blackIntelligence: number;
+  whitePly: number;
+  blackPly: number;
 };
 
 /*
@@ -26,12 +26,7 @@ export type ChessAI = {
  * http://www.chessbin.com/post/Chess-Board-Evaluation.aspx
  */
 
-/*
- * Difficulty
- * 1 = Very Easy (ply 2). High randomness.
- * 2 = Easy (ply 3). Piece value only.
- * 3 = Medium (ply 4). Piece value + positional tables.
- */
+/* Difficulty = ply search depth (selectable in UI). */
 export const AI = {
   // prettier-ignore
   bishopTable : [
@@ -44,7 +39,7 @@ export const AI = {
     -10,   5,   0,   0,   0,   0,   5, -10,
     -20, -10, -40, -10, -10, -40, -10, -20
   ],
-  blackIntelligence: -1,
+  blackPly: -1,
   // prettier-ignore
   kingTable : [
     -30, -40, -40, -50, -50, -40, -40, -30,
@@ -89,61 +84,56 @@ export const AI = {
     5,    10,  10, -25, -25,  10,  10,   5,
     0,     0,   0,   0,   0,   0,   0,   0
   ],
-  whiteIntelligence: -1,
+  whitePly: -1,
 };
 
 const getPieceValueSum = ({
   board = [] as readonly string[],
   pieces = [] as readonly number[],
-  AILevel = 1,
 }): number =>
   pieces.reduce((sum, piece) => {
     switch (pieceOnIndex({ board, pieceIndex: piece })) {
       case 'p':
       case 'P':
-        return sum + 100 + (AILevel === 3 ? AI.pawnTable[piece] : 0);
+        return sum + 100 + AI.pawnTable[piece];
       case 'r':
       case 'R':
         return sum + 500;
       case 'n':
       case 'N':
-        return sum + 320 + (AILevel === 3 ? AI.knightTable[piece] : 0);
+        return sum + 320 + AI.knightTable[piece];
       case 'b':
       case 'B':
-        return sum + 325 + (AILevel === 3 ? AI.bishopTable[piece] : 0);
+        return sum + 325 + AI.bishopTable[piece];
       case 'q':
       case 'Q':
         return sum + 975;
       case 'k':
       case 'K':
-        return sum + 32767 + (AILevel === 3 ? AI.kingTable[piece] : 0);
+        return sum + 32767 + AI.kingTable[piece];
       default:
         return sum;
     }
   }, 0);
 
 // Evaluates the board relative to `currentColor`
-const evaluate = (
-  board: readonly string[],
-  currentColor: color,
-  intelligence: number,
-): number => {
-  const currentValue =
-    getPieceValueSum({
-      AILevel: intelligence,
-      board,
-      pieces: getPiecesOfColor(board, currentColor),
-    }) + (isInCheck(board, oppositeColor(currentColor)) ? 0.5 : 0);
+const evaluate = (board: readonly string[], currentColor: color): number => {
+  const opponent = oppositeColor(currentColor);
+  const checkBonus = isInCheck(board, opponent) ? 15 : 0;
+  const checkPenalty = isInCheck(board, currentColor) ? 15 : 0;
 
-  const opponentValue =
-    getPieceValueSum({
-      AILevel: intelligence,
-      board,
-      pieces: getPiecesOfColor(board, oppositeColor(currentColor)),
-    }) + (isInCheck(board, currentColor) ? 0.5 : 0);
+  const currentValue = getPieceValueSum({
+    board,
+    pieces: getPiecesOfColor(board, currentColor),
+  });
 
-  const salt = Math.random() * (intelligence === 1 ? 1000 : 0.1);
-  return salt + (currentValue - opponentValue);
+  const opponentValue = getPieceValueSum({
+    board,
+    pieces: getPiecesOfColor(board, opponent),
+  });
+
+  const salt = Math.random() * 0.1;
+  return salt + checkBonus - checkPenalty + (currentValue - opponentValue);
 };
 
 /*
@@ -170,17 +160,16 @@ const negamax = (
   alpha: number,
   beta: number,
   enPassantTarget: number | null,
-  intelligence: number,
 ): readonly number[] => {
   if (depth === 0) {
-    return [-1, -1, evaluate(board, currentPlayer, intelligence)];
+    return [-1, -1, evaluate(board, currentPlayer)];
   }
 
   const pieces = getPiecesOfColor(board, currentPlayer);
   const moves = getAllValidMovesNoCheck(board, pieces, enPassantTarget);
 
   if (moves.every((m) => m.length === 0)) {
-    return [-1, -1, evaluate(board, currentPlayer, intelligence)];
+    return [-1, -1, evaluate(board, currentPlayer)];
   }
 
   let bestStart = -1;
@@ -201,7 +190,6 @@ const negamax = (
         -beta,
         -localAlpha,
         childEp,
-        intelligence,
       );
 
       const score = -childResult[2];
@@ -222,26 +210,16 @@ const negamax = (
 };
 
 /*
- * Main AI entry point. Ply depth is determined by difficulty level.
+ * Main AI entry point. Ply depth is selected directly in the UI.
  */
 export const makeAIMove = (
   board: readonly string[],
   turn: color,
   enPassantTarget: number | null,
 ): void => {
-  const intelligence =
-    turn === 'white' ? AI.whiteIntelligence : AI.blackIntelligence;
-  const ply = intelligence + 1;
+  const ply = turn === 'white' ? AI.whitePly : AI.blackPly;
 
-  const bestMove = negamax(
-    board,
-    turn,
-    ply,
-    -100000,
-    100000,
-    enPassantTarget,
-    intelligence,
-  );
+  const bestMove = negamax(board, turn, ply, -100000, 100000, enPassantTarget);
 
   makeMove(bestMove[0], bestMove[1], true);
 };

@@ -43,6 +43,13 @@ export const mailboxIndex = [
   91, 92, 93, 94, 95, 96, 97, 98
 ];
 
+// Reverse lookup: mailbox position → board index (0-63). O(1) vs indexOf O(64).
+export const reverseMailbox: readonly number[] = (() => {
+  const rev = new Array<number>(99).fill(-1);
+  for (let i = 0; i < 64; i += 1) rev[mailboxIndex[i]] = i;
+  return rev;
+})();
+
 export const positionKey = (
   board: readonly string[],
   turn: color,
