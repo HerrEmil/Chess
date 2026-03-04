@@ -5,7 +5,9 @@
     "build": "rm -rf build && tsc && mkdir -p build && cp src/index.html src/default.css src/favicon.ico build/",
     "lint": "eslint src/chess/*",
     "serve": "npx -y http-server build -o",
-    "start": "npm run build && npm run serve"
+    "start": "npm run build && npm run serve",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,8 @@
     "eslint-config-prettier": "^10",
     "globals": "^16",
     "typescript": "^5",
-    "typescript-eslint": "^8"
+    "typescript-eslint": "^8",
+    "vitest": "^4.0.18"
   },
   "dependencies": {
     "@types/jquery": "^3.5.5",
