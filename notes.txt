@@ -1,12 +1,8 @@
 Outstanding
- - Immutable/functional style refactoring (lint rules added, code not yet refactored)
  - User-configurable search depth (currently hardcoded per difficulty)
  - Full test coverage (67 unit tests exist, no DOM/integration tests)
  - Minimal publish process
 
 Tech debt
- - jQuery dependency, no modern framework
- - Game state stored in window globals
+ - jQuery dependency: removed from non-drag-drop code; remains in bindEvents() (drag-drop, resize)
  - No game persistence (state lost on refresh)
-
- - DOM updates tightly coupled to game logic (standalone expressions)

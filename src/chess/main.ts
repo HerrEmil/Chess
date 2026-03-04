@@ -412,15 +412,19 @@ export const switchTurn = (): void => {
   );
 
   // Hide the turn for the one that just moved
-  $(`.${appState.turn}`).addClass('notYourTurn');
-  $(`#${appState.turn}Turn2`).addClass('hidden');
+  document
+    .querySelectorAll(`.${appState.turn}`)
+    .forEach((el) => el.classList.add('notYourTurn'));
+  document.getElementById(`${appState.turn}Turn2`)!.classList.add('hidden');
 
   // Apply new turn
   appState.turn = result.newTurn;
 
   // Show the turn for the one to move next
-  $(`.${appState.turn}`).removeClass('notYourTurn');
-  $(`#${appState.turn}Turn2`).removeClass('hidden');
+  document
+    .querySelectorAll(`.${appState.turn}`)
+    .forEach((el) => el.classList.remove('notYourTurn'));
+  document.getElementById(`${appState.turn}Turn2`)!.classList.remove('hidden');
 
   if (result.gameEnd) {
     endGame(result.gameEnd);
@@ -450,7 +454,7 @@ const pawnConversion = (pawnPosition: number): void => {
       convertPawn();
       break;
     case 'convert_human':
-      $('#conversion').removeClass('hidden');
+      document.getElementById('conversion')!.classList.remove('hidden');
       break;
     case 'switch_turn':
       switchTurn();
@@ -466,7 +470,10 @@ export const makeMove = (
   AIMove: boolean,
 ): void => {
   if (origin >= 0 && destination >= 0) {
-    $(`#${origin}`).children('a').attr('style', 'position: relative;');
+    document
+      .getElementById(`${origin}`)!
+      .querySelector('a')!
+      .setAttribute('style', 'position: relative;');
 
     if (
       AIMove ||
@@ -501,9 +508,13 @@ export const makeMove = (
     }
   }
 
-  $('.valid').removeClass('valid');
-  $('.origin').removeClass('origin');
+  document
+    .querySelectorAll('.valid')
+    .forEach((el) => el.classList.remove('valid'));
+  document
+    .querySelectorAll('.origin')
+    .forEach((el) => el.classList.remove('origin'));
   appState.inHand = '';
 };
 
-$(document).ready(initChess);
+document.addEventListener('DOMContentLoaded', initChess);

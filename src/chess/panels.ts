@@ -20,14 +20,17 @@ const pieceHTML = new Map(
 );
 
 export const convertPawn = (): void => {
-  const piece = $('input:radio[name=convert]:checked').val() as string;
+  const piece = (
+    document.querySelector('input[name=convert]:checked') as HTMLInputElement
+  ).value;
 
   // Update DOM board
-  $(`#${appState.game.pawn.pawnToConvert}`)
-    .children('a')
-    .removeClass('pawn')
-    .addClass(piece)
-    .html(pieceHTML.get(piece) as string);
+  const pieceEl = document
+    .getElementById(`${appState.game.pawn.pawnToConvert}`)!
+    .querySelector('a')!;
+  pieceEl.classList.remove('pawn');
+  pieceEl.classList.add(piece);
+  pieceEl.innerHTML = pieceHTML.get(piece) as string;
 
   // Update JS board
   appState.game.board[mailboxIndex[appState.game.pawn.pawnToConvert]] =
@@ -35,17 +38,22 @@ export const convertPawn = (): void => {
       ? (pieceChar.get(piece) as string)
       : (pieceChar.get(piece) as string).toUpperCase();
 
-  $('#conversion').addClass('hidden');
-  $('input:radio[name=convert]').eq(0).attr('checked', 'checked');
+  document.getElementById('conversion')!.classList.add('hidden');
+  (document.querySelector('input[name=convert]') as HTMLInputElement).checked =
+    true;
   appState.game.pawn.pawnToConvert = -1;
   switchTurn();
 };
 
 export const startGame = (): void => {
   // Grab player selections
-  const blackPlayer = $('#blackPlayer').val();
+  const blackPlayer = (
+    document.getElementById('blackPlayer') as HTMLSelectElement
+  ).value;
 
-  const whitePlayer = $('#whitePlayer').val();
+  const whitePlayer = (
+    document.getElementById('whitePlayer') as HTMLSelectElement
+  ).value;
 
   // Set variables used for switching turns
   appState.game.blackAI = blackPlayer !== 'Player';
@@ -81,7 +89,7 @@ export const startGame = (): void => {
   }
 
   // Remove start menu
-  $('#background').addClass('hidden');
+  document.getElementById('background')!.classList.add('hidden');
 
   // Go!
   switchTurn();
@@ -94,17 +102,15 @@ export const endGame = (result: GameResult): void => {
     repetition: 'Draw — threefold repetition!',
     stalemate: 'Stalemate!',
   };
-  const theMenu = $('#startMenu');
+  const theMenu = document.getElementById('startMenu')!;
   const playerWhoWon = appState.turn === 'black' ? 'White' : 'Black';
-  theMenu.html('');
-  theMenu.append(`<br/><br/><h2>${titles[result]}</h2>`);
-  theMenu.append(
+  const winner =
     result === 'checkmate'
-      ? `<h3>${playerWhoWon} won the game!</h3><br/><br/>`
-      : '<h3>Nobody won the game!</h3><br/><br/>',
-  );
-  theMenu.append(
-    '<input type="button" value="Restart Chess!" onclick="window.location.reload()">',
-  );
-  $('#background').removeClass('hidden');
+      ? `<h3>${playerWhoWon} won the game!</h3>`
+      : '<h3>Nobody won the game!</h3>';
+  theMenu.innerHTML =
+    `<br/><br/><h2>${titles[result]}</h2>` +
+    `${winner}<br/><br/>` +
+    '<input type="button" value="Restart Chess!" onclick="window.location.reload()">';
+  document.getElementById('background')!.classList.remove('hidden');
 };
