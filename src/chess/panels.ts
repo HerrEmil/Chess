@@ -1,4 +1,5 @@
-import { mailboxIndex, switchTurn, type GameResult } from './main.js';
+import { AI } from './ai.js';
+import { appState, mailboxIndex, switchTurn, type GameResult } from './main.js';
 
 const pieceChar = new Map(
   Object.entries({
@@ -22,24 +23,23 @@ export const convertPawn = (): void => {
   const piece = $('input:radio[name=convert]:checked').val() as string;
 
   // Update DOM board
-  $(`#${window.game.pawn.pawnToConvert}`)
+  $(`#${appState.game.pawn.pawnToConvert}`)
     .children('a')
     .removeClass('pawn')
     .addClass(piece)
     .html(pieceHTML.get(piece) as string);
 
   // Update JS board
-  window.game.board[mailboxIndex[window.game.pawn.pawnToConvert]] =
-    window.turn === 'white'
+  appState.game.board[mailboxIndex[appState.game.pawn.pawnToConvert]] =
+    appState.turn === 'white'
       ? (pieceChar.get(piece) as string)
       : (pieceChar.get(piece) as string).toUpperCase();
 
   $('#conversion').addClass('hidden');
   $('input:radio[name=convert]').eq(0).attr('checked', 'checked');
-  window.game.pawn.pawnToConvert = -1;
+  appState.game.pawn.pawnToConvert = -1;
   switchTurn();
 };
-window.convertPawn = convertPawn;
 
 export const startGame = (): void => {
   // Grab player selections
@@ -48,19 +48,19 @@ export const startGame = (): void => {
   const whitePlayer = $('#whitePlayer').val();
 
   // Set variables used for switching turns
-  window.game.blackAI = blackPlayer !== 'Player';
-  window.game.whiteAI = whitePlayer !== 'Player';
+  appState.game.blackAI = blackPlayer !== 'Player';
+  appState.game.whiteAI = whitePlayer !== 'Player';
 
   // Save difficulties chosen to AI
   switch (whitePlayer) {
     case 'AI - Very Easy':
-      window.AI.whiteIntelligence = 1;
+      AI.whiteIntelligence = 1;
       break;
     case 'AI - Easy':
-      window.AI.whiteIntelligence = 2;
+      AI.whiteIntelligence = 2;
       break;
     case 'AI - Medium':
-      window.AI.whiteIntelligence = 3;
+      AI.whiteIntelligence = 3;
       break;
     default:
       break;
@@ -68,13 +68,13 @@ export const startGame = (): void => {
 
   switch (blackPlayer) {
     case 'AI - Very Easy':
-      window.AI.blackIntelligence = 1;
+      AI.blackIntelligence = 1;
       break;
     case 'AI - Easy':
-      window.AI.blackIntelligence = 2;
+      AI.blackIntelligence = 2;
       break;
     case 'AI - Medium':
-      window.AI.blackIntelligence = 3;
+      AI.blackIntelligence = 3;
       break;
     default:
       break;
@@ -95,7 +95,7 @@ export const endGame = (result: GameResult): void => {
     stalemate: 'Stalemate!',
   };
   const theMenu = $('#startMenu');
-  const playerWhoWon = window.turn === 'black' ? 'White' : 'Black';
+  const playerWhoWon = appState.turn === 'black' ? 'White' : 'Black';
   theMenu.html('');
   theMenu.append(`<br/><br/><h2>${titles[result]}</h2>`);
   theMenu.append(

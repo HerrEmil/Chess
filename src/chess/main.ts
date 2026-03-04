@@ -1,4 +1,4 @@
-import { AI, color, makeAIMove } from './ai.js';
+import { color, makeAIMove } from './ai.js';
 import { bindEvents, buildBoard, setBoard, setLabels } from './board.js';
 import { convertPawn, endGame, startGame } from './panels.js';
 import { getAllValidMoves, getPiecesOfColor } from './util.js';
@@ -67,40 +67,41 @@ export const pieceOnIndex = ({
   readonly pieceIndex: number;
 }): string => board[mailboxIndex[pieceIndex]];
 
-window.inHand = '';
-window.mousePos = '';
-window.turn = '' as color;
-
-window.AI = AI;
-window.startGame = startGame;
-
-window.game = {
+export const appState = {
   // prettier-ignore
-  board: [
-    '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
-    '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
-    '*', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R', '*',
-    '*', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', '*',
-    '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
-    '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
-    '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
-    '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
-    '*', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', '*',
-    '*', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r', '*',
-    '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
-    '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'
-  ],
-  castle: {
-    blackLongCastle: true,
-    blackShortCastle: true,
-    whiteLongCastle: true,
-    whiteShortCastle: true,
-  },
-  enPassantTarget: null,
-  halfMoveClock: 0,
-  pawn: { pawnToConvert: -1 },
-  positionHistory: new Map(),
-} as Partial<GlobalChess> as GlobalChess;
+  game: {
+    board: [
+      '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
+      '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
+      '*', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R', '*',
+      '*', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', '*',
+      '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
+      '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
+      '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
+      '*', '-', '-', '-', '-', '-', '-', '-', '-', '*',
+      '*', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', '*',
+      '*', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r', '*',
+      '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
+      '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'
+    ],
+    castle: {
+      blackLongCastle: true,
+      blackShortCastle: true,
+      whiteLongCastle: true,
+      whiteShortCastle: true,
+    },
+    enPassantTarget: null,
+    halfMoveClock: 0,
+    pawn: { pawnToConvert: -1 },
+    positionHistory: new Map(),
+  } as Partial<GlobalChess> as GlobalChess,
+  inHand: '' as number | string,
+  mousePos: '' as JQuery | string,
+  turn: '' as color,
+};
+
+window.startGame = startGame;
+window.convertPawn = convertPawn;
 
 const initChess = (): void => {
   buildBoard();
@@ -109,7 +110,7 @@ const initChess = (): void => {
   setLabels();
 
   // Init the turn counter on black and switch turn to white
-  window.turn = 'black';
+  appState.turn = 'black';
   // Makes no text selectable.
   document.onselectstart = (): false => false;
 };
@@ -379,18 +380,18 @@ const renderPieceMove = (origin: number, destination: number): void => {
 // --- DOM wrappers ---
 
 export const switchTurn = (): void => {
-  const result = checkTurnEnd(window.game, window.turn);
+  const result = checkTurnEnd(appState.game, appState.turn);
 
   // Hide the turn for the one that just moved
-  $(`.${window.turn}`).addClass('notYourTurn');
-  $(`#${window.turn}Turn2`).addClass('hidden');
+  $(`.${appState.turn}`).addClass('notYourTurn');
+  $(`#${appState.turn}Turn2`).addClass('hidden');
 
   // Apply new turn
-  window.turn = result.newTurn;
+  appState.turn = result.newTurn;
 
   // Show the turn for the one to move next
-  $(`.${window.turn}`).removeClass('notYourTurn');
-  $(`#${window.turn}Turn2`).removeClass('hidden');
+  $(`.${appState.turn}`).removeClass('notYourTurn');
+  $(`#${appState.turn}Turn2`).removeClass('hidden');
 
   if (result.gameEnd) {
     endGame(result.gameEnd);
@@ -399,16 +400,20 @@ export const switchTurn = (): void => {
 
   if (result.shouldTriggerAI) {
     setTimeout(() => {
-      makeAIMove(window.game.board, window.turn, window.game.enPassantTarget);
+      makeAIMove(
+        appState.game.board,
+        appState.turn,
+        appState.game.enPassantTarget,
+      );
     }, 10);
   }
 };
 
 const pawnConversion = (pawnPosition: number): void => {
-  const action = shouldConvertPawn(window.game, window.turn, pawnPosition);
+  const action = shouldConvertPawn(appState.game, appState.turn, pawnPosition);
 
   if (action === 'convert_ai' || action === 'convert_human') {
-    window.game.pawn.pawnToConvert = pawnPosition;
+    appState.game.pawn.pawnToConvert = pawnPosition;
   }
 
   switch (action) {
@@ -441,7 +446,7 @@ export const makeMove = (
       ).classList.contains('valid')
     ) {
       const { enPassantCaptureIndex, castlingRookMove } = applyMove(
-        window.game,
+        appState.game,
         origin,
         destination,
       );
@@ -467,7 +472,7 @@ export const makeMove = (
 
   $('.valid').removeClass('valid');
   $('.origin').removeClass('origin');
-  window.inHand = '';
+  appState.inHand = '';
 };
 
 $(document).ready(initChess);

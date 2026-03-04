@@ -16,11 +16,6 @@ export default tseslint.config(
         ...globals.browser,
         $: "readonly",
         jQuery: "readonly",
-        AI: "writable",
-        game: "writable",
-        inHand: "writable",
-        mousePos: "writable",
-        turn: "writable",
       },
       parserOptions: {
         projectService: true,

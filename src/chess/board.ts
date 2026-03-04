@@ -1,5 +1,5 @@
 import { getValid } from './moveGen.js';
-import { makeMove } from './main.js';
+import { appState, makeMove } from './main.js';
 
 // Takes a column (0-7) and returns column label (A-H)
 export const intToCol = (charInt: number): string => 'ABCDEFGH'.charAt(charInt);
@@ -166,14 +166,14 @@ export const bindEvents = (): void => {
   $('#board a')
     .on('mousedown', ({ target }) => {
       const location = parseInt($(target).parent().attr('id') as string, 10);
-      window.inHand = location;
-      window.mousePos = $(target).parent().addClass('origin');
+      appState.inHand = location;
+      appState.mousePos = $(target).parent().addClass('origin');
       markValids(
         getValid(
           location,
-          window.game.board,
-          window.game.enPassantTarget,
-          window.game.castle,
+          appState.game.board,
+          appState.game.enPassantTarget,
+          appState.game.castle,
         ),
       );
       return false;
@@ -189,7 +189,7 @@ export const bindEvents = (): void => {
 
   $('#board td').on('mouseup', ({ target }) => {
     makeMove(
-      window.inHand as number,
+      appState.inHand as number,
       parseInt($(target).attr('id') as string, 10),
       false,
     );
@@ -197,9 +197,11 @@ export const bindEvents = (): void => {
 
   $('#board').on('mouseleave', () => {
     $(document).mouseup();
-    if (window.inHand !== '') {
-      $(`#${window.inHand}`).children('a').attr('style', 'position: relative;');
-      window.inHand = '';
+    if (appState.inHand !== '') {
+      $(`#${appState.inHand}`)
+        .children('a')
+        .attr('style', 'position: relative;');
+      appState.inHand = '';
     }
 
     $('.valid').removeClass('valid');
