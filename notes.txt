@@ -1,38 +1,14 @@
-Add possibility of en passant moves in moveGen
- - If pawn is in 5th rank, and en passant is true, and en passant pawn is next to pawn, it is a valid move
-
-In switchTurn, handle en passant state
-
-
-In make move, turn on possibility of en passant when making pawn move from 2nd to 4th rank
- - AI is not affected by stuff in really make move, only kinda make move, so kinda make move should be rule complete
-
-En Passant Object
- - Contains position of pawn that is up for the taking
- - 
-
-
-
-
-
-Wishlist
- - Immutable and functional style - eslint tslint rules
- - minmax -> negamax
- - any ply functional
+Outstanding
+ - Immutable/functional style refactoring (lint rules added, code not yet refactored)
+ - User-configurable search depth (currently hardcoded per difficulty)
+ - Full test coverage (67 unit tests exist, no DOM/integration tests)
+ - Close GitHub issue #1 after pushing AI fix
  - Minimal publish process
- - Strict tooling, prettify, lint
- - Full test coverage, component style or unit test or e2e?
 
-
-Todo
- - scripts to prettify, lint, test
-
-
-non-functional stuff
-
-updating DOM (standalone expressions)
-
-game loop (standalone expressions)
-
-saving game state (mutation)
-
+Tech debt
+ - jQuery dependency, no modern framework
+ - Game state stored in window globals
+ - No CI test step in deploy workflow
+ - No game persistence (state lost on refresh)
+ - No 50-move rule or threefold repetition
+ - DOM updates tightly coupled to game logic (standalone expressions)

@@ -19,7 +19,9 @@ const getValidPositionsInDirection = ({
   for (let position = startPosition + direction; true; position += direction) {
     const piece = board[position].charCodeAt(0);
 
-    if (piece === 45) {
+    if (piece === 42) {
+      return positions;
+    } else if (piece === 45) {
       positions.push(mailboxIndex.indexOf(position));
     } else if (
       (piece > 96 && color === 'black') ||

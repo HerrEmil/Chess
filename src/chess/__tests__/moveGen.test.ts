@@ -159,10 +159,10 @@ describe('bishop moves', () => {
       { piece: 'K', index: 4 },
     ]);
     const moves = getAllValidMovesNoCheck(board, [35])[0];
-    const validMoves = moves.filter((m) => m >= 0);
-    expect(validMoves).toContain(26); // c5
-    expect(validMoves).toContain(17); // b6
-    expect(validMoves.length).toBeGreaterThanOrEqual(10);
+    expect(moves).toContain(26); // c5
+    expect(moves).toContain(17); // b6
+    expect(moves.length).toBeGreaterThanOrEqual(10);
+    expect(moves.every((m) => m >= 0 && m <= 63)).toBe(true);
   });
 
   it('bishop blocked by own piece stops before it', () => {
@@ -198,11 +198,9 @@ describe('rook moves', () => {
       { piece: 'K', index: 4 },
     ]);
     const moves = getAllValidMovesNoCheck(board, [35])[0];
-    // Known engine quirk: sliding pieces generate -1 entries for border squares.
-    // Filter to valid moves (0-63) for assertions.
-    const validMoves = moves.filter((m) => m >= 0);
     // 7 along rank + 7 along file = 14
-    expect(validMoves).toHaveLength(14);
+    expect(moves).toHaveLength(14);
+    expect(moves.every((m) => m >= 0 && m <= 63)).toBe(true);
   });
 
   it('rook blocked by own piece', () => {
@@ -215,6 +213,18 @@ describe('rook moves', () => {
     const moves = getAllValidMovesNoCheck(board, [35])[0];
     expect(moves).not.toContain(27); // blocked by own
     expect(moves).not.toContain(19); // behind blocker
+  });
+
+  it('rook on board edge produces no -1 entries', () => {
+    // Regression: white sliding pieces treated '*' border as capturable
+    const board = boardWithPieces([
+      { piece: 'r', index: 56 }, // a1 (corner)
+      { piece: 'k', index: 60 },
+      { piece: 'K', index: 4 },
+    ]);
+    const moves = getAllValidMovesNoCheck(board, [56])[0];
+    expect(moves.every((m) => m >= 0 && m <= 63)).toBe(true);
+    expect(moves).not.toContain(-1);
   });
 
   it('rook can capture enemy and stops', () => {
@@ -238,9 +248,9 @@ describe('queen moves', () => {
       { piece: 'K', index: 4 },
     ]);
     const moves = getAllValidMovesNoCheck(board, [35])[0];
-    const validMoves = moves.filter((m) => m >= 0);
     // Rook directions: 14, Bishop directions: 13 = 27
-    expect(validMoves).toHaveLength(27);
+    expect(moves).toHaveLength(27);
+    expect(moves.every((m) => m >= 0 && m <= 63)).toBe(true);
   });
 });
 
