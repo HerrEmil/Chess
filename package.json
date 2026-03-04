@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rm -rf build && tsc && mkdir -p build && cp src/index.html src/default.css src/favicon.ico build/",
-    "lint": "eslint src/chess/*",
+    "format": "prettier --write src/",
+    "format:check": "prettier --check src/",
+    "lint": "eslint src/chess/*.ts",
     "serve": "npx -y http-server build -o",
     "start": "npm run build && npm run serve",
     "test": "vitest run",
@@ -22,6 +24,8 @@
     "eslint": "^9",
     "eslint-config-prettier": "^10",
     "globals": "^16",
+    "jsdom": "^28.1.0",
+    "prettier": "^3.8.1",
     "typescript": "^5",
     "typescript-eslint": "^8",
     "vitest": "^4.0.18"
