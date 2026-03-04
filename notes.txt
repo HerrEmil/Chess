@@ -8,7 +8,6 @@ Outstanding
 Tech debt
  - jQuery dependency, no modern framework
  - Game state stored in window globals
- - No CI test step in deploy workflow
  - No game persistence (state lost on refresh)
  - No 50-move rule or threefold repetition
  - DOM updates tightly coupled to game logic (standalone expressions)
