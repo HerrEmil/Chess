@@ -80,6 +80,19 @@ export const pieceOnIndex = ({
   readonly pieceIndex: number;
 }): string => board[mailboxIndex[pieceIndex]];
 
+type GameSnapshot = {
+  board: string[];
+  capturedPieces: { black: string[]; white: string[] };
+  castle: CastleState;
+  enPassantTarget: number | null;
+  halfMoveClock: number;
+  lastMove: { from: number; to: number } | null;
+  positionHistory: Map<string, number>;
+  turn: color;
+};
+
+export const moveHistory: GameSnapshot[] = [];
+
 export const appState = {
   capturedPieces: { black: [] as string[], white: [] as string[] },
   // prettier-ignore
@@ -213,6 +226,79 @@ export const renderCapturedPieces = (): void => {
   }
 };
 
+const pushSnapshot = (): void => {
+  moveHistory.push({
+    board: [...appState.game.board],
+    capturedPieces: {
+      black: [...appState.capturedPieces.black],
+      white: [...appState.capturedPieces.white],
+    },
+    castle: { ...appState.game.castle },
+    enPassantTarget: appState.game.enPassantTarget,
+    halfMoveClock: appState.game.halfMoveClock,
+    lastMove: appState.lastMove ? { ...appState.lastMove } : null,
+    positionHistory: new Map(appState.game.positionHistory),
+    turn: appState.turn,
+  });
+};
+
+const restoreSnapshot = (snap: GameSnapshot): void => {
+  appState.game.board = snap.board;
+  appState.game.castle = snap.castle;
+  appState.game.enPassantTarget = snap.enPassantTarget;
+  appState.game.halfMoveClock = snap.halfMoveClock;
+  appState.game.positionHistory = snap.positionHistory;
+  appState.capturedPieces = snap.capturedPieces;
+  appState.lastMove = snap.lastMove;
+  appState.turn = snap.turn;
+};
+
+const undoMove = (): void => {
+  if (moveHistory.length === 0) return;
+
+  // If playing vs AI, undo 2 moves (AI + player) to get back to player's turn
+  const isVsAI =
+    (appState.turn === 'white' && appState.game.blackAI) ||
+    (appState.turn === 'black' && appState.game.whiteAI);
+  const steps = isVsAI && moveHistory.length >= 2 ? 2 : 1;
+
+  for (let i = 0; i < steps; i += 1) {
+    const snap = moveHistory.pop();
+    if (snap) restoreSnapshot(snap);
+  }
+
+  // Re-render the board
+  setBoardFromState(appState.game.board);
+  renderCapturedPieces();
+
+  // Update last move highlights
+  document
+    .querySelectorAll('.lastMove')
+    .forEach((el) => el.classList.remove('lastMove'));
+  if (appState.lastMove) {
+    document
+      .getElementById(`${appState.lastMove.from}`)
+      ?.classList.add('lastMove');
+    document
+      .getElementById(`${appState.lastMove.to}`)
+      ?.classList.add('lastMove');
+  }
+
+  // Update turn indicators
+  const opponent: color = appState.turn === 'white' ? 'black' : 'white';
+  document
+    .querySelectorAll(`.${opponent}`)
+    .forEach((el) => el.classList.add('notYourTurn'));
+  document.getElementById(`${opponent}Turn2`)!.classList.add('hidden');
+  document
+    .querySelectorAll(`.${appState.turn}`)
+    .forEach((el) => el.classList.remove('notYourTurn'));
+  document.getElementById(`${appState.turn}Turn2`)!.classList.remove('hidden');
+
+  saveGame();
+};
+window.undoMove = undoMove;
+
 const initChess = (): void => {
   buildBoard();
   bindEvents();
@@ -221,9 +307,10 @@ const initChess = (): void => {
   if (restoreGame()) {
     setBoardFromState(appState.game.board);
     renderCapturedPieces();
-    // Hide start menu, show restart button
+    // Hide start menu, show game buttons
     document.getElementById('background')!.classList.add('hidden');
     document.getElementById('restartBtn')!.classList.remove('hidden');
+    document.getElementById('undoBtn')!.classList.remove('hidden');
     // Set turn indicators
     const opponent: color = appState.turn === 'white' ? 'black' : 'white';
     document
@@ -647,6 +734,7 @@ export const makeMove = (
         document.getElementById(`${destination}`) as HTMLElement
       ).classList.contains('valid')
     ) {
+      pushSnapshot();
       const result = applyMove(appState.game, origin, destination);
       appState.game.board = result.board;
       appState.game.castle = result.castle;

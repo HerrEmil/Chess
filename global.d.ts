@@ -2,8 +2,9 @@ export {};
 
 declare global {
   interface Window {
-    startGame: () => void;
     convertPawn: () => void;
     restartGame: () => void;
+    startGame: () => void;
+    undoMove: () => void;
   }
 }

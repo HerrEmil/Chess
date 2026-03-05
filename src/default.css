@@ -181,10 +181,10 @@ h3 {
 =========== Miscellaneous ============
 */
 
-#restartBtn {
+#restartBtn,
+#undoBtn {
   position: fixed;
   top: 8px;
-  left: 8px;
   z-index: 5;
   background: none;
   border: none;
@@ -194,7 +194,14 @@ h3 {
   padding: 4px;
   line-height: 1;
 }
-#restartBtn:hover {
+#restartBtn {
+  left: 8px;
+}
+#undoBtn {
+  left: 40px;
+}
+#restartBtn:hover,
+#undoBtn:hover {
   opacity: 1;
 }
 

@@ -72,9 +72,10 @@ export const startGame = (): void => {
   const plyMatchBlack = blackPlayer.match(/(?<depth>\d+) ply/u);
   if (plyMatchBlack?.groups) AI.blackPly = Number(plyMatchBlack.groups.depth);
 
-  // Remove start menu, show restart button
+  // Remove start menu, show game buttons
   document.getElementById('background')!.classList.add('hidden');
   document.getElementById('restartBtn')!.classList.remove('hidden');
+  document.getElementById('undoBtn')!.classList.remove('hidden');
 
   // Go!
   switchTurn();
@@ -83,6 +84,7 @@ export const startGame = (): void => {
 export const endGame = (result: GameResult): void => {
   clearSavedGame();
   document.getElementById('restartBtn')!.classList.add('hidden');
+  document.getElementById('undoBtn')!.classList.add('hidden');
   const titles: Record<GameResult, string> = {
     checkmate: 'Checkmate!',
     'fifty-move': 'Draw — 50-move rule!',
