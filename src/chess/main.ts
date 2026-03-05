@@ -108,6 +108,7 @@ export const appState = {
     pawn: { pawnToConvert: -1 },
     positionHistory: new Map(),
   } as Partial<GlobalChess> as GlobalChess,
+  lastMove: null as { from: number; to: number } | null,
   inHand: '' as number | string,
   turn: '' as color,
 };
@@ -578,6 +579,12 @@ export const makeMove = (
   AIMove: boolean,
 ): void => {
   if (origin >= 0 && destination >= 0) {
+    if (appState.lastMove) {
+      document.getElementById(`${appState.lastMove.from}`)?.classList.remove('lastMove');
+      document.getElementById(`${appState.lastMove.to}`)?.classList.remove('lastMove');
+      appState.lastMove = null;
+    }
+
     document
       .getElementById(`${origin}`)!
       .querySelector('a')!
@@ -613,6 +620,12 @@ export const makeMove = (
       }
 
       pawnConversion(destination);
+
+      if (AIMove) {
+        appState.lastMove = { from: origin, to: destination };
+        document.getElementById(`${origin}`)?.classList.add('lastMove');
+        document.getElementById(`${destination}`)?.classList.add('lastMove');
+      }
     }
   }
 
