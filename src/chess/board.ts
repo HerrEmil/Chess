@@ -396,14 +396,18 @@ export const bindEvents = (): void => {
       once: true,
       signal: ac.signal,
     });
-    board.addEventListener('mouseleave', () => {
-      // Stop listening but keep selection if not dragging
-      if (dragging) cancelDrag();
-      else ac.abort();
-    }, {
-      once: true,
-      signal: ac.signal,
-    });
+    board.addEventListener(
+      'mouseleave',
+      () => {
+        // Stop listening but keep selection if not dragging
+        if (dragging) cancelDrag();
+        else ac.abort();
+      },
+      {
+        once: true,
+        signal: ac.signal,
+      },
+    );
   });
 
   window.addEventListener('resize', () => {
