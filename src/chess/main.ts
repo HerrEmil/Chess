@@ -108,8 +108,8 @@ export const appState = {
     pawn: { pawnToConvert: -1 },
     positionHistory: new Map(),
   } as Partial<GlobalChess> as GlobalChess,
-  lastMove: null as { from: number; to: number } | null,
   inHand: '' as number | string,
+  lastMove: null as { from: number; to: number } | null,
   turn: '' as color,
 };
 
