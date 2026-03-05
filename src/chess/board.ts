@@ -175,6 +175,7 @@ export const setLabels = (): void => {
   const cellSize = firstRect.height;
   const borderWidth = parseInt(
     document.documentElement.style.getPropertyValue('--border-width'),
+    10,
   );
   const leftPos = firstRect.left + scrollX;
   const topPosLet1 = firstRect.top + scrollY;
