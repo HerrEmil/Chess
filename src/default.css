@@ -46,12 +46,12 @@ td {
 /*Make the black pieces black and shiny*/
 #board a.black {
   color: #000;
-  text-shadow: 0 0 30px #000;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 /*Make the white pieces white and shiny*/
 #board a.white {
   color: #fff;
-  text-shadow: 0 0 30px #fff;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 /*
@@ -77,14 +77,14 @@ New plain CSS selectors for checkered board:
 }
 .valid a.black {
   text-shadow:
-    0 0 30px #000,
+    0 0 8px rgba(255, 255, 255, 0.5),
     0 0 5px #000,
     0px 0px 20px #f00,
     0px 0px 20px #f00 !important;
 }
 .valid a.white {
   text-shadow:
-    0 0 5px #fff,
+    0 0 8px rgba(0, 0, 0, 0.5),
     0px 0px 20px #f00,
     0px 0px 20px #f00 !important;
 }
