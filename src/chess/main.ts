@@ -341,6 +341,7 @@ const initChess = (): void => {
           appState.turn,
           appState.game.enPassantTarget,
           appState.game.castle,
+          appState.game.positionHistory,
         );
       }, 10);
     }
@@ -687,6 +688,7 @@ export const switchTurn = (): void => {
         appState.turn,
         appState.game.enPassantTarget,
         appState.game.castle,
+        appState.game.positionHistory,
       );
     }, 10);
   }

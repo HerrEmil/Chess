@@ -5,6 +5,8 @@ import {
   mailboxIndex,
   makeMove,
   pieceOnIndex,
+  positionKey,
+  reverseMailbox,
 } from './main.js';
 import { getAllValidMoves, getPiecesOfColor } from './util.js';
 import { isInCheck } from './moveGen.js';
@@ -150,11 +152,34 @@ const getPieceValueSum = ({
     }
   }, 0);
 
+// When materially ahead, reward pushing opponent king to edge and bringing own king closer
+const endgameBonus = (
+  board: readonly string[],
+  currentColor: color,
+): number => {
+  const myKingIdx =
+    reverseMailbox[board.indexOf(currentColor === 'white' ? 'k' : 'K')];
+  const oppKingIdx =
+    reverseMailbox[board.indexOf(currentColor === 'white' ? 'K' : 'k')];
+  if (myKingIdx === -1 || oppKingIdx === -1) return 0;
+
+  const oppFile = oppKingIdx % 8;
+  const oppRank = Math.floor(oppKingIdx / 8);
+  const edgeBonus = (Math.abs(oppFile - 3.5) + Math.abs(oppRank - 3.5)) * 9;
+
+  const myFile = myKingIdx % 8;
+  const myRank = Math.floor(myKingIdx / 8);
+  const kingDist = Math.abs(myFile - oppFile) + Math.abs(myRank - oppRank);
+  const proximityBonus = (14 - kingDist) * 5;
+
+  return edgeBonus + proximityBonus;
+};
+
 // Evaluates the board relative to `currentColor`
 const evaluate = (board: readonly string[], currentColor: color): number => {
   const opponent = oppositeColor(currentColor);
-  const checkBonus = isInCheck(board, opponent) ? 15 : 0;
-  const checkPenalty = isInCheck(board, currentColor) ? 15 : 0;
+  const checkBonus = isInCheck(board, opponent) ? 50 : 0;
+  const checkPenalty = isInCheck(board, currentColor) ? 50 : 0;
 
   const currentValue = getPieceValueSum({
     board,
@@ -166,7 +191,10 @@ const evaluate = (board: readonly string[], currentColor: color): number => {
     pieces: getPiecesOfColor(board, opponent),
   });
 
-  return checkBonus - checkPenalty + (currentValue - opponentValue);
+  const materialDiff = currentValue - opponentValue;
+  const endgame = materialDiff > 300 ? endgameBonus(board, currentColor) : 0;
+
+  return checkBonus - checkPenalty + materialDiff + endgame;
 };
 
 /*
@@ -194,6 +222,7 @@ export const negamax = (
   beta: number,
   enPassantTarget: number | null,
   castle: CastleState,
+  posHistory: Map<string, number> = new Map(),
 ): readonly number[] => {
   if (depth === 0) {
     return [-1, -1, evaluate(board, currentPlayer)];
@@ -219,7 +248,11 @@ export const negamax = (
   }
 
   if (moveList.length === 0) {
-    return [-1, -1, evaluate(board, currentPlayer)];
+    // Checkmate (in check) or stalemate (not in check)
+    if (isInCheck(board, currentPlayer)) {
+      return [-1, -1, -50000 - depth];
+    }
+    return [-1, -1, 0];
   }
 
   // Sort: captures first (highest MVV-LVA score), then quiet moves
@@ -229,22 +262,46 @@ export const negamax = (
   let bestGoal = -1;
   let localAlpha = alpha;
 
+  // Only check repetition near the root (depth >= 2) to avoid
+  // expensive positionKey computation at every node
+  const checkRepetition = depth >= 2 && posHistory.size > 0;
+
   for (const { start, goal } of moveList) {
     const childBoard = boardAfterMove(board, start, goal, enPassantTarget);
     const childEp = computeEnPassantTarget(board, start, goal);
     const childCastle = computeCastleState(castle, start, goal);
 
-    const childResult = negamax(
-      childBoard,
-      oppositeColor(currentPlayer),
-      depth - 1,
-      -beta,
-      -localAlpha,
-      childEp,
-      childCastle,
-    );
+    const childKey = checkRepetition
+      ? positionKey(
+          childBoard,
+          oppositeColor(currentPlayer),
+          childCastle,
+          childEp,
+        )
+      : '';
+    const histCount = checkRepetition ? (posHistory.get(childKey) ?? 0) : 0;
 
-    const score = -childResult[2];
+    let score = 0;
+
+    if (histCount < 2) {
+      if (checkRepetition) posHistory.set(childKey, histCount + 1);
+      const childResult = negamax(
+        childBoard,
+        oppositeColor(currentPlayer),
+        depth - 1,
+        -beta,
+        -localAlpha,
+        childEp,
+        childCastle,
+        posHistory,
+      );
+      score = -childResult[2];
+      // Restore history
+      if (checkRepetition) {
+        if (histCount === 0) posHistory.delete(childKey);
+        else posHistory.set(childKey, histCount);
+      }
+    }
 
     if (score > localAlpha) {
       localAlpha = score;
@@ -268,6 +325,7 @@ export const makeAIMove = (
   turn: color,
   enPassantTarget: number | null,
   castle: CastleState,
+  posHistory: Map<string, number> = new Map(),
 ): void => {
   const ply = turn === 'white' ? AI.whitePly : AI.blackPly;
 
@@ -279,6 +337,7 @@ export const makeAIMove = (
     100000,
     enPassantTarget,
     castle,
+    posHistory,
   );
 
   makeMove(bestMove[0], bestMove[1], true);

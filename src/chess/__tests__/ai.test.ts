@@ -1,9 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { AI, negamax } from '../ai.js';
 import { boardWithPieces } from './helpers.js';
-import { boardAfterMove } from '../main.js';
+import { boardAfterMove, positionKey } from '../main.js';
 import type { CastleState } from '../main.js';
 import { isInCheck } from '../moveGen.js';
+import { getAllValidMoves, getPiecesOfColor } from '../util.js';
 
 const NO_CASTLE: CastleState = {
   whiteShortCastle: false,
@@ -143,5 +144,114 @@ describe('negamax legality', () => {
     // Verify the move is legal: white king must not be in check after the move
     const resultBoard = boardAfterMove(board, bestStart, bestGoal);
     expect(isInCheck(resultBoard, 'white')).toBe(false);
+  });
+});
+
+describe('checkmate and stalemate detection', () => {
+  it('finds mate-in-1 with rook', () => {
+    // Black king a8 (0), white king b6 (17), white rook c1 (58)
+    // Rc8# (58->2) is checkmate: rook checks along rank 8,
+    // king can't go to a7 (white king), b8 (rook), or b7 (white king).
+    const board = boardWithPieces([
+      { piece: 'K', index: 0 }, // black king a8
+      { piece: 'k', index: 17 }, // white king b6
+      { piece: 'r', index: 58 }, // white rook c1
+    ]);
+
+    const [bestStart, bestGoal] = negamax(
+      board,
+      'white',
+      2,
+      -100000,
+      100000,
+      null,
+      NO_CASTLE,
+    );
+
+    // Rook should move to c8 (index 2) for checkmate
+    expect(bestStart).toBe(58);
+    expect(bestGoal).toBe(2);
+
+    const resultBoard = boardAfterMove(board, bestStart, bestGoal);
+    expect(isInCheck(resultBoard, 'black')).toBe(true);
+  });
+
+  it('avoids stalemate when winning', () => {
+    // Black king a8 (0), white king b6 (17), white queen c6 (18)
+    // Qa6 (index 16) would be stalemate. Other queen moves should be preferred.
+    const board = boardWithPieces([
+      { piece: 'K', index: 0 }, // black king a8
+      { piece: 'k', index: 17 }, // white king b6
+      { piece: 'q', index: 18 }, // white queen c6
+    ]);
+
+    const [bestStart, bestGoal] = negamax(
+      board,
+      'white',
+      2,
+      -100000,
+      100000,
+      null,
+      NO_CASTLE,
+    );
+
+    // The AI should not stalemate - verify the opponent still has legal moves
+    // or it's checkmate (not stalemate)
+    const resultBoard = boardAfterMove(board, bestStart, bestGoal);
+    const inCheck = isInCheck(resultBoard, 'black');
+    // If it's not check, the opponent must still have moves (not stalemate)
+    // Qa6 (16) would be stalemate - queen should NOT go there
+    if (bestStart === 18) {
+      expect(bestGoal).not.toBe(16);
+    }
+    // If it delivers check, that's fine (could be checkmate)
+    if (!inCheck) {
+      // Not stalemate: opponent should have legal moves
+      const opponentPieces = getPiecesOfColor(resultBoard, 'black');
+      const opponentMoves = getAllValidMoves(
+        resultBoard,
+        opponentPieces,
+        null,
+        NO_CASTLE,
+      ).flat();
+      expect(opponentMoves.length).toBeGreaterThan(0);
+    }
+  });
+});
+
+describe('repetition awareness', () => {
+  it('avoids move that causes threefold repetition when winning', () => {
+    // White is materially ahead (has a rook). Set up position history
+    // so that one particular move would cause threefold repetition.
+    const board = boardWithPieces([
+      { piece: 'K', index: 4 }, // black king e8
+      { piece: 'k', index: 60 }, // white king e1
+      { piece: 'r', index: 56 }, // white rook a1
+    ]);
+
+    // If rook moves to a2 (48) and that position was seen twice, AI should avoid it
+    const posHistory = new Map<string, number>();
+    const boardAfterRa2 = boardAfterMove(board, 56, 48);
+    const ra2Key = positionKey(boardAfterRa2, 'black', NO_CASTLE, null);
+    posHistory.set(ra2Key, 2);
+
+    const [bestStart, bestGoal] = negamax(
+      board,
+      'white',
+      2,
+      -100000,
+      100000,
+      null,
+      NO_CASTLE,
+      posHistory,
+    );
+
+    // AI should find a move (not give up)
+    expect(bestStart).toBeGreaterThanOrEqual(0);
+    expect(bestGoal).toBeGreaterThanOrEqual(0);
+    // AI should avoid the repeated position (Ra2 = 56->48)
+    if (bestStart === 56) {
+      expect(bestGoal).not.toBe(48);
+    }
   });
 });
