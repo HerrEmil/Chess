@@ -1,5 +1,5 @@
 import { getValid } from './moveGen.js';
-import { appState, makeMove } from './main.js';
+import { appState, mailboxIndex, makeMove } from './main.js';
 
 // Takes a column (0-7) and returns column label (A-H)
 export const intToCol = (charInt: number): string => 'ABCDEFGH'.charAt(charInt);
@@ -117,6 +117,34 @@ export const setBoard = (): void => {
     '<a href="#" class="black pawn">&#9823;</a>';
   document.getElementById('15')!.innerHTML =
     '<a href="#" class="black pawn">&#9823;</a>';
+};
+
+const pieceInfo: Record<string, { color: string; html: string; type: string }> =
+  {
+    B: { color: 'black', html: '&#9821;', type: 'bishop' },
+    K: { color: 'black', html: '&#9818;', type: 'king' },
+    N: { color: 'black', html: '&#9822;', type: 'knight' },
+    P: { color: 'black', html: '&#9823;', type: 'pawn' },
+    Q: { color: 'black', html: '&#9819;', type: 'queen' },
+    R: { color: 'black', html: '&#9820;', type: 'rook' },
+    b: { color: 'white', html: '&#9821;', type: 'bishop' },
+    k: { color: 'white', html: '&#9818;', type: 'king' },
+    n: { color: 'white', html: '&#9822;', type: 'knight' },
+    p: { color: 'white', html: '&#9823;', type: 'pawn' },
+    q: { color: 'white', html: '&#9819;', type: 'queen' },
+    r: { color: 'white', html: '&#9820;', type: 'rook' },
+  };
+
+// Render any board position to the DOM by iterating all 64 squares.
+export const setBoardFromState = (board: readonly string[]): void => {
+  for (let i = 0; i < 64; i += 1) {
+    const cell = document.getElementById(`${i}`)!;
+    const ch = board[mailboxIndex[i]];
+    const info = pieceInfo[ch];
+    cell.innerHTML = info
+      ? `<a href="#" class="${info.color} ${info.type}">${info.html}</a>`
+      : '';
+  }
 };
 
 // Adds 'valid' CSS class to squares, i.e. turns on highlights

@@ -1,5 +1,11 @@
-import { color, makeAIMove } from './ai.js';
-import { bindEvents, buildBoard, setBoard, setLabels } from './board.js';
+import { AI, color, makeAIMove } from './ai.js';
+import {
+  bindEvents,
+  buildBoard,
+  setBoardFromState,
+  setBoard,
+  setLabels,
+} from './board.js';
 import { convertPawn, endGame, startGame } from './panels.js';
 import { getAllValidMoves, getPiecesOfColor } from './util.js';
 import { isInCheck } from './moveGen.js';
@@ -109,14 +115,106 @@ export const appState = {
 window.startGame = startGame;
 window.convertPawn = convertPawn;
 
+const STORAGE_KEY = 'chessGame';
+
+export const saveGame = (): void => {
+  const data = {
+    blackAI: appState.game.blackAI,
+    blackPly: AI.blackPly,
+    board: appState.game.board,
+    castle: appState.game.castle,
+    enPassantTarget: appState.game.enPassantTarget,
+    halfMoveClock: appState.game.halfMoveClock,
+    positionHistory: [...appState.game.positionHistory],
+    turn: appState.turn,
+    whiteAI: appState.game.whiteAI,
+    whitePly: AI.whitePly,
+  };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+};
+
+export const restoreGame = (): boolean => {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return false;
+  try {
+    const data = JSON.parse(raw) as {
+      board: string[];
+      castle: CastleState;
+      enPassantTarget: number | null;
+      halfMoveClock: number;
+      positionHistory: [string, number][];
+      blackAI: boolean;
+      whiteAI: boolean;
+      turn: color;
+      whitePly: number;
+      blackPly: number;
+    };
+    appState.game.board = data.board;
+    appState.game.castle = data.castle;
+    appState.game.enPassantTarget = data.enPassantTarget;
+    appState.game.halfMoveClock = data.halfMoveClock;
+    appState.game.positionHistory = new Map(data.positionHistory);
+    appState.game.blackAI = data.blackAI;
+    appState.game.whiteAI = data.whiteAI;
+    appState.turn = data.turn;
+    AI.whitePly = data.whitePly;
+    AI.blackPly = data.blackPly;
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+export const clearSavedGame = (): void => {
+  localStorage.removeItem(STORAGE_KEY);
+};
+
+const restartGame = (): void => {
+  clearSavedGame();
+  window.location.reload();
+};
+window.restartGame = restartGame;
+
 const initChess = (): void => {
   buildBoard();
-  setBoard();
   bindEvents();
   setLabels();
 
-  // Init the turn counter on black and switch turn to white
-  appState.turn = 'black';
+  if (restoreGame()) {
+    setBoardFromState(appState.game.board);
+    // Hide start menu, show restart button
+    document.getElementById('background')!.classList.add('hidden');
+    document.getElementById('restartBtn')!.classList.remove('hidden');
+    // Set turn indicators
+    const opponent: color = appState.turn === 'white' ? 'black' : 'white';
+    document
+      .querySelectorAll(`.${opponent}`)
+      .forEach((el) => el.classList.add('notYourTurn'));
+    document.getElementById(`${opponent}Turn2`)!.classList.add('hidden');
+    document
+      .querySelectorAll(`.${appState.turn}`)
+      .forEach((el) => el.classList.remove('notYourTurn'));
+    document
+      .getElementById(`${appState.turn}Turn2`)!
+      .classList.remove('hidden');
+    // If it's AI's turn, trigger AI move
+    if (
+      (appState.turn === 'black' && appState.game.blackAI) ||
+      (appState.turn === 'white' && appState.game.whiteAI)
+    ) {
+      setTimeout(() => {
+        makeAIMove(
+          appState.game.board,
+          appState.turn,
+          appState.game.enPassantTarget,
+        );
+      }, 10);
+    }
+  } else {
+    setBoard();
+    appState.turn = 'black';
+  }
+
   // Makes no text selectable.
   document.onselectstart = (): false => false;
 };
@@ -436,6 +534,8 @@ export const switchTurn = (): void => {
     endGame(result.gameEnd);
     return;
   }
+
+  saveGame();
 
   if (result.shouldTriggerAI) {
     setTimeout(() => {

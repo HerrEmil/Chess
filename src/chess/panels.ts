@@ -1,5 +1,11 @@
 import { AI } from './ai.js';
-import { appState, mailboxIndex, switchTurn, type GameResult } from './main.js';
+import {
+  appState,
+  clearSavedGame,
+  mailboxIndex,
+  switchTurn,
+  type GameResult,
+} from './main.js';
 
 const pieceChar = new Map(
   Object.entries({
@@ -66,14 +72,17 @@ export const startGame = (): void => {
   const plyMatchBlack = blackPlayer.match(/(?<depth>\d+) ply/u);
   if (plyMatchBlack?.groups) AI.blackPly = Number(plyMatchBlack.groups.depth);
 
-  // Remove start menu
+  // Remove start menu, show restart button
   document.getElementById('background')!.classList.add('hidden');
+  document.getElementById('restartBtn')!.classList.remove('hidden');
 
   // Go!
   switchTurn();
 };
 
 export const endGame = (result: GameResult): void => {
+  clearSavedGame();
+  document.getElementById('restartBtn')!.classList.add('hidden');
   const titles: Record<GameResult, string> = {
     checkmate: 'Checkmate!',
     'fifty-move': 'Draw — 50-move rule!',

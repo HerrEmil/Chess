@@ -178,6 +178,23 @@ h3 {
 =========== Miscellaneous ============
 */
 
+#restartBtn {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 5;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 4px;
+  line-height: 1;
+}
+#restartBtn:hover {
+  opacity: 1;
+}
+
 .hidden {
   display: none !important;
 }
