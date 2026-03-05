@@ -80,12 +80,12 @@ export const pieceOnIndex = ({
   readonly pieceIndex: number;
 }): string => board[mailboxIndex[pieceIndex]];
 
-const setTurnVisible = (color: color, visible: boolean): void => {
+const setTurnVisible = (side: color, visible: boolean): void => {
   document
-    .getElementById(`${color}Turn2`)!
+    .getElementById(`${side}Turn2`)!
     .classList.toggle('invisible', !visible);
   document
-    .getElementById(`${color}Turn2Landscape`)
+    .getElementById(`${side}Turn2Landscape`)
     ?.classList.toggle('invisible', !visible);
 };
 
