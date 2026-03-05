@@ -1,5 +1,0 @@
-Wishlist
- - Game persistence (state lost on refresh)
-
-Bugs
- - Game can continue after player has lost king. When testing AI vs AI games, I noted several games where the king got captured but the game continued.
