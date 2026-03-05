@@ -362,7 +362,9 @@ a.dragging {
     justify-content: center;
     align-items: center;
     max-width: calc(var(--cell-size, 80px) * 0.5);
-    height: calc(var(--cell-size, 80px) * 8 + var(--border-width, 20px) * 2 + 2px);
+    height: calc(
+      var(--cell-size, 80px) * 8 + var(--border-width, 20px) * 2 + 2px
+    );
     padding: 0;
     gap: 4px;
     overflow: hidden;

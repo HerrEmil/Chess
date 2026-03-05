@@ -293,7 +293,9 @@ const undoMove = (): void => {
   document
     .querySelectorAll(`.${appState.turn}`)
     .forEach((el) => el.classList.remove('notYourTurn'));
-  document.getElementById(`${appState.turn}Turn2`)!.classList.remove('invisible');
+  document
+    .getElementById(`${appState.turn}Turn2`)!
+    .classList.remove('invisible');
 
   saveGame();
 };
@@ -664,7 +666,9 @@ export const switchTurn = (): void => {
   document
     .querySelectorAll(`.${appState.turn}`)
     .forEach((el) => el.classList.remove('notYourTurn'));
-  document.getElementById(`${appState.turn}Turn2`)!.classList.remove('invisible');
+  document
+    .getElementById(`${appState.turn}Turn2`)!
+    .classList.remove('invisible');
 
   if (result.gameEnd) {
     endGame(result.gameEnd);
