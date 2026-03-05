@@ -85,8 +85,11 @@ Note that white cells are first, black are second
 .bc {
   background-color: #b58863;
 }
-.lastMove {
-  background-color: rgba(235, 190, 60, 0.35) !important;
+.lastMove.wc {
+  background-color: #f5e6a3 !important;
+}
+.lastMove.bc {
+  background-color: #d4a830 !important;
 }
 /* Valid move: green dot in center */
 .valid::after {
