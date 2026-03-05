@@ -207,6 +207,7 @@ const initChess = (): void => {
           appState.game.board,
           appState.turn,
           appState.game.enPassantTarget,
+          appState.game.castle,
         );
       }, 10);
     }
@@ -284,7 +285,7 @@ const computeCastlingRookMove = (
   return null;
 };
 
-const computeCastleState = (
+export const computeCastleState = (
   castle: CastleState,
   moveOrigin: number,
   moveDestination: number,
@@ -543,6 +544,7 @@ export const switchTurn = (): void => {
         appState.game.board,
         appState.turn,
         appState.game.enPassantTarget,
+        appState.game.castle,
       );
     }, 10);
   }

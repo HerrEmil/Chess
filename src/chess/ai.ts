@@ -1,11 +1,13 @@
 import {
   boardAfterMove,
+  computeCastleState,
+  type CastleState,
   mailboxIndex,
   makeMove,
   pieceOnIndex,
 } from './main.js';
-import { getPiecesOfColor } from './util.js';
-import { getAllValidMovesNoCheck, isInCheck } from './moveGen.js';
+import { getAllValidMoves, getPiecesOfColor } from './util.js';
+import { isInCheck } from './moveGen.js';
 
 export type color = 'white' | 'black';
 
@@ -153,20 +155,21 @@ const computeEnPassantTarget = (
   return null;
 };
 
-const negamax = (
+export const negamax = (
   board: readonly string[],
   currentPlayer: color,
   depth: number,
   alpha: number,
   beta: number,
   enPassantTarget: number | null,
+  castle: CastleState,
 ): readonly number[] => {
   if (depth === 0) {
     return [-1, -1, evaluate(board, currentPlayer)];
   }
 
   const pieces = getPiecesOfColor(board, currentPlayer);
-  const moves = getAllValidMovesNoCheck(board, pieces, enPassantTarget);
+  const moves = getAllValidMoves(board, pieces, enPassantTarget, castle);
 
   if (moves.every((m) => m.length === 0)) {
     return [-1, -1, evaluate(board, currentPlayer)];
@@ -182,6 +185,7 @@ const negamax = (
       const goal = move.valueOf();
       const childBoard = boardAfterMove(board, start, goal, enPassantTarget);
       const childEp = computeEnPassantTarget(board, start, goal);
+      const childCastle = computeCastleState(castle, start, goal);
 
       const childResult = negamax(
         childBoard,
@@ -190,6 +194,7 @@ const negamax = (
         -beta,
         -localAlpha,
         childEp,
+        childCastle,
       );
 
       const score = -childResult[2];
@@ -216,10 +221,19 @@ export const makeAIMove = (
   board: readonly string[],
   turn: color,
   enPassantTarget: number | null,
+  castle: CastleState,
 ): void => {
   const ply = turn === 'white' ? AI.whitePly : AI.blackPly;
 
-  const bestMove = negamax(board, turn, ply, -100000, 100000, enPassantTarget);
+  const bestMove = negamax(
+    board,
+    turn,
+    ply,
+    -100000,
+    100000,
+    enPassantTarget,
+    castle,
+  );
 
   makeMove(bestMove[0], bestMove[1], true);
 };
