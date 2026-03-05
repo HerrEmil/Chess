@@ -268,7 +268,7 @@ export const bindEvents = (): void => {
 
   board.addEventListener('mousedown', (e) => {
     const targetEl = e.target as HTMLElement;
-    const targetTd = targetEl.closest('#board td') as HTMLElement | null;
+    const targetTd = targetEl.closest('#board td');
     if (!targetTd) return;
 
     const clickedLocation = parseInt(targetTd.id, 10);
@@ -397,8 +397,9 @@ export const bindEvents = (): void => {
       signal: ac.signal,
     });
     board.addEventListener('mouseleave', () => {
+      // Stop listening but keep selection if not dragging
       if (dragging) cancelDrag();
-      else ac.abort(); // stop listening but keep selection
+      else ac.abort();
     }, {
       once: true,
       signal: ac.signal,
