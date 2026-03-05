@@ -11,7 +11,7 @@
 =========== General setup ===========
 */
 html {
-  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a2e 50%, #2c2c2c 100%);
+  background-color: #a8a09a;
   overflow: hidden;
 }
 body {
@@ -35,7 +35,6 @@ body {
 =========== Board controls ===========
 */
 table {
-  border-spacing: 0px;
   border-collapse: collapse;
   user-select: none;
   -webkit-user-select: none;
@@ -54,7 +53,7 @@ td {
   outline: var(--border-width, 20px) solid #5c3a1e;
   margin: var(--border-width, 20px) 0;
   border-radius: 2px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(40, 25, 15, 0.45);
 }
 /*Fix links to not look like links, and choose the proper font for pieces*/
 #board a {
@@ -63,17 +62,17 @@ td {
 }
 /*Make the black pieces dark with subtle light shadow*/
 #board a.black {
-  color: #333;
+  color: #2c2420;
   text-shadow:
-    0 1px 2px rgba(255, 255, 255, 0.3),
-    0 0 1px rgba(255, 255, 255, 0.2);
+    0 1px 2px rgba(255, 245, 230, 0.25),
+    0 0 1px rgba(255, 245, 230, 0.15);
 }
 /*Make the white pieces white with subtle dark shadow*/
 #board a.white {
-  color: #fff;
+  color: #faf6f0;
   text-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.5),
-    0 0 2px rgba(0, 0, 0, 0.3);
+    0 1px 3px rgba(50, 30, 15, 0.45),
+    0 0 2px rgba(50, 30, 15, 0.25);
 }
 
 /*
@@ -87,9 +86,9 @@ Note that white cells are first, black are second
   background-color: #b58863;
 }
 .lastMove {
-  background-color: rgba(255, 200, 50, 0.4) !important;
+  background-color: rgba(235, 190, 60, 0.35) !important;
 }
-/* Valid move: semi-transparent dot in center for empty squares */
+/* Valid move: green dot in center */
 .valid::after {
   content: '';
   position: absolute;
@@ -99,28 +98,18 @@ Note that white cells are first, black are second
   width: 25%;
   height: 25%;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(90, 145, 70, 0.55);
   pointer-events: none;
 }
-/* Valid move on squares with capturable pieces: ring instead of dot */
+/* Capturable pieces: red ring */
 .valid:has(a)::after {
   width: 85%;
   height: 85%;
   background: none;
-  border: calc(var(--cell-size, 80px) * 0.08) solid rgba(0, 0, 0, 0.15);
-}
-.valid a.black {
-  text-shadow:
-    0 1px 2px rgba(255, 255, 255, 0.3),
-    0 0 1px rgba(255, 255, 255, 0.2);
-}
-.valid a.white {
-  text-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.5),
-    0 0 2px rgba(0, 0, 0, 0.3);
+  border: calc(var(--cell-size, 80px) * 0.08) solid rgba(180, 60, 45, 0.5);
 }
 .origin {
-  background-color: rgba(80, 140, 220, 0.35) !important;
+  background-color: rgba(196, 170, 120, 0.55) !important;
 }
 
 /*
@@ -128,18 +117,13 @@ Note that white cells are first, black are second
 */
 p {
   position: absolute;
-  font-family:
-    'Segoe UI',
-    system-ui,
-    -apple-system,
-    sans-serif;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: none;
+  color: #faf6f0;
+  text-shadow: 0 0 5px rgba(250, 246, 240, 0.8);
   margin: auto;
 }
 .invis {
-  color: transparent;
+  color: #a8a09a;
   text-shadow: none;
 }
 
@@ -148,12 +132,12 @@ p {
   text-align: center;
 }
 #whiteTurn2 {
-  text-shadow: none;
-  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 5px rgba(250, 246, 240, 0.8);
+  color: #faf6f0;
 }
 #blackTurn2 {
-  text-shadow: none;
-  color: rgba(50, 50, 50, 0.8);
+  text-shadow: 0 0 5px rgba(44, 36, 32, 0.6);
+  color: #2c2420;
 }
 #conversion {
   position: fixed;
@@ -165,21 +149,16 @@ p {
   margin-top: -90px;
   margin-left: -160px;
   border: none;
-  background-color: #fff;
+  background-color: #fdf9f5;
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 40px rgba(40, 25, 15, 0.3);
   z-index: 20;
 }
 #conversion h1 {
-  font-family:
-    'Segoe UI',
-    system-ui,
-    -apple-system,
-    sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #333;
+  color: #3a2a1e;
   margin: 0 0 16px 0;
 }
 #conversion input[type='radio'] {
@@ -194,11 +173,6 @@ p {
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
-  font-family:
-    'Segoe UI',
-    system-ui,
-    -apple-system,
-    sans-serif;
   font-size: 14px;
   font-weight: 600;
   transition: background 0.15s ease;
@@ -216,19 +190,19 @@ p {
   transform: translate(-50%, -50%);
   margin: 0;
   border: none;
-  background-color: #fff;
+  background-color: #fdf9f5;
   text-align: center;
   border-radius: 16px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 16px 48px rgba(40, 25, 15, 0.3);
 }
 #background {
   align-items: center;
   justify-content: center;
   transition: 0.25s opacity;
   background: radial-gradient(
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.3) 35%,
-    rgba(0, 0, 0, 0.7)
+    rgba(120, 110, 100, 0.5),
+    rgba(120, 110, 100, 0.5) 35%,
+    rgba(30, 20, 15, 0.7)
   );
   bottom: 0;
   display: flex;
@@ -242,25 +216,15 @@ p {
   z-index: 10;
 }
 h2 {
-  font-family:
-    'Segoe UI',
-    system-ui,
-    -apple-system,
-    sans-serif;
   font-size: 20px;
   font-weight: 700;
-  color: #333;
+  color: #3a2a1e;
   margin: 0 0 20px 0;
 }
 h3 {
-  font-family:
-    'Segoe UI',
-    system-ui,
-    -apple-system,
-    sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #666;
+  color: #8a7568;
   margin: 12px 0 6px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -268,7 +232,7 @@ h3 {
 #startMenu select {
   width: 100%;
   padding: 8px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #d4c4b0;
   border-radius: 8px;
   font-family:
     'Segoe UI',
@@ -276,8 +240,8 @@ h3 {
     -apple-system,
     sans-serif;
   font-size: 14px;
-  color: #333;
-  background: #fafafa;
+  color: #3a2a1e;
+  background: #fdfaf7;
   appearance: auto;
   cursor: pointer;
   transition: border-color 0.15s ease;
@@ -316,7 +280,7 @@ h3 {
 
 #restartBtn,
 #undoBtn {
-  background: rgba(255, 255, 255, 0.1);
+  background: none;
   border: none;
   border-radius: 8px;
   font-family: 'Arial Unicode MS', sans-serif;
@@ -325,10 +289,10 @@ h3 {
   width: calc(var(--cell-size, 80px) * 0.5);
   height: calc(var(--cell-size, 80px) * 0.5);
   cursor: pointer;
-  opacity: 0.6;
+  color: #3a2a1e;
+  opacity: 0.5;
   padding: 0;
   flex-shrink: 0;
-  color: rgba(255, 255, 255, 0.8);
   transition:
     opacity 0.15s ease,
     background 0.15s ease;
@@ -336,7 +300,6 @@ h3 {
 #restartBtn:hover,
 #undoBtn:hover {
   opacity: 1;
-  background: rgba(255, 255, 255, 0.2);
 }
 
 .hidden {
@@ -371,10 +334,10 @@ a.dragging {
   -webkit-user-select: none;
 }
 #captured-black {
-  color: #444;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+  color: #2c2420;
+  text-shadow: 0 0 4px rgba(255, 245, 230, 0.35);
 }
 #captured-white {
-  color: #ccc;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: #e8e0d8;
+  text-shadow: 0 0 4px rgba(50, 30, 15, 0.35);
 }
