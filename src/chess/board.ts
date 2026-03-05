@@ -10,11 +10,20 @@ const TRAY_RATIO = 0.5;
 
 // Scale the board and all surrounding elements to fit the viewport.
 const scaleBoard = (): void => {
-  // Same units both axes: equal padding (tray-sized) on all four sides
-  const units = 8 + 2 * BORDER_RATIO + 2 * TRAY_RATIO;
+  const isLandscape = window.innerWidth > window.innerHeight;
+
+  // In portrait, trays are above/below (add to height units)
+  // In landscape, trays are left/right (add to width units)
+  const LABEL_RATIO = 0.3;
+  const widthUnits = isLandscape
+    ? 8 + 2 * BORDER_RATIO + 2 * TRAY_RATIO
+    : 8 + 2 * BORDER_RATIO + 2 * LABEL_RATIO;
+  const heightUnits = isLandscape
+    ? 8 + 2 * BORDER_RATIO + 2 * LABEL_RATIO
+    : 8 + 2 * BORDER_RATIO + 2 * TRAY_RATIO;
 
   const tdSize = Math.floor(
-    Math.min(window.innerHeight / units, window.innerWidth / units),
+    Math.min(window.innerHeight / heightUnits, window.innerWidth / widthUnits),
   );
   const borderWidth = Math.round(tdSize * BORDER_RATIO);
   const fontSize = tdSize / 25;
@@ -229,22 +238,6 @@ export const setLabels = (): void => {
         index,
       )}</p>`,
     );
-  }
-  const blackTopPos = topPosLet1 + cellSize / 2;
-  const whiteTopPos = topPosLet2 - cellSize / 2 - cellSize;
-  const bothLeftPos = leftPos + cellSize * 8 + borderWidth + borderWidth / 2;
-
-  for (const [id, topPos] of [
-    ['blackTurn2', blackTopPos],
-    ['whiteTurn2', whiteTopPos],
-  ] as const) {
-    const el = document.getElementById(id)!;
-    el.style.fontSize = `${fontSize * 2}em`;
-    el.style.height = `${cellSize}px`;
-    el.style.left = `${bothLeftPos}px`;
-    el.style.lineHeight = `${cellSize}px`;
-    el.style.top = `${topPos}px`;
-    el.style.width = `${cellSize}px`;
   }
 };
 

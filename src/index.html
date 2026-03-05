@@ -17,7 +17,7 @@
   <body>
     <!-- Content -->
     <div id="main">
-      <div class="tray-row">
+      <div class="tray-row" id="top-tray">
         <button
           id="restartBtn"
           class="hidden"
@@ -35,13 +35,13 @@
           &#8617;
         </button>
         <div id="captured-black" class="captured-tray"></div>
+        <p id="blackTurn2">&#8592;</p>
       </div>
       <table id="board"></table>
-      <div class="tray-row">
+      <div class="tray-row" id="bottom-tray">
         <div id="captured-white" class="captured-tray"></div>
+        <p id="whiteTurn2" class="invisible">&#8592;</p>
       </div>
-      <p id="blackTurn2">&#8592;</p>
-      <p id="whiteTurn2" class="hidden">&#8592;</p>
     </div>
 
     <!-- Pawn promotion dialog -->

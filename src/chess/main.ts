@@ -289,11 +289,11 @@ const undoMove = (): void => {
   document
     .querySelectorAll(`.${opponent}`)
     .forEach((el) => el.classList.add('notYourTurn'));
-  document.getElementById(`${opponent}Turn2`)!.classList.add('hidden');
+  document.getElementById(`${opponent}Turn2`)!.classList.add('invisible');
   document
     .querySelectorAll(`.${appState.turn}`)
     .forEach((el) => el.classList.remove('notYourTurn'));
-  document.getElementById(`${appState.turn}Turn2`)!.classList.remove('hidden');
+  document.getElementById(`${appState.turn}Turn2`)!.classList.remove('invisible');
 
   saveGame();
 };
@@ -316,13 +316,13 @@ const initChess = (): void => {
     document
       .querySelectorAll(`.${opponent}`)
       .forEach((el) => el.classList.add('notYourTurn'));
-    document.getElementById(`${opponent}Turn2`)!.classList.add('hidden');
+    document.getElementById(`${opponent}Turn2`)!.classList.add('invisible');
     document
       .querySelectorAll(`.${appState.turn}`)
       .forEach((el) => el.classList.remove('notYourTurn'));
     document
       .getElementById(`${appState.turn}Turn2`)!
-      .classList.remove('hidden');
+      .classList.remove('invisible');
     // If it's AI's turn, trigger AI move
     if (
       (appState.turn === 'black' && appState.game.blackAI) ||
@@ -655,7 +655,7 @@ export const switchTurn = (): void => {
   document
     .querySelectorAll(`.${appState.turn}`)
     .forEach((el) => el.classList.add('notYourTurn'));
-  document.getElementById(`${appState.turn}Turn2`)!.classList.add('hidden');
+  document.getElementById(`${appState.turn}Turn2`)!.classList.add('invisible');
 
   // Apply new turn
   appState.turn = result.newTurn;
@@ -664,7 +664,7 @@ export const switchTurn = (): void => {
   document
     .querySelectorAll(`.${appState.turn}`)
     .forEach((el) => el.classList.remove('notYourTurn'));
-  document.getElementById(`${appState.turn}Turn2`)!.classList.remove('hidden');
+  document.getElementById(`${appState.turn}Turn2`)!.classList.remove('invisible');
 
   if (result.gameEnd) {
     endGame(result.gameEnd);

@@ -129,7 +129,12 @@ p {
 
 #whiteTurn2,
 #blackTurn2 {
+  position: static;
   text-align: center;
+  flex-shrink: 0;
+  width: calc(var(--cell-size, 80px) * 0.5);
+  font-size: calc(var(--cell-size, 80px) * 0.35);
+  line-height: calc(var(--cell-size, 80px) * 0.5);
 }
 #whiteTurn2 {
   text-shadow: 0 0 5px rgba(250, 246, 240, 0.8);
@@ -305,6 +310,9 @@ h3 {
 .hidden {
   display: none !important;
 }
+.invisible {
+  visibility: hidden;
+}
 .notYourTurn {
   pointer-events: none;
 }
@@ -340,4 +348,28 @@ a.dragging {
 #captured-white {
   color: #e8e0d8;
   text-shadow: 0 0 4px rgba(50, 30, 15, 0.35);
+}
+
+@media (orientation: landscape) {
+  #main {
+    flex-direction: row;
+  }
+  #board {
+    margin: 0 var(--border-width, 20px);
+  }
+  .tray-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: calc(var(--cell-size, 80px) * 0.5);
+    height: calc(var(--cell-size, 80px) * 8 + var(--border-width, 20px) * 2 + 2px);
+    padding: 0;
+    gap: 4px;
+    overflow: hidden;
+  }
+  .captured-tray {
+    max-width: calc(var(--cell-size, 80px));
+    word-break: break-all;
+    line-height: calc(var(--cell-size, 80px) * 0.4);
+  }
 }
