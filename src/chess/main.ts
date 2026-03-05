@@ -81,6 +81,7 @@ export const pieceOnIndex = ({
 }): string => board[mailboxIndex[pieceIndex]];
 
 export const appState = {
+  capturedPieces: { black: [] as string[], white: [] as string[] },
   // prettier-ignore
   game: {
     board: [
@@ -123,6 +124,7 @@ export const saveGame = (): void => {
     blackAI: appState.game.blackAI,
     blackPly: AI.blackPly,
     board: appState.game.board,
+    capturedPieces: appState.capturedPieces,
     castle: appState.game.castle,
     enPassantTarget: appState.game.enPassantTarget,
     halfMoveClock: appState.game.halfMoveClock,
@@ -140,6 +142,7 @@ export const restoreGame = (): boolean => {
   try {
     const data = JSON.parse(raw) as {
       board: string[];
+      capturedPieces?: { black: string[]; white: string[] };
       castle: CastleState;
       enPassantTarget: number | null;
       halfMoveClock: number;
@@ -157,6 +160,9 @@ export const restoreGame = (): boolean => {
     appState.game.positionHistory = new Map(data.positionHistory);
     appState.game.blackAI = data.blackAI;
     appState.game.whiteAI = data.whiteAI;
+    if (data.capturedPieces) {
+      appState.capturedPieces = data.capturedPieces;
+    }
     appState.turn = data.turn;
     AI.whitePly = data.whitePly;
     AI.blackPly = data.blackPly;
@@ -176,6 +182,37 @@ const restartGame = (): void => {
 };
 window.restartGame = restartGame;
 
+const capturedPieceHtml: Record<string, string> = {
+  B: '\u265D',
+  K: '\u265A',
+  N: '\u265E',
+  P: '\u265F',
+  Q: '\u265B',
+  R: '\u265C',
+  b: '\u265D',
+  k: '\u265A',
+  n: '\u265E',
+  p: '\u265F',
+  q: '\u265B',
+  r: '\u265C',
+};
+
+const pieceOrder = 'qrbnp';
+
+export const renderCapturedPieces = (): void => {
+  for (const side of ['black', 'white'] as const) {
+    const el = document.getElementById(`captured-${side}`);
+    if (el) {
+      const sorted = [...appState.capturedPieces[side]].sort(
+        (a, b) =>
+          pieceOrder.indexOf(a.toLowerCase()) -
+          pieceOrder.indexOf(b.toLowerCase()),
+      );
+      el.textContent = sorted.map((p) => capturedPieceHtml[p] ?? '').join(' ');
+    }
+  }
+};
+
 const initChess = (): void => {
   buildBoard();
   bindEvents();
@@ -183,6 +220,7 @@ const initChess = (): void => {
 
   if (restoreGame()) {
     setBoardFromState(appState.game.board);
+    renderCapturedPieces();
     // Hide start menu, show restart button
     document.getElementById('background')!.classList.add('hidden');
     document.getElementById('restartBtn')!.classList.remove('hidden');
@@ -263,6 +301,7 @@ export const boardAfterMove = (
 
 export type MoveResult = {
   board: string[];
+  capturedPiece: string | null;
   castle: CastleState;
   castlingRookMove: [number, number] | null;
   enPassantCaptureIndex: number | null;
@@ -366,6 +405,13 @@ export const applyMove = (
   // Detect capture before moving the piece
   const isCapture = destPiece !== '-' || isEnPassant;
 
+  // Record captured piece character
+  const capturedPiece = isEnPassant
+    ? pieceOnIndex({ board: game.board, pieceIndex: enPassantCaptureIndex! })
+    : destPiece === '-'
+      ? null
+      : destPiece;
+
   // Compute castling rook move before updating castling state
   const castlingRookMove = computeCastlingRookMove(
     game.castle,
@@ -403,6 +449,7 @@ export const applyMove = (
 
   return {
     board,
+    capturedPiece,
     castle,
     castlingRookMove,
     enPassantCaptureIndex,
@@ -605,6 +652,16 @@ export const makeMove = (
       appState.game.castle = result.castle;
       appState.game.enPassantTarget = result.enPassantTarget;
       appState.game.halfMoveClock = result.halfMoveClock;
+
+      if (result.capturedPiece) {
+        // Uppercase = black piece, lowercase = white piece
+        const capturedColor =
+          result.capturedPiece === result.capturedPiece.toUpperCase()
+            ? 'black'
+            : 'white';
+        appState.capturedPieces[capturedColor].push(result.capturedPiece);
+        renderCapturedPieces();
+      }
 
       const { enPassantCaptureIndex, castlingRookMove } = result;
 

@@ -210,3 +210,24 @@ Fix-it-all for mouseposition shizz. This ensures that while mouse is being dragg
 a.dragging {
   pointer-events: none;
 }
+.captured-tray {
+  text-align: center;
+  font-family: 'Arial Unicode MS', sans-serif;
+  font-size: 1.8em;
+  min-height: 1.4em;
+  letter-spacing: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+  z-index: 1;
+}
+#captured-black {
+  color: #333;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+  margin-bottom: -8px;
+}
+#captured-white {
+  color: #ddd;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  margin-top: -8px;
+}
