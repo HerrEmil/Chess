@@ -232,7 +232,7 @@ export const setLabels = (): void => {
   }
   const blackTopPos = topPosLet1 + cellSize / 2;
   const whiteTopPos = topPosLet2 - cellSize / 2 - cellSize;
-  const bothLeftPos = leftPos + cellSize * 8 + borderWidth;
+  const bothLeftPos = leftPos + cellSize * 8 + borderWidth + borderWidth / 2;
 
   for (const [id, topPos] of [
     ['blackTurn2', blackTopPos],

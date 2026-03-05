@@ -227,6 +227,9 @@ a.dragging {
   display: flex;
   align-items: center;
   width: calc(var(--cell-size, 80px) * 8 + var(--border-width, 20px) * 2 + 2px);
+  padding: 0 var(--border-width, 20px);
+  gap: 4px;
+  box-sizing: border-box;
 }
 .captured-tray {
   flex: 1;
