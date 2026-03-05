@@ -580,8 +580,12 @@ export const makeMove = (
 ): void => {
   if (origin >= 0 && destination >= 0) {
     if (appState.lastMove) {
-      document.getElementById(`${appState.lastMove.from}`)?.classList.remove('lastMove');
-      document.getElementById(`${appState.lastMove.to}`)?.classList.remove('lastMove');
+      document
+        .getElementById(`${appState.lastMove.from}`)
+        ?.classList.remove('lastMove');
+      document
+        .getElementById(`${appState.lastMove.to}`)
+        ?.classList.remove('lastMove');
       appState.lastMove = null;
     }
 
