@@ -236,19 +236,23 @@ export const setLabels = (): void => {
 
 export const bindEvents = (): void => {
   const board = document.getElementById('board')!;
+  let selectedSquare: number | null = null;
 
-  // Prevent native browser drag on <a> elements so mousemove fires during drag
-  board.addEventListener('dragstart', (e) => e.preventDefault());
+  const clearSelection = (): void => {
+    document
+      .querySelectorAll('.valid')
+      .forEach((el) => el.classList.remove('valid'));
+    document
+      .querySelectorAll('.origin')
+      .forEach((el) => el.classList.remove('origin'));
+    selectedSquare = null;
+    appState.inHand = '';
+  };
 
-  board.addEventListener('mousedown', (e) => {
-    const anchor = (e.target as HTMLElement).closest('#board a');
-    if (!(anchor instanceof HTMLAnchorElement)) return;
-    e.preventDefault();
-
-    const cell = anchor.parentElement as HTMLElement;
-    const location = parseInt(cell.id, 10);
+  const selectPiece = (location: number): void => {
+    selectedSquare = location;
     appState.inHand = location;
-    cell.classList.add('origin');
+    document.getElementById(`${location}`)!.classList.add('origin');
     markValids(
       getValid(
         location,
@@ -257,6 +261,55 @@ export const bindEvents = (): void => {
         appState.game.castle,
       ),
     );
+  };
+
+  // Prevent native browser drag on <a> elements so mousemove fires during drag
+  board.addEventListener('dragstart', (e) => e.preventDefault());
+
+  board.addEventListener('mousedown', (e) => {
+    const targetEl = e.target as HTMLElement;
+    const targetTd = targetEl.closest('#board td') as HTMLElement | null;
+    if (!targetTd) return;
+
+    const clickedLocation = parseInt(targetTd.id, 10);
+    // --- Path A: a piece is already selected ---
+    if (selectedSquare !== null) {
+      e.preventDefault();
+
+      // Clicked a valid destination → execute move
+      // makeMove checks .valid class and handles cleanup, so don't clearSelection first
+      if (targetTd.classList.contains('valid')) {
+        const origin = selectedSquare;
+        selectedSquare = null;
+        makeMove(origin, clickedLocation, false);
+        return;
+      }
+
+      // Clicked a different own piece → switch selection
+      const anchor = targetEl.closest('#board a');
+      if (
+        anchor instanceof HTMLAnchorElement &&
+        anchor.classList.contains(appState.turn)
+      ) {
+        clearSelection();
+        selectPiece(clickedLocation);
+        return;
+      }
+
+      // Anything else → deselect
+      clearSelection();
+      return;
+    }
+
+    // --- Path B: no selection, need a piece click ---
+    const anchor = targetEl.closest('#board a');
+    if (!(anchor instanceof HTMLAnchorElement)) return;
+    e.preventDefault();
+
+    const cell = targetTd;
+    const location = clickedLocation;
+
+    selectPiece(location);
 
     const boardRect = board.getBoundingClientRect();
     const cellRect = cell.getBoundingClientRect();
@@ -264,10 +317,6 @@ export const bindEvents = (): void => {
     const startX = e.clientX;
     const startY = e.clientY;
     const ac = new AbortController();
-
-    anchor.classList.add('dragging');
-    anchor.style.position = 'relative';
-    anchor.style.zIndex = '1000';
 
     const onMove = (ev: MouseEvent): void => {
       let dx = ev.clientX - startX;
@@ -289,6 +338,13 @@ export const bindEvents = (): void => {
       anchor.style.top = `${dy}px`;
     };
 
+    const startDrag = (): void => {
+      anchor.classList.add('dragging');
+      anchor.style.position = 'relative';
+      anchor.style.zIndex = '1000';
+      document.addEventListener('mousemove', onMove, { signal: ac.signal });
+    };
+
     const resetAnchor = (): void => {
       ac.abort();
       anchor.classList.remove('dragging');
@@ -300,34 +356,50 @@ export const bindEvents = (): void => {
 
     const cancelDrag = (): void => {
       resetAnchor();
-      document
-        .querySelectorAll('.valid')
-        .forEach((el) => el.classList.remove('valid'));
-      document
-        .querySelectorAll('.origin')
-        .forEach((el) => el.classList.remove('origin'));
-      appState.inHand = '';
+      clearSelection();
+    };
+
+    let dragging = false;
+
+    const onMouseMove = (ev: MouseEvent): void => {
+      const dx = ev.clientX - startX;
+      const dy = ev.clientY - startY;
+      if (!dragging && Math.hypot(dx, dy) >= 5) {
+        dragging = true;
+        startDrag();
+      }
     };
 
     const onUp = (ev: MouseEvent): void => {
+      ac.abort();
+      if (!dragging) {
+        // Click (no drag) → keep selection visible for click-to-move
+        return;
+      }
+
       resetAnchor();
 
       // Find the drop target cell under the pointer
       const dropEl = document.elementFromPoint(ev.clientX, ev.clientY);
-      const targetTd = dropEl?.closest('#board td') as HTMLElement | null;
-      if (targetTd) {
-        makeMove(appState.inHand as number, parseInt(targetTd.id, 10), false);
+      const dropTd = dropEl?.closest('#board td') as HTMLElement | null;
+      if (dropTd) {
+        const origin = selectedSquare!;
+        selectedSquare = null;
+        makeMove(origin, parseInt(dropTd.id, 10), false);
       } else {
         cancelDrag();
       }
     };
 
-    document.addEventListener('mousemove', onMove, { signal: ac.signal });
+    document.addEventListener('mousemove', onMouseMove, { signal: ac.signal });
     document.addEventListener('mouseup', onUp, {
       once: true,
       signal: ac.signal,
     });
-    board.addEventListener('mouseleave', cancelDrag, {
+    board.addEventListener('mouseleave', () => {
+      if (dragging) cancelDrag();
+      else ac.abort(); // stop listening but keep selection
+    }, {
       once: true,
       signal: ac.signal,
     });
