@@ -6,7 +6,7 @@
     "format": "prettier --write src/",
     "format:check": "prettier --check src/",
     "lint": "eslint 'src/chess/**/*.ts'",
-    "serve": "npx -y http-server build -o",
+    "serve": "npx -y http-server build",
     "start": "npm run build && npm run serve",
     "test": "vitest run",
     "test:watch": "vitest"

@@ -19,6 +19,7 @@ export type ChessAI = {
   readonly kingTableEndGame: readonly number[];
   readonly knightTable: readonly number[];
   readonly pawnTable: readonly number[];
+  readonly rookTable: readonly number[];
   whitePly: number;
   blackPly: number;
 };
@@ -86,7 +87,38 @@ export const AI = {
     5,    10,  10, -25, -25,  10,  10,   5,
     0,     0,   0,   0,   0,   0,   0,   0
   ],
+  // prettier-ignore
+  rookTable: [
+     0,   0,   0,   0,   0,   0,   0,   0,
+     5,  10,  10,  10,  10,  10,  10,   5,
+    -5,   0,   0,   0,   0,   0,   0,  -5,
+    -5,   0,   0,   0,   0,   0,   0,  -5,
+    -5,   0,   0,   0,   0,   0,   0,  -5,
+    -5,   0,   0,   0,   0,   0,   0,  -5,
+    -5,   0,   0,   0,   0,   0,   0,  -5,
+     0,   0,   0,   5,   5,   0,   0,   0
+  ],
   whitePly: -1,
+};
+
+// Base material value for a piece character (no positional bonus)
+const basePieceValue = (ch: string): number => {
+  switch (ch.toLowerCase()) {
+    case 'p':
+      return 100;
+    case 'n':
+      return 320;
+    case 'b':
+      return 325;
+    case 'r':
+      return 500;
+    case 'q':
+      return 975;
+    case 'k':
+      return 32767;
+    default:
+      return 0;
+  }
 };
 
 const getPieceValueSum = ({
@@ -100,7 +132,7 @@ const getPieceValueSum = ({
         return sum + 100 + AI.pawnTable[piece];
       case 'r':
       case 'R':
-        return sum + 500;
+        return sum + 500 + AI.rookTable[piece];
       case 'n':
       case 'N':
         return sum + 320 + AI.knightTable[piece];
@@ -134,8 +166,7 @@ const evaluate = (board: readonly string[], currentColor: color): number => {
     pieces: getPiecesOfColor(board, opponent),
   });
 
-  const salt = Math.random() * 0.1;
-  return salt + checkBonus - checkPenalty + (currentValue - opponentValue);
+  return checkBonus - checkPenalty + (currentValue - opponentValue);
 };
 
 /*
@@ -171,43 +202,58 @@ export const negamax = (
   const pieces = getPiecesOfColor(board, currentPlayer);
   const moves = getAllValidMoves(board, pieces, enPassantTarget, castle);
 
-  if (moves.every((m) => m.length === 0)) {
+  // Flatten into a sortable move list for MVV-LVA ordering
+  const moveList: { goal: number; orderScore: number; start: number }[] = [];
+  for (let i = 0; i < pieces.length; i += 1) {
+    for (const goal of moves[i]) {
+      const start = pieces[i];
+      const victim = board[mailboxIndex[goal]];
+      // MVV-LVA: prioritize capturing high-value pieces with low-value attackers
+      const orderScore =
+        victim === '-'
+          ? 0
+          : basePieceValue(victim) * 10 -
+            basePieceValue(board[mailboxIndex[start]]);
+      moveList.push({ goal, orderScore, start });
+    }
+  }
+
+  if (moveList.length === 0) {
     return [-1, -1, evaluate(board, currentPlayer)];
   }
+
+  // Sort: captures first (highest MVV-LVA score), then quiet moves
+  moveList.sort((a, b) => b.orderScore - a.orderScore);
 
   let bestStart = -1;
   let bestGoal = -1;
   let localAlpha = alpha;
 
-  for (let pieceIndex = 0; pieceIndex < pieces.length; pieceIndex += 1) {
-    for (const move of moves[pieceIndex]) {
-      const start = pieces[pieceIndex].valueOf();
-      const goal = move.valueOf();
-      const childBoard = boardAfterMove(board, start, goal, enPassantTarget);
-      const childEp = computeEnPassantTarget(board, start, goal);
-      const childCastle = computeCastleState(castle, start, goal);
+  for (const { start, goal } of moveList) {
+    const childBoard = boardAfterMove(board, start, goal, enPassantTarget);
+    const childEp = computeEnPassantTarget(board, start, goal);
+    const childCastle = computeCastleState(castle, start, goal);
 
-      const childResult = negamax(
-        childBoard,
-        oppositeColor(currentPlayer),
-        depth - 1,
-        -beta,
-        -localAlpha,
-        childEp,
-        childCastle,
-      );
+    const childResult = negamax(
+      childBoard,
+      oppositeColor(currentPlayer),
+      depth - 1,
+      -beta,
+      -localAlpha,
+      childEp,
+      childCastle,
+    );
 
-      const score = -childResult[2];
+    const score = -childResult[2];
 
-      if (score > localAlpha) {
-        localAlpha = score;
-        bestStart = start;
-        bestGoal = goal;
-      }
+    if (score > localAlpha) {
+      localAlpha = score;
+      bestStart = start;
+      bestGoal = goal;
+    }
 
-      if (localAlpha >= beta) {
-        return [bestStart, bestGoal, localAlpha];
-      }
+    if (localAlpha >= beta) {
+      return [bestStart, bestGoal, localAlpha];
     }
   }
 
