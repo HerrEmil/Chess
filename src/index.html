@@ -17,27 +17,27 @@
   <body>
     <!-- Content -->
     <div id="main">
-      <div id="captured-black" class="captured-tray"></div>
+      <div class="tray-row">
+        <button
+          id="restartBtn"
+          class="hidden"
+          onclick="restartGame()"
+          title="New Game"
+        >&#8634;</button>
+        <button
+          id="undoBtn"
+          class="hidden"
+          onclick="undoMove()"
+          title="Undo Move"
+        >&#8617;</button>
+        <div id="captured-black" class="captured-tray"></div>
+      </div>
       <table id="board"></table>
-      <div id="captured-white" class="captured-tray"></div>
+      <div class="tray-row">
+        <div id="captured-white" class="captured-tray"></div>
+      </div>
       <p id="blackTurn2">&#8592;</p>
       <p id="whiteTurn2" class="hidden">&#8592;</p>
-      <button
-        id="restartBtn"
-        class="hidden"
-        onclick="restartGame()"
-        title="New Game"
-      >
-        &#8634;
-      </button>
-      <button
-        id="undoBtn"
-        class="hidden"
-        onclick="undoMove()"
-        title="Undo Move"
-      >
-        &#8617;
-      </button>
     </div>
 
     <!-- Pawn promotion dialog -->

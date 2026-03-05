@@ -4,18 +4,28 @@ import { appState, mailboxIndex, makeMove } from './main.js';
 // Takes a column (0-7) and returns column label (A-H)
 export const intToCol = (charInt: number): string => 'ABCDEFGH'.charAt(charInt);
 
-// Simple function to scale a square board.
+// All surrounding elements are proportional to cell size
+const BORDER_RATIO = 0.22;
+const TRAY_RATIO = 0.5;
+
+// Scale the board and all surrounding elements to fit the viewport.
 const scaleBoard = (): void => {
-  // Get the lowest of document height and width and substract space for the borders.
-  const pik = Math.min(window.innerHeight, window.innerWidth) - 109;
-  // Divide by the number of rows, and round down to int.
-  const tdSize = Math.floor(pik / document.querySelectorAll('tr').length);
+  // Same units both axes: equal padding (tray-sized) on all four sides
+  const units = 8 + 2 * BORDER_RATIO + 2 * TRAY_RATIO;
+
+  const tdSize = Math.floor(
+    Math.min(window.innerHeight / units, window.innerWidth / units),
+  );
+  const borderWidth = Math.round(tdSize * BORDER_RATIO);
   const fontSize = tdSize / 25;
+
+  // Publish CSS custom properties for use in default.css
+  const root = document.documentElement;
+  root.style.setProperty('--cell-size', `${tdSize}px`);
+  root.style.setProperty('--border-width', `${borderWidth}px`);
+
+  // Size pieces
   document.getElementById('board')!.style.fontSize = `${fontSize}em`;
-  document.querySelectorAll<HTMLElement>('td').forEach((td) => {
-    td.style.width = `${tdSize}px`;
-    td.style.height = `${tdSize}px`;
-  });
 };
 
 // This file deals with functions building, scaling and modifying the board
@@ -163,6 +173,9 @@ export const setLabels = (): void => {
   const { scrollX, scrollY } = window;
   const firstRect = firstCell.getBoundingClientRect();
   const cellSize = firstRect.height;
+  const borderWidth = parseInt(
+    document.documentElement.style.getPropertyValue('--border-width'),
+  );
   const leftPos = firstRect.left + scrollX;
   const topPosLet1 = firstRect.top + scrollY;
   const topPosLet2 =
@@ -170,7 +183,7 @@ export const setLabels = (): void => {
     scrollY +
     cellSize +
     1;
-  const fontSize = cellSize / 50;
+  const fontSize = borderWidth / 25;
 
   const mainEl = document.getElementById('main')!;
 
@@ -186,15 +199,15 @@ export const setLabels = (): void => {
     // Set the two numbered cols
     mainEl.insertAdjacentHTML(
       'beforeend',
-      `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:40px;top:${topPos}px;left:${
-        leftPos - 40
+      `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:${borderWidth}px;top:${topPos}px;left:${
+        leftPos - borderWidth
       }px;line-height:${cellSize}px;font-size:${fontSize}em">${
         9 - (index + 1)
       }</p>`,
     );
     mainEl.insertAdjacentHTML(
       'beforeend',
-      `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:40px;top:${topPos}px;left:${
+      `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:${borderWidth}px;top:${topPos}px;left:${
         leftPos + cellSize * 8
       }px;line-height:${cellSize}px;font-size:${fontSize}em">${
         9 - (index + 1)
@@ -203,22 +216,22 @@ export const setLabels = (): void => {
     // Set the two lettered rows
     mainEl.insertAdjacentHTML(
       'beforeend',
-      `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:40px;top:${topPosLet2}px;left:${leftPosLet}px;line-height:40px;font-size:${fontSize}em;width:${cellSize}px">${intToCol(
+      `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:${borderWidth}px;top:${topPosLet2}px;left:${leftPosLet}px;line-height:${borderWidth}px;font-size:${fontSize}em;width:${cellSize}px">${intToCol(
         index,
       )}</p>`,
     );
     mainEl.insertAdjacentHTML(
       'beforeend',
-      `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:40px;top:${
-        topPosLet1 - 40
-      }px;left:${leftPosLet}px;line-height:40px;font-size:${fontSize}em;width:${cellSize}px">${intToCol(
+      `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:${borderWidth}px;top:${
+        topPosLet1 - borderWidth
+      }px;left:${leftPosLet}px;line-height:${borderWidth}px;font-size:${fontSize}em;width:${cellSize}px">${intToCol(
         index,
       )}</p>`,
     );
   }
   const blackTopPos = topPosLet1 + cellSize / 2;
   const whiteTopPos = topPosLet2 - cellSize / 2 - cellSize;
-  const bothLeftPos = leftPos + cellSize * 8 + 25;
+  const bothLeftPos = leftPos + cellSize * 8 + borderWidth;
 
   for (const [id, topPos] of [
     ['blackTurn2', blackTopPos],

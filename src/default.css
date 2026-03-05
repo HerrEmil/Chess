@@ -15,15 +15,25 @@ Note that when we implement classic and futuristic styles, another section shoul
 */
 html {
   background-color: #999;
-  overflow-x: hidden;
+  overflow: hidden;
 }
-/* 
+body {
+  margin: 0;
+}
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+/*
 =========== Board controls ===========
 */
 table {
   border-spacing: 0px;
   border-collapse: collapse;
-  margin: 0 auto;
   user-select: none;
   -webkit-user-select: none;
   cursor: default !important;
@@ -31,12 +41,14 @@ table {
 td {
   text-align: center;
   border: solid black 1px;
+  width: var(--cell-size, 80px);
+  height: var(--cell-size, 80px);
 }
-/* Style the whole board with shadow and margin */
+/* Style the whole board with outline and margin */
 #board {
-  border: solid;
-  box-shadow: 0 0 2px 40px #000;
-  margin-top: 42px;
+  border: 1px solid #000;
+  outline: var(--border-width, 20px) solid #000;
+  margin: var(--border-width, 20px) 0;
 }
 /*Fix links to not look like links, and choose the proper font for pieces*/
 #board a {
@@ -105,7 +117,8 @@ p {
   margin: auto;
 }
 .invis {
-  color: #000;
+  color: #999;
+  text-shadow: none;
 }
 
 #whiteTurn2,
@@ -183,22 +196,15 @@ h3 {
 
 #restartBtn,
 #undoBtn {
-  position: fixed;
-  top: 8px;
-  z-index: 5;
   background: none;
   border: none;
-  font-size: 24px;
+  font-family: 'Arial Unicode MS', sans-serif;
+  font-size: calc(var(--cell-size, 80px) * 0.3);
+  line-height: calc(var(--cell-size, 80px) * 0.5);
   cursor: pointer;
   opacity: 0.6;
-  padding: 4px;
-  line-height: 1;
-}
-#restartBtn {
-  left: 8px;
-}
-#undoBtn {
-  left: 40px;
+  padding: 0;
+  flex-shrink: 0;
 }
 #restartBtn:hover,
 #undoBtn:hover {
@@ -217,24 +223,27 @@ Fix-it-all for mouseposition shizz. This ensures that while mouse is being dragg
 a.dragging {
   pointer-events: none;
 }
+.tray-row {
+  display: flex;
+  align-items: center;
+  width: calc(var(--cell-size, 80px) * 8 + var(--border-width, 20px) * 2 + 2px);
+}
 .captured-tray {
+  flex: 1;
   text-align: center;
   font-family: 'Arial Unicode MS', sans-serif;
-  font-size: 1.8em;
-  min-height: 1.4em;
+  font-size: calc(var(--cell-size, 80px) * 0.3);
+  min-height: calc(var(--cell-size, 80px) * 0.5);
+  line-height: calc(var(--cell-size, 80px) * 0.5);
   letter-spacing: 4px;
   user-select: none;
   -webkit-user-select: none;
-  position: relative;
-  z-index: 1;
 }
 #captured-black {
   color: #333;
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
-  margin-bottom: -8px;
 }
 #captured-white {
   color: #ddd;
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-  margin-top: -8px;
 }
