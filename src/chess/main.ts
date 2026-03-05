@@ -80,6 +80,15 @@ export const pieceOnIndex = ({
   readonly pieceIndex: number;
 }): string => board[mailboxIndex[pieceIndex]];
 
+const setTurnVisible = (color: color, visible: boolean): void => {
+  document
+    .getElementById(`${color}Turn2`)!
+    .classList.toggle('invisible', !visible);
+  document
+    .getElementById(`${color}Turn2Landscape`)
+    ?.classList.toggle('invisible', !visible);
+};
+
 type GameSnapshot = {
   board: string[];
   capturedPieces: { black: string[]; white: string[] };
@@ -289,13 +298,11 @@ const undoMove = (): void => {
   document
     .querySelectorAll(`.${opponent}`)
     .forEach((el) => el.classList.add('notYourTurn'));
-  document.getElementById(`${opponent}Turn2`)!.classList.add('invisible');
+  setTurnVisible(opponent, false);
   document
     .querySelectorAll(`.${appState.turn}`)
     .forEach((el) => el.classList.remove('notYourTurn'));
-  document
-    .getElementById(`${appState.turn}Turn2`)!
-    .classList.remove('invisible');
+  setTurnVisible(appState.turn, true);
 
   saveGame();
 };
@@ -318,13 +325,11 @@ const initChess = (): void => {
     document
       .querySelectorAll(`.${opponent}`)
       .forEach((el) => el.classList.add('notYourTurn'));
-    document.getElementById(`${opponent}Turn2`)!.classList.add('invisible');
+    setTurnVisible(opponent, false);
     document
       .querySelectorAll(`.${appState.turn}`)
       .forEach((el) => el.classList.remove('notYourTurn'));
-    document
-      .getElementById(`${appState.turn}Turn2`)!
-      .classList.remove('invisible');
+    setTurnVisible(appState.turn, true);
     // If it's AI's turn, trigger AI move
     if (
       (appState.turn === 'black' && appState.game.blackAI) ||
@@ -657,7 +662,7 @@ export const switchTurn = (): void => {
   document
     .querySelectorAll(`.${appState.turn}`)
     .forEach((el) => el.classList.add('notYourTurn'));
-  document.getElementById(`${appState.turn}Turn2`)!.classList.add('invisible');
+  setTurnVisible(appState.turn, false);
 
   // Apply new turn
   appState.turn = result.newTurn;
@@ -666,9 +671,7 @@ export const switchTurn = (): void => {
   document
     .querySelectorAll(`.${appState.turn}`)
     .forEach((el) => el.classList.remove('notYourTurn'));
-  document
-    .getElementById(`${appState.turn}Turn2`)!
-    .classList.remove('invisible');
+  setTurnVisible(appState.turn, true);
 
   if (result.gameEnd) {
     endGame(result.gameEnd);

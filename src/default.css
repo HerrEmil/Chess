@@ -35,7 +35,7 @@ body {
 =========== Board controls ===========
 */
 table {
-  border-collapse: collapse;
+  border-spacing: 0;
   user-select: none;
   -webkit-user-select: none;
   cursor: default !important;
@@ -47,13 +47,13 @@ td {
   border: none;
   position: relative;
 }
-/* Style the whole board with outline and margin */
-#board {
-  border: none;
-  outline: var(--border-width, 20px) solid #5c3a1e;
-  margin: var(--border-width, 20px) 0;
-  border-radius: 2px;
+/* Wrapper handles border, radius and shadow so Firefox clips corners */
+#board-wrapper {
+  border: var(--border-width, 20px) solid #5c3a1e;
+  border-radius: 8px;
   box-shadow: 0 8px 32px rgba(40, 25, 15, 0.45);
+  overflow: hidden;
+  line-height: 0;
 }
 /*Fix links to not look like links, and choose the proper font for pieces*/
 #board a {
@@ -128,7 +128,8 @@ p {
 }
 
 #whiteTurn2,
-#blackTurn2 {
+#blackTurn2,
+#blackTurn2Landscape {
   position: static;
   text-align: center;
   flex-shrink: 0;
@@ -140,9 +141,13 @@ p {
   text-shadow: 0 0 5px rgba(250, 246, 240, 0.8);
   color: #faf6f0;
 }
-#blackTurn2 {
+#blackTurn2,
+#blackTurn2Landscape {
   text-shadow: 0 0 5px rgba(44, 36, 32, 0.6);
   color: #2c2420;
+}
+.landscape-only {
+  display: none !important;
 }
 #conversion {
   position: fixed;
@@ -307,6 +312,10 @@ h3 {
   opacity: 1;
 }
 
+.button-group {
+  display: flex;
+  flex-shrink: 0;
+}
 .hidden {
   display: none !important;
 }
@@ -354,22 +363,30 @@ a.dragging {
   #main {
     flex-direction: row;
   }
-  #board {
-    margin: 0 var(--border-width, 20px);
-  }
   .tray-row {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     max-width: calc(var(--cell-size, 80px) * 0.5);
     height: calc(
       var(--cell-size, 80px) * 8 + var(--border-width, 20px) * 2 + 2px
     );
     padding: 0;
-    gap: 4px;
+    gap: 0;
     overflow: hidden;
   }
+  .button-group {
+    flex-direction: column;
+  }
+  #blackTurn2 {
+    visibility: hidden;
+  }
+  #blackTurn2Landscape {
+    display: block !important;
+    height: calc(var(--cell-size, 80px));
+    line-height: calc(var(--cell-size, 80px));
+  }
   .captured-tray {
+    flex: 1;
     max-width: calc(var(--cell-size, 80px));
     word-break: break-all;
     line-height: calc(var(--cell-size, 80px) * 0.4);

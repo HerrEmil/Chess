@@ -18,27 +18,32 @@
     <!-- Content -->
     <div id="main">
       <div class="tray-row" id="top-tray">
-        <button
-          id="restartBtn"
-          class="hidden"
-          onclick="restartGame()"
-          title="New Game"
-        >
-          &#8634;
-        </button>
-        <button
-          id="undoBtn"
-          class="hidden"
-          onclick="undoMove()"
-          title="Undo Move"
-        >
-          &#8617;
-        </button>
+        <div class="button-group">
+          <button
+            id="restartBtn"
+            class="hidden"
+            onclick="restartGame()"
+            title="New Game"
+          >
+            &#8634;
+          </button>
+          <button
+            id="undoBtn"
+            class="hidden"
+            onclick="undoMove()"
+            title="Undo Move"
+          >
+            &#8617;
+          </button>
+        </div>
         <div id="captured-black" class="captured-tray"></div>
         <p id="blackTurn2">&#8592;</p>
       </div>
-      <table id="board"></table>
+      <div id="board-wrapper">
+        <table id="board"></table>
+      </div>
       <div class="tray-row" id="bottom-tray">
+        <p id="blackTurn2Landscape" class="landscape-only">&#8592;</p>
         <div id="captured-white" class="captured-tray"></div>
         <p id="whiteTurn2" class="invisible">&#8592;</p>
       </div>
