@@ -59,6 +59,7 @@ td {
 #board a {
   text-decoration: none;
   font-family: 'Arial Unicode MS', sans-serif;
+  font-variant-emoji: text;
 }
 /*Make the black pieces dark with subtle light shadow*/
 #board a.black {
@@ -352,6 +353,7 @@ a.dragging {
   letter-spacing: 4px;
   user-select: none;
   -webkit-user-select: none;
+  font-variant-emoji: text;
 }
 #captured-black {
   color: #2c2420;
