@@ -89,21 +89,21 @@ export const setBoard = (): void => {
   document.getElementById('63')!.innerHTML =
     '<a href="#" class="white rook">&#9820;</a>';
   document.getElementById('48')!.innerHTML =
-    '<a href="#" class="white pawn">&#9823;</a>';
+    '<a href="#" class="white pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('49')!.innerHTML =
-    '<a href="#" class="white pawn">&#9823;</a>';
+    '<a href="#" class="white pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('50')!.innerHTML =
-    '<a href="#" class="white pawn">&#9823;</a>';
+    '<a href="#" class="white pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('51')!.innerHTML =
-    '<a href="#" class="white pawn">&#9823;</a>';
+    '<a href="#" class="white pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('52')!.innerHTML =
-    '<a href="#" class="white pawn">&#9823;</a>';
+    '<a href="#" class="white pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('53')!.innerHTML =
-    '<a href="#" class="white pawn">&#9823;</a>';
+    '<a href="#" class="white pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('54')!.innerHTML =
-    '<a href="#" class="white pawn">&#9823;</a>';
+    '<a href="#" class="white pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('55')!.innerHTML =
-    '<a href="#" class="white pawn">&#9823;</a>';
+    '<a href="#" class="white pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('0')!.innerHTML =
     '<a href="#" class="black rook">&#9820;</a>';
   document.getElementById('1')!.innerHTML =
@@ -121,21 +121,21 @@ export const setBoard = (): void => {
   document.getElementById('7')!.innerHTML =
     '<a href="#" class="black rook">&#9820;</a>';
   document.getElementById('8')!.innerHTML =
-    '<a href="#" class="black pawn">&#9823;</a>';
+    '<a href="#" class="black pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('9')!.innerHTML =
-    '<a href="#" class="black pawn">&#9823;</a>';
+    '<a href="#" class="black pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('10')!.innerHTML =
-    '<a href="#" class="black pawn">&#9823;</a>';
+    '<a href="#" class="black pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('11')!.innerHTML =
-    '<a href="#" class="black pawn">&#9823;</a>';
+    '<a href="#" class="black pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('12')!.innerHTML =
-    '<a href="#" class="black pawn">&#9823;</a>';
+    '<a href="#" class="black pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('13')!.innerHTML =
-    '<a href="#" class="black pawn">&#9823;</a>';
+    '<a href="#" class="black pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('14')!.innerHTML =
-    '<a href="#" class="black pawn">&#9823;</a>';
+    '<a href="#" class="black pawn">&#9823;&#xFE0E;</a>';
   document.getElementById('15')!.innerHTML =
-    '<a href="#" class="black pawn">&#9823;</a>';
+    '<a href="#" class="black pawn">&#9823;&#xFE0E;</a>';
 };
 
 const pieceInfo: Record<string, { color: string; html: string; type: string }> =
@@ -143,13 +143,13 @@ const pieceInfo: Record<string, { color: string; html: string; type: string }> =
     B: { color: 'black', html: '&#9821;', type: 'bishop' },
     K: { color: 'black', html: '&#9818;', type: 'king' },
     N: { color: 'black', html: '&#9822;', type: 'knight' },
-    P: { color: 'black', html: '&#9823;', type: 'pawn' },
+    P: { color: 'black', html: '&#9823;&#xFE0E;', type: 'pawn' },
     Q: { color: 'black', html: '&#9819;', type: 'queen' },
     R: { color: 'black', html: '&#9820;', type: 'rook' },
     b: { color: 'white', html: '&#9821;', type: 'bishop' },
     k: { color: 'white', html: '&#9818;', type: 'king' },
     n: { color: 'white', html: '&#9822;', type: 'knight' },
-    p: { color: 'white', html: '&#9823;', type: 'pawn' },
+    p: { color: 'white', html: '&#9823;&#xFE0E;', type: 'pawn' },
     q: { color: 'white', html: '&#9819;', type: 'queen' },
     r: { color: 'white', html: '&#9820;', type: 'rook' },
   };
