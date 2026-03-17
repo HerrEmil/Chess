@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 22
 
-      - run: npm ci && npm run build
+      - run: yarn install --frozen-lockfile && yarn build
 
       - name: Sync to S3
         run: |
