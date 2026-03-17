@@ -2,67 +2,32 @@ name: Deploy
 
 on:
   push:
-    branches: [ master ]
-
-  workflow_dispatch:
+    branches: [main]
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'yarn'
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Lint
-        run: yarn lint
-
-      - name: Format check
-        run: yarn format:check
-
-      - name: Test
-        run: yarn test
-
-      - name: Build
-        run: yarn build
-
   deploy:
-    needs: check
     runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: eu-north-1
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'yarn'
+          node-version: 22
 
-      - name: Install and build
+      - run: npm ci && npm run build
+
+      - name: Sync to S3
         run: |
-          yarn install --frozen-lockfile
-          yarn build
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-north-1
-
-      - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./build/ s3://game-chess --delete
+          aws s3 sync build/ s3://${{ secrets.S3_BUCKET }}/ \
+            --delete
 
       - name: Invalidate CloudFront cache
-        run: aws cloudfront create-invalidation --distribution-id E24F2DBYSW79ZP --paths "/chess/*"
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
