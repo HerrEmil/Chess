@@ -306,7 +306,7 @@ h3 {
   outline: none;
   border-color: #5c3a1e;
 }
-#startMenu input[type='button'] {
+#startMenu button {
   margin-top: 20px;
   padding: 10px 32px;
   background: #5c3a1e;
@@ -323,7 +323,7 @@ h3 {
   cursor: pointer;
   transition: background 0.15s ease;
 }
-#startMenu input[type='button']:hover {
+#startMenu button:hover {
   background: #7a4f2e;
 }
 #startMenu br {

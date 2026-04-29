@@ -1,7 +1,8 @@
 {
   "extends": ["html-validate:recommended"],
   "rules": {
-    "void-style": ["error", { "style": "omit" }],
+    "void-style": "off",
+    "doctype-style": "off",
     "no-trailing-whitespace": "error",
     "no-inline-style": "error",
     "require-sri": "off",

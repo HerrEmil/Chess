@@ -10,8 +10,7 @@
     />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#a8a09a" />
-    <link rel="ICON" href="favicon.ico" />
-    <link rel="SHORTCUT ICON" href="favicon.ico" />
+    <link rel="icon" href="favicon.ico" />
     <link rel="modulepreload" href="chess/main.js" />
     <link rel="stylesheet" type="text/css" href="default.css" />
 
@@ -65,10 +64,17 @@
       aria-label="Pawn promotion"
     >
       <h1>Convert pawn to?</h1>
-      <input type="radio" name="convert" value="queen" checked />&#9819;
-      <input type="radio" name="convert" value="rook" />&#9820;
-      <input type="radio" name="convert" value="knight" />&#9822;
-      <input type="radio" name="convert" value="bishop" />&#9821;
+      <label
+        ><input
+          type="radio"
+          name="convert"
+          value="queen"
+          checked
+        />&#9819;</label
+      >
+      <label><input type="radio" name="convert" value="rook" />&#9820;</label>
+      <label><input type="radio" name="convert" value="knight" />&#9822;</label>
+      <label><input type="radio" name="convert" value="bishop" />&#9821;</label>
       <br />
       <button type="button" id="convertAccept" onclick="convertPawn()">
         Accept
@@ -79,7 +85,7 @@
     <div id="background" class="nothidden">
       <div id="startMenu">
         <h2 id="menuHeading">Welcome! Please set players</h2>
-        <label for="whitePlayer"><h3>White player</h3></label>
+        <h3><label for="whitePlayer">White player</label></h3>
         <select id="whitePlayer" name="whitePlayer">
           <option selected>Player</option>
           <option>AI - 1 ply</option>
@@ -90,7 +96,7 @@
           <option>AI - 6 ply</option>
         </select>
         <br />
-        <label for="blackPlayer"><h3>Black player</h3></label>
+        <h3><label for="blackPlayer">Black player</label></h3>
         <select id="blackPlayer" name="blackPlayer">
           <option>Player</option>
           <option>AI - 1 ply</option>
@@ -102,7 +108,9 @@
         </select>
         <br />
         <br />
-        <input type="button" value="Play Chess!" onclick="startGame()" />
+        <button type="button" id="playChessBtn" onclick="startGame()">
+          Play Chess!
+        </button>
       </div>
     </div>
   </body>

@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, unlinkSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 
 const html = readFileSync('build/index.html', 'utf8');
 const css = readFileSync('build/default.css', 'utf8');
@@ -11,9 +11,10 @@ const minified = css
   .trim();
 
 const replaced = html.replace(
-  /<link rel="stylesheet" type="text\/css" href="default\.css" \/>/,
+  /<link rel="stylesheet" type="text\/css" href="default\.css"\s*\/?>/,
   `<style>${minified}</style>`,
 );
 
 writeFileSync('build/index.html', replaced);
-if (existsSync('build/default.css')) unlinkSync('build/default.css');
+// Keep build/default.css so size-limit and stylelint have something to consume;
+// it's no longer referenced from index.html, so the browser never fetches it.
