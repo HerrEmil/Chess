@@ -29,6 +29,42 @@ body {
   justify-content: center;
   height: 100vh;
   position: relative;
+  contain: layout;
+}
+/*
+ * Reserve board footprint pre-JS so first paint matches post-JS layout.
+ * Mirrors scaleBoard()'s formula: cell = min(vh / heightUnits, vw / widthUnits).
+ * Portrait: heightUnits = 8 + 2*0.22 + 2*0.5 = 9.44; widthUnits = 8 + 2*0.22 + 2*0.3 = 9.04.
+ * Landscape: heightUnits = 9.04; widthUnits = 9.44.
+ */
+:root {
+  --cell-size: min(100vh / 9.44, 100vw / 9.04);
+  --border-width: calc(var(--cell-size) * 0.22);
+}
+@media (orientation: landscape) {
+  :root {
+    --cell-size: min(100vh / 9.04, 100vw / 9.44);
+  }
+}
+#board {
+  width: calc(var(--cell-size) * 8);
+  height: calc(var(--cell-size) * 8);
+}
+#board-wrapper {
+  width: calc(var(--cell-size) * 8 + var(--border-width) * 2);
+  height: calc(var(--cell-size) * 8 + var(--border-width) * 2);
+  box-sizing: border-box;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /*
@@ -72,8 +108,8 @@ td {
 #board a.white {
   color: #faf6f0;
   text-shadow:
-    0 1px 3px rgba(50, 30, 15, 0.45),
-    0 0 2px rgba(50, 30, 15, 0.25);
+    0 1px 3px rgba(20, 12, 6, 0.95),
+    0 0 2px rgba(20, 12, 6, 0.75);
 }
 
 /*
@@ -179,19 +215,25 @@ p {
   margin: 8px 6px;
   accent-color: #5c3a1e;
 }
-#conversion a {
+#conversion button {
   display: inline-block;
   margin-top: 16px;
   padding: 8px 28px;
   background: #5c3a1e;
   color: #fff;
-  text-decoration: none;
+  border: none;
   border-radius: 8px;
+  font-family:
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
   transition: background 0.15s ease;
 }
-#conversion a:hover {
+#conversion button:hover {
   background: #7a4f2e;
 }
 #startMenu {
@@ -238,7 +280,7 @@ h2 {
 h3 {
   font-size: 14px;
   font-weight: 600;
-  color: #8a7568;
+  color: #6e5a4d;
   margin: 12px 0 6px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;

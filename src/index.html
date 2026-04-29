@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <title>Chess!</title>
     <meta charset="utf-8" />
@@ -8,8 +8,11 @@
       name="description"
       content="Chess! is a free light-weight HTML5 app. Play against one of the three different AI opponents or local multiplayer :)"
     />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#a8a09a" />
     <link rel="ICON" href="favicon.ico" />
     <link rel="SHORTCUT ICON" href="favicon.ico" />
+    <link rel="modulepreload" href="chess/main.js" />
     <link rel="stylesheet" type="text/css" href="default.css" />
 
     <!-- Chess! -->
@@ -24,7 +27,9 @@
             id="restartBtn"
             class="hidden"
             onclick="restartGame()"
+            type="button"
             title="New Game"
+            aria-label="New Game"
           >
             &#8634;&#xFE0E;
           </button>
@@ -32,7 +37,9 @@
             id="undoBtn"
             class="hidden"
             onclick="undoMove()"
+            type="button"
             title="Undo Move"
+            aria-label="Undo Move"
           >
             &#8617;&#xFE0E;
           </button>
@@ -41,7 +48,7 @@
         <p id="blackTurn2">&#8592;&#xFE0E;</p>
       </div>
       <div id="board-wrapper">
-        <table id="board"></table>
+        <table id="board" role="presentation"></table>
       </div>
       <div class="tray-row" id="bottom-tray">
         <p id="blackTurn2Landscape" class="landscape-only">&#8592;&#xFE0E;</p>
@@ -51,22 +58,29 @@
     </div>
 
     <!-- Pawn promotion dialog -->
-    <div id="conversion" class="overlay hidden">
+    <div
+      id="conversion"
+      class="overlay hidden"
+      role="dialog"
+      aria-label="Pawn promotion"
+    >
       <h1>Convert pawn to?</h1>
       <input type="radio" name="convert" value="queen" checked />&#9819;
       <input type="radio" name="convert" value="rook" />&#9820;
       <input type="radio" name="convert" value="knight" />&#9822;
       <input type="radio" name="convert" value="bishop" />&#9821;
       <br />
-      <a href="javascript:void(0)" onclick="convertPawn()">Accept</a>
+      <button type="button" id="convertAccept" onclick="convertPawn()">
+        Accept
+      </button>
     </div>
 
     <!-- Start menu -->
     <div id="background" class="nothidden">
       <div id="startMenu">
         <h2 id="menuHeading">Welcome! Please set players</h2>
-        <h3>White player</h3>
-        <select id="whitePlayer">
+        <label for="whitePlayer"><h3>White player</h3></label>
+        <select id="whitePlayer" name="whitePlayer">
           <option selected>Player</option>
           <option>AI - 1 ply</option>
           <option>AI - 2 ply</option>
@@ -76,8 +90,8 @@
           <option>AI - 6 ply</option>
         </select>
         <br />
-        <h3>Black player</h3>
-        <select id="blackPlayer">
+        <label for="blackPlayer"><h3>Black player</h3></label>
+        <select id="blackPlayer" name="blackPlayer">
           <option>Player</option>
           <option>AI - 1 ply</option>
           <option>AI - 2 ply</option>
