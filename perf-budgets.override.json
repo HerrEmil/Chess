@@ -1,0 +1,33 @@
+{
+  "_note": "Chess-specific perf overrides. Each entry must have a sunset date and a tracked TODO. Documentation-only; LHCI does not consume this file. Source of truth for assertions is Chess/lighthouserc.json.",
+  "_overrides": [
+    {
+      "key": "categories:accessibility",
+      "loosened_to": 0.7,
+      "default": 1.0,
+      "sunset": "2026-07-01",
+      "todo": "Fix HTML: viewport meta, select labels, table headers"
+    },
+    {
+      "key": "cumulative-layout-shift",
+      "loosened_to": 0.15,
+      "default": 0.05,
+      "sunset": "2026-07-01",
+      "todo": "Investigate layout shift in board rendering"
+    },
+    {
+      "key": "categories:performance",
+      "loosened_to": 0.85,
+      "default": 0.92,
+      "sunset": "2026-07-01",
+      "todo": "fix board CLS, image preload, defer JS"
+    },
+    {
+      "key": "categories:seo",
+      "loosened_to": 0.85,
+      "default": 0.95,
+      "sunset": "2026-07-01",
+      "todo": "add description meta, robots-allowed, lang attribute"
+    }
+  ]
+}
