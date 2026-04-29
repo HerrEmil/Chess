@@ -16,3 +16,4 @@ jobs:
       build_cmd: yarn build
       tier: spa
       package_manager: yarn
+      # 2026-04-29: re-run against perf-config@v1 patch (4ffc6ca)
