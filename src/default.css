@@ -14,6 +14,7 @@ html {
   background-color: #a8a09a;
   overflow: hidden;
 }
+
 body {
   margin: 0;
   font-family:
@@ -22,6 +23,7 @@ body {
     -apple-system,
     sans-serif;
 }
+
 #main {
   display: flex;
   flex-direction: column;
@@ -31,6 +33,7 @@ body {
   position: relative;
   contain: layout;
 }
+
 /*
  * Reserve board footprint pre-JS so first paint matches post-JS layout.
  * Mirrors scaleBoard()'s formula: cell = min(vh / heightUnits, vw / widthUnits).
@@ -41,20 +44,29 @@ body {
   --cell-size: min(100vh / 9.44, 100vw / 9.04);
   --border-width: calc(var(--cell-size) * 0.22);
 }
+
 @media (orientation: landscape) {
   :root {
     --cell-size: min(100vh / 9.04, 100vw / 9.44);
   }
 }
+
 #board {
   width: calc(var(--cell-size) * 8);
   height: calc(var(--cell-size) * 8);
 }
+
 #board-wrapper {
   width: calc(var(--cell-size) * 8 + var(--border-width) * 2);
   height: calc(var(--cell-size) * 8 + var(--border-width) * 2);
   box-sizing: border-box;
+  border: var(--border-width, 20px) solid #5c3a1e;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgb(40 25 15 / 45%);
+  overflow: hidden;
+  line-height: 0;
 }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -76,6 +88,7 @@ table {
   -webkit-user-select: none;
   cursor: default !important;
 }
+
 td {
   text-align: center;
   width: var(--cell-size, 80px);
@@ -83,33 +96,28 @@ td {
   border: none;
   position: relative;
 }
-/* Wrapper handles border, radius and shadow so Firefox clips corners */
-#board-wrapper {
-  border: var(--border-width, 20px) solid #5c3a1e;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(40, 25, 15, 0.45);
-  overflow: hidden;
-  line-height: 0;
-}
-/*Fix links to not look like links, and choose the proper font for pieces*/
+
+/* Fix links to not look like links, and choose the proper font for pieces */
 #board a {
   text-decoration: none;
   font-family: 'Arial Unicode MS', sans-serif;
   font-variant-emoji: text;
 }
-/*Make the black pieces dark with subtle light shadow*/
+
+/* Make the black pieces dark with subtle light shadow */
 #board a.black {
   color: #2c2420;
   text-shadow:
-    0 1px 2px rgba(255, 245, 230, 0.25),
-    0 0 1px rgba(255, 245, 230, 0.15);
+    0 1px 2px rgb(255 245 230 / 25%),
+    0 0 1px rgb(255 245 230 / 15%);
 }
-/*Make the white pieces white with subtle dark shadow*/
+
+/* Make the white pieces white with subtle dark shadow */
 #board a.white {
   color: #faf6f0;
   text-shadow:
-    0 1px 3px rgba(20, 12, 6, 0.95),
-    0 0 2px rgba(20, 12, 6, 0.75);
+    0 1px 3px rgb(20 12 6 / 95%),
+    0 0 2px rgb(20 12 6 / 75%);
 }
 
 /*
@@ -119,15 +127,19 @@ Note that white cells are first, black are second
 .wc {
   background-color: #f0d9b5;
 }
+
 .bc {
   background-color: #b58863;
 }
+
 .lastMove.wc {
   background-color: #f5e6a3 !important;
 }
+
 .lastMove.bc {
   background-color: #d4a830 !important;
 }
+
 /* Valid move: green dot in center */
 .valid::after {
   content: '';
@@ -138,18 +150,20 @@ Note that white cells are first, black are second
   width: 25%;
   height: 25%;
   border-radius: 50%;
-  background: rgba(90, 145, 70, 0.55);
+  background: rgb(90 145 70 / 55%);
   pointer-events: none;
 }
+
 /* Capturable pieces: red ring */
 .valid:has(a)::after {
   width: 85%;
   height: 85%;
   background: none;
-  border: calc(var(--cell-size, 80px) * 0.08) solid rgba(180, 60, 45, 0.5);
+  border: calc(var(--cell-size, 80px) * 0.08) solid rgb(180 60 45 / 50%);
 }
+
 .origin {
-  background-color: rgba(196, 170, 120, 0.55) !important;
+  background-color: rgb(196 170 120 / 55%) !important;
 }
 
 /*
@@ -159,9 +173,10 @@ p {
   position: absolute;
   font-weight: 600;
   color: #faf6f0;
-  text-shadow: 0 0 5px rgba(250, 246, 240, 0.8);
+  text-shadow: 0 0 5px rgb(250 246 240 / 80%);
   margin: auto;
 }
+
 .invis {
   color: #a8a09a;
   text-shadow: none;
@@ -177,18 +192,22 @@ p {
   font-size: calc(var(--cell-size, 80px) * 0.35);
   line-height: calc(var(--cell-size, 80px) * 0.5);
 }
+
 #whiteTurn2 {
-  text-shadow: 0 0 5px rgba(250, 246, 240, 0.8);
+  text-shadow: 0 0 5px rgb(250 246 240 / 80%);
   color: #faf6f0;
 }
+
 #blackTurn2,
 #blackTurn2Landscape {
-  text-shadow: 0 0 5px rgba(44, 36, 32, 0.6);
+  text-shadow: 0 0 5px rgb(44 36 32 / 60%);
   color: #2c2420;
 }
+
 .landscape-only {
   display: none !important;
 }
+
 #conversion {
   position: fixed;
   width: 320px;
@@ -202,19 +221,22 @@ p {
   background-color: #fdf9f5;
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(40, 25, 15, 0.3);
+  box-shadow: 0 12px 40px rgb(40 25 15 / 30%);
   z-index: 20;
 }
+
 #conversion h1 {
   font-size: 18px;
   font-weight: 600;
   color: #3a2a1e;
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
 }
+
 #conversion input[type='radio'] {
   margin: 8px 6px;
   accent-color: #5c3a1e;
 }
+
 #conversion button {
   display: inline-block;
   margin-top: 16px;
@@ -233,9 +255,11 @@ p {
   cursor: pointer;
   transition: background 0.15s ease;
 }
+
 #conversion button:hover {
   background: #7a4f2e;
 }
+
 #startMenu {
   position: fixed;
   width: 320px;
@@ -249,42 +273,43 @@ p {
   background-color: #fdf9f5;
   text-align: center;
   border-radius: 16px;
-  box-shadow: 0 16px 48px rgba(40, 25, 15, 0.3);
+  box-shadow: 0 16px 48px rgb(40 25 15 / 30%);
 }
+
 #background {
   align-items: center;
   justify-content: center;
   transition: 0.25s opacity;
   background: radial-gradient(
-    rgba(120, 110, 100, 0.5),
-    rgba(120, 110, 100, 0.5) 35%,
-    rgba(30, 20, 15, 0.7)
+    rgb(120 110 100 / 50%),
+    rgb(120 110 100 / 50%) 35%,
+    rgb(30 20 15 / 70%)
   );
-  bottom: 0;
+  inset: 0;
   display: flex;
-  left: 0;
   overflow: auto;
   padding: 20px;
   padding-bottom: 130px;
   position: fixed;
-  right: 0;
-  top: 0;
   z-index: 10;
 }
+
 h2 {
   font-size: 20px;
   font-weight: 700;
   color: #3a2a1e;
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
 }
+
 h3 {
   font-size: 14px;
   font-weight: 600;
   color: #6e5a4d;
-  margin: 12px 0 6px 0;
+  margin: 12px 0 6px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
 #startMenu select {
   width: 100%;
   padding: 8px 12px;
@@ -302,10 +327,12 @@ h3 {
   cursor: pointer;
   transition: border-color 0.15s ease;
 }
+
 #startMenu select:focus {
   outline: none;
   border-color: #5c3a1e;
 }
+
 #startMenu button {
   margin-top: 20px;
   padding: 10px 32px;
@@ -323,9 +350,11 @@ h3 {
   cursor: pointer;
   transition: background 0.15s ease;
 }
+
 #startMenu button:hover {
   background: #7a4f2e;
 }
+
 #startMenu br {
   display: none;
 }
@@ -353,6 +382,7 @@ h3 {
     opacity 0.15s ease,
     background 0.15s ease;
 }
+
 #restartBtn:hover,
 #undoBtn:hover {
   opacity: 1;
@@ -362,21 +392,26 @@ h3 {
   display: flex;
   flex-shrink: 0;
 }
+
 .hidden {
   display: none !important;
 }
+
 .invisible {
   visibility: hidden;
 }
+
 .notYourTurn {
   pointer-events: none;
 }
+
 /*
 Fix-it-all for mouseposition shizz. This ensures that while mouse is being dragged, no events will be fired from the <a>
 */
 a.dragging {
   pointer-events: none;
 }
+
 .tray-row {
   display: flex;
   align-items: center;
@@ -385,6 +420,7 @@ a.dragging {
   gap: 4px;
   box-sizing: border-box;
 }
+
 .captured-tray {
   flex: 1;
   text-align: center;
@@ -397,19 +433,22 @@ a.dragging {
   -webkit-user-select: none;
   font-variant-emoji: text;
 }
+
 #captured-black {
   color: #2c2420;
-  text-shadow: 0 0 4px rgba(255, 245, 230, 0.35);
+  text-shadow: 0 0 4px rgb(255 245 230 / 35%);
 }
+
 #captured-white {
   color: #e8e0d8;
-  text-shadow: 0 0 4px rgba(50, 30, 15, 0.35);
+  text-shadow: 0 0 4px rgb(50 30 15 / 35%);
 }
 
 @media (orientation: landscape) {
   #main {
     flex-direction: row;
   }
+
   .tray-row {
     flex-direction: column;
     align-items: center;
@@ -421,17 +460,21 @@ a.dragging {
     gap: 0;
     overflow: hidden;
   }
+
   .button-group {
     flex-direction: column;
   }
+
   #blackTurn2 {
     visibility: hidden;
   }
+
   #blackTurn2Landscape {
     display: block !important;
     height: calc(var(--cell-size, 80px));
     line-height: calc(var(--cell-size, 80px));
   }
+
   .captured-tray {
     flex: 1;
     max-width: calc(var(--cell-size, 80px));
