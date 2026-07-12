@@ -175,8 +175,7 @@ describe('encyclopedia data', () => {
 
       for (const mv of entry.moves) {
         const pieceChar = game.board[mailboxIndex[mv.from]];
-        const pieceColor =
-          pieceChar === pieceChar.toLowerCase() ? 'w' : 'b';
+        const pieceColor = pieceChar === pieceChar.toLowerCase() ? 'w' : 'b';
         expect(pieceColor).toBe(active);
 
         const valids = getValid(

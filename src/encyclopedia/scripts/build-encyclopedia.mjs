@@ -24,7 +24,10 @@ const dataDir = join(here, '..', 'data');
 const outDir = join(here, '..', '..', '..', 'build', 'encyclopedia');
 const buildDir = join(here, '..', '..', '..', 'build');
 
-const SITE = 'https://herremil.com/chess/';
+// Production is served from the chess.herremil.com subdomain; the legacy
+// herremil.com/chess/ path 301-redirects here (stripping the path), so canonical
+// URLs must point at the subdomain to resolve directly (SEO).
+const SITE = 'https://chess.herremil.com/';
 const HUB_URL = `${SITE}encyclopedia/`;
 
 // Outline glyphs = white, solid glyphs = black (print-diagram convention). This
