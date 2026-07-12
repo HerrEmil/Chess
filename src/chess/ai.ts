@@ -123,30 +123,41 @@ const basePieceValue = (ch: string): number => {
   }
 };
 
+// Vertically mirror a 0-63 board index (flip rank, keep file): rank r -> 7-r.
+const mirrorIndex = (index: number): number =>
+  (7 - Math.floor(index / 8)) * 8 + (index % 8);
+
+// Piece-square tables are authored from White's perspective (index 0 = a8).
+// Black's squares are the vertical mirror image, so Black piece lookups must
+// use the flipped index. Passing `mirror = false` reproduces the legacy
+// (single-orientation) behaviour and exists only for A/B regression testing.
 const getPieceValueSum = ({
   board = [] as readonly string[],
   pieces = [] as readonly number[],
+  black = false,
+  mirror = true,
 }): number =>
   pieces.reduce((sum, piece) => {
+    const idx = black && mirror ? mirrorIndex(piece) : piece;
     switch (pieceOnIndex({ board, pieceIndex: piece })) {
       case 'p':
       case 'P':
-        return sum + 100 + AI.pawnTable[piece];
+        return sum + 100 + AI.pawnTable[idx];
       case 'r':
       case 'R':
-        return sum + 500 + AI.rookTable[piece];
+        return sum + 500 + AI.rookTable[idx];
       case 'n':
       case 'N':
-        return sum + 320 + AI.knightTable[piece];
+        return sum + 320 + AI.knightTable[idx];
       case 'b':
       case 'B':
-        return sum + 325 + AI.bishopTable[piece];
+        return sum + 325 + AI.bishopTable[idx];
       case 'q':
       case 'Q':
         return sum + 975;
       case 'k':
       case 'K':
-        return sum + 32767 + AI.kingTable[piece];
+        return sum + 32767 + AI.kingTable[idx];
       default:
         return sum;
     }
@@ -175,19 +186,28 @@ const endgameBonus = (
   return edgeBonus + proximityBonus;
 };
 
-// Evaluates the board relative to `currentColor`
-const evaluate = (board: readonly string[], currentColor: color): number => {
+// Evaluates the board relative to `currentColor`.
+// `mirror` toggles per-color piece-square mirroring; false = legacy behaviour.
+export const evaluate = (
+  board: readonly string[],
+  currentColor: color,
+  mirror = true,
+): number => {
   const opponent = oppositeColor(currentColor);
   const checkBonus = isInCheck(board, opponent) ? 50 : 0;
   const checkPenalty = isInCheck(board, currentColor) ? 50 : 0;
 
   const currentValue = getPieceValueSum({
+    black: currentColor === 'black',
     board,
+    mirror,
     pieces: getPiecesOfColor(board, currentColor),
   });
 
   const opponentValue = getPieceValueSum({
+    black: opponent === 'black',
     board,
+    mirror,
     pieces: getPiecesOfColor(board, opponent),
   });
 
@@ -223,9 +243,10 @@ export const negamax = (
   enPassantTarget: number | null,
   castle: CastleState,
   posHistory: Map<string, number> = new Map(),
+  evaluateFn: (b: readonly string[], c: color) => number = evaluate,
 ): readonly number[] => {
   if (depth === 0) {
-    return [-1, -1, evaluate(board, currentPlayer)];
+    return [-1, -1, evaluateFn(board, currentPlayer)];
   }
 
   const pieces = getPiecesOfColor(board, currentPlayer);
@@ -294,6 +315,7 @@ export const negamax = (
         childEp,
         childCastle,
         posHistory,
+        evaluateFn,
       );
       score = -childResult[2];
       // Restore history
