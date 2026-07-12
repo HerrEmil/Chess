@@ -1,0 +1,68 @@
+{
+  "slug": "english-opening",
+  "eco": "A10",
+  "name": "English Opening",
+  "aka": ["English"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The English Opening (1.c4) fights for the centre from the flank, a flexible system rich in transpositions.",
+  "intro": "The English Opening, 1.c4, stakes a claim in the centre from the wing and can transpose into a huge range of structures, from reversed Sicilians to Queen’s Gambit and Indian setups. Its flexibility has made it a favourite of positional world champions.",
+  "line": "c4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    }
+  ],
+  "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq c3 0 1",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The English Opening starts with 1.c4, a flank move that stakes a claim to the center from the side rather than occupying it immediately. White fights for the central light squares, especially d5, and keeps the pawn structure flexible, delaying commitment until Black shows his hand. This restraint gives the English a positional, maneuvering character while retaining the option to transpose into sharper play.",
+        "A hallmark of the opening is the kingside fianchetto with g3 and Bg2, placing the bishop on the long diagonal to bear down on d5 and the queenside. From this flexible foundation White can steer toward a wide variety of structures, choosing plans according to Black's setup rather than following a single rigid scheme."
+      ]
+    },
+    {
+      "heading": "Transpositions and structures",
+      "paragraphs": [
+        "The English is famous for its transpositional richness. Depending on how both sides continue, it can merge into the Queen's Gambit, the Catalan, or various Indian defenses, so a player of the English must be comfortable with a broad web of related positions. This fluidity is both a strength and a demand: it lets White sidestep an opponent's preparation but requires understanding of many pawn formations.",
+        "One of the most instructive ideas is the reversed Sicilian. When Black answers 1.c4 with 1...e5, the position resembles a Sicilian Defense with colors reversed and White a tempo up. White can then employ, with an extra move, the same attacking schemes Black uses in the Sicilian, an advantage that shapes much of the opening's strategy. Symmetrical structures after 1...c5 are equally common and lead to subtle battles over the central squares and the timing of pawn breaks."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The English takes its name from Howard Staunton, the leading English player of the nineteenth century, who employed 1.c4 in important games and helped bring it to prominence. For many years it was regarded as a quiet sideline, but through the twentieth century it was refined into a fully respectable main-line weapon at the highest level.",
+        "Today the English is a mainstay of elite practice, valued for its flexibility and its capacity to produce rich, unbalanced middlegames without the heavy forcing theory of some 1.e4 and 1.d4 openings. It appeals to players who prefer to outmaneuver rather than to memorize, and it remains a favorite of positional strategists worldwide."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "1.c4 is a flank opening that pressures the center, especially d5, from the side",
+    "The g3 and Bg2 fianchetto is the opening's signature, aiming the bishop at the long diagonal",
+    "The English is highly transpositional, flowing into the Catalan, Queen's Gambit and Indian systems",
+    "After 1...e5 the game becomes a reversed Sicilian with White enjoying an extra tempo",
+    "White keeps the pawn structure flexible and chooses plans in response to Black's setup",
+    "It favors maneuvering and positional understanding over sharp forcing theory"
+  ],
+  "plans": {
+    "white": [
+      "Fianchetto with g3 and Bg2 to control d5 and the long light-squared diagonal",
+      "Contest the center with an early Nc3 and pressure on the d5-square",
+      "Against 1...e5, adopt reversed-Sicilian attacking schemes with the extra tempo",
+      "Expand on the queenside with b4 and a well-timed pawn advance to gain space",
+      "Keep options open to transpose into a Catalan or Queen's Gambit if it suits the position"
+    ],
+    "black": [
+      "Meet 1.c4 with 1...e5 to claim central space and play a reversed-Sicilian setup",
+      "Play symmetrically with 1...c5, mirroring White and fighting for the central squares",
+      "Fianchetto with ...g6 and ...Bg7 to challenge White on the long diagonal",
+      "Contest d5 directly, for example with ...e6 and ...d5, to break White's grip on the center",
+      "Aim for a timely central break to free the position and equalize the space balance"
+    ]
+  },
+  "related": ["queens-gambit", "kings-indian-defense", "nimzo-indian-defense"]
+}

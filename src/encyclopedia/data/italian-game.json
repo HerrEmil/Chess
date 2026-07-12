@@ -1,0 +1,87 @@
+{
+  "slug": "italian-game",
+  "eco": "C50",
+  "name": "Italian Game",
+  "aka": ["Giuoco Piano family"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Italian Game (3.Bc4) trains the bishop on f7 and leads to both the quiet Giuoco Piano and the sharp Two Knights.",
+  "intro": "The Italian Game begins 1.e4 e5 2.Nf3 Nc6 3.Bc4, aiming the light-squared bishop straight at the vulnerable f7-square. One of the oldest recorded openings, it ranges from the slow manoeuvring of the Giuoco Piano to the fireworks of the Two Knights Defense.",
+  "line": "e4 e5 Nf3 Nc6 Bc4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    }
+  ],
+  "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Italian Game arises after 1.e4 e5 2.Nf3 Nc6 3.Bc4, aiming the bishop directly at the f7-square, the most vulnerable point in Black's camp. It is one of the oldest recorded openings and a natural choice for players who value quick, harmonious development and clear attacking targets. The character of the game hinges on how quickly White pushes in the centre and whether the position becomes a slow positional build-up or a sharp tactical fight.",
+        "Modern practice is dominated by the quiet approach with c3 and d3, sometimes called the Giuoco Pianissimo, where White delays d4 and instead manoeuvres patiently behind a small but flexible pawn centre. This restrained treatment keeps the tension and allows both sides to reposition their knights, often with Nbd2-f1-g3 for White, echoing ideas from the Ruy López. The immediate 4.d4 lines lead to more open, forcing play where central pawns are exchanged early."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The classical continuation is 3...Bc5, the Giuoco Piano, where both bishops eye the opponent's weak f-square and play frequently revolves around the c3-d4 central advance. If Black instead replies 3...Nf6, the game enters the Two Knights Defence, a sharper and more combative branch with its own extensive theory. The Hungarian Defence with 3...Be7 is a solid, modest alternative that avoids the sharpest lines.",
+        "In the Giuoco Piano, a key strategic question is whether White achieves d4 under favourable circumstances. The Evans Gambit (4.b4) is a famous aggressive sideline in which White sacrifices a pawn to accelerate the c3 and d4 plan and seize the initiative. Whether White gambits or plays quietly, control of the central squares and pressure on f7 remain the recurring themes."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Italian Game is among the most venerable of all openings, studied by the Italian masters of the Renaissance and appearing in the earliest chess literature. Its name Giuoco Piano, meaning the quiet game, reflects the calm, methodical development it invites, in contrast to the wilder gambits of the romantic era. After periods of falling out of top-level fashion in favour of the Ruy López, it enjoyed a strong modern revival thanks to the flexible slow-manoeuvring systems, and it remains popular at every level today."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3.Bc4 trains the bishop on f7, Black's most sensitive square.",
+    "The central question is whether and when White can achieve d4.",
+    "Modern lines favour a slow c3 and d3 build-up, the Giuoco Pianissimo.",
+    "Knight manoeuvres like Nbd2-f1-g3 mirror Ruy López regrouping ideas.",
+    "The Evans Gambit sacrifices a pawn to speed up the c3-d4 central plan.",
+    "Harmonious development and clear attacking targets make it beginner-friendly yet deep."
+  ],
+  "plans": {
+    "white": [
+      "Prepare c3 to support an eventual d4 advance in the centre.",
+      "In quiet lines, play d3 and reroute the b1-knight via d2-f1-g3.",
+      "Keep the bishop pointed at f7 and look for tactical chances there.",
+      "Consider the Evans Gambit to trade a pawn for rapid development and initiative.",
+      "Castle short and coordinate the rooks before opening the centre."
+    ],
+    "black": [
+      "Mirror White with 3...Bc5, contesting the central dark squares and f-file.",
+      "Prepare ...d6 and ...a6 to give the bishop a safe retreat and restrain b4.",
+      "Aim for the freeing ...d5 break to equalise in the centre.",
+      "Complete kingside castling quickly to blunt any attack on f7.",
+      "Choose the Two Knights with 3...Nf6 for sharper, more active counterplay."
+    ]
+  },
+  "related": ["two-knights-defense", "ruy-lopez", "scotch-game", "open-game"]
+}

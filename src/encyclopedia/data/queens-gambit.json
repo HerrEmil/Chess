@@ -1,0 +1,83 @@
+{
+  "slug": "queens-gambit",
+  "eco": "D06",
+  "name": "Queen’s Gambit",
+  "aka": ["QG"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Queen’s Gambit (1.d4 d5 2.c4) offers a wing pawn to deflect Black’s d5 and dominate the centre.",
+  "intro": "The Queen’s Gambit, 1.d4 d5 2.c4, is one of the oldest and most respected openings. White offers the c-pawn not as a true sacrifice but to pull Black’s d-pawn off the centre, trading a flank pawn for lasting central control and easy development.",
+  "line": "d4 d5 c4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    }
+  ],
+  "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Queen's Gambit begins 1.d4 d5 2.c4, offering the c-pawn to deflect Black's central pawn from d5. Despite its name, it is not a true sacrifice: if Black grabs the pawn with 2...dxc4, White can regain it comfortably, and any attempt to cling to the extra pawn with a later ...b5 fails because White breaks through with a2-a4 and the queenside pawns collapse. The gambit's real purpose is positional, using the c-pawn to challenge and undermine Black's grip on the center.",
+        "By trading the flank c-pawn for the more valuable central d-pawn, White aims to build a broad pawn presence and prepare the freeing central advance e2-e4. Control of the center then translates into easier piece development and more space. Black, in turn, must decide whether to defend the d5-point, exchange in the center, or counterattack, and this fundamental choice defines the many systems that branch out of the opening."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "Black's replies fall into three broad families. Declining with 2...e6 leads to the Queen's Gambit Declined, a rock-solid system that supports d5 at the cost of temporarily shutting in the light-squared bishop. Playing 2...c6 enters the Slav Defense, which also bolsters d5 but keeps the c8-bishop's diagonal open. Accepting with 2...dxc4 gives up the center immediately, planning to strike back with ...c5 or ...e5 and to complete development quickly.",
+        "Sharper independent tries also exist, such as 2...e5, the Albin Countergambit, and 2...c5, the Symmetrical Defense, though these are less common than the solid main lines. Whichever path Black chooses, the resulting structures tend to be well understood, which is one reason the Queen's Gambit has been a cornerstone of classical opening play for well over a century."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Queen's Gambit is one of the oldest recorded chess openings, analyzed in early manuscripts and refined steadily through the nineteenth and twentieth centuries. It rose to prominence as players came to appreciate that controlling the center with pawns and pieces mattered more than a single pawn's material value. Across many eras it has been a favored weapon of world champions seeking a sound, strategically rich battleground.",
+        "Its enduring appeal lies in balance: the opening offers White a lasting initiative without undue risk, while giving Black clear, reliable ways to equalize. This blend of safety and depth has kept the Queen's Gambit central to elite and club practice alike."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The gambit is positional, not a real sacrifice; White regains the pawn and Black cannot hold it with ...b5 due to a2-a4.",
+    "White trades a flank pawn for influence over the central d5-square.",
+    "The freeing break e2-e4 is White's central ambition in many lines.",
+    "Black chooses among declining with ...e6, the Slav ...c6, or accepting with ...dxc4.",
+    "Control of the center, not material, is the opening's guiding theme.",
+    "Resulting structures are well mapped, making the opening both sound and instructive."
+  ],
+  "plans": {
+    "white": [
+      "Prepare and execute the central break e2-e4 to seize space.",
+      "Meet an early ...dxc4 by recapturing the pawn and completing smooth development.",
+      "Answer ...b5 with a2-a4, breaking up Black's queenside pawn chain.",
+      "Develop pieces harmoniously behind the pawns and pressure the d5-point.",
+      "Aim for a lasting central and spatial edge rather than immediate tactics."
+    ],
+    "black": [
+      "Decide whether to defend d5, exchange in the center, or counterattack.",
+      "If accepting the gambit, strike back quickly with ...c5 or ...e5.",
+      "Complete development efficiently and neutralize White's central ambitions.",
+      "Avoid trying to hold the extra pawn with ...b5, which fails to a2-a4.",
+      "Aim for a solid, well-understood structure with clear equalizing resources."
+    ]
+  },
+  "related": [
+    "queens-gambit-declined",
+    "slav-defense",
+    "kings-indian-defense",
+    "nimzo-indian-defense"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "philidor-defense",
+  "eco": "C41",
+  "name": "Philidor Defense",
+  "aka": ["Philidor’s Defence"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Philidor Defense (2...d6) builds a solid but passive centre, prizing structure over space.",
+  "intro": "The Philidor Defense, 1.e4 e5 2.Nf3 d6, is named after the 18th-century master François-André Philidor, who prized the pawn chain. Solid if cramped, it is often reached via a modern move order that sidesteps sharper lines.",
+  "line": "e4 e5 Nf3 d6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    }
+  ],
+  "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Philidor arises after 1.e4 e5 2.Nf3 d6, a solid but modest way of supporting the e5-pawn. By defending with the d-pawn rather than a knight, Black keeps a compact structure but temporarily concedes space and locks in the f8-bishop. The opening suits players who value soundness and a resilient position over immediate activity.",
+        "The central tension is the heart of the Philidor. White typically plays d4, and after ...exd4 or the maintaining ...Nf6 and ...Be7, Black aims for a cramped but sturdy formation reminiscent of the Old Indian. Black's long-term counterplay usually revolves around the ...c6 and ...d5 break, or a well-timed ...exd4 followed by piece pressure against White's centre."
+      ]
+    },
+    {
+      "heading": "Pawn structure",
+      "paragraphs": [
+        "A recurring Philidor structure features black pawns on d6 and e5 facing a white pawn on e4, with White often committing a pawn to d4. If Black allows dxe5 and recaptures, the position opens toward a symmetrical, piece-play battle; if Black releases the tension with ...exd4, White gains a mobile centre while Black seeks piece activity and the ...d5 break. Managing this tension well is the defining skill of the defence.",
+        "Because the d6-pawn can become slightly backward and the e5-square must be watched, Black often manoeuvres knights to d7 and f6 or g6 to reinforce the centre. The freeing advance ...d5, prepared by ...c6 and ...Re8, is the strategic goal that lets Black finally unbind the position and equalise."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The defence is named after François-André Danican Philidor, the eighteenth-century French master and composer, who championed the idea that pawns are the soul of chess and advocated solid pawn play in the centre. His name is attached to this system because his teachings emphasised the kind of restrained, pawn-based structure it produces. Though it cedes some space, the Philidor has retained a following among players who prize its clarity and its avoidance of sharp early theory."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black supports e5 with ...d6, choosing solidity and compactness over space",
+    "Central tension between ...e5/...d6 and White's e4/d4 defines the middlegame",
+    "The freeing break ...d5, prepared by ...c6, is Black's main strategic goal",
+    "Cramped but resilient structures akin to the Old Indian Defence",
+    "Knight manoeuvres to d7, f6 and g6 shore up the centre and the e5-point",
+    "Named after Philidor, who taught that pawns are the soul of chess"
+  ],
+  "plans": {
+    "white": [
+      "Play d4 early to challenge e5 and build a broad, mobile pawn centre",
+      "Maintain central tension to keep Black cramped and restrict the light-squared bishop",
+      "Develop actively with Bc4 or Bg5 to exploit Black's slight lack of space",
+      "Aim for pressure on the d6-pawn and control of the d5-square"
+    ],
+    "black": [
+      "Prepare the freeing ...d5 break with moves like ...c6 and ...Re8",
+      "Reroute knights to d7 and f6 or g6 to defend e5 and support the centre",
+      "Release the tension with ...exd4 when it gains piece activity against White's centre",
+      "Keep the structure compact and untangle patiently toward an equal middlegame"
+    ]
+  },
+  "related": ["petrov-defense", "open-game", "ruy-lopez"]
+}

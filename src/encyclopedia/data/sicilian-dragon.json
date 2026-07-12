@@ -1,0 +1,111 @@
+{
+  "slug": "sicilian-dragon",
+  "eco": "B70",
+  "name": "Sicilian Dragon",
+  "aka": ["Dragon Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Dragon (5...g6) fianchettoes the bishop and races White in opposite-side castling attacks.",
+  "intro": "The Sicilian Dragon, defined by 5...g6, sends the dark-squared bishop to g7 where it rakes the long diagonal toward White’s queenside. When White castles long, both sides throw pawns at the enemy king in some of the most forcing races in opening theory.",
+  "line": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 g6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    }
+  ],
+  "fen": "rnbqkb1r/pp2pp1p/3p1np1/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Dragon Variation begins with 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 g6, in which Black fianchettoes the dark-squared bishop to g7. From g7 the bishop rakes the long a1-h8 diagonal, bearing down on White's queenside and the centre, and it is the signature piece of the entire system. The name is traditionally said to come from the resemblance of Black's kingside pawn chain to the constellation Draco.",
+        "Black's setup is harmonious and quick to develop: after ...Bg7, ...0-0, ...Nc6 and ...d6, the pieces cooperate naturally. The g7-bishop combines with pressure down the half-open c-file to generate fierce queenside counterplay, making the Dragon one of the most uncompromising ways to meet the Open Sicilian."
+      ]
+    },
+    {
+      "heading": "Opposite-side castling",
+      "paragraphs": [
+        "The defining battleground of the Dragon is the Yugoslav Attack, where White plays Be3, f3, Qd2 and castles queenside, then throws the h- and g-pawns forward to prise open Black's king. Black answers with a mirror-image assault on the other wing, using the c-file, the ...b5-b4 advance, and often the exchange sacrifice ...Rxc3 to shatter White's queenside pawns. The result is one of the sharpest races in all of opening theory, where a single tempo can prove decisive.",
+        "Both attacks aim straight at the enemy king, so accuracy and speed matter more than material. White tries to land h4-h5 and open the h-file for a mating attack, while Black relies on the g7-bishop, the c-file rooks, and thematic sacrifices to break through first. Understanding which attack is faster in a given position is the essence of Dragon strategy."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "Beyond the Yugoslav Attack, White may adopt the Classical Variation with Be2 and 0-0, leading to a calmer but still rich middlegame where kingside castling removes the mutual pawn-storming character. In these lines Black continues to press on the c-file and the long diagonal, seeking piece activity rather than a direct king hunt. The strategic themes of the fianchettoed bishop and half-open c-file remain central regardless of White's choice.",
+        "A recurring resource for Black across Dragon lines is the exchange sacrifice ...Rxc3, giving up a rook for the knight to wreck White's queenside pawns and expose the king. When it works, it transforms the game and hands Black a lasting initiative; the willingness to part with material for the attack is characteristic of the whole opening."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "5...g6 prepares the fianchetto ...Bg7, aiming the bishop along the long diagonal at White's queenside and centre.",
+    "The Dragon combines the g7-bishop with the half-open c-file for aggressive counterplay.",
+    "The Yugoslav Attack (Be3, f3, Qd2, 0-0-0) sets up opposite-side castling and mutual pawn storms.",
+    "White races with h4-h5 to open the h-file; Black races with ...b5-b4 and the c-file.",
+    "The exchange sacrifice ...Rxc3 is a thematic way to demolish White's queenside pawns.",
+    "In opposite-castling positions, speed and precise move order outweigh material."
+  ],
+  "plans": {
+    "white": [
+      "Adopt the Yugoslav Attack with Be3, f3, Qd2 and 0-0-0.",
+      "Launch the kingside pawn storm with h4-h5 to open the h-file against Black's king.",
+      "Trade off the powerful g7-bishop, for example with Be3-h6, to weaken Black's dark squares.",
+      "Choose the Classical setup with Be2 and 0-0 for a quieter positional game."
+    ],
+    "black": [
+      "Complete the harmonious setup with ...Bg7, ...0-0, ...Nc6 and ...d6.",
+      "Attack on the queenside with the c-file rooks and the ...b5-b4 advance.",
+      "Consider the exchange sacrifice ...Rxc3 to shatter White's pawn cover.",
+      "Use the g7-bishop's diagonal to pressure the centre and White's king."
+    ]
+  },
+  "related": ["sicilian-defense", "sicilian-najdorf", "pirc-defense"]
+}

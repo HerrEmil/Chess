@@ -1,0 +1,118 @@
+{
+  "slug": "sicilian-najdorf",
+  "eco": "B90",
+  "name": "Sicilian Najdorf",
+  "aka": ["Najdorf Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Najdorf (5...a6) is the most celebrated Sicilian, a flexible set-up favoured by Fischer and Kasparov.",
+  "intro": "The Najdorf Variation, reached by 5...a6 in the Open Sicilian, is among the most deeply analysed openings in all of chess. The quiet rook-pawn move prepares ...e5 or ...e6 and denies White’s pieces the b5-square, and it was a lifelong weapon of Bobby Fischer and Garry Kasparov.",
+  "line": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "a6",
+      "from": 8,
+      "to": 16
+    }
+  ],
+  "fen": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+  "sections": [
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Najdorf Variation arises after 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 and is named after the Polish-Argentine grandmaster Miguel Najdorf, who did much to popularize it in the mid-twentieth century. It became one of the most prestigious and deeply analysed openings in all of chess, famously favoured by Bobby Fischer and Garry Kasparov. Its blend of solidity and dynamic counterattacking potential has made it a mainstay of elite practice for decades.",
+        "The modest-looking 5...a6 conceals a wealth of strategic content and has generated an enormous body of theory. Rather than committing its central structure immediately, Black keeps options open and prepares to meet White's most aggressive tries. The Najdorf is often described as a system that rewards deep understanding as much as memorization."
+      ]
+    },
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The point of 5...a6 is prophylaxis and flexibility. The pawn on a6 denies the b5-square to White's pieces, particularly the knight and light-squared bishop, which might otherwise leap in to harass Black. It also prepares Black's own queenside expansion with ...b5, gaining space and opening lines toward the white king.",
+        "Having secured b5, Black retains a choice between two classic central setups. Playing ...e5 stakes out the centre and gains kingside space, though it concedes the d5-square, while ...e6 keeps a smaller, more resilient structure in the spirit of the Scheveningen. This ability to delay the central decision until White has shown his hand is the strategic heart of the Najdorf."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "White's sharpest and most storied reply is 6.Bg5, developing with pressure on f6 and preparing rapid queenside castling and a kingside pawn advance. The English Attack, with 6.Be3 followed by f3, Qd2 and g4, aims to castle long and storm Black's king with a pawn avalanche. Both approaches lead to double-edged struggles where accurate play is essential for both sides.",
+        "Quieter but respected options include 6.Be2, heading for a positional game with kingside castling, and 6.Bc4, the Fischer-Sozin approach, which trains the bishop on Black's kingside. Against each of these, Black tailors the choice of ...e5 or ...e6 and the timing of ...b5 to the demands of the position."
+      ]
+    },
+    {
+      "heading": "Typical middlegame",
+      "paragraphs": [
+        "Najdorf middlegames frequently feature a race between opposite-wing attacks. When White castles long and pushes the kingside pawns, Black counters with ...b5, ...b4 and pressure down the half-open c-file, so both sides are attacking simultaneously. Tempo and precise move order can decide the game long before material is settled.",
+        "In the more restrained lines, play revolves around the classic Sicilian squares: White eyes the d5-outpost and the weakness of Black's d6-pawn, while Black seeks piece activity, control of the c-file, and the freeing break ...d5. Handling these positional nuances well is what separates a comfortable Najdorf from a passive one."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "5...a6 controls b5, denying White's pieces the square and preparing Black's own ...b5 expansion.",
+    "Black keeps the central structure flexible, choosing between ...e5 and ...e6 later.",
+    "The Najdorf is named after Miguel Najdorf and was a favourite of Fischer and Kasparov.",
+    "6.Bg5 and the English Attack (6.Be3, f3, Qd2, g4) are White's most aggressive tries.",
+    "Opposite-side castling often produces a mutual pawn-storming race.",
+    "The d5-square and the freeing break ...d5 are recurring positional themes."
+  ],
+  "plans": {
+    "white": [
+      "Play 6.Be3 with f3, Qd2, and 0-0-0, then storm the kingside with g4-g5.",
+      "Try 6.Bg5 to pressure f6 and pursue a sharp attacking setup.",
+      "Fight for the d5-outpost and exploit the backward d6-pawn.",
+      "Choose 6.Be2 for a calmer game with kingside castling and central control."
+    ],
+    "black": [
+      "Play ...b5 to gain queenside space and open lines against a long-castled king.",
+      "Decide between ...e5 (space, but concedes d5) and ...e6 (compact and flexible).",
+      "Pressure the half-open c-file and prepare the ...d5 freeing break.",
+      "In opposite-castling lines, push the queenside pawns to reach White's king first."
+    ]
+  },
+  "related": ["sicilian-defense", "sicilian-dragon", "sicilian-alapin"]
+}

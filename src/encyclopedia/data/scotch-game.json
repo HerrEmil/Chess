@@ -1,0 +1,97 @@
+{
+  "slug": "scotch-game",
+  "eco": "C45",
+  "name": "Scotch Game",
+  "aka": ["Scotch Opening"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Scotch Game (3.d4) opens the centre at once, trading White’s d-pawn for quick development and open lines.",
+  "intro": "The Scotch Game, 1.e4 e5 2.Nf3 Nc6 3.d4, immediately challenges the centre. After 3...exd4 4.Nxd4 White enjoys free development and a lead in space; revived at the top level by Garry Kasparov, it is a straightforward, principled alternative to the Ruy López.",
+  "line": "e4 e5 Nf3 Nc6 d4 exd4 Nxd4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "exd4",
+      "from": 28,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    }
+  ],
+  "fen": "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Scotch Game arises after 1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4, in which White resolves the central tension immediately by exchanging on d4 and recapturing with the knight. Unlike the Ruy López or Italian, where White maintains the tension and manoeuvres slowly, the Scotch opens the centre at once and leads to clear, well-defined pawn structures. This gives White easy development and a spatial foothold, while committing to a more concrete style of play.",
+        "A central strategic theme is White's strong knight on d4 and the fight over the central light squares. Black usually challenges the knight quickly, either with 4...Nf6 hitting e4, or 4...Bc5 pressuring the d4-knight along the diagonal. Because lines are often forcing, the Scotch appeals to players who prefer clarity and concrete plans over the long, subtle manoeuvring of the closed classical openings."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The two principal replies are 4...Nf6 and 4...Bc5. After 4...Bc5, play frequently revolves around pressure on the d4-knight and White's efforts to support or reposition it, often with c3 and Be3. After 4...Nf6, White commonly continues 5.Nxc6, giving Black a choice of recaptures that shapes the resulting pawn structure and the character of the middlegame.",
+        "The Scotch Gambit, reached via 4.Bc4 instead of recapturing at once, offers a pawn for rapid development and often transposes into related Italian and Two Knights structures. Whether in the main lines or the gambit, White typically enjoys a lead in development and open lines, while Black seeks to neutralise the centre and exploit White's slightly loosened pawn structure in the endgame."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The opening takes its name from a nineteenth-century correspondence match involving a team from Scotland, and it was a respected weapon throughout the classical era before being somewhat overshadowed by the Ruy López. Its modern fame owes much to Garry Kasparov, who revived it at the very highest level and demonstrated that its concrete, open positions offered fresh winning chances against well-prepared opponents. Since then it has been a fully mainstream choice, valued as a direct and less theory-laden alternative to the Spanish."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White releases the central tension at once with 3.d4 and 4.Nxd4.",
+    "A powerful knight on d4 anchors White's central control.",
+    "Play is more forcing and concrete than in the Ruy López or Italian.",
+    "Black challenges the centre quickly with 4...Nf6 or 4...Bc5.",
+    "The Scotch Gambit offers a pawn for rapid development and open lines.",
+    "Kasparov's use of the Scotch restored it to top-level respectability."
+  ],
+  "plans": {
+    "white": [
+      "Recapture on d4 with the knight to occupy a strong central outpost.",
+      "Support or reposition the d4-knight with c3 and Be3 as needed.",
+      "Exploit the lead in development and open lines with active piece play.",
+      "Consider Nxc6 to alter Black's pawn structure in White's favour.",
+      "Try the Scotch Gambit with 4.Bc4 to accelerate development for a pawn."
+    ],
+    "black": [
+      "Hit the centre immediately with 4...Nf6, attacking the e4-pawn.",
+      "Pressure the d4-knight with 4...Bc5 along the a7-g1 diagonal.",
+      "Complete development and castle to neutralise White's early initiative.",
+      "Aim to exploit White's slightly loosened queenside pawns in the endgame.",
+      "Seek timely central breaks or piece trades to equalise the position."
+    ]
+  },
+  "related": ["italian-game", "ruy-lopez", "petrov-defense", "open-game"]
+}

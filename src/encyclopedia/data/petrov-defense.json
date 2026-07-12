@@ -1,0 +1,100 @@
+{
+  "slug": "petrov-defense",
+  "eco": "C42",
+  "name": "Petrov Defense",
+  "aka": ["Petroff Defence", "Russian Game"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Petrov Defense (2...Nf6) counterattacks e4 by symmetry, a rock-solid drawing weapon at elite level.",
+  "intro": "The Petrov, or Russian Game, meets 2.Nf3 with the symmetrical 2...Nf6, counterattacking e4 rather than defending e5. Its reputation for solidity makes it a favourite of players seeking a reliable, low-risk defence to 1.e4.",
+  "line": "e4 e5 Nf3 Nf6 Nxe5 d6 Nf3 Nxe4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nxe5",
+      "from": 45,
+      "to": 28
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "Nf3",
+      "from": 28,
+      "to": 45
+    },
+    {
+      "san": "Nxe4",
+      "from": 21,
+      "to": 36
+    }
+  ],
+  "fen": "rnbqkb1r/ppp2ppp/3p4/8/4n3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Petrov, also called the Russian Game, arises after 1.e4 e5 2.Nf3 Nf6, when Black counterattacks White's e4-pawn instead of defending e5. The defining feature is symmetry: rather than protecting the e5-pawn, Black immediately strikes at the centre, offering an even exchange of central pawns. This gives the opening a solid, resilient character that has made it a favourite of players seeking to neutralise White's first-move initiative.",
+        "A key point is that White cannot simply grab the e5-pawn with 3.Nxe5. If Black replies 3...Nxe4 too hastily there are tactical pitfalls, so the standard method is 3...d6 first, driving the knight back before recapturing on e4. This little sequence, hitting the knight before regaining the pawn, is the cornerstone of Petrov theory and the reason the opening is prized for its clarity."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 3.Nxe5 d6 4.Nf3 Nxe4 the position is nearly symmetrical, and White usually continues 5.d4, gaining space and preparing to challenge the centralised black knight. Black then develops naturally with ...d5, ...Bd6 or ...Be7, and ...O-O, aiming for a harmonious, well-coordinated setup. The resulting middlegames are typically balanced and manoeuvring in nature.",
+        "White's other main try is 3.d4, the modern preference of players who want to avoid the heavily analysed symmetrical lines. After 3...Nxe4 4.Bd3 d5 the centre opens and both sides develop their pieces actively. In all these lines Black relies on precise piece placement rather than pawn tension, which is why the Petrov is regarded as a reliable equalising weapon."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The opening is named after the Russian master Alexander Petrov, one of the earliest great players of the Russian tradition, and it is for this reason known throughout the Russian-speaking world as the Russian Game. Long dismissed as drawish, it was rehabilitated at the highest level as a rock-solid defence with which Black can steer toward calm, strategically clear positions. Its reputation as a fortress against 1.e4 endures because the symmetrical structures leave White few natural targets."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black counterattacks e4 rather than defending e5, seeking symmetry and solidity",
+    "The move order 3.Nxe5 d6 first drives the knight back before recapturing on e4",
+    "Balanced, manoeuvring middlegames where accurate piece placement matters more than pawn tension",
+    "A reliable equalising weapon that gives White few natural targets to attack",
+    "White seeks a small pull with early d4, gaining central space against the exposed knight",
+    "Symmetrical pawn structures often lead toward simplified, drawish endgames"
+  ],
+  "plans": {
+    "white": [
+      "Play d4 to seize central space and question Black's centralised knight on e4",
+      "Choose 3.d4 as a fresh try to sidestep the deeply analysed symmetrical lines",
+      "Develop harmoniously and use the extra tempo to press for a small, lasting initiative",
+      "Aim to trade into slightly more comfortable structures where the first move still counts"
+    ],
+    "black": [
+      "Insert ...d6 to chase the knight before recapturing on e4 and equalising material",
+      "Complete development with ...Be7 or ...Bd6, ...O-O and ...Nc6 for a solid setup",
+      "Support the e4-knight with ...d5 and keep the position symmetrical and stable",
+      "Neutralise White's initiative through timely exchanges and head for a balanced endgame"
+    ]
+  },
+  "related": ["philidor-defense", "ruy-lopez", "scotch-game", "open-game"]
+}

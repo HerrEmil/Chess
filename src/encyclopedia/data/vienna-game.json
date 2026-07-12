@@ -1,0 +1,75 @@
+{
+  "slug": "vienna-game",
+  "eco": "C25",
+  "name": "Vienna Game",
+  "aka": ["Vienna Opening"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Vienna Game (2.Nc3) develops a knight and prepares f4, a delayed King’s Gambit with extra flexibility.",
+  "intro": "The Vienna Game opens 1.e4 e5 2.Nc3, developing the queen’s knight while keeping the f-pawn free to advance. It blends classical development with the attacking ideas of the King’s Gambit, and can turn quiet or ferocious depending on White’s intent.",
+  "line": "e4 e5 Nc3",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    }
+  ],
+  "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Vienna Game begins 1.e4 e5 2.Nc3, developing the queen's knight and supporting a later f4 advance. It is a flexible opening that can transpose into quiet positional systems or ignite sharp attacking play, depending on White's follow-up. The move 2.Nc3 keeps options open while reinforcing control of the central d5- and e4-squares.",
+        "The signature idea is the delayed King's Gambit motif: White often prepares f2-f4 with the knight already developed, aiming for a strong pawn thrust against Black's e5-pawn without committing to an immediate pawn sacrifice. Alternatively, White may adopt the restrained fianchetto or Bc4 setups, treating the Vienna as a calm battle for the centre. This dual nature makes it a versatile choice at every level."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 2...Nc6, White can play 3.f4, the Vienna Gambit, offering a pawn in true romantic style to open lines toward Black's king. Black must react precisely, since accepting with 3...exf4 leads to open, tactical positions where development speed is paramount. A quieter route is 3.Bc4, developing the bishop toward f7 and keeping the f4 break in reserve.",
+        "Another important line runs 2...Nf6, when White frequently continues 3.f4 or 3.g3, the latter fianchettoing the bishop for a positional grip on the long diagonal and the d5-square. Black's soundest replies include ...d5 counterstrikes and natural development with ...Bb4 or ...Bc5. Throughout, the tension centres on whether White's f-pawn advance will yield an attack or merely loosen the position."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Vienna takes its name from the city that was a leading centre of chess in the nineteenth century, where its lines were extensively developed and analysed. It is often viewed as a more circumspect cousin of the King's Gambit, retaining the ambition to play f4 while first tucking the knight safely on c3. This blend of classical development and latent aggression has kept it a respected, if less common, member of the open-game family."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "2.Nc3 develops a piece while supporting a later f4 and controlling d5 and e4",
+    "A flexible opening that can turn positional or launch a King's Gambit-style attack",
+    "The Vienna Gambit with f4 opens lines toward Black's king in romantic fashion",
+    "Quiet setups with Bc4 or a g3 fianchetto press on the long diagonal and d5",
+    "Black counters in the centre with a well-timed ...d5 break",
+    "Named after Vienna, a great nineteenth-century centre of chess"
+  ],
+  "plans": {
+    "white": [
+      "Prepare and play f4 to attack e5 and open lines against the black king",
+      "Develop the light-squared bishop to c4, eyeing the sensitive f7-square",
+      "Adopt a g3 fianchetto for positional control of the long diagonal and d5",
+      "Keep the setup flexible, choosing attack or manoeuvre based on Black's reply"
+    ],
+    "black": [
+      "Meet f4 with accurate defence and rapid development to blunt White's attack",
+      "Strike back in the centre with ...d5 to free the position and gain activity",
+      "Develop pieces to natural squares with ...Nc6, ...Nf6 and ...Bc5 or ...Bb4",
+      "Exploit any loosening of White's structure caused by an over-eager f-pawn push"
+    ]
+  },
+  "related": ["kings-gambit", "open-game", "italian-game"]
+}

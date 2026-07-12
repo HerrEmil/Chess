@@ -1,0 +1,77 @@
+{
+  "slug": "sicilian-defense",
+  "eco": "B20",
+  "name": "Sicilian Defense",
+  "aka": ["Sicilian Defence"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Sicilian Defense (1...c5) is the sharpest and most popular reply to 1.e4, fighting for the centre asymmetrically.",
+  "intro": "The Sicilian Defense, 1.e4 c5, is the most popular and highest-scoring answer to 1.e4. By striking at d4 from the side, Black unbalances the position from move one, inviting the double-edged struggles that dominate modern tournament chess.",
+  "line": "e4 c5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    }
+  ],
+  "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Sicilian Defense arises after 1.e4 c5 and is the most popular and combative reply to 1.e4 at every level of play. Instead of mirroring White's central advance with 1...e5, Black stakes a claim on the centre from the flank, immediately creating an asymmetric position that promises rich, unbalanced play. This asymmetry is the defining feature of the opening: both sides fight for the initiative on opposite wings, and quiet, symmetrical simplification is rare.",
+        "The essential transaction usually occurs when White plays d4 and Black captures with ...cxd4. Black exchanges a wing pawn (the c-pawn) for White's central d-pawn, obtaining a central pawn majority and a half-open c-file. In return White gains a lead in development and greater space, especially in the centre and on the kingside. Black accepts a slightly passive early position in exchange for long-term structural and dynamic chances."
+      ]
+    },
+    {
+      "heading": "Pawn structure",
+      "paragraphs": [
+        "After the typical ...cxd4 exchange, the pawn structure defines the strategic battleground. Black has a half-open c-file, which becomes a natural highway for the rooks and queen to pressure White's queenside, frequently targeting the c3-knight and the c2-pawn. White, in turn, obtains a half-open d-file (and often play down the e-file), aiming pressure at Black's d6- or e6-pawns.",
+        "Because the central pawns have been traded asymmetrically, the two sides tend to castle on the same or opposite wings and then push their pawns toward the enemy king. Black's queenside pawn advances such as ...b5 and ...a5 gain space and open lines against the white king when White has castled long. Understanding whose attack arrives first is often the whole point of a Sicilian middlegame."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The Sicilian branches into a vast family of systems, most of which begin with the Open Sicilian after 2.Nf3 followed by 3.d4. Among the best-known are the Najdorf (5...a6), the Dragon (5...g6), the Scheveningen (with ...e6 and ...d6), the Classical (5...Nc6), and the Sveshnikov (with an early ...e5). Each has its own pawn structure and typical plans, yet all share the underlying Sicilian bargain of the c-file and central majority.",
+        "White is not obliged to enter the Open Sicilian. The Anti-Sicilians offer independent paths: the Alapin (2.c3) prepares d4 with a broad centre, the Closed Sicilian (2.Nc3 and g3) delays d4 entirely, and the Rossolimo and Moscow systems develop the bishop to b5. These lines aim to sidestep Black's deep preparation while still fighting for an edge."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black answers 1.e4 with a flank strike on the centre, creating an asymmetric, unbalanced fight.",
+    "The ...cxd4 exchange trades Black's c-pawn for White's d-pawn, yielding a central majority and half-open c-file.",
+    "White typically enjoys a development lead and kingside space in return.",
+    "The half-open c-file is Black's main artery for queenside counterplay against c3 and c2.",
+    "The choice between Open Sicilians and Anti-Sicilians shapes the entire character of the game.",
+    "Opposite-wing pawn storms and races to attack are recurring Sicilian themes."
+  ],
+  "plans": {
+    "white": [
+      "Play Nf3 and d4 to open the position and exploit a lead in development.",
+      "Use the half-open d-file and central space to pressure Black's d6/e6 pawns.",
+      "Choose an Anti-Sicilian such as the Alapin or Closed Sicilian to avoid sharp theory.",
+      "Castle and launch a kingside or central initiative before Black's counterplay matures."
+    ],
+    "black": [
+      "Trade the c-pawn for White's d-pawn and gain a central pawn majority.",
+      "Occupy and pressure the half-open c-file with rooks and queen.",
+      "Expand on the queenside with ...a6 and ...b5 to generate counterplay.",
+      "Complete development flexibly, choosing ...e5, ...e6, or ...g6 setups to suit the position."
+    ]
+  },
+  "related": [
+    "sicilian-najdorf",
+    "sicilian-dragon",
+    "sicilian-alapin",
+    "french-defense",
+    "caro-kann-defense"
+  ]
+}

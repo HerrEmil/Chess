@@ -1,0 +1,88 @@
+{
+  "slug": "caro-kann-defense",
+  "eco": "B10",
+  "name": "Caro-Kann Defense",
+  "aka": ["Caro-Kann Defence"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Caro-Kann (1...c6) supports ...d5 without shutting in the bishop, a solid and respected equalizer.",
+  "intro": "The Caro-Kann Defense, 1.e4 c6 2.d4 d5, prepares the central break ...d5 while keeping the light-squared bishop’s diagonal open — the key improvement over the French. Renowned for its soundness, it is a lifelong choice of many world-class defenders.",
+  "line": "e4 c6 d4 d5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    }
+  ],
+  "fen": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq d6 0 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Caro-Kann answers 1.e4 with 1...c6, preparing to contest the centre by 2...d5 much as the French does. The crucial difference is that Black supports the ...d5 advance with the c-pawn rather than the e-pawn, which keeps the diagonal open for the light-squared bishop. This lets Black develop the bishop actively to f5 or g4 before playing ...e6, avoiding the French's chronic bad-bishop problem.",
+        "Because of this, the Caro-Kann has a reputation as one of the soundest and most solid answers to 1.e4. Black accepts a slightly passive but very durable position, aiming for a healthy pawn structure and long-term equality. The trade-off is that Black often spends time on modest moves and must be patient, seeking counterplay in the endgame or on the queenside."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 1.e4 c6 2.d4 d5 White's principal tries are 3.Nc3 or 3.Nd2, the Classical approach that usually leads to 3...dxe4 4.Nxe4 and further piece play, and 3.e5, the Advance Variation, which grabs space and resembles a French but with Black's light-squared bishop already free to reach f5. The Exchange Variation 3.exd5 cxd5 gives a clear, open structure, while the sharp Panov-Botvinnik Attack arises when White follows the exchange with c4, generating an isolated queen's pawn middlegame.",
+        "In the Classical lines Black typically develops the bishop to f5, then plays ...e6, ...Nd7, ...Ngf6 and completes a compact setup. The modern ...Nd7 and ...Ngf6 systems avoid an early ...Bf5 in favour of flexibility. Across all these branches the Caro-Kann keeps the same underlying goal: a solid structure with the light-squared bishop developed outside the pawn chain."
+      ]
+    },
+    {
+      "heading": "Why play it",
+      "paragraphs": [
+        "The Caro-Kann appeals to players who want a reliable, low-risk defense against 1.e4 without memorizing sprawling forcing lines. Its structures recur again and again, so understanding the typical plans matters more than raw theory. Many players value its resilience: even when Black stands slightly worse, the positions are hard to break down and rich in endgame resources.",
+        "At the same time it is far from purely defensive. Sharp branches like the Advance and Panov-Botvinnik give both sides real winning chances, and Black's solid centre can become the springboard for active queenside or central counterplay once development is complete."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "1...c6 supports ...d5 while keeping the light-squared bishop free",
+    "Developing the bishop to f5 or g4 before ...e6 fixes the French's core problem",
+    "The defense prizes a sound structure and long-term solidity",
+    "Black accepts slight passivity in exchange for durability and endgame resources",
+    "Advance, Classical, Exchange, and Panov-Botvinnik each define distinct middlegames",
+    "Counterplay often comes on the queenside or in a favorable endgame"
+  ],
+  "plans": {
+    "white": [
+      "Play the Advance 3.e5 to seize space and cramp Black's position",
+      "Enter Classical lines with 3.Nc3/3.Nd2 to develop naturally and pressure the centre",
+      "Adopt the Panov-Botvinnik with c4 to fight from an isolated queen's pawn",
+      "Target Black's slightly passive setup by seizing central and kingside space",
+      "Exchange on d5 for a clear structure and steady piece play"
+    ],
+    "black": [
+      "Support ...d5 with ...c6 and develop the light bishop to f5 or g4 early",
+      "Complete a solid setup with ...e6, ...Nd7, ...Ngf6 and castle",
+      "Aim to neutralize White's centre and steer toward comfortable endgames",
+      "Generate counterplay on the queenside once development is finished",
+      "Exchange pieces to relieve any cramp and exploit the healthy structure"
+    ]
+  },
+  "related": [
+    "french-defense",
+    "scandinavian-defense",
+    "slav-defense",
+    "sicilian-defense"
+  ]
+}
