@@ -1,0 +1,97 @@
+{
+  "slug": "tarrasch-defense",
+  "eco": "D32",
+  "name": "Tarrasch Defense",
+  "aka": ["Tarrasch Defence, QGD"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Tarrasch Defense (1.d4 d5 2.c4 e6 3.Nc3 c5) meets the Queen's Gambit with an active pawn strike accepting an isolated d-pawn.",
+  "intro": "The Tarrasch Defense arises after 1.d4 d5 2.c4 e6 3.Nc3 c5, an assertive answer to the Queen's Gambit Declined in which Black counterattacks in the center rather than defending d5 passively. Instead of shoring up the pawn chain, Black invites structural imbalance in return for rapid development and open lines. The defining bargain, reached after 4.cxd5 exd5, is an isolated queen's pawn on d5 that Black gladly shoulders for the sake of active, purposeful piece play.",
+  "line": "d4 d5 c4 e6 Nc3 c5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    }
+  ],
+  "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq c6 0 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The heart of the Tarrasch is the deliberate acceptance of an isolated queen's pawn. After 4.cxd5 exd5 5.Nf3 Nc6 6.g3, Black stands with a lone pawn on d5 that no neighboring pawn can defend, but in compensation gains half-open lines, free squares for the pieces, and a lead in development. The d5-pawn controls c4 and e4, cramping White and granting Black's minor pieces natural outposts; the c8-bishop and both knights spring to life without the usual QGD passivity.",
+        "The struggle is a classic contest of dynamic activity against long-term structure. White's strategy is to blockade the pawn on d4, trade down into a favorable endgame, and eventually win the isolani, whereas Black seeks to justify the weakness through initiative, piece pressure, and well-timed central or kingside play before it can be exploited. If the pieces come off without incident, the isolated pawn becomes a chronic liability; if Black keeps the position sharp, that same pawn becomes the spearhead of active operations."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The principal tabiya follows 4.cxd5 exd5 5.Nf3 Nc6 6.g3, the Rubinstein Variation, where White fianchettoes with Bg2 to bear down on the isolated d5-pawn along the long diagonal. Black continues naturally with 6...Nf6 7.Bg2 Be7, castling and completing development while safeguarding the central pawn. This g3 setup is regarded as White's most testing try precisely because it pressures d5 from a distance rather than committing to an immediate blockade.",
+        "Black has independent tries as well. The Schara-Hennig Gambit, 4.cxd5 cxd4, sacrifices a pawn for quick development and open lines, while the Symmetrical Tarrasch and Tarrasch-style structures can transpose from various Queen's Gambit move orders. White may also decline the central tension or delay cxd5, but the mainline commitment to the isolated queen's pawn remains the theoretical and practical core of the opening."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The defense bears the name of Siegbert Tarrasch, the influential German master and teacher who championed it as the logical, principled reply to the Queen's Gambit, prizing the free piece play and open lines it offered over passive defense. Long considered slightly suspect because of the isolated pawn, the Tarrasch was rehabilitated at the highest level by Boris Spassky and later by Garry Kasparov, who employed it in world-championship play and demonstrated its combative resources. It endures today as a respected, fighting choice for players who welcome dynamic imbalance."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black answers the Queen's Gambit actively with 3...c5, striking the center.",
+    "The isolated queen's pawn is a conscious trade for activity and open lines.",
+    "Free development and piece play compensate for the structural weakness.",
+    "White fianchettoes with g3 and Bg2 to pressure the d5-pawn.",
+    "The isolani is a strength in the middlegame, a liability in the endgame.",
+    "Championed by Tarrasch, later revived by Spassky and Kasparov."
+  ],
+  "plans": {
+    "white": [
+      "Fianchetto with g3 and Bg2 to attack the isolated d5-pawn along the long diagonal.",
+      "Blockade the pawn by planting a piece firmly on d4.",
+      "Exchange minor pieces to reduce Black's activity and expose the isolani.",
+      "Steer toward an endgame where the weak d5-pawn can be won.",
+      "Pressure d5 with rooks and queen to tie Black's pieces to its defense."
+    ],
+    "black": [
+      "Develop rapidly with Nc6, Nf6, Be7 and quick castling.",
+      "Use the active pieces and open lines to generate middlegame initiative.",
+      "Consider a timely d5-d4 advance to open the position and free the pieces.",
+      "Aim pieces at White's kingside while the position remains dynamic.",
+      "Keep the game complex and avoid mass exchanges that highlight the isolani."
+    ]
+  },
+  "related": [
+    "queens-gambit-declined",
+    "queens-gambit",
+    "semi-slav-defense",
+    "slav-defense"
+  ]
+}

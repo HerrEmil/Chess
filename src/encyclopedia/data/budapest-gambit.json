@@ -1,0 +1,87 @@
+{
+  "slug": "budapest-gambit",
+  "eco": "A52",
+  "name": "Budapest Gambit",
+  "aka": ["Budapest Defence"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Budapest Gambit (1.d4 Nf6 2.c4 e5) sacrifices a pawn for fast piece play and pressure on f2 and e5.",
+  "intro": "The Budapest Gambit arises after 1.d4 Nf6 2.c4 e5, a bold counter-strike that offers a pawn barely two moves into the game. Rather than defend passively against 1.d4, Black invites 3.dxe5 and then hunts the pawn back with quick, aggressive development. It is an enterprising, tactical weapon that thrives on initiative rather than material, and it can catch an unprepared queen's-pawn player off guard.",
+  "line": "d4 Nf6 c4 e5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    }
+  ],
+  "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq e6 0 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The point of the gambit is speed and pressure, not the pawn itself. After 3.dxe5, Black regains the material by leaping with 3...Ng4, attacking the advanced e5-pawn and preparing rapid piece activity. The knight is supported by ...Nc6, the dark-squared bishop swings to c5 to bear down on f2, and Black's pieces reach their best squares faster than White can consolidate. In many lines the sensitive f2-square becomes a permanent target, and Black hopes to convert this lead in development into concrete tactical chances.",
+        "White, in return, holds a small structural edge and extra space, so the strategic battle is one of tempo against solidity. If White absorbs the early pressure and completes development, the healthier pawn structure and central control tend to favor the first player in a long game. Black therefore aims to keep the position sharp and open, avoiding the quiet, technical middlegames where White's assets matter most."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The principal line runs 3.dxe5 Ng4, when White chooses between two natural setups. With 4.Nf3, White simply develops, guards against the ...Bc5 and ...Nxf2 tricks, and prepares to return the pawn under favorable circumstances while consolidating the extra space. The alternative 4.Bf4 is the ambitious try, defending e5 and staking a claim to more territory, though it invites the sharp Rubinstein idea 4...Nc6 5.Nf3 Bb4+ with active play.",
+        "Black's chief alternative to 3...Ng4 is the Fajarowicz Variation, 3...Ne4, a trickier and more provocative choice. Instead of chasing e5 directly, the knight plants itself in the center and eyes tactical motifs around c3, d2, and f2. It is a genuine surprise weapon, though it is considered somewhat riskier than the main knight retreat to g4, since accurate play can leave Black struggling to justify the pawn."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "Also known as the Budapest Defence, the gambit takes its name from the Hungarian capital, where it was developed and popularized in the early twentieth century. It has always occupied the borderland between respectability and adventure: reliable enough to appear in grandmaster practice as an occasional surprise, yet spirited enough to be a favorite shock weapon at club level, where its tactical traps around f2 claim many unwary victims."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black gambits a pawn after 2...e5 for rapid, active development.",
+    "3...Ng4 is the main line, hunting down the e5-pawn.",
+    "The f2-square is a recurring tactical target for Black.",
+    "White consolidates with 4.Nf3 or grabs space with 4.Bf4.",
+    "The Fajarowicz 3...Ne4 is a trickier, riskier surprise try.",
+    "A dangerous club weapon and an occasional grandmaster surprise."
+  ],
+  "plans": {
+    "white": [
+      "Accept the pawn with 3.dxe5 and aim to consolidate calmly.",
+      "Develop with 4.Nf3 to blunt the ...Bc5 and ...Nxf2 tricks.",
+      "Choose 4.Bf4 to defend e5 and seize extra central space.",
+      "Return the extra pawn when it defuses Black's initiative.",
+      "Steer toward quiet positions where structure and space tell."
+    ],
+    "black": [
+      "Regain the pawn quickly with 3...Ng4 and fast piece play.",
+      "Develop ...Nc6 and ...Bc5 to pile pressure on f2.",
+      "Keep the position open and sharp to exploit the tempo lead.",
+      "Try the Rubinstein 4...Nc6 5.Nf3 Bb4+ against 4.Bf4.",
+      "Deploy the Fajarowicz 3...Ne4 as a provocative surprise weapon."
+    ]
+  },
+  "related": [
+    "benko-gambit",
+    "modern-benoni",
+    "old-indian-defense",
+    "dutch-defense"
+  ]
+}

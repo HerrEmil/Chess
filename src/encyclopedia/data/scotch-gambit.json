@@ -1,0 +1,103 @@
+{
+  "slug": "scotch-gambit",
+  "eco": "C44",
+  "name": "Scotch Gambit",
+  "aka": [],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Scotch Gambit (1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4) sacrifices a pawn for fast development and pressure on f7.",
+  "intro": "The Scotch Gambit arises after 1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4, when White declines to recapture the pawn on d4 with the usual 4.Nxd4 of the Scotch Game and instead reaches for the bishop's most aggressive diagonal. In return for the material, White gains a lead in development and immediate pressure against the sensitive f7-square. It is an open, tactical way to play the 1.e4 e5 openings, one that rewards initiative and punishes passive defense.",
+  "line": "e4 e5 Nf3 Nc6 d4 exd4 Bc4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "exd4",
+      "from": 28,
+      "to": 35
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    }
+  ],
+  "fen": "r1bqkbnr/pppp1ppp/2n5/8/2BpP3/5N2/PPP2PPP/RNBQK2R b KQkq - 1 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The guiding idea is speed. By leaving the pawn on d4 uncaptured, White frees the light-squared bishop to strike at f7 and prepares to castle quickly, often meeting Black's development with a timely c3 to open lines or with a direct assault on the king's most vulnerable point. The extra pawn Black holds is only meaningful if Black can complete development safely; White's whole strategy is to prevent exactly that, keeping the position open so that superior piece activity outweighs the small material deficit.",
+        "For Black, the challenge is conversion versus survival. Holding the gambit pawn is tempting but secondary to neutralizing White's initiative, returning the material at the right moment to reach a comfortable, well-developed middlegame. Because the resulting structures frequently resemble those of the Italian Game, understanding typical Italian plans, the tension on d4 and the fight for the e- and f-files, matters more than memorizing a single forcing line."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 4.Bc4 Black's two principal replies are 4...Nf6 and 4...Bc5. The move 4...Nf6 attacks e4 and can steer play toward Two Knights Defense and Max Lange Attack territory, especially after 5.O-O or 5.e5, where sharp, well-analyzed complications arise and precise knowledge is essential for both sides. The natural 4...Bc5 develops with tempo and defends against the immediate threats, often transposing into Giuoco Piano and other Italian Game structures once White plays c3 to challenge the center.",
+        "A recurring theme across these lines is the pawn on d4: White may recover it with c3, prepare e5 to gain space and open attacking lanes, or simply castle and develop, treating the pawn as a long-term investment. Many roads lead back to familiar Italian middlegames, which is one reason the Scotch Gambit remains a practical, low-maintenance weapon that funnels play into positions White knows well."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Scotch Gambit belongs to the great age of Romantic chess, when sacrificing a pawn for rapid development and open lines was the mark of enterprising play, and it shares its heritage with the Scotch Game and the related Italian gambits of the 19th century. While the solid 4.Nxd4 of the Scotch Game eventually drew more top-level attention, 4.Bc4 endured as a favorite of attacking players and club competitors alike, prized for its directness and for the way it transposes into well-charted Two Knights, Max Lange and Italian Game territory."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White sacrifices the d4-pawn for rapid development and initiative.",
+    "The bishop on c4 aims squarely at Black's weak f7-square.",
+    "Quick castling and c3 help White open lines and recover the pawn.",
+    "Play often transposes into Italian Game and Giuoco Piano structures.",
+    "4...Nf6 heads toward sharp Two Knights and Max Lange lines.",
+    "Black should prioritize safe development over clinging to the extra pawn."
+  ],
+  "plans": {
+    "white": [
+      "Develop fast, castle early, and keep the position open and tactical.",
+      "Play c3 to challenge the d4-pawn and open central lines.",
+      "Advance e5 to gain space and create attacking chances against f7.",
+      "Target the f7-square with the bishop and coordinated piece pressure.",
+      "Steer the game into familiar Italian middlegame structures."
+    ],
+    "black": [
+      "Complete development quickly rather than hoarding the extra pawn.",
+      "Meet 4.Bc4 with 4...Bc5 or 4...Nf6 to blunt White's threats.",
+      "Return the material at the right moment to defuse the initiative.",
+      "Guard f7 and prepare to castle into safety.",
+      "Aim for solid Italian-style positions with the bishop pair and sound structure."
+    ]
+  },
+  "related": [
+    "scotch-game",
+    "italian-game",
+    "two-knights-defense",
+    "giuoco-piano",
+    "center-game"
+  ]
+}

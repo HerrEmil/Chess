@@ -1,0 +1,92 @@
+{
+  "slug": "french-tarrasch",
+  "eco": "C03",
+  "name": "French Tarrasch",
+  "aka": ["Tarrasch Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The French Tarrasch (1.e4 e6 2.d4 d5 3.Nd2) sidesteps the Winawer pin while keeping c3 available to bolster d4.",
+  "intro": "The French Tarrasch arises after 1.e4 e6 2.d4 d5 3.Nd2, a flexible and positionally sound treatment of the French Defence. By developing the knight to d2 rather than c3, White avoids the sharp Winawer pin that follows 3.Nc3 Bb4 and keeps the c-pawn free to play c3 in support of the d4-square. The one concession is that the knight momentarily blocks the c1-bishop, and unravelling that piece becomes a recurring theme for both sides.",
+  "line": "e4 e6 d4 d5 Nd2",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Nd2",
+      "from": 57,
+      "to": 51
+    }
+  ],
+  "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPPN1PPP/R1BQKBNR b KQkq - 1 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The point of 3.Nd2 is prophylaxis combined with structural harmony. Because the knight no longer stands on c3, Black cannot pin it with Bb4, and White retains the option of c2-c3, buttressing the d4-pawn and giving the centre a broad, durable base. In many lines White follows with e4-e5, gaining space and clamping down on Black's kingside, then manoeuvres pieces behind the pawn chain toward the f4-f5 or c-file breaks.",
+        "Black's counterplay revolves around striking at the white centre before it becomes overwhelming. The pawn breaks ...c5 and ...f6 are the two levers: ...c5 challenges d4 directly and often produces an isolated queen's pawn for one side, while ...f6 undermines an advanced e5-pawn. The trade-off inherent in Nd2 also shapes plans, since White must spend time freeing the c1-bishop, and Black tries to exploit that lag with quick, purposeful development."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "Black's principal reply is 3...c5, the Open Tarrasch, immediately contesting d4 and steering toward isolated queen's pawn structures after 4.exd5. These positions are rich in piece play, where the side holding the isolani enjoys active development and the other aims to blockade and grind. The classical alternative is 3...Nf6 4.e5 Nfd7, the Closed Tarrasch, a solid main line in which Black accepts a space disadvantage but builds a resilient structure and prepares ...c5 and ...f6 to hit White's pawn chain.",
+        "A calmer third option is 3...Be7, a modest, elastic developing move that keeps Black's structure intact and invites transpositions once White reveals a plan. Across all three lines the strategic contours are familiar French themes: the fight over the d4 and e5 squares, the fate of Black's light-squared bishop hemmed in by the ...e6 pawn, and the timing of the freeing pawn breaks."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "Named for Siegbert Tarrasch, the great German master and teacher whose name attaches to several openings, the 3.Nd2 system became one of the most respected weapons against the French. Its blend of soundness and flexibility made it a long-time favourite of Anatoly Karpov, whose positional mastery showcased the variation's quiet, squeezing potential at the highest level."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3.Nd2 sidesteps the Winawer pin that 3.Nc3 Bb4 would allow.",
+    "Keeping the c-pawn free lets White play c3 to reinforce d4.",
+    "The knight on d2 temporarily blocks the c1-bishop, a minor drawback.",
+    "3...c5 opens the game and invites isolated queen's pawn positions.",
+    "3...Nf6 4.e5 Nfd7 is the solid, space-conceding main line.",
+    "Flexible and positionally sound, long a favourite of Karpov."
+  ],
+  "plans": {
+    "white": [
+      "Support the centre with c3, giving d4 a broad and durable base.",
+      "Play e4-e5 to gain space and cramp Black's kingside.",
+      "Complete development and free the c1-bishop as soon as possible.",
+      "In IQP positions, blockade the d-pawn or exploit the isolani's activity.",
+      "Prepare breaks with f4-f5 or on the c-file behind the pawn chain."
+    ],
+    "black": [
+      "Challenge d4 immediately with 3...c5 for open, active play.",
+      "Choose the solid 3...Nf6 4.e5 Nfd7 and undermine e5 with ...c5 and ...f6.",
+      "Develop calmly with 3...Be7, keeping the structure flexible.",
+      "Use the ...f6 break to attack an advanced white e5-pawn.",
+      "Solve the problem of the light-squared bishop hemmed in by ...e6."
+    ]
+  },
+  "related": [
+    "french-defense",
+    "french-winawer",
+    "french-advance",
+    "caro-kann-defense"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "accelerated-dragon",
+  "eco": "B34",
+  "name": "Accelerated Dragon",
+  "aka": ["Accelerated Fianchetto"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Accelerated Dragon (B34) fianchettoes early with ...g6, delaying ...d6 to keep the freeing break ...d5 in one move.",
+  "intro": "The Accelerated Dragon arises after 1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 g6, a flexible Sicilian in which Black hurries the kingside fianchetto and pointedly delays ...d6. That small change of move order carries a big idea: by keeping the d-pawn at home, Black reserves the option of the freeing advance ...d5 in a single tempo. The result is a sound, positional system that sidesteps much of the razor-sharp theory of the Dragon proper.",
+  "line": "e4 c5 Nf3 Nc6 d4 cxd4 Nxd4 g6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    }
+  ],
+  "fen": "r1bqkbnr/pp1ppp1p/2n3p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "Everything in the Accelerated Dragon revolves around the long diagonal and the ...d5 break. After ...Bg7 the bishop bears down on d4 and the queenside, and because Black has not committed the d-pawn to d6, the central push ...d5 becomes available in one move rather than two. If White plays casually, ...d5 equalizes on the spot, so White is steered toward setups that clamp down on that square. The most important of these is the Maroczy Bind, reached when White answers with c4, gripping d5 and denying Black the freeing break.",
+        "Against the Bind, Black plays for the long game. Pressure on d4 is built with ...Nxd4, ...Bg7 and ...d6, after which Black manoeuvres patiently, angling for the counterthrusts ...b5 on the queenside or ...f5 in the centre. Trading a pair of knights on d4 and swapping dark-squared bishops can leave Black with a solid, resilient structure in which White's space advantage is hard to convert. Throughout, Black keeps an eye on White's most testing tries, the aggressive Bc4 and Qd2 development that eyes the h6 and f7 squares."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The critical main line is the Maroczy Bind, 5.c4, when Black continues 5...Bg7 6.Be3 Nf6 7.Nc3 and now the well-known 7...Ng4, provoking 8.Qxg4 Nxd4, a standard sequence that exchanges pieces and eases Black's game. If White avoids the Bind, the fianchetto still shines: 5.Nc3 Bg7 leads to open Sicilian positions where an early ...d5 is a constant resource, and Black must simply be aware of 6.Nxc6 bxc6 7.e5, a thematic try to exploit the missing ...d6.",
+        "White's other principal weapon is the classical build-up with Bc4 and Qd2, castling long and aiming at Black's king with pieces rather than pawns. Here Black relies on the sound Accelerated structure, timely piece trades and the latent ...d5 and ...b5 breaks to blunt the attack. Because Black has not weakened the kingside with an early ...d6 and can meet many lines with clean central counterplay, the Accelerated Dragon offers a reliable path to balanced, strategically rich middlegames."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "Also known as the Accelerated Fianchetto, this treatment of the Sicilian earned its place in opening theory as a positional alternative to the heavily analysed Dragon and Najdorf. Its appeal is enduring precisely because of the ...d5 idea: by fianchettoing before playing ...d6, Black trades some of the Dragon's sharpness for flexibility and resilience, accepting the Maroczy Bind as the price of admission and meeting it with well-charted, sound counterplay."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Fianchetto early with ...g6 and delay ...d6 to enable a one-move ...d5.",
+    "The ...d5 break is the whole point; if allowed, it equalizes at once.",
+    "The Maroczy Bind (c4) is the critical strategic battleground.",
+    "Black pressures d4 with ...Nxd4, ...Bg7 and ...d6, then plays for ...b5 or ...f5.",
+    "Sidesteps much of the sharp theory of the classical Dragon.",
+    "Sound, positional and resilient, favouring long-term manoeuvring over tactics."
+  ],
+  "plans": {
+    "white": [
+      "Play c4 to erect the Maroczy Bind and clamp down on d5.",
+      "Develop with Be3 and Nc3, keeping a firm grip on the centre.",
+      "Try the aggressive Bc4 and Qd2 setup, castling long for a piece attack.",
+      "Use the space advantage to restrain ...b5 and ...f5 counterplay.",
+      "Consider Nxc6 and e5 to punish Black's delayed ...d6."
+    ],
+    "black": [
+      "Fianchetto with ...Bg7 and eye the freeing ...d5 break.",
+      "Exchange on d4 with ...Nxd4 to relieve pressure and simplify.",
+      "Prepare queenside expansion with ...b5 against the Bind.",
+      "Break in the centre with ...f5 when the position invites it.",
+      "Trade dark-squared bishops to reach a solid, resilient structure."
+    ]
+  },
+  "related": [
+    "sicilian-dragon",
+    "sicilian-defense",
+    "sicilian-najdorf",
+    "sicilian-rossolimo"
+  ]
+}

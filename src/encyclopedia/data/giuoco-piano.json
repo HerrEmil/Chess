@@ -1,0 +1,113 @@
+{
+  "slug": "giuoco-piano",
+  "eco": "C53",
+  "name": "Giuoco Piano",
+  "aka": ["Italian Game, Giuoco Piano"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Giuoco Piano (1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4): both bishops bite and White strikes at the centre.",
+  "intro": "The Giuoco Piano arises after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4, one of the oldest recorded openings and a cornerstone of the Italian Game. Its name is Italian for 'quiet game', yet the position is anything but passive: both bishops occupy their most active diagonals, and with 4.c3 and 5.d4 White announces a direct battle for the centre. It is a classical school in miniature, prizing rapid development and central control above all.",
+  "line": "e4 e5 Nf3 Nc6 Bc4 Bc5 c3 Nf6 d4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "Bc5",
+      "from": 5,
+      "to": 26
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    }
+  ],
+  "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq d3 0 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The strategic tension is set by the mirrored bishops on c4 and c5, both raking toward the opponent's weakest early point, f7 and f2. White's plan is transparent and thematic: support the centre with c3, then play d4 to challenge Black's e5-pawn and open lines for the pieces. If Black captures with ...exd4 and White recaptures cxd4, White gains a broad pawn duo on d4 and e4 that promises space and attacking chances, but which Black immediately targets.",
+        "Black meets this head-on. The typical response is to strike back with ...exd4 and then check on b4, forcing White to declare intentions in the centre before completing development. Play revolves around whether White can maintain the ideal pawn centre or whether Black can undermine it and exploit the temporarily exposed king. It is a genuine classical struggle: piece activity, central pawns, and the safety of both kings are all in the balance from the very first moves."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 5.d4 the classical main line continues 5...exd4 6.cxd4 Bb4+, and here White must choose how to block the check. The sharp 7.Nc3 introduces the famous Moeller Attack, an old and heavily analysed gambit line in which White sacrifices material for a dangerous initiative and a mobile centre. The solid alternative 7.Bd2 leads to quieter, well-mapped positions where White aims to consolidate the centre while Black seeks timely piece exchanges and central counterplay.",
+        "In modern tournament practice many players sidestep the theoretical duels of 5.d4 in favour of the slow Giuoco Pianissimo, reached by 4.c3 Nf6 5.d3. Here White forgoes the immediate central break and instead builds patiently with d3, Nbd2, Re1, a4 and Bb3, retreating the bishop to safety and preparing a slow expansion. The result is a rich manoeuvring struggle where understanding of plans matters more than memorised lines, which explains much of the system's enduring popularity at every level."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Giuoco Piano is among the oldest openings in the recorded literature, studied by the Italian masters of the Renaissance and analysed continuously ever since. Its name, 'the quiet game', distinguishes it from the wilder gambit play of earlier eras, though the central clash after 4.c3 and 5.d4 shows how much bite lies beneath the calm surface. Prized by the classical school as a model of principled development, it remains a living opening today, equally at home in the sharp Moeller and in the slow, deeply strategic Pianissimo."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Both bishops develop actively to c4 and c5, eyeing f7 and f2.",
+    "White supports the centre with c3 and strikes with d4.",
+    "5...exd4 6.cxd4 Bb4+ is the classical main line.",
+    "7.Nc3 is the sharp Moeller Attack; 7.Bd2 is the solid choice.",
+    "The Giuoco Pianissimo with 5.d3 leads to a slow manoeuvring battle.",
+    "A classical fight for the centre and rapid, principled development."
+  ],
+  "plans": {
+    "white": [
+      "Prepare and execute the central break d4 after supporting it with c3.",
+      "After cxd4, use the d4 and e4 pawn duo for space and attack.",
+      "In the Moeller, sacrifice a pawn with Nc3 for a lasting initiative.",
+      "In the Pianissimo, build slowly with d3, Nbd2, Re1, a4 and Bb3.",
+      "Retreat the light-squared bishop to b3 to keep it safe and active."
+    ],
+    "black": [
+      "Meet 5.d4 with 5...exd4 and check on b4 to gain time.",
+      "Pressure and undermine White's central pawns on d4 and e4.",
+      "Complete development quickly and secure the king by castling.",
+      "Seek well-timed exchanges to blunt White's central initiative.",
+      "In the Pianissimo, mirror White's setup and fight for the centre."
+    ]
+  },
+  "related": [
+    "italian-game",
+    "two-knights-defense",
+    "evans-gambit",
+    "scotch-gambit",
+    "ruy-lopez"
+  ]
+}

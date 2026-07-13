@@ -1,0 +1,92 @@
+{
+  "slug": "birds-opening",
+  "eco": "A03",
+  "name": "Bird's Opening",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "Bird's Opening (1.f4) is a reversed Dutch where White grabs e5 and steers toward offbeat, aggressive flank play.",
+  "intro": "Bird's Opening arises after 1.f4, and in the main line 1.f4 d5 2.Nf3 Nf6 3.e3 White builds a patient, flexible structure. By pushing the f-pawn first, White stakes an early claim to the e5-square and adopts what amounts to a Dutch Defence with an extra tempo. It is an offbeat, aggressive system that keeps forced theory to a minimum and steers the game onto original ground.",
+  "line": "f4 d5 Nf3 Nf6 e3",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "f4",
+      "from": 53,
+      "to": 37
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "e3",
+      "from": 52,
+      "to": 44
+    }
+  ],
+  "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/5P2/4PN2/PPPP2PP/RNBQKB1R b KQkq - 0 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The move 1.f4 fights for e5 and prepares a reversed Dutch setup, with White typically continuing Nf3, e3, b3, Bb2, Be2 and O-O before generating play on the kingside. Because the extra tempo of the first move mirrors the Dutch from White's side, familiar Dutch structures reappear with colours reversed. The fianchettoed dark-squared bishop on b2 rakes the long diagonal toward Black's kingside and supports an eventual central or wing advance.",
+        "White generally chooses between two well-known formations. In the Stonewall setup White plays d4, e3 and Bd3, building a broad pawn front and eyeing the e5-square and a kingside attack; in the Leningrad setup White plays g3 and Bg2, developing more fluidly and pressuring the centre from the flank. The main downside of 1.f4 is that it slightly loosens White's own king position, so accurate, purposeful development matters more than in quieter systems."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 1.f4 d5 Black stakes a share of the centre, and the natural continuation 2.Nf3 Nf6 3.e3 leads to the classical Bird structures where White fianchettoes on b3 or expands with d4. Black's most testing reply, however, comes at move one: the sharp From's Gambit, 1...e5, in which Black sacrifices a pawn for rapid development and open lines after 2.fxe5 d6. Because From's Gambit gives Black dangerous activity, many players sidestep it entirely with 2.e4, transposing directly into a King's Gambit.",
+        "In the main lines Black usually develops soundly with an early ...Nf6, ...e6 or ...g6, and often ...Bg4 or ...Bf5 to activate the light-squared bishop before White can blunt it. A common plan for Black is to challenge the centre with ...c5 and complete kingside development quickly, exploiting the slight weakening that 1.f4 creates around White's king."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The opening is named for the nineteenth-century English master Henry Bird, who championed 1.f4 throughout his career and gave the system its enduring identity. It has remained a favourite of players who prize originality and attacking chances over dense theoretical preparation, keeping its reputation as an offbeat but fully respectable way to open the game."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "1.f4 fights for the e5-square and sets up a reversed Dutch Defence.",
+    "White fianchettoes with b3 and Bb2 to eye Black's kingside.",
+    "Choose between the Stonewall (d4, Bd3) and Leningrad (g3, Bg2) formations.",
+    "The sharp From's Gambit, 1...e5, is Black's most testing reply.",
+    "White can decline From's Gambit with 2.e4, transposing to a King's Gambit.",
+    "An offbeat, aggressive system with little forced theory to memorize."
+  ],
+  "plans": {
+    "white": [
+      "Develop with Nf3, e3, b3, Bb2 and Be2, then castle kingside.",
+      "Build a Stonewall with d4, e3 and Bd3 aiming at a kingside attack.",
+      "Adopt a Leningrad setup with g3 and Bg2 to pressure the centre.",
+      "Use the b2-bishop and f-file to generate play against Black's king.",
+      "Meet 1...e5 with 2.e4, transposing to a King's Gambit if desired."
+    ],
+    "black": [
+      "Stake a central claim with 1...d5 and develop naturally with ...Nf6.",
+      "Try the aggressive From's Gambit, 1...e5, for quick development.",
+      "Activate the light-squared bishop early with ...Bg4 or ...Bf5.",
+      "Challenge White's centre and structure with a timely ...c5.",
+      "Exploit the slight weakening of White's king created by 1.f4."
+    ]
+  },
+  "related": [
+    "dutch-defense",
+    "reti-opening",
+    "nimzo-larsen-attack",
+    "english-opening"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "french-advance",
+  "eco": "C02",
+  "name": "French Advance",
+  "aka": ["Advance Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The French Advance (1.e4 e6 2.d4 d5 3.e5) grabs space and builds a pawn chain that Black undermines with c5 and Nc6.",
+  "intro": "The French Advance, reached after 1.e4 e6 2.d4 d5 3.e5 c5 4.c3 Nc6 5.Nf3, is the most direct way for White to meet the French Defence. By pushing 3.e5 instead of exchanging or defending on d5, White clamps down on the centre and stakes out a lasting space advantage. In return, Black accepts a cramped but resilient position and sets about chipping away at the pawn chain from its base, making this one of the clearest strategic battlegrounds in all of chess.",
+  "line": "e4 e6 d4 d5 e5 c5 c3 Nc6 Nf3",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "e5",
+      "from": 36,
+      "to": 28
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    }
+  ],
+  "fen": "r1bqkbnr/pp3ppp/2n1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 2 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining feature of the Advance is the locked pawn chain: White's pawns on d4 and e5 face Black's on d5 and e6, pointing toward opposite wings and dictating the plans for both sides. White's space on the kingside invites a slow build-up there, while Black naturally strikes at the chain's base on d4 with c5 and Nc6, adding pressure through Qb6 and frequently challenging the head of the chain with f6. The whole struggle turns on whether Black can dissolve or blockade White's centre before that extra space is converted into a lasting attack.",
+        "Black's perennial headache is the light-squared bishop on c8, hemmed in by its own pawns on d5 and e6 and often called the 'bad' French bishop. Solving that piece is a strategic project in itself, and Black frequently reroutes it via d7 to b5 to trade off White's more active counterpart or to press against the queenside. White, meanwhile, must nurse the d4 point, since if that pawn falls the entire chain and the space behind it can collapse."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 5.Nf3 the principal continuation is 5...Qb6, piling a third attacker onto d4 and eyeing the sensitive b2-square. White most often replies 6.a3, preparing b4 to gain queenside space and to blunt the pressure on the chain, when the sharp 6...c4 or the maintaining 6...Nh6, heading for f5, are both well-trodden. A quieter but respected path is 6.Be2, calmly developing and inviting Black to capture on d4, after which White regains the pawn with active piece play.",
+        "Black's other principal try is the immediate 5...Bd7, keeping options open and preparing the ...Bb5 manoeuvre to exchange the problem bishop, while 5...Nh6 followed by ...Nf5 targets the d4-pawn from a fresh angle. Across these lines Black must judge carefully when to release the tension with ...cxd4 and when to strike with ...f6 against e5; premature captures can hand White the freer game, whereas well-timed undermining leaves Black with a sound, active position."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Advance Variation was a favourite of Aron Nimzowitsch, whose writings on the blockade, the pawn chain, and the strategy of attacking a chain at its base drew heavily on these very positions, making the line a touchstone of classical strategic teaching. Long viewed as a solid rather than critical weapon, it has retained a loyal following at every level precisely because its plans are so clear-cut, offering both sides a rich, understandable middlegame built on space, blockade, and undermining."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White plays 3.e5 to seize space and fix a d4-e5 pawn chain.",
+    "Black attacks the chain's base on d4 with c5, Nc6, and often Qb6.",
+    "The ...f6 break challenges the head of the chain on e5.",
+    "Black's light-squared bishop is the bad piece, often rerouted via d7-b5.",
+    "White must defend d4; losing it can collapse the whole centre.",
+    "A model struggle of space versus undermining, blockade, and pawn-chain strategy."
+  ],
+  "plans": {
+    "white": [
+      "Support d4 with c3 and Nf3 and keep the pawn chain intact.",
+      "Play a3 and b4 to gain queenside space and ease pressure on d4.",
+      "Exploit the kingside space granted by the advanced e5-pawn.",
+      "Trade off or neutralise Black's active pieces while nursing the d4 point.",
+      "Aim for a favourable release of central tension after cxd4."
+    ],
+    "black": [
+      "Pile up on d4 with c5, Nc6, and Qb6 to hit the chain's base.",
+      "Undermine e5 with a well-timed f6 break.",
+      "Reroute the bad bishop via d7 to b5 to trade or press.",
+      "Blockade White's centre and the advanced e5-pawn.",
+      "Choose the right moment to play cxd4 rather than release tension early."
+    ]
+  },
+  "related": [
+    "french-defense",
+    "french-winawer",
+    "french-tarrasch",
+    "caro-kann-advance",
+    "sicilian-alapin"
+  ]
+}

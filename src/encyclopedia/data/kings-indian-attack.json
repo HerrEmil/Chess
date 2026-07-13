@@ -1,0 +1,102 @@
+{
+  "slug": "kings-indian-attack",
+  "eco": "A07",
+  "name": "King's Indian Attack",
+  "aka": ["KIA", "Barcza System"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The King's Indian Attack (A07) is a flexible reversed-KID system where White fianchettoes, plays d3 and e4, and storms the kingside.",
+  "intro": "The King's Indian Attack, reached via 1.Nf3 d5 2.g3 Nf6 3.Bg2 e6 4.O-O, is a universal system in which White adopts a King's Indian Defence setup with an extra tempo. Rather than a single sharp line, it is a flexible plan-based opening: White develops with d3, Nbd2, Re1 and prepares the central break e4, then expands on the kingside to attack the enemy king. Prized for its low theoretical burden and rich middlegame ideas, it was a favourite of Bobby Fischer and Tigran Petrosian.",
+  "line": "Nf3 d5 g3 Nf6 Bg2 e6 O-O",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "g3",
+      "from": 54,
+      "to": 46
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Bg2",
+      "from": 61,
+      "to": 54
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    }
+  ],
+  "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/8/5NP1/PPPPPPBP/RNBQ1RK1 b kq - 1 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The King's Indian Attack is defined by a fixed White structure rather than a forced move order: the knight sits on f3, the bishop fianchettoes on g2, and the pawns settle on d3 and later e4. After completing development with Nbd2, Re1 and c3, White prepares the thematic advance e4-e5, which gains space, closes the long diagonal in front of the g2-bishop and signals a kingside offensive. The knight on d2 typically reroutes via f1 to h2 or g4, while the h- and f-pawns can join the storm; because the setup is symmetrical to the King's Indian Defence played with an extra tempo, White enjoys the initiative that Black normally seeks in that opening.",
+        "The trade-off is that White voluntarily concedes the centre and plays for a long-term attack rather than an immediate advantage. Against structures where Black has committed to a solid centre, White's e5 wedge cramps the position and creates classic attacking motifs such as Qe2, Nf1-h2-g4, and the pawn lever f2-f4-f5 or h2-h4-h5. If Black counters energetically on the queenside with moves like c5, Nc6 and b5, the game becomes a race between wing attacks, and White must judge carefully when to commit pawns to the assault versus keeping the position flexible."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The King's Indian Attack is best understood by the Black formation it faces rather than by a single tabiya. Against a French-type setup with e6, d5 and c5, White plays d3, Nbd2, e4, Re1 and pushes e5, aiming the whole army at the black king; this is the classic Fischer treatment and one of the opening's most feared incarnations. Against a Sicilian move order (1.e4 c5 2.Nf3 followed by d3, g3, Bg2, O-O and Nbd2) White reaches the same structure by transposition, and Black often reacts with a quick d5 or an early ...e5 to fight for the centre.",
+        "From the diagram position after 4.O-O, main continuations include 4...Be7 and 4...c5, after which White proceeds with d3, Nbd2 and e4. Black's most testing plans involve rapid queenside expansion with ...b5, ...a5 and pressure against White's slightly loosened kingside; alternatively Black can strike in the centre with an early ...e5 or ...c5 and ...d4 to gain space and blunt the g2-bishop. Because so little is forced, understanding the resulting pawn structures and the timing of e4-e5 matters far more than memorising concrete lines."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The King's Indian Attack grew out of the hypermodern fianchetto systems of the early twentieth century and is closely associated with the Barcza System, named for the Hungarian grandmaster Gedeon Barcza, who used the flexible Nf3, g3 and Bg2 setup regularly. It reached the peak of its popularity in the mid-twentieth century as a low-theory weapon, and Bobby Fischer produced several celebrated attacking wins with it while Tigran Petrosian employed it as a positional, risk-averse system, together demonstrating the opening's remarkable versatility across contrasting styles."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "It is the King's Indian Defence played by White with an extra tempo.",
+    "A plan-based system, not a forced line, so theory is light.",
+    "The break e4 followed by e5 defines White's kingside ambitions.",
+    "The knight reroutes Nd2-f1-h2 or g4 to feed the attack.",
+    "Works against French, Sicilian and many other Black structures by transposition.",
+    "Fischer and Petrosian showed its attacking and positional versatility."
+  ],
+  "plans": {
+    "white": [
+      "Complete the setup with d3, Nbd2, Re1 and c3, then break with e4.",
+      "Advance e4-e5 to gain space and open lines toward the black king.",
+      "Reroute the knight Nd2-f1-h2-g4 to join the kingside attack.",
+      "Push the f- and h-pawns (f4-f5 or h4-h5) to pry open the king.",
+      "Keep the fianchettoed bishop active on the long h1-a8 diagonal."
+    ],
+    "black": [
+      "Expand on the queenside with c5, Nc6, a5 and b5 for counterplay.",
+      "Contest the centre early with ...e5 or ...c5 and ...d4.",
+      "Trade off White's dangerous light-squared bishop when possible.",
+      "Castle and reinforce the kingside before White's storm arrives.",
+      "Open a queenside file to race White's attack on the other wing."
+    ]
+  },
+  "related": [
+    "reti-opening",
+    "catalan-opening",
+    "english-opening",
+    "kings-indian-defense"
+  ]
+}

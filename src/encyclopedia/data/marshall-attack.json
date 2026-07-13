@@ -1,0 +1,148 @@
+{
+  "slug": "marshall-attack",
+  "eco": "C89",
+  "name": "Marshall Attack",
+  "aka": ["Marshall Gambit"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Marshall Attack is Black's daring Ruy Lopez pawn sacrifice for the bishop pair and a lasting kingside initiative.",
+  "intro": "The Marshall Attack, reached after 1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 O-O 8.c3 d5, is one of the most celebrated pawn sacrifices in all of opening theory. Rather than defending the solid but passive Closed Ruy Lopez, Black strikes in the center with 8...d5, offering a pawn to unleash rapid piece activity against White's king. Also known as the Marshall Gambit, it transforms a slow maneuvering battle into a sharp, forcing struggle where initiative outweighs material.",
+  "line": "e4 e5 Nf3 Nc6 Bb5 a6 Ba4 Nf6 O-O Be7 Re1 b5 Bb3 O-O c3 d5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bb5",
+      "from": 61,
+      "to": 25
+    },
+    {
+      "san": "a6",
+      "from": 8,
+      "to": 16
+    },
+    {
+      "san": "Ba4",
+      "from": 25,
+      "to": 32
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    },
+    {
+      "san": "Re1",
+      "from": 61,
+      "to": 60
+    },
+    {
+      "san": "b5",
+      "from": 9,
+      "to": 25
+    },
+    {
+      "san": "Bb3",
+      "from": 32,
+      "to": 41
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    }
+  ],
+  "fen": "r1bq1rk1/2p1bppp/p1n2n2/1p1pp3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w - d6 0 9",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "Black's central thrust 8...d5 invites 9.exd5 Nxd5 10.Nxe5 Nxe5 11.Rxe5 c6, the tabiya of the whole variation. In return for the sacrificed pawn Black obtains long-term compensation: the bishop pair, harmonious development, and open lines aimed squarely at White's kingside. The typical follow-up sees Black play ...Bd6, ...Qh4, ...Nf6 or ...Qf6, and often ...Bg4 or ...Nf4, generating threats around White's slightly weakened castled position while White scrambles to complete development and return the extra pawn under favorable terms.",
+        "For White the challenge is defense and consolidation. The extra pawn is meaningful only if White survives the middlegame storm, so accurate move orders and precise piece placement are essential, above all the retreat of the e5-rook and the mobilization of the queenside pieces. If White untangles safely, the material advantage can tell in the endgame; if Black's initiative crashes through, the attack can be decisive. This razor-thin balance is what has kept the Marshall relevant at every level for over a century."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line runs 8...d5 9.exd5 Nxd5 10.Nxe5 Nxe5 11.Rxe5 c6, after which 12.d4 Bd6 13.Re1 Qh4 reaches the classical starting position of Marshall theory. From here White has tried many defensive setups, including the main line with 14.g3 Qh3 followed by the sharp 15.Be3 or 15.Re4, as well as the solid 12.d4 lines where White aims to blunt Black's bishops. Black's attacking resources include ...Bg4, ...Rae8, ...Nf6-g4, and the thematic ...Qh3 provoking g3 to fix a target on the light squares.",
+        "Because the sacrifice is so well analyzed, many White players sidestep it entirely with an Anti-Marshall. Common choices are 8.a4, striking at Black's queenside before ...d5 is played, and 8.h3, a flexible move that prepares to meet ...d5 with the option of d4 while ruling out an early ...Bg4. Other Anti-Marshall tries such as 8.d4 and 8.a3 keep the game in more strategic channels. These systems avoid the deepest theory but usually promise White only a modest edge, which is precisely the trade-off many opt to accept."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is named after the American grandmaster Frank Marshall, who famously unveiled it against Jose Raul Capablanca in New York in 1918. Marshall is said to have kept the idea in reserve for years, waiting for the right opponent, but Capablanca defended with remarkable accuracy over the board and won the game. Despite that inauspicious debut, the concept proved profound, and generations of analysts and champions have refined it into one of the most respected and deeply studied weapons in the Ruy Lopez, so feared that avoiding it with an Anti-Marshall has become a mainstream choice."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black sacrifices a central pawn for rapid development and initiative.",
+    "Compensation rests on the bishop pair and open kingside lines.",
+    "The tabiya arises after 9.exd5 Nxd5 10.Nxe5 Nxe5 11.Rxe5 c6.",
+    "Thematic attacking moves include ...Bd6, ...Qh4, and ...Qh3.",
+    "White wins if he consolidates; Black wins if the attack lands.",
+    "Anti-Marshall lines like 8.a4 and 8.h3 dodge the deep theory."
+  ],
+  "plans": {
+    "white": [
+      "Accept the pawn, then retreat the e5-rook to safety and consolidate.",
+      "Play d4 to blunt Black's dark-squared bishop and open lines for defense.",
+      "Complete queenside development quickly with Nd2, Bc2, and Qf3 or Qf1.",
+      "Meet ...Qh3 with g3, accepting slight light-square weaknesses to blunt threats.",
+      "Sidestep the gambit with an Anti-Marshall such as 8.a4 or 8.h3."
+    ],
+    "black": [
+      "Recapture and follow with ...c6 to secure the knight and open the position.",
+      "Deploy the bishop to d6 aiming at White's kingside.",
+      "Swing the queen to h4 and h3 to pressure the castled king.",
+      "Activate rooks along the e-file with ...Rae8 and reroute the knight via ...Nf6-g4.",
+      "Use the bishop pair and initiative to justify the sacrificed pawn."
+    ]
+  },
+  "related": [
+    "ruy-lopez",
+    "berlin-defense",
+    "italian-game",
+    "two-knights-defense",
+    "open-game"
+  ]
+}
