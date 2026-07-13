@@ -12,7 +12,7 @@
  * variety comes from a seeded PRNG, so a given seed always yields the same
  * games.
  */
-import { color, evaluate, negamax } from '../../src/chess/ai.js';
+import { color, evaluate, negamax, quiescentEval } from '../../src/chess/ai.js';
 import {
   applyMove,
   mailboxIndex,
@@ -26,10 +26,15 @@ import { STARTING_BOARD } from '../../src/chess/__tests__/helpers.js';
 
 export type EngineEval = (b: readonly string[], c: color) => number;
 
-// The two engines under comparison. `newEval` mirrors the piece-square tables
-// per color; `legacyEval` reproduces the pre-fix single-orientation behaviour.
-export const newEval: EngineEval = (b, c) => evaluate(b, c, true);
-export const legacyEval: EngineEval = (b, c) => evaluate(b, c, false);
+// The two engines under comparison. `newEval` is the current candidate;
+// `legacyEval` is the previous accepted engine. Both search with the same
+// negamax; only the leaf evaluator differs.
+//
+// Experiment #2: quiescence search. The new engine resolves captures at the
+// leaf before scoring (`quiescentEval`); the previous engine scored the raw
+// leaf statically (`evaluate(..., true)`, the mirrored piece-square eval).
+export const newEval: EngineEval = quiescentEval;
+export const legacyEval: EngineEval = (b, c) => evaluate(b, c, true);
 
 export type Move = { start: number; goal: number };
 export type GameOutcome = 'white' | 'black' | 'draw';

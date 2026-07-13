@@ -9,7 +9,7 @@ import {
   reverseMailbox,
 } from './main.js';
 import { getAllValidMoves, getPiecesOfColor } from './util.js';
-import { isInCheck } from './moveGen.js';
+import { getAllValidMovesNoCheck, isInCheck } from './moveGen.js';
 
 export type color = 'white' | 'black';
 
@@ -218,6 +218,142 @@ export const evaluate = (
 };
 
 /*
+ * Quiescence search.
+ *
+ * The static `evaluate` is only meaningful for "quiet" positions. Calling it at
+ * a fixed horizon mid-capture causes the horizon effect: the search stops after
+ * grabbing a piece and never sees the recapture, so it over/under-counts
+ * material. Quiescence fixes this by, at the leaf, resolving all pending
+ * captures before scoring — it plays out capture sequences (only) until the
+ * position is quiet, using a stand-pat lower bound so the side to move is never
+ * forced into a losing capture it could decline.
+ *
+ * Captures are generated pseudo-legally and filtered for self-check legality in
+ * the loop. En passant is intentionally omitted (rare, and its target isn't
+ * threaded to the leaf); capture-promotions auto-queen to match the game UI.
+ */
+const QUIESCENCE_MAX_DEPTH = 4;
+
+/*
+ * Safety buffer for delta pruning: the largest positional swing `evaluate` can
+ * add on top of raw material (piece-square + check + endgame terms). A capture
+ * that can't reach alpha even with this slack cannot improve the score.
+ */
+const DELTA_MARGIN = 200;
+
+// A pseudo-legal capture for quiescence, pre-scored for MVV-LVA ordering.
+// `gain` is the captured material (plus promotion), used for delta pruning.
+type Capture = {
+  gain: number;
+  goal: number;
+  orderScore: number;
+  start: number;
+};
+
+/*
+ * True when `code` (a char code) is an enemy piece of `currentColor` other than
+ * the king. Lowercase = white, uppercase = black; kings are never "captured".
+ * White's enemies are black A-Z (65-90, excluding 'K' 75); black's enemies are
+ * white a-z (97-122, excluding 'k' 107).
+ */
+const isEnemyNonKing = (code: number, currentColor: color): boolean =>
+  currentColor === 'white'
+    ? code >= 65 && code <= 90 && code !== 75
+    : code >= 97 && code <= 122 && code !== 107;
+
+// All pseudo-legal captures for `currentColor`, MVV-LVA ordered (most valuable
+// victim, least valuable attacker first). Reuses the production pseudo-legal
+// move generator, then keeps only moves landing on an enemy piece.
+const generateCaptures = (
+  board: readonly string[],
+  currentColor: color,
+): Capture[] => {
+  const pieces = getPiecesOfColor(board, currentColor);
+  const perPiece = getAllValidMovesNoCheck(board, pieces);
+  const captures: Capture[] = [];
+  for (let i = 0; i < pieces.length; i += 1) {
+    const start = pieces[i];
+    const attacker = board[mailboxIndex[start]];
+    const attackerValue = basePieceValue(attacker);
+    for (const goal of perPiece[i]) {
+      const victim = board[mailboxIndex[goal]];
+      if (isEnemyNonKing(victim.charCodeAt(0), currentColor)) {
+        const isPromotion =
+          (attacker === 'p' && goal < 8) || (attacker === 'P' && goal > 55);
+        // A capture-promotion also nets a queen minus the consumed pawn.
+        const gain = basePieceValue(victim) + (isPromotion ? 975 - 100 : 0);
+        captures.push({
+          gain,
+          goal,
+          orderScore: gain * 10 - attackerValue,
+          start,
+        });
+      }
+    }
+  }
+  return captures;
+};
+
+// Board after a quiescence capture, auto-queening a pawn that reached the last
+// rank (mirrors the game UI's default promotion). No en passant here.
+const captureChild = (
+  board: readonly string[],
+  start: number,
+  goal: number,
+): readonly string[] => {
+  const child = boardAfterMove(board, start, goal).slice();
+  const moved = child[mailboxIndex[goal]];
+  if (moved === 'p' && goal < 8) child[mailboxIndex[goal]] = 'q';
+  else if (moved === 'P' && goal > 55) child[mailboxIndex[goal]] = 'Q';
+  return child;
+};
+
+// Negamax capture-only search returning the quiet score for `currentColor`.
+export const quiesce = (
+  board: readonly string[],
+  currentColor: color,
+  alpha: number,
+  beta: number,
+  qdepth: number = QUIESCENCE_MAX_DEPTH,
+): number => {
+  // Stand-pat: the side to move may always decline to capture, so the static
+  // score is a lower bound on what it can achieve.
+  const standPat = evaluate(board, currentColor, true);
+  if (standPat >= beta) return beta;
+  let localAlpha = standPat > alpha ? standPat : alpha;
+  if (qdepth === 0) return localAlpha;
+
+  const captures = generateCaptures(board, currentColor);
+  captures.sort((a, b) => b.orderScore - a.orderScore);
+
+  for (const { start, goal, gain } of captures) {
+    // Delta pruning: skip captures whose best-case material can't reach alpha.
+    const worthTrying = standPat + gain + DELTA_MARGIN >= localAlpha;
+    const child = worthTrying ? captureChild(board, start, goal) : null;
+    // Skip captures that leave the mover's own king in check (illegal).
+    if (child !== null && !isInCheck(child, currentColor)) {
+      const score = -quiesce(
+        child,
+        oppositeColor(currentColor),
+        -beta,
+        -localAlpha,
+        qdepth - 1,
+      );
+      if (score >= beta) return beta;
+      if (score > localAlpha) localAlpha = score;
+    }
+  }
+  return localAlpha;
+};
+
+// Leaf evaluator used by negamax: resolves captures before scoring. This is the
+// production engine's static-eval replacement at the search horizon.
+export const quiescentEval = (
+  board: readonly string[],
+  currentColor: color,
+): number => quiesce(board, currentColor, -100000, 100000);
+
+/*
  * Negamax with alpha-beta pruning.
  * Returns [bestMoveStart, bestMoveGoal, score].
  * Score is always from the perspective of the current player.
@@ -243,7 +379,7 @@ export const negamax = (
   enPassantTarget: number | null,
   castle: CastleState,
   posHistory: Map<string, number> = new Map(),
-  evaluateFn: (b: readonly string[], c: color) => number = evaluate,
+  evaluateFn: (b: readonly string[], c: color) => number = quiescentEval,
 ): readonly number[] => {
   if (depth === 0) {
     return [-1, -1, evaluateFn(board, currentPlayer)];

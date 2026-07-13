@@ -1,7 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { evaluate } from '../ai.js';
+import { evaluate, quiesce } from '../ai.js';
 import { boardWithPieces, STARTING_BOARD } from './helpers.js';
 import { runMatch } from '../../../tools/engine-lab/selfplay.js';
+
+const INF = 100000;
 
 /*
  * Experiment #1: piece-square tables are now mirrored per color. The tables are
@@ -44,11 +46,49 @@ describe('per-color piece-square mirroring', () => {
   });
 });
 
+/*
+ * Experiment #2: quiescence search. At the search horizon the engine now
+ * resolves pending captures before scoring, instead of taking the raw static
+ * eval mid-exchange (the horizon effect). These tests pin the two properties
+ * that matter: it declines a materially-losing capture, and it grabs a winning
+ * one.
+ */
+describe('quiescence search', () => {
+  it('declines a poisoned capture (queen takes a defended pawn)', () => {
+    // White queen d5(27) can take the black pawn d6(19), but that pawn is
+    // defended by the black pawn e7(12), so QxP loses the queen to the
+    // recapture. A static leaf would book the won pawn; quiescence must see the
+    // recapture and decline, returning exactly the stand-pat score.
+    const board = boardWithPieces([
+      { piece: 'k', index: 56 }, // white king a1
+      { piece: 'K', index: 7 }, // black king h8
+      { piece: 'q', index: 27 }, // white queen d5
+      { piece: 'P', index: 19 }, // black pawn d6 (the poisoned target)
+      { piece: 'P', index: 12 }, // black pawn e7 (defends d6)
+    ]);
+    const standPat = evaluate(board, 'white', true);
+    expect(quiesce(board, 'white', -INF, INF)).toBe(standPat);
+  });
+
+  it('grabs a genuinely winning capture (undefended pawn)', () => {
+    // Same position without the defender: QxP wins a clean pawn with no
+    // recapture, so quiescence must score it above the stand-pat.
+    const board = boardWithPieces([
+      { piece: 'k', index: 56 }, // white king a1
+      { piece: 'K', index: 7 }, // black king h8
+      { piece: 'q', index: 27 }, // white queen d5
+      { piece: 'P', index: 19 }, // black pawn d6 (undefended)
+    ]);
+    const standPat = evaluate(board, 'white', true);
+    expect(quiesce(board, 'white', -INF, INF)).toBeGreaterThan(standPat);
+  });
+});
+
 describe('self-play non-regression', () => {
   it('new engine does not regress vs the previous engine', () => {
     // Deterministic (seeded PRNG + deterministic search), so this is a stable
-    // guardrail, not a flaky benchmark. The full ~700-game validation across
-    // depths 2-3 is recorded in tools/engine-lab/experiments.jsonl.
+    // guardrail, not a flaky benchmark. The full multi-depth validation is
+    // recorded in tools/engine-lab/experiments.jsonl.
     const result = runMatch({ games: 24, depth: 2, seed: 1 });
     expect(result.games).toBe(24);
     expect(result.newScore).toBeGreaterThanOrEqual(result.oldScore);
