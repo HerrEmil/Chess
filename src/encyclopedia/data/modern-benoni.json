@@ -1,0 +1,118 @@
+{
+  "slug": "modern-benoni",
+  "eco": "A60",
+  "name": "Modern Benoni",
+  "aka": ["Benoni Defense"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Modern Benoni (1.d4 Nf6 2.c4 c5 3.d5 e6) trades a central majority for a queenside majority and sharp ...b5 and ...f5 counterplay.",
+  "intro": "The Modern Benoni arises after 1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6, an unbalanced, fighting defence in which Black concedes White a protected central pawn on d5 in exchange for a queenside pawn majority, the half-open e-file, and dynamic piece play. It is one of the sharpest and most double-edged replies to 1.d4.",
+  "line": "d4 Nf6 c4 c5 d5 e6 Nc3 exd5 cxd5 d6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "d5",
+      "from": 35,
+      "to": 27
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "exd5",
+      "from": 20,
+      "to": 27
+    },
+    {
+      "san": "cxd5",
+      "from": 34,
+      "to": 27
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    }
+  ],
+  "fen": "rnbqkb1r/pp3ppp/3p1n2/2pP4/8/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Modern Benoni is a study in dynamic imbalance. After 1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6, the pawn structure is skewed: White owns a spearhead on d5 and a central majority that can roll forward with e4-e5, while Black gains a queenside pawn majority and the half-open e-file. Black fianchettoes with ...g6 and ...Bg7, and that bishop, together with the pressure down the e-file, generates the counterplay that makes the whole system tick.",
+        "The defining pawn breaks are ...b5 on the queenside and ...f5 in the centre, both aimed at activating Black's majority and opening lines for the pieces. If Black gets in these breaks under good circumstances, his position becomes tremendously active; if White clamps down, especially by achieving a well-supported e5, Black can be squeezed. The result is a razor-sharp opening where accurate, energetic play is essential for both sides."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "In the Classical main line White develops naturally with Nf3, Be2, O-O and e4, building the central pawn duo and preparing to expand; Black replies with ...g6, ...Bg7, ...O-O, ...Re8, and the typical knight route ...Na6-c7 or ...Nbd7 to prepare ...b5. This is the traditional battleground, balancing White's space against Black's activity.",
+        "White has several aggressive tries. The Taimanov Attack, with f4 and Bb5+, is considered one of the most dangerous, gaining space and hindering Black's development. The Four Pawns Attack with f4 and the Fianchetto Variation with g3 are also important, the latter aiming for a safer, more positional handling. Each system tests a different aspect of Black's dynamic setup."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The name Benoni comes from a Hebrew phrase meaning roughly 'son of sorrow', taken from a nineteenth-century treatise on the defence. The Modern Benoni, distinguished by the early ...e6 and ...exd5 to open the e-file, rose to prominence in the mid-twentieth century as players embraced sharper, more unbalanced fighting openings.",
+        "It gained a glamorous reputation through the games of attacking players, most famously the former World Champion Mikhail Tal, whose sacrificial style suited its dynamism, and it was used by Bobby Fischer, including a memorable win in his 1972 World Championship match. Despite the theoretical pressure of the Taimanov and other lines, it remains a respected choice for players seeking an uncompromising fight as Black."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black trades a central majority to White for a queenside majority.",
+    "The half-open e-file and the g7-bishop drive Black's counterplay.",
+    "The ...b5 and ...f5 breaks activate Black's position and open lines.",
+    "White's central majority can roll forward with a powerful e4-e5.",
+    "A sharp, double-edged struggle of White space versus Black activity.",
+    "Typical regrouping ...Na6-c7 or ...Nbd7 prepares the ...b5 break."
+  ],
+  "plans": {
+    "white": [
+      "Build the central pawn duo with e4 and prepare e5 to gain space.",
+      "Develop classically with Nf3, Be2, and O-O behind the d5-pawn.",
+      "Try the Taimanov Attack with f4 and Bb5+ to cramp Black.",
+      "Restrain the ...b5 break with a2-a4 and careful piece play.",
+      "Convert space and the d5-pawn into a lasting positional bind."
+    ],
+    "black": [
+      "Fianchetto with ...g6 and ...Bg7 to hit d4 and the long diagonal.",
+      "Prepare the ...b5 break, often via ...Na6-c7 or ...a6 and ...Rb8.",
+      "Strike in the centre with ...f5 to open lines for the pieces.",
+      "Use the half-open e-file to pressure White's centre with ...Re8.",
+      "Seek active, dynamic play rather than passive defence of the majority."
+    ]
+  },
+  "related": [
+    "benko-gambit",
+    "kings-indian-defense",
+    "dutch-defense",
+    "grunfeld-defense"
+  ]
+}

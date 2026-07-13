@@ -1,0 +1,118 @@
+{
+  "slug": "sicilian-scheveningen",
+  "eco": "B80",
+  "name": "Sicilian Defense: Scheveningen Variation",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Scheveningen's ...e6/...d6 small centre is flexible and resilient; White's critical try is the sharp Keres Attack with g4.",
+  "intro": "The Scheveningen Variation is defined by the modest pawn duo on d6 and e6, reached here via 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e6. This 'small centre' looks unassuming but is remarkably elastic, giving Black a compact, resilient structure from which to counterattack. It has been a favourite battleground of Sicilian strategists, including Garry Kasparov, though White's aggressive Keres Attack has driven many to reach the setup by other move orders.",
+  "line": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 e6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    }
+  ],
+  "fen": "rnbqkb1r/pp3ppp/3ppn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The heart of the Scheveningen is the restrained centre with pawns on d6 and e6. Rather than grabbing space, Black builds a low, flexible structure that controls the key central squares d5 and e5 and keeps every piece within a resilient shell. From this base Black expands on the queenside with ...a6 and ...b5 and looks to the freeing breaks ...d5 or ...e5 at the right moment.",
+        "Because Black cedes space, White enjoys freer development and natural attacking prospects, most often directed at the black king. The typical piece placement - queen on c7, knights on c6 and f6 or d7, bishop on e7 - is designed to be hard to break down and quick to generate counterplay along the c-file. The strategic tension between White's space and attack and Black's solidity and counterpunching defines the whole variation."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "White's most feared weapon is the Keres Attack, 6.g4, launching a kingside pawn storm before Black can castle. Its sting is so respected that a great many players enter the Scheveningen through a Najdorf move order with 5...a6, sidestepping 6.g4 entirely. When White prefers a slower build-up, the Classical setup with Be2 and 0-0 and the English Attack with Be3, f3, Qd2 and 0-0-0 are the main roads.",
+        "Against the calmer systems Black follows the standard plan of ...a6, ...Be7, ...O-O and ...Qc7, then strikes with ...b5 or prepares ...d5. In the English Attack the game frequently becomes a race of opposite-wing pawn storms, White rolling the kingside while Black hits back on the queenside and the c-file. Precise timing of these breaks and storms is what decides most Scheveningen middlegames."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation takes its name from the Dutch seaside resort of Scheveningen, where an important tournament was held in 1923 and the characteristic ...e6/...d6 structure came to prominence. Over the following decades it grew into one of the central pillars of Sicilian theory, prized as a laboratory of dynamic defence. Paul Keres lent his name to the critical 6.g4 assault, and the resulting theoretical arms race is a major reason so many players now steer into the structure via the Najdorf."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The ...e6/...d6 small centre is compact, flexible, and hard to break down.",
+    "Black controls d5 and e5 and counterattacks rather than grabbing space.",
+    "Queenside expansion with ...a6 and ...b5 is a standard source of counterplay.",
+    "The Keres Attack (6.g4) is White's sharpest and most testing try.",
+    "Many players reach the setup via a Najdorf move order to dodge 6.g4.",
+    "Opposite-wing pawn storms are common in the English Attack lines."
+  ],
+  "plans": {
+    "white": [
+      "Launch the Keres Attack with 6.g4 to storm the kingside early.",
+      "Choose the English Attack (Be3, f3, Qd2, 0-0-0) and push the g- and h-pawns.",
+      "Play the Classical Be2 and 0-0 for a calmer space advantage.",
+      "Target the black king while restraining the ...d5 and ...b5 breaks.",
+      "Exploit the extra central space to build a kingside initiative."
+    ],
+    "black": [
+      "Complete the compact setup with ...a6, ...Be7, ...O-O, and ...Qc7.",
+      "Expand on the queenside with ...b5 and pressure the c-file.",
+      "Prepare the freeing breaks ...d5 or ...e5 at the right moment.",
+      "Consider a Najdorf move order to avoid the Keres Attack.",
+      "Counterpunch against White's king when he commits to a pawn storm."
+    ]
+  },
+  "related": [
+    "sicilian-najdorf",
+    "sicilian-defense",
+    "sicilian-taimanov",
+    "sicilian-sveshnikov",
+    "french-defense"
+  ]
+}

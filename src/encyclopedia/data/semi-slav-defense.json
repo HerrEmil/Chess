@@ -1,0 +1,109 @@
+{
+  "slug": "semi-slav-defense",
+  "eco": "D43",
+  "name": "Semi-Slav Defense",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Semi-Slav (1.d4 d5 2.c4 c6 with ...e6) fuses the Slav and QGD into a rock-solid yet razor-sharp defence rich in pawn-sacrifice theory.",
+  "intro": "The Semi-Slav Defense arises after 1.d4 d5 2.c4 c6 3.Nf3 Nf6 4.Nc3 e6, where Black supports the d5-pawn with both ...c6 and ...e6. This hybrid combines the solidity of the Slav with the reliable framework of the Queen's Gambit Declined, at the cost of temporarily shutting in the light-squared bishop. From this deceptively calm structure spring some of the sharpest, most heavily analysed battles in all of opening theory.",
+  "line": "d4 d5 c4 c6 Nf3 Nf6 Nc3 e6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    }
+  ],
+  "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The twin pawns on c6 and e6 give Black an extremely durable centre, but they also block the c8-bishop, so a recurring strategic theme is freeing that piece. Black often prepares ...dxc4 followed by ...b5 to grab the pawn and gain queenside space, after which ...Bb7 activates the bishop on the long diagonal. White, meanwhile, enjoys a slight lead in development and space and must decide between quiet build-ups and sharp, forcing pawn thrusts.",
+        "The choice of White's fifth move sets the tone. A calm 5.e3 keeps a solid structure and heads for manoeuvring play, while the aggressive 5.Bg5 invites Black to snatch the c4-pawn and hold it with ...b5, leading to double-edged positions where both kings can come under fire. Understanding the resulting pawn structures, minority attacks, and central breaks matters far more here than memorising isolated moves."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After the solid 5.e3, the Meran Variation is the main battleground: Black plays ...Nbd7, ...dxc4, and ...b5, unfurling the queenside for active piece play and a later ...c5 break. White seeks to exploit the loosened black queenside with well-timed central and flank pawn advances. This complex has been refined over a century and remains a mainstay of top-level practice.",
+        "The sharpest lines follow 5.Bg5. The Botvinnik System, 5...dxc4 6.e4 b5 7.e5 h6 8.Bh4 g5, produces wild, forcing play where deep preparation is essential. Alternatively, the Moscow Variation with 5...h6 6.Bxf6 and the Anti-Moscow Gambit 6.Bh4 sidestep or embrace the mayhem in different ways. These variations are famous for their concrete, tactical character and for rewarding precise home analysis."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "As its name suggests, the Semi-Slav sits between the Slav Defense and the Queen's Gambit Declined, and it grew in importance through the twentieth century as players sought a solid but combative answer to 1.d4. Its razor-sharp lines became a proving ground for opening preparation, and the Botvinnik System is named for Mikhail Botvinnik, who did much to develop its intricate theory.",
+        "The Meran Variation takes its name from the 1924 tournament in Meran, Italy, where the idea drew attention, and it has been a fixture of elite chess ever since. The Semi-Slav's blend of structural soundness and tactical richness has kept it a favourite of world championship contenders across many eras."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "...c6 and ...e6 build a rock-solid centre but hem in the c8-bishop.",
+    "Freeing the light-squared bishop with ...b5 and ...Bb7 is a core plan.",
+    "5.e3 aims for solid manoeuvring; 5.Bg5 invites sharp forcing play.",
+    "The Meran unleashes ...dxc4 and ...b5 for active queenside piece play.",
+    "The Botvinnik System leads to wild, deeply analysed tactical battles.",
+    "Concrete preparation matters more than general rules in the main lines."
+  ],
+  "plans": {
+    "white": [
+      "Choose 5.e3 for a solid game or 5.Bg5 for sharp, forcing lines.",
+      "Complete development and castle before opening the centre.",
+      "Meet ...b5 with a4 or e4 breaks to open lines against Black's queenside.",
+      "Aim for an e3-e4 central advance to seize space and open the position.",
+      "In sharp lines, follow prepared, concrete plans against Black's king."
+    ],
+    "black": [
+      "Support d5 with ...c6 and ...e6, keeping a durable central pawn chain.",
+      "Free the c8-bishop with ...dxc4, ...b5, and ...Bb7 on the long diagonal.",
+      "Prepare the freeing ...c5 break to activate the pieces and centre.",
+      "Enter the Meran for active queenside play and dynamic piece activity.",
+      "In the Botvinnik and Moscow lines, rely on precise home analysis."
+    ]
+  },
+  "related": [
+    "slav-defense",
+    "queens-gambit-declined",
+    "queens-gambit",
+    "queens-gambit-accepted",
+    "catalan-opening"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "slug": "sicilian-sveshnikov",
+  "eco": "B33",
+  "name": "Sicilian Defense: Sveshnikov Variation",
+  "aka": ["Sveshnikov Sicilian"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Sveshnikov (5...e5) concedes a d5 hole for active piece play and the bishop pair, and is trusted at world-championship level.",
+  "intro": "The Sveshnikov Variation arises after 1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5, a bold thrust that kicks the d4-knight and stakes a claim in the centre. In return for a backward d6-pawn and a permanent hole on d5, Black obtains rapid piece activity and, in many lines, the bishop pair. Once dismissed as unsound, it was rehabilitated by Evgeny Sveshnikov and is now trusted at the very highest level.",
+  "line": "e4 c5 Nf3 Nc6 d4 cxd4 Nxd4 Nf6 Nc3 e5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    }
+  ],
+  "fen": "r1bqkb1r/pp1p1ppp/2n2n2/4p3/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq e6 0 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining move 5...e5 immediately challenges the knight on d4, which almost always retreats to b5 to eye the sensitive d6-square. Black accepts long-term structural concessions - a backward pawn on d6 and a gaping hole on d5 - in exchange for free development and active pieces. The whole variation is a wager that dynamic activity will outweigh the static weaknesses.",
+        "After the typical 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5, Black gains queenside space and often the bishop pair once White parts with his dark-squared bishop on f6. The resulting positions revolve around the fight for the d5-square: White wants to plant a knight there and blockade, while Black strives for the freeing ...f5 break and piece play down the half-open c-file. Grasping this d5-versus-...f5 tension is the key to handling the opening from either side."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The principal tabiya appears after 6.Ndb5 d6 7.Bg5 a6 8.Na3 b5, when White chooses between 9.Bxf6 and 9.Nd5. The capture 9.Bxf6 gxf6 saddles Black with doubled f-pawns but hands over the bishop pair and reinforces the centre, preparing an eventual ...f5. The knight leap 9.Nd5 heads for a more static struggle in which White nurses the d5-outpost and Black seeks counterplay on the wings.",
+        "White has also tried move-order subtleties, occupying the d5-square early or restraining Black's queenside expansion with a2-a4 before ...b5 arrives. Many players reach the Sveshnikov through a 2...Nc6 move order, only later committing to ...e5. Whatever the route, both sides must reckon with the same recurring themes of the d5-outpost, the bishop pair, and the ...f5 break."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The line was known for decades as the Lasker-Pelikan Variation, after Emanuel Lasker and the Argentine master Jorge Pelikan, and was long regarded with suspicion because of the weaknesses Black creates on d5 and d6. From the 1970s onward the Russian grandmaster Evgeny Sveshnikov championed it with fresh analysis and practical results, showing that Black's activity fully compensates for the structural defects. It has since become one of the most respected replies to the Open Sicilian, appearing in top-level play up to and including world-championship matches."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "5...e5 evicts the d4-knight and claims central space at the cost of the d5-square.",
+    "Black concedes a backward d6-pawn and a d5 hole for active piece play.",
+    "The thematic ...a6 and ...b5 gain queenside space and often the bishop pair.",
+    "White fights to occupy and blockade the d5-outpost with a knight.",
+    "Black's key counter is the ...f5 break to activate the position.",
+    "Rehabilitated by Evgeny Sveshnikov, it is trusted at world-championship level."
+  ],
+  "plans": {
+    "white": [
+      "Retreat the knight to b5 to target the d6-square after ...e5.",
+      "Trade on f6 or leap to d5 to fight for the key central outpost.",
+      "Blockade d5 with a knight and exploit the backward d6-pawn.",
+      "Restrain Black's queenside with a2-a4 when the timing suits.",
+      "Aim for a positional grind where the static weaknesses tell in an endgame."
+    ],
+    "black": [
+      "Play ...a6 and ...b5 to seize queenside space and gain the bishop pair.",
+      "Prepare the freeing ...f5 break to activate the pieces and centre.",
+      "Use the half-open c-file for pressure against White's position.",
+      "Contest the d5-square and prevent a permanent White blockade.",
+      "Rely on dynamic activity to outweigh the backward d6-pawn."
+    ]
+  },
+  "related": [
+    "sicilian-defense",
+    "sicilian-najdorf",
+    "sicilian-dragon",
+    "sicilian-taimanov",
+    "sicilian-scheveningen"
+  ]
+}

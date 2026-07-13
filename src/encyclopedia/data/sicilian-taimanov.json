@@ -1,0 +1,117 @@
+{
+  "slug": "sicilian-taimanov",
+  "eco": "B47",
+  "name": "Sicilian Defense: Taimanov Variation",
+  "aka": ["Bastrikov Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Taimanov's flexible ...e6/...Nc6/...Qc7 setup keeps the d-pawn back and sidesteps the sharpest Open Sicilian attacks.",
+  "intro": "The Taimanov Variation is a flexible Open Sicilian in which Black develops with ...e6, ...Nc6 and ...Qc7, here via 1.e4 c5 2.Nf3 e6 3.d4 cxd4 4.Nxd4 Nc6 5.Nc3 Qc7. By delaying ...d6 and ...Nf6, Black keeps the pawn structure fluid and refuses to hand White a fixed target. Named after the Soviet grandmaster Mark Taimanov, it is a mainstay of players who want a rich, strategically complex game without walking into the most forcing attacking lines.",
+  "line": "e4 c5 Nf3 e6 d4 cxd4 Nxd4 Nc6 Nc3 Qc7",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Qc7",
+      "from": 3,
+      "to": 10
+    }
+  ],
+  "fen": "r1b1kbnr/ppqp1ppp/2n1p3/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Taimanov's calling card is flexibility. By posting the queen on c7 and the knight on c6 while holding the d-pawn on d7, Black keeps several structures in reserve and postpones committing the kingside. The queen on c7 eyes the e5-square and the half-open c-file, discouraging some of White's most natural attacking setups.",
+        "This fluid approach lets Black transpose toward Scheveningen or Kan-like formations depending on White's choice, often continuing with ...a6, ...Nf6 and a timely ...b5 to gain queenside space. The trade-off is that Black concedes central space and must handle White's lead in development with care. Good piece coordination and well-timed pawn breaks, rather than memorized forcing lines, are what the variation demands."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "White's most ambitious answer is the English Attack, with Be3, Qd2 and long castling followed by a kingside pawn advance, mirroring the plans seen against the Najdorf. The knight sortie Ndb5, hitting the c7-queen and eyeing the d6-square, is another critical resource that Black must meet accurately, typically by retreating the queen and completing development. Both approaches lead to the sharp, double-edged play typical of the Open Sicilian.",
+        "Quieter but respected is the fianchetto system with g3 and Bg2, when White contents himself with a small, durable pull rather than a direct attack. Systems with Be2 and short castling are also common, steering toward positional Sicilian middlegames. Against every setup Black relies on the same toolkit of ...a6, ...b5 and pressure on the c-file to generate counterplay."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is named after Mark Taimanov, the Soviet grandmaster and concert pianist who did much to develop the ...Qc7 systems in the mid-twentieth century, and the same setup is sometimes called the Bastrikov Variation after Georgy Bastrikov. It belongs to the broader Paulsen family of Sicilians, which emphasize the flexible ...e6 structures over an early ...d6. Championed by many leading players for its strategic richness, the Taimanov remains a fully respected way to reach unbalanced, double-edged positions from the Open Sicilian."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The ...e6/...Nc6/...Qc7 setup is highly flexible and keeps the d-pawn back.",
+    "Delaying ...d6 and ...Nf6 denies White an early fixed target.",
+    "The queen on c7 eyes e5 and supports pressure on the c-file.",
+    "Black can transpose toward Scheveningen or Kan structures at will.",
+    "White's main tries are the English Attack and the Ndb5 jump.",
+    "Also called the Bastrikov Variation, part of the Paulsen family."
+  ],
+  "plans": {
+    "white": [
+      "Adopt the English Attack (Be3, Qd2, 0-0-0) and storm the kingside.",
+      "Try Ndb5 to harass the c7-queen and target the d6-square.",
+      "Choose the g3 fianchetto for a small, durable positional pull.",
+      "Use the extra central space to press before Black completes development.",
+      "Restrain Black's ...b5 expansion and fight for the d5-square."
+    ],
+    "black": [
+      "Develop flexibly with ...a6 and ...Nf6, delaying central commitments.",
+      "Expand with ...b5 and generate pressure along the half-open c-file.",
+      "Transpose toward a Scheveningen or Kan structure as White commits.",
+      "Meet Ndb5 by retreating the queen and calmly finishing development.",
+      "Coordinate the pieces and time the freeing breaks rather than memorize lines."
+    ]
+  },
+  "related": [
+    "sicilian-defense",
+    "sicilian-scheveningen",
+    "sicilian-najdorf",
+    "sicilian-sveshnikov"
+  ]
+}

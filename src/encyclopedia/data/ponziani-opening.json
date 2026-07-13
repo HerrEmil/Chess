@@ -1,0 +1,87 @@
+{
+  "slug": "ponziani-opening",
+  "eco": "C44",
+  "name": "Ponziani Opening",
+  "aka": [],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Ponziani Opening (1.e4 e5 2.Nf3 Nc6 3.c3) prepares d4 to build a big centre in one of chess's oldest openings.",
+  "intro": "The Ponziani Opening begins 1.e4 e5 2.Nf3 Nc6 3.c3, an old and offbeat try in which White immediately prepares to build a broad pawn centre with d4. It is one of the earliest recorded openings, and although modern theory considers it harmless with accurate play, it retains a good deal of venom against an unprepared opponent.",
+  "line": "e4 e5 Nf3 Nc6 c3",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    }
+  ],
+  "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The idea behind 3.c3 is straightforward: White supports a future d4, hoping to establish a big pawn centre and open lines for the pieces. If Black reacts passively, White can seize the centre with d4 and enjoy a comfortable spatial advantage, making the Ponziani a natural fit for players who like to steer the game onto their own terms early.",
+        "The drawback is equally clear. The move 3.c3 does nothing for development and, crucially, denies the b1-knight its most natural square, so White's initiative can evaporate if Black responds energetically. Much of the opening's theory therefore centres on whether White's central ambitions or the loss of time proves more important once Black hits back in the middle."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "Black's two principal equalizers are 3...d5 and 3...Nf6. The direct 3...d5, striking at the centre before White is ready, is considered the most reliable route to comfortable, roughly equal positions. The counterattacking 3...Nf6, pressuring the e4-pawn, likewise gives Black an easy game and is a favourite of those who wish to punish White's slightly artificial third move.",
+        "Sharper options exist for both sides. The Ponziani Countergambit, 3...f5, invites wild complications, while against quieter Black setups White presses ahead with d4 to justify the c3-pawn. In each case the thematic battle is the same: White strives to make the broad centre count, and Black seeks to prove that 3.c3 was simply too slow."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The opening is named after Domenico Lorenzo Ponziani, an eighteenth-century Italian master who analysed it, though the moves had appeared in even earlier sources, making it one of the oldest documented openings in chess. Popular in the nineteenth century and championed by Howard Staunton — so much so that it is sometimes called Staunton's Opening — it was gradually displaced by the Ruy López and other more ambitious systems, surviving today mainly as a surprise weapon at club and correspondence level."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3.c3 prepares d4 to build a broad central pawn duo.",
+    "White seeks a spatial edge by seizing the centre early.",
+    "The downside: 3.c3 denies the b1-knight its natural square.",
+    "3...d5 is Black's most reliable equalizing counterstrike.",
+    "3...Nf6 hits e4 and gives Black an easy, comfortable game.",
+    "One of chess's oldest openings, now mainly a surprise weapon."
+  ],
+  "plans": {
+    "white": [
+      "Follow up with d4 to establish a broad pawn centre.",
+      "Open lines for the pieces and exploit any extra space.",
+      "Meet 3...d5 with concrete central play such as Qa4.",
+      "Aim to prove the centre outweighs the tempo spent on c3.",
+      "Steer toward positions where opponents are unfamiliar with theory."
+    ],
+    "black": [
+      "Strike immediately with 3...d5 to challenge the centre.",
+      "Alternatively play 3...Nf6, attacking the e4-pawn.",
+      "Complete development quickly to exploit White's slow c3.",
+      "Open the position before White consolidates a big centre.",
+      "Head for equality, using the extra time White spends on c3."
+    ]
+  },
+  "related": ["italian-game", "scotch-game", "ruy-lopez", "open-game"]
+}

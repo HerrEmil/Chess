@@ -1,0 +1,108 @@
+{
+  "slug": "dutch-defense",
+  "eco": "A80",
+  "name": "Dutch Defense",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Dutch Defense (1.d4 f5) grabs kingside space and fights for e4 via the Classical, Stonewall, and Leningrad setups.",
+  "intro": "The Dutch Defense answers 1.d4 with the combative 1...f5, immediately staking a claim on the kingside and fighting for control of e4. After a typical 2.g3 Nf6 3.Bg2 e6 4.Nf3 Be7, Black chooses among three time-honoured setups — the Classical, the Stonewall, and the Leningrad — each giving the opening its own character while accepting a slight loosening of the king's position.",
+  "line": "d4 f5 g3 Nf6 Bg2 e6 Nf3 Be7",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "f5",
+      "from": 13,
+      "to": 29
+    },
+    {
+      "san": "g3",
+      "from": 54,
+      "to": 46
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Bg2",
+      "from": 61,
+      "to": 54
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    }
+  ],
+  "fen": "rnbqk2r/ppppb1pp/4pn2/5p2/3P4/5NP1/PPP1PPBP/RNBQK2R w KQkq - 2 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "With 1...f5 Black fights for the e4-square and gains kingside space, typically aiming for a later ...e5 break or a direct attack against the enemy king. The cost is a slight loosening of the position: the move weakens e6 and the a2-g8 and h5-e8 diagonals, so White most often fianchettoes with g3 and Bg2 to press along the long light diagonal and probe the resulting soft squares.",
+        "The choice of setup defines the middlegame structure. The Classical (...e6, ...d6, ...Be7) keeps things flexible and prepares ...e5; the Stonewall (...d5, ...e6, ...c6 alongside the f5-pawn) clamps down on e4 and the dark squares but leaves the c8-bishop passive and concedes the e5-outpost; the Leningrad (...g6, ...Bg7, ...d6) fianchettoes on the kingside and strikes with ...e5, resembling a King's Indian with reversed emphasis."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "Against White's main try, the fianchetto with 2.g3, Black selects one of the three principal systems. In the Stonewall, Black builds the d5-e6-f5 pawn wall and often reroutes the light-squared bishop via ...Bd7-e8-h5; in the Leningrad, ...g6 and ...Bg7 support the thematic ...e5; in the Classical, flexible development keeps both the ...e5 break and a kingside attack in reserve.",
+        "White also has sharp anti-Dutch tries that avoid the fianchetto. The Staunton Gambit, 2.e4, offers a pawn for rapid development and open lines, while 2.Bg5 and 2.Nc3 aim to enforce e4, and early moves like 2.h3 with g4 challenge the f5-pawn directly. Each of these attempts to exploit the slight weaknesses created by ...f5 before Black completes his setup."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The opening owes its name to Elias Stein, an author based in the Netherlands who recommended 1...f5 in a treatise published in the late eighteenth century. Long regarded as a fighting, double-edged reply to 1.d4, the Dutch has been employed at the highest level — Mikhail Botvinnik was a notable champion of both its Stonewall and Classical forms — and it remains a favourite of players seeking an unbalanced struggle with the black pieces."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "1...f5 fights for e4 and stakes out kingside space.",
+    "Three setups: Classical (...e6/...d6), Stonewall (...d5/...c6), Leningrad (...g6).",
+    "The move ...f5 slightly loosens the king and the a2-g8 diagonal.",
+    "White usually fianchettoes with g3 and Bg2 to press the long diagonal.",
+    "Black frequently aims for the freeing or attacking ...e5 break.",
+    "The Stonewall clamps e4 and the dark squares but leaves the c8-bishop passive."
+  ],
+  "plans": {
+    "white": [
+      "Fianchetto with g3 and Bg2 to control the long light diagonal.",
+      "Target the weakened e6-square and the light squares near Black's king.",
+      "Consider the Staunton Gambit 2.e4 or 2.Bg5 to exploit ...f5 early.",
+      "Challenge Black's grip on e4 and pry open lines toward the king.",
+      "Exchange Black's good bishop to leave the weakened squares exposed."
+    ],
+    "black": [
+      "Choose a setup — Classical, Stonewall, or Leningrad — to taste.",
+      "Fight for the e4-square and prepare the freeing ...e5 advance.",
+      "In the Leningrad, fianchetto ...g6 and ...Bg7 and expand on the kingside.",
+      "In the Stonewall, clamp e4 and reroute the c8-bishop via ...Be8-h5.",
+      "Launch a kingside attack once White has castled short."
+    ]
+  },
+  "related": [
+    "kings-indian-defense",
+    "french-defense",
+    "modern-benoni",
+    "queens-gambit-declined",
+    "nimzo-indian-defense"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "slug": "queens-gambit-accepted",
+  "eco": "D20",
+  "name": "Queen's Gambit Accepted",
+  "aka": ["QGA"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Queen's Gambit Accepted (1.d4 d5 2.c4 dxc4) takes the c4-pawn and cedes the centre, letting White develop freely and regain the pawn.",
+  "intro": "The Queen's Gambit Accepted arises after 1.d4 d5 2.c4 dxc4, where Black snatches the offered c-pawn rather than defending d5. Instead of clinging to the extra material, Black concedes the centre and aims for quick, harmonious development, while White expects to recover the pawn on c4 and enjoy a lead in development with a mobile centre. The mainline continues 3.Nf3 Nf6 4.e3 e6 5.Bxc4 c5, striking at White's centre without delay.",
+  "line": "d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "dxc4",
+      "from": 27,
+      "to": 34
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "e3",
+      "from": 52,
+      "to": 44
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Bxc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    }
+  ],
+  "fen": "rnbqkb1r/pp3ppp/4pn2/2p5/2BP4/4PN2/PP3PPP/RNBQK2R w KQkq c6 0 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "By capturing on c4, Black gives up the fight for the centre in exchange for free piece development and no cramped, blocked bishop of the sort found in the Queen's Gambit Declined. White rarely tries to hold the extra pawn; instead the bishop recaptures on c4 and White builds a broad pawn front with e3 and d4, enjoying more space and easier development. The resulting struggle pits White's central majority and initiative against Black's flexible, unobstructed pieces.",
+        "Black's counterplay revolves around timely pawn breaks that undermine White's centre, above all ...c5 and often ...a6 followed by ...b5 to gain queenside space and hit the bishop on c4. If White pushes d4-d5 or allows an exchange on d4, an isolated queen's pawn can appear, giving White active pieces and attacking chances at the cost of a long-term structural weakness. Precise timing of these central exchanges is the heart of the opening for both sides."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The Classical main line runs 3.Nf3 Nf6 4.e3 e6 5.Bxc4 c5, when Black challenges the centre and typically follows with ...a6, ...b5, and ...Bb7, developing actively on the queenside. White completes development with O-O, Qe2, and rook to d1, keeping options of dxc5 or advancing to gain space. This tabiya, long a battleground of theory, balances White's central control against Black's pressure on the c-file and long diagonal.",
+        "White has ambitious alternatives to the quiet build-up. The Central Variation 3.e4 grabs a big pawn centre at once, daring Black to strike back with ...e5 or ...c5, while 3.e3 keeps things solid. Black, in turn, can defer ...Nf6 to prepare an early ...b5 with tricks against the c4-bishop. Because so many transpositions are possible, move-order finesse matters as much as memorised lines."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Queen's Gambit Accepted is one of the oldest recorded openings, discussed in early manuscripts and treatises alongside the wider Queen's Gambit complex. Long regarded as a fully sound and respectable defence, it has served generations of players as a reliable way to reach clear, playable positions without the passivity of some Closed Game structures.",
+        "At the highest level the QGA has been employed as both a solid equalising weapon and a fighting try for the initiative, appearing regularly in world-class practice. Its enduring appeal lies in the clarity of its plans: Black knows exactly what to aim for, and White must convert a development lead before Black's pieces spring fully to life."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "2...dxc4 concedes the centre in return for free, rapid development.",
+    "White usually recaptures the pawn on c4 rather than trying to hold it.",
+    "The ...c5 break challenges White's centre and opens lines for Black's pieces.",
+    "The ...a6 and ...b5 plan gains queenside space and hits the c4-bishop.",
+    "Exchanges on d4 can hand White an isolated queen's pawn with active pieces.",
+    "Move-order precision and transpositions are central to the theory."
+  ],
+  "plans": {
+    "white": [
+      "Recapture on c4 and build a broad centre with e3 and d4.",
+      "Castle short and place the rook on d1 to support the centre.",
+      "Play Qe2 and a timely a4 to blunt Black's ...b5 expansion.",
+      "Use dxc5 or d4-d5 at the right moment to seize space or open lines.",
+      "Accept an isolated d-pawn when it brings active pieces and attacking chances."
+    ],
+    "black": [
+      "Develop quickly and strike the centre with an early ...c5.",
+      "Expand on the queenside with ...a6 and ...b5, hitting the bishop.",
+      "Fianchetto with ...Bb7 to pressure White's centre along the long diagonal.",
+      "Complete development with ...Be7 and ...O-O before opening the position.",
+      "Trade off White's central pawns to reach a comfortable, balanced structure."
+    ]
+  },
+  "related": [
+    "queens-gambit",
+    "queens-gambit-declined",
+    "slav-defense",
+    "semi-slav-defense",
+    "catalan-opening"
+  ]
+}

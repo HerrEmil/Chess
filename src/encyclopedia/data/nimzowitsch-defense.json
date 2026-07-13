@@ -1,0 +1,87 @@
+{
+  "slug": "nimzowitsch-defense",
+  "eco": "B00",
+  "name": "Nimzowitsch Defense",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Nimzowitsch Defence (1.e4 Nc6) is a provocative hypermodern try, striking back with ...d5 after 2.d4 d5.",
+  "intro": "The Nimzowitsch Defence answers 1.e4 with the provocative 1...Nc6, developing a knight while deliberately blocking the c-pawn and inviting White to grab space. After the continuation 2.d4 d5, Black strikes at the centre in Scandinavian style, embodying the hypermodern belief that a big pawn centre can be a target as much as a strength.",
+  "line": "e4 Nc6 d4 d5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    }
+  ],
+  "fen": "r1bqkbnr/ppp1pppp/2n5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq d6 0 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Nimzowitsch Defence is built on provocation. By playing 1...Nc6 Black tempts White to occupy the centre with e4 and d4, intending to attack that centre later rather than match it pawn for pawn. It is a hypermodern, offbeat choice that steers the game away from heavily analysed main lines and into positions where understanding matters more than memorized theory.",
+        "In the line 1.e4 Nc6 2.d4 d5, Black challenges the e4-pawn at once and is ready to meet 3.e5 with piece pressure or 3.exd5 with a quick recapture and rapid development. The knight on c6 is unusually placed, blocking the c-pawn, so Black often accepts a slightly cramped or unbalanced structure in exchange for active pieces and clear plans against White's centre."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 2.d4 d5, White's most testing tries are 3.Nc3, defending e4 and keeping the tension, and 3.e5, gaining space and closing the centre in French-like fashion. The straightforward 3.exd5 Qxd5 hands Black a comfortable Scandinavian-style game with the queen recaptured and the pieces ready to develop. Each choice leads to a distinct middlegame character, from sharp piece play to slower manoeuvring.",
+        "Black has independent second moves too, most notably 1...Nc6 2.d4 e5, aiming to open the centre immediately, and setups with ...d6 that steer toward Pirc- and Modern-like structures. Whatever the move order, the defining thread is Black's willingness to let White build a broad centre first and then undermine it with timely pawn breaks and active minor pieces."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The defence bears the name of Aron Nimzowitsch, the great hypermodern theorist of the early twentieth century, whose ideas about controlling the centre with pieces rather than pawns underpin the whole system. Never a mainstream choice, 1...Nc6 has nonetheless attracted independent-minded players and remains a respected surprise weapon, valued for sidestepping theory and posing opponents unfamiliar problems from the very first move."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "1...Nc6 provokes White into occupying the centre, then attacks it.",
+    "A hypermodern, offbeat defence that sidesteps main-line theory.",
+    "In the 2.d4 d5 line Black hits e4 immediately, Scandinavian-style.",
+    "The c6-knight blocks the c-pawn, giving Black an unusual structure.",
+    "Black relies on active pieces and timely breaks against the centre.",
+    "Named after the hypermodern pioneer Aron Nimzowitsch."
+  ],
+  "plans": {
+    "white": [
+      "Grab the centre with e4 and d4 and aim to prove it a strength.",
+      "Meet 2...d5 with 3.Nc3 or 3.e5 to keep or expand the space.",
+      "Exploit Black's slightly cramped, offbeat piece placement.",
+      "Complete development and challenge the awkward c6-knight.",
+      "Use the extra central space to build a lasting spatial edge."
+    ],
+    "black": [
+      "Provoke White's centre with 1...Nc6, then strike with ...d5 or ...e5.",
+      "In the ...d5 line, pressure e4 and develop the pieces rapidly.",
+      "Undermine White's broad centre with well-timed pawn breaks.",
+      "Accept some cramping in return for active, purposeful minor pieces.",
+      "Steer the game into unfamiliar, less-analysed middlegames."
+    ]
+  },
+  "related": [
+    "scandinavian-defense",
+    "alekhine-defense",
+    "pirc-defense",
+    "modern-defense"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "slug": "bogo-indian-defense",
+  "eco": "E11",
+  "name": "Bogo-Indian Defense",
+  "aka": ["Bogoljubov Indian"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Bogo-Indian Defence (1.d4 Nf6 2.c4 e6 3.Nf3 Bb4+) checks on b4 for a sound, low-risk, Nimzo-flavoured game against 3.Nf3.",
+  "intro": "The Bogo-Indian Defence arises after 1.d4 Nf6 2.c4 e6 3.Nf3 Bb4+, when Black checks with the bishop instead of fianchettoing. The check, met by 4.Bd2 or 4.Nbd2, gives Black a sound and low-risk game with a distinctly Nimzo-Indian flavour, and is a natural choice when White avoids 3.Nc3.",
+  "line": "d4 Nf6 c4 e6 Nf3 Bb4+",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Bb4",
+      "from": 5,
+      "to": 33
+    }
+  ],
+  "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Bogo-Indian is defined by the early check 1.d4 Nf6 2.c4 e6 3.Nf3 Bb4+, a move that develops the bishop with tempo and immediately poses White a small problem about how to block the check. Because White has played 3.Nf3 rather than 3.Nc3, the natural Nimzo-Indian pin is unavailable, and the Bogo-Indian gives Black a closely related way to fight for the dark squares and the e4-square while keeping the position solid and sound.",
+        "Strategically the opening is understated and reliable. Black is happy to exchange the dark-squared bishop for a knight if it eases his development or damages White's structure, and he typically follows up with ...O-O, ...d6 and ...e5, or ...b6 and ...Bb7 in Queen's-Indian style. The play is less forcing than in many 1.d4 openings, making the Bogo-Indian a favourite of players who want a safe, manoeuvring game with clear plans."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main reply is 4.Bd2, offering a trade or a retreat of the checking bishop. Black can continue with 4...Qe7, intending ...Bxd2+ and a solid setup with ...d6 and ...e5, or 4...a5 to preserve the bishop on b4. These lines lead to sound, slightly manoeuvring middlegames where Black has comfortable equality.",
+        "The other principal choice is 4.Nbd2, blocking the check with the knight and keeping the light-squared bishop's diagonal open, often preparing e4. Black tends to react with ...O-O, ...d5 or ...b6, contesting the centre. In several lines the Bogo-Indian can transpose into Queen's Indian or Nimzo-Indian structures, underlining how closely these Indian systems are related."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The defence is named after Efim Bogoljubov, the Russian-born grandmaster who twice contested the World Championship with Alexander Alekhine and who employed the ...Bb4+ idea in the 1920s. It emerged in the same hypermodern era as its cousins, the Nimzo-Indian and Queen's Indian.",
+        "Though less fashionable than the sharpest replies to 1.d4, the Bogo-Indian has retained a loyal following at every level precisely because of its solidity. It is a practical, low-maintenance weapon, frequently reached when White declines the Nimzo-Indian with 3.Nf3."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3...Bb4+ develops with tempo and forces White to address the check.",
+    "A Nimzo-flavoured system available when White plays 3.Nf3 instead of 3.Nc3.",
+    "Black readily trades the dark-squared bishop to ease development.",
+    "Typical setups feature ...d6 and ...e5, or ...b6 and ...Bb7.",
+    "Solid, low-risk, and rich in transpositions to other Indian defences.",
+    "The fight centres on the dark squares and control of e4."
+  ],
+  "plans": {
+    "white": [
+      "Block the check with 4.Bd2, offering to trade or retreat the bishop.",
+      "Choose 4.Nbd2 to keep the structure intact and prepare e4.",
+      "Build a broad centre with e4 once the check is dealt with.",
+      "Exploit the bishop pair if Black trades on d2 or c3.",
+      "Aim for a space advantage in quiet, manoeuvring positions."
+    ],
+    "black": [
+      "Check with 3...Bb4+ to develop quickly and comfortably.",
+      "Play ...Qe7 and ...Bxd2+ for a solid, sound structure.",
+      "Preserve the bishop with ...a5 when it is well placed.",
+      "Strike in the centre with ...d5 or ...e5 at the right moment.",
+      "Transpose to Queen's Indian setups with ...b6 and ...Bb7."
+    ]
+  },
+  "related": [
+    "nimzo-indian-defense",
+    "queens-indian-defense",
+    "catalan-opening",
+    "grunfeld-defense"
+  ]
+}

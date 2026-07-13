@@ -1,0 +1,102 @@
+{
+  "slug": "evans-gambit",
+  "eco": "C51",
+  "name": "Evans Gambit",
+  "aka": [],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Evans Gambit (1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4) sacrifices a pawn to seize the centre and launch a fierce attack.",
+  "intro": "The Evans Gambit is a swashbuckling branch of the Italian Game, reached after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4. White offers the b-pawn to deflect Black's active bishop, then follows with c3 and d4 to erect a broad pawn centre with gain of time, aiming for a swift and often decisive attack.",
+  "line": "e4 e5 Nf3 Nc6 Bc4 Bc5 b4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "Bc5",
+      "from": 5,
+      "to": 26
+    },
+    {
+      "san": "b4",
+      "from": 49,
+      "to": 33
+    }
+  ],
+  "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R b KQkq b3 0 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The point of 4.b4 is deflection: if Black grabs the pawn with 4...Bxb4, White plays 5.c3, hitting the bishop and preparing the powerful central advance d4. In a move or two White converts a single pawn into a big, mobile centre, open lines for the bishops, and a lead in development — the classic Romantic recipe of trading material for initiative and time.",
+        "White's attack typically flows from the strong c3-d4 pawn duo, the raking c4-bishop aimed at f7, and quick castling followed by ideas such as Qb3 and Ba3. Black's defensive task is to blunt this initiative, return the extra pawn at the right moment, and complete development safely; if Black manages to trade pieces and reach an endgame, the extra pawn can even tell in Black's favour."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 4...Bxb4 5.c3, Black's bishop chooses a square: 5...Ba5, 5...Be7 and 5...Bc5 are all respected. Play usually continues 6.d4, when White grabs the centre and Black must decide whether to cling to the pawn or give it back. Emanuel Lasker's Defence, returning the pawn to force exchanges and defuse White's attack, long stood as one of the most reliable ways to take the sting out of the gambit.",
+        "Black can also decline. The solid 4...Bb6, the Evans Gambit Declined, sidesteps the main complications, keeping a sound structure while conceding White some space. Accepting and then meeting c3 with a timely central strike is a further option, but in every case the fight revolves around whether White's development lead can be converted before Black consolidates."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The gambit was devised around 1827 by Captain William Davies Evans, a Welsh sea captain, and it became a signature weapon of the Romantic era, wielded with great success by Adolf Anderssen, Paul Morphy and Mikhail Chigorin. Improved defensive technique caused it to fade for much of the twentieth century, until Garry Kasparov dramatically revived it in the 1990s — most memorably in a celebrated win over Viswanathan Anand — restoring the Evans Gambit's standing as a fully respectable try for the advantage."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "4.b4 deflects the c5-bishop to speed up White's central expansion.",
+    "c3 and d4 build a broad, mobile pawn centre with gain of tempo.",
+    "White trades a pawn for a lead in development and open attacking lines.",
+    "The c4-bishop and moves like Qb3 target the sensitive f7-square.",
+    "Black aims to return the pawn and reach a safe, simplified position.",
+    "A Romantic gambit famously revived at the top level by Garry Kasparov."
+  ],
+  "plans": {
+    "white": [
+      "Play c3 and d4 to seize the centre with tempo after 4...Bxb4.",
+      "Castle short and mass pieces toward Black's king with Qb3 and Ba3.",
+      "Exploit the open lines and the a2-g8 diagonal against f7.",
+      "Keep the initiative rolling before Black can consolidate.",
+      "If the pawn is returned, retain the more active pieces."
+    ],
+    "black": [
+      "Consider declining with 4...Bb6 to keep a sound structure.",
+      "If accepting, return the pawn at the right moment (Lasker's Defence).",
+      "Complete development quickly and neutralize the c4-bishop's pressure.",
+      "Trade pieces to blunt White's attack and reach a safe endgame.",
+      "Guard f7 and the centre while keeping any extra material secure."
+    ]
+  },
+  "related": [
+    "italian-game",
+    "two-knights-defense",
+    "kings-gambit",
+    "ruy-lopez"
+  ]
+}

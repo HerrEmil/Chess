@@ -1,0 +1,98 @@
+{
+  "slug": "grunfeld-defense",
+  "eco": "D80",
+  "name": "Grünfeld Defense",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Grünfeld Defence (1.d4 Nf6 2.c4 g6 3.Nc3 d5) invites White to build a broad centre, then attacks it with pieces and ...c5.",
+  "intro": "The Grünfeld Defence arises after 1.d4 Nf6 2.c4 g6 3.Nc3 d5, a strikingly ambitious reply in which Black challenges the centre before White has finished occupying it. Rather than contest the dark squares with a big pawn of his own, Black fianchettoes the bishop to g7 and treats White's imposing centre as a target to be undermined with ...c5 and piece pressure. It is one of the sharpest and most theory-rich answers to 1.d4.",
+  "line": "d4 Nf6 c4 g6 Nc3 d5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    }
+  ],
+  "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq d6 0 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Grünfeld is the purest expression of hypermodern strategy against 1.d4. After 1.d4 Nf6 2.c4 g6 3.Nc3 d5, Black deliberately allows White to capture on d5 and erect a broad pawn centre with pawns on c3, d4, and e4. In return, Black develops rapidly, fianchettoes the king's bishop to g7 along the long diagonal, and sets about demolishing that centre with the pawn break ...c5 and pressure from the pieces. The whole opening is a running argument about whether White's centre is a strength or a liability.",
+        "Central to Black's play is the tension between White's pawn mass and Black's active pieces. The g7-bishop rakes the a1-h8 diagonal and bears down on d4, the queen and c8-bishop join the assault on the centre and queenside, and moves like ...c5, ...Bg4, ...Nc6, and ...Qa5 keep White under pressure. If White consolidates the centre and pushes the pawns forward successfully, the space advantage can become overwhelming; if Black breaks it up, the same pawns become weaknesses in an endgame."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The Exchange Variation, 4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3, is the principled main line and the heart of Grünfeld theory. White takes the big centre and often continues with Bc4, Ne2, and O-O, aiming to advance in the middlegame, while Black immediately hits back with ...c5 and ...Bg7, targeting d4. Decades of high-level practice have produced deeply analysed positions here, including lines with ...Bg4 and ...Nc6 piling up on the d4-pawn.",
+        "White has several major alternatives to grabbing the centre at once. The Russian System, 4.Nf3 Bg7 5.Qb3, pressures d5 and after 5...dxc4 6.Qxc4 gains time, leading to rich strategic battles. The quieter fianchetto approach with g3 aims to neutralise the g7-bishop, while 4.Bf4 and 4.Bg5 develop a piece before deciding on the centre. Each system gives the Grünfeld a different character, from sharp tactics to slow positional pressure."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The defence is named after the Austrian grandmaster Ernst Grünfeld, who brought it to prominence in the early 1920s as part of the hypermodern movement that questioned the old dogma of occupying the centre with pawns. The idea of ceding the centre in order to attack it fit naturally alongside the theories of Réti and Nimzowitsch.",
+        "It went on to become one of the most respected replies to 1.d4, adopted at the highest level by World Champions including Bobby Fischer and Garry Kasparov, who used it in many of his battles with Anatoly Karpov. In modern practice it remains a favourite of elite grandmasters such as Peter Svidler, keeping its reputation as a dynamic, uncompromising weapon for Black."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black allows a big White centre with ...d5, then attacks it rather than occupying it.",
+    "The g7-bishop rakes the long diagonal and pressures the d4-pawn.",
+    "The ...c5 break is Black's principal lever against White's centre.",
+    "In the Exchange Variation White's c3-d4-e4 pawns are both a strength and a target.",
+    "Piece play with ...Bg4, ...Nc6, and ...Qa5 keeps White's centre under pressure.",
+    "A hypermodern defence: White's space can crush or collapse depending on the centre's fate."
+  ],
+  "plans": {
+    "white": [
+      "Build and maintain the broad pawn centre with c3, d4, and e4.",
+      "Develop actively with Bc4, Ne2, Be3, and castle short.",
+      "Advance the central pawns (d5, e5) to gain space and open lines.",
+      "In the Russian System, pressure d5 with Qb3 and gain time on ...dxc4.",
+      "Neutralise the g7-bishop with a g3 fianchetto when playing positionally."
+    ],
+    "black": [
+      "Fianchetto the bishop to g7 to bear down on d4 and the long diagonal.",
+      "Strike at the centre with ...c5, and sometimes ...e5, as quickly as possible.",
+      "Pile up on d4 with ...Bg4, ...Nc6, and ...Qa5.",
+      "Trade pieces to expose White's centre pawns as endgame weaknesses.",
+      "Generate queenside and central counterplay before White's space tells."
+    ]
+  },
+  "related": [
+    "kings-indian-defense",
+    "queens-indian-defense",
+    "nimzo-indian-defense",
+    "catalan-opening"
+  ]
+}
