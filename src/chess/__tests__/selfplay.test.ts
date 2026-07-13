@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { evaluate, quiesce } from '../ai.js';
-import { boardWithPieces, STARTING_BOARD } from './helpers.js';
+import { evaluate, negamax, quiesce, quiescentEval } from '../ai.js';
+import { ALL_CASTLE, boardWithPieces, STARTING_BOARD } from './helpers.js';
 import { runMatch } from '../../../tools/engine-lab/selfplay.js';
 
 const INF = 100000;
@@ -84,11 +84,66 @@ describe('quiescence search', () => {
   });
 });
 
+/*
+ * Experiment #4: check extensions. Quiescence resolves captures at the horizon
+ * but not check evasions, so an in-check leaf is scored by a stand-pat that
+ * cannot see a forced mate. The search now extends one ply while the side to
+ * move is in check. This test pins the property directly: a mate-in-1 delivered
+ * by a checking move is invisible to a plain depth-1 search (the mating move's
+ * child sits at the depth-0 horizon, where mate is never detected) but is found
+ * once the in-check horizon is extended.
+ */
+describe('check extensions', () => {
+  it('recognises a mate-in-1 at the horizon that a plain search misses', () => {
+    // Back-rank mate: white rook e1 delivers Re8#. Black king h8 is boxed in by
+    // its own pawns g7/h7; the only 8th-rank flight g8 is covered by the rook.
+    const board = boardWithPieces([
+      { piece: 'k', index: 56 }, // white king a1
+      { piece: 'K', index: 7 }, // black king h8
+      { piece: 'r', index: 60 }, // white rook e1
+      { piece: 'P', index: 14 }, // black pawn g7
+      { piece: 'P', index: 15 }, // black pawn h7
+    ]);
+
+    const withExt = negamax(
+      board,
+      'white',
+      1,
+      -INF,
+      INF,
+      null,
+      ALL_CASTLE,
+      new Map(),
+      quiescentEval,
+      true,
+    );
+    const noExt = negamax(
+      board,
+      'white',
+      1,
+      -INF,
+      INF,
+      null,
+      ALL_CASTLE,
+      new Map(),
+      quiescentEval,
+      false,
+    );
+
+    // With the extension, the mate is scored as a mate and Re8 (e1->e8) is
+    // played; without it, the depth-1 search only sees a static leaf score.
+    expect(withExt[2]).toBeGreaterThanOrEqual(50000);
+    expect([withExt[0], withExt[1]]).toEqual([60, 4]);
+    expect(noExt[2]).toBeLessThan(50000);
+  });
+});
+
 describe('self-play non-regression', () => {
   it('new engine does not regress vs the previous engine', () => {
     // Deterministic (seeded PRNG + deterministic search), so this is a stable
     // guardrail, not a flaky benchmark. The full multi-depth validation is
-    // recorded in tools/engine-lab/experiments.jsonl.
+    // recorded in tools/engine-lab/experiments.jsonl. Experiment #4 compares
+    // check-extensions-on (new) vs -off (old); both use the quiescence leaf.
     const result = runMatch({ games: 24, depth: 2, seed: 1 });
     expect(result.games).toBe(24);
     expect(result.newScore).toBeGreaterThanOrEqual(result.oldScore);

@@ -12,7 +12,7 @@
  * variety comes from a seeded PRNG, so a given seed always yields the same
  * games.
  */
-import { color, evaluate, negamax, quiescentEval } from '../../src/chess/ai.js';
+import { color, negamax, quiescentEval } from '../../src/chess/ai.js';
 import {
   applyMove,
   mailboxIndex,
@@ -26,15 +26,17 @@ import { STARTING_BOARD } from '../../src/chess/__tests__/helpers.js';
 
 export type EngineEval = (b: readonly string[], c: color) => number;
 
-// The two engines under comparison. `newEval` is the current candidate;
-// `legacyEval` is the previous accepted engine. Both search with the same
-// negamax; only the leaf evaluator differs.
+// The two engines under comparison. Both search with the same negamax and the
+// same leaf evaluator; what differs is a search flag threaded through negamax.
 //
-// Experiment #2: quiescence search. The new engine resolves captures at the
-// leaf before scoring (`quiescentEval`); the previous engine scored the raw
-// leaf statically (`evaluate(..., true)`, the mirrored piece-square eval).
+// Experiment #4: check extensions. Both engines use the accepted quiescence leaf
+// (experiment #2). The new engine extends the search one ply whenever the side
+// to move is in check (`checkExtend = true`); the previous accepted engine does
+// not (`checkExtend = false`). Isolating the flag measures the extension alone.
 export const newEval: EngineEval = quiescentEval;
-export const legacyEval: EngineEval = (b, c) => evaluate(b, c, true);
+export const legacyEval: EngineEval = quiescentEval;
+const NEW_CHECK_EXTEND = true;
+const OLD_CHECK_EXTEND = false;
 
 export type Move = { start: number; goal: number };
 export type GameOutcome = 'white' | 'black' | 'draw';
@@ -161,6 +163,10 @@ export type PlayGameOptions = {
   depth: number;
   opening?: Move[];
   maxPlies?: number;
+  // Per-side search flags (default true = production behaviour). Used to A/B a
+  // search change (e.g. check extensions) between the two players.
+  whiteCheckExtend?: boolean;
+  blackCheckExtend?: boolean;
 };
 
 export const playGame = (opts: PlayGameOptions): GameResult => {
@@ -182,6 +188,10 @@ export const playGame = (opts: PlayGameOptions): GameResult => {
 
   for (let ply = 0; ply < maxPlies; ply += 1) {
     const evalFn = turn === 'white' ? opts.whiteEval : opts.blackEval;
+    const checkExtend =
+      turn === 'white'
+        ? (opts.whiteCheckExtend ?? true)
+        : (opts.blackCheckExtend ?? true);
     const best = negamax(
       state.board,
       turn,
@@ -192,6 +202,7 @@ export const playGame = (opts: PlayGameOptions): GameResult => {
       state.castle,
       history,
       evalFn,
+      checkExtend,
     );
     const start = best[0];
     const goal = best[1];
@@ -318,6 +329,8 @@ export const runMatch = (opts: {
       playGame({
         whiteEval: newEval,
         blackEval: legacyEval,
+        whiteCheckExtend: NEW_CHECK_EXTEND,
+        blackCheckExtend: OLD_CHECK_EXTEND,
         depth: opts.depth,
         opening,
         maxPlies: opts.maxPlies,
@@ -331,6 +344,8 @@ export const runMatch = (opts: {
       playGame({
         whiteEval: legacyEval,
         blackEval: newEval,
+        whiteCheckExtend: OLD_CHECK_EXTEND,
+        blackCheckExtend: NEW_CHECK_EXTEND,
         depth: opts.depth,
         opening,
         maxPlies: opts.maxPlies,

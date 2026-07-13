@@ -370,26 +370,55 @@ const computeEnPassantTarget = (
   return null;
 };
 
-export const negamax = (
-  board: readonly string[],
-  currentPlayer: color,
+/*
+ * Check extensions (horizon-only).
+ *
+ * Quiescence resolves captures at the horizon but not check evasions, so a leaf
+ * reached while the side to move is in check is scored by a stand-pat that
+ * cannot tell a forced mate/loss from a harmless check. When the search hits the
+ * horizon in check, it is extended one ply to search the (few, forced) evasions
+ * instead of trusting the leaf — recognising mate the plain leaf would miss.
+ * Only the frontier is extended (interior nodes already search their evasions to
+ * the remaining depth), so the cost is a small sub-search at in-check leaves
+ * rather than an inflation of the whole tree. A per-path budget bounds a run of
+ * consecutive frontier checks so a forcing sequence cannot recurse without
+ * limit: total search depth never exceeds nominalDepth + CHECK_EXTENSION_BUDGET.
+ *
+ * The budget is 1 (a single extension ply, no check-chains) deliberately: a
+ * larger budget lets alternating-check sequences extend repeatedly and blows up
+ * worst-case search time at the UI's higher depths (measurably pathological at
+ * depth 4+), which would freeze the AI mid-move. One ply already resolves the
+ * in-check horizon leaf — the case quiescence cannot handle — at bounded cost.
+ */
+const CHECK_EXTENSION_BUDGET = 1;
+
+// Resolve the depth to search at a node, applying the horizon-only check
+// extension. Interior nodes (depth > 0) are unchanged. At the horizon a side to
+// move in check is extended one ply (searchDepth 1), consuming one unit of the
+// budget; otherwise the leaf is scored statically (searchDepth 0).
+const resolveSearchDepth = (
   depth: number,
-  alpha: number,
-  beta: number,
-  enPassantTarget: number | null,
-  castle: CastleState,
-  posHistory: Map<string, number> = new Map(),
-  evaluateFn: (b: readonly string[], c: color) => number = quiescentEval,
-): readonly number[] => {
-  if (depth === 0) {
-    return [-1, -1, evaluateFn(board, currentPlayer)];
+  inCheck: boolean,
+  checkExtend: boolean,
+  extLeft: number,
+): { extRemaining: number; searchDepth: number } => {
+  if (depth > 0) return { extRemaining: extLeft, searchDepth: depth };
+  if (checkExtend && inCheck && extLeft > 0) {
+    return { extRemaining: extLeft - 1, searchDepth: 1 };
   }
+  return { extRemaining: extLeft, searchDepth: 0 };
+};
 
-  const pieces = getPiecesOfColor(board, currentPlayer);
-  const moves = getAllValidMoves(board, pieces, enPassantTarget, castle);
+type OrderedMove = { goal: number; orderScore: number; start: number };
 
-  // Flatten into a sortable move list for MVV-LVA ordering
-  const moveList: { goal: number; orderScore: number; start: number }[] = [];
+// Flatten the per-piece move lists into a single MVV-LVA-ordered move list:
+// captures of high-value victims by low-value attackers first, then quiet moves.
+const orderMoves = (
+  board: readonly string[],
+  pieces: readonly number[],
+  moves: readonly (readonly number[])[],
+): OrderedMove[] => {
+  const moveList: OrderedMove[] = [];
   for (let i = 0; i < pieces.length; i += 1) {
     for (const goal of moves[i]) {
       const start = pieces[i];
@@ -403,17 +432,45 @@ export const negamax = (
       moveList.push({ goal, orderScore, start });
     }
   }
+  moveList.sort((a, b) => b.orderScore - a.orderScore);
+  return moveList;
+};
+
+export const negamax = (
+  board: readonly string[],
+  currentPlayer: color,
+  depth: number,
+  alpha: number,
+  beta: number,
+  enPassantTarget: number | null,
+  castle: CastleState,
+  posHistory: Map<string, number> = new Map(),
+  evaluateFn: (b: readonly string[], c: color) => number = quiescentEval,
+  checkExtend = true,
+  extLeft: number = CHECK_EXTENSION_BUDGET,
+): readonly number[] => {
+  const inCheck = isInCheck(board, currentPlayer);
+  const { searchDepth, extRemaining } = resolveSearchDepth(
+    depth,
+    inCheck,
+    checkExtend,
+    extLeft,
+  );
+  if (searchDepth === 0) {
+    return [-1, -1, evaluateFn(board, currentPlayer)];
+  }
+
+  const pieces = getPiecesOfColor(board, currentPlayer);
+  const moves = getAllValidMoves(board, pieces, enPassantTarget, castle);
+  const moveList = orderMoves(board, pieces, moves);
 
   if (moveList.length === 0) {
     // Checkmate (in check) or stalemate (not in check)
-    if (isInCheck(board, currentPlayer)) {
-      return [-1, -1, -50000 - depth];
+    if (inCheck) {
+      return [-1, -1, -50000 - searchDepth];
     }
     return [-1, -1, 0];
   }
-
-  // Sort: captures first (highest MVV-LVA score), then quiet moves
-  moveList.sort((a, b) => b.orderScore - a.orderScore);
 
   let bestStart = -1;
   let bestGoal = -1;
@@ -421,7 +478,7 @@ export const negamax = (
 
   // Only check repetition near the root (depth >= 2) to avoid
   // expensive positionKey computation at every node
-  const checkRepetition = depth >= 2 && posHistory.size > 0;
+  const checkRepetition = searchDepth >= 2 && posHistory.size > 0;
 
   for (const { start, goal } of moveList) {
     const childBoard = boardAfterMove(board, start, goal, enPassantTarget);
@@ -445,13 +502,15 @@ export const negamax = (
       const childResult = negamax(
         childBoard,
         oppositeColor(currentPlayer),
-        depth - 1,
+        searchDepth - 1,
         -beta,
         -localAlpha,
         childEp,
         childCastle,
         posHistory,
         evaluateFn,
+        checkExtend,
+        extRemaining,
       );
       score = -childResult[2];
       // Restore history
