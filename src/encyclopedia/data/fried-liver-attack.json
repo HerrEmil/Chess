@@ -1,0 +1,123 @@
+{
+  "slug": "fried-liver-attack",
+  "eco": "C57",
+  "name": "Fried Liver Attack",
+  "aka": ["Fegatello Attack"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Fried Liver Attack (1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7) sacrifices a knight to drag out Black's king.",
+  "intro": "The Fried Liver Attack arises in the Two Knights Defence after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7. White gives up a knight to capture on f7, forcing the black king into the open, and follows with Qf3+ to attack the exposed monarch and the pinned knight on d5. It is one of the sharpest and most famous attacking tries in all of chess.",
+  "line": "e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5 d5 exd5 Nxd5 Nxf7",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Ng5",
+      "from": 45,
+      "to": 30
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "exd5",
+      "from": 36,
+      "to": 27
+    },
+    {
+      "san": "Nxd5",
+      "from": 21,
+      "to": 27
+    },
+    {
+      "san": "Nxf7",
+      "from": 30,
+      "to": 13
+    }
+  ],
+  "fen": "r1bqkb1r/ppp2Npp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R b KQkq - 0 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Fried Liver springs from the Two Knights Defence, where 4.Ng5 immediately attacks the f7-square, the weakest point in Black's camp. After 4...d5 5.exd5, the tempting recapture 5...Nxd5?! walks into the sacrifice, since the knight on d5 is no longer defended by a pawn and the f7-point is left short of defenders. With 6.Nxf7 White gives up a knight to remove that pawn and expose the king, which must recapture with 6...Kxf7 and forfeit the right to castle. The whole idea is speed: White converts material into a lasting initiative against an uncastled king stranded in the centre.",
+        "After the king takes on f7, White continues 7.Qf3+, hitting the king and simultaneously renewing the pressure on the pinned knight on d5. Black is forced into awkward defence, typically covering with the king and trying to consolidate the extra piece while White piles up on the d5-knight with moves like Nc3. The resulting positions are enormously double-edged: if Black survives the onslaught and untangles, the extra piece should tell, but a single careless move can be fatal. This risk-laden balance is exactly why the line is a rite of passage for attacking players."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The critical practical question is whether Black should even allow the sacrifice. Instead of 5...Nxd5, the recommended antidote is the Lolli or, more famously, 5...Na5, the main line of the Two Knights, where Black offers a pawn with ...Na5 to chase the c4-bishop and gain rapid development rather than defend f7 passively. If Black does permit 6.Nxf7 Kxf7 7.Qf3+, the key defensive move is 7...Ke6, bravely centralising the king to hold the d5-knight together, after which 8.Nc3 sets about prising the position open.",
+        "A close cousin is the Traxler Counterattack (also called the Wilkes-Barre), where after 4.Ng5 Black ignores the threat with 4...Bc5!?, meeting 5.Nxf7 with a counter-sacrifice on f2 and wild complications. Players who wish to avoid the entire Fegatello mess often prefer the calmer 4.d3 or 4.d4, steering into quieter Italian and Scotch-flavoured structures. But when both sides are willing, the mainline Fried Liver remains the sharpest test, with theory extending many moves deep into the resulting king hunt."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The attack has been known for centuries; its Italian name, the Fegatello or 'dead liver' Attack, evokes a victim so thoroughly cooked as to be finished off, and analysis of the line appears in early Italian manuscripts associated with players such as Polerio and Greco. It became a staple of romantic-era attacking chess and remains a favourite teaching tool for demonstrating the value of initiative over material. Although modern theory holds that Black can defend accurately, the Fried Liver endures at club level as a sharp weapon and a memorable warning about the fragility of the f7-square."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "4.Ng5 targets f7, the most vulnerable square in Black's position.",
+    "6.Nxf7 sacrifices a knight to drag the black king into the open.",
+    "7.Qf3+ hits the king and renews pressure on the pinned d5-knight.",
+    "Black loses castling rights and must defend a king stranded in the centre.",
+    "White trades material for a fast, dangerous initiative.",
+    "5...Na5 sidesteps the whole sacrifice and is Black's soundest choice."
+  ],
+  "plans": {
+    "white": [
+      "Provoke ...Nxd5 so that the f7-point is left underdefended.",
+      "Play Nxf7 to expose the king, then follow up with Qf3+.",
+      "Bring the queen's knight to c3 to intensify pressure on d5.",
+      "Open lines toward the centralised black king before it finds shelter.",
+      "Keep piling attackers on the pinned knight rather than regaining material at once."
+    ],
+    "black": [
+      "Prefer 5...Na5, chasing the bishop and avoiding the sacrifice entirely.",
+      "If the sacrifice is allowed, meet Qf3+ with the brave ...Ke6 to hold d5.",
+      "Cling to the extra piece and aim to untangle and reach safety.",
+      "Return material at the right moment to blunt White's initiative.",
+      "Consider the sharp Traxler with 4...Bc5 to seize the counterattack first."
+    ]
+  },
+  "related": [
+    "two-knights-defense",
+    "italian-game",
+    "giuoco-piano",
+    "evans-gambit",
+    "bishops-opening"
+  ]
+}

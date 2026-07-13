@@ -1,0 +1,103 @@
+{
+  "slug": "goring-gambit",
+  "eco": "C44",
+  "name": "Göring Gambit",
+  "aka": ["Goering Gambit"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Göring Gambit (1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.c3) is a Scotch cousin offering a pawn to open lines and develop with tempo.",
+  "intro": "The Göring Gambit arises from the Scotch move order after 1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.c3, when White offers a pawn (sometimes two) to prise open the centre. Closely related to the Danish Gambit but with the knights already developed, it trades material for rapid mobilisation and pressure against the f7-point.",
+  "line": "e4 e5 Nf3 Nc6 d4 exd4 c3",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "exd4",
+      "from": 28,
+      "to": 35
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    }
+  ],
+  "fen": "r1bqkbnr/pppp1ppp/2n5/8/3pP3/2P2N2/PP3PPP/RNBQKB1R b KQkq - 0 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Göring Gambit is essentially the Danish Gambit idea reached through the Scotch, with the useful difference that White's knight already stands on f3 and Black's on c6 before the pawn is offered. After 4.c3 White invites ...dxc3, when Nxc3 (or the double-pawn Bc4 approach) yields a big lead in development, open central files and the familiar Bc4 pressure toward f7. Because the knights are committed, the play is slightly more concrete than in the Danish: White knows where the pieces belong and can strike quickly with Bc4, O-O, Qb3 and rook activity down the central files.",
+        "As in all such gambits, White's compensation is dynamic rather than structural, so speed is everything: White must convert the developmental lead into a genuine attack before Black returns some material and consolidates. Black's soundest antidotes involve giving the pawn back with a timely ...d5, which frees the position and challenges White's active bishop, or simply declining the gambit and steering into calmer Scotch-like channels. The resulting middlegames feature open lines, active bishops and a persistent race between White's initiative and Black's extra pawn."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The critical acceptance is 4...dxc3 5.Nxc3, the single-pawn Göring, when White enjoys rapid development and open lines for a modest investment; the alternative 5.Bc4 cxb2 6.Bxb2 transposes to full Danish-style positions with two pawns sacrificed and both bishops raking the kingside. Against either, Black's most reliable equaliser is the freeing ...d5 break, for example 5.Nxc3 Bb4 or an early ...d5, returning the pawn to neutralise White's activity and reach a balanced game. This ...d5 resource is the main reason strong players regard the Göring as a practical surprise weapon rather than a theoretical worry.",
+        "Black may also decline the gambit outright with 4...d5 or 4...Nf6, sidestepping the sacrificial lines and inviting transpositions to the Scotch or Ponziani-flavoured positions. When Black grabs the pawn and tries to hold it, White's standard plan of Bc4, castling and Qb3 generates lasting pressure on f7 and along the e-file. The theoretical debate throughout centres on the same question as in the Danish: whether White's lead in development and open lines outweigh the sacrificed pawn once Black plays the correct defensive ...d5."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The gambit is named after the nineteenth-century German player Carl Theodor Göring, who analysed and employed the 4.c3 pawn offer within the Scotch complex, and it is occasionally spelled Goering in English sources. It belongs to the same romantic tradition as the Danish and Scotch gambits, prizing initiative and open lines over material, and it enjoyed periods of popularity as an enterprising alternative to the main-line Scotch. Modern practice, armed with the ...d5 defence, treats it as a sound but not especially dangerous try at the highest level, while it remains a favourite among attacking club players and a fine illustration of gambit principles in the open games."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A Scotch cousin: 4.c3 offers a pawn to open the centre.",
+    "Like the Danish but with the knights already on f3 and c6.",
+    "White develops with tempo and pressures f7 via Bc4 and Qb3.",
+    "Compensation is dynamic, resting on the developmental lead.",
+    "Black's ...d5 break returns the pawn and equalises.",
+    "Black may also decline with ...d5 or ...Nf6 into quieter lines."
+  ],
+  "plans": {
+    "white": [
+      "Offer the pawn with c3 and recapture on c3 for fast development.",
+      "Deploy the bishop to c4 and the queen to b3 to hit f7.",
+      "Castle quickly and use the open central files with the rooks.",
+      "Choose the double-pawn Bc4 line for full Danish-style attacking chances.",
+      "Press the initiative before Black frees himself with ...d5."
+    ],
+    "black": [
+      "Accept the pawn but plan the freeing ...d5 to return it.",
+      "Neutralise the c4-bishop and complete development safely.",
+      "Decline with ...d5 or ...Nf6 to reach calmer Scotch-like play.",
+      "Guard the f7-square against Bc4 and Qb3 pressure.",
+      "Aim for an endgame where the sound structure counts."
+    ]
+  },
+  "related": [
+    "scotch-game",
+    "scotch-gambit",
+    "danish-gambit",
+    "ponziani-opening",
+    "italian-game"
+  ]
+}

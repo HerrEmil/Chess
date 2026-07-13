@@ -1,0 +1,103 @@
+{
+  "slug": "blackmar-diemer-gambit",
+  "eco": "D00",
+  "name": "Blackmar-Diemer Gambit",
+  "aka": ["BDG"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Blackmar-Diemer Gambit (1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3) sacrifices a pawn to blast open lines for a fierce attack.",
+  "intro": "The Blackmar-Diemer Gambit arises after 1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3, when White offers a pawn to prise open the f-file and the centre for rapid, aggressive development. After the typical 4...exf3 5.Nxf3, White enjoys a lead in development, open lines and long-term attacking chances against the black king. Enormously popular at club level and championed by a devoted following, it is respected as dangerous practical fare even though top theory holds that precise defence should neutralise the attack.",
+  "line": "d4 d5 e4 dxe4 Nc3 Nf6 f3",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "dxe4",
+      "from": 27,
+      "to": 36
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "f3",
+      "from": 53,
+      "to": 45
+    }
+  ],
+  "fen": "rnbqkb1r/ppp1pppp/5n2/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR b KQkq - 0 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Blackmar-Diemer is a genuine gambit: White gives a central pawn to obtain speed and open lines. After 4...exf3 5.Nxf3 the knight on f3, the half-open f-file and the smoothly developing bishops give White a natural attacking scheme built around Bd3 or Bc4, short castling, and the Qe1-h4 lift. The black king becomes the target, and White's initiative can crash through quickly if Black develops passively or greedily clings to the extra pawn.",
+        "For Black the message is clear: return the material at the right moment, complete development, and reach a sound position where the extra pawn or a solid structure outweighs White's activity. Well-timed defensive resources — trading pieces to blunt the attack, controlling the key central squares, and neutralising the Qe1-h4 manoeuvre — are the antidote. The strategic battle is therefore one of initiative against material: White must strike before Black consolidates, while Black must weather the storm and convert the long-term asset."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line is the accepted gambit, 4...exf3 5.Nxf3, after which Black chooses a development scheme. The most respected defences avoid greed: 5...e6 and 5...Bf5 develop pieces and prepare to castle, while 5...g6 aims for a solid fianchetto. White replies with Bd3 or Bc4, castles kingside, and reaches for the thematic Qe1-h4 lift to mass forces against h7 and the black king. The pinning 5...Bg4, tying down the f3-knight and returning pressure to White's centre, is another principled try.",
+        "Black also has ways to sidestep the main gambit. The Ryder Gambit, 5.Qxf3 in place of the knight recapture, offers still faster development and is a favourite of the boldest attackers, though it is objectively dubious against accurate defence. Move-order tries such as declining with an early ...e3 or ...Bf5, or transposing via related queen's-pawn openings, can steer play into calmer channels. In every case White's practical trumps are speed and attacking know-how, which is why the gambit scores far better in fast, club-level play than its theoretical reputation would suggest."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The gambit's name honours Armand Blackmar, a nineteenth-century New Orleans player who experimented with an early f-pawn thrust, and Emil Josef Diemer, the twentieth-century German who reshaped the move order into its modern form with 3.Nc3 and 4.f3 and tirelessly promoted it. Diemer's advocacy turned the opening into a cult favourite among attacking amateurs, complete with its own analytical literature. Although elite players avoid it and best play is held to leave Black comfortable, the Blackmar-Diemer endures as a proving ground for tactical skill and a perennially dangerous surprise weapon in club and online play."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White sacrifices a central pawn to open the f-file and the centre.",
+    "After 4...exf3 5.Nxf3 White develops fast with a natural kingside attack.",
+    "The thematic plan is Bd3/Bc4, short castling and the Qe1-h4 lift against h7.",
+    "Black should return the pawn and complete development rather than hoard it.",
+    "The Ryder Gambit (5.Qxf3) offers still faster play for a knockout.",
+    "Practical attacking chances outweigh the opening's shaky theoretical standing."
+  ],
+  "plans": {
+    "white": [
+      "Recapture with 5.Nxf3 and mobilise for a kingside attack.",
+      "Post a bishop on d3 or c4, castle short, and swing the queen to h4.",
+      "Open lines against the black king and exploit the half-open f-file.",
+      "Keep the initiative alive so Black never fully consolidates the extra pawn.",
+      "Consider the Ryder Gambit for maximum speed when playing for a knockout."
+    ],
+    "black": [
+      "Return the pawn at the right moment to defuse White's initiative.",
+      "Develop soundly with ...e6, ...Bf5 or ...g6 and castle to safety.",
+      "Pin the f3-knight with ...Bg4 to pressure White's centre.",
+      "Trade pieces to blunt the attack and reach a safe, sound position.",
+      "Convert the extra pawn or superior structure once the storm passes."
+    ]
+  },
+  "related": [
+    "richter-veresov-attack",
+    "trompowsky-attack",
+    "danish-gambit",
+    "albin-countergambit",
+    "queens-gambit"
+  ]
+}

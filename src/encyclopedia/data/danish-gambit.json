@@ -1,0 +1,103 @@
+{
+  "slug": "danish-gambit",
+  "eco": "C21",
+  "name": "Danish Gambit",
+  "aka": ["Nordic Gambit"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Danish Gambit (1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4) sacrifices one or two pawns to unleash two raking bishops at f7 and g7.",
+  "intro": "The Danish Gambit is a swashbuckling romantic-era opening beginning 1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4, where White offers one and often two pawns to accelerate development. The reward is a pair of powerful bishops on the a2-g8 and a1-h8 diagonals, bearing down on the sensitive f7- and g7-squares before Black can consolidate.",
+  "line": "e4 e5 d4 exd4 c3 dxc3 Bc4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "exd4",
+      "from": 28,
+      "to": 35
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    },
+    {
+      "san": "dxc3",
+      "from": 35,
+      "to": 42
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    }
+  ],
+  "fen": "rnbqkbnr/pppp1ppp/8/8/2B1P3/2p5/PP3PPP/RNBQK1NR b KQkq - 1 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Danish Gambit is built on a simple, aggressive idea: give up central pawns to gain a decisive lead in development and two long-range bishops. After 2.d4 exd4 3.c3 White offers the first pawn, and 3...dxc3 4.Bc4 completes the picture, since after the second capture on b2 White plays Bxb2 and both bishops rake toward the black kingside. The bishop on c4 eyes f7, the future bishop on b2 eyes g7, and together they make natural developing moves for Black feel dangerous.",
+        "In return for the material White relies on tempo and initiative rather than any structural asset, so the gambit is a race: White must open lines and attack before Black untangles and consolidates the extra pawns. The e-file, the diagonals and rapid piece deployment with Nf3, Ne2, O-O and Qb3 are the standard tools, often pointing at f7. If Black defends accurately and gives back some material at the right moment, the endgame favours the side with the sounder structure, which is precisely why modern theory treats the Danish with respect but also with a proven antidote."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The classical acceptance is 4...cxb2 5.Bxb2, when White has sacrificed two pawns for a raging initiative and the twin bishops; Black must then find precise defence, and the well-known equaliser is the counter-sacrifice 5...d5, returning material with ...d5 to blunt the c4-bishop and free the position. After 6.Bxd5 Nf6 (or 6...Bb4+ ideas) Black trades into a comfortable game, and this resource is the main reason the double-pawn Danish is not feared at the top level. White can instead decline the second pawn with 4.Nxc3, the Danish Gambit Declined by transposition to a Göring-style setup, keeping a modest but safer initiative.",
+        "Black also has entirely sound ways to sidestep the sharpest lines earlier. Declining with ...d5 in reply to 3.c3, or simply developing solidly and returning one pawn, are reliable roads to equality. Against the full gambit, the practical battle usually revolves around whether White's attack against f7 and the black king breaks through before Black completes development with ...d5, ...Nf6, ...Be7 and castling. Because the ...d5 defence is so effective, many modern adherents prefer to reach related positions via the Göring Gambit move order with the knights already developed."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Danish Gambit was popularised in the mid-nineteenth century and takes its name from the Danish player Martin Severin From, who employed it in international play; in some countries it is known as the Nordic Gambit. It flourished in the romantic era when rapid development and direct attacks on the king were prized above material, and it produced many brilliant miniatures. As defensive technique improved, the discovery that Black can neutralise the two bishops with a timely ...d5 counter-sacrifice relegated the Danish to a surprise weapon, but it remains a beloved teaching opening for demonstrating the value of the initiative and the strength of bishops on open diagonals."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White sacrifices one or two pawns for a lead in development.",
+    "The bishops on c4 and b2 rake toward f7 and g7.",
+    "Compensation is dynamic, based on tempo rather than structure.",
+    "The gambit is a race to attack before Black consolidates.",
+    "Black's ...d5 counter-sacrifice neutralises the raking bishops.",
+    "Often reached via the Göring move order with knights developed."
+  ],
+  "plans": {
+    "white": [
+      "Complete the bishop pair with Bc4 and Bxb2, aiming at f7 and g7.",
+      "Develop quickly with Nf3, Ne2 and castle to open lines fast.",
+      "Deploy the queen to b3 to double pressure on the f7-square.",
+      "Open the centre and e-file before Black finishes developing.",
+      "Consider declining the second pawn with Nxc3 for a safer initiative."
+    ],
+    "black": [
+      "Accept the pawns but be ready to return material at the right moment.",
+      "Play the freeing ...d5 counter-sacrifice to blunt the c4-bishop.",
+      "Develop solidly with ...Nf6, ...Be7 and rapid castling.",
+      "Guard the f7-square and untangle before White's attack lands.",
+      "Steer toward an endgame where the sounder structure tells."
+    ]
+  },
+  "related": [
+    "center-game",
+    "goring-gambit",
+    "scotch-gambit",
+    "evans-gambit",
+    "kings-gambit"
+  ]
+}

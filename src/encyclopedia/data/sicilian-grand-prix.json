@@ -1,0 +1,93 @@
+{
+  "slug": "sicilian-grand-prix",
+  "eco": "B23",
+  "name": "Sicilian Grand Prix Attack",
+  "aka": ["Grand Prix Attack"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Grand Prix Attack (1.e4 c5 2.Nc3 Nc6 3.f4) is an aggressive anti-Sicilian aimed at a direct kingside assault.",
+  "intro": "The Grand Prix Attack is an aggressive anti-Sicilian reached after 1.e4 c5 2.Nc3 Nc6 3.f4. Instead of entering the vast theory of the Open Sicilian with an early d4, White develops behind the f-pawn and plays for a rapid attack against Black's king. It is a favourite of club and tournament players who want a clear, attacking plan against the Sicilian without memorising reams of theory.",
+  "line": "e4 c5 Nc3 Nc6 f4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "f4",
+      "from": 53,
+      "to": 37
+    }
+  ],
+  "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq f3 0 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Grand Prix Attack sidesteps the Open Sicilian entirely: by holding back d4 and instead playing f4, White signals an immediate intention to attack on the kingside rather than fight over the centre. The f-pawn gains space, supports a later e4-e5 or f4-f5 advance, and opens lines for the pieces toward Black's castled king. White typically develops with Nf3, Bb5 or Bc4, and O-O, then throws pawns and pieces forward, often lifting a rook or swinging the queen toward the kingside. The whole approach trades theoretical depth for a straightforward, thematic attacking plan.",
+        "The signature manoeuvre is the queen lift Qe1-h4, redeploying the queen to the kingside to join an assault spearheaded by f4-f5, which can rip open the f-file and the diagonal toward Black's king. When White fianchettoes with g3 and Bg2 in some move orders, the attack takes a different shape, but the recurring theme is a pawn storm supported by well-placed minor pieces. Black, for his part, seeks counterplay on the queenside and against White's slightly loosened structure, since the f4-advance weakens the e4-pawn and the a7-g1 diagonal. The resulting middlegames are sharp and double-edged, with each side racing to attack on opposite wings."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "There are two main handlings of the White pieces. The classical Grand Prix set-up develops the king's bishop to c4, eyeing f7, but this runs into the well-known reply ...e6 and ...d5, blunting the bishop, so modern practice usually prefers the Bb5 lines, exchanging the light-squared bishop for the c6-knight to weaken Black's structure and speed up the attack. A typical sequence runs 3.f4 g6 4.Nf3 Bg7 5.Bb5, when the trade on c6 gives White a free hand to advance in the centre and on the kingside. The move order with an early Bb5 (before f4) is a common way to reach the same ideas.",
+        "Black's most reliable systems involve a kingside fianchetto with ...g6 and ...Bg7, meeting the coming pawn storm with a solid, flexible set-up and counterplay down the c-file. Alternatively Black plays ...e6 and ...d5, striking at the centre to open lines before White's attack gathers pace, which is why the Bc4 lines have fallen out of favour. Against accurate defence the attack can be held, so much of the theory concerns whether White's kingside initiative outweighs the structural concessions created by the f4-advance. In practice the opening scores well below master level, where the direct attacking plans are dangerous to face without preparation."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The opening takes its name from the English 'Grand Prix' weekend tournament circuit of the 1970s and 1980s, where it became enormously popular among players who wanted an aggressive, easy-to-learn weapon against the Sicilian in fast-paced events. British players in particular did much to develop and popularise its ideas during that period. Although top grandmasters more often prefer other anti-Sicilians today, the Grand Prix Attack remains a respected and thoroughly practical try, especially at club and rapid time controls, where its clear attacking plans and modest theoretical demands make it a perennial favourite."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3.f4 avoids the Open Sicilian and prepares a direct kingside attack.",
+    "The f-pawn supports an f4-f5 break to open lines toward Black's king.",
+    "The queen lift Qe1-h4 brings the queen into the kingside assault.",
+    "Modern practice prefers Bb5 to Bc4, trading to weaken Black's structure.",
+    "Black seeks counterplay on the queenside and against the loosened e4-pawn.",
+    "Low-theory, plan-based attacking weapon, especially strong below master level."
+  ],
+  "plans": {
+    "white": [
+      "Develop with Nf3, Bb5 (or Bc4), and O-O, then attack on the kingside.",
+      "Advance f4-f5 to prise open lines against Black's king.",
+      "Lift the queen with Qe1-h4 to reinforce the kingside attack.",
+      "Trade Bxc6 to damage Black's structure and free the attack.",
+      "Use the e4-e5 break to gain space and open diagonals."
+    ],
+    "black": [
+      "Fianchetto with ...g6 and ...Bg7 for a solid, flexible defence.",
+      "Generate queenside counterplay down the half-open c-file.",
+      "Strike in the centre with ...e6 and ...d5 to open lines early.",
+      "Target the e4-pawn and the squares weakened by f4.",
+      "Complete development quickly and castle before the pawn storm arrives."
+    ]
+  },
+  "related": [
+    "sicilian-defense",
+    "sicilian-closed",
+    "sicilian-alapin",
+    "sicilian-rossolimo",
+    "kings-gambit"
+  ]
+}

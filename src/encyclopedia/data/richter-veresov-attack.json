@@ -1,0 +1,93 @@
+{
+  "slug": "richter-veresov-attack",
+  "eco": "D01",
+  "name": "Richter-Veresov Attack",
+  "aka": ["Veresov Opening"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Richter-Veresov, 1.d4 d5 2.Nc3 Nf6 3.Bg5, is an aggressive queen's-pawn system pinning f6 to prepare an e4 break.",
+  "intro": "The Richter-Veresov Attack begins 1.d4 d5 2.Nc3 Nf6 3.Bg5, deploying the knight and bishop to pin the f6-knight and to support a quick central advance. Sometimes dubbed the queen's-pawn Ruy Lopez for its early Bg5 and knight development, it is a more aggressive and less-charted d4 system than the mainstream openings, aiming for an f3 and e4 break. Its flexible move order can transpose toward Trompowsky or Blackmar-Diemer structures, making it a favourite surprise weapon for players who relish sharp, original positions.",
+  "line": "d4 d5 Nc3 Nf6 Bg5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Bg5",
+      "from": 58,
+      "to": 30
+    }
+  ],
+  "fen": "rnbqkb1r/ppp1pppp/5n2/3p2B1/3P4/2N5/PPP1PPPP/R2QKBNR b KQkq - 3 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The point of 2.Nc3 and 3.Bg5 is to build up quickly against the f6-knight and the e4-square. By pinning the knight, White prepares to play f3 and e4, blasting open the centre in a way that ordinary closed queen's-pawn openings avoid. The unusual placement of the knight on c3, blocking the c-pawn, is the price of this speed: White forgoes the c2-c4 lever entirely, banking instead on rapid piece play and a central pawn break to generate the initiative.",
+        "Strategically the opening is a bid for early activity at the cost of long-term structural soundness. If White achieves e4 under good circumstances, the pieces spring to life and Black can face a real attack; if Black neutralises the break, the committal knight on c3 and the absence of c4 can leave White's position slightly loose. The dark-squared bishop on g5 is central to the plan, and the recurring decision of whether to maintain the pin, retreat, or capture on f6 to inflict doubled pawns shapes almost every line."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "Black's principal replies challenge the bishop or the centre at once. The straightforward 3...Nbd7 supports f6 and prepares ...e5 or ...c5, while 3...c6 and 3...Bf5 aim for solid, comfortable development in the spirit of the Caro-Kann and Slav. The critical test is 3...c5, hitting d4 immediately and questioning whether White's committal set-up can withstand direct central counterplay. After the natural 3...h6 White again chooses between 4.Bxf6, doubling Black's pawns for the bishop pair, and 4.Bh4 keeping the tension.",
+        "White's own ambitions usually centre on the f3 and e4 advance, sometimes prepared by Qd3 or O-O-O to castle long and storm the kingside. A key transpositional resource is that the Veresov shades into Trompowsky territory when Black meets an early Bg5 with ...Ne4, and into Blackmar-Diemer-style gambit play if White is willing to sacrifice a pawn to prise open the centre. Black's soundest recipes are to develop naturally, complete kingside castling before White's break lands, and use the slightly awkward c3-knight and missing c-pawn lever to claim a comfortable, well-founded game."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The opening carries the names of the German master Kurt Richter and the Belarusian player Gavriil Veresov, who between the 1930s and 1960s explored and championed the 3.Bg5 set-up against the queen's-pawn defences. It has never been a front-line theoretical battleground, and against accurate defence it promises no objective advantage, but it has retained a devoted following as an offbeat, aggressive alternative to the Queen's Gambit. Its enduring appeal lies in taking well-prepared opponents out of book early and steering the game toward the sharp, tactical middlegames its adherents enjoy, whether by direct assault or by transposition to related d4 systems."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "2.Nc3 and 3.Bg5 rapidly pressure the f6-knight and the e4-square.",
+    "White's whole plan is built around achieving an f3 and e4 break.",
+    "The knight on c3 blocks the c-pawn, so White forgoes the c4 lever.",
+    "An aggressive, less-charted system that trades soundness for early activity.",
+    "The Bg5 pin invites Bxf6 to inflict doubled pawns for the bishop pair.",
+    "Move order can transpose toward Trompowsky and Blackmar-Diemer play."
+  ],
+  "plans": {
+    "white": [
+      "Pin the f6-knight with Bg5 and prepare the f3-e4 break.",
+      "Castle queenside and launch a kingside pawn storm.",
+      "Capture on f6 to double Black's pawns and keep the bishop pair.",
+      "Use rapid piece play to compensate for the missing c4 lever.",
+      "Consider a Blackmar-Diemer-style pawn sacrifice to open the centre."
+    ],
+    "black": [
+      "Strike at the centre immediately with ...c5.",
+      "Support f6 with ...Nbd7 and prepare ...e5 or ...c5.",
+      "Develop solidly with ...c6 and ...Bf5 in Caro-Kann style.",
+      "Challenge the bishop with ...h6 or jump in with ...Ne4.",
+      "Castle and complete development before White's e4 break arrives."
+    ]
+  },
+  "related": [
+    "trompowsky-attack",
+    "torre-attack",
+    "london-system",
+    "queens-gambit",
+    "blackmar-diemer-gambit"
+  ]
+}

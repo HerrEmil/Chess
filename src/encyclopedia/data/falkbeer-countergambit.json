@@ -1,0 +1,97 @@
+{
+  "slug": "falkbeer-countergambit",
+  "eco": "C31",
+  "name": "Falkbeer Countergambit",
+  "aka": ["Falkbeer Counter-Gambit"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Falkbeer Countergambit (1.e4 e5 2.f4 d5 3.exd5 e4) answers the King's Gambit with a central counterstrike for rapid development.",
+  "intro": "The Falkbeer Countergambit meets the King's Gambit head-on: after 1.e4 e5 2.f4 d5 3.exd5, Black plays 3...e4, declining to take the f-pawn and instead advancing a cramping wedge into White's position. In return for the sacrificed d5-pawn Black gains space, a lead in development and open lines, turning White's aggression back on itself.",
+  "line": "e4 e5 f4 d5 exd5 e4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "f4",
+      "from": 53,
+      "to": 37
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "exd5",
+      "from": 36,
+      "to": 27
+    },
+    {
+      "san": "e4",
+      "from": 28,
+      "to": 36
+    }
+  ],
+  "fen": "rnbqkbnr/ppp2ppp/8/3P4/4pP2/8/PPPP2PP/RNBQKBNR w KQkq - 0 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The whole point of 2...d5 is to refuse the King's Gambit on its own terms: instead of grabbing the f4-pawn, Black opens the centre while White's f-pawn is committed and his king still uncastled. After 3.exd5 e4 the advanced e-pawn is the soul of the variation, cramping White by denying the natural Nf3 development square and giving Black a spatial grip in the centre. Black is happy to be a pawn down because the wedge on e4, quick piece play and the exposed white king promise more than enough compensation.",
+        "White's task is to neutralise and then win the e4-pawn without falling behind in development. Typical methods include d3 to undermine the wedge directly, and careful handling of the knights, since the f3-square is off-limits while the pawn stands on e4. If White manages to consume the e4-pawn and complete development, the extra pawn tells; if Black keeps the wedge propped up and the lines open, the initiative can become overwhelming. The struggle therefore hinges on the fate of that single advanced pawn and on which king finds safety first."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line is 4.d3, striking at the e4-pawn at once, when 4...Nf6 develops with pressure and 5.dxe4 Nxe4 restores material balance but leaves a lively, roughly level middlegame where Black's activity offsets White's structure. This has long been considered the critical test, and modern practice regards it as somewhat better for White with accurate play, which is why the whole countergambit is treated as a fighting rather than fully equalising choice. Black must be ready to recapture actively and to justify the pawn with fast development and central pressure.",
+        "The Nimzowitsch Variation, 3...c6, is an important independent branch in which Black offers a further pawn to open the c-file and accelerate development, leading to sharp and less charted positions. Other tries revolve around how Black recovers the d5-pawn and where the knights and bishops go, with ...Nf6, ...Bc5 and quick castling being standard. White, meanwhile, chooses between the solid d3 approach and more ambitious attempts to hold the extra material, but must always reckon with the difficulty of developing the kingside while the e4-pawn cramps him."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The countergambit is named after the nineteenth-century Austrian master Ernst Falkbeer, who championed 2...d5 as an antidote to the then-ubiquitous King's Gambit, shifting the argument from material to the centre. It became a fashionable weapon in the romantic era precisely because it refused to play White's game, and the 3...e4 advance came to define the variation. Although later analysis, especially of the 4.d3 line, showed that White can claim a small pull, the Falkbeer remains a respected and thematically instructive way to counter the King's Gambit, valued for teaching the power of a central counterstrike and rapid development over pawn-grabbing."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black answers the King's Gambit with the central strike 2...d5.",
+    "After 3.exd5 the thrust 3...e4 plants a cramping wedge in the centre.",
+    "The e4-pawn denies White the natural Nf3 development square.",
+    "Black sacrifices the d5-pawn for space, development and open lines.",
+    "White aims to undermine e4 with d3 and convert the extra pawn.",
+    "The Nimzowitsch line 3...c6 offers a further pawn to open the c-file."
+  ],
+  "plans": {
+    "white": [
+      "Challenge the wedge immediately with d3 to break up the e4-pawn.",
+      "Develop the knights carefully while the f3-square is unavailable.",
+      "Recapture on e4 and steer toward positions where the extra pawn matters.",
+      "Complete kingside development and castle out of the exposed centre.",
+      "Return material if needed to blunt Black's initiative and stay solid."
+    ],
+    "black": [
+      "Advance ...e4 to cramp White and deny the f3-square to the knight.",
+      "Develop rapidly with ...Nf6, ...Bc5 and quick castling.",
+      "Prop up the e4-pawn and keep the central lines working for the attack.",
+      "Recover the d5-pawn actively rather than materialistically.",
+      "Consider the Nimzowitsch ...c6 to open lines at the cost of a pawn."
+    ]
+  },
+  "related": [
+    "kings-gambit",
+    "kings-gambit-declined",
+    "danish-gambit",
+    "open-game"
+  ]
+}

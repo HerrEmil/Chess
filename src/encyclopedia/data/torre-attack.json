@@ -1,0 +1,93 @@
+{
+  "slug": "torre-attack",
+  "eco": "A46",
+  "name": "Torre Attack",
+  "aka": ["Torre Attack"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Torre Attack, 1.d4 Nf6 2.Nf3 e6 3.Bg5, is a solid low-theory system pinning the knight before a later e4 break.",
+  "intro": "The Torre Attack arises after 1.d4 Nf6 2.Nf3 e6 3.Bg5, developing the dark-squared bishop outside the pawn chain to pin or pressure the f6-knight. It is a system opening: rather than a forcing main line, White aims for a reliable, easily-learned set-up with e3, Nbd2, c3 and often a later e4 advance. A d4 cousin of the London and Colle, the Torre trades opening-theory memorisation for sound development and clear middlegame plans.",
+  "line": "d4 Nf6 Nf3 e6 Bg5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Bg5",
+      "from": 58,
+      "to": 30
+    }
+  ],
+  "fen": "rnbqkb1r/pppp1ppp/4pn2/6B1/3P4/5N2/PPP1PPPP/RN1QKB1R b KQkq - 1 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining move is 3.Bg5, which develops the dark-squared bishop to an active post before it can be shut in by a later e3, the persistent problem of the closely-related Colle System. By pinning or pressuring the f6-knight, White gains a small lever against Black's control of the e4-square and often the option to double Black's pawns with Bxf6. Behind the bishop, White completes a compact structure with e3, Bd3, Nbd2 and c3, a formation that is robust against almost anything Black does.",
+        "The Torre is best understood as a plan rather than a variation. White develops quickly, keeps the position flexible, and looks for the right moment to strike in the centre with e3-e4 or to expand on the kingside once castled. Because the set-up is so self-contained, White can steer many different Black defences into familiar structures and rely on understanding rather than memory. The trade-off is modesty of ambition: correctly met, the Torre promises only a small pull, so its value lies in soundness and in sidestepping Black's deeply-prepared main-line defences."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 1.d4 Nf6 2.Nf3 e6 3.Bg5 Black's most principled reply is 3...h6, immediately questioning the bishop. White then chooses between 4.Bxf6, damaging Black's structure in return for the bishop pair, and the retreat 4.Bh4, maintaining the pin and the tension. A major alternative move order sees Black play 3...c5, striking at d4 and inviting White to react with c3 and Nbd2, keeping a solid centre while preparing e4. Against a kingside fianchetto with ...g6, White often prefers a set-up with Nbd2, e4 and c3, treating the position more like a Pirc reversed.",
+        "The typical Torre middlegames flow from these choices. If White captures on f6, play centres on the bishop pair and open lines against a slightly damaged black kingside; if White keeps the pin, the game is more manoeuvring, with a well-timed e4 as the thematic break. Black's soundest antidotes involve early central counterplay with ...c5 and ...d5, or a quick ...Be7, ...O-O and ...b6 to develop the light-squared bishop and neutralise White's pressure. Because the Torre frequently transposes to and from the London, Colle and even Queen's Gambit structures, alertness to move order matters as much as knowledge of any single line."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The opening is named after the Mexican master Carlos Torre, whose brilliant games in the 1920s brought the 3.Bg5 set-up to wider attention. Never a fixture of the highest-level main-line repertoire, it earned a lasting place as a practical system weapon, prized for letting a player reach comfortable, well-understood middlegames without wrestling the vast theory of the Nimzo-Indian, Queen's Gambit or King's Indian. It has been employed as a surprise and a workhorse by many strong grandmasters seeking a quiet but purposeful game with the white pieces, and it remains a popular choice for club players who value structure over memorisation."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3.Bg5 develops the dark bishop outside the pawn chain, unlike the Colle.",
+    "The pin on f6 pressures the e4-square and threatens Bxf6.",
+    "A system opening: e3, Bd3, Nbd2 and c3 with a later e4 break.",
+    "Understanding plans matters more than memorising forcing lines.",
+    "Frequently transposes to and from London, Colle and Queen's Gambit structures.",
+    "Promises a small, safe edge while sidestepping Black's main-line preparation."
+  ],
+  "plans": {
+    "white": [
+      "Develop the bishop to g5 to pin f6 before playing e3.",
+      "Build the compact e3, Bd3, Nbd2, c3 formation.",
+      "Prepare and time the central e3-e4 advance.",
+      "Capture with Bxf6 to win the bishop pair and open lines.",
+      "Expand on the kingside once safely castled."
+    ],
+    "black": [
+      "Challenge the bishop at once with ...h6.",
+      "Strike at the centre with ...c5 and ...d5 for counterplay.",
+      "Complete development with ...Be7, ...O-O and ...b6.",
+      "Fianchetto the light bishop to neutralise White's pressure.",
+      "Exploit any move-order inaccuracy to equalise cleanly."
+    ]
+  },
+  "related": [
+    "london-system",
+    "trompowsky-attack",
+    "colle-system",
+    "richter-veresov-attack",
+    "queens-gambit"
+  ]
+}

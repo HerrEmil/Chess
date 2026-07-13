@@ -1,0 +1,108 @@
+{
+  "slug": "qgd-exchange",
+  "eco": "D35",
+  "name": "Queen's Gambit Declined: Exchange",
+  "aka": ["QGD Exchange Variation", "Exchange Variation"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The QGD Exchange (cxd5 exd5) fixes a Carlsbad structure pitting White's minority attack against Black's central counterplay.",
+  "intro": "The Exchange Variation of the Queen's Gambit Declined arises after 1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.cxd5 exd5, when White resolves the central tension and fixes the classic Carlsbad pawn structure. The clarified position defines the strategic battle sharply: White typically launches a queenside minority attack while Black seeks central and kingside counterplay. Far from a drawish simplification, the Exchange is a rich positional battleground that has served world champions on both sides of the board.",
+  "line": "d4 d5 c4 e6 Nc3 Nf6 cxd5 exd5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "cxd5",
+      "from": 34,
+      "to": 27
+    },
+    {
+      "san": "exd5",
+      "from": 20,
+      "to": 27
+    }
+  ],
+  "fen": "rnbqkb1r/ppp2ppp/5n2/3p4/3P4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "By capturing on d5 White fixes the Carlsbad structure, in which Black's c7- and d5-pawns face White's b2- and d4-pawns, leaving each side a half-open file — the c-file for White, the e-file for Black. White's signature plan is the minority attack: pushing b2-b4-b5 and exchanging on c6 to saddle Black with a weak, backward pawn that White's pieces can besiege down the half-open c-file. The manoeuvre is slow and positional, and executing it accurately — including the supporting rook lifts and knight regroupings to c5 or e5 — is a model theme of instructive chess.",
+        "Black meets the plan with counterplay in the centre and on the kingside. The freeing regrouping ...Ne4, exchanging pieces and gaining space, and the pawn break ...f5 to launch a kingside advance are the standard antidotes, aiming to generate threats faster than White's queenside operation matures. Piece placement is critical: the fight often revolves around the c5, e5 and e4 outposts, the fate of the light-squared bishops, and whether Black can become active before the minority attack creates a lasting weakness. If White's break succeeds Black is left defending a chronic pawn weakness; if Black's counterattack lands first the initiative can swing the other way."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "A defining choice for White is where to place the king's bishop and knight. The classical main line features Bg5, pinning the f6-knight, followed by e3, Bd3, Qc2 and short castling, after which White prepares b4-b5. Black responds with ...Be7, ...O-O, ...Nbd7 and ...Re8 and, at the right moment, the regrouping ...Ne4 or ...Nf8-g6 to redirect pieces towards the kingside. The route of Black's queen's knight — whether it heads for d7 or via ...Na6-c7 to bolster the queenside — is a key strategic decision.",
+        "Modern practice has also embraced setups with Nge2 rather than Nf3, so that White can support the f3 and g4 advances and pursue a kingside plan rather than committing to the minority attack. Black's most reliable equalising schemes revolve around timely central action with ...c5 or ...Ne4, or the kingside expansion ...f5 backed by piece play. The choice between these plans, for both colours, gives the Exchange its strategic depth: it is less about memorised lines than about correctly judging which wing to open and when."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Carlsbad structure takes its name from the great tournaments held at Carlsbad in the early twentieth century, where the Exchange Variation and its minority-attack plans were extensively tested and refined. The line became a favoured positional weapon of numerous world champions, prized for handing White a clear, low-risk plan with lasting pressure. Its instructional value — as a textbook illustration of the minority attack, the backward pawn, and the race between opposing plans on opposite wings — has made it a staple of chess teaching, and it remains fully respected in contemporary grandmaster practice."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "4.cxd5 exd5 fixes the classic Carlsbad pawn structure.",
+    "White's signature plan is the minority attack with b4-b5.",
+    "The minority attack aims to leave Black a weak, backward c-pawn.",
+    "Black counters with the ...Ne4 regrouping and the kingside break ...f5.",
+    "The game often becomes a race between plans on opposite wings.",
+    "A model teaching position for structure-based positional chess."
+  ],
+  "plans": {
+    "white": [
+      "Fix the Carlsbad structure and prepare the minority attack.",
+      "Advance b2-b4-b5 and exchange to create a weak black c-pawn.",
+      "Pin with Bg5 and develop e3, Bd3, Qc2 and short castling.",
+      "Occupy the half-open c-file and pressure the resulting weakness.",
+      "Alternatively, choose Nge2 and play for f3-g4 on the kingside."
+    ],
+    "black": [
+      "Meet the minority attack with central and kingside counterplay.",
+      "Reroute with ...Ne4 to exchange pieces and gain space.",
+      "Prepare the ...f5 break to launch a kingside advance.",
+      "Contest the c-file and shore up the c6-pawn against the minority attack.",
+      "Develop the queen's knight to its best square, via d7 or ...Na6-c7."
+    ]
+  },
+  "related": [
+    "queens-gambit-declined",
+    "queens-gambit",
+    "tarrasch-defense",
+    "semi-slav-defense",
+    "catalan-opening"
+  ]
+}
