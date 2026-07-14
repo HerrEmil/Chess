@@ -1,0 +1,102 @@
+{
+  "slug": "qgd-alatortsev",
+  "eco": "D31",
+  "name": "Queen's Gambit Declined: Alatortsev",
+  "aka": ["Alatortsev System"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Alatortsev System is a solid Queen's Gambit Declined where Black plays ...Be7 early and recaptures ...exd5 into a Carlsbad structure.",
+  "intro": "The Alatortsev System is an offbeat but thoroughly sound branch of the Queen's Gambit Declined in which Black commits the dark-squared bishop to e7 before developing the king's knight. By inviting the exchange 4.cxd5 exd5, Black steers the game into a Carlsbad pawn structure on his own terms, with the bishop already sensibly placed and the familiar minority-attack middlegame looming.",
+  "line": "d4 d5 c4 e6 Nc3 Be7 cxd5 exd5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    },
+    {
+      "san": "cxd5",
+      "from": 34,
+      "to": 27
+    },
+    {
+      "san": "exd5",
+      "from": 20,
+      "to": 27
+    }
+  ],
+  "fen": "rnbqk1nr/ppp1bppp/8/3p4/3P4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining feature is Black's move order: by playing 3...Be7 rather than 3...Nf6, Black keeps the king's knight uncommitted and encourages White to release the central tension with cxd5. After 4.cxd5 exd5 the position is a classic Carlsbad structure, with black pawns on d5 and c7 facing white pawns on d4 and a coming e3, and the half-open files, the c-file for White and the e-file for Black, defining the strategic battle. Because Black has already developed the bishop to e7, he sidesteps some of the tempo losses and awkward bishop placements that crop up in other QGD move orders.",
+        "In these structures White's traditional plan is the minority attack, advancing b2-b4-b5 to provoke a weakness on Black's queenside, typically a backward c-pawn or an isolated pawn after bxc6. Black counters either by seeking piece activity and a kingside pawn advance with ...f5 and a knight route to e4, or by fighting for the c-file when the pawns are exchanged. The early ...Be7 supports a smooth ...Nf6, ...O-O, ...Re8 and ...Bf8 regrouping, and can make it easier for Black to reroute a knight to the strong e4 outpost that characterises well-handled Carlsbad defences."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line begins 1.d4 d5 2.c4 e6 3.Nc3 Be7 4.cxd5 exd5, after which White most often continues 5.Bf4 or 5.Bg5, developing the queen's bishop actively before playing e3 and Bd3. A natural continuation is 5.Bf4 Nf6 6.e3 O-O 7.Bd3 c6, transposing into standard Carlsbad positions where White prepares Qc2, Nge2 or Nf3 and the minority attack. If White instead declines the early exchange, Black can transpose back into orthodox QGD channels, so the Alatortsev is as much a move-order device as an independent system.",
+        "A key point is that Black is comfortable if White avoids cxd5, since ...Be7 fits every mainstream QGD plan; the trade simply commits both sides to the Carlsbad battle sooner. When White chooses 5.Bg5, Black can consider ...Bd6 and ...f6 setups or the solid ...Nf6, ...c6 and ...Bf5 development that contests the light squares before White's bishop reaches d3. These positions share much with the Exchange Variation of the QGD, yet Black's specific move order gives him extra flexibility in deciding where the knights and light-squared bishop belong, unlike the more committal Cambridge Springs approach with an early ...Qa5."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The system is named after the Soviet master Vladimir Alatortsev, who explored these ...Be7 and ...exd5 move orders in the mid-twentieth century as a reliable way to reach Carlsbad structures with an improved version of Black's setup. It has never been a mainstream headline choice, but it has retained a following among positional players who prefer to dictate the pawn structure early and sidestep sharper theoretical debates. Like several classical QGD lines it is periodically revisited by modern grandmasters looking for a solid, low-maintenance answer to 1.d4."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black plays 3...Be7 before ...Nf6, keeping the king's knight flexible and inviting cxd5.",
+    "After 4.cxd5 exd5 the game reaches a Carlsbad structure with the bishop already well placed.",
+    "The struggle centres on White's minority attack b4-b5 against Black's queenside pawns.",
+    "Black seeks the e4 outpost and kingside activity to offset White's queenside play.",
+    "The early ...Be7 makes the standard ...Re8 and ...Bf8 regrouping smooth and natural.",
+    "The line doubles as a move-order tool that can transpose back to orthodox QGD setups."
+  ],
+  "plans": {
+    "white": [
+      "Release the tension with cxd5 to enter a Carlsbad structure and target the queenside.",
+      "Prepare the minority attack with a3, b4, Rb1 and b5 to create a weak black c-pawn.",
+      "Develop the queen's bishop actively to f4 or g5 before playing e3 and Bd3.",
+      "Post a knight on e5 or reroute via Nge2-g3 to pressure Black's kingside and centre.",
+      "Contest the c-file and pile up on any backward or isolated pawn that results from b5."
+    ],
+    "black": [
+      "Recapture with ...exd5 and build the standard ...Nf6, ...O-O, ...c6 Carlsbad set-up.",
+      "Regroup with ...Re8, ...Bf8 and ...Nbd7 to prepare a knight leap to e4.",
+      "Meet the minority attack by fighting for the c-file and keeping the pawns compact.",
+      "Prepare ...f5 or ...Ne4 to generate kingside and central counterplay.",
+      "Develop the light-squared bishop to f5 or g4 before White plays Bd3 to blunt it."
+    ]
+  },
+  "related": ["queens-gambit-declined", "qgd-exchange", "slav-defense"]
+}

@@ -1,0 +1,126 @@
+{
+  "slug": "qgd-cambridge-springs",
+  "eco": "D52",
+  "name": "Queen's Gambit Declined: Cambridge Springs",
+  "aka": ["Cambridge Springs Defence"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Cambridge Springs Defence is a counterattacking Queen's Gambit Declined where Black plays an early ...Qa5 to target White's queenside.",
+  "intro": "The Cambridge Springs Defence is a resourceful branch of the Queen's Gambit Declined in which Black postpones ...Be7 and instead develops with ...Nbd7 and ...c6 before uncorking 6...Qa5. By pinning nothing yet threatening plenty, Black generates immediate pressure against the c3-knight and the g5-bishop, turning a normally sedate structure into a genuine counterattack.",
+  "line": "d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 e3 c6 Nf3 Qa5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Bg5",
+      "from": 58,
+      "to": 30
+    },
+    {
+      "san": "Nbd7",
+      "from": 1,
+      "to": 11
+    },
+    {
+      "san": "e3",
+      "from": 52,
+      "to": 44
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Qa5",
+      "from": 3,
+      "to": 24
+    }
+  ],
+  "fen": "r1b1kb1r/pp1n1ppp/2p1pn2/q2p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R w KQkq - 2 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The point of 6...Qa5 is to combine development with concrete threats: the queen and the knight on d7 both bear down on the c3-knight, which is additionally loosened once the bishop on g5 is challenged. Black often follows with ...Bb4 and ...Ne4, exploiting the fact that White's dark-squared bishop has strayed from the defence of the queenside. Because the light-squared bishop still sits on c8, Black's whole scheme is built around piece pressure rather than pawn breaks, and White must answer accurately to avoid dropping the c4-pawn or getting the c3-knight tangled up.",
+        "Structurally the position remains a classical Carlsbad-type formation with pawns on d5 and e6 against d4 and e3, but the early queen sortie gives the game a sharper, more tactical flavour than the main-line Orthodox QGD. White's most reliable replies are 7.Nd2, unpinning and preparing to challenge the black queen, and 7.cxd5, clarifying the centre before Black's pieces reach their best squares. If White drifts, motifs such as ...Ne4, ...Bb4 and ...dxc4 can leave the c3-knight overloaded or hand Black the bishop pair, so precise move orders matter for both sides."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.e3 c6 6.Nf3 Qa5, the principled main line runs 7.Nd2, when White breaks the potential pin and eyes both cxd5 and Nb3 to harass the queen. Black usually continues 7...Bb4 8.Qc2, and the ensuing struggle centres on whether Black can profitably capture on c4 or must retreat and regroup. A well-known alternative is 7.cxd5, when 7...Nxd5 offers Black active piece play, while 7...exd5 keeps a more solid but slightly passive structure.",
+        "White's other tries include 7.Bd3 and the simplifying 7.Bxf6, which concedes the bishop pair to blunt Black's initiative. The exchange 7.Bxf6 Nxf6 removes a key attacker of c3 and steers toward a calmer, more strategic middlegame where White hopes the queen on a5 will prove misplaced. Throughout these lines Black must be ready to meet an eventual e3-e4 or a queenside expansion, and the resulting positions reward accurate piece coordination over memorised theory, distinguishing the Cambridge Springs from the more purely positional Orthodox and Lasker systems."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The defence takes its name from the Cambridge Springs tournament of 1904 in the United States, where it drew attention as a combative answer to the fashionable 4.Bg5 lines of the day. It became a favourite of classical-era masters seeking counterplay against the Queen's Gambit and has remained a respected surprise weapon, periodically revived by grandmasters who value its blend of solidity and hidden venom. Modern theory regards it as fully sound provided White knows the standard antidotes, and it continues to appeal to players who enjoy meeting the QGD with early, concrete piece pressure."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black delays ...Be7 in favour of ...Nbd7 and ...c6, keeping the option of the aggressive ...Qa5 sortie.",
+    "The move ...Qa5 pins nothing directly but combines with ...Nbd7 to double the attackers on the c3-knight.",
+    "Because White's bishop has left the queenside, ...Bb4 and ...Ne4 can win the bishop pair or overload the knight.",
+    "Tactics often revolve around a timely ...dxc4 followed by pressure on an overloaded c3-knight.",
+    "White neutralises the idea most reliably with 7.Nd2 or by clarifying the centre with 7.cxd5.",
+    "The exchange 7.Bxf6 concedes the bishop pair to defuse Black's initiative and reach a calmer game."
+  ],
+  "plans": {
+    "white": [
+      "Play 7.Nd2 to unpin, defend c3, and prepare Nb3 harassing the black queen on a5.",
+      "Consider 7.cxd5 to resolve the central tension before Black's pieces reach ideal squares.",
+      "Meet ...Bb4 with Qc2, keeping the queenside intact and eyeing e3-e4 or a later a3.",
+      "Trade with Bxf6 when appropriate to remove an attacker of c3 and blunt Black's counterplay.",
+      "Aim for a favourable Carlsbad structure with the minority attack b4-b5 once Black's queen is offside."
+    ],
+    "black": [
+      "Complete the ...Qa5, ...Bb4, ...Ne4 plan to pressure c3 and pry apart White's queenside.",
+      "Time ...dxc4 to open lines and exploit any overload on the c3-knight.",
+      "Keep the light-squared bishop flexible, developing it via ...b6 and ...Bb7 or after ...dxc4.",
+      "Castle short quickly so the queen sortie is backed by a safe king and connected rooks.",
+      "If White exchanges on f6, regroup the queen and aim for a solid, equal Carlsbad middlegame."
+    ]
+  },
+  "related": [
+    "queens-gambit-declined",
+    "qgd-orthodox-defense",
+    "semi-slav-defense"
+  ]
+}

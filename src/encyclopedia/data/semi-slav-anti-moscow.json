@@ -1,0 +1,122 @@
+{
+  "slug": "semi-slav-anti-moscow",
+  "eco": "D43",
+  "name": "Semi-Slav: Anti-Moscow Gambit",
+  "aka": ["Anti-Moscow Gambit"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Anti-Moscow Gambit is a sharp Semi-Slav line where White sacrifices a pawn for a big centre and a lasting, dangerous initiative.",
+  "intro": "The Anti-Moscow Gambit arises in the Semi-Slav after 1.d4 d5 2.c4 c6 3.Nf3 Nf6 4.Nc3 e6 5.Bg5 h6 6.Bh4 dxc4, where Black first prods the bishop and then grabs the c-pawn. White willingly parts with material for a powerful pawn centre and enduring pressure, producing rich, unbalanced middlegames prized by aggressive players of both colours.",
+  "line": "d4 d5 c4 c6 Nf3 Nf6 Nc3 e6 Bg5 h6 Bh4 dxc4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Bg5",
+      "from": 58,
+      "to": 30
+    },
+    {
+      "san": "h6",
+      "from": 15,
+      "to": 23
+    },
+    {
+      "san": "Bh4",
+      "from": 30,
+      "to": 39
+    },
+    {
+      "san": "dxc4",
+      "from": 27,
+      "to": 34
+    }
+  ],
+  "fen": "rnbqkb1r/pp3pp1/2p1pn1p/8/2pP3B/2N2N2/PP2PPPP/R2QKB1R w KQkq - 0 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The point of Black's move order is subtle but important: by inserting 5...h6 to provoke 6.Bh4 before taking on c4, Black keeps White's dark-squared bishop committed to the h4-square and the f6 knight firmly pinned, then pockets the gambit pawn. White responds in true Semi-Slav gambit style with 7.e4, erecting an imposing pawn duo on d4 and e4 and accepting that the c4-pawn, soon buttressed by ...b5, will be hard to regain. The resulting struggle pits White's space and initiative against Black's extra material and solid, if slightly loosened, structure.",
+        "Unlike the Botvinnik System, where White hurls a whole knight into the attack, the Anti-Moscow is a pawn sacrifice, which lends the play a slightly slower but no less venomous character. White's bishop typically drops back to g3 after ...g5, from where it rakes the b8-h2 diagonal and supports the e5 advance, while the other bishop and the queen swing toward Black's kingside. Black, meanwhile, expands with ...b5, develops the light-squared bishop to b7, and tries to complete development and blunt the centre before White's initiative crashes through; accurate defence can leave Black with a healthy extra pawn, but the practical dangers are considerable."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line runs 7.e4 g5 8.Bg3 b5, after which White has several thrusts. The energetic 9.Ne5 immediately posts the knight in the centre and eyes the weakened light squares, 9.Be2 quietly develops while preparing to castle and play on the centre and kingside, and the sharp 9.h4 challenges Black's advanced g5-pawn to open lines against the king. In each case Black leans on the extra pawn, the b7-bishop, and moves like ...Nbd7, ...a6, and ...Bb7 to hold the queenside chain together while completing development.",
+        "The variation is defined against its quieter sibling: had White met 5...h6 with 6.Bxf6, the game would enter the calmer, positional Moscow Variation, so 6.Bh4 is precisely the ambitious, gambit-minded choice. Sidelines include Black declining the deepest theory with restrained setups, and White occasionally preferring slower plans that keep more material on the board. Because the Anti-Moscow and the still fiercer Botvinnik both flow from 5.Bg5, players who take up one of these gambits should be comfortable with the whole sharp Semi-Slav complex, including the possibility of transposing between related structures."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Anti-Moscow Gambit came to prominence as a fashionable, uncompromising try when leading grandmasters of the modern era sought fresh ways to fight for the initiative with White inside the Semi-Slav, and it enjoyed a wave of top-level attention in the era of deep computer preparation. Its appeal lies in the way a single pawn buys White a durable centre and long-lasting attacking chances, so that even objectively balanced positions remain treacherous to defend in practice. It continues to attract ambitious players who prefer dynamic imbalance to symmetrical equality and who are willing to invest study time in its rich theory."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black plays 5...h6 to force 6.Bh4 before taking dxc4, keeping White's bishop committed and the knight pinned.",
+    "White answers with 7.e4, sacrificing the c-pawn to build a strong d4-e4 pawn centre.",
+    "After ...g5, White's bishop retreats to g3 to support e5 and eye the b8-h2 diagonal.",
+    "Black defends the extra pawn with ...b5, ...a6, and ...Bb7, aiming to consolidate the queenside.",
+    "White's initiative flows from rapid development and pressure against Black's slightly loosened kingside.",
+    "The line is a pawn sacrifice, making it a shade slower but no less dangerous than the Botvinnik."
+  ],
+  "plans": {
+    "white": [
+      "Erect the d4-e4 pawn centre with 7.e4 and use the extra space to fuel an attack.",
+      "Retreat the bishop to g3 after ...g5 to reinforce the e5 break and pressure the dark squares.",
+      "Post a knight on e5 and bring the queen toward the kingside to exploit the weakened dark squares.",
+      "Consider the pawn thrust h4 to pry open lines against Black's advanced g5-pawn and king.",
+      "Keep the initiative alive with piece activity rather than hurrying to regain the sacrificed pawn."
+    ],
+    "black": [
+      "Cash in on c4 and shore it up with ...b5 to preserve the extra queenside pawn.",
+      "Develop the light-squared bishop to b7 and challenge White's broad centre along the long diagonal.",
+      "Complete development with ...Nbd7 and ...a6, untangling before White's attack gathers pace.",
+      "Meet the e5 advance and piece pressure with accurate, prophylactic defence of the kingside.",
+      "Trade into simpler positions where the extra pawn can be converted in the endgame."
+    ]
+  },
+  "related": ["semi-slav-defense", "semi-slav-moscow", "semi-slav-botvinnik"]
+}

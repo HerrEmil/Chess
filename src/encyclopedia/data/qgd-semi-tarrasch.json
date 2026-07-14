@@ -1,0 +1,116 @@
+{
+  "slug": "qgd-semi-tarrasch",
+  "eco": "D41",
+  "name": "Queen's Gambit Declined: Semi-Tarrasch",
+  "aka": ["Semi-Tarrasch Defence"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Queen's Gambit Declined: Semi-Tarrasch plays ...c5 but recaptures with the knight on d5, dodging the Tarrasch isolated pawn.",
+  "intro": "The Semi-Tarrasch Defence, reached after 1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Nf3 c5 5.cxd5 Nxd5, is Black's solid answer to the isolated-pawn commitment of the true Tarrasch. By recapturing on d5 with the knight rather than the e-pawn, Black keeps a sound, compact structure and steers the game toward positions where White's central pawn majority is balanced by active, well-coordinated black pieces.",
+  "line": "d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "cxd5",
+      "from": 34,
+      "to": 27
+    },
+    {
+      "san": "Nxd5",
+      "from": 21,
+      "to": 27
+    }
+  ],
+  "fen": "rnbqkb1r/pp3ppp/4p3/2pn4/3P4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Semi-Tarrasch rests on a single strategic decision: after 4...c5 5.cxd5, Black plays 5...Nxd5 instead of 5...exd5, declining the isolated queen's pawn that characterises the genuine Tarrasch Defence. The trade-off is clear. Black avoids the long-term weakness of an isolated d-pawn and obtains an elastic, hard-to-crack position, but concedes a share of the centre, since White can later play e4 and build a mobile pawn majority. Much of the theory revolves around the fight over the d5-knight, the timing of exchanges on c3 or d4, and whether White can convert central space into a lasting initiative.",
+        "Two contrasting middlegame structures dominate. In one, exchanges on c3 and d4 leave White with an isolated queen's pawn of his own, and the roles reverse: Black blockades on d5 and plays for the endgame while White seeks piece activity. In the other, White is allowed to establish pawns on d4 and e4, gaining a central majority and space for a kingside build-up, against which Black organises pressure with ...b6, ...Bb7 and timely exchanges to blunt the centre. Knowing which structure to steer toward, and when to trade the powerful d5-knight, is the practical heart of the variation."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The classical main line runs 6.e4 Nxc3 7.bxc3 cxd4 8.cxd4, giving White a broad d4-e4 pawn centre and Black a solid, resilient set-up with ...Bb4+, ...O-O, ...b6 and ...Bb7 to pressure it. A key alternative is the restrained 6.g3, fianchettoing the bishop and playing a slower positional game, while 6.e3 keeps matters quieter still. In each case Black's plan of exchanging on c3 and challenging the centre with ...b6 and ...Bb7 remains central to the fight for equality.",
+        "Against White's big centre, Black's most reliable method is to complete development and provoke the advance d4-d5 or e4-e5 under favourable circumstances, meeting it with well-timed exchanges and piece pressure rather than passive defence. The resulting positions are less forcing than the sharp QGD Vienna and less unbalanced than the pure Tarrasch, offering Black a durable, low-risk route to equality with real winning chances if White overextends. Careful handling of the c-file and the d5-square, together with the standard ...b6 and ...Bb7 development, defines correct play for both sides."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Semi-Tarrasch grew out of efforts to enjoy the active ...c5 break of the Tarrasch Defence without inheriting its permanent isolated queen's pawn, and it earned a reputation as one of the soundest and most respectable ways to meet the Queen's Gambit. Favoured by classical-era masters and later a trusted equalising weapon in world-championship practice, it remains popular among players who value structural solidity; modern grandmasters continue to employ it as a dependable, well-analysed defence that keeps the position under firm control."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black plays ...c5 but recaptures on d5 with the knight to avoid an isolated queen's pawn.",
+    "The choice trades some central influence for a solid, compact and resilient structure.",
+    "Exchanging ...Nxc3 can hand White a broad d4-e4 centre or, after ...cxd4, an isolated d-pawn.",
+    "Development with ...b6 and ...Bb7 pressures White's central pawns from the long diagonal.",
+    "Black blockades the d5-square and seeks well-timed exchanges to blunt White's space.",
+    "The line is calmer than the QGD Vienna and safer than the isolated-pawn Tarrasch."
+  ],
+  "plans": {
+    "white": [
+      "Recapture toward the centre and play e4 to build a mobile d4-e4 pawn majority.",
+      "Use the central space for a kingside build-up and active piece play.",
+      "Meet ...Nxc3 with bxc3 to reinforce the centre, accepting doubled c-pawns temporarily.",
+      "Prepare the d4-d5 or e4-e5 break to open lines against Black's position.",
+      "In isolated-pawn structures, seek active pieces and control of the d5-square."
+    ],
+    "black": [
+      "Recapture with ...Nxd5 to sidestep the Tarrasch's isolated queen's pawn.",
+      "Exchange on c3 with ...Nxc3 to challenge and pressure White's pawn centre.",
+      "Develop ...b6 and ...Bb7 to hit the centre along the long diagonal.",
+      "Blockade the d5-square and trade pieces to neutralise White's space.",
+      "Provoke d4-d5 or e4-e5 and meet the advance with precise counterplay."
+    ]
+  },
+  "related": [
+    "tarrasch-defense",
+    "queens-gambit-declined",
+    "qgd-harrwitz-attack"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "slug": "qga-classical-defense",
+  "eco": "D27",
+  "name": "Queen's Gambit Accepted: Classical",
+  "aka": ["QGA Classical", "Classical Variation"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Queen's Gambit Accepted: Classical sees Black return the c4-pawn after ...e6, ...c5 and ...a6, seeking free piece play and queenside expansion.",
+  "intro": "The Classical Variation is the main-line treatment of the Queen's Gambit Accepted, in which Black declines to cling to the extra pawn and instead develops smoothly with ...Nf6, ...e6 and ...c5 before challenging White's centre. It leads to open, piece-active positions where accurate development and the fight over the d-file matter far more than the temporary material.",
+  "line": "d4 d5 c4 dxc4 Nf3 Nf6 e3 e6 Bxc4 c5 O-O a6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "dxc4",
+      "from": 27,
+      "to": 34
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "e3",
+      "from": 52,
+      "to": 44
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Bxc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    },
+    {
+      "san": "a6",
+      "from": 8,
+      "to": 16
+    }
+  ],
+  "fen": "rnbqkb1r/1p3ppp/p3pn2/2p5/2BP4/4PN2/PP3PPP/RNBQ1RK1 w kq - 0 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining strategic theme is the isolated queen's pawn. After the standard sequence 5...c5 6.O-O a6, White usually meets ...cxd4 with exd4, accepting an isolated pawn on d4 in return for freer development, the half-open c- and e-files, and a pair of active bishops. Black, in turn, relies on solid blockading resources, aiming to exchange pieces and eventually treat the d4-pawn as a long-term weakness once the position simplifies toward an endgame.",
+        "Move order is delicate because both sides jockey over the ...b5 and dxc5 breaks. Black's ...a6 prepares ...b5, gaining queenside space and creating a home for the light-squared bishop on b7, from where it eyes White's kingside along the long diagonal. White frequently replies with a2-a4 to restrain the advance, or plays dxc5 to open lines, and the resulting battle centres on whether Black can finish developing and neutralise White's lead without conceding a lasting structural or dynamic edge."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "In the tabiya after 6...a6, White's principal tries are 7.Bb3, keeping the bishop on its best diagonal, 7.a4, clamping down on ...b5, and 7.dxc5, immediately resolving the central tension. After 7.Bb3, Black typically continues with ...b5 followed by ...Bb7 and ...Nbd7, completing a harmonious set-up before deciding when to release the tension with ...cxd4. Accurate timing matters, since a premature ...cxd4 can hand White a comfortable isolated-pawn game with all of the initiative.",
+        "The isolated-queen-pawn structures reached here are closely related to those of the Tarrasch and Semi-Tarrasch complexes, though the QGA versions tend to be more open and less blocked. A recurring branch involves White expanding with a2-a4 and Nc3, after which Black must handle the resulting isolated-pawn or hanging-pawn middlegames with precise piece placement, often rerouting a knight to d5 or b6 to blockade. Endgames are a genuine part of Black's strategy, because the extra structural target on d4 can outweigh White's activity once queens and minor pieces come off."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Queen's Gambit Accepted is one of the oldest recorded openings, analysed as far back as the earliest printed chess literature, and the classical treatment with ...e6 and ...c5 became a respected mainstay in the hands of positional players of the twentieth century. Long regarded as a reliable equalising system, it has been employed by world champions and elite grandmasters seeking a sound, less theory-heavy alternative to the Queen's Gambit Declined, and it remains popular at every level for its clear plans and durable structures."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black voluntarily returns the c4-pawn, prioritising rapid, harmonious development over clinging to extra material.",
+    "The moves ...e6, ...c5 and ...a6 free Black's pieces and prepare the freeing ...b5 advance on the queenside.",
+    "Isolated-queen-pawn structures are the heart of the variation, giving White activity and Black a long-term target.",
+    "White's bishop on c4, often retreating to b3, together with rapid castling generates pressure against Black's centre and king.",
+    "The timing of the central break ...cxd4 is critical, since releasing the tension too early favours White's initiative.",
+    "Black frequently blockades on d5 and steers toward endgames where the isolated d4-pawn becomes a weakness."
+  ],
+  "plans": {
+    "white": [
+      "Recapture on c4 with the bishop and castle quickly to complete development before opening the centre.",
+      "Accept the isolated d-pawn after ...cxd4 exd4, using the open lines and active pieces to seize the initiative.",
+      "Play a2-a4 to restrain Black's ...b5 and secure control of the b5- and c4-squares.",
+      "Post a knight on e5 or reroute the bishop to d3-c2 to build a kingside attack against Black's king.",
+      "Advance d4-d5 at the right moment to open lines while Black is still uncoordinated."
+    ],
+    "black": [
+      "Complete development with ...Nf6, ...Nbd7, ...Be7 and ...O-O before challenging the centre.",
+      "Expand on the queenside with ...b5 and fianchetto the bishop to b7 on the long diagonal.",
+      "Release the central tension with ...cxd4 only when it hands White an isolated, blockadable pawn.",
+      "Blockade the d5-square with a knight and trade pieces to reach a favourable endgame.",
+      "Target the isolated d4-pawn with rooks and minor pieces once White's activity has been neutralised."
+    ]
+  },
+  "related": ["queens-gambit-accepted", "queens-gambit", "slav-exchange"]
+}

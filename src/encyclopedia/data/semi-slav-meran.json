@@ -59,7 +59,8 @@
     "semi-slav-defense",
     "slav-defense",
     "slav-czech",
-    "queens-gambit-declined"
+    "queens-gambit-declined",
+    "semi-slav-botvinnik"
   ],
   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
   "moves": [

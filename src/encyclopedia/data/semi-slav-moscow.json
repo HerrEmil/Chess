@@ -1,0 +1,122 @@
+{
+  "slug": "semi-slav-moscow",
+  "eco": "D43",
+  "name": "Semi-Slav: Moscow Variation",
+  "aka": ["Moscow Variation", "Bxf6 Semi-Slav"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Moscow Variation is a positional Semi-Slav line where White plays Bxf6, conceding the bishop pair for a small structural edge.",
+  "intro": "The Moscow Variation is the quiet, strategic member of the 5.Bg5 Semi-Slav family, arising after 1.d4 d5 2.c4 c6 3.Nf3 Nf6 4.Nc3 e6 5.Bg5 h6 6.Bxf6 Qxf6. By capturing on f6, White resolves the pin at once, surrendering the bishop pair in return for a small lead in development and a sound, manoeuvring game far removed from the wild gambits of its cousins.",
+  "line": "d4 d5 c4 c6 Nf3 Nf6 Nc3 e6 Bg5 h6 Bxf6 Qxf6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Bg5",
+      "from": 58,
+      "to": 30
+    },
+    {
+      "san": "h6",
+      "from": 15,
+      "to": 23
+    },
+    {
+      "san": "Bxf6",
+      "from": 30,
+      "to": 21
+    },
+    {
+      "san": "Qxf6",
+      "from": 3,
+      "to": 21
+    }
+  ],
+  "fen": "rnb1kb1r/pp3pp1/2p1pq1p/3p4/2PP4/2N2N2/PP2PPPP/R2QKB1R w KQkq - 0 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Moscow Variation trades sharpness for structure. Rather than maintaining the pin and inviting the fireworks of the Botvinnik or Anti-Moscow, White simply exchanges on f6, handing Black the two bishops but gaining a modest edge in development and central control and a clear, long-term plan. Black recaptures with the queen, keeping the pawn structure intact and undamaged, and the resulting positions are strategically rich but far calmer, the sort of slow-burning middlegame in which small, accumulated advantages matter more than memorised tactics.",
+        "Both sides have clear ambitions. White will usually expand in the centre with e4 or develop modestly with e3, aiming to make the extra tempo and freer pieces tell before Black's bishops come to life, and the black queen on f6 can occasionally become a target for gains of time. Black, for their part, prizes the bishop pair and the healthy structure, developing harmoniously with ...Nd7, ...g6 and a fianchetto or ...Bd6, and seeking the freeing breaks ...c5 or ...e5 to open the position for the two bishops in a long strategic fight."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "A typical continuation is 7.e3, when Black often follows with 7...Nd7, 8.Bd3 dxc4 9.Bxc4 g6, preparing to fianchetto the dark-squared bishop and press on the long diagonal. White may instead choose 7.Qb3 or 7.g3, and the ambitious 7.e4 stakes out extra central space at the cost of allowing early simplification. Across these lines the strategic questions are the same: whether White can exploit the temporary initiative and space before Black mobilises the bishop pair and equalises with a well-timed central break.",
+        "The variation is defined by the choice at move six: 6.Bxf6 enters the Moscow, whereas the aggressive retreat 6.Bh4 leads to the Anti-Moscow Gambit and its pawn sacrifice, and the earlier 5...dxc4 instead ushers in the piece-sacrificing Botvinnik System. Because the Moscow avoids those forcing gambits, it is a practical, lower-maintenance choice for players who prefer understanding to memorisation, and it can also transpose toward related Queen's Gambit Declined and Semi-Slav structures when Black delays or omits ...dxc4."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Moscow Variation has long been valued as a solid, classical way to meet the Semi-Slav, favoured by positional players who are happy to give up the bishop pair for a clean structure and easy development, and it has appeared regularly at the highest levels as a low-risk alternative to the theory-heavy gambits. Its enduring reputation rests on reliability rather than fireworks: White accepts only a small pull, and Black obtains long-term trumps in the two bishops, so both sides can play for a win in a genuinely strategic battle. It remains a mainstay of players who prefer sound manoeuvring to forced complications."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White plays 6.Bxf6 to resolve the pin at once, trading the bishop pair for a small development edge.",
+    "Black recaptures with 6...Qxf6, keeping a sound, undamaged pawn structure.",
+    "The two bishops are Black's main long-term asset in a slow, strategic middlegame.",
+    "White expands with e3 or e4 to use the extra tempo and central space before the bishops awaken.",
+    "Black aims for the freeing breaks ...c5 or ...e5 to open lines for the bishop pair.",
+    "The variation is far calmer than the Botvinnik and Anti-Moscow, rewarding understanding over memorisation."
+  ],
+  "plans": {
+    "white": [
+      "Exchange on f6 to remove the pin and gain a small lead in development.",
+      "Play e3 or the more ambitious e4 to claim central space and press the initiative.",
+      "Develop smoothly with Bd3, O-O and Rd1, keeping pieces active before Black's bishops come to life.",
+      "Use tempo gains against the black queen on f6 where the chance arises.",
+      "Restrain Black's freeing breaks ...c5 and ...e5 to keep the bishop pair passive."
+    ],
+    "black": [
+      "Recapture with the queen to preserve an intact structure and the bishop pair.",
+      "Fianchetto with ...g6 and ...Bg7, or develop ...Bd6, to activate the dark-squared bishop.",
+      "Prepare the freeing break ...c5 or ...e5 to open the position for the two bishops.",
+      "Complete development with ...Nd7, ...O-O and ...b6 or ...Bb7 for harmonious coordination.",
+      "Steer toward long strategic middlegames and endgames where the bishop pair can dominate."
+    ]
+  },
+  "related": ["semi-slav-defense", "semi-slav-anti-moscow", "semi-slav-meran"]
+}

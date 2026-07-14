@@ -59,7 +59,8 @@
     "slav-defense",
     "semi-slav-defense",
     "semi-slav-meran",
-    "queens-gambit"
+    "queens-gambit",
+    "slav-chebanenko"
   ],
   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
   "moves": [

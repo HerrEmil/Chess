@@ -79,5 +79,12 @@
       "Meet a minority attack by defending or timely advancing the queenside pawns."
     ]
   },
-  "related": ["queens-gambit", "slav-defense", "nimzo-indian-defense"]
+  "related": [
+    "queens-gambit",
+    "slav-defense",
+    "nimzo-indian-defense",
+    "qgd-orthodox-defense",
+    "qgd-tartakower",
+    "qgd-ragozin"
+  ]
 }

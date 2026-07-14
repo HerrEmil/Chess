@@ -105,6 +105,9 @@
     "queens-gambit-declined",
     "queens-gambit",
     "queens-gambit-accepted",
-    "catalan-opening"
+    "catalan-opening",
+    "semi-slav-botvinnik",
+    "semi-slav-moscow",
+    "semi-slav-anti-moscow"
   ]
 }

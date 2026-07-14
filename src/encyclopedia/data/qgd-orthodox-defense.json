@@ -1,0 +1,127 @@
+{
+  "slug": "qgd-orthodox-defense",
+  "eco": "D63",
+  "name": "Queen's Gambit Declined: Orthodox",
+  "aka": ["Orthodox Defence", "QGD Orthodox"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Queen's Gambit Declined Orthodox Defence is the classical main line where Black develops soundly with ...Be7, ...O-O and ...Nbd7.",
+  "intro": "The Orthodox Defence is the oldest and most natural way to decline the Queen's Gambit, reaching a rock-solid formation after 1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7. It defined top-level practice for decades because it marries flawless development to a resilient pawn structure, forcing White to work patiently for even a small advantage.",
+  "line": "d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Bg5",
+      "from": 58,
+      "to": 30
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    },
+    {
+      "san": "e3",
+      "from": 52,
+      "to": 44
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nbd7",
+      "from": 1,
+      "to": 11
+    }
+  ],
+  "fen": "r1bq1rk1/pppnbppp/4pn2/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R w KQ - 3 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The character of the Orthodox is defined by the Carlsbad pawn structure that arises when White plays cxd5 and Black recaptures ...exd5, leaving pawns facing off on the c- and d-files. White's classical plan is the minority attack: advancing a4, b4 and b5 on the queenside to force ...bxc6 or plant a b6 wedge, saddling Black with a weak, backward c6-pawn on a half-open file. Black, in turn, looks for activity in the centre and on the kingside, where White's advancing queenside pawns leave fewer defenders and where a well-timed break can seize the initiative.",
+        "Because the position is closed and manoeuvring, piece placement matters far more than raw tempo. Black must judge when to release the tension with ...dxc4, gaining time on White's bishop and preparing the freeing breaks ...c5 or ...e5, and when instead to sit tight and meet the minority attack head-on. White's light-squared bishop, developed to d3, eyes the b1-h7 diagonal and supports a later e3-e4 central expansion, while the c1-bishop on g5 pins the f6-knight and pressures Black's kingside. Steering toward the right structure is the essential skill of the whole variation."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After the tabiya 6...Nbd7, White most often continues 7.Rc1 or 7.Qc2, preparing to recapture on c4 and to launch the minority attack. The old main line runs 7.Rc1 c6 8.Bd3 dxc4 9.Bxc4 Nd5, the famous Capablanca freeing manoeuvre, in which Black offers exchanges on g5 and c3 to trade a pair of minor pieces and unclog the cramped position. A respected alternative is the Rubinstein handling, where White castles and builds in the centre, keeping more pieces on the board to preserve winning chances rather than committing at once to a queenside pawn storm.",
+        "The other principal branch keeps the tension: Black delays ...dxc4 and prepares ...c5 to strike at White's centre, or reroutes with ...Re8 and ...Nf8-g6 to reinforce the kingside. If White commits to the minority attack, Black's counterplay usually flows from the ...Ne4 jump or a timely ...e5, opening lines for the pieces before White's queenside pressure crystallises. Compared with the simplifying Lasker Defence, where Black plays ...h6 and ...Ne4 to trade at once, the Orthodox keeps more material on and accepts a passive but extremely durable game."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Orthodox Defence was the backbone of elite practice through the classical and hypermodern eras, championed by world champions who prized its soundness in match play. Its reputation as an impregnable equaliser made it the proving ground for the minority attack as a strategic weapon, and generations of players learned queenside pawn play from Orthodox middlegames. Though later systems such as the Tartakower and the Lasker offered Black livelier alternatives, the Orthodox remains the classical yardstick against which every other way of declining the Queen's Gambit is measured."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The Carlsbad structure after cxd5 exd5 sets up White's minority attack with a4, b4 and b5 on the queenside.",
+    "White's b5-b6 or bxc6 aims to leave Black with a weak, backward c6-pawn on the half-open c-file.",
+    "Black's ...dxc4 gains a tempo on White's bishop and prepares the freeing breaks ...c5 and ...e5.",
+    "The Capablanca manoeuvre ...Nd5 trades a pair of minor pieces to relieve Black's cramped position.",
+    "White's bishop on d3 supports a central e3-e4 break and eyes the b1-h7 diagonal toward Black's king.",
+    "Black usually seeks central and kingside counterplay while White commits pawns to the queenside."
+  ],
+  "plans": {
+    "white": [
+      "Play cxd5 exd5 and launch the minority attack with a4, b4 and b5 to create a weakness on c6.",
+      "Develop the bishop to d3 and prepare a central e3-e4 break once the pieces are ready.",
+      "Use the Bg5 pin on the f6-knight to restrain Black's freeing ...e5 advance.",
+      "Recapture on c4 with the bishop after ...dxc4 and post rooks on c1 and e1 for central play.",
+      "Convert the resulting c6 weakness into a long-term endgame edge through patient manoeuvring."
+    ],
+    "black": [
+      "Complete the solid setup with ...Be7, ...O-O and ...Nbd7 before choosing a freeing break.",
+      "Release the tension with ...dxc4 to gain a tempo and prepare ...c5 or ...e5.",
+      "Employ the Capablanca manoeuvre ...Nd5 to exchange pieces and ease the cramped position.",
+      "Meet the minority attack by generating active play in the centre and on the kingside.",
+      "Reroute with ...Re8 and ...Nf8-g6 to reinforce the kingside and support the ...e5 break."
+    ]
+  },
+  "related": [
+    "queens-gambit-declined",
+    "qgd-lasker-defense",
+    "qgd-tartakower",
+    "qgd-cambridge-springs"
+  ]
+}
