@@ -1,0 +1,99 @@
+{
+  "slug": "ruy-lopez-schliemann",
+  "eco": "C63",
+  "name": "Ruy López Schliemann Defense",
+  "aka": ["Jaenisch Gambit", "Schliemann Gambit"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Schliemann (3...f5) is an aggressive Ruy López gambit that strikes at e4 and opens the f-file for sharp attacking play.",
+  "intro": "The Schliemann Defense arises after 1.e4 e5 2.Nf3 Nc6 3.Bb5 f5, an immediate and provocative counterstrike against White's centre. Rather than patiently untangling as in the main lines, Black lashes out with the f-pawn to challenge e4 at once and open attacking prospects along the f-file. Also known as the Jaenisch Gambit, it is one of the sharpest and most theory-heavy replies to the Ruy López, prized as a fighting surprise weapon that trades structural safety for raw initiative.",
+  "line": "e4 e5 Nf3 Nc6 Bb5 f5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bb5",
+      "from": 61,
+      "to": 25
+    },
+    {
+      "san": "f5",
+      "from": 13,
+      "to": 29
+    }
+  ],
+  "fen": "r1bqkbnr/pppp2pp/2n5/1B2pp2/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq f6 0 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The whole point of 3...f5 is to seize the initiative before White can settle into the slow, grinding manoeuvres that give the Ruy López its reputation. By hitting e4 immediately, Black forces White to make committal decisions in the centre and creates the possibility of opening the f-file for the rooks and generating a kingside attack. It is a gambit in spirit: Black is willing to accept material or structural concessions in return for active piece play, open lines, and the practical pressure of a position both sides must handle precisely.",
+        "The cost of this ambition is a genuine loosening of Black's own king. Advancing the f-pawn weakens the a2-g8 diagonal and the e6- and g6-squares, and if White consolidates, the exposed black king can become a lasting liability. The central tension is therefore between Black's dynamic counterplay and this structural risk: if the initiative flows, Black is comfortable and dangerous, but if White neutralises the pressure and returns any extra material, the long-term weaknesses tend to favour the first player. This double-edged balance is exactly what makes the line so combative."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The most principled reply is 4.Nc3, developing with tempo and adding a second attacker to the e4-pawn, after which Black usually continues 4...fxe4 5.Nxe4 with rich, forcing play where accurate knowledge matters for both sides. This approach accepts the challenge head-on and leads to some of the sharpest theory in the Open Games. The alternative fork 4.exf5 is also critical, when Black gains central space and piece activity in exchange for the pawn and aims to prove compensation with quick development.",
+        "Players who prefer to sidestep the deepest complications often choose the solid 4.d3, quietly reinforcing e4 and keeping the position closed rather than entering a forcing debate. This restrained treatment blunts Black's central break and steers toward a calmer strategic game where White's extra space and safer structure can tell over time. Because the line is so heavily analysed, the Schliemann is most effective as a prepared surprise weapon at club and rapid time controls, where the burden of finding precise moves at the board falls heavily on an unprepared opponent."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The defence carries the names of two nineteenth-century analysts. The Finnish master Carl Jaenisch examined 3...f5 in his mid-century writings, which is why the line is frequently called the Jaenisch Gambit, while the German player Adolf Schliemann later contributed further analysis that attached his name in much of the English-speaking world. The two labels have coexisted ever since, reflecting the opening's long pedigree among students of aggressive, counterattacking chess.",
+        "For most of its history the Schliemann was viewed as dashing but slightly unsound, a romantic try rather than a main-line equaliser. Modern engine analysis and dedicated opening preparation have rehabilitated it considerably, showing that Black's resources are more resilient than the old assessments suggested, especially against imprecise handling. It remains a niche choice at the very top, but it enjoys a devoted following among ambitious club players and correspondence enthusiasts who relish its uncompromising, initiative-seeking character."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3...f5 immediately strikes at e4 and seizes the initiative in the centre.",
+    "Opening the f-file gives Black attacking chances against White's king.",
+    "It is a gambit in spirit, trading structural safety for active piece play.",
+    "Advancing the f-pawn loosens Black's king along the a2-g8 diagonal.",
+    "4.Nc3 is the principled test; 4.d3 is the solid, low-theory reply.",
+    "Best used as a prepared, double-edged surprise weapon at club level."
+  ],
+  "plans": {
+    "white": [
+      "Meet 3...f5 with 4.Nc3, developing and hitting e4 a second time.",
+      "Consider capturing with 4.exf5 to grab a pawn and challenge Black's compensation.",
+      "Choose the solid 4.d3 to reinforce e4 and avoid the sharpest theory.",
+      "Complete development and castle to exploit Black's loosened kingside.",
+      "Return any extra material when it neutralises Black's initiative and leaves lasting weaknesses."
+    ],
+    "black": [
+      "Strike with 3...f5 to open the f-file and generate an early initiative.",
+      "Recapture on e4 to keep the centre fluid and the pieces active.",
+      "Develop quickly and castle to justify the gambit with fast piece play.",
+      "Use the half-open f-file to pressure f2 and White's king.",
+      "Stay alert to king safety, since the advanced f-pawn creates lasting weaknesses."
+    ]
+  },
+  "related": [
+    "ruy-lopez",
+    "ruy-lopez-classical-defense",
+    "ruy-lopez-bird-defense",
+    "ruy-lopez-morphy-defense",
+    "kings-gambit"
+  ]
+}

@@ -84,10 +84,13 @@
     ]
   },
   "related": [
-    "italian-game",
-    "scotch-game",
-    "petrov-defense",
-    "two-knights-defense",
-    "open-game"
+    "ruy-lopez-morphy-defense",
+    "ruy-lopez-closed",
+    "ruy-lopez-open",
+    "ruy-lopez-berlin-endgame",
+    "ruy-lopez-exchange",
+    "marshall-attack",
+    "berlin-defense",
+    "italian-game"
   ]
 }

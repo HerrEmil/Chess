@@ -1,0 +1,119 @@
+{
+  "slug": "ruy-lopez-open",
+  "eco": "C80",
+  "name": "Ruy López Open Variation",
+  "aka": ["Open Ruy López", "Open Spanish"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Open Ruy López (5...Nxe4) grabs the e4-pawn for free, active piece play, trading White's lead in development for the initiative.",
+  "intro": "The Open Variation of the Ruy López arises after 1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4, where Black snatches the undefended e4-pawn instead of retreating into the slow manoeuvring of the Closed lines. In one stroke the game becomes concrete and tactical: Black obtains free, active piece play, while White banks a lead in development and long-term pressure on the light squares. The whole struggle revolves around the ...d5 pawn Black soon plays to support the advanced knight, a pawn that serves as both a shield and a target. Sharp and principled, the Open Ruy López was a famous battleground of the Karpov-Korchnoi world-championship matches.",
+  "line": "e4 e5 Nf3 Nc6 Bb5 a6 Ba4 Nf6 O-O Nxe4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bb5",
+      "from": 61,
+      "to": 25
+    },
+    {
+      "san": "a6",
+      "from": 8,
+      "to": 16
+    },
+    {
+      "san": "Ba4",
+      "from": 25,
+      "to": 32
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    },
+    {
+      "san": "Nxe4",
+      "from": 21,
+      "to": 36
+    }
+  ],
+  "fen": "r1bqkb1r/1ppp1ppp/p1n5/4p3/B3n3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 0 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Open Variation is defined by the capture 5...Nxe4, taken after White has castled with 5.O-O in the Morphy Defence. By grabbing the e4-pawn, Black changes the character of the game away from the patient positional jockeying of the Closed Ruy López and toward a concrete, tactical fight. The bargain is clear: Black accepts that White will enjoy a lead in development and enduring pressure, and in return gains rapid, active deployment of the pieces and immediate central presence.",
+        "The heart of the variation is the ...d5 pawn, which Black plays to support the knight on e4 after the typical 6.d4 b5 7.Bb3 d5 8.dxe5 Be6. That pawn is at once a shield, holding the advanced knight in place, and a target that White probes for the rest of the game. Play is dominated by the light squares: Black develops the bishop to e6 and the other bishop to c5 or e7, while White builds with c3 and d4 and manoeuvres with Nbd2, Bc2, and Re1 to chip away at Black's slightly loose but active structure."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line runs 6.d4 b5 7.Bb3 d5 8.dxe5 Be6, reaching the central tabiya of the Open Ruy López. From here Black chooses between the aggressive 9.c3 Bc5, eyeing f2 and the kingside, and the more restrained ...Be7, while White typically continues with Nbd2 and Bc2 and looks to undermine the queenside with a4. The sharp Dilworth Variation, in which Black castles and then sacrifices a knight on f2 to seize the initiative, is one of the most striking tactical resources available in this structure.",
+        "White has several ways to pose different problems. The Howell Attack with 9.Qe2 sidesteps the main paths and prepares Rd1 with pressure down the d-file, while quieter setups keep the tension around d5 and e4. Black in turn can deviate as early as the Riga Variation with 6...exd4, an old and double-edged try. Throughout these lines the recurring danger for Black is that the extended pawn front with ...b5 and ...d5 becomes overextended, letting White's better development and light-square pressure tell."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Open Variation is one of the oldest active answers to the Ruy López, analysed since the nineteenth century by players seeking counterplay rather than the slow suffering of the Closed defences. It appealed to combative masters because it fights for the initiative from the very first captures instead of conceding White a free hand in the centre. Over the decades it built a body of precise theory in which a single tempo can decide whether Black's activity or White's development proves the stronger asset.",
+        "Its most celebrated moment came in the Karpov-Korchnoi world-championship matches of 1978 and 1981, where Korchnoi repeatedly used the Open Variation as a fighting weapon against Karpov's Ruy López. That elite testing burnished its reputation as a fully sound, if demanding, defence. Today it is less common at the very top than the Closed lines and the Marshall Attack, yet it remains respected as a principled way to meet the Spanish head-on, rewarding players who relish concrete calculation over quiet manoeuvring."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "5...Nxe4, played after 5.O-O, captures the e4-pawn and defines the Open Variation.",
+    "Black trades White's lead in development for free, active piece play.",
+    "The ...d5 pawn both shields the advanced e4-knight and becomes a long-term target.",
+    "Natural development with ...Be6 and ...Bc5 or ...Be7 stresses the light squares.",
+    "White presses with c3, d4, Nbd2, Bc2, and Re1 for enduring pressure.",
+    "A famous battleground of the Karpov-Korchnoi world-championship matches."
+  ],
+  "plans": {
+    "white": [
+      "Build the centre with c3 and d4 and clamp down on the light squares.",
+      "Reroute pieces via Nbd2 and Bc2 to pressure the e4-knight and the d5-pawn.",
+      "Occupy the e-file with Re1 and probe Black's slightly loose structure.",
+      "Play a4 to challenge Black's advanced queenside pawns on a6 and b5.",
+      "Exploit the lead in development before Black fully coordinates."
+    ],
+    "black": [
+      "Support the advanced e4-knight with ...d5 to keep active piece play.",
+      "Develop the bishop to e6 and choose between ...Bc5 and ...Be7.",
+      "Contest the light squares and maintain the tension in the centre.",
+      "Complete development and castle before White's initiative peaks.",
+      "Look to the sharp Dilworth with ...Bc5 and a knight sacrifice on f2."
+    ]
+  },
+  "related": [
+    "ruy-lopez",
+    "ruy-lopez-morphy-defense",
+    "ruy-lopez-closed",
+    "marshall-attack",
+    "ruy-lopez-archangelsk"
+  ]
+}

@@ -100,9 +100,10 @@
   },
   "related": [
     "ruy-lopez",
+    "ruy-lopez-morphy-defense",
+    "ruy-lopez-berlin-endgame",
     "berlin-defense",
     "marshall-attack",
-    "italian-game",
     "open-game"
   ]
 }

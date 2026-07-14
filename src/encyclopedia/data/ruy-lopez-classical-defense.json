@@ -1,0 +1,99 @@
+{
+  "slug": "ruy-lopez-classical-defense",
+  "eco": "C64",
+  "name": "Ruy López Classical Defense",
+  "aka": ["Cordel Defence", "Classical Variation"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Classical Defense (3...Bc5) develops the bishop actively toward f2, borrowing Italian ideas within the Ruy López.",
+  "intro": "The Classical Defense, also known as the Cordel Defence, arises after 1.e4 e5 2.Nf3 Nc6 3.Bb5 Bc5, immediately developing the bishop to its most aggressive post. Rather than fussing over the pin on the c6-knight, Black trains the bishop on the f2-square and adopts a direct, combative posture reminiscent of the Italian Game. The result is one of the more provocative answers to the Spanish, inviting sharp central play in which White tries to punish the exposed bishop with a well-timed c3 and d4.",
+  "line": "e4 e5 Nf3 Nc6 Bb5 Bc5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bb5",
+      "from": 61,
+      "to": 25
+    },
+    {
+      "san": "Bc5",
+      "from": 5,
+      "to": 26
+    }
+  ],
+  "fen": "r1bqk1nr/pppp1ppp/2n5/1Bb1p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "With 3...Bc5 Black develops the dark-squared bishop actively toward the f2-square, echoing the ideas of the Italian Game, where the same bishop eyes the opponent's weakest point. The move is direct and combative, prioritising rapid piece activity over the careful queenside preparation of the Morphy lines. Because the bishop sits on c5 rather than tucked away on e7, Black is ready to meet White's central ambitions with active counterplay, and the diagonal aimed at f2 can become a real factor if White castles carelessly.",
+        "The defining tension of the variation is that White can gain time against the c5-bishop by advancing in the centre with c3 and d4, questioning the piece with tempo just as it becomes exposed. Meanwhile the pin on the c6-knight, the hallmark of the Ruy López, still shapes the play: the knight is tied to the defence of e5, and the threat of Bxc6 lingers in the background. Black must therefore balance the activity of the bishop against the danger that the centre opens while it stands in the line of fire."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "White's principal try is to strike at the centre and the bishop with 4.c3, preparing d4 with gain of tempo, when Black often continues with ...Nf6, ...Nge7, or the ambitious ...f5 to fight for the initiative. A common alternative is the calm 4.O-O followed by c3 and d4, castling into safety before opening the position. In the sharpest lines Black meets d4 with ...exd4 and may lunge with ...Nd4 or develop the queen actively to f6, leading to concrete, tactical struggles where accurate calculation is at a premium.",
+        "It is instructive to contrast the Classical Defense with the Italian Game. In the Italian White plays the bishop to c4 first, and both bishops mirror one another on the same diagonal, whereas here White's bishop has committed to b5 and pins the c6-knight before Black plays ...Bc5. That pin subtly changes the character of the fight, since the knight defending e5 is less mobile and the trade on c6 is always available. As a result the Classical is livelier and less symmetrical than its Italian cousin, rewarding energetic play from both sides."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Classical Defense is one of the oldest replies to the Ruy López, dating back to the era when developing the bishop to its most natural, active square was the instinctive choice. It is frequently called the Cordel Defence after the German player Oscar Cordel, who studied and advocated the line in the late nineteenth century, and it belongs to the same combative tradition as the Italian bishop deployments of the romantic period. Its appeal has always been directness: Black stakes a claim in the fight for f2 and the centre from the very third move.",
+        "Although never the main line at the highest level, where the Morphy Defense with 3...a6 predominates, the Classical has retained a loyal following and periodic revivals, including modern grandmaster experiments seeking fresh, unbalanced positions. It appeals to players who enjoy Italian-style piece play and wish to avoid the heavily analysed Closed Spanish, and it remains a fully respectable and instructive weapon, especially valuable for learning how active development interacts with a central pawn break."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3...Bc5 develops the bishop actively toward f2, mirroring Italian Game ideas.",
+    "The move is direct and combative, prizing piece activity over queenside prep.",
+    "White gains time on the bishop by advancing c3 and d4 in the centre.",
+    "The pin on the c6-knight still ties it to defending e5 and enables Bxc6.",
+    "Sharp follow-ups include ...Nf6, ...Nd4, and ...Qf6 for active counterplay.",
+    "Unlike the Italian, White's bishop is on b5, making the fight less symmetrical."
+  ],
+  "plans": {
+    "white": [
+      "Prepare d4 with c3, hitting the c5-bishop with tempo.",
+      "Castle short quickly to remove the king from the f2 diagonal.",
+      "Keep the pin on c6 and hold the option of Bxc6 in reserve.",
+      "Open the centre when the bishop on c5 is most exposed.",
+      "Contest the initiative if Black lunges with ...f5 or ...Nd4."
+    ],
+    "black": [
+      "Post the bishop actively on c5, targeting the f2-square.",
+      "Meet d4 with ...exd4 and seek concrete, tactical counterplay.",
+      "Consider ...Nd4 or ...Qf6 to keep the initiative in sharp lines.",
+      "Support the centre with ...d6 and give the bishop a retreat.",
+      "Complete kingside castling to neutralise the pressure on c6 and the centre."
+    ]
+  },
+  "related": [
+    "ruy-lopez",
+    "ruy-lopez-bird-defense",
+    "ruy-lopez-schliemann",
+    "ruy-lopez-cozio",
+    "italian-game"
+  ]
+}

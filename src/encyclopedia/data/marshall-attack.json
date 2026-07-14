@@ -140,8 +140,9 @@
   },
   "related": [
     "ruy-lopez",
+    "ruy-lopez-closed",
+    "ruy-lopez-anti-marshall",
     "berlin-defense",
-    "italian-game",
     "two-knights-defense",
     "open-game"
   ]

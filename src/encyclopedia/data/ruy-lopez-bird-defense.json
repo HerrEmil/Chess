@@ -1,0 +1,98 @@
+{
+  "slug": "ruy-lopez-bird-defense",
+  "eco": "C61",
+  "name": "Ruy López Bird Defense",
+  "aka": ["Bird's Defence"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Bird Defense (3...Nd4) trades a knight in the centre to hand Black the bishop pair and a half-open e-file.",
+  "intro": "The Bird Defense begins 1.e4 e5 2.Nf3 Nc6 3.Bb5 Nd4, an offbeat but respectable reply in which Black immediately jumps the knight into the centre and offers a trade. After 4.Nxd4 exd4 Black recaptures with a pawn, gaining the bishop pair and a half-open e-file at the cost of a committal structure. Named after the English master Henry Bird and quite distinct from Bird's Opening 1.f4, it sidesteps the vast main-line theory of the Ruy López and steers the game toward original, imbalanced positions.",
+  "line": "e4 e5 Nf3 Nc6 Bb5 Nd4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bb5",
+      "from": 61,
+      "to": 25
+    },
+    {
+      "san": "Nd4",
+      "from": 18,
+      "to": 35
+    }
+  ],
+  "fen": "r1bqkbnr/pppp1ppp/8/1B2p3/3nP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Bird Defense is built around a clear positional trade-off. By playing 3...Nd4 and inviting 4.Nxd4 exd4, Black willingly parts with the central pawn structure of the Open Games to obtain two long-term assets: the bishop pair and a half-open e-file for the rooks. The recaptured pawn on d4 cramps White slightly and can become a useful spearhead, while Black's bishops gain scope once the position opens. The whole idea is to unbalance the game early and play for active piece coordination rather than symmetrical manoeuvring.",
+        "The drawback is that Black's structure is somewhat committal, and the d4-pawn can turn from a strength into a target. If White organises to blockade and eventually undermine it, the pawn may become backward or fall under pressure, leaving White with a small but stable edge in a more comfortable structure. The strategic battle therefore revolves around whether Black's bishops and open lines generate enough activity to compensate for the structural concession, or whether White can neutralise the pieces and exploit the long-term weakness."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The critical continuation is the direct 4.Nxd4 exd4, after which White most often retreats the bishop and develops naturally, aiming to castle and prepare a central break such as c3 or d3 followed by pressure against the advanced d4-pawn. Black, in turn, develops the kingside, castles, and looks to activate the bishop pair, sometimes fianchettoing or placing the bishops on active diagonals to make the open e-file count. Play is less forcing than in the sharp gambit lines, so understanding the resulting middlegame plans matters more than memorising long variations.",
+        "White is not obliged to capture on d4 at once. Sidesteps such as declining the trade or inserting a preparatory move can lead to independent positions, though the exchange on d4 remains the principled main road. Because the Bird avoids the enormous body of Morphy and Closed Ruy López theory, it appeals to players who want a sound, low-maintenance system with clear strategic themes. The trade-off of bishop pair against structure gives both sides understandable long-term goals rather than a memorisation contest."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The defence is named after Henry Edward Bird, the nineteenth-century English master known for his enterprising and unconventional approach to the openings. It should not be confused with the separate Bird's Opening, which begins 1.f4; the shared name simply reflects Bird's fondness for original ideas across the board. His willingness to accept structural imbalances in exchange for piece activity is very much in keeping with the spirit of 3...Nd4.",
+        "Over the years the Bird Defense has remained a respectable if secondary choice, appearing periodically in master practice as a way to dodge heavy Ruy López preparation. It has never been a mainstream weapon at the elite level, where the bishop pair is not always considered adequate compensation for the concession, but it retains a solid reputation as a practical surprise. Club players and those seeking fresh, less-charted positions continue to value it for the clear plans and rich imbalance it offers."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3...Nd4 offers an immediate knight trade in the centre.",
+    "After 4.Nxd4 exd4 Black gains the bishop pair and a half-open e-file.",
+    "The advanced d4-pawn can be either a cramping spearhead or a target.",
+    "White aims for a small, stable edge by pressuring the committal structure.",
+    "Black relies on active bishops and open lines for compensation.",
+    "It sidesteps heavy main-line theory and is named after Henry Bird."
+  ],
+  "plans": {
+    "white": [
+      "Capture with 4.Nxd4 to invite the structural imbalance on Black's terms turned against him.",
+      "Retreat the bishop and develop smoothly toward short castling.",
+      "Prepare c3 or d3 to challenge and undermine the advanced d4-pawn.",
+      "Blockade d4 and treat it as a long-term target rather than a threat.",
+      "Trade or restrain Black's bishops to keep a stable structural edge."
+    ],
+    "black": [
+      "Play 3...Nd4 to trade knights and unbalance the position early.",
+      "Recapture with ...exd4 to secure the bishop pair and open the e-file.",
+      "Activate both bishops on their best diagonals as the game opens.",
+      "Use the half-open e-file for rook pressure against White's centre.",
+      "Support the d4-pawn so it cramps White rather than becoming weak."
+    ]
+  },
+  "related": [
+    "ruy-lopez",
+    "ruy-lopez-cozio",
+    "ruy-lopez-classical-defense",
+    "ruy-lopez-steinitz-defense"
+  ]
+}

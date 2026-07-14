@@ -1,0 +1,159 @@
+{
+  "slug": "ruy-lopez-breyer",
+  "eco": "C95",
+  "name": "Ruy López Breyer Variation",
+  "aka": ["Breyer Defence"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Breyer Variation of the Closed Ruy López retreats 9...Nb8 to reroute the knight via d7, one of Black's most solid setups.",
+  "intro": "The Breyer Variation is reached in the Closed Ruy López after 1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3 Nb8. At first glance the retreat 9...Nb8 looks like a beginner's blunder, undeveloping a piece that took two moves to reach c6, yet it embodies one of the deepest strategic ideas in the Spanish. Black intends ...Nbd7 to regroup the knight to a more harmonious square, unblock the c-pawn for ...c5, and reinforce the e5-point, while the light-squared bishop takes up residence on b7. Slow, subtle, and famously reliable, the Breyer has served champions from Boris Spassky to Garry Kasparov as a bedrock defence against 1.e4.",
+  "line": "e4 e5 Nf3 Nc6 Bb5 a6 Ba4 Nf6 O-O Be7 Re1 b5 Bb3 d6 c3 O-O h3 Nb8",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bb5",
+      "from": 61,
+      "to": 25
+    },
+    {
+      "san": "a6",
+      "from": 8,
+      "to": 16
+    },
+    {
+      "san": "Ba4",
+      "from": 25,
+      "to": 32
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    },
+    {
+      "san": "Re1",
+      "from": 61,
+      "to": 60
+    },
+    {
+      "san": "b5",
+      "from": 9,
+      "to": 25
+    },
+    {
+      "san": "Bb3",
+      "from": 32,
+      "to": 41
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "san": "h3",
+      "from": 55,
+      "to": 47
+    },
+    {
+      "san": "Nb8",
+      "from": 18,
+      "to": 1
+    }
+  ],
+  "fen": "rnbq1rk1/2p1bppp/p2p1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 w - - 1 10",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The point of 9...Nb8 is that the knight is misplaced on c6 in the Closed Ruy López. On c6 it blocks the c-pawn, so Black cannot easily prepare the freeing ...c5 break, and it can become a target for White's advancing d-pawn. By retreating and rerouting with ...Nbd7, Black solves several problems at once: the c-pawn is unblocked, the knight lends extra support to the crucial e5-square, and from d7 it can later reach f8 or c5 or b6 depending on how the centre develops. The manoeuvre costs time, which is precisely why it only makes sense in the slow, closed structures the Spanish tends to produce, where deep positioning matters more than raw tempo.",
+        "A defining feature is the fianchetto of the light-squared bishop to b7, where it eyes the e4-pawn and the long diagonal, coordinating naturally with the knight on d7 and the e7-bishop. Black then aims for a flexible pawn structure with ...c5 to challenge White's classical d4 centre, or holds back and manoeuvres if White commits early. The resulting middlegames are among the most strategically rich in all of chess: both sides castle short, avoid premature commitments, and jockey for the ideal placement of knights and bishops before the central tension is finally resolved. Black's setup is celebrated for its resilience and lack of long-term weaknesses."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 9...Nb8 the main road is 10.d4 Nbd7, completing the knight's journey and reaching the tabiya of the Breyer. White usually continues developing with Nbd2, Bc2 to relocate the light-squared bishop off the exposed b3-square, and often b3 or a4 to gain queenside space. Black responds with ...Bb7, ...Re8, ...Bf8, and a timely ...c5 or ...g6 and ...Bg7 regrouping, patiently improving the pieces. The struggle typically revolves around whether White can achieve a favourable d4-d5 advance, gaining space but releasing the central tension, or whether Black can equalise by liquidating with ...exd4 and ...c5.",
+        "White has tried numerous plans against the Breyer, including the direct central expansion with d4 and d5, the flexible Nbd2-f1-g3 knight redeployment familiar from the wider Ruy López, and quieter setups with a4 to pressure the b5-pawn. Because Black's structure is so sound, White rarely obtains a concrete advantage and instead relies on the small, persistent pressure that gives the Spanish its nickname of the Spanish Torture. Correspondingly, the Breyer has a reputation as a fortress-like equaliser, and much top-level theory concerns subtle move-order questions rather than forced tactical sequences."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is named after the Hungarian master Gyula Breyer, a leading figure of the hypermodern movement in the early twentieth century who suggested the ...Nb8 regrouping idea. The concept lay largely dormant for decades until it was taken up at the highest level in the 1960s, most memorably by Boris Spassky, who used it as a key defensive weapon on his path to the World Championship. Its reputation for solidity attracted a long line of elite practitioners.",
+        "In the following decades the Breyer became a mainstay of championship-level preparation, employed by Garry Kasparov, Vasily Smyslov, and many other leading grandmasters as a dependable answer to the Closed Ruy López. Its blend of rock-solid structure and rich manoeuvring possibilities keeps it firmly within modern top-level repertoires, and it is frequently recommended to club players seeking a principled, low-risk defence to 1.e4 e5. The paradoxical knight retreat that once looked like a mistake is now regarded as one of the deepest strategic ideas in the opening."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "9...Nb8 reroutes the knight via d7 to a more harmonious post.",
+    "The retreat unblocks the c-pawn to prepare the ...c5 break.",
+    "From d7 the knight reinforces the vital e5-square.",
+    "The light-squared bishop fianchettoes to b7, eyeing e4 and the long diagonal.",
+    "Extremely solid with no long-term structural weaknesses.",
+    "A championship-level defence favoured by Spassky and Kasparov."
+  ],
+  "plans": {
+    "white": [
+      "Build the classical centre with d4 and probe with a later d5 advance.",
+      "Redeploy the b1-knight via d2-f1-g3 toward the kingside.",
+      "Relocate the light-squared bishop to c2 off the exposed b3-square.",
+      "Gain queenside space and pressure the b5-pawn with a4.",
+      "Maintain the central tension and grind out slow positional pressure."
+    ],
+    "black": [
+      "Complete the regrouping with ...Nbd7 to support e5 and free the c-pawn.",
+      "Fianchetto the light-squared bishop to b7 against e4 and the long diagonal.",
+      "Prepare the ...c5 break to challenge White's d4 centre.",
+      "Reroute with ...Re8 and ...Bf8 to bolster the kingside and e5.",
+      "Aim to liquidate with ...exd4 or hold a resilient, weakness-free structure."
+    ]
+  },
+  "related": [
+    "ruy-lopez",
+    "ruy-lopez-closed",
+    "ruy-lopez-chigorin",
+    "ruy-lopez-zaitsev",
+    "ruy-lopez-anti-marshall"
+  ]
+}
