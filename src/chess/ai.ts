@@ -127,6 +127,50 @@ const basePieceValue = (ch: string): number => {
 const mirrorIndex = (index: number): number =>
   (7 - Math.floor(index / 8)) * 8 + (index % 8);
 
+/*
+ * Game phase for tapered evaluation. Standard 24-point scale: each knight/bishop
+ * counts 1, each rook 2, the queen 4 (both colors), so the full opening board is
+ * 24 and bare kings are 0. Returned as the middlegame weight in [0, 1]; the
+ * endgame weight is 1 - it. Pawns and kings do not contribute to phase. Extra
+ * queens from promotion are capped so the weight never exceeds 1.
+ */
+const PHASE_TOTAL = 24;
+const gamePhaseMg = (board: readonly string[]): number => {
+  let phase = 0;
+  for (const idx of mailboxIndex) {
+    switch (board[idx].toLowerCase()) {
+      case 'n':
+      case 'b':
+        phase += 1;
+        break;
+      case 'r':
+        phase += 2;
+        break;
+      case 'q':
+        phase += 4;
+        break;
+      default:
+        break;
+    }
+  }
+  return (phase > PHASE_TOTAL ? PHASE_TOTAL : phase) / PHASE_TOTAL;
+};
+
+/*
+ * King piece-square value, tapered by game phase between the middlegame table
+ * (king tucked behind its pawns) and the endgame table (king centralised). At
+ * mgWeight >= 1 (full material) it is exactly the middlegame table, so the
+ * non-tapered evaluation is byte-for-byte unchanged; the endgame table — until
+ * now defined but never read — is blended in as material comes off the board.
+ */
+const kingSquareValue = (idx: number, mgWeight: number): number =>
+  mgWeight >= 1
+    ? AI.kingTable[idx]
+    : Math.round(
+        AI.kingTable[idx] * mgWeight +
+          AI.kingTableEndGame[idx] * (1 - mgWeight),
+      );
+
 // Piece-square tables are authored from White's perspective (index 0 = a8).
 // Black's squares are the vertical mirror image, so Black piece lookups must
 // use the flipped index. Passing `mirror = false` reproduces the legacy
@@ -136,6 +180,7 @@ const getPieceValueSum = ({
   pieces = [] as readonly number[],
   black = false,
   mirror = true,
+  mgWeight = 1,
 }): number =>
   pieces.reduce((sum, piece) => {
     const idx = black && mirror ? mirrorIndex(piece) : piece;
@@ -157,7 +202,7 @@ const getPieceValueSum = ({
         return sum + 975;
       case 'k':
       case 'K':
-        return sum + 32767 + AI.kingTable[idx];
+        return sum + 32767 + kingSquareValue(idx, mgWeight);
       default:
         return sum;
     }
@@ -188,18 +233,23 @@ const endgameBonus = (
 
 // Evaluates the board relative to `currentColor`.
 // `mirror` toggles per-color piece-square mirroring; false = legacy behaviour.
+// `tapered` blends the king table toward its endgame orientation by game phase
+// (default false = single middlegame king table, the pre-taper behaviour).
 export const evaluate = (
   board: readonly string[],
   currentColor: color,
   mirror = true,
+  tapered = false,
 ): number => {
   const opponent = oppositeColor(currentColor);
   const checkBonus = isInCheck(board, opponent) ? 50 : 0;
   const checkPenalty = isInCheck(board, currentColor) ? 50 : 0;
+  const mgWeight = tapered ? gamePhaseMg(board) : 1;
 
   const currentValue = getPieceValueSum({
     black: currentColor === 'black',
     board,
+    mgWeight,
     mirror,
     pieces: getPiecesOfColor(board, currentColor),
   });
@@ -207,6 +257,7 @@ export const evaluate = (
   const opponentValue = getPieceValueSum({
     black: opponent === 'black',
     board,
+    mgWeight,
     mirror,
     pieces: getPiecesOfColor(board, opponent),
   });
@@ -315,10 +366,11 @@ export const quiesce = (
   alpha: number,
   beta: number,
   qdepth: number = QUIESCENCE_MAX_DEPTH,
+  tapered = false,
 ): number => {
   // Stand-pat: the side to move may always decline to capture, so the static
   // score is a lower bound on what it can achieve.
-  const standPat = evaluate(board, currentColor, true);
+  const standPat = evaluate(board, currentColor, true, tapered);
   if (standPat >= beta) return beta;
   let localAlpha = standPat > alpha ? standPat : alpha;
   if (qdepth === 0) return localAlpha;
@@ -338,6 +390,7 @@ export const quiesce = (
         -beta,
         -localAlpha,
         qdepth - 1,
+        tapered,
       );
       if (score >= beta) return beta;
       if (score > localAlpha) localAlpha = score;
@@ -352,6 +405,16 @@ export const quiescentEval = (
   board: readonly string[],
   currentColor: color,
 ): number => quiesce(board, currentColor, -100000, 100000);
+
+// Candidate leaf (experiment #5): quiescence with a phase-tapered king table, so
+// the king is valued for safety in the middlegame and for activity as the board
+// empties. Same capture resolution as `quiescentEval`; only the leaf king term
+// differs, isolating the tapered-eval contribution in self-play.
+export const quiescentEvalTapered = (
+  board: readonly string[],
+  currentColor: color,
+): number =>
+  quiesce(board, currentColor, -100000, 100000, QUIESCENCE_MAX_DEPTH, true);
 
 /*
  * Negamax with alpha-beta pruning.

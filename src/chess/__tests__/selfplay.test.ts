@@ -138,12 +138,58 @@ describe('check extensions', () => {
   });
 });
 
+/*
+ * Experiment #5: tapered king evaluation. The king piece-square table is blended
+ * between its middlegame orientation (king tucked behind its pawns) and its
+ * endgame orientation (king centralised) by game phase. With full material the
+ * blend is exactly the middlegame table, so the non-tapered eval is unchanged;
+ * as pieces come off, the king is rewarded for activity. These tests pin the
+ * correctness property (still color-symmetric) and the behaviour (an endgame
+ * king is valued for centralisation, the reverse of the middlegame table).
+ */
+describe('tapered king evaluation', () => {
+  it('is unchanged and color-symmetric at the full-material start', () => {
+    // Full material => phase weight 1 => the king reads the middlegame table, so
+    // the tapered eval matches the (already color-symmetric) non-tapered eval.
+    expect(evaluate(STARTING_BOARD, 'white', true, true)).toBe(0);
+    expect(evaluate(STARTING_BOARD, 'black', true, true)).toBe(0);
+    expect(evaluate(STARTING_BOARD, 'white', true, true)).toBe(
+      evaluate(STARTING_BOARD, 'white', true, false),
+    );
+  });
+
+  it('rewards a centralised king in the endgame, reversing the middlegame table', () => {
+    // Bare kings (phase 0 => pure endgame table). Only the white king's square
+    // differs: e4 (centralised) vs a1 (cornered). No other material, so the
+    // king-safety endgame mop-up term stays off and this isolates the king PST.
+    const centralised = boardWithPieces([
+      { piece: 'k', index: 36 }, // white king e4
+      { piece: 'K', index: 7 }, // black king h8
+    ]);
+    const cornered = boardWithPieces([
+      { piece: 'k', index: 56 }, // white king a1
+      { piece: 'K', index: 7 }, // black king h8
+    ]);
+
+    // Tapered (endgame): the centralised king is worth more to White.
+    expect(evaluate(centralised, 'white', true, true)).toBeGreaterThan(
+      evaluate(cornered, 'white', true, true),
+    );
+    // Non-tapered (middlegame table): the ranking is reversed — the cornered
+    // king scores higher, which is exactly wrong for an endgame.
+    expect(evaluate(centralised, 'white', true, false)).toBeLessThan(
+      evaluate(cornered, 'white', true, false),
+    );
+  });
+});
+
 describe('self-play non-regression', () => {
   it('new engine does not regress vs the previous engine', () => {
     // Deterministic (seeded PRNG + deterministic search), so this is a stable
     // guardrail, not a flaky benchmark. The full multi-depth validation is
-    // recorded in tools/engine-lab/experiments.jsonl. Experiment #4 compares
-    // check-extensions-on (new) vs -off (old); both use the quiescence leaf.
+    // recorded in tools/engine-lab/experiments.jsonl. Experiment #5 compares the
+    // tapered-king leaf (new) vs the middlegame-only leaf (old); both use the
+    // quiescence leaf and shipped check extensions.
     const result = runMatch({ games: 24, depth: 2, seed: 1 });
     expect(result.games).toBe(24);
     expect(result.newScore).toBeGreaterThanOrEqual(result.oldScore);

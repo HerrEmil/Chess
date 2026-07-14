@@ -12,7 +12,12 @@
  * variety comes from a seeded PRNG, so a given seed always yields the same
  * games.
  */
-import { color, negamax, quiescentEval } from '../../src/chess/ai.js';
+import {
+  color,
+  negamax,
+  quiescentEval,
+  quiescentEvalTapered,
+} from '../../src/chess/ai.js';
 import {
   applyMove,
   mailboxIndex,
@@ -27,16 +32,19 @@ import { STARTING_BOARD } from '../../src/chess/__tests__/helpers.js';
 export type EngineEval = (b: readonly string[], c: color) => number;
 
 // The two engines under comparison. Both search with the same negamax and the
-// same leaf evaluator; what differs is a search flag threaded through negamax.
+// same alpha-beta / check-extension search; what differs is the leaf evaluator.
 //
-// Experiment #4: check extensions. Both engines use the accepted quiescence leaf
-// (experiment #2). The new engine extends the search one ply whenever the side
-// to move is in check (`checkExtend = true`); the previous accepted engine does
-// not (`checkExtend = false`). Isolating the flag measures the extension alone.
-export const newEval: EngineEval = quiescentEval;
+// Experiment #5: tapered king evaluation. Both engines use the accepted
+// quiescence leaf (experiment #2) and shipped check extensions (experiment #4,
+// so both check-extend flags are true). The new engine's leaf tapers the king
+// piece-square table toward its endgame orientation by game phase
+// (`quiescentEvalTapered`); the previous accepted engine's leaf uses the single
+// middlegame king table (`quiescentEval`). Isolating the leaf measures the
+// tapered-eval contribution alone.
+export const newEval: EngineEval = quiescentEvalTapered;
 export const legacyEval: EngineEval = quiescentEval;
 const NEW_CHECK_EXTEND = true;
-const OLD_CHECK_EXTEND = false;
+const OLD_CHECK_EXTEND = true;
 
 export type Move = { start: number; goal: number };
 export type GameOutcome = 'white' | 'black' | 'draw';
