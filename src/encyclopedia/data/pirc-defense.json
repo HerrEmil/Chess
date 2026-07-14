@@ -82,5 +82,11 @@
       "Exploit the long diagonal and any overextension in White's centre"
     ]
   },
-  "related": ["alekhine-defense", "kings-indian-defense", "sicilian-dragon"]
+  "related": [
+    "pirc-austrian-attack",
+    "pirc-classical",
+    "alekhine-defense",
+    "kings-indian-defense",
+    "sicilian-dragon"
+  ]
 }

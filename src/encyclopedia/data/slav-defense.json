@@ -79,5 +79,11 @@
       "In isolated queen's pawn positions, blockade and target the lone pawn."
     ]
   },
-  "related": ["queens-gambit", "queens-gambit-declined", "caro-kann-defense"]
+  "related": [
+    "slav-czech",
+    "semi-slav-defense",
+    "queens-gambit",
+    "queens-gambit-declined",
+    "caro-kann-defense"
+  ]
 }

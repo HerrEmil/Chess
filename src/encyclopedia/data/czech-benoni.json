@@ -1,0 +1,118 @@
+{
+  "slug": "czech-benoni",
+  "eco": "A56",
+  "name": "Czech Benoni",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Czech Benoni (1.d4 Nf6 2.c4 c5 3.d5 e5) locks the centre for a cramped but resilient King's-Indian-style game aiming at the ...f5 break.",
+  "intro": "The Czech Benoni arises after 1.d4 Nf6 2.c4 c5 3.d5 e5, when Black immediately locks the centre into a fixed, blocked structure. Where the more famous Modern Benoni keeps the position fluid, the Czech Benoni does the opposite: with pawns nailed down on c5, d6, and e5 against White's c4, d5, and e4, both sides settle in for a slow, manoeuvring battle reminiscent of the King's Indian Defence. Black accepts a cramped, space-conceding position in exchange for a rock-solid pawn chain and a clear long-term plan built around the ...f5 break. It is a resilient, strategically clear choice, less theory-heavy than many mainstream openings and well suited to players who relish patient positional chess.",
+  "line": "d4 Nf6 c4 c5 d5 e5 Nc3 d6 e4 Be7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The closed centre is the essence of the Czech Benoni. After 3...e5 Black will follow with ...d6, ...Be7, and ...O-O, and White typically builds a broad space advantage with e4, developing pieces behind the pawn chain. Because the centre is locked, both sides must generate play on the wings, and the game revolves around two competing pawn breaks: Black's ...f5 on the kingside and White's b4, prepared with a3 and Rb1, on the queenside. Whoever prepares and times their break better, without conceding counterplay, usually seizes the initiative.",
+        "Piece placement follows the pawn structure. Black often reroutes a knight to prepare ...f5, for example with ...Ne8 or ...Nbd7 and ...Ng6, and may develop the dark-squared bishop to g5 or keep it on e7. White, enjoying more space, can choose between a kingside clamp with g4 and Nge2-g3 to smother the ...f5 break, or queenside expansion with b4 to open lines where his space tells. The position is cramped for Black but very hard to crack, and premature action by either side can rebound badly, so accurate manoeuvring matters more than sharp calculation."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "Because the structure is so fixed, the Czech Benoni is defined less by forcing move-orders than by the plans each side adopts. A principal White approach is the kingside space-grab with g4, often supported by h4 and Nge2-g3, aiming to prevent ...f5 entirely and to expand on the flank where White is strongest. Against this Black must manoeuvre patiently, sometimes seeking play on the queenside instead or preparing ...f5 under more favourable circumstances.",
+        "The other main plan is queenside expansion: White prepares b4 with a3 and Rb1 (or Be2, Nd2, and a3), seeking to open the b- or c-file and to create pressure against Black's queenside pawns. Black meets this by contesting the opening files, timing ...f5 to gain kingside counterplay, and using the fixed centre as a shield behind which to regroup. Move-order subtleties matter, but in every line the strategic contest between White's space and Black's solidity and ...f5 break remains the same."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The name Benoni derives from a Hebrew phrase meaning son of my sorrow, taken from an 1825 book by Aaron Reinganum that examined defences to the queen's-pawn openings, and it has since been attached to the family of systems featuring an early ...c5 against 1.d4. The Czech Benoni is one of the oldest members of that family, arising naturally whenever Black meets the space-gaining d5 with the blocking ...e5.",
+        "Never a mainstream weapon at the very top, the Czech Benoni has nonetheless retained a loyal following among positional players and club competitors who value its clarity of plan and its resilience. It is frequently recommended as a practical, low-theory system for Black, offering a fighting, unbalanced game with modest risk against 1.d4 and 2.c4."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3...e5 locks the centre into a fixed c5/d6/e5 versus c4/d5/e4 structure.",
+    "Black trades space for a solid pawn chain and a clear ...f5 plan.",
+    "With the centre closed, the real play shifts to the wings.",
+    "Black's main break is ...f5; White's is b4 on the queenside.",
+    "White can also clamp the kingside with g4 to prevent ...f5.",
+    "A cramped but resilient, low-theory King's-Indian-style setup."
+  ],
+  "plans": {
+    "white": [
+      "Build a broad space advantage with e4 behind the pawn chain.",
+      "Prepare queenside expansion with a3, Rb1, and b4.",
+      "Alternatively clamp the kingside with g4 and Nge2-g3 to stop ...f5.",
+      "Open the b- or c-file to pressure Black's queenside pawns.",
+      "Manoeuvre patiently and avoid letting Black free his game with ...f5."
+    ],
+    "black": [
+      "Complete a solid setup with ...d6, ...Be7, and ...O-O.",
+      "Reroute a knight (via e8, or to g6) to prepare the ...f5 break.",
+      "Play ...f5 at the right moment for kingside counterplay.",
+      "Contest White's queenside files after b4.",
+      "Use the fixed centre as a shield while regrouping the pieces."
+    ]
+  },
+  "related": [
+    "modern-benoni",
+    "benko-gambit",
+    "kings-indian-defense",
+    "old-indian-defense"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "d5",
+      "from": 35,
+      "to": 27
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    }
+  ],
+  "fen": "rnbqk2r/pp2bppp/3p1n2/2pPp3/2P1P3/2N5/PP3PPP/R1BQKBNR w KQkq - 1 6"
+}

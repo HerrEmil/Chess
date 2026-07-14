@@ -64,5 +64,11 @@
       "Aim for a timely central break to free the position and equalize the space balance"
     ]
   },
-  "related": ["queens-gambit", "kings-indian-defense", "nimzo-indian-defense"]
+  "related": [
+    "english-symmetrical",
+    "english-reversed-sicilian",
+    "queens-gambit",
+    "kings-indian-defense",
+    "nimzo-indian-defense"
+  ]
 }

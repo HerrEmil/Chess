@@ -1,0 +1,113 @@
+{
+  "slug": "caro-kann-two-knights",
+  "eco": "B11",
+  "name": "Caro-Kann: Two Knights",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Caro-Kann Two Knights (1.e4 c6 2.Nc3 d5 3.Nf3) sidesteps main theory; after 3...Bg4 4.h3 Bxf3 5.Qxf3 White gains the bishop pair and fast development.",
+  "intro": "The Two Knights Variation is an enterprising way to meet the Caro-Kann, arising after 1.e4 c6 2.Nc3 d5 3.Nf3. By developing both knights before touching the centre pawns, White declines the heavily analysed main lines and invites a quick, natural game. The critical continuation is 3...Bg4 4.h3 Bxf3 5.Qxf3, when Black exchanges the light-squared bishop to relieve the pressure on d5 while White is rewarded with the bishop pair, an actively placed queen on f3, and a comfortable lead in development. The variation has appealed to aggressive players who like to steer the solid Caro-Kann into fresh, lively positions, and it was famously employed by Bobby Fischer, giving the line lasting respect as a practical, low-theory weapon.",
+  "line": "e4 c6 Nc3 d5 Nf3 Bg4 h3 Bxf3 Qxf3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The appeal of 2.Nc3 and 3.Nf3 is that White develops rapidly and keeps the centre fluid, avoiding the deep theory of the Advance, Classical, and Panov systems. Because the knight on c3 defends e4, Black must decide how to handle the central tension, and the natural developing move 3...Bg4 pins nothing yet but prepares to trade off Black's problem bishop. After 4.h3 Bxf3 5.Qxf3, White emerges with the two bishops, a queen eyeing the b7- and f7-squares and the kingside, and easy piece development. The long-term trump is the bishop pair in a semi-open position, which can become powerful if the centre opens.",
+        "Black's compensation is soundness and simplicity. By parting with the light-squared bishop, Black removes the piece that is often hardest to develop in the Caro-Kann and gains a solid, if slightly passive, structure. Typical continuations involve ...e6, ...Nf6, ...Bd6 or ...Be7, and quick castling, after which Black looks to complete development and neutralise White's initiative, sometimes releasing the central tension with ...dxe4. The strategic question is whether White can convert the bishops and lead in development into a lasting initiative before Black finishes mobilising and equalises with a well-organised, weakness-free position."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line runs 3...Bg4 4.h3, when Black almost always plays 4...Bxf3 5.Qxf3, since the retreat 4...Bh5 allows 5.exd5 cxd5 6.Bb5+ with an awkward check that exploits the loose bishop on h5. After 5.Qxf3 Black continues developing with ...Nf6 and ...e6, aiming for a compact French-like or Caro-like structure, or resolves the centre with ...dxe4 followed by ...Nf6. White typically completes development with d3 or d4, Bd3 or Bc4, and castling, then uses the bishop pair and the active queen to press for the initiative. Precise handling of the central tension is the key strategic decision for both players.",
+        "Black also has independent tries at move three. The direct 3...dxe4 4.Nxe4 leads to open, symmetrical development where Black seeks quick equality with ...Bf5 or ...Nf6, while 3...Nf6 keeps more tension and can transpose to related structures. These alternatives avoid surrendering the bishop pair but concede other small concessions in space or time. Because the Two Knights is comparatively free of forcing theory, understanding the recurring themes, the value of the bishop pair, the activity of the f3-queen, and the timing of ...dxe4, matters more than memorising long variations."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Caro-Kann Defence, 1.e4 c6, is named after Horatio Caro and Marcus Kann, who examined it in the late nineteenth century, and it has endured as one of the most reliable and structurally sound answers to 1.e4. Within its many systems, the Two Knights Variation stands apart as a flexible, development-first approach that keeps the game away from the most deeply analysed main lines.",
+        "The line is most famously associated with Bobby Fischer, who adopted 2.Nc3 and 3.Nf3 with success and did much to popularise it as a practical try that combines quick development with the enduring pressure of the bishop pair. Its reputation as a straightforward, low-maintenance weapon that still poses real problems has kept it a favourite of attacking and club players alike, and it remains a respected way to avoid the theoretical thickets of the mainstream Caro-Kann while retaining chances for a genuine opening initiative."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "2.Nc3 and 3.Nf3 develop quickly and sidestep the main Caro-Kann theory.",
+    "After 3...Bg4 4.h3 Bxf3 5.Qxf3 White gains the bishop pair and fast development.",
+    "The queen on f3 is active, eyeing b7, f7, and the kingside.",
+    "The retreat 4...Bh5 runs into 5.exd5 cxd5 6.Bb5+ with an awkward check.",
+    "Black trades off the problem light-squared bishop for a solid structure.",
+    "A favourite of attacking players, famously used by Bobby Fischer."
+  ],
+  "plans": {
+    "white": [
+      "Develop both knights quickly and keep the centre flexible.",
+      "Play h3 to provoke ...Bxf3 and secure the bishop pair.",
+      "Post the queen actively on f3 to pressure b7, f7, and the kingside.",
+      "Complete development with d4 or d3, a bishop to d3 or c4, and castle.",
+      "Open the position to make the two bishops tell and build an initiative."
+    ],
+    "black": [
+      "Trade the light-squared bishop with ...Bg4 and ...Bxf3 to ease development.",
+      "Build a compact structure with ...e6, ...Nf6, and ...Bd6 or ...Be7.",
+      "Castle quickly and complete piece development to neutralise White's initiative.",
+      "Release the central tension with a timely ...dxe4 when convenient.",
+      "Aim for a solid, weakness-free position and gradual equality."
+    ]
+  },
+  "related": [
+    "caro-kann-defense",
+    "caro-kann-classical",
+    "caro-kann-fantasy",
+    "caro-kann-panov"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Bg4",
+      "from": 2,
+      "to": 38
+    },
+    {
+      "san": "h3",
+      "from": 55,
+      "to": 47
+    },
+    {
+      "san": "Bxf3",
+      "from": 38,
+      "to": 45
+    },
+    {
+      "san": "Qxf3",
+      "from": 59,
+      "to": 45
+    }
+  ],
+  "fen": "rn1qkbnr/pp2pppp/2p5/3p4/4P3/2N2Q1P/PPPP1PP1/R1B1KB1R b KQkq - 0 5"
+}

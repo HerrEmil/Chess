@@ -1,0 +1,118 @@
+{
+  "slug": "pirc-classical",
+  "eco": "B08",
+  "name": "Pirc: Classical System",
+  "aka": ["Two Knights System"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Pirc Classical (Two Knights) System develops Nf3 and Be2 and castles, keeping a sound e4-d4 centre for a calm, positional battle against the Pirc.",
+  "intro": "The Classical System, also called the Two Knights System, is White's natural and solid way of meeting the Pirc Defence, reached after 1.e4 d6 2.d4 Nf6 3.Nc3 g6 4.Nf3 Bg7 5.Be2 O-O. Rather than overextend with an early f4, White simply develops the pieces to their most harmonious squares, bringing out both knights, placing the bishop on e2, and castling into a healthy position. The name Two Knights reflects White's decision to complete knight development before committing the pawns. It is a restrained, flexible approach that keeps a comfortable share of the centre and avoids the sharp theoretical duels of the Austrian Attack, steering the game toward a patient positional struggle where sound structure and good piece placement matter more than forcing lines.",
+  "line": "e4 d6 d4 Nf6 Nc3 g6 Nf3 Bg7 Be2 O-O",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "In the Classical System White is content with a modest but durable centre of pawns on e4 and d4, backed by the knight on f3 and pieces developed to natural squares. The plan is straightforward: castle short, connect the rooks, and gradually build up with moves like Re1, h3, Be3, and Qd2, keeping options open in the centre and on either wing. Because White has not committed to a pawn storm, the position is less brittle than in the Austrian Attack, and White can aim for a small, lasting space advantage while restraining Black's freeing breaks. The e4-d4 duo gives White the more comfortable game if Black is allowed to remain passive.",
+        "Black's counterplay revolves around the standard Pirc levers ...e5 and ...c5, prepared by good development. The fianchettoed bishop on g7 eyes d4 and the long diagonal, and Black often plays ...Nc6 or ...Nbd7 to support the central breaks, together with ...c6 to build a small pawn chain and prepare ...b5 or ...d5. A very common motif is ...Bg4, pinning the f3-knight to increase pressure on d4 before striking with ...e5. If Black can achieve ...e5 or ...c5 on favourable terms and exchange enough pieces, the position equalises; if White keeps the breaks under control, the extra central space tells."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 5.Be2 O-O 6.O-O, Black chooses among several well-established setups. The most direct is 6...Bg4, pinning the knight and following up with ...Nc6 to pile pressure on d4, when White often responds with Be3 and Qd2 or breaks the pin with h3. The solid 6...c6 prepares ...b5 with queenside expansion or supports a later ...d5, giving Black a flexible, resilient structure. Another mainstream plan is 6...Nc6 aiming quickly for ...e5, or 6...Nbd7 with the same idea, rerouting a knight to support the centre. Each of these keeps the game within positional channels.",
+        "A common independent try for White is 6.h3, played before Black can pin with ...Bg4, ensuring that the f3-knight is never bothered on the way to supporting d4 or a later d5 advance. White can then expand with a4, Be3, and Qd2, or prepare the central push. Because the Classical System is so free of concrete weaknesses, the theory here is less about long forced sequences and more about accurate handling of typical plans, timing the central breaks correctly, and outmanoeuvring the opponent in a slow middlegame."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Pirc Defence is named after the Slovenian grandmaster Vasja Pirc, who did much to establish the ...d6 and ...g6 system in serious practice during the 1930s and 1940s; it is also historically linked with Anatoly Ufimtsev and sometimes called the Pirc-Ufimtsev Defence. The opening rose to full respectability in the mid-twentieth century as a flexible, counterattacking answer to 1.e4, closely related to the Modern Defence and sharing many ideas with the King's Indian.",
+        "The Classical, or Two Knights, System represents the traditional main-line response, favoured by players who prefer sound development and a small positional edge to the tactical complications of the Austrian Attack. It has long been a dependable choice for those wishing to meet the Pirc without memorising sharp forcing lines, and it remains a staple of practical play. Its emphasis on harmonious piece placement and a healthy centre keeps it a natural recommendation for club players and a respectable weapon at the highest level."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White develops naturally with Nf3, Be2, and O-O, keeping a sound e4-d4 centre.",
+    "A restrained system that avoids the sharp theory of the Austrian Attack.",
+    "White aims for a small, lasting space advantage and slow positional pressure.",
+    "Black counters with the standard Pirc breaks ...e5 and ...c5.",
+    "...Bg4 pins the f3-knight to increase pressure on d4 before ...e5.",
+    "The move 6.h3 sidesteps the pin and keeps the knight flexible."
+  ],
+  "plans": {
+    "white": [
+      "Castle short and complete development with Re1, Be3, and Qd2.",
+      "Maintain the e4-d4 centre and keep a small space advantage.",
+      "Play h3 to prevent the ...Bg4 pin and keep the f3-knight free.",
+      "Expand with a4 on the queenside and consider a later d5 advance.",
+      "Restrain Black's ...e5 and ...c5 breaks and outmanoeuvre in the middlegame."
+    ],
+    "black": [
+      "Pressure d4 with ...Bg4, ...Nc6, and the g7-bishop on the long diagonal.",
+      "Prepare the freeing break ...e5 with ...Nc6 or ...Nbd7.",
+      "Play ...c6 to build a pawn chain and prepare ...b5 or ...d5.",
+      "Strike with ...c5 to open the c-file and activate the fianchettoed bishop.",
+      "Trade pieces after a successful central break to reach comfortable equality."
+    ]
+  },
+  "related": [
+    "pirc-defense",
+    "pirc-austrian-attack",
+    "modern-defense",
+    "philidor-defense"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Bg7",
+      "from": 5,
+      "to": 14
+    },
+    {
+      "san": "Be2",
+      "from": 61,
+      "to": 52
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    }
+  ],
+  "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/3PP3/2N2N2/PPP1BPPP/R1BQK2R w KQ - 4 6"
+}

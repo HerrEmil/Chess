@@ -89,5 +89,12 @@
       "Keep the structure sound so the long-term pawn imbalance favors the endgame"
     ]
   },
-  "related": ["kings-indian-defense", "queens-gambit-declined", "queens-gambit"]
+  "related": [
+    "nimzo-indian-classical",
+    "nimzo-indian-rubinstein",
+    "nimzo-indian-samisch",
+    "kings-indian-defense",
+    "queens-gambit-declined",
+    "queens-gambit"
+  ]
 }

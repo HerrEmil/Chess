@@ -1,0 +1,118 @@
+{
+  "slug": "nimzo-indian-rubinstein",
+  "eco": "E41",
+  "name": "Nimzo-Indian: Rubinstein",
+  "aka": ["Rubinstein System"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Rubinstein System (4.e3) is the Nimzo-Indian's flexible main line, developing quietly with Bd3, Nf3 and O-O while aiming for the e4 break.",
+  "intro": "The Rubinstein System is the most popular and flexible way to meet the Nimzo-Indian, arising after 1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3. White forgoes any immediate attempt to punish the pin and instead develops smoothly with Bd3, a knight to f3 or e2, and short castling, keeping the choice of when and how to deal with the bishop on b4. The modest e3 supports d4, opens the f1-bishop, and leaves White's structure sound whatever Black chooses. Play often continues 4...O-O 5.Nf3 d5, or the immediate 4...c5, when the character of the game hinges on which central break defines the position, from an isolated queen's pawn to hanging pawns to a fixed centre. Named after Akiba Rubinstein, it is the workhorse main line of the entire Nimzo-Indian complex.",
+  "line": "d4 Nf6 c4 e6 Nc3 Bb4 e3 O-O Nf3 d5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining question of the Rubinstein is what happens to the central tension and to White's pawn structure. Because White has not played a3, Black keeps the option of surrendering the bishop on c3 only when it damages White most, or of retreating it and preserving the pair. With ...d5 systems Black challenges c4 directly; after cxd5 exd5 a classical structure appears, while ...c5 combined with ...d5 and later ...dxc4 or ...cxd4 can leave White with an isolated d-pawn or hanging c- and d-pawns. Each structure sets the middlegame agenda: White wants the freeing e3-e4 advance and active piece play, while Black blockades, pressures any weakened pawns, and fights for the light squares around e4.",
+        "Piece placement follows the structure. White's light-squared bishop belongs on d3 aiming at the black king, the king's knight heads for f3 and can later reroute via d2 or e2 to support e4, and the c1-bishop develops to b2 or d2. Black castles quickly, develops with ...d5 and ...c5, or ...b6 and ...Bb7, and frequently trades on c3 to inflict doubled pawns before the centre closes. If White achieves e4 under favourable circumstances the initiative and space can be considerable; if Black neutralises it and fixes the doubled pawns, the endgame favours the side with the sounder structure. This tug-of-war over e4 and the c-pawns is the essence of the variation."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "Within 4.e3 several well-mapped systems branch out. After 4...O-O 5.Nf3 d5 6.Bd3 White heads for classical positions where 6...c5 7.O-O and an eventual cxd5 or dxc5 defines the pawns, giving rise to the isolated queen's pawn and hanging-pawn middlegames that generations of masters have analysed. The set-up with an early ...c5, ...d5 and ...Nc6, favoured by positional players such as Anatoly Karpov, keeps the tension and invites rich manoeuvring, while lines with ...b6 and ...Bb7 fight for e4 along the long diagonal.",
+        "A distinct branch is the Hübner Variation, in which Black plays ...c5 and ...d6 rather than ...d5, trades on c3, and clamps the centre with ...Nc6 and ...e5, banking on a firm dark-square blockade and the long-term weakness of White's doubled c-pawns; Bobby Fischer used exactly this treatment to beat Boris Spassky in the fifth game of their 1972 match. Another important line runs 4...c5 5.Ne2, when White intends to recapture on c3 with the knight and avoid doubled pawns altogether, aiming for the bishop pair and the e4 break. The wealth of move orders and transpositions makes the Rubinstein one of the most flexible openings in all of chess."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The 4.e3 system is named after Akiba Rubinstein, the great Polish grandmaster of the early twentieth century, who did much to develop White's quiet, structurally sound treatment of the Nimzo-Indian in the 1920s and 1930s. It has since become the most frequently played fourth move at every level, precisely because it commits to nothing and keeps White's options open.",
+        "Elite players from Mikhail Botvinnik and Anatoly Karpov to a long line of modern world-class grandmasters have handled both sides of the Rubinstein, and its isolated-queen's-pawn and hanging-pawn structures serve as textbook teaching material for positional chess. Its blend of low commitment and rich strategic content keeps it firmly at the centre of both elite preparation and club-level repertoires."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "4.e3 keeps White's structure sound and delays any commitment to the pin.",
+    "White develops flexibly with Bd3, Nf3 or Ne2, and short castling.",
+    "The freeing e3-e4 advance is White's central ambition.",
+    "Black picks the structure with ...d5, ...c5, or the ...c5 and ...d6 Hübner clamp.",
+    "Isolated queen's pawn and hanging-pawn middlegames are common.",
+    "Whether Black doubles White's c-pawns shapes the long-term endgame."
+  ],
+  "plans": {
+    "white": [
+      "Develop with Bd3, Nf3 or Ne2, and castle short.",
+      "Prepare and execute the freeing e3-e4 break.",
+      "Recapture on c3 with the knight via Ne2 to keep the pawns intact.",
+      "Exploit the bishop pair and space when the centre opens.",
+      "Steer toward an isolated queen's pawn or hanging pawns with active pieces."
+    ],
+    "black": [
+      "Castle quickly and strike the centre with ...d5 or ...c5.",
+      "Trade on c3 to saddle White with doubled pawns when it helps.",
+      "Blockade and pressure White's weakened c-pawns.",
+      "Fight for control of e4 with pieces and pawns.",
+      "In the Hübner set-up, clamp the centre with ...Nc6, ...d6 and ...e5."
+    ]
+  },
+  "related": [
+    "nimzo-indian-defense",
+    "nimzo-indian-classical",
+    "nimzo-indian-samisch",
+    "queens-indian-defense"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Bb4",
+      "from": 5,
+      "to": 33
+    },
+    {
+      "san": "e3",
+      "from": 52,
+      "to": 44
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    }
+  ],
+  "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/1bPP4/2N1PN2/PP3PPP/R1BQKB1R w KQ d6 0 6"
+}

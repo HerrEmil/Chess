@@ -1,0 +1,118 @@
+{
+  "slug": "english-reversed-sicilian",
+  "eco": "A22",
+  "name": "English: Reversed Sicilian",
+  "aka": ["Reversed Dragon"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Reversed Sicilian (1.c4 e5) meets ...e5 as a Sicilian with colours reversed and an extra tempo, often reaching a Dragon structure a move up.",
+  "intro": "The Reversed Sicilian arises after 1.c4 e5, when Black stakes a claim in the centre and turns the game into a Sicilian Defence with the colours reversed — and White enjoying an extra tempo. In the line 2.Nc3 Nf6 3.Nf3 Nc6 4.g3 d5 5.cxd5 Nxd5, Black opens the centre and, after a later ...Nb6, White develops with g3 and Bg2 to reach a structure that mirrors the Sicilian Dragon a full move up, which is why the system is popularly called the Reversed Dragon. The extra tempo is not decisive on its own, but it lets White pursue the same energetic central and queenside plans that Black uses in the Sicilian, only sooner and with the initiative. The result is a rich, positional opening that has been a respected way to meet 1...e5 for the better part of a century.",
+  "line": "c4 e5 Nc3 Nf6 Nf3 Nc6 g3 d5 cxd5 Nxd5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The guiding idea is to treat a Sicilian structure from the stronger side. In a normal Open Sicilian Dragon Black fianchettoes on g7 and plays for queenside pressure; here White does exactly that with g3 and Bg2, and because he is a tempo ahead he can carry out the analogous plans more quickly. After 4...d5 5.cxd5 Nxd5 Black usually retreats the knight to b6, keeping a healthy share of the centre, while White completes his fianchetto and prepares queenside expansion with a3 and b4 or central pressure with d3 and play down the c-file. The battle is about whether White's extra move translates into a lasting initiative or whether Black's solid, well-centralised setup holds the balance.",
+        "Pawn structure and piece activity define the middlegame. Black's ...e5 and ...d5 give him central presence, but the exchange on d5 leaves both sides with a fluid, semi-open position in which the fianchettoed bishops and the well-placed knights vie for the long diagonals. White typically presses on the queenside, using moves like Rb1, a3, and b4 to gain space, while Black seeks counterplay with piece activity, ...Be6 or ...Bb4, and a well-timed pawn break. The positions are strategically intricate rather than sharply tactical, rewarding a good sense of when the extra tempo can be converted into concrete pressure."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line runs 5...Nxd5 6.Bg2 Nb6, when Black steps the knight back to a safe, active post and prepares to develop the kingside; play often continues 7.O-O Be7 8.d3 O-O, reaching the classic Reversed Dragon tabiya. From here White chooses between a3 and b4 to expand on the queenside, Be3 to eye the b6-knight and prepare Rc1 or Qc1 ideas, and Nd2-c4 to increase the pressure. Black holds the centre and looks for the right moment to activate his pieces or challenge White's queenside advance.",
+        "Black has more than one respectable treatment. After 5...Nxd5 6.Bg2 the knight most often drops back to b6, but 6...Nxc3 followed by 7.bxc3, doubling White's pawns, is a known structural try for counterchances. Earlier, Black can vary with 4...Bb4, pinning the c3-knight instead of striking with ...d5, giving the game a more piece-play character. White, for his part, can reach these positions through the Four Knights English (the tabiya after 3.Nf3 Nc6) or choose the Bremen System with an early g3, underscoring how closely the 1.c4 e5 lines are interwoven."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "Like the rest of the English Opening, the Reversed Sicilian traces back to Howard Staunton's use of 1.c4 in the mid-nineteenth century, but the specific idea of welcoming 1...e5 and treating it as a Sicilian a tempo up became a serious weapon in the twentieth century. Mikhail Botvinnik was among the great champions who employed 1.c4 e5 systems, lending them authority at the highest level.",
+        "The Reversed Dragon and its relatives have since been adopted by a broad range of elite grandmasters, valued for combining the soundness of a symmetrical-style structure with the extra half-tempo that gives White something to press for. It remains a popular, well-respected answer to 1...e5, especially among players who enjoy Sicilian-style middlegames from the white side."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "1.c4 e5 is a Sicilian Defence with colours reversed and White a tempo up.",
+    "After ...d5, cxd5 Nxd5 and ...Nb6, White reaches a Reversed Dragon structure.",
+    "The extra tempo lets White pursue Black's usual Sicilian plans sooner.",
+    "White presses on the queenside with a3, b4, and Rb1.",
+    "Black relies on a solid, well-centralised setup to neutralise the tempo.",
+    "Strategically rich and positional rather than sharply tactical."
+  ],
+  "plans": {
+    "white": [
+      "Fianchetto with g3 and Bg2 to control the long light diagonal.",
+      "Expand on the queenside with a3, b4, and Rb1.",
+      "Play d3 and manoeuvre a knight to c4 to pressure b6 and e5.",
+      "Use the extra tempo to reach favourable Dragon-style structures.",
+      "Convert the initiative into concrete pressure before Black consolidates."
+    ],
+    "black": [
+      "Recapture with ...Nxd5 and reroute the knight to b6.",
+      "Complete development with ...Be7 and ...O-O, holding the centre.",
+      "Meet White's b4 with timely queenside counter-measures.",
+      "Activate pieces with ...Be6, ...Bb4, or ...Bf5 for counterplay.",
+      "Consider ...Nxc3 to double White's pawns for structural chances."
+    ]
+  },
+  "related": [
+    "english-opening",
+    "english-symmetrical",
+    "sicilian-dragon",
+    "reti-opening"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "g3",
+      "from": 54,
+      "to": 46
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "cxd5",
+      "from": 34,
+      "to": 27
+    },
+    {
+      "san": "Nxd5",
+      "from": 21,
+      "to": 27
+    }
+  ],
+  "fen": "r1bqkb1r/ppp2ppp/2n5/3np3/8/2N2NP1/PP1PPP1P/R1BQKB1R w KQkq - 0 6"
+}

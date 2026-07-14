@@ -1,0 +1,128 @@
+{
+  "slug": "smith-morra-gambit",
+  "eco": "B21",
+  "name": "Smith-Morra Gambit",
+  "aka": ["Morra Gambit"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Smith-Morra Gambit answers the Sicilian with 2.d4 and 3.c3, sacrificing a pawn for fast development, open files, and lasting initiative.",
+  "intro": "The Smith-Morra Gambit arises after 1.e4 c5 2.d4 cxd4 3.c3, when White offers a pawn to blow open the position against the Sicilian. If Black accepts with 3...dxc3 4.Nxc3, White emerges a pawn down but with a substantial lead in development, the half-open c- and d-files for the rooks, and natural attacking squares for the pieces. A typical deployment runs Nf3, Bc4, O-O, Qe2, and rooks to c1 and d1, after which the bishop on c4 together with the queen and rooks bear down on e6, d6, and f7. The whole gambit is a wager that quick, harmonious development and open lines will outweigh a single pawn.",
+  "line": "e4 c5 d4 cxd4 c3 dxc3 Nxc3 Nc6 Nf3 d6 Bc4 e6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "White's compensation is entirely dynamic. Because Black has swapped the c-pawn for White's d-pawn, the c- and d-files are half-open, and White places rooks on c1 and d1 to hammer at c6, c7, and d6. The light-squared bishop belongs on c4 or b3, pointing at the sensitive f7- and e6-squares, and the queen usually goes to e2 so that the rook can come to d1 with tempo. White wants to keep the initiative rolling, provoke weaknesses, and open lines before Black untangles; if the attack fizzles, the missing pawn tells in the endgame.",
+        "Black's task is the mirror image: complete development, blunt White's active pieces, and consolidate the extra pawn toward a favourable endgame. The most reliable setups keep pawns on d6 and e6 with pieces on ...Nc6, ...Be7, ...Nf6 or ...Nge7, ...a6 and ...Qc7, avoiding the tactical pitfalls on the c-file and around f7. A recurring motif is the manoeuvre ...Qc7 and ...Nge7 to cover d5 and e6 while sidestepping pins, and the ...a6 and ...b5 plan to challenge the c4-bishop. If Black survives the opening barrage with the pieces coordinated, the extra pawn becomes a real asset."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main tabiya is the Morra Accepted, 3...dxc3 4.Nxc3, when 4...Nc6 5.Nf3 d6 6.Bc4 e6 reaches a solid defensive formation. White continues with O-O and Qe2, adds Rd1 and Bf4, and keeps the pressure, while Black aims to complete development with ...Be7, ...Nf6, ...O-O, and ...a6. Accuracy matters: the well-known Siberian Trap shows the danger for an unwary White player, as Black's early ...Qc7 and ...Ng4 prepare the ...Nd4 leap and a decisive mating attack against h2.",
+        "Black is by no means obliged to accept. Declining with 3...Nf6 steers toward Alapin-like structures after 4.e5, 3...d5 4.exd5 Qxd5 reaches a comfortable Scandinavian-flavoured position, and the solid 3...d3 hands the pawn straight back to blunt White's initiative and leave the c-pawn slightly awkward. Because these lines take much of the sting out of the gambit, dedicated Morra players usually welcome the acceptance, where their preparation runs deepest."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The gambit is named after two players who championed it decades apart. The French player Pierre Morra analysed and popularised the 2.d4 and 3.c3 pawn sacrifice in the 1940s and 1950s, and the American master Ken Smith, founder of the Chess Digest publishing house, adopted it as his main weapon and did much to spread it in the United States, so the line carries both their names.",
+        "Long regarded as a club-level surprise weapon rather than a main-line try, the Smith-Morra has nonetheless attracted committed advocates at master level. The American grandmaster Marc Esserman, whose book Mayhem in the Morra argues for the gambit's soundness, has scored notable wins with it against strong opposition, and it remains a popular practical choice for players who relish open, initiative-driven positions over material."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White sacrifices a pawn with 2.d4 cxd4 3.c3 to open the position quickly.",
+    "After 3...dxc3 4.Nxc3 White has a big lead in development and open c- and d-files.",
+    "The c4-bishop and the heavy pieces target e6, d6, and f7.",
+    "Rooks belong on c1 and d1, with the queen on e2 supporting Rd1.",
+    "Black aims to develop safely, blunt the initiative, and keep the extra pawn.",
+    "Beware the Siberian Trap: ...Qc7 and ...Ng4 set up a mating ...Nd4."
+  ],
+  "plans": {
+    "white": [
+      "Recapture on c3 and develop rapidly with Nf3, Bc4, and O-O.",
+      "Place the rooks on the half-open c- and d-files.",
+      "Post the queen on e2 and the bishop on c4 to pressure e6 and f7.",
+      "Provoke weaknesses and open lines before Black completes development.",
+      "Keep the initiative alive to justify the sacrificed pawn."
+    ],
+    "black": [
+      "Accept the pawn and aim to consolidate it in a safe structure.",
+      "Develop with ...Nc6, ...d6, ...e6, ...Be7, and ...Nf6 or ...Nge7.",
+      "Cover d5 and e6, and neutralise the c4-bishop with ...a6 and ...b5.",
+      "Avoid tactical pitfalls on the c-file and around f7.",
+      "Trade pieces to reach a favourable endgame a pawn up."
+    ]
+  },
+  "related": [
+    "sicilian-defense",
+    "sicilian-alapin",
+    "danish-gambit",
+    "goring-gambit"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    },
+    {
+      "san": "dxc3",
+      "from": 35,
+      "to": 42
+    },
+    {
+      "san": "Nxc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    }
+  ],
+  "fen": "r1bqkbnr/pp3ppp/2npp3/8/2B1P3/2N2N2/PP3PPP/R1BQK2R w KQkq - 0 7"
+}

@@ -1,0 +1,128 @@
+{
+  "slug": "kings-indian-samisch",
+  "eco": "E81",
+  "name": "King's Indian: Sämisch",
+  "aka": ["Sämisch Variation"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Sämisch King's Indian (5.f3) props up e4 and prepares Be3, Qd2 and queenside castling behind a kingside pawn storm with g4 and h4.",
+  "intro": "The Sämisch Variation is one of White's most combative answers to the King's Indian Defence, arising after 1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.f3. The modest-looking 5.f3 is the key move: it bolsters the e4-pawn, takes the g4-square away from Black's pieces, and lays the groundwork for a broad, aggressive setup with Be3, Qd2 and often long castling followed by a kingside pawn storm with g4 and h4-h5. Black usually castles and challenges the centre with 6...e5, or heads for a Benoni-style structure with ...c5. The result is a rich, sharp struggle in which White enjoys a firm centre and attacking ambitions on both wings, while Black seeks dynamic counterplay against the sometimes slightly loosened white position.",
+  "line": "d4 Nf6 c4 g6 Nc3 Bg7 e4 d6 f3 O-O Be3 e5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "By playing f3 White builds an unusually solid pawn centre, with e4 supported by both the d- and f-pawns, and gains the option of castling queenside to hurl the kingside pawns forward. The dark-squared bishop develops actively to e3, the queen goes to d2 connecting with it and eyeing h6, and White frequently follows with g4, h4-h5 and O-O-O in a direct assault on Black's fianchettoed king. The trade-offs are time and a certain rigidity: the f3-pawn blocks the natural g1-knight square and can become a target if the centre is opened.",
+        "Black has two principal counter-strategies. The classical response is 5...O-O and 6...e5, challenging d4 head-on; if White closes with d5 the game resembles a King's Indian with the extra feature of f3, and Black plays for ...f5 or expands on the queenside with ...c6 and ...a6-...b5. The other main path is the ...c5 lever, transposing to sharp Benoni-type positions where Black accepts a space disadvantage or sacrifices a pawn in return for active piece play against White's centre. In every line the battle is about whether White's imposing but slow build-up strikes first, or whether Black's counterplay against d4 and the queenside arrives in time."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 5...O-O 6.Be3, Black chooses how to fight for the centre. The classical 6...e5 challenges d4 directly; White can lock the centre with 7.d5, keeping the Sämisch bind, or trade into an endgame with 7.dxe5 dxe5 8.Qxd8 Rxd8, where the bishop pair gives a small pull. The sharp 6...c5 aims for Benoni-style counterplay, when 7.dxc5 dxc5 or the gambit lines with ...b5 lead to unbalanced positions rich in chances for both sides.",
+        "The other principal system is the Panno Variation, 6...Nc6 followed by ...a6 and ...Rb8, in which Black delays the central break and instead prepares the queenside expansion ...b5, attacking White's centre from the flank. Against all of these, White's thematic plan of Qd2, Bh6 to trade off the strong g7-bishop, long castling and the g4-h4-h5 pawn storm is a constant threat, and much of Sämisch theory concerns whether Black's counterplay on the queenside and in the centre is fast enough to meet White's kingside avalanche."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is named after the German master Friedrich Sämisch, who introduced the 5.f3 setup in the 1920s. It quickly gained a reputation as one of the most testing anti-King's-Indian systems precisely because it meets Black's hypermodern strategy with a broad, well-supported centre of White's own, combined with the threat of a direct attack.",
+        "Over the following decades the Sämisch was adopted by many leading players seeking a principled way to punish the King's Indian, and it remains a mainstay at every level. Its uncompromising character, with an early commitment to opposite-wing attacks, has made it a favourite of ambitious attacking players, while its solidity in the centre also appeals to those who prefer to squeeze Black positionally. It continues to be a central topic of modern King's Indian preparation."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "5.f3 props up e4 and prepares Be3, Qd2 and long castling.",
+    "White aims for a kingside pawn storm with g4, h4 and h5.",
+    "Bh6 trades off Black's powerful fianchettoed g7-bishop.",
+    "The f3-pawn is solid but slow and blocks the g1-knight.",
+    "Black counters with ...e5, the Benoni ...c5, or the Panno ...Nc6.",
+    "A race between White's kingside attack and Black's queenside play."
+  ],
+  "plans": {
+    "white": [
+      "Support e4 with f3 and develop with Be3 and Qd2.",
+      "Castle queenside and storm the kingside with g4 and h4-h5.",
+      "Trade the g7-bishop with Bh6 to weaken Black's king.",
+      "Meet ...e5 by closing with d5 or trading into a better endgame.",
+      "Blunt Black's ...b5 counterplay while pressing on the kingside."
+    ],
+    "black": [
+      "Castle and challenge the centre with ...e5 or the Benoni ...c5.",
+      "Adopt the Panno with ...Nc6, ...a6 and ...Rb8 to prepare ...b5.",
+      "Generate fast queenside counterplay before White's storm lands.",
+      "Exploit the loosened f3 setup with piece pressure on the centre.",
+      "Reroute the f6-knight with ...Nh5 or ...Nd7 to enable ...f5."
+    ]
+  },
+  "related": [
+    "kings-indian-defense",
+    "kings-indian-classical",
+    "kings-indian-fianchetto",
+    "modern-benoni"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Bg7",
+      "from": 5,
+      "to": 14
+    },
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "f3",
+      "from": 53,
+      "to": 45
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "san": "Be3",
+      "from": 58,
+      "to": 44
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    }
+  ],
+  "fen": "rnbq1rk1/ppp2pbp/3p1np1/4p3/2PPP3/2N1BP2/PP4PP/R2QKBNR w KQ e6 0 7"
+}

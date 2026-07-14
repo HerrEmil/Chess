@@ -1,0 +1,138 @@
+{
+  "slug": "sicilian-richter-rauzer",
+  "eco": "B62",
+  "name": "Richter-Rauzer Attack",
+  "aka": ["Rauzer Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Richter-Rauzer Attack meets the Classical Sicilian with 6.Bg5, pinning the knight and preparing opposite-side castling and mutual attacks.",
+  "intro": "The Richter-Rauzer Attack arises in the Classical Sicilian after 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 Nc6 6.Bg5, when White pins the f6-knight and prepares the thematic plan of Qd2 and queenside castling. After 6...e6 7.Qd2, the flexible 7...a6 is one of Black's most popular replies, keeping options open for ...Bd7, ...Be7, or ...h6 while preparing queenside expansion with ...b5. The variation is a classic opposite-side-castling battle: White throws the kingside pawns forward against Black's king, while Black counterattacks on the queenside and down the half-open c-file. Sharp, deeply analysed, and uncompromising, it is one of the most respected weapons against the Classical Sicilian.",
+  "line": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 Nc6 Bg5 e6 Qd2 a6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "By playing 6.Bg5 White pins the knight that guards d5 and e4 and clears the way for rapid queenside castling. The standard plan is Qd2, O-O-O, and then f3 or f4 followed by a pawn storm with g4-g5 and h4-h5, prising open lines against a Black king that often castles short. In many lines White is happy to exchange on f6, doubling Black's pawns and clamping down on the dark squares, especially if Black has weakened the kingside with ...h6 and ...g5. The bishop on g5 and the queen on d2 together generate lasting pressure.",
+        "Black's counterplay is just as thematic. The half-open c-file, the ...a6 and ...b5-b4 pawn advance, and pressure on the d4-knight and the c3- and e4-pawns give Black a fast attack on the opposite wing. A key decision is where to place the king: Black may castle kingside and race White's pawn storm, or castle queenside for a more balanced struggle. The ...a6, ...Bd7, ...Rc8, and ...Qa5 or ...Qc7 setup is typical, and the whole variation is a race in which a single tempo can decide the outcome."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 6.Bg5 e6 7.Qd2 the main branching point concerns Black's move order. The classical 7...Be7 8.O-O-O O-O leads to well-mapped attacking positions, while the modern 7...a6, the given line and sometimes called the Neo-Rauzer, delays the bishop to retain flexibility and speed up ...b5. White usually follows with 8.O-O-O, after which ...Bd7, ...h6, and ...b5 fight for the initiative.",
+        "A major alternative for Black is 7...h6, questioning the bishop at once: 8.Bxf6 gxf6 damages Black's structure but hands over the bishop pair and the half-open g-file, while 8.Bf4 or 8.Be3 keeps the tension. White's kingside pawn storm with f3, g4, and h4 is the standard attacking method, and Black must generate queenside play quickly to keep pace. The resulting positions are among the sharpest in Sicilian theory and demand precise, well-prepared play from both sides."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation takes its name from two players. The German master Kurt Richter introduced the aggressive 6.Bg5 in the 1930s, and the Soviet master Vsevolod Rauzer developed the accompanying plan of Qd2 and queenside castling that gives the system its attacking bite. Rauzer's strategic ideas about clamping down on d5 and storming the kingside proved enormously influential.",
+        "The Richter-Rauzer went on to become one of the principal tests of the Classical Sicilian and a fixture of top-level theory. Generations of grandmasters have contributed to its dense body of analysis, and it remains a staple of elite preparation, its sharp opposite-wing race continually refined as both sides search for the decisive tempo."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "6.Bg5 pins the f6-knight and prepares Qd2 and O-O-O.",
+    "White storms the kingside with f3 or f4, g4-g5, and h4-h5.",
+    "Black counterattacks on the queenside with ...a6 and ...b5-b4.",
+    "Exchanging on f6 damages Black's pawns but yields the bishop pair.",
+    "The half-open c-file is Black's main source of counterplay.",
+    "A tense opposite-side-castling race where tempo is everything."
+  ],
+  "plans": {
+    "white": [
+      "Pin with Bg5 and prepare Qd2 and queenside castling.",
+      "Launch a kingside pawn storm with g4-g5 and h4-h5.",
+      "Consider Bxf6 to clamp the dark squares and target d5.",
+      "Keep the initiative rolling before Black's queenside play arrives.",
+      "Watch the c-file and the safety of the c3-knight."
+    ],
+    "black": [
+      "Play ...a6 and ...b5-b4 to open lines against White's king.",
+      "Develop with ...Bd7, ...Rc8, and ...Qa5 or ...Qc7 for c-file pressure.",
+      "Choose kingside or queenside castling to suit the race.",
+      "Consider ...h6 to question the g5-bishop and win the bishop pair.",
+      "Hit the d4-knight and the c3 and e4 pawns to speed the counterattack."
+    ]
+  },
+  "related": [
+    "sicilian-classical",
+    "sicilian-najdorf",
+    "sicilian-dragon",
+    "sicilian-defense"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bg5",
+      "from": 58,
+      "to": 30
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Qd2",
+      "from": 59,
+      "to": 51
+    },
+    {
+      "san": "a6",
+      "from": 8,
+      "to": 16
+    }
+  ],
+  "fen": "r1bqkb1r/1p3ppp/p1nppn2/6B1/3NP3/2N5/PPPQ1PPP/R3KB1R w KQkq - 0 8"
+}

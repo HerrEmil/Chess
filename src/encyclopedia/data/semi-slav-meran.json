@@ -1,0 +1,138 @@
+{
+  "slug": "semi-slav-meran",
+  "eco": "D47",
+  "name": "Semi-Slav: Meran",
+  "aka": ["Meran Variation"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Meran Variation of the Semi-Slav (6.Bd3 dxc4 7.Bxc4 b5) grabs queenside space and prepares ...c5 to free Black's game against White's e4 break.",
+  "intro": "The Meran Variation is a sharp, deeply analysed system of the Semi-Slav Defence reached after 1.d4 d5 2.c4 c6 3.Nf3 Nf6 4.Nc3 e6 5.e3 Nbd7 6.Bd3 dxc4 7.Bxc4 b5. With 6...dxc4 Black surrenders the centre for a moment to win a tempo on White's bishop, and 7...b5 immediately claims queenside space, making room for the light-squared bishop on b7 and preparing the freeing break ...c5. White, for his part, has completed a harmonious classical development and aims to open the position with the e3-e4 advance, when the bishop pair and lead in development can become dangerous. The result is one of the most theory-rich battlegrounds in all of Queen's Gambit play, prized for its blend of solid structure and concrete, tactical middlegames. It has appeared in countless top-level games and remains a mainstay of elite repertoires.",
+  "line": "d4 d5 c4 c6 Nf3 Nf6 Nc3 e6 e3 Nbd7 Bd3 dxc4 Bxc4 b5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Meran revolves around a race between Black's queenside expansion and White's central break. By playing ...c6 and ...e6 before ...dxc4, Black keeps a compact pawn shell and only strikes at the centre once White has committed the bishop to d3. After 7...b5 the pawn, supported by ...a6, gains space and clears the way for ...Bb7 and ...c5, the two moves that give Black's game its life. If Black achieves ...c5 under good circumstances, the light-squared bishop springs to life on the long diagonal and the position opens in Black's favour; if White prevents or blunts it, Black can feel cramped.",
+        "White's trumps are the bishop pair, a small lead in development, and the e3-e4 lever that would hand him a mobile central majority. Typical piece placement sees the bishop retreat from c4 to d3 or e2, the queen come to e2 or c2 to support e4, and the rooks occupy the central files. The middlegame frequently becomes a concrete, tactical affair once the centre opens, with the e5-square, the d-file, and the Black king (which often castles late) all in play. Both sides must calculate precisely, because small inaccuracies in these open positions are quickly punished."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The classical Meran continues 8.Bd3 a6, when 9.e4 c5 reaches the defining tabiya. White can play the natural 10.e5, gaining space and chasing the f6-knight, which leads to extremely sharp lines where he often sacrifices a piece with 11.Nxb5 to blast the position open; alternatively 10.d5 is the aggressive Reynolds Variation, a central pawn sacrifice that opens lines against Black's uncastled king. These continuations have been analysed to great depth and remain the theoretical heart of the system.",
+        "Black has good alternatives to the immediate ...a6, most notably 8...Bb7, developing the bishop at once and keeping the queenside pawns flexible. White can also try to sidestep the Meran altogether: the modern anti-Meran approach with an early Qc2 (in place of 6.Bd3) discourages ...dxc4, while the sharp Botvinnik System with 5.Bg5 steers the game into an entirely different, hugely complex struggle. Within the Meran itself, quieter White setups with Be2 and a slow build-up offer a more positional alternative to the mainline pawn storms."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation takes its name from the northern Italian town of Meran (Merano), where the system was brought to prominence at the tournament of 1924, most famously through Akiba Rubinstein's handling of the black pieces. His demonstration of Black's queenside counterplay gave the line its lasting reputation and its name.",
+        "Since then the Meran has been a fixture of master and grandmaster practice, refined across generations as one of the principal try-for-a-win weapons against the Queen's Gambit. Its forcing, uncompromising character has made it a favourite for players seeking active piece play and concrete counterchances rather than a passive equality, and it continues to feature in modern elite preparation."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black delays ...dxc4 until White's bishop lands on d3, winning a tempo.",
+    "7...b5 seizes queenside space and prepares ...Bb7 and the ...c5 break.",
+    "The ...c5 lever is Black's key to freeing the game and activating the light bishop.",
+    "White aims for the e3-e4 advance to open the centre for the bishop pair.",
+    "Positions turn sharp and concrete once the centre opens; precise calculation is essential.",
+    "A deeply analysed, uncompromising try-for-a-win system against the Queen's Gambit."
+  ],
+  "plans": {
+    "white": [
+      "Complete classical development and prepare the e3-e4 central break.",
+      "Support e4 with Qe2 or Qc2 and retreat the bishop to d3.",
+      "Meet ...c5 with e5 to gain space and harass the f6-knight.",
+      "Try the Reynolds Variation with d5 to open lines against the Black king.",
+      "Alternatively sidestep with an early Qc2 or the Botvinnik 5.Bg5 for a different fight."
+    ],
+    "black": [
+      "Play ...b5 and ...a6 to seize queenside space.",
+      "Develop the light-squared bishop to b7 on the long diagonal.",
+      "Prepare and carry out the freeing ...c5 break.",
+      "Complete development and castle before the centre opens.",
+      "Use active piece play and queenside pressure to generate counterchances."
+    ]
+  },
+  "related": [
+    "semi-slav-defense",
+    "slav-defense",
+    "slav-czech",
+    "queens-gambit-declined"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "e3",
+      "from": 52,
+      "to": 44
+    },
+    {
+      "san": "Nbd7",
+      "from": 1,
+      "to": 11
+    },
+    {
+      "san": "Bd3",
+      "from": 61,
+      "to": 43
+    },
+    {
+      "san": "dxc4",
+      "from": 27,
+      "to": 34
+    },
+    {
+      "san": "Bxc4",
+      "from": 43,
+      "to": 34
+    },
+    {
+      "san": "b5",
+      "from": 9,
+      "to": 25
+    }
+  ],
+  "fen": "r1bqkb1r/p2n1ppp/2p1pn2/1p6/2BP4/2N1PN2/PP3PPP/R1BQK2R w KQkq b6 0 8"
+}

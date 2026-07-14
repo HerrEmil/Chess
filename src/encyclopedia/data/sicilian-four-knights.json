@@ -1,0 +1,118 @@
+{
+  "slug": "sicilian-four-knights",
+  "eco": "B45",
+  "name": "Four Knights Sicilian",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Four Knights Sicilian is an e6 line where both sides develop all four knights, leading to sharp play after 6.Nxc6 or the pinning 6.Ndb5 Bb4.",
+  "intro": "The Four Knights Sicilian arises after 1.e4 c5 2.Nf3 e6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 Nc6, an e6-based Open Sicilian in which both sides bring out all four knights in the opening moves. It is closely related to the Taimanov and Kan systems and can transpose to the Sveshnikov, but it has an independent character built around the central tension and White's two principal sixth moves. The position is flexible and modern, and Black's rapid, natural development gives it a sound positional footing while still allowing for sharp tactical skirmishes. Its reputation has risen in recent decades as a reliable, low-risk way to meet the Open Sicilian.",
+  "line": "e4 c5 Nf3 e6 d4 cxd4 Nxd4 Nf6 Nc3 Nc6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "With no pawn yet on d6 and the e6-pawn defining the structure, Black keeps a compact, resilient formation and looks to challenge White's centre with ...d5 or ...Bb4. The knight on c6 pressures the d4-knight, inviting exchanges that can hand Black doubled pawns but also the bishop pair and a mobile centre. Because Black has not yet committed the dark-squared bishop or the d-pawn, the position stays fluid, and much of the early play concerns which pawn break, ...d5 for Black or e5 for White, will be achieved on favourable terms.",
+        "White enjoys a small lead in space and development and must decide how to exploit the central tension before Black equalises with ...d5. The typical middlegames feature a fight over the d5- and e5-squares, the half-open c-file for Black's rook, and piece activity on both sides. If White achieves e5 under good circumstances the f6-knight is displaced and White gains kingside chances; if Black lands ...d5 comfortably the position tends to level out. The balance between these breaks gives the variation its strategic tension."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "White's two main tries define the opening. After 6.Nxc6 bxc6 7.e5, White gains time by hitting the f6-knight, which retreats with 7...Nd5 8.Ne4, leading to a structurally imbalanced middlegame where Black has the bishop pair and central pawns against White's more active pieces. This exchanging plan is the positional main line and has been extensively tested.",
+        "The sharper alternative is 6.Ndb5, threatening the annoying Nd6+ fork, when Black replies 6...Bb4, the Pin Variation. By pinning the c3-knight Black both guards against Nd6+ and increases the pressure on e4; play typically continues 7.a3 Bxc3+ 8.Nxc3 d5, leaving a lively position with mutual chances. White may also meet the Four Knights with 6.g3 or 6.Be2 in quieter fashion, but the 6.Nxc6 and 6.Ndb5 lines are the theoretical heart of the variation."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Four Knights is one of the more transpositionally complex corners of the Sicilian, and its independent significance grew as players sought sound alternatives to the heavily analysed Najdorf and Sveshnikov. The 6.Ndb5 Pin Variation in particular has a long pedigree as one of the sharpest ways for White to fight for an advantage, while the 6.Nxc6 and e5 plan reflects a more modern, structure-based approach.",
+        "In contemporary practice the Four Knights is valued as a flexible, resilient system that sidesteps some of the most forcing theory of other Sicilians while retaining winning chances for Black. It is frequently reached by transposition from Taimanov and Kan move orders, and its blend of solidity and latent dynamism has made it a popular practical choice among grandmasters and club players alike."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "An e6 Open Sicilian where both sides develop all four knights.",
+    "Black keeps a compact structure and aims for the ...d5 break.",
+    "6.Nxc6 bxc6 7.e5 gives Black the bishop pair and central pawns.",
+    "6.Ndb5 threatens Nd6+, met by 6...Bb4, the Pin Variation.",
+    "The fight centres on the d5- and e5-square breaks.",
+    "Flexible and low-risk, with many transpositions to Taimanov and Kan."
+  ],
+  "plans": {
+    "white": [
+      "Exploit the central tension before Black frees himself with ...d5.",
+      "Play 6.Nxc6 and e5 to gain time and displace the f6-knight.",
+      "Try 6.Ndb5 with the threat of Nd6+ for a sharp fight.",
+      "Aim for the e5 break and kingside activity.",
+      "Use the lead in space to pressure Black's position."
+    ],
+    "black": [
+      "Develop naturally and prepare the freeing ...d5 break.",
+      "Meet 6.Ndb5 with 6...Bb4, pinning the c3-knight.",
+      "Accept doubled pawns after ...bxc6 for the bishop pair and centre.",
+      "Use the half-open c-file for rook counterplay.",
+      "Steer toward Taimanov- or Kan-like structures when favourable."
+    ]
+  },
+  "related": [
+    "sicilian-defense",
+    "sicilian-taimanov",
+    "sicilian-kan",
+    "sicilian-sveshnikov"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    }
+  ],
+  "fen": "r1bqkb1r/pp1p1ppp/2n1pn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6"
+}

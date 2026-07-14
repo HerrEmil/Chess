@@ -1,0 +1,123 @@
+{
+  "slug": "nimzo-indian-classical",
+  "eco": "E32",
+  "name": "Nimzo-Indian: Classical",
+  "aka": ["Capablanca Variation"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Classical Variation (4.Qc2) meets the Nimzo-Indian by avoiding doubled pawns and recapturing on c3 with the queen to keep the bishop pair.",
+  "intro": "The Classical or Capablanca Variation answers the Nimzo-Indian with 4.Qc2, the most direct attempt to defuse the point of Black's pin. By defending the c3-knight with the queen, White prepares to recapture on c3 with a piece rather than a pawn, so that if Black plays ...Bxc3 the structure stays intact and White simply gains the bishop pair. A typical continuation is 4...O-O 5.a3 Bxc3+ 6.Qxc3, when White owns two bishops and a healthy pawn structure while Black enjoys a lead in development and clear targets for central counterplay with ...d5, ...b6 and ...Ne4. The trade-off between White's long-term bishops and Black's immediate activity defines the whole variation.",
+  "line": "d4 Nf6 c4 e6 Nc3 Bb4 Qc2 O-O a3 Bxc3 Qxc3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The 4.Qc2 lines revolve around a clean strategic bargain. White accepts a slight loss of time, since the queen moves early and can become a target, in exchange for the bishop pair and a structure free of the doubled c-pawns that mark other Nimzo-Indian lines. After 5.a3 Bxc3+ 6.Qxc3 White's plan is to finish development, restrain Black's freeing breaks, and eventually use the bishops in an open position. Black, meanwhile, must justify surrendering the bishop by generating quick activity, typically striking at the centre with ...d5 or ...c5, occupying e4 with a knight, and provoking weaknesses before White consolidates.",
+        "A recurring theme is the fight over the e4-square and the light squares. Black often plays ...b6 and ...Bb7 to reinforce control of e4, or ...d5 to open lines for the pieces, and the knight jump ...Ne4 hitting the queen on c3 gains time and central space. White responds by challenging the knight, arranging b4 and Bb2 to activate the dark-squared bishop along the long diagonal, and preparing the e4 or d5 advances. If White untangles and keeps the bishops, the middlegame and endgame favour the two-bishop side; if Black's initiative rolls first, the exposed queen and slow development can tell."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main tabiya arises after 4...O-O 5.a3 Bxc3+ 6.Qxc3, the classical treatment in which Black usually chooses between the solid ...d5 set-ups and the ...b6 fianchetto plan with ...Bb7, ...d6 and ...Nbd7 aiming at e4. A key alternative for Black is 4...c5, immediately hitting d4; after 5.dxc5 Black regains the pawn with ...Bxc5 or ...O-O and reaches free, roughly balanced positions. Another mainstream reply is 4...d5, when 5.cxd5 exd5 or 5.a3 Bxc3+ 6.Qxc3 Ne4 leads to well-charted middlegames.",
+        "Instead of the immediate 5.a3, White frequently develops first with moves like Nf3 and Bg5 or e3, keeping the queen's options and only later forcing the trade on c3, which can transpose or steer play into independent channels. Because 4.Qc2 does not commit White's kingside pieces early, it is extremely flexible and rich in move-order subtleties; whole chapters of theory concern whether Black should release the tension with ...d5, keep it with ...b6, or counterattack with ...c5. Across these lines the constant is White's wager on the bishop pair against Black's development and central pressure."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is most closely associated with José Raúl Capablanca, the Cuban world champion renowned for his clarity of technique, who favoured 4.Qc2 precisely because it kept the position clean and avoided structural damage, an approach well suited to his classical style. It fell somewhat out of fashion in the mid-twentieth century but was rehabilitated by later analysis, which showed that the bishop pair offers White enduring, low-risk pressure.",
+        "In the modern era 4.Qc2 has been one of the most fashionable and heavily analysed answers to the Nimzo-Indian at the very top level, employed by world champions and elite grandmasters as a principled way to fight for an opening advantage. Its combination of a sound structure and long-term bishop pair keeps it a mainstay of contemporary preparation."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "4.Qc2 defends the c3-knight so White can recapture with the queen, not a pawn.",
+    "White avoids the doubled c-pawns and secures the bishop pair.",
+    "The early queen move costs time and can become a target.",
+    "Black seeks quick activity with ...d5, ...c5, ...b6 and ...Ne4.",
+    "The e4-square and the light squares are the main battleground.",
+    "White banks on the two bishops for a lasting, low-risk edge."
+  ],
+  "plans": {
+    "white": [
+      "Recapture on c3 with the queen after a3 and ...Bxc3+.",
+      "Keep the intact structure and the bishop pair.",
+      "Activate the dark-squared bishop with b4 and Bb2.",
+      "Prepare the central advances e4 or d5.",
+      "Complete development and neutralise Black's initiative."
+    ],
+    "black": [
+      "Castle and generate fast activity to justify giving up the bishop.",
+      "Strike the centre with ...d5 or ...c5.",
+      "Reinforce e4 with ...b6 and ...Bb7.",
+      "Gain time and space with the ...Ne4 jump against the queen.",
+      "Provoke weaknesses before White consolidates the bishops."
+    ]
+  },
+  "related": [
+    "nimzo-indian-defense",
+    "nimzo-indian-rubinstein",
+    "nimzo-indian-samisch",
+    "bogo-indian-defense"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Bb4",
+      "from": 5,
+      "to": 33
+    },
+    {
+      "san": "Qc2",
+      "from": 59,
+      "to": 50
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "san": "a3",
+      "from": 48,
+      "to": 40
+    },
+    {
+      "san": "Bxc3",
+      "from": 33,
+      "to": 42
+    },
+    {
+      "san": "Qxc3",
+      "from": 50,
+      "to": 42
+    }
+  ],
+  "fen": "rnbq1rk1/pppp1ppp/4pn2/8/2PP4/P1Q5/1P2PPPP/R1B1KBNR b KQ - 0 6"
+}

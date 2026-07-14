@@ -1,0 +1,138 @@
+{
+  "slug": "grunfeld-exchange",
+  "eco": "D85",
+  "name": "Grünfeld: Exchange Variation",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Grünfeld Exchange Variation hands White a broad c3-d4-e4 pawn centre that Black assaults with ...c5, the g7-bishop and piece pressure.",
+  "intro": "The Exchange Variation is the critical main line of the Grünfeld Defence, reached after 1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3. White accepts Black's invitation and erects the imposing pawn centre the whole opening is about, with pawns on c3, d4 and e4 and open diagonals for the bishops. Black fianchettoes with 6...Bg7, and after the modern 7.Nf3 c5 immediately puts the d4-pawn under fire. The battle that follows is one of the sharpest strategic arguments in chess: White's centre is either a rolling steamroller or a collection of targets. Black leans on the g7-bishop, ...c5, ...Qa5, ...Bg4 and ...Nc6 to prove the pawns are overextended, while White hopes to advance them and open the position for an attack.",
+  "line": "d4 Nf6 c4 g6 Nc3 d5 cxd5 Nxd5 e4 Nxc3 bxc3 Bg7 Nf3 c5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining feature is White's broad pawn centre of c3, d4 and e4 set against Black's fianchettoed king's bishop on g7. White would like to keep the centre mobile, play a later d5 or e5 to gain space and open lines, and make use of the half-open b-file and the bishop pair. Black treats those same pawns as a target, hammering d4 with ...c5, ...Qa5, ...Nc6 and ...Bg4, and hoping to trade pieces so that the c3- and d4-pawns become chronic weaknesses in an endgame. The g7-bishop, raking the long diagonal, is the engine of Black's whole counterattack.",
+        "Everything revolves around the d4-pawn and the tension created by ...c5. If White is allowed to place the pieces on their best squares and then push d5 under favourable circumstances, the space advantage and the two bishops can become overwhelming. If Black succeeds in exchanging on d4 and forcing further trades, White is often left nursing weak pawns and a passive light-squared bishop. The c3-pawn is both a prop for d4 and a long-term liability, and the entire variation can be read as a running dispute over whether White's centre is a strength or a target."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The modern main line runs 7.Nf3 c5 8.Rb1, a subtle move that steps off the a1-h8 diagonal, eyes the b7-pawn and prepares to meet Black's development. Play often continues 8...O-O 9.Be2 cxd4 10.cxd4 Qa5+ 11.Bd2 Qxa2, when Black snatches the a-pawn but must weather White's central and developmental lead. The sharp 8.Be3 is the other principal try, supporting d4 directly and inviting ...Qa5, ...Nc6 and ...Bg4 with heavy pressure on the centre.",
+        "For decades the classical approach was 7.Bc4 (frequently combined with Ne2 rather than Nf3, to shield d4 and avoid the ...Bg4 pin), placing the bishop on its most aggressive diagonal and preparing O-O, Be3 and a central advance. Black replies with ...c5, ...Nc6, ...Bg4 and ...Qc7 or ...Qa5, again converging on d4. Whichever route White chooses, the thematic pawn breaks d5 and e5 for White, and ...c5 and sometimes ...e5 or ...f5 for Black, recur throughout, making the Exchange one of the most heavily analysed battlegrounds in all of opening theory."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Exchange Variation has been the principled test of the Grünfeld ever since the opening entered top-level practice in the 1920s and 1930s. The classical treatment with Bc4 and Ne2 was a leading weapon of mid-twentieth-century players and was among the systems Bobby Fischer employed against the Grünfeld. From the 1980s onward the lines with Nf3 and Rb1, the so-called Modern Exchange, rose to prominence and became the backbone of elite theory.",
+        "On the Black side the Grünfeld, and the Exchange in particular, was a cornerstone of Garry Kasparov's repertoire, including in his championship matches with Anatoly Karpov, and it remains a favourite of grandmasters such as Peter Svidler and Maxime Vachier-Lagrave. The variation's blend of forcing theory and deep strategic content keeps it at the very centre of modern opening preparation."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White grabs a broad c3-d4-e4 pawn centre after 6.bxc3.",
+    "Black hits back at once with 7...c5 and the g7-bishop.",
+    "The d4-pawn is the main target and the pivot of the struggle.",
+    "Trades favour Black by exposing the c3- and d4-pawns as weaknesses.",
+    "White's trumps are space, the bishop pair and the half-open b-file.",
+    "The modern main line 8.Rb1 sidesteps the long diagonal and eyes b7."
+  ],
+  "plans": {
+    "white": [
+      "Keep the centre mobile and prepare the d5 or e5 advance.",
+      "Develop with Nf3 or Ne2, Bc4 or Be2, Be3, Rb1 and castle short.",
+      "Use the bishop pair and half-open b-file for active play.",
+      "Meet ...cxd4 with cxd4, keeping a strong, supported centre.",
+      "Open the position for an attack once the centre is stabilised."
+    ],
+    "black": [
+      "Fianchetto to g7 and attack d4 with ...c5 right away.",
+      "Pile onto d4 with ...Nc6, ...Bg4 and ...Qa5.",
+      "Provoke exchanges to leave White's c3- and d4-pawns weak.",
+      "Grab the a2-pawn with ...Qa5+ and ...Qxa2 when it is sound.",
+      "Aim for an endgame where White's centre becomes a liability."
+    ]
+  },
+  "related": [
+    "grunfeld-defense",
+    "kings-indian-defense",
+    "queens-indian-defense",
+    "nimzo-indian-defense"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "cxd5",
+      "from": 34,
+      "to": 27
+    },
+    {
+      "san": "Nxd5",
+      "from": 21,
+      "to": 27
+    },
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "Nxc3",
+      "from": 27,
+      "to": 42
+    },
+    {
+      "san": "bxc3",
+      "from": 49,
+      "to": 42
+    },
+    {
+      "san": "Bg7",
+      "from": 5,
+      "to": 14
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    }
+  ],
+  "fen": "rnbqk2r/pp2ppbp/6p1/2p5/3PP3/2P2N2/P4PPP/R1BQKB1R w KQkq c6 0 8"
+}
