@@ -183,13 +183,67 @@ describe('tapered king evaluation', () => {
   });
 });
 
+/*
+ * Experiment #6: bishop-pair bonus. Two bishops are worth more together than the
+ * material table (which scores each bishop in isolation) credits, so a side that
+ * keeps both bishops gets a small bonus. These tests pin the correctness
+ * properties: the bonus is color-symmetric, it rewards the side actually holding
+ * the pair, and it is a no-op when a side has fewer than two bishops (and when
+ * the flag is off, so every pre-#6 caller is unchanged).
+ */
+describe('bishop-pair evaluation', () => {
+  it('is unchanged and color-symmetric at the full-material start', () => {
+    // Both sides own both bishops => the pair bonus cancels => still 0. And with
+    // the flag off the eval is byte-for-byte the pre-#6 (tapered) value.
+    expect(evaluate(STARTING_BOARD, 'white', true, true, true)).toBe(0);
+    expect(evaluate(STARTING_BOARD, 'black', true, true, true)).toBe(0);
+    expect(evaluate(STARTING_BOARD, 'white', true, true, false)).toBe(
+      evaluate(STARTING_BOARD, 'white', true, true),
+    );
+  });
+
+  it('rewards the side holding the two bishops', () => {
+    // White has two bishops (c1, f1); Black has one bishop + one knight, so only
+    // White owns the pair. Comparing the same board with the flag on vs off
+    // isolates the pair term (all material/piece-square terms are identical), so
+    // the bonus must raise White's score and, by symmetry, lower Black's.
+    const board = boardWithPieces([
+      { piece: 'k', index: 56 }, // white king a1
+      { piece: 'K', index: 7 }, // black king h8
+      { piece: 'b', index: 58 }, // white bishop c1
+      { piece: 'b', index: 61 }, // white bishop f1
+      { piece: 'B', index: 2 }, // black bishop c8
+      { piece: 'N', index: 1 }, // black knight b8 (so Black has no pair)
+    ]);
+    expect(evaluate(board, 'white', true, true, true)).toBeGreaterThan(
+      evaluate(board, 'white', true, true, false),
+    );
+    expect(evaluate(board, 'black', true, true, true)).toBeLessThan(
+      evaluate(board, 'black', true, true, false),
+    );
+  });
+
+  it('gives no bonus to a side with a single bishop', () => {
+    // One bishop each: neither side has a pair, so the flag is a no-op.
+    const board = boardWithPieces([
+      { piece: 'k', index: 56 }, // white king a1
+      { piece: 'K', index: 7 }, // black king h8
+      { piece: 'b', index: 58 }, // one white bishop
+      { piece: 'B', index: 2 }, // one black bishop
+    ]);
+    expect(evaluate(board, 'white', true, true, true)).toBe(
+      evaluate(board, 'white', true, true, false),
+    );
+  });
+});
+
 describe('self-play non-regression', () => {
   it('new engine does not regress vs the previous engine', () => {
     // Deterministic (seeded PRNG + deterministic search), so this is a stable
     // guardrail, not a flaky benchmark. The full multi-depth validation is
-    // recorded in tools/engine-lab/experiments.jsonl. Experiment #5 compares the
-    // tapered-king leaf (new) vs the middlegame-only leaf (old); both use the
-    // quiescence leaf and shipped check extensions.
+    // recorded in tools/engine-lab/experiments.jsonl. Experiment #6 compares the
+    // bishop-pair leaf (new) vs the tapered-only leaf (old); both use the
+    // quiescence leaf, shipped check extensions, and the tapered king table.
     const result = runMatch({ games: 24, depth: 2, seed: 1 });
     expect(result.games).toBe(24);
     expect(result.newScore).toBeGreaterThanOrEqual(result.oldScore);

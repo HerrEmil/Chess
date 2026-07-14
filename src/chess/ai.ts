@@ -231,15 +231,56 @@ const endgameBonus = (
   return edgeBonus + proximityBonus;
 };
 
+/*
+ * Bishop-pair bonus. Two bishops cover both square colors and coordinate far
+ * better than a bishop plus a knight — worth roughly half a pawn in practice —
+ * yet the material table scores a bishop identically whether or not its partner
+ * is still on the board, so the engine parts with the pair for free. This term
+ * adds a small bonus to a side holding both bishops, returned as a White-minus-
+ * Black delta from `currentColor`'s perspective (symmetric by construction: it
+ * only counts bishops, so a mirror-image position nets 0).
+ *
+ * "Pair" is taken as two-or-more bishops — the standard simplification. It does
+ * not check that the bishops sit on opposite square colors, which for a normally
+ * promoting game only matters for the rare same-colored pair from an under-
+ * promotion the UI never makes (it auto-queens). The bonus is deliberately
+ * non-committal: it nudges roughly equal minor-piece trades toward keeping the
+ * pair but never pushes a piece to a worse square, so — unlike the rejected
+ * passed-pawn term (experiment #3) — it cannot steer the shallow search into
+ * material it can't convert. A clearly winning capture (gain >> the bonus) is
+ * still taken.
+ */
+const BISHOP_PAIR_BONUS = 40;
+const bishopPairDelta = (
+  board: readonly string[],
+  currentColor: color,
+): number => {
+  let whiteBishops = 0;
+  let blackBishops = 0;
+  for (const idx of mailboxIndex) {
+    const ch = board[idx];
+    if (ch === 'b') whiteBishops += 1;
+    else if (ch === 'B') blackBishops += 1;
+  }
+  const whiteBonus = whiteBishops >= 2 ? BISHOP_PAIR_BONUS : 0;
+  const blackBonus = blackBishops >= 2 ? BISHOP_PAIR_BONUS : 0;
+  return currentColor === 'white'
+    ? whiteBonus - blackBonus
+    : blackBonus - whiteBonus;
+};
+
 // Evaluates the board relative to `currentColor`.
 // `mirror` toggles per-color piece-square mirroring; false = legacy behaviour.
 // `tapered` blends the king table toward its endgame orientation by game phase
 // (default false = single middlegame king table, the pre-taper behaviour).
+// `bishopPair` adds the bishop-pair bonus (default false = no bishop-pair term,
+// the pre-#6 behaviour), keeping every existing caller byte-for-byte unchanged.
 export const evaluate = (
   board: readonly string[],
   currentColor: color,
   mirror = true,
   tapered = false,
+  bishopPair = false,
 ): number => {
   const opponent = oppositeColor(currentColor);
   const checkBonus = isInCheck(board, opponent) ? 50 : 0;
@@ -264,8 +305,9 @@ export const evaluate = (
 
   const materialDiff = currentValue - opponentValue;
   const endgame = materialDiff > 300 ? endgameBonus(board, currentColor) : 0;
+  const pairDelta = bishopPair ? bishopPairDelta(board, currentColor) : 0;
 
-  return checkBonus - checkPenalty + materialDiff + endgame;
+  return checkBonus - checkPenalty + materialDiff + endgame + pairDelta;
 };
 
 /*
@@ -367,10 +409,11 @@ export const quiesce = (
   beta: number,
   qdepth: number = QUIESCENCE_MAX_DEPTH,
   tapered = false,
+  bishopPair = false,
 ): number => {
   // Stand-pat: the side to move may always decline to capture, so the static
   // score is a lower bound on what it can achieve.
-  const standPat = evaluate(board, currentColor, true, tapered);
+  const standPat = evaluate(board, currentColor, true, tapered, bishopPair);
   if (standPat >= beta) return beta;
   let localAlpha = standPat > alpha ? standPat : alpha;
   if (qdepth === 0) return localAlpha;
@@ -378,9 +421,17 @@ export const quiesce = (
   const captures = generateCaptures(board, currentColor);
   captures.sort((a, b) => b.orderScore - a.orderScore);
 
+  // Delta-pruning margin bounds the positional (non-material) score a capture
+  // can add on top of its raw material gain. The bishop-pair term can swing by
+  // at most one bonus when a capture removes the enemy's second bishop, so widen
+  // the margin by that bonus while it is active; with bishopPair off the margin
+  // is exactly DELTA_MARGIN, keeping quiescentEval / quiescentEvalTapered
+  // byte-for-byte unchanged.
+  const deltaMargin = DELTA_MARGIN + (bishopPair ? BISHOP_PAIR_BONUS : 0);
+
   for (const { start, goal, gain } of captures) {
     // Delta pruning: skip captures whose best-case material can't reach alpha.
-    const worthTrying = standPat + gain + DELTA_MARGIN >= localAlpha;
+    const worthTrying = standPat + gain + deltaMargin >= localAlpha;
     const child = worthTrying ? captureChild(board, start, goal) : null;
     // Skip captures that leave the mover's own king in check (illegal).
     if (child !== null && !isInCheck(child, currentColor)) {
@@ -391,6 +442,7 @@ export const quiesce = (
         -localAlpha,
         qdepth - 1,
         tapered,
+        bishopPair,
       );
       if (score >= beta) return beta;
       if (score > localAlpha) localAlpha = score;
@@ -415,6 +467,30 @@ export const quiescentEvalTapered = (
   currentColor: color,
 ): number =>
   quiesce(board, currentColor, -100000, 100000, QUIESCENCE_MAX_DEPTH, true);
+
+/*
+ * Production leaf (experiment #6): the accepted tapered-king quiescence leaf
+ * (experiment #5) plus the bishop-pair bonus. Wiring this as the negamax default
+ * also finally ships tapering: experiment #5 was accepted in the lab but the
+ * production default was left as the non-tapered `quiescentEval`, so the browser
+ * AI was still the experiment-#4 engine. This leaf lands both the tapered king
+ * table and the bishop-pair term. Same capture resolution as
+ * `quiescentEvalTapered`; only the added pair term differs, isolating the
+ * bishop-pair contribution in self-play (new here vs `quiescentEvalTapered`).
+ */
+export const quiescentEvalBishopPair = (
+  board: readonly string[],
+  currentColor: color,
+): number =>
+  quiesce(
+    board,
+    currentColor,
+    -100000,
+    100000,
+    QUIESCENCE_MAX_DEPTH,
+    true,
+    true,
+  );
 
 /*
  * Negamax with alpha-beta pruning.
@@ -508,7 +584,10 @@ export const negamax = (
   enPassantTarget: number | null,
   castle: CastleState,
   posHistory: Map<string, number> = new Map(),
-  evaluateFn: (b: readonly string[], c: color) => number = quiescentEval,
+  evaluateFn: (
+    b: readonly string[],
+    c: color,
+  ) => number = quiescentEvalBishopPair,
   checkExtend = true,
   extLeft: number = CHECK_EXTENSION_BUDGET,
 ): readonly number[] => {
