@@ -34,6 +34,10 @@ describe('AI piece-square tables', () => {
     expect(AI.kingTableEndGame).toHaveLength(64);
   });
 
+  it('queenTable has 64 entries', () => {
+    expect(AI.queenTable).toHaveLength(64);
+  });
+
   it('pawn promotion row has high values', () => {
     for (let i = 0; i < 8; i++) {
       expect(AI.pawnTable[i]).toBeGreaterThan(800);
@@ -63,6 +67,15 @@ describe('AI piece-square tables', () => {
   it('king endgame table encourages center', () => {
     expect(AI.kingTableEndGame[27]).toBeGreaterThan(AI.kingTableEndGame[0]);
     expect(AI.kingTableEndGame[28]).toBeGreaterThan(AI.kingTableEndGame[7]);
+  });
+
+  it('queen table penalizes corners and rewards center', () => {
+    expect(AI.queenTable[0]).toBeLessThan(0);
+    expect(AI.queenTable[7]).toBeLessThan(0);
+    expect(AI.queenTable[56]).toBeLessThan(0);
+    expect(AI.queenTable[63]).toBeLessThan(0);
+    expect(AI.queenTable[27]).toBeGreaterThan(0);
+    expect(AI.queenTable[28]).toBeGreaterThan(0);
   });
 });
 

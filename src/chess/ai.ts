@@ -21,6 +21,7 @@ export type ChessAI = {
   readonly kingTableEndGame: readonly number[];
   readonly knightTable: readonly number[];
   readonly pawnTable: readonly number[];
+  readonly queenTable: readonly number[];
   readonly rookTable: readonly number[];
   whitePly: number;
   blackPly: number;
@@ -88,6 +89,17 @@ export const AI = {
     5,    -5, -10,   0,   0, -10,  -5,   5,
     5,    10,  10, -25, -25,  10,  10,   5,
     0,     0,   0,   0,   0,   0,   0,   0
+  ],
+  // prettier-ignore
+  queenTable: [
+    -20, -10, -10,  -5,  -5, -10, -10, -20,
+    -10,   0,   0,   0,   0,   0,   0, -10,
+    -10,   0,   5,   5,   5,   5,   0, -10,
+     -5,   0,   5,   5,   5,   5,   0,  -5,
+     -5,   0,   5,   5,   5,   5,   0,  -5,
+    -10,   0,   5,   5,   5,   5,   0, -10,
+    -10,   0,   0,   0,   0,   0,   0, -10,
+    -20, -10, -10,  -5,  -5, -10, -10, -20
   ],
   // prettier-ignore
   rookTable: [
@@ -175,12 +187,16 @@ const kingSquareValue = (idx: number, mgWeight: number): number =>
 // Black's squares are the vertical mirror image, so Black piece lookups must
 // use the flipped index. Passing `mirror = false` reproduces the legacy
 // (single-orientation) behaviour and exists only for A/B regression testing.
+// `queenPst` adds the queen piece-square table (default false = the queen is
+// scored by flat material only, the pre-#7 behaviour), keeping every existing
+// caller byte-for-byte unchanged.
 const getPieceValueSum = ({
   board = [] as readonly string[],
   pieces = [] as readonly number[],
   black = false,
   mirror = true,
   mgWeight = 1,
+  queenPst = false,
 }): number =>
   pieces.reduce((sum, piece) => {
     const idx = black && mirror ? mirrorIndex(piece) : piece;
@@ -199,7 +215,7 @@ const getPieceValueSum = ({
         return sum + 325 + AI.bishopTable[idx];
       case 'q':
       case 'Q':
-        return sum + 975;
+        return sum + 975 + (queenPst ? AI.queenTable[idx] : 0);
       case 'k':
       case 'K':
         return sum + 32767 + kingSquareValue(idx, mgWeight);
@@ -269,18 +285,35 @@ const bishopPairDelta = (
     : blackBonus - whiteBonus;
 };
 
+/*
+ * Queen piece-square table.
+ *
+ * Every other piece already reads a piece-square table, but the queen was
+ * scored by flat material alone, so the engine had no positional preference for
+ * where the queen sat — parking it on a rim or corner square cost nothing. This
+ * small, conservative table (standard shape: mild centre preference, edges and
+ * back-rank corners penalised) gives the queen a gradient without inviting an
+ * early sortie: the swing from the home square (-5) to the centre (+5) is only
+ * ~10cp, far less than the tempo a shallow search loses when its queen is
+ * kicked around, so it nudges placement but never chases. Like the bishop-pair
+ * term (#6) and unlike the rejected passed-pawn term (#3), it induces no
+ * committal move — it only scores the square the queen already occupies.
+ */
 // Evaluates the board relative to `currentColor`.
 // `mirror` toggles per-color piece-square mirroring; false = legacy behaviour.
 // `tapered` blends the king table toward its endgame orientation by game phase
 // (default false = single middlegame king table, the pre-taper behaviour).
 // `bishopPair` adds the bishop-pair bonus (default false = no bishop-pair term,
 // the pre-#6 behaviour), keeping every existing caller byte-for-byte unchanged.
+// `queenPst` adds the queen piece-square table (default false = flat queen
+// material, the pre-#7 behaviour).
 export const evaluate = (
   board: readonly string[],
   currentColor: color,
   mirror = true,
   tapered = false,
   bishopPair = false,
+  queenPst = false,
 ): number => {
   const opponent = oppositeColor(currentColor);
   const checkBonus = isInCheck(board, opponent) ? 50 : 0;
@@ -293,6 +326,7 @@ export const evaluate = (
     mgWeight,
     mirror,
     pieces: getPiecesOfColor(board, currentColor),
+    queenPst,
   });
 
   const opponentValue = getPieceValueSum({
@@ -301,6 +335,7 @@ export const evaluate = (
     mgWeight,
     mirror,
     pieces: getPiecesOfColor(board, opponent),
+    queenPst,
   });
 
   const materialDiff = currentValue - opponentValue;
@@ -333,6 +368,17 @@ const QUIESCENCE_MAX_DEPTH = 4;
  * that can't reach alpha even with this slack cannot improve the score.
  */
 const DELTA_MARGIN = 200;
+
+/*
+ * Extra delta-pruning slack for the queen piece-square table. A single capture
+ * can add at most one queen-table swing beyond raw material: the moving piece
+ * changes square (a queen swings by at most max-min = 5 - (-20) = 25) and the
+ * captured piece is removed (an enemy queen's table value is at most 20 in
+ * magnitude), so 25 + 20 = 45 < 50. Widening the margin by this when the queen
+ * table is active keeps delta pruning from discarding a capture whose queen-PST
+ * swing would reach alpha; with the flag off the margin is exactly DELTA_MARGIN.
+ */
+const QUEEN_PST_MARGIN = 50;
 
 // A pseudo-legal capture for quiescence, pre-scored for MVV-LVA ordering.
 // `gain` is the captured material (plus promotion), used for delta pruning.
@@ -410,10 +456,18 @@ export const quiesce = (
   qdepth: number = QUIESCENCE_MAX_DEPTH,
   tapered = false,
   bishopPair = false,
+  queenPst = false,
 ): number => {
   // Stand-pat: the side to move may always decline to capture, so the static
   // score is a lower bound on what it can achieve.
-  const standPat = evaluate(board, currentColor, true, tapered, bishopPair);
+  const standPat = evaluate(
+    board,
+    currentColor,
+    true,
+    tapered,
+    bishopPair,
+    queenPst,
+  );
   if (standPat >= beta) return beta;
   let localAlpha = standPat > alpha ? standPat : alpha;
   if (qdepth === 0) return localAlpha;
@@ -423,11 +477,14 @@ export const quiesce = (
 
   // Delta-pruning margin bounds the positional (non-material) score a capture
   // can add on top of its raw material gain. The bishop-pair term can swing by
-  // at most one bonus when a capture removes the enemy's second bishop, so widen
-  // the margin by that bonus while it is active; with bishopPair off the margin
-  // is exactly DELTA_MARGIN, keeping quiescentEval / quiescentEvalTapered
-  // byte-for-byte unchanged.
-  const deltaMargin = DELTA_MARGIN + (bishopPair ? BISHOP_PAIR_BONUS : 0);
+  // at most one bonus when a capture removes the enemy's second bishop, and the
+  // queen table by at most QUEEN_PST_MARGIN, so widen the margin by each active
+  // term; with both flags off the margin is exactly DELTA_MARGIN, keeping
+  // quiescentEval / quiescentEvalTapered byte-for-byte unchanged.
+  const deltaMargin =
+    DELTA_MARGIN +
+    (bishopPair ? BISHOP_PAIR_BONUS : 0) +
+    (queenPst ? QUEEN_PST_MARGIN : 0);
 
   for (const { start, goal, gain } of captures) {
     // Delta pruning: skip captures whose best-case material can't reach alpha.
@@ -443,6 +500,7 @@ export const quiesce = (
         qdepth - 1,
         tapered,
         bishopPair,
+        queenPst,
       );
       if (score >= beta) return beta;
       if (score > localAlpha) localAlpha = score;
@@ -488,6 +546,28 @@ export const quiescentEvalBishopPair = (
     -100000,
     100000,
     QUIESCENCE_MAX_DEPTH,
+    true,
+    true,
+  );
+
+/*
+ * Production leaf (experiment #7): the accepted bishop-pair quiescence leaf
+ * (experiment #6) plus the queen piece-square table. Same capture resolution,
+ * tapered king, and bishop-pair bonus as `quiescentEvalBishopPair`; only the
+ * added queen-PST term differs, isolating the queen-table contribution in
+ * self-play (new here vs `quiescentEvalBishopPair`).
+ */
+export const quiescentEvalQueenPst = (
+  board: readonly string[],
+  currentColor: color,
+): number =>
+  quiesce(
+    board,
+    currentColor,
+    -100000,
+    100000,
+    QUIESCENCE_MAX_DEPTH,
+    true,
     true,
     true,
   );
@@ -587,7 +667,7 @@ export const negamax = (
   evaluateFn: (
     b: readonly string[],
     c: color,
-  ) => number = quiescentEvalBishopPair,
+  ) => number = quiescentEvalQueenPst,
   checkExtend = true,
   extLeft: number = CHECK_EXTENSION_BUDGET,
 ): readonly number[] => {

@@ -237,13 +237,70 @@ describe('bishop-pair evaluation', () => {
   });
 });
 
+/*
+ * Experiment #7: queen piece-square table. Every other piece already read a
+ * piece-square table; the queen was scored by flat material, so the engine had
+ * no positional preference for where the queen sat. A small, conservative table
+ * (mild centre preference, edges/corners penalised) now gives it a gradient.
+ * These tests pin the correctness properties: it is color-symmetric and a no-op
+ * with the flag off (so every pre-#7 caller is unchanged), it rewards a
+ * centralised queen over a cornered one, and it only touches queens.
+ */
+describe('queen piece-square table', () => {
+  it('is unchanged and color-symmetric at the full-material start', () => {
+    // Both queens sit on mirror-image squares (d1/d8) => the queen-table term
+    // cancels => still 0. And with the flag off the eval is byte-for-byte the
+    // pre-#7 (bishop-pair) value.
+    expect(evaluate(STARTING_BOARD, 'white', true, true, true, true)).toBe(0);
+    expect(evaluate(STARTING_BOARD, 'black', true, true, true, true)).toBe(0);
+    expect(evaluate(STARTING_BOARD, 'white', true, true, true, false)).toBe(
+      evaluate(STARTING_BOARD, 'white', true, true, true),
+    );
+  });
+
+  it('rewards a centralised queen over a cornered one', () => {
+    // Only the white queen's square differs: e4 (centre) vs a1 (corner). Kings
+    // are identical (g1/b6) so the king terms and endgame mop-up cancel, and no
+    // king is in check on either board, isolating the queen table. Neither queen
+    // square lies on a line to the black king, so no check term contaminates it.
+    const kings = [
+      { piece: 'k', index: 62 }, // white king g1
+      { piece: 'K', index: 17 }, // black king b6
+    ];
+    const central = boardWithPieces([...kings, { piece: 'q', index: 36 }]); // e4
+    const cornered = boardWithPieces([...kings, { piece: 'q', index: 56 }]); // a1
+
+    // Queen table on: the centralised queen is worth more to White.
+    expect(evaluate(central, 'white', true, true, true, true)).toBeGreaterThan(
+      evaluate(cornered, 'white', true, true, true, true),
+    );
+    // Queen table off: the two squares score identically (flat queen material).
+    expect(evaluate(central, 'white', true, true, true, false)).toBe(
+      evaluate(cornered, 'white', true, true, true, false),
+    );
+  });
+
+  it('is a no-op on a position with no queen', () => {
+    // A rook, not a queen: the queen-table flag must not change the score.
+    const board = boardWithPieces([
+      { piece: 'k', index: 62 }, // white king g1
+      { piece: 'K', index: 17 }, // black king b6
+      { piece: 'r', index: 56 }, // white rook a1
+    ]);
+    expect(evaluate(board, 'white', true, true, true, true)).toBe(
+      evaluate(board, 'white', true, true, true, false),
+    );
+  });
+});
+
 describe('self-play non-regression', () => {
   it('new engine does not regress vs the previous engine', () => {
     // Deterministic (seeded PRNG + deterministic search), so this is a stable
     // guardrail, not a flaky benchmark. The full multi-depth validation is
-    // recorded in tools/engine-lab/experiments.jsonl. Experiment #6 compares the
-    // bishop-pair leaf (new) vs the tapered-only leaf (old); both use the
-    // quiescence leaf, shipped check extensions, and the tapered king table.
+    // recorded in tools/engine-lab/experiments.jsonl. Experiment #7 compares the
+    // queen-PST leaf (new) vs the bishop-pair leaf (old); both use the
+    // quiescence leaf, shipped check extensions, the tapered king table, and the
+    // bishop-pair bonus.
     const result = runMatch({ games: 24, depth: 2, seed: 1 });
     expect(result.games).toBe(24);
     expect(result.newScore).toBeGreaterThanOrEqual(result.oldScore);

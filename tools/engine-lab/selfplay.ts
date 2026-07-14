@@ -16,7 +16,7 @@ import {
   color,
   negamax,
   quiescentEvalBishopPair,
-  quiescentEvalTapered,
+  quiescentEvalQueenPst,
 } from '../../src/chess/ai.js';
 import {
   applyMove,
@@ -34,14 +34,15 @@ export type EngineEval = (b: readonly string[], c: color) => number;
 // The two engines under comparison. Both search with the same negamax and the
 // same alpha-beta / check-extension search; what differs is the leaf evaluator.
 //
-// Experiment #6: bishop-pair bonus. Both engines use the accepted quiescence
-// leaf (experiment #2), shipped check extensions (experiment #4, both check-
-// extend flags true), and the accepted tapered king table (experiment #5). The
-// new engine's leaf adds the bishop-pair bonus (`quiescentEvalBishopPair`); the
-// previous accepted engine's leaf is tapered-only (`quiescentEvalTapered`).
-// Isolating the leaf measures the bishop-pair contribution alone.
-export const newEval: EngineEval = quiescentEvalBishopPair;
-export const legacyEval: EngineEval = quiescentEvalTapered;
+// Experiment #7: queen piece-square table. Both engines use the accepted
+// quiescence leaf (experiment #2), shipped check extensions (experiment #4,
+// both check-extend flags true), the tapered king table (experiment #5), and
+// the bishop-pair bonus (experiment #6). The new engine's leaf adds the queen
+// piece-square table (`quiescentEvalQueenPst`); the previous accepted engine's
+// leaf is bishop-pair-and-tapered without it (`quiescentEvalBishopPair`).
+// Isolating the leaf measures the queen-PST contribution alone.
+export const newEval: EngineEval = quiescentEvalQueenPst;
+export const legacyEval: EngineEval = quiescentEvalBishopPair;
 const NEW_CHECK_EXTEND = true;
 const OLD_CHECK_EXTEND = true;
 
