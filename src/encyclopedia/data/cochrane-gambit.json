@@ -1,0 +1,97 @@
+{
+  "slug": "cochrane-gambit",
+  "eco": "C42",
+  "name": "Cochrane Gambit",
+  "aka": [],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Cochrane Gambit (1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nxf7) sacrifices a knight against the Petrov to expose Black's king for a lasting initiative.",
+  "intro": "The Cochrane Gambit is a bold piece sacrifice against the Petrov Defence, reached after 1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nxf7. White gives up a knight for two pawns to drag the black king into the open and generate a long-lasting initiative. It is a speculative yet respectable surprise weapon that turns the usually staid Petrov into a sharp, unbalanced fight from the very fourth move.",
+  "line": "e4 e5 Nf3 Nf6 Nxe5 d6 Nxf7",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nxe5",
+      "from": 45,
+      "to": 28
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "Nxf7",
+      "from": 28,
+      "to": 13
+    }
+  ],
+  "fen": "rnbqkb1r/ppp2Npp/3p1n2/8/4P3/8/PPPP1PPP/RNBQKB1R b KQkq - 0 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Petrov Defence has a reputation for solidity and symmetry, and the Cochrane Gambit is White's attempt to shatter that calm at once. By capturing on f7 with 4.Nxf7, White forces 4...Kxf7 and permanently deprives Black of the right to castle, leaving the king stranded on f7 in the centre. In exchange for the sacrificed knight White collects two pawns and, more importantly, targets against the exposed monarch, aiming to build a broad centre and open lines faster than Black can bring the king to safety.",
+        "The compensation is dynamic rather than material, so White must play energetically and purposefully. The typical plan is d4, Nc3, and development of the bishops to c4 or f4, followed by castling and a central pawn advance to pry open the position while the black king remains awkwardly placed. Black, for a full piece, seeks to consolidate: to blunt the initiative, complete development, tuck the king into relative safety, and eventually let the extra material decide. The practical difficulty of defending an exposed king under sustained pressure is the whole point of the gambit."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After the forced 4...Kxf7 White chooses between several move orders that all pursue the same idea. The most common is 5.d4, immediately staking out the centre and preparing Nc3, Bd3 or Bc4, and short castling, so that White's development flows toward the exposed king. The bishop is often deployed to c4 to eye f7-square weaknesses or to f4 and d3 to support the central pawns, and White may follow with f4 and e5 to blast open lines.",
+        "Black's defensive setups revolve around how to shelter the king and challenge White's centre. A key resource is the freeing break ...d5, and often ...c5, contesting White's pawns and opening diagonals for Black's own pieces, after which the king may find shelter via ...Kg8 once ...g6 and ...Bg7 or ...Kf7-g8 manoeuvres are arranged. The evaluation hinges on whether Black can weather the initial pressure; if the storm is survived, the extra piece tells, which is why the Cochrane is treated as a practical, surprise-value try rather than a bid for a theoretical advantage."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The gambit is named after John Cochrane, a nineteenth-century Scottish master and barrister who spent many years in India and employed the sacrifice in games against the strong Indian player Mahescandra Bannerjee. It embodies the Romantic era's fondness for enterprising sacrifice, offering material for attacking chances rather than clinging to equality. For a long time the line was regarded as dubious, but it has enjoyed periodic revivals, and a number of grandmasters have essayed it as a fighting weapon to sidestep the Petrov's drawish reputation. Today it stands as a respected if speculative surprise, valued for the practical problems it sets a defender who must justify the extra piece under fire."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "4.Nxf7 sacrifices a knight for two pawns to expose Black's king.",
+    "The forced 4...Kxf7 permanently denies Black the right to castle.",
+    "White's compensation is dynamic: a central pawn mass and attacking lines.",
+    "Rapid development with d4, Nc3, and a bishop to c4 or f4 drives the initiative.",
+    "Black is up a piece and must consolidate and shelter the king to win.",
+    "A speculative but respected surprise weapon against the solid Petrov."
+  ],
+  "plans": {
+    "white": [
+      "Play d4 to build a broad centre and open lines toward the exposed king.",
+      "Develop with Nc3 and a bishop to c4 or f4, then castle and press forward.",
+      "Advance f4 and e5 to blast open the position before Black consolidates.",
+      "Keep the initiative flowing so Black never gets the king to safety.",
+      "Aim for practical attacking chances rather than a forced material recovery."
+    ],
+    "black": [
+      "Accept the piece with 4...Kxf7 and focus on careful consolidation.",
+      "Challenge White's centre with the freeing breaks ...d5 and ...c5.",
+      "Manoeuvre the king toward g8 via ...g6 and ...Bg7 to reach safety.",
+      "Complete development and blunt White's initiative with accurate defence.",
+      "Let the extra piece decide once the attacking pressure has been weathered."
+    ]
+  },
+  "related": ["petrov-defense", "two-knights-defense", "italian-game"]
+}

@@ -96,5 +96,11 @@
       "Neutralise White's initiative through timely exchanges and head for a balanced endgame"
     ]
   },
-  "related": ["philidor-defense", "ruy-lopez", "scotch-game", "open-game"]
+  "related": [
+    "philidor-defense",
+    "ruy-lopez",
+    "scotch-game",
+    "open-game",
+    "cochrane-gambit"
+  ]
 }

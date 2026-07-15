@@ -113,6 +113,7 @@
     "sicilian-defense",
     "sicilian-taimanov",
     "sicilian-sveshnikov",
-    "french-defense"
+    "french-defense",
+    "sicilian-najdorf-english-attack"
   ]
 }

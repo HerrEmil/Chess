@@ -88,5 +88,11 @@
       "Aim to regain the pawn or generate lasting pressure before White consolidates."
     ]
   },
-  "related": ["italian-game", "ruy-lopez", "open-game"]
+  "related": [
+    "italian-game",
+    "ruy-lopez",
+    "open-game",
+    "traxler-counterattack",
+    "max-lange-attack"
+  ]
 }

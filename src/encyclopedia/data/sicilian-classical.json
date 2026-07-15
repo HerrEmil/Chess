@@ -59,7 +59,8 @@
     "sicilian-defense",
     "sicilian-najdorf",
     "sicilian-richter-rauzer",
-    "sicilian-dragon"
+    "sicilian-dragon",
+    "sicilian-fischer-sozin-attack"
   ],
   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
   "moves": [

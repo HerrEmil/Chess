@@ -1,0 +1,137 @@
+{
+  "slug": "sicilian-fischer-sozin-attack",
+  "eco": "B87",
+  "name": "Sicilian: Fischer–Sozin Attack",
+  "aka": ["Sozin Attack"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Fischer–Sozin Attack (6.Bc4 against the Najdorf) aims the light-squared bishop at f7 and e6 for a direct kingside assault.",
+  "intro": "The Fischer–Sozin Attack is an aggressive answer to the Najdorf, arising after 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Bc4 e6 7.Bb3 b5. White develops the light-squared bishop to c4 and then b3, training it on the sensitive f7 and e6 squares, and prepares f4, queen development and castling for a swift attack. It was a favourite aggressive weapon of Bobby Fischer.",
+  "line": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6 Bc4 e6 Bb3 b5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "a6",
+      "from": 8,
+      "to": 16
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Bb3",
+      "from": 34,
+      "to": 41
+    },
+    {
+      "san": "b5",
+      "from": 9,
+      "to": 25
+    }
+  ],
+  "fen": "rnbqkb1r/5ppp/p2ppn2/1p6/3NP3/1BN5/PPP2PPP/R1BQK2R w KQkq b6 0 8",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining feature of the Fischer–Sozin Attack is the light-squared bishop on the a2-g8 diagonal, retreating from c4 to b3 where it bears down on f7 and, once Black plays ...e6, on the e6-pawn and the light squares around the king. Rather than the slow manoeuvring of many Sicilians, White plays for a direct attack, typically combining f4, queen development to f3 or e2, and castling on either wing with the thrust f5 to prise open lines. The bishop’s pressure means that Black must be constantly alert to sacrifices on e6 that rip open the position.",
+        "Black’s counterplay follows familiar Najdorf lines but must respect White’s attacking chances. The immediate 7...b5 gains queenside space, prepares ...Bb7 to fight for the long diagonal and the e4-pawn, and eyes ...b4 to disturb the c3-knight. Development with ...Be7, ...Nbd7 or ...Nc6, and timely castling, aims to neutralise the bishop on b3 and to strike back in the centre with ...d5 or on the queenside. The middlegame is a contest between White’s kingside initiative and Black’s space and central resources, and the light squares around e6 and d5 are the recurring theme."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 6.Bc4 e6 7.Bb3, the move 7...b5 is one of Black’s most principled continuations, and play often proceeds with ...Be7, ...O-O and ...Bb7, when White chooses between kingside castling with a quieter build-up and queenside castling for an all-out pawn storm. When White castles short, the plan of f4-f5 combined with Qf3 and Rae1 seeks to open the e- and f-files, whereas queenside castling turns the game into an opposite-wing race similar in spirit to the Velimirovic and English Attack set-ups. The recurring tactical idea for White is the sacrifice Bxe6 or Ndxb5, opening lines against the king.",
+        "Black’s handling depends on how White deploys. Against a kingside build-up, Black seeks central counterplay with ...Nc6, ...Nxd4 and a well-timed ...d5, aiming to exchange White’s dangerous pieces and reach a comfortable structure. Against queenside castling, Black hurries with ...b4, ...a5-a4 and pressure down the c-file, racing the attack. Precise move orders decide whether White’s sacrifices on e6 crash through or merely fizzle, so both sides need concrete knowledge of the key positions."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The system is named jointly after the Soviet master Veniamin Sozin, who pioneered the 6.Bc4 development against the Sicilian in the early twentieth century, and after Bobby Fischer, who adopted it as one of his signature attacking weapons and enriched its theory with many memorable games. The bishop deployment to c4 and b3 became associated with Fischer’s aggressive, direct style against the Najdorf and related Sicilians. The closely connected Velimirovic Attack, featuring Qe2 and O-O-O, extends the same attacking idea. The Fischer–Sozin remains a respected try for players who prefer to meet the Najdorf with immediate pressure rather than slow manoeuvring."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The c4-b3 bishop targets f7 and, after ...e6, the light squares around e6.",
+    "White plays for a direct attack with f4-f5, Qf3 or Qe2, and castling.",
+    "Sacrifices such as Bxe6 recur as a means of ripping open the king.",
+    "Black gains queenside space with ...b5 and fights the long diagonal with ...Bb7.",
+    "Control of the d5- and e6-squares is the central positional theme.",
+    "Queenside castling by White turns the game into an opposite-wing race."
+  ],
+  "plans": {
+    "white": [
+      "Retreat the bishop to b3 to bear down on f7 and e6.",
+      "Prepare f4-f5 with queen support to open lines toward the king.",
+      "Consider Bxe6 or Ndxb5 sacrifices to expose the black monarch.",
+      "Castle queenside for an all-out pawn storm when the position invites it.",
+      "Clamp the d5-square to deny Black the freeing central break."
+    ],
+    "black": [
+      "Expand with ...b5 and develop ...Bb7 to contest the long diagonal.",
+      "Complete development with ...Be7 and ...O-O to neutralise the b3-bishop.",
+      "Strike in the centre with a timely ...d5 to trade off White’s attackers.",
+      "Push ...b4 and ...a5-a4 to generate queenside counterplay.",
+      "Guard the e6- and d5-squares carefully against sacrificial breakthroughs."
+    ]
+  },
+  "related": [
+    "sicilian-najdorf",
+    "sicilian-classical",
+    "sicilian-scheveningen",
+    "sicilian-najdorf-english-attack"
+  ]
+}

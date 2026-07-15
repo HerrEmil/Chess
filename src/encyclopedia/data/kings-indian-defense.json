@@ -96,6 +96,7 @@
     "nimzo-indian-defense",
     "queens-gambit",
     "pirc-defense",
-    "english-opening"
+    "english-opening",
+    "kings-indian-four-pawns-attack"
   ]
 }

@@ -59,7 +59,8 @@
     "english-opening",
     "english-symmetrical",
     "sicilian-dragon",
-    "reti-opening"
+    "reti-opening",
+    "english-four-knights"
   ],
   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
   "moves": [

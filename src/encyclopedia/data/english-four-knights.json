@@ -1,0 +1,97 @@
+{
+  "slug": "english-four-knights",
+  "eco": "A28",
+  "name": "English Opening: Four Knights Variation",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The English Four Knights (1.c4 e5 with all four knights out) is a reversed Sicilian in which White enjoys an extra tempo on Black's setup.",
+  "intro": "The Four Knights Variation of the English Opening arises after 1.c4 e5 2.Nc3 Nf6 3.Nf3 Nc6, developing all four knights before either side commits the centre. It is a reversed Sicilian: the position resembles a Sicilian Defence with colours reversed and White a tempo up. The line leads to rich, strategically complex middlegames in which White tries to make that extra tempo tell.",
+  "line": "c4 e5 Nc3 Nf6 Nf3 Nc6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    }
+  ],
+  "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2P5/2N2N2/PP1PPPPP/R1BQKB1R w KQkq - 4 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "With the pawn on c4 and the e-pawn at home, the English is often understood as a Sicilian with colours reversed, and after 1...e5 White is effectively playing a Sicilian setup a full move ahead. The battle centres on the d4 and d5 squares and on control of the e5-point, which Black holds for now. White's principal ideas are the kingside fianchetto with g3 and Bg2, exerting pressure along the long light diagonal toward Black's queenside, and the central break d4, prepared either directly or by e3, to challenge Black's pawn. The extra tempo means White can often reach a favourable version of well-known Sicilian structures.",
+        "Black, holding the e5-pawn, aims for active piece play and central expansion. The freeing advance ...d5 is a key resource, striking at White's grip and opening lines, while ...Bb4 pins the c3-knight and fights for the d5-square and the initiative. Depending on how the centre is resolved, the game can become a slow manoeuvring struggle over the light squares or a sharper fight after an early d4 or ...d5. Because the structures mirror the Sicilian, both sides can draw on a vast body of familiar strategic knowledge, applied with the roles reversed."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "White's most respected setup is the kingside fianchetto: 4.g3 followed by Bg2, O-O and often d3, with a later e3 and d4 or the manoeuvre Nd2 and Nc4. A critical line is 4.g3 d5 5.cxd5 Nxd5, when Black returns the favour by seizing the centre and the play resembles a reversed Sicilian Dragon; 6.Bg2 Nb6 with ...Be7 or ...Bc5 leads to well-mapped positions. White may instead choose 4.e3, preparing d4 in classical style, or 4.d4 at once, opening the centre and steering toward an isolated-pawn or symmetrical structure.",
+        "Another important branch is 4.g3 Bb4 or 4.g3 Bc5, when Black develops the bishop actively and fights for the d4-square. The space-grabbing 4.e4, heading for a reversed Sicilian of a different character, is also possible, though it commits White's structure. Whichever route is chosen, the recurring themes are the ...d5 and d4 breaks, the pressure of the fianchettoed bishops, and the manoeuvring of the knights toward the key central squares. Precise move orders matter, as many lines transpose among the English, the Reversed Sicilian, and even the Four Knights Game proper."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The English Opening takes its name from Howard Staunton, the leading English master of the mid-nineteenth century, who adopted 1.c4 in his matches, and the Four Knights structure with 1...e5 has long been one of its principal battlegrounds. The reversed-Sicilian interpretation grew in importance during the twentieth century as flank openings gained respectability, and the line was employed by many World Champions who valued its flexibility and its avoidance of heavy 1.e4 and 1.d4 theory. Players of the hypermodern school and later positional grandmasters helped establish the English as a fully independent, first-rate opening. Today the Four Knights remains a mainstream, richly analysed way to meet 1...e5 against the English."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "1.c4 e5 with all four knights out is a reversed Sicilian a tempo up.",
+    "The struggle centres on the d4 and d5 squares and the e5-point.",
+    "White's g3 and Bg2 fianchetto pressures the long light diagonal.",
+    "The d4 break for White and ...d5 for Black are the key freeing advances.",
+    "...Bb4 pins the c3-knight and fights for d5 and the initiative.",
+    "Familiar Sicilian structures appear with the colours reversed."
+  ],
+  "plans": {
+    "white": [
+      "Fianchetto with g3 and Bg2 to pressure the long diagonal.",
+      "Prepare the central break d4, often after e3 or d3.",
+      "Reroute a knight via Nd2-c4 to eye e5 and the queenside.",
+      "Use the extra tempo to reach a favourable reversed-Sicilian structure.",
+      "Castle short and play on the light squares and the c-file."
+    ],
+    "black": [
+      "Hold the e5-point and complete rapid development.",
+      "Strike with the freeing ...d5 break to seize the centre.",
+      "Pin the c3-knight with ...Bb4 to fight for d5.",
+      "Develop the bishop actively to c5 or b4 and contest d4.",
+      "Aim for active piece play, applying Sicilian ideas with reversed roles."
+    ]
+  },
+  "related": [
+    "english-opening",
+    "english-reversed-sicilian",
+    "english-symmetrical",
+    "four-knights-game"
+  ]
+}

@@ -79,5 +79,10 @@
       "Exploit dark-square weaknesses if White overextends on the kingside"
     ]
   },
-  "related": ["caro-kann-defense", "sicilian-defense", "scandinavian-defense"]
+  "related": [
+    "caro-kann-defense",
+    "sicilian-defense",
+    "scandinavian-defense",
+    "french-rubinstein"
+  ]
 }

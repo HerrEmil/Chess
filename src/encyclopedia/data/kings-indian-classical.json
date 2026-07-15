@@ -59,7 +59,8 @@
     "kings-indian-defense",
     "kings-indian-samisch",
     "kings-indian-fianchetto",
-    "grunfeld-defense"
+    "grunfeld-defense",
+    "kings-indian-four-pawns-attack"
   ],
   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
   "moves": [

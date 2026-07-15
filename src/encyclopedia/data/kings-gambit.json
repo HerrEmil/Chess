@@ -76,5 +76,11 @@
       "Aim to trade into an endgame where the extra pawn and sound structure tell"
     ]
   },
-  "related": ["vienna-game", "open-game", "italian-game"]
+  "related": [
+    "vienna-game",
+    "open-game",
+    "italian-game",
+    "king-gambit-accepted",
+    "kieseritzky-gambit"
+  ]
 }

@@ -114,5 +114,12 @@
       "In opposite-castling lines, push the queenside pawns to reach White's king first."
     ]
   },
-  "related": ["sicilian-defense", "sicilian-dragon", "sicilian-alapin"]
+  "related": [
+    "sicilian-defense",
+    "sicilian-dragon",
+    "sicilian-alapin",
+    "sicilian-najdorf-english-attack",
+    "sicilian-najdorf-poisoned-pawn",
+    "sicilian-fischer-sozin-attack"
+  ]
 }

@@ -59,7 +59,8 @@
     "grunfeld-defense",
     "kings-indian-defense",
     "queens-indian-defense",
-    "nimzo-indian-defense"
+    "nimzo-indian-defense",
+    "grunfeld-russian-system"
   ],
   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
   "moves": [

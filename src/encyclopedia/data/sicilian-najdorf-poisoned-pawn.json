@@ -1,0 +1,156 @@
+{
+  "slug": "sicilian-najdorf-poisoned-pawn",
+  "eco": "B97",
+  "name": "Najdorf: Poisoned Pawn Variation",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "In the Poisoned Pawn Najdorf (6.Bg5 e6 7.f4 Qb6 8.Qd2 Qxb2 9.Rb1 Qa3) Black grabs b2 and defends against a fierce attack.",
+  "intro": "The Poisoned Pawn Variation is among the sharpest lines in all of chess, reached after 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Bg5 e6 7.f4 Qb6 8.Qd2 Qxb2 9.Rb1 Qa3. Black snatches the b2-pawn with the queen and accepts a lag in development in return for material, daring White to prove compensation through a direct attack.",
+  "line": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6 Bg5 e6 f4 Qb6 Qd2 Qxb2 Rb1 Qa3",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "a6",
+      "from": 8,
+      "to": 16
+    },
+    {
+      "san": "Bg5",
+      "from": 58,
+      "to": 30
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "f4",
+      "from": 53,
+      "to": 37
+    },
+    {
+      "san": "Qb6",
+      "from": 3,
+      "to": 17
+    },
+    {
+      "san": "Qd2",
+      "from": 59,
+      "to": 51
+    },
+    {
+      "san": "Qxb2",
+      "from": 17,
+      "to": 49
+    },
+    {
+      "san": "Rb1",
+      "from": 56,
+      "to": 57
+    },
+    {
+      "san": "Qa3",
+      "from": 49,
+      "to": 40
+    }
+  ],
+  "fen": "rnb1kb1r/1p3ppp/p2ppn2/6B1/3NPP2/q1N5/P1PQ2PP/1R2KB1R w Kkq - 2 10",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Poisoned Pawn embodies the central Najdorf gamble in its most extreme form: material versus initiative. After 6.Bg5 e6 7.f4, White has built an imposing attacking formation with the pin on f6, the f-pawn ready to advance, and rapid mobilisation toward Black’s king. By playing 7...Qb6 and then 8...Qxb2, Black diverts the queen to the far side of the board to win a pawn, betting that the extra material will tell if the position can be held together. It is a deliberate, principled provocation rather than mere greed.",
+        "The strategic tension turns on time and king safety. White is fully justified in sacrificing further material to open lines, and typical ideas include e5 to blast open the centre, f5 to strike at e6, and heavy-piece pressure down the b- and d-files. Black, meanwhile, must shepherd the wandering queen back into play, complete development, and often return some or all of the extra material at the right moment to reach a safe and materially favourable endgame. Because the margins are so fine, both sides rely on precise, memorised theory extending deep into the middlegame."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 9.Rb1 Qa3 the main crossroads is White’s choice between the aggressive 10.e5 and the older 10.f5, each opening lines toward the Black king in a different way. The line 10.e5 dxe5 11.fxe5 leads to enormous complications in which Black’s knight is chased and the centre erupts, while 10.f5 targets the e6-pawn and the light squares around the king. A further important try is 10.Bxf6 gxf6, damaging Black’s structure before continuing the assault. In each case the resulting positions are among the most heavily analysed in opening theory.",
+        "Black’s defensive resources typically involve returning the queen via ...Qa3 and later manoeuvres, meeting central breaks with ...Nfd7 and ...Nc6, and using the b-file and the extra pawn to blunt White’s pressure. A recurring theme is that Black willingly gives back material to trade queens or reach an endgame where the king is safe, since with reduced forces the surviving pawn advantage becomes meaningful. The variation is notorious for lines where a single tempo or a precise move order decides the entire game, so accurate preparation is indispensable."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Poisoned Pawn earned worldwide fame through the World Championship match between Bobby Fischer and Boris Spassky in 1972, where it featured in a celebrated and heavily scrutinised game. Fischer was a lifelong devotee of the line and did much to establish its soundness at the highest level, and it has since attracted the deep attention of many World Champions and elite theoreticians. Its reputation is that of a razor’s edge on which Black must know the theory precisely or risk a swift defeat. Modern engine analysis has reinforced its viability while pushing the critical lines ever deeper, keeping it a favourite of well-prepared, combative players."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "7...Qb6 and 8...Qxb2 win the b2-pawn at the cost of development and time.",
+    "White seeks compensation through rapid attack against Black’s king.",
+    "Central breaks e5 and f5 aim to blast open lines before Black consolidates.",
+    "Black often returns material to trade queens and reach a safe endgame.",
+    "The wandering queen must be brought back into play without losing time.",
+    "The line demands precise, deeply memorised theory from both sides."
+  ],
+  "plans": {
+    "white": [
+      "Exploit the lead in development with e5 or f5 to open lines.",
+      "Pressure Black’s king along the b- and d-files with the heavy pieces.",
+      "Play Bxf6 to damage Black’s structure before continuing the attack.",
+      "Sacrifice further material to keep the black king stuck in the centre.",
+      "Convert the initiative into a mating attack or regain material with interest."
+    ],
+    "black": [
+      "Grab the b2-pawn and bank the material advantage.",
+      "Bring the queen back into play via a3 without losing time.",
+      "Complete development with ...Nbd7, ...Nc6 and ...Be7 to blunt the attack.",
+      "Return some material to trade queens and steer toward an endgame.",
+      "Rely on precise theory to survive the storm and cash in the extra pawn."
+    ]
+  },
+  "related": [
+    "sicilian-najdorf",
+    "sicilian-najdorf-english-attack",
+    "sicilian-scheveningen"
+  ]
+}

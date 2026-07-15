@@ -1,0 +1,107 @@
+{
+  "slug": "traxler-counterattack",
+  "eco": "C57",
+  "name": "Traxler Counterattack",
+  "aka": ["Wilkes-Barre Variation"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "In the Traxler Counterattack (1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5) Black ignores the threat to f7 and counterattacks with wild complications.",
+  "intro": "The Traxler Counterattack arises in the Two Knights Defence after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5. Instead of defending the f7-pawn with the usual 4...d5, Black audaciously ignores White's threat and develops the bishop, offering a counter-sacrifice on f2. It is one of the most romantic and double-edged replies in all of opening theory, leading to mutual king-hunts where both sides attack rather than defend.",
+  "line": "e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5 Bc5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Ng5",
+      "from": 45,
+      "to": 30
+    },
+    {
+      "san": "Bc5",
+      "from": 5,
+      "to": 26
+    }
+  ],
+  "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p1N1/2B1P3/8/PPPP1PPP/RNBQK2R w KQkq - 6 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "White's 4.Ng5 is a direct, somewhat primitive lunge that attacks f7 and threatens the fork with Nxf7 or the Fried Liver after 4...d5. The Traxler turns the tables: with 4...Bc5 Black meets threat with threat, training the bishop on f2 and inviting White to grab material on f7 at the cost of walking into a ferocious counterattack. The point is that the f2-square is White's mirror weakness, and the resulting positions become a race in which whoever attacks faster, rather than whoever is materially ahead, tends to prevail.",
+        "The imbalances are extreme and concrete rather than positional. After 5.Nxf7 Bxf2+ or 5.Bxf7+ Ke7, Black often gives up the right to castle and marches the king into the centre, banking on the exposure of White's king and the activity of the black pieces. Precise calculation matters far more than general principles here: every check, capture, and interposition must be worked out, because a single misstep can leave one king hunted to death. Both sides walk a knife-edge between a winning attack and immediate collapse."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The two principal tries for White are 5.Nxf7 and 5.Bxf7+. The knight capture 5.Nxf7 is the greedier choice, forking the queen and rook, but after 5...Bxf2+ 6.Kxf2 Nxe4+ Black regains material with a raging initiative and the white king dangerously exposed. Modern analysis regards this as the more testing but also the more dangerous line for White, since the resulting complications have been analysed to great depth and often peter out to sharp equality with best play.",
+        "The bishop check 5.Bxf7+ is considered the safer, more solid path to an edge. After 5...Ke7 Black again forgoes castling, but White returns some material to blunt the attack and steer toward a calmer position where the misplaced black king may tell in the long run. Both main lines lead to enormously forcing sequences, and much of the theory has been mapped out by correspondence players and engines, so that the Traxler is as much a test of memory and calculation as of understanding."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is named after Karel Traxler, a Czech priest and problem composer who introduced it in the late nineteenth century, and in the English-speaking world it is often called the Wilkes-Barre Variation after the Pennsylvania town where a group of enthusiasts analysed it extensively. It has always been the province of adventurous attacking players who relish sharp, uncompromising positions rather than a fixture of elite tournament practice. The advent of powerful engines and deep correspondence analysis has both stress-tested and rehabilitated many of its lines, confirming that Black obtains genuine counterplay. It endures as a cult favourite, a byword for fearless counterattacking chess against the Two Knights' 4.Ng5."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "4...Bc5 ignores the threat to f7 and counterattacks against f2.",
+    "The f2-square is White's mirror weakness to Black's f7.",
+    "Black often sacrifices on f2 and gives up castling for a raging attack.",
+    "Concrete calculation, not general principles, decides these positions.",
+    "5.Nxf7 is the greediest try; 5.Bxf7+ is the safer path to an edge.",
+    "Both kings can end up hunted, so tempo and initiative are everything."
+  ],
+  "plans": {
+    "white": [
+      "Grab material with 5.Nxf7, forking queen and rook, and try to survive the attack.",
+      "Choose the safer 5.Bxf7+ Ke7 to return material and blunt Black's initiative.",
+      "Consolidate the extra material and exploit Black's uncastled king in the long run.",
+      "Return the piece at the right moment to defuse the mutual king-hunt.",
+      "Calculate every forcing line precisely, as a single slip can be fatal."
+    ],
+    "black": [
+      "Answer 4.Ng5 with 4...Bc5, meeting the threat to f7 with a threat to f2.",
+      "Sacrifice on f2 with ...Bxf2+ to expose White's king and seize the initiative.",
+      "Accept giving up castling and activate the pieces against the white king.",
+      "Regain material with tactics such as ...Nxe4+ while keeping the attack alive.",
+      "Rely on deep home preparation to navigate the forcing complications."
+    ]
+  },
+  "related": [
+    "two-knights-defense",
+    "fried-liver-attack",
+    "italian-game",
+    "giuoco-piano"
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "slug": "sicilian-najdorf-english-attack",
+  "eco": "B90",
+  "name": "Najdorf: English Attack",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The English Attack against the Najdorf (6.Be3, f3, Qd2, O-O-O, g4) is a modern main line pitting kingside storm against queenside expansion.",
+  "intro": "The English Attack is one of the principal weapons against the Najdorf, arising after 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Be3 e5 7.Nb3 Be6 8.f3 Be7 9.Qd2 O-O. White builds with f3, Qd2 and long castling, then advances g4-g5, while Black expands on the queenside with ...Nbd7 and ...b5. It has been a central battleground of modern opening theory.",
+  "line": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6 Be3 e5 Nb3 Be6 f3 Be7 Qd2 O-O",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "a6",
+      "from": 8,
+      "to": 16
+    },
+    {
+      "san": "Be3",
+      "from": 58,
+      "to": 44
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nb3",
+      "from": 35,
+      "to": 41
+    },
+    {
+      "san": "Be6",
+      "from": 2,
+      "to": 20
+    },
+    {
+      "san": "f3",
+      "from": 53,
+      "to": 45
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    },
+    {
+      "san": "Qd2",
+      "from": 59,
+      "to": 51
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    }
+  ],
+  "fen": "rn1q1rk1/1p2bppp/p2pbn2/4p3/4P3/1NN1BP2/PPPQ2PP/R3KB1R w KQ - 3 10",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The English Attack is defined by a clear plan rather than a single forcing line: White plays f3 to bolster e4 and prepare g4, develops the queen to d2, castles long, and then storms the kingside with g4-g5 to drive away the f6-knight and open lines. The bishop on e3 and the queen on d2 are ideally placed both to support the pawn advance and to eye the dark squares around Black’s king. After 6...e5 7.Nb3 the knight steps back to b3, keeping options open, and the resulting pawn structure with a hole on d5 gives the game its particular character.",
+        "Black’s response is thematic Najdorf counterplay on the opposite wing. The moves ...Be6, ...Nbd7 and ...b5 prepare queenside expansion with ...b4 to kick the c3-knight and open lines against White’s king, while the light-squared bishop on e6 guards the d5-square and supports the ...d5 break. Whoever’s attack arrives first tends to prevail, so the middlegame is a fight over tempo, the d5-square, and control of the a1-h8 and light-square diagonals. Both sides frequently castle on opposite flanks, sharpening the race still further."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 6.Be3 the critical divide is Black’s choice between 6...e5 and 6...e6, the latter transposing toward Scheveningen-style structures where White’s g4 thrust is met by more flexible piece play. Following 6...e5 7.Nb3, Black most often continues with ...Be6, ...Be7 and ...O-O, reaching the tabiya of this entry, after which White chooses between an immediate g4 and the preparatory h4 or O-O-O. The move-order subtleties over when to insert ...h5 to slow White’s g-pawn, and when White should castle long, are a large part of the theory.",
+        "A key strategic branch involves Black meeting g4 with ...h6 and ...b5, aiming to counter on the queenside before White breaks through, while White may answer ...b5 with a4 or push straight ahead with g5. If Black achieves a well-timed ...d5, the central break usually equalises, so much of White’s play is devoted to preventing it and clamping down on the d5-square with pieces. The lines are concrete and continue to be refined at the highest level, with engine-driven analysis regularly reshaping the assessments."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The English Attack owes its name to a group of English grandmasters, notably John Nunn, Nigel Short and Murray Chandler, who developed and popularised the f3, Qd2 and O-O-O plan against the Najdorf and Scheveningen in the 1980s. It quickly grew from a fashionable idea into one of the main lines, adopted by elite players seeking a principled, attacking response to Black’s most respected Sicilian. Its blend of clear strategic plans and razor-sharp tactics made it a staple of top-level practice and a rich field for home preparation. It remains a leading anti-Najdorf choice today, continually reshaped by modern analysis."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White’s plan is f3, Qd2, O-O-O and a g4-g5 kingside pawn storm.",
+    "Control of the d5-square is the central positional battleground.",
+    "After 6...e5 7.Nb3 the knight keeps flexibility and eyes c5 and d5.",
+    "Black expands with ...Be6, ...Nbd7 and ...b5-b4 to hit the c3-knight.",
+    "The ...d5 break tends to equalise, so White works hard to prevent it.",
+    "Opposite-side attacks make tempo and move order decisive."
+  ],
+  "plans": {
+    "white": [
+      "Prepare g4-g5 with f3 to evict the f6-knight and open kingside lines.",
+      "Castle queenside and coordinate the queen and bishop against the king.",
+      "Clamp down on d5 with pieces to deny Black the freeing break.",
+      "Meet ...b5 with a4 or push g5 to keep the initiative.",
+      "Race the kingside attack home before Black’s queenside play matures."
+    ],
+    "black": [
+      "Post the bishop on e6 to guard d5 and support ...d5.",
+      "Expand with ...Nbd7 and ...b5-b4 to open lines toward White’s king.",
+      "Time ...h5 or ...h6 to slow White’s g-pawn advance.",
+      "Achieve the ...d5 break to free the position and neutralise the attack.",
+      "Generate a queenside counterattack quickly to win the mutual race."
+    ]
+  },
+  "related": [
+    "sicilian-najdorf",
+    "sicilian-scheveningen",
+    "sicilian-najdorf-poisoned-pawn",
+    "sicilian-yugoslav-attack"
+  ]
+}

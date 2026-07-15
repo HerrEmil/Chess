@@ -1,0 +1,127 @@
+{
+  "slug": "catalan-open",
+  "eco": "E04",
+  "name": "Catalan Opening: Open Variation",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "In the Open Catalan Black captures on c4 while White's fianchettoed bishop generates lasting pressure on the long diagonal and the c-file.",
+  "intro": "The Open Catalan arises when Black meets the Catalan set-up by grabbing the c4-pawn, as after 1.d4 Nf6 2.c4 e6 3.g3 d5 4.Bg2 dxc4 5.Nf3 Be7 6.O-O O-O. Black tries to hold or return the extra pawn while completing development, and White accepts a temporary material deficit in exchange for long-term positional pressure. The fianchettoed g2-bishop, raking the long light-squared diagonal, is the soul of the whole system.",
+  "line": "d4 Nf6 c4 e6 g3 d5 Bg2 dxc4 Nf3 Be7 O-O O-O",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "g3",
+      "from": 54,
+      "to": 46
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Bg2",
+      "from": 61,
+      "to": 54
+    },
+    {
+      "san": "dxc4",
+      "from": 27,
+      "to": 34
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    }
+  ],
+  "fen": "rnbq1rk1/ppp1bppp/4pn2/8/2pP4/5NP1/PP2PPBP/RNBQ1RK1 w - - 4 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining imbalance of the Open Catalan is a pawn for pressure: Black has taken the c4-pawn, but White enjoys smooth development, a lead in the centre, and the powerful g2-bishop bearing down the a8-h1 diagonal. White is rarely in a hurry to regain the material, because the pawn on c4 is difficult for Black to defend and hold. Instead White develops naturally, often with Qc2 or Qa4 and the manoeuvre Nbd2 or Ne5, and recovers the pawn under favourable circumstances while retaining the bishop's long-term influence. The typical middlegame sees White pressing along the c-file and the long diagonal against Black's queenside.",
+        "For Black, the extra pawn is a bargaining chip rather than a lasting gain, and the central strategic task is to complete development and neutralise the Catalan bishop. The freeing break ...c5 is a constant aim, striking at d4 and opening lines for Black's own pieces, and Black frequently combines it with ...a6 and ...b5 to defend the c4-pawn and gain queenside space. Another key idea is to challenge or exchange the g2-bishop directly, most cleanly with the manoeuvre ...Bd7-c6 or ...b6 and ...Ba6, since trading off White's best piece dissolves much of the pressure. If Black manages these tasks, the position equalises comfortably; if not, White's bind can become very unpleasant to face."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "A principal branch is the ambitious ...a6 system, in which Black meets 7.Qc2 with 7...a6, intending ...b5 to prop up the c4-pawn and expand on the queenside. White then chooses between the direct recovery of the pawn with a2-a4 and Qxc4 ideas and slower plans that leave the pawn alone while building pressure, and the resulting positions are among the most heavily analysed in the whole Catalan. The alternative 7...Nc6, defending the option of ...b5 and eyeing d4, is another well-established treatment that keeps the tension in the centre.",
+        "White's own choices shape the character of the fight. The most common continuation is 7.Qc2, calmly preparing to round up the c4-pawn while keeping the bishop's diagonal open, but 7.Ne5 is a sharper try that immediately jabs at c6 and prepares to regain the pawn with tempo. Against ...c5 breaks White must judge when to release the central tension, since an early dxc5 can hand Black easy equality, whereas maintaining the tension keeps the queenside pressure alive. Throughout, the recurring themes are the same: White presses on the c-file and the long diagonal, and Black seeks the liberating ...c5 and the exchange of the Catalan bishop."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Catalan Opening takes its name from the Catalonia region of Spain, having been introduced for a tournament in Barcelona in 1929, and it blends the solid Queen's Gambit structure with the Réti-style kingside fianchetto. The Open Variation, in which Black snatches the c4-pawn, is the most testing way to challenge White's concept and has been a fixture of high-level practice for decades. The whole system rose dramatically in popularity in the modern era, championed by leading grandmasters and World Champions who valued its blend of low risk and enduring pressure. Today the Open Catalan is regarded as one of the soundest and most respected weapons at the top level, prized for the long-lasting initiative White can extract from a single well-placed bishop."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black wins the c4-pawn, White gets lasting positional compensation.",
+    "The g2-bishop on the long diagonal is the heart of White's pressure.",
+    "White often recovers the pawn later via Qc2/Qa4 and Nbd2 or Ne5.",
+    "Black's key freeing break is ...c5, striking at the d4-pawn.",
+    "Exchanging the Catalan bishop by ...Bd7-c6 or ...b6/...Ba6 eases Black.",
+    "Play centres on the c-file and long diagonal against Black's queenside."
+  ],
+  "plans": {
+    "white": [
+      "Develop naturally and delay regaining the c4-pawn until favourable.",
+      "Play Qc2 or Qa4 with Nbd2 or Ne5 to round up the c4-pawn.",
+      "Press along the half-open c-file and the long light-squared diagonal.",
+      "Keep central tension to restrain the freeing ...c5 break.",
+      "Exploit queenside weaknesses if Black over-extends with ...b5."
+    ],
+    "black": [
+      "Complete development quickly and treat the extra pawn as a bargaining chip.",
+      "Support the c4-pawn with ...a6 and ...b5 to gain queenside space.",
+      "Strike with the freeing ...c5 break to challenge d4 and open lines.",
+      "Neutralise the Catalan bishop with ...Bd7-c6 or ...b6 and ...Ba6.",
+      "Aim for a timely piece exchange to dissolve White's pressure."
+    ]
+  },
+  "related": [
+    "catalan-opening",
+    "queens-indian-defense",
+    "bogo-indian-defense",
+    "queens-gambit-declined"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "vienna-gambit",
+  "eco": "C29",
+  "name": "Vienna Gambit",
+  "aka": [],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Vienna Gambit (1.e4 e5 2.Nc3 Nf6 3.f4) launches a King's-Gambit-style thrust with the knight already developed to c3.",
+  "intro": "The Vienna Gambit arises after 1.e4 e5 2.Nc3 Nf6 3.f4, an aggressive offshoot of the Vienna Game. By developing the queen's knight before advancing the f-pawn, White adds support to e4 and prepares to open lines against Black's centre. It combines the attacking spirit of the King's Gambit with a more restrained, better-supported set-up, making it a dangerous try that has attracted club players and attacking specialists alike.",
+  "line": "e4 e5 Nc3 Nf6 f4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "f4",
+      "from": 53,
+      "to": 37
+    }
+  ],
+  "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq f3 0 3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Vienna Gambit resembles the King's Gambit but with the important difference that the knight already sits on c3, reinforcing the e4-pawn. This subtle change means that after 3.f4 White is far better prepared to meet the freeing thrust ...d5, which is Black's most principled response. White's plan is to open the f-file, develop rapidly, and generate pressure against Black's kingside and centre, using the extra support on e4 to keep the initiative rather than immediately parting with a pawn.",
+        "The struggle turns on the fight for the centre and the e4- and e5-squares. If Black meets f4 passively, White gains space and a dangerous attack after fxe5; the critical reply 3...d5 4.fxe5 Nxe4 leads to sharp middlegames in which the e4-knight is both active and potentially exposed. White often continues with Nf3, d3 or d4, and Bc4 or Be2, castling and pressing along the f-file, while Black seeks to complete development, challenge the centre, and exploit any weaknesses that the early f4 advance creates around White's king."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line runs 3...d5 4.fxe5 Nxe4, when Black strikes back in the centre and grabs the e4-pawn with the knight. Play typically continues 5.Nf3 or 5.Qf3, contesting the strong knight and fighting for the initiative; the resulting positions are rich and double-edged, with both kings potentially exposed. This central counter is regarded as Black's most reliable route to comfortable, active play, and it defines modern theory of the opening.",
+        "Alternatives for Black are considerably riskier. Accepting the gambit with 3...exf4 transposes into King's-Gambit-like structures where White's knight on c3 proves a useful extra developing move, and Black must be prepared for a swift assault. Declining passively with moves such as 3...Nc6 or 3...Bc5 tends to concede White easy development and central space after fxe5. Because of this, the ...d5 counter has become the theoretical benchmark against which the whole variation is measured."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Vienna Game and its aggressive gambit take their name from the city of Vienna, a major centre of chess in the nineteenth century, where players such as Carl Hamppe and later Adolf Albin developed and popularised these systems. The gambit flourished in the Romantic era as a way to seek King's-Gambit-style attacks on a sounder positional footing. Although it never fully supplanted the main Open Games at the highest level, it retained a loyal following and periodically reappeared in the hands of attacking players. Today it is valued as an enterprising surprise weapon that steers the game into fresh, tactical territory away from heavily trodden main lines."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "2.Nc3 supports e4 before 3.f4, unlike the plain King's Gambit.",
+    "The extra knight on c3 discourages and better meets the ...d5 break.",
+    "White aims to open the f-file and attack Black's kingside and centre.",
+    "The critical line 3...d5 4.fxe5 Nxe4 leads to sharp, double-edged play.",
+    "Accepting with 3...exf4 transposes to King's-Gambit-type attacking structures.",
+    "The early f4 advance can leave White's own king slightly exposed."
+  ],
+  "plans": {
+    "white": [
+      "Advance f4 with e4 already defended by the c3-knight to seize the initiative.",
+      "Open and exploit the f-file with rapid development and short castling.",
+      "Meet ...d5 with fxe5 and contest the active e4-knight with Nf3 or Qf3.",
+      "Develop the light-squared bishop to c4 or e2 and build a kingside attack.",
+      "Use the space and lead in development to press before Black consolidates."
+    ],
+    "black": [
+      "Strike in the centre with 3...d5 to free the position and gain active play.",
+      "Grab the e4-pawn with ...Nxe4 and hold the knight with careful support.",
+      "Complete development quickly and castle to blunt White's f-file pressure.",
+      "Target the weaknesses the early f4 advance creates around White's king.",
+      "Avoid passive declines that hand White free central space after fxe5."
+    ]
+  },
+  "related": [
+    "vienna-game",
+    "kings-gambit",
+    "king-gambit-accepted",
+    "bishops-opening",
+    "four-knights-game"
+  ]
+}

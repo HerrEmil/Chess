@@ -1,0 +1,117 @@
+{
+  "slug": "caro-kann-exchange",
+  "eco": "B13",
+  "name": "Caro-Kann Defense: Exchange Variation",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Caro-Kann Exchange (3.exd5 cxd5) gives a symmetrical, Carlsbad-type structure in which White can pursue a queenside minority attack.",
+  "intro": "The Exchange Variation of the Caro-Kann arises after 1.e4 c6 2.d4 d5 3.exd5 cxd5, when White resolves the central tension immediately. The result is a symmetrical pawn structure closely related to the Carlsbad formation, offering White a safe, positional way to play for a small edge. It is less ambitious than the sharp Panov Attack with 4.c4, but it avoids Black's most active defensive resources.",
+  "line": "e4 c6 d4 d5 exd5 cxd5 Bd3 Nc6 c3 Nf6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "exd5",
+      "from": 36,
+      "to": 27
+    },
+    {
+      "san": "cxd5",
+      "from": 18,
+      "to": 27
+    },
+    {
+      "san": "Bd3",
+      "from": 61,
+      "to": 43
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    }
+  ],
+  "fen": "r1bqkb1r/pp2pppp/2n2n2/3p4/3P4/2PB4/PP3PPP/RNBQK1NR w KQkq - 1 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "After 3.exd5 cxd5 the pawns stand symmetrically on d4 and d5, producing a clear, open position with easy development for both sides. White's plan, borrowed from Queen's Gambit Carlsbad structures, is the minority attack: advancing the queenside pawns with b4-b5 to provoke weaknesses in Black's chain, typically leaving Black with a backward pawn on c6 or an isolated d5-pawn to besiege. White develops with Bd3, c3, Nf3 and Nbd2, castles short, and prepares to expand on the queenside, while the half-open e-file and the e5 outpost can also feature in the plans.",
+        "Black enjoys comfortable, natural development and equal space, which makes the Exchange one of the least troublesome lines for a Caro-Kann player to face. The light-squared bishop, so often a problem in the French, is here free to develop actively to f5 or g4 outside the pawn chain. Black's counterplay comes from piece activity, a minority attack of their own with ...b5-b4, or central and kingside play; a well-known active setup runs ...Qc7, ...Bd6 and ...Nge7 with an eye on the kingside. Because the structure is symmetrical, the balance is easy to keep, so both sides must play energetically to create winning chances."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line runs 4.Bd3 Nc6 5.c3 Nf6, when White completes development with Bf4 or Bg5, Nf3, Nbd2 and O-O, preparing the minority attack with a4 and b4. A key moment is the placement of the dark-squared bishops: White's Bf4 contests the important e5 and d6 squares, and Black frequently responds with the aggressive ...Qc7 and ...Bd6 to challenge it and gain kingside prospects. The exchange of dark-squared bishops on f4 or d6 often defines the middlegame plans for both sides.",
+        "An important nuance is where Black places the light-squared bishop and whether to provoke or allow the pin ...Bg4. Black may also play for the ...Ne4 outpost or prepare ...f6 and ...e5 to challenge White's centre. If White's minority attack succeeds it yields a lasting endgame target; if Black meets it by trading pawns or striking back in the centre, the game can open into a lively middlegame. Because the structure is symmetrical, precise move orders and piece placement matter more than raw memorised theory."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Exchange Variation has been part of Caro-Kann practice since the opening's rise in the early twentieth century, offering a solid, low-theory alternative to the more combative main lines. For much of its history it was regarded as harmless, granting Black easy equality, but it gained new respect when Bobby Fischer employed it with the plan Bd3, c3 and Qc2 aimed at a kingside attack, showing that White could play for more than a dry minority attack. Today it is valued as a flexible, positionally rich system that sidesteps heavy preparation while still posing practical questions. It remains a popular choice at club and master level alike."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3.exd5 cxd5 creates a symmetrical, Carlsbad-type pawn structure.",
+    "White's main weapon is the minority attack with b4-b5 to create a target.",
+    "Black's light-squared bishop develops freely outside the pawn chain.",
+    "The e5 outpost and the half-open e-file feature in White's plans.",
+    "Black equalises easily and may counter with ...Qc7, ...Bd6 and kingside play.",
+    "Safer and less theoretical than the sharp Panov Attack with 4.c4."
+  ],
+  "plans": {
+    "white": [
+      "Develop with Bd3, c3, Nf3 and Nbd2 and castle short.",
+      "Launch the minority attack with b4-b5 to weaken Black's queenside.",
+      "Post the dark-squared bishop on f4 to fight for e5 and d6.",
+      "Consider Fischer's plan with Qc2 aiming at a kingside attack.",
+      "Target the resulting backward c6 or isolated d5-pawn in the endgame."
+    ],
+    "black": [
+      "Develop the light-squared bishop actively to f5 or g4.",
+      "Meet Bf4 with ...Qc7 and ...Bd6 to challenge it and eye the kingside.",
+      "Seek the ...Ne4 outpost or prepare ...f6 and ...e5 in the centre.",
+      "Counter the minority attack by trading pawns or advancing ...b5-b4.",
+      "Use the free development and symmetry to reach comfortable equality."
+    ]
+  },
+  "related": [
+    "caro-kann-defense",
+    "caro-kann-panov",
+    "caro-kann-advance",
+    "caro-kann-classical"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "slug": "kings-indian-four-pawns-attack",
+  "eco": "E76",
+  "name": "King's Indian Defense: Four Pawns Attack",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "White grabs maximum space with pawns on c4, d4, e4 and f4 against the King's Indian; Black counters at once with ...c5 or ...e5.",
+  "intro": "The Four Pawns Attack is the most space-grabbing response to the King's Indian Defence, arising after 1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.f4 O-O 6.Nf3 c5. White plants pawns on c4, d4, e4 and f4, seizing the maximum central and kingside territory the position allows. Black does not sit and admire this wall but strikes at it immediately, most often with the Benoni-style ...c5, betting that the broad centre is over-extended and can be turned into a target.",
+  "line": "d4 Nf6 c4 g6 Nc3 Bg7 e4 d6 f4 O-O Nf3 c5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Bg7",
+      "from": 5,
+      "to": 14
+    },
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "f4",
+      "from": 53,
+      "to": 37
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    }
+  ],
+  "fen": "rnbq1rk1/pp2ppbp/3p1np1/2p5/2PPPP2/2N2N2/PP4PP/R1BQKB1R w KQ c6 0 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Four Pawns Attack stakes out the largest possible pawn front, and the entire game turns on whether that front is a crushing space advantage or a brittle over-extension. With four pawns abreast, White dreams of rolling the centre forward with e4-e5 to sweep Black off the board, and the f4-pawn adds the prospect of a kingside pawn storm. The cost is that such an advanced structure needs constant care: every one of the big pawns can become a target, the e4-point in particular requires attention, and squares behind the pawns can fall into Black's hands if the centre is prematurely fixed or cracked open.",
+        "Black's counterplay is thematic and energetic. The immediate ...c5 challenges d4 and, after d4-d5, transposes into Benoni-type structures where Black plays on the queenside and against the e4-pawn while the g7-bishop eyes the long diagonal. The alternative ...e5 break attacks the centre head-on and can open lines quickly. In either case Black relies on piece activity, well-timed pawn breaks and the latent power of the fianchettoed bishop to prove that White has bitten off more than can be held. If Black is passive the space simply suffocates him, but if the breaks land accurately the over-extended pawns give Black excellent chances."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 6...c5 the principal line runs 7.d5, when White gains a protected passed pawn and the game takes on a Modern Benoni character; Black continues with ...e6 to challenge the d5-pawn, aiming for the ...exd5 and ...b5 queenside expansion typical of those structures. A key theoretical crossroads involves the sharp 7.d5 e6 8.dxe6 fxe6 and 8...Bxe6 lines, as well as White's ambitious central pushes, all of which have been mapped out in detail because the resulting positions are so double-edged. The other main try for Black is ...e5, striking the centre directly and inviting complications after fxe5 or d4-d5.",
+        "White's handling divides between the aggressive players who push the centre and castle short to launch a kingside initiative, and those who look to consolidate the space with careful piece placement before advancing. Because the structure is so committal, a single inaccurate advance can leave White with weak pawns and open lines toward his own king, so precise move-orders matter greatly. For Black, the choice between the Benoni-flavoured ...c5 and d5 set-ups and the more classical ...e5 break defines the middlegame, but the underlying idea is constant: exploit the over-extension with active pieces and timely central counterpunches."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Four Pawns Attack is one of the oldest and most direct anti-King's-Indian systems, its descriptive name simply capturing the imposing quartet of pawns on the fourth rank. It enjoyed particular attention in the mid-twentieth century as the King's Indian rose to prominence, when theory sought to test whether Black's hypermodern strategy of allowing a big centre could withstand the most maximalist occupation of it. Modern practice has shown that Black obtains fully adequate counterplay with accurate handling of the ...c5 and ...e5 breaks, and the line is today regarded as ambitious but risky, appearing more as a surprise weapon than a fixture of top-level play. It remains a favourite among players who relish sharp, uncompromising battles for the centre."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White grabs maximum space with pawns on c4, d4, e4 and f4.",
+    "The dream is a central roll with e4-e5 and a kingside pawn storm.",
+    "The advanced pawn front can become over-extended and vulnerable.",
+    "Black hits back at once with the Benoni-style ...c5 break.",
+    "After d4-d5 play transposes to Modern Benoni structures.",
+    "The ...e5 break is Black's alternative direct strike at the centre."
+  ],
+  "plans": {
+    "white": [
+      "Consolidate the broad centre and prepare the e4-e5 breakthrough.",
+      "Meet ...c5 with d4-d5, gaining a protected passed pawn.",
+      "Castle short and launch a kingside pawn storm with f4-f5.",
+      "Guard the e4-point and avoid premature, weakening advances.",
+      "Use the space to restrict Black's pieces if he plays passively."
+    ],
+    "black": [
+      "Strike immediately with ...c5 to challenge the d4-pawn.",
+      "After d4-d5 adopt Benoni play with ...e6 and ...b5 on the queenside.",
+      "Consider the direct ...e5 break to open lines against the centre.",
+      "Exploit the g7-bishop's pressure down the long diagonal.",
+      "Target the over-extended e4- and f4-pawns with active pieces."
+    ]
+  },
+  "related": [
+    "kings-indian-defense",
+    "kings-indian-classical",
+    "kings-indian-samisch",
+    "modern-benoni"
+  ]
+}

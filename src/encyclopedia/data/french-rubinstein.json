@@ -1,0 +1,116 @@
+{
+  "slug": "french-rubinstein",
+  "eco": "C10",
+  "name": "French Defense: Rubinstein Variation",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "In the Rubinstein French Black plays ...dxe4 early, giving up space to avoid the blocked French chains and reach a solid, simplified game.",
+  "intro": "The Rubinstein Variation of the French Defence arises after 1.e4 e6 2.d4 d5 followed by an early ...dxe4, most often 3.Nc3 dxe4 4.Nxe4, and it can equally be reached against 3.Nd2. By resolving the central tension at once, Black concedes the centre and a little space in return for a clear, unblocked position and easy development. The line has a solid, somewhat drawish reputation and is named after Akiba Rubinstein.",
+  "line": "e4 e6 d4 d5 Nc3 dxe4 Nxe4 Nd7 Nf3 Ngf6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "dxe4",
+      "from": 27,
+      "to": 36
+    },
+    {
+      "san": "Nxe4",
+      "from": 42,
+      "to": 36
+    },
+    {
+      "san": "Nd7",
+      "from": 1,
+      "to": 11
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Ngf6",
+      "from": 6,
+      "to": 21
+    }
+  ],
+  "fen": "r1bqkb1r/pppn1ppp/4pn2/8/3PN3/5N2/PPP2PPP/R1BQKB1R w KQkq - 3 6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "By capturing on e4, Black dissolves the central pawn tension and avoids the closed, cramped structures that define most French lines, where the light-squared bishop is famously hemmed in behind the pawn chain. In exchange, White is granted a freer hand in the centre and a lead in space, with the pieces developing naturally to active squares. Black's strategy is one of solidity and simplification: complete development smoothly, blunt White's initiative, and aim for equality through piece exchanges rather than a sharp counterattack. The resulting positions are structurally sound but a touch passive, demanding accurate and patient defence.",
+        "Black's characteristic manoeuvre is ...Nd7 and ...Ngf6, challenging White's e4-knight and preparing to castle. The queen's bishop, the traditional problem piece of the French, is here developed via ...b6 and ...Bb7 or exchanged off, resolving Black's main structural headache. Central to the plan is the freeing break ...c5, striking at White's d4-pawn to complete equalisation and open lines for the pieces. White, for their part, seeks to exploit the extra space with harmonious development, pressure on the kingside, and the possibility of a small but nagging initiative if Black plays inaccurately."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The tabiya after 4.Nxe4 Nd7 5.Nf3 Ngf6 is the backbone of the variation. White usually continues 6.Nxf6+ or keeps pieces on with 6.Bd3; after 6.Nxf6+, Black may recapture 6...Nxf6, keeping a sound structure, or try the sharper 6...gxf6, opening the g-file for the rook in return for doubled pawns. Once the knights are traded Black completes development with ...Be7, ...O-O and the freeing ...c5, when accurate play generally holds the balance, while White retains a small space edge by continuing with Bd3 and c3.",
+        "A well-known related treatment is the Fort Knox Variation, 4...Bd7 intending ...Bc6 to exchange Black's problem bishop for White's active knight or bishop, reaching an extremely solid if passive structure. The Rubinstein is also a standard antidote to the Tarrasch move order 3.Nd2, since 3...dxe4 4.Nxe4 transposes, giving Black a unified system against both 3.Nc3 and 3.Nd2. Whichever route is chosen, Black's aims are the same: trade pieces, play ...c5 at the right moment, and steer toward a level endgame."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is named after Akiba Rubinstein, one of the strongest players of the early twentieth century and a renowned endgame virtuoso, who employed the early ...dxe4 as a reliable, low-risk way to meet 1.e4. It never rivalled the Winawer or the Classical French in popularity, but it has retained a loyal following among players who value structural soundness over dynamism. Because it sidesteps the sharpest theoretical battles and leads to clear positions, it is frequently recommended as a practical repertoire choice and as a drawing weapon at the highest level. Its solid, simplifying character remains its defining and most enduring feature."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3...dxe4 releases the central tension and avoids the blocked French chains.",
+    "Black concedes space for a solid, unblocked, easily developed position.",
+    "The ...Nd7 and ...Ngf6 manoeuvre challenges White's e4-knight.",
+    "The freeing ...c5 break is Black's key route to full equality.",
+    "Black often solves the bad-bishop problem by fianchettoing or exchanging it.",
+    "Reachable against both 3.Nc3 and 3.Nd2, giving a unified French system."
+  ],
+  "plans": {
+    "white": [
+      "Develop harmoniously with Nf3, Bd3 and O-O to exploit the space edge.",
+      "Trade or retreat the e4-knight while keeping a small initiative.",
+      "Build pressure toward Black's kingside before ...c5 frees the game.",
+      "Aim for a nagging positional pull rather than a direct attack."
+    ],
+    "black": [
+      "Challenge the e4-knight with ...Nd7 and ...Ngf6.",
+      "Complete development with ...Be7 and ...O-O.",
+      "Prepare the freeing ...c5 break against d4.",
+      "Solve the light-squared bishop with ...b6 and ...Bb7 or the Fort Knox ...Bd7-c6.",
+      "Exchange pieces and steer toward a solid, level endgame."
+    ]
+  },
+  "related": [
+    "french-defense",
+    "french-classical",
+    "french-tarrasch",
+    "french-winawer"
+  ]
+}
