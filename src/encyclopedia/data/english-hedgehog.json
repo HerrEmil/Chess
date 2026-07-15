@@ -1,0 +1,122 @@
+{
+  "slug": "english-hedgehog",
+  "eco": "A30",
+  "name": "English Opening, Hedgehog System",
+  "aka": ["Hedgehog"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The English Opening's Hedgehog System: Black builds a compact a6/b6/d6/e6 shell, fianchettoes, and waits to strike with ...b5 or ...d5.",
+  "intro": "In the Hedgehog, White plays 1.c4 c5 2.Nf3 Nf6 3.g3 b6 4.Bg2 Bb7 5.O-O e6 6.Nc3 Be7 and beyond, while Black erects a low, elastic pawn wall on a6, b6, d6 and e6. Coiled behind these spikes, Black concedes space but keeps every piece ready to uncoil with the freeing breaks ...b5 and ...d5.",
+  "line": "c4 c5 Nf3 Nf6 g3 b6 Bg2 Bb7 O-O e6 Nc3 Be7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Hedgehog is a study in restrained flexibility: Black accepts a cramped position in return for a resilient, hard-to-crack structure and latent energy on the dark squares. The pawns on a6 and b6 support the thematic ...b5, while the e6 and d6 pawns cover the key central squares and prepare ...d5. Black's light-squared bishop on b7 rakes the long diagonal, pressuring e4 and White's queenside.",
+        "White's task is to convert the space advantage before Black breaks free, typically by clamping down with pieces on d4 and e4 and probing for weaknesses. If White grows careless, the coiled ...b5 or ...d5 lever can suddenly open lines toward the white king or the queenside. The resulting middlegames reward positional understanding far more than rote memorisation."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "A defining moment is whether White commits a pawn to d4 or keeps a smaller centre. The double-fianchetto setups, where White adds b3 and Bb2, lead to slow manoeuvring battles over the central squares, while lines with an early d4 and a knight on d4 or e2 aim to fix Black's cramp. Black completes development with ...d6, ...a6, ...Qc7 and ...Nbd7, often doubling rooks on the c- and e-files.",
+        "The position can be reached through numerous move orders, including Symmetrical English and Sicilian channels such as the Kan and Taimanov. This transpositional richness is part of the system's appeal, letting both colours steer toward familiar structures. Piece placement is remarkably standardised, but the timing of the freeing breaks is where the real theory lies."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Hedgehog rose to prominence in the 1970s and 1980s as players recognised that a compact, waiting structure could neutralise a space advantage rather than suffer under it. Championed by leading grandmasters of that era, it became a respected weapon at the highest level and remains a staple of modern practice. Its enduring reputation rests on the balance it strikes between solidity and dynamic counterattacking potential."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Compact pawn shell on a6, b6, d6 and e6 that trades space for resilience",
+    "The freeing breaks ...b5 and ...d5 are the heart of Black's counterplay",
+    "Light-squared bishop on b7 pressures e4 along the long diagonal",
+    "White seeks to clamp the centre with pieces on d4 and e4 before Black uncoils",
+    "Reachable via English, Symmetrical and Sicilian move orders",
+    "Understanding of timing outweighs memorisation of concrete lines"
+  ],
+  "plans": {
+    "white": [
+      "Establish and maintain a central clamp with pieces on d4 and e4",
+      "Restrain the ...b5 break by meeting it with a2-a4 or piece pressure",
+      "Contest the long light diagonal, often trading the b7-bishop",
+      "Use the space edge to manoeuvre knights to strong central outposts",
+      "Double rooks on the c- or d-file to exploit Black's cramp"
+    ],
+    "black": [
+      "Complete the shell with ...d6, ...a6, ...Qc7 and ...Nbd7",
+      "Prepare and time the ...b5 break to open the queenside",
+      "Look for the central ...d5 lever when White's grip loosens",
+      "Keep the b7-bishop active on the long diagonal against e4",
+      "Double rooks on the c- and e-files behind the pawn spikes"
+    ]
+  },
+  "related": ["english-symmetrical", "queens-indian-defense", "sicilian-kan"],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "g3",
+      "from": 54,
+      "to": 46
+    },
+    {
+      "san": "b6",
+      "from": 9,
+      "to": 17
+    },
+    {
+      "san": "Bg2",
+      "from": 61,
+      "to": 54
+    },
+    {
+      "san": "Bb7",
+      "from": 2,
+      "to": 9
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    }
+  ],
+  "fen": "rn1qk2r/pb1pbppp/1p2pn2/2p5/2P5/2N2NP1/PP1PPPBP/R1BQ1RK1 w kq - 2 7"
+}

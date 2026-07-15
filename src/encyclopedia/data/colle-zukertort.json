@@ -1,0 +1,107 @@
+{
+  "slug": "colle-zukertort",
+  "eco": "D05",
+  "name": "Colle-Zukertort System",
+  "aka": ["Zukertort System"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Colle-Zukertort System fianchettoes the queen's bishop to b2, aiming both bishops at Black's king for an e3/Ne5/f4 attack.",
+  "intro": "In the Colle-Zukertort, White develops quietly with 1.d4 d5 2.Nf3 Nf6 3.e3 e6 4.Bd3 c5 5.b3, choosing to fianchetto the queen's bishop to b2 rather than play the classical c3. Both bishops are trained on Black's kingside, setting up the thematic Ne5 and f4 attacking scheme.",
+  "line": "d4 d5 Nf3 Nf6 e3 e6 Bd3 c5 b3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Zukertort treatment turns the modest Colle structure into a genuine attacking system. The b2-bishop rakes the long dark diagonal toward g7, while the d3-bishop eyes h7, giving White the raw materials for a kingside assault. The knight leaps to e5, f2-f4 lends it support, and White dreams of piling pieces against the black king.",
+        "Because the setup is largely self-contained, White can reach the same harmonious formation against many black replies, which makes it easy to learn and reliable to play. The danger for Black is drifting: if the second player develops passively and allows Ne5 and f4 unchallenged, White's attack can arrive quickly. Well-timed central counterplay with ...c5 and ...Qc7 keeps White honest."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "A key branching point is how Black meets the attacking build-up. The critical antidote is to expand on the queenside and, in many lines, to develop the light-squared bishop actively before locking it in, sometimes via ...b6 and ...Bb7 or an early ...Bd6 to contest the b8-h2 diagonal. Trading off White's dangerous d3-bishop is a common defensive resource.",
+        "White, for his part, completes the scheme with Nbd2, O-O, Ne5 and f4, often followed by a rook lift or the advance of the g- and h-pawns. If Black neutralises the kingside, the game can transpose into a quieter manoeuvring struggle where White's slight space and harmonious pieces still offer a pleasant game. Central tension around d4 and e5 governs much of the middlegame."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The system carries the name of Johannes Zukertort, one of the strongest players of the nineteenth century and a contestant in the first official World Championship match. His handling of the queen's-bishop fianchetto within the Colle framework gave the setup its identity. Today it remains popular with club and correspondence players who value a reliable, easily learned scheme that carries real attacking bite."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Queen's bishop fianchettoes to b2 instead of the classical c3",
+    "Both bishops aim at Black's kingside for a direct attack",
+    "The Ne5 and f4 scheme is the system's central attacking motif",
+    "A self-contained setup that is easy to learn and reproduce",
+    "Dangerous against passive play but blunted by active defence",
+    "Trading off White's d3-bishop is a key defensive resource"
+  ],
+  "plans": {
+    "white": [
+      "Fianchetto the queen's bishop to b2 to command the long diagonal",
+      "Install a knight on e5 and support it with f2-f4",
+      "Aim the d3-bishop at h7 for kingside attacking chances",
+      "Complete the harmonious Nbd2, O-O and rook-lift scheme",
+      "Advance the kingside pawns to open lines toward Black's king"
+    ],
+    "black": [
+      "Generate central counterplay with ...c5 and ...Qc7",
+      "Challenge or trade White's dangerous light-squared bishop",
+      "Develop the light bishop actively before it is shut in",
+      "Contest the e5 outpost and the b8-h2 diagonal",
+      "Avoid passive play that lets Ne5 and f4 arrive unopposed"
+    ]
+  },
+  "related": ["colle-system", "london-system", "torre-attack"],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "e3",
+      "from": 52,
+      "to": 44
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Bd3",
+      "from": 61,
+      "to": 43
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "b3",
+      "from": 49,
+      "to": 41
+    }
+  ],
+  "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/3P4/1P1BPN2/P1P2PPP/RNBQK2R b KQkq - 0 5"
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "icelandic-gambit",
+  "eco": "B01",
+  "name": "Scandinavian, Icelandic Gambit",
+  "aka": ["Icelandic-Palme Gambit"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Icelandic Gambit is a sharp Scandinavian where Black plays 3...e6 to sacrifice a pawn for rapid development and open lines.",
+  "intro": "The Icelandic Gambit arises after 1.e4 d5 2.exd5 Nf6 3.c4 e6, when instead of regaining the pawn Black offers a second one with 4.dxe6 Bxe6, gaining a big lead in development and open lines against White's centre and the f2-point.",
+  "line": "e4 d5 exd5 Nf6 c4 e6 dxe6 Bxe6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "Rather than the routine recapture on d5, Black treats the position as a genuine gambit, using the time White spends grabbing and holding the pawn to develop rapidly with ...Bc5, ...Nc6, ...O-O and ...Qe7 or ...Qd7. The open e-file and active bishops give real, lasting compensation.",
+        "Black's pieces swarm toward d4, f2 and White's uncastled king, so White must develop with great care and avoid greedy pawn-grabbing. If White consolidates and returns the pawn at the right moment the extra material can tell, but one careless move can leave the king caught in the centre."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 4.dxe6 Bxe6 Black develops with tempo, hitting the c4-pawn with the bishop and following up with ...Nc6, ...Bc5 and quick castling. White commonly returns the pawn to blunt the initiative and reach a roughly balanced game, or tries to hold on and weather the attack.",
+        "Key target squares for Black are d4 and f2, and moves like ...Bb4+ or ...Qe7 add to the pressure. White's soundest approach is patient development, timely returns of material and getting the king to safety before Black's activity becomes decisive."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The gambit is associated with Icelandic players who developed and popularised it, and it is also known as the Icelandic-Palme Gambit. It belongs to the dynamic wing of Scandinavian theory, prized by attacking players who happily invest a pawn for the initiative and are willing to play for the attack straight out of the opening."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "3...e6 turns the Scandinavian into a genuine gambit",
+    "Black sacrifices a pawn for rapid development",
+    "The open e-file and active bishops give compensation",
+    "Black's pieces target d4, f2 and the centre",
+    "White should return the pawn to defuse the initiative",
+    "Also known as the Icelandic-Palme Gambit"
+  ],
+  "plans": {
+    "white": [
+      "Develop carefully and avoid greedy pawn-grabbing",
+      "Return the extra pawn to blunt Black's initiative",
+      "Get the king to safety before Black's attack builds",
+      "Complete development with Nf3, Be2 and castling",
+      "Neutralise the active bishops by trading pieces"
+    ],
+    "black": [
+      "Develop with tempo using ...Bc5 and ...Nc6",
+      "Castle quickly and seize the open e-file",
+      "Target the f2-square and White's uncastled king",
+      "Add pressure with ...Bb4+, ...Qe7 or ...Qd7",
+      "Keep the initiative rolling to justify the pawn"
+    ]
+  },
+  "related": ["scandinavian-defense", "elephant-gambit", "danish-gambit"],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "exd5",
+      "from": 36,
+      "to": 27
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "dxe6",
+      "from": 27,
+      "to": 20
+    },
+    {
+      "san": "Bxe6",
+      "from": 2,
+      "to": 20
+    }
+  ],
+  "fen": "rn1qkb1r/ppp2ppp/4bn2/8/2P5/8/PP1P1PPP/RNBQKBNR w KQkq - 0 5"
+}

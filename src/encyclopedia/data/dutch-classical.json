@@ -1,0 +1,122 @@
+{
+  "slug": "dutch-classical",
+  "eco": "A96",
+  "name": "Dutch Defense, Classical Variation",
+  "aka": ["Classical Dutch", "Ilyin-Zhenevsky System"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Classical Dutch (Ilyin-Zhenevsky System) builds a solid ...e6/...d6/...Be7 kingside and prepares the freeing ...e5 central break.",
+  "intro": "The Classical Variation of the Dutch Defense arises after 1.d4 f5 2.c4 Nf6 3.g3 e6 4.Bg2 Be7 5.Nf3 O-O 6.O-O d6. In this Ilyin-Zhenevsky setup Black combines a solid, flexible kingside with the ambition of playing the freeing ...e5 break, seeking dynamic central counterplay rather than the rigidity of the Stonewall or the fianchetto of the Leningrad.",
+  "line": "d4 f5 c4 Nf6 g3 e6 Bg2 Be7 Nf3 O-O O-O d6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Classical Dutch stakes out kingside space with the f5-pawn while keeping a sound structure through ...e6, ...d6 and ...Be7. Unlike the Stonewall, Black does not commit to ...d5, retaining the option of ...e5 to challenge the centre and open lines for the pieces. This makes the setup flexible and combative.",
+        "Central to Black's play is the ...e5 advance, prepared with pieces such as the queen on e8 or knight regrouping. If Black achieves ...e5 favourably, the position opens with active piece play and attacking chances against White's king. White, meanwhile, enjoys the long-term pressure of the g2-bishop and space on the queenside, and often works to blunt or exploit Black's committal kingside pawns."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "A standard plan for Black is ...Qe8, rerouting the queen toward the kingside and supporting ...e5; the queen may later swing to g6 or h5 to join an attack. Black also develops the queenside pieces with ...Nc6 or ...Nbd7 and ...Bd7 to marshal forces for the central break.",
+        "White typically completes development with Nc3, and often expands with b3 and Bb2 or plays for the d5 and e4 squares. A well-timed d5 or e4 by White can seize the initiative in the centre, so both sides manoeuvre carefully around the critical ...e5 versus d5/e4 tension that defines the middlegame."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The line is named after Alexander Ilyin-Zhenevsky, an early Soviet master who developed and championed this classical treatment of the Dutch in the early twentieth century. His system gave the Dutch a coherent, attacking plan built around ...e5, and it has remained a respected weapon for players seeking unbalanced, fighting positions with Black."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Build a solid kingside with ...e6, ...d6 and ...Be7",
+    "Aim for the freeing ...e5 break to open the centre",
+    "Stay flexible, avoiding the Stonewall's fixed ...d5 structure",
+    "Reroute the queen via ...Qe8 to support ...e5 and a kingside attack",
+    "Seek dynamic piece play and attacking chances against White's king",
+    "Balance kingside ambitions against the weakening of the f5-pawn"
+  ],
+  "plans": {
+    "white": [
+      "Pressure the long diagonal with the g2-bishop",
+      "Complete development with Nc3 and challenge the centre",
+      "Prepare d5 or e4 to seize central space and the initiative",
+      "Fianchetto the queen's bishop with b3 and Bb2 for central control",
+      "Target the weaknesses created by Black's advanced f5-pawn"
+    ],
+    "black": [
+      "Prepare and execute the ...e5 break for central counterplay",
+      "Maneuver the queen with ...Qe8 toward the kingside",
+      "Develop the queenside with ...Nc6 or ...Nbd7 and ...Bd7",
+      "Coordinate pieces for a kingside attack once the centre opens",
+      "Keep the structure flexible to meet White's d5 or e4 accurately"
+    ]
+  },
+  "related": ["dutch-defense", "dutch-stonewall", "dutch-leningrad"],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "f5",
+      "from": 13,
+      "to": 29
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "g3",
+      "from": 54,
+      "to": 46
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Bg2",
+      "from": 61,
+      "to": 54
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    }
+  ],
+  "fen": "rnbq1rk1/ppp1b1pp/3ppn2/5p2/2PP4/5NP1/PP2PPBP/RNBQ1RK1 w - - 0 7"
+}

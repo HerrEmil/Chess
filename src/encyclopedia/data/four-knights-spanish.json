@@ -1,0 +1,97 @@
+{
+  "slug": "four-knights-spanish",
+  "eco": "C48",
+  "name": "Four Knights Game, Spanish Variation",
+  "aka": ["Spanish Four Knights"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Spanish Variation of the Four Knights blends symmetrical development with a Ruy López bishop on b5, a solid and classical choice for White.",
+  "intro": "After 1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.Bb5, White grafts the Ruy López bishop onto the symmetrical Four Knights. The result is a sound, classical opening that pressures the c6-knight while developing naturally, aiming for a small but durable positional pull.",
+  "line": "e4 e5 Nf3 Nc6 Nc3 Nf6 Bb5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The pin-like pressure of Bb5 against c6 mirrors the Ruy López, hinting at Bxc6 to damage Black's structure or provoke concessions. White develops harmoniously and can castle quickly, generally steering toward quiet manoeuvring rather than early fireworks.",
+        "Symmetry is the defining feature: if Black simply copies White's moves, the extra tempo eventually forces a decision. Black must find the right moment to break the symmetry, either by counterattacking the e4-pawn or by relieving the pressure on c6, without conceding a lasting structural weakness."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The most testing reply is the Rubinstein Variation 4...Nd4, a counterattacking pawn offer that immediately unbalances the game; White can accept with Nxd4 or sidestep with Nxe5 and Ba4, entering rich tactical territory. This line is Black's principal try for full equality and even the initiative.",
+        "The classical 4...Bb4 maintains the symmetry and frequently leads to the Metger manoeuvre, in which Black plays ...Bxc3, ...Qe7 and reroutes the knight via ...Nd8-e6 to bolster the kingside. Solid but somewhat static positions typically follow, where both sides jockey for small structural edges."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Four Knights was a mainstay of nineteenth- and early twentieth-century classical chess, and the Spanish Variation drew on Ruy López ideas to give it more bite. Analysts such as Akiba Rubinstein enriched its theory, and while modern practice regards it as reliable rather than ambitious, it remains a respected way to reach sound, strategically clear middlegames."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Combine Four Knights development with Ruy López pressure on b5",
+    "Threaten Bxc6 to inflict structural damage",
+    "Exploit the extra tempo against Black's symmetry",
+    "Aim for solid, classical development and quick castling",
+    "Meet the Rubinstein 4...Nd4 with either Nxd4 or Nxe5",
+    "Play for a small, durable positional edge rather than an early attack"
+  ],
+  "plans": {
+    "white": [
+      "Develop with O-O, d3 and Bxc6 when it damages Black's pawns",
+      "Keep the tension and use the extra tempo from the symmetry",
+      "Reroute knights toward strong central and kingside squares",
+      "In the Rubinstein, choose between Nxd4 and Nxe5 to keep an edge",
+      "Steer toward quiet positions where the bishop pair or structure tells"
+    ],
+    "black": [
+      "Break the symmetry with the counterattacking 4...Nd4",
+      "Play 4...Bb4 and the Metger plan of ...Bxc3, ...Qe7 and ...Nd8-e6",
+      "Relieve the pressure on c6 with ...a6 or timely trades",
+      "Contest the centre and challenge the e4-pawn",
+      "Complete development and castle to reach a balanced middlegame"
+    ]
+  },
+  "related": ["four-knights-game", "three-knights-game", "ruy-lopez"],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Bb5",
+      "from": 61,
+      "to": 25
+    }
+  ],
+  "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 4"
+}

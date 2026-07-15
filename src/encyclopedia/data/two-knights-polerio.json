@@ -1,0 +1,141 @@
+{
+  "slug": "two-knights-polerio",
+  "eco": "C58",
+  "name": "Two Knights Defense, Polerio Defense",
+  "aka": ["Polerio Defence", "Two Knights, Main Line"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Polerio Defense is the main line of the Two Knights, where Black sacrifices a pawn with 5...Na5 for the bishop pair and a big lead in development.",
+  "intro": "Arising after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Na5 6.Bb5+ c6 7.dxc6 bxc6 8.Be2, the Polerio Defense answers the aggressive 4.Ng5 by declining the greedy 5...Nxd5. Instead Black plays 5...Na5, chasing the c4-bishop and giving up a pawn for open lines, the bishop pair, and a powerful initiative.",
+  "line": "e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5 d5 exd5 Na5 Bb5 c6 dxc6 bxc6 Be2",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "By sidestepping 5...Nxd5, Black avoids the Fried Liver complications and instead invests a pawn in development. The knight on a5 nabs the strong light-squared bishop, and after ...bxc6 Black obtains a mobile pawn centre, the open b-file for the rook, and rapid piece activity.",
+        "White's task is to consolidate the extra pawn and untangle without allowing Black's initiative to snowball. The retreat to e2 is modern and unpretentious, keeping the bishop flexible; White wants to complete development, blunt Black's activity, and eventually convert the material edge in a calmer position."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 8.Be2 Black usually continues with ...Bd6 or ...Bc5 followed by ...O-O, ...e4 and ...Qc7, building pressure and clamping down on White's kingside development. The half-open b-file and the c6-d5 pawn duo give Black long-term compensation that persists into the middlegame.",
+        "White has tried several eighth moves besides 8.Be2, including 8.Bd3 and 8.Qf3, each aiming to defuse Black's activity in a different way. Theory generally regards the pawn sacrifice as fully sound, offering Black practical chances and dynamic equality rather than an outright advantage for either side."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is named after Giulio Cesare Polerio, an Italian master of the late sixteenth century whose analysis of open games was well ahead of its time. The Two Knights as a whole has long been a battleground between attack and defence, and the Polerio line has endured as Black's most respected antidote to 4.Ng5, favoured by players seeking active, unbalanced positions."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Decline the Fried Liver by choosing 5...Na5 over 5...Nxd5",
+    "Sacrifice a pawn for development, the bishop pair, and open lines",
+    "Chase and eliminate White's strong light-squared bishop",
+    "Use the open b-file and mobile c6-d5 centre for pressure",
+    "Keep White's king and pieces uncomfortably passive",
+    "Aim for lasting initiative rather than immediate recovery of the pawn"
+  ],
+  "plans": {
+    "white": [
+      "Consolidate the extra pawn and complete development calmly",
+      "Retreat the bishop to e2 (or d3) to keep it flexible and safe",
+      "Blunt Black's initiative by trading active pieces",
+      "Castle and neutralise the pressure on the b-file",
+      "Convert the material advantage once the position stabilises"
+    ],
+    "black": [
+      "Develop the bishop to d6 or c5 and castle quickly",
+      "Advance ...e4 to gain space and cramp White",
+      "Use the open b-file for a rook to pressure b2",
+      "Coordinate ...Qc7 and the pieces against White's king",
+      "Keep the initiative rolling to justify the pawn investment"
+    ]
+  },
+  "related": [
+    "two-knights-defense",
+    "fried-liver-attack",
+    "traxler-counterattack"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Ng5",
+      "from": 45,
+      "to": 30
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "exd5",
+      "from": 36,
+      "to": 27
+    },
+    {
+      "san": "Na5",
+      "from": 18,
+      "to": 24
+    },
+    {
+      "san": "Bb5",
+      "from": 34,
+      "to": 25
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "dxc6",
+      "from": 27,
+      "to": 18
+    },
+    {
+      "san": "bxc6",
+      "from": 9,
+      "to": 18
+    },
+    {
+      "san": "Be2",
+      "from": 25,
+      "to": 52
+    }
+  ],
+  "fen": "r1bqkb1r/p4ppp/2p2n2/n3p1N1/8/8/PPPPBPPP/RNBQK2R b KQkq - 1 8"
+}
