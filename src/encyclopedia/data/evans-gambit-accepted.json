@@ -1,0 +1,138 @@
+{
+  "slug": "evans-gambit-accepted",
+  "eco": "C52",
+  "name": "Evans Gambit Accepted",
+  "aka": ["Evans Gambit, Main Line"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Evans Gambit Accepted (1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4), where White sacrifices the b-pawn for a big centre and a rapid attack.",
+  "intro": "The Evans Gambit Accepted arises after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4, a fighting offshoot of the Giuoco Piano. With 4.b4 White offers the b-pawn to deflect Black's bishop and gain a crucial tempo, then follows up with c3 and d4 to build a broad, mobile pawn centre. The point is speed: White opens lines for the pieces and aims a rapid attack at f7 and the black king. Black accepts the pawn and must defend precisely, typically with ...d6 and careful piece placement, to blunt the initiative and make the extra material count.",
+  "line": "e4 e5 Nf3 Nc6 Bc4 Bc5 b4 Bxb4 c3 Ba5 d4 exd4 O-O d6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "Bc5",
+      "from": 5,
+      "to": 26
+    },
+    {
+      "san": "b4",
+      "from": 49,
+      "to": 33
+    },
+    {
+      "san": "Bxb4",
+      "from": 26,
+      "to": 33
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    },
+    {
+      "san": "Ba5",
+      "from": 33,
+      "to": 24
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "exd4",
+      "from": 28,
+      "to": 35
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    }
+  ],
+  "fen": "r1bqk1nr/ppp2ppp/2np4/b7/2BpP3/2P2N2/P4PPP/RNBQ1RK1 w kq - 0 8",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Evans is all about tempo and the centre. By luring the bishop to b4 with 4.b4, White gains time with 5.c3, hitting the bishop, and then 6.d4, striking the centre while the bishop is still exposed. In return for the pawn White obtains a strong pawn duo, open lines, and fast development of the light-squared bishop and rooks toward the black king. The classic attacking targets are f7 and the a2-g8 diagonal. White is not playing for a slow squeeze but for a direct initiative, hoping to catch Black before the extra pawn can be organised into a defence.",
+        "Black's task is defence and consolidation. The extra b-pawn is real, but only matters if Black survives the opening pressure. Modern practice favours the flexible retreat 5...Ba5, keeping pressure on the c3-pawn, followed by 7...d6 to support the e5-square, blunt the c4-bishop, and prepare ...Bb6 and ...Bg4. Black wants to trade pieces, return the pawn if necessary to reach a safe structure, and steer toward an endgame or calm middlegame where the material tells. Accurate move-order matters: a single passive or greedy move can hand White a devastating attack, so Black must know the critical lines well."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The classical accepted main line runs 4...Bxb4 5.c3 Ba5 6.d4 exd4 7.O-O d6, reaching the central tabiya of the Evans. White has castled, opened lines, and prepared to recapture on d4 or play cxd4 for a big centre; Black has grabbed material and shored up e5 with ...d6. From here White often continues with moves like Qb3, aiming at f7, or cxd4 and e5 to open the position, while Black develops with ...Bb6, ...Bg4, and ...Nf6 to complete mobilisation. The battle pits White's initiative against Black's solidity and extra pawn.",
+        "Black has other well-known choices at move five. The older 5...Bc5 invites 6.d4 with extremely sharp play, while 5...Be7 is a solid, modern try that keeps the position more contained and hands back some of White's attacking chances. In the main line 6.d4 exd4 7.O-O is the branch point where Black must decide between 7...d6, 7...Nge7, and other setups. In each case the strategic contrast is the same: White banks on the centre, development, and pressure against f7, while Black tries to neutralise the initiative and convert the extra pawn."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Evans Gambit was introduced by the Welsh sea captain William Davies Evans around 1827 and quickly became a favourite of the Romantic era, wielded by attacking greats such as Anderssen, Morphy, and Chigorin. For decades it was one of the most feared weapons in open play. Improved defensive technique later dimmed its reputation, but the gambit enjoyed a striking revival when Garry Kasparov employed it in top-level play in the 1990s, scoring memorable wins. Today it remains a respected, ambitious try that appeals to players who value initiative and dynamic, attacking chess over safe material equality."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "4.b4 deflects the bishop and gains a tempo for c3 and d4",
+    "White builds a big centre with c3 and d4 for open lines",
+    "The bishop on c4 and ideas like Qb3 target f7",
+    "5...Ba5 and 7...d6 are Black's reliable defensive setup",
+    "Black aims to trade pieces and consolidate the extra pawn",
+    "White plays for a fast attack, not a slow positional edge"
+  ],
+  "plans": {
+    "white": [
+      "Play 4.b4 and 5.c3 to gain tempo on the bishop",
+      "Strike with 6.d4 to open the centre for the pieces",
+      "Castle quickly and aim the c4-bishop and Qb3 at f7",
+      "Push e5 or recapture on d4 to keep the initiative alive",
+      "Attack the black king before Black consolidates the pawn"
+    ],
+    "black": [
+      "Accept the pawn and retreat 5...Ba5 for flexibility",
+      "Support e5 with 7...d6 and blunt the c4-bishop",
+      "Develop with ...Bb6, ...Bg4, and ...Nf6 to untangle",
+      "Trade active pieces to defuse White's attack",
+      "Return the pawn if needed to reach a safe, better endgame"
+    ]
+  },
+  "related": [
+    "evans-gambit",
+    "italian-game",
+    "giuoco-piano",
+    "two-knights-defense",
+    "fried-liver-attack"
+  ]
+}

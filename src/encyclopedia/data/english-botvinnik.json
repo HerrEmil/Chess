@@ -1,0 +1,128 @@
+{
+  "slug": "english-botvinnik",
+  "eco": "A26",
+  "name": "English Opening: Botvinnik System",
+  "aka": ["English, Closed, Botvinnik System"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "English Botvinnik System: 1.c4 e5 2.Nc3 Nc6 3.g3 g6 4.Bg2 Bg7 5.e4 d6 6.Nge2 Nge7, a durable c4/e4 setup gripping d5 for slow expansion.",
+  "intro": "The Botvinnik System is a flexible, durable set-up in the English Opening, reached in this game after 1.c4 e5 2.Nc3 Nc6 3.g3 g6 4.Bg2 Bg7 5.e4 d6 6.Nge2 Nge7. Its defining formation places pawns on c4 and e4, the king's knight on e2, and the bishop fianchettoed on g2, a scheme that can be adopted against many Black replies. White grips the central light squares, especially d5, and prepares slow expansion. Black mirrors the structure in a reversed Closed Sicilian, aiming for ...f5 breaks and kingside play. It is a rich manoeuvring opening rewarding positional depth.",
+  "line": "c4 e5 Nc3 Nc6 g3 g6 Bg2 Bg7 e4 d6 Nge2 Nge7",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "g3",
+      "from": 54,
+      "to": 46
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "Bg2",
+      "from": 61,
+      "to": 54
+    },
+    {
+      "san": "Bg7",
+      "from": 5,
+      "to": 14
+    },
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "Nge2",
+      "from": 62,
+      "to": 52
+    },
+    {
+      "san": "Nge7",
+      "from": 6,
+      "to": 12
+    }
+  ],
+  "fen": "r1bqk2r/ppp1npbp/2np2p1/4p3/2P1P3/2N3P1/PP1PNPBP/R1BQK2R w KQkq - 2 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Botvinnik System is built on control of d5. The pawns on c4 and e4 together with the g2-bishop and the knights clamp that central square, making it very hard for Black to free his game with ...d5. White's play is patient and schematic: complete development, castle short, and expand on the queenside with d3, Rb1, a3 and b4, or in the centre with a timely f4. Because the set-up is so solid, White can afford to manoeuvre and probe, choosing the moment to open lines where he stands best. The reversed-Sicilian structure gives White a comfortable extra tempo over analogous Black systems.",
+        "Black, having mirrored the formation, has his own thematic resources. The main freeing idea is ...f5, striking at e4 and generating kingside play much as White does in a Closed Sicilian with colours reversed. Black may also contest the queenside with ...a5 to slow b4, or fight for d5 with ...Be6 and ...Nd4. The knight on e7 supports ...f5 and can reroute to d4 or c6. Typical middlegames feature mutual flank expansion: White on the queenside, Black on the kingside. Whoever handles the central tension and the timing of the pawn breaks more accurately usually seizes the initiative in a long strategic struggle."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "From the tabiya after 6...Nge7, White most often continues with d3 and O-O, completing the classic Botvinnik formation before choosing an expansion plan. The main try is queenside play with Rb1, a3 and b4, gaining space and creating targets on the c- and b-files. Black replies with ...O-O and then either ...a5, restraining b4, or ...f5, opening the kingside. A key strategic point is that White usually avoids an early d4, preferring to keep the central clamp; when d4 does come it is prepared so that the recaptures favour White's grip on d5 rather than freeing Black.",
+        "If Black strikes with ...f5, play often continues exf5 gxf5 (or ...Nxf5), when White targets the slightly loosened black kingside and the e4-square while Black gains central presence and open lines. Alternatively Black keeps the tension and manoeuvres with ...Be6, ...Qd7 and ...Nd4, seeking the strong d4-outpost. White's standard responses include Nd5, planting a knight on the key square, and the queenside pawn advance to open the b-file. Because both sides fianchetto and mirror one another, understanding the reversed Closed Sicilian plans, rather than memorising forcing lines, is what guides good play here."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The system is named after the sixth World Champion, Mikhail Botvinnik, who employed and deeply understood this English Opening formation and did much to establish its strategic blueprint. Botvinnik prized set-ups that combined solidity with long-term pressure, and the c4/e4 clamp with Nge2 and g3 exemplified his positional style. The scheme proved so reliable that it entered the general repertoire as a low-theory, high-understanding way to play for a lasting edge with White. It remains popular at club and master level alike, valued by players who prefer manoeuvring mastery to sharp, forcing preparation."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Pawns on c4 and e4 clamp the key d5-square",
+    "The knight develops to e2, keeping the g2-bishop's diagonal open",
+    "White expands on the queenside with Rb1, a3 and b4",
+    "A timely f4 is White's central and kingside break",
+    "Black mirrors the plan and seeks the freeing ...f5 break",
+    "The structure is a reversed Closed Sicilian with an extra tempo for White"
+  ],
+  "plans": {
+    "white": [
+      "Complete the formation with d3 and O-O before expanding",
+      "Advance on the queenside with Rb1, a3 and b4",
+      "Plant a knight on d5, the system's key outpost",
+      "Prepare f4 to open the centre or kingside when favourable",
+      "Keep the d5-clamp and avoid a premature d4"
+    ],
+    "black": [
+      "Break with ...f5 to strike e4 and open kingside play",
+      "Restrain White's b4 with ...a5 on the queenside",
+      "Fight for d5 with ...Be6 and ...Nd4",
+      "Use the e7-knight to support ...f5 or reroute to d4",
+      "Mirror White's expansion and contest the central tension"
+    ]
+  },
+  "related": [
+    "english-opening",
+    "english-symmetrical",
+    "english-reversed-sicilian",
+    "english-four-knights",
+    "kings-indian-attack"
+  ]
+}

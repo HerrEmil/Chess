@@ -1,0 +1,143 @@
+{
+  "slug": "caro-kann-bronstein-larsen",
+  "eco": "B16",
+  "name": "Caro-Kann Defense: Bronstein-Larsen Variation",
+  "aka": ["Caro-Kann, Bronstein-Larsen Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "Caro-Kann Defense Bronstein-Larsen Variation: 1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Nxf6 gxf6, Black shatters the kingside for the open g-file.",
+  "intro": "The Bronstein-Larsen Variation arises after 1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Nxf6+ gxf6. Instead of the safe recapture, Black takes with the g-pawn, deliberately shattering the kingside in return for the open g-file, the bishop pair, and a dynamic, unbalanced game. It is a provocative, fighting choice associated with David Bronstein and Bent Larsen. Black typically castles queenside, hurls the h- and g-pawns forward, and attacks, while White targets the ruptured kingside and doubled f-pawns, aiming for a safe structural edge that tells in the endgame.",
+  "line": "e4 c6 d4 d5 Nc3 dxe4 Nxe4 Nf6 Nxf6 gxf6 c3 Bf5 Nf3 Nd7 Bd3",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "dxe4",
+      "from": 27,
+      "to": 36
+    },
+    {
+      "san": "Nxe4",
+      "from": 42,
+      "to": 36
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nxf6",
+      "from": 36,
+      "to": 21
+    },
+    {
+      "san": "gxf6",
+      "from": 14,
+      "to": 21
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    },
+    {
+      "san": "Bf5",
+      "from": 2,
+      "to": 29
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nd7",
+      "from": 1,
+      "to": 11
+    },
+    {
+      "san": "Bd3",
+      "from": 61,
+      "to": 43
+    }
+  ],
+  "fen": "r2qkb1r/pp1npp1p/2p2p2/5b2/3P4/2PB1N2/PP3PPP/R1BQK2R b KQkq - 4 8",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "Black's decision to recapture with 5...gxf6 is a strategic gamble that trades pawn structure for dynamism. The doubled f-pawns and the missing g-pawn look ugly, but they open the g-file for a rook and grant Black the bishop pair and a semi-open avenue toward White's king. The extra central f-pawns can also support a strong center and an eventual ...f5 or ...e5 advance. Black's whole plan is activity: rapid development, queenside castling, and a pawn storm with ...h5-h4 and ...Rg8 to generate an attack before the long-term structural weaknesses can be exploited.",
+        "White meets the challenge by staying solid and playing for the endgame. The structure gives White a healthy pawn majority and clear targets in the doubled f-pawns and the airy Black kingside. Typical development with c3, Bd3, Nf3, and O-O keeps the position sound and prepares to blunt Black's g-file play with careful piece placement. If White survives the middlegame initiative and trades into an endgame, the superior pawns often decide. The battle is a classic clash of Black's dynamic activity and bishop pair against White's structural soundness and long-term pawn advantage."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "A standard continuation is 6.c3 Bf5 7.Nf3 Nd7 8.Bd3, when White solidifies the center, offers to exchange the active light-squared bishop, and completes development. Black often responds with ...Bg6 or ...Bxd3, ...Qc7, ...e6, and long castling, followed by ...O-O-O and a kingside pawn advance. White must decide where to castle: short castling can invite Black's ...h5-h4 storm, so White frequently keeps the king in the center briefly or prepares queenside safety. The struggle then centers on whether Black's attack down the g- and h-files arrives before White consolidates the extra structural trump.",
+        "The critical thematic question is the pace of Black's attack versus White's consolidation. Black wants ...Rg8, ...h5-h4, and piece pressure on g2 and along the g-file, sometimes sacrificing a pawn for the initiative. White aims to exchange Black's most active pieces, particularly the light-squared bishop, neutralize the g-file with careful defense, and steer toward simplified positions where the doubled f-pawns are chronic. Correct handling for White involves patient defense and timely trades; for Black, energetic play and a willingness to accept risk in pursuit of a kingside breakthrough."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Caro-Kann is named after Horatio Caro and Marcus Kann, who analyzed it in the late nineteenth century. The Bronstein-Larsen Variation carries the names of David Bronstein and Bent Larsen, two of the most creative and combative players of the twentieth century, who were drawn to its imbalance and attacking potential. Rather than settle for the quiet 5...exf6, they chose 5...gxf6 to unbalance the game and play for a win with the black pieces. It remains a respected fighting weapon for players who prize dynamism and the bishop pair over structural comfort."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "5...gxf6 trades pawn structure for the open g-file and bishop pair",
+    "Black castles queenside and storms with ...h5-h4 and ...Rg8",
+    "The doubled f-pawns can support an ...e5 or ...f5 central advance",
+    "White plays for the endgame where the healthy majority tells",
+    "Exchanging Black's active light-squared bishop eases White's defense",
+    "The game is a race between Black's attack and White's consolidation"
+  ],
+  "plans": {
+    "white": [
+      "Develop solidly with c3, Bd3, Nf3 and complete development",
+      "Offer to trade Black's active light-squared bishop on d3",
+      "Blunt the g-file and defend the king carefully",
+      "Target the doubled f-pawns and the weakened kingside",
+      "Steer toward an endgame where the pawn structure decides"
+    ],
+    "black": [
+      "Castle queenside and launch a kingside pawn storm with ...h5-h4",
+      "Use the open g-file with ...Rg8 and pressure on g2",
+      "Develop the bishop actively to f5 and coordinate the attack",
+      "Support a central break with the extra f-pawns via ...e5 or ...f5",
+      "Play energetically for the initiative, accepting structural risk"
+    ]
+  },
+  "related": [
+    "caro-kann-defense",
+    "caro-kann-karpov",
+    "caro-kann-classical",
+    "caro-kann-panov",
+    "caro-kann-two-knights"
+  ]
+}

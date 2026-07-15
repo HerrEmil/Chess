@@ -1,0 +1,143 @@
+{
+  "slug": "queens-indian-petrosian",
+  "eco": "E12",
+  "name": "Queen's Indian Defense: Petrosian Variation",
+  "aka": ["Queen's Indian, Petrosian System, 4.a3"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "Queen's Indian Defense, Petrosian Variation: 1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.a3, prophylactic against ...Bb4, preparing Nc3 and a big e4 centre.",
+  "intro": "The Petrosian Variation is one of the most respected weapons against the Queen's Indian Defense, distinguished by the quiet but purposeful 4.a3 after 1.d4 Nf6 2.c4 e6 3.Nf3 b6. The little rook's-pawn move is pure prophylaxis: it denies Black the ...Bb4 pin and clears the way for Nc3 and a broad e4 centre without harassment. Following ...d5 cxd5 Nxd5 Qc2 Be7 e4, White grabs central space while Black relies on the fianchettoed b7-bishop and timely ...c5 breaks. It is a deeply positional, strategically rich struggle over the centre and the long light-squared diagonal.",
+  "line": "d4 Nf6 c4 e6 Nf3 b6 a3 Bb7 Nc3 d5 cxd5 Nxd5 Qc2 Be7 e4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "b6",
+      "from": 9,
+      "to": 17
+    },
+    {
+      "san": "a3",
+      "from": 48,
+      "to": 40
+    },
+    {
+      "san": "Bb7",
+      "from": 2,
+      "to": 9
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "cxd5",
+      "from": 34,
+      "to": 27
+    },
+    {
+      "san": "Nxd5",
+      "from": 21,
+      "to": 27
+    },
+    {
+      "san": "Qc2",
+      "from": 59,
+      "to": 50
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    },
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    }
+  ],
+  "fen": "rn1qk2r/pbp1bppp/1p2p3/3n4/3PP3/P1N2N2/1PQ2PPP/R1B1KB1R b KQkq e3 0 8",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The heart of the variation is White's fight for the centre. By preparing e4 with a3, Nc3, and Qc2, White erects a classical big pawn centre that promises space and attacking chances on the kingside. Black's counterplay is thematic Queen's Indian: the b7-bishop x-rays the e4 pawn and the long diagonal, and the ...c5 break (sometimes ...d5 followed by exchanges) challenges d4 and opens lines. After the central exchanges on d5, the resulting structures often feature a mobile White pawn duo on d4 and e4 versus Black's pressure on those pawns from b7, e7, and the c-file. Timing the ...c5 break is Black's central strategic task.",
+        "Piece placement revolves around the e4 pawn. White supports it and looks to expand with d5 at the right moment, gaining space and potentially clamping down on Black's position, or to launch a kingside initiative with pieces and pawns. Black must generate activity before being squeezed: the moves ...c5, ...Nc6 or ...Nd7, ...Rc8, and pressure against d4 and e4 are standard. If White overextends, the broad centre can become a target, and well-timed exchanges leave White with weak or overextended pawns. The strategic tension between White's space and Black's piece pressure and structural soundness gives the variation its enduring positional appeal."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The tabiya after 4.a3 Bb7 5.Nc3 d5 6.cxd5 Nxd5 7.Qc2 Be7 8.e4 is a critical branching point. The main line runs 8...Nxc3 9.bxc3, when White obtains the classical d4-e4 pawn centre and the c3 pawn reinforces d4; Black plays ...c5, ...O-O, and pressures the centre with the b7-bishop and rooks. A key alternative is 8...Nf6, hitting the e4 pawn and inviting White to advance or defend it. In many lines White follows with Bd3 or Bb5+, castling, and preparing the d5 or e5 breaks, while Black seeks freedom through ...c5 and piece activity on the queenside.",
+        "Black has several ways to meet the broad centre. Besides ...Nxc3, the retreat ...Nf6 and the aggressive ...Nb4, hitting the c2-queen, are seen, each steering into distinct structures. A common plan for Black is ...c5, ...Nc6 or ...Bb4, and quick castling to complete development and pile up on d4. White, for his part, chooses between the space-gaining d5 push, which can gain a protected passed pawn or clamp the position, and a slower build-up preserving central tension. The interplay of these choices, together with move-order transpositions to the Nimzo-Indian and Bogo-Indian, gives the Petrosian a wide, deeply analysed body of theory."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation bears the name of Tigran Petrosian, the ninth World Champion, renowned for his prophylactic style and his instinct for preventing the opponent's plans before pursuing his own. His treatment of the Queen's Indian with the modest 4.a3, ruling out ...Bb4 before building the centre, perfectly expressed that philosophy. Adopted and refined by generations of strong grandmasters, the system became a principal test of the Queen's Indian. It appeals to players who prefer clear strategic aims, space, and long-term pressure over forcing tactics, and it remains a fixture of elite preparation and a demanding challenge for Black to neutralise."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The prophylactic 4.a3 rules out ...Bb4, letting White play Nc3 and e4 unhindered.",
+    "White aims for a classical d4-e4 pawn centre, gaining space and kingside chances.",
+    "Black's b7-bishop x-rays the e4 pawn and the long light-squared diagonal.",
+    "The ...c5 break is Black's key lever against White's broad centre.",
+    "After 8.e4 Nxc3 9.bxc3, the c3 pawn reinforces d4 and opens the b-file for White.",
+    "If White overextends, the big centre becomes a target for well-timed exchanges."
+  ],
+  "plans": {
+    "white": [
+      "Prepare and play e4 with a3, Nc3, and Qc2 to build a classical pawn centre.",
+      "Recapture with bxc3 after ...Nxc3 to buttress d4 and open the b-file.",
+      "Advance d5 at the right moment to gain space or a protected passed pawn.",
+      "Develop the light-squared bishop actively (Bd3 or Bb5+) and castle to support the centre.",
+      "Use the space advantage to launch a kingside initiative or squeeze in the endgame."
+    ],
+    "black": [
+      "Fianchetto with ...b6 and ...Bb7 to pressure the e4 pawn and the long diagonal.",
+      "Strike with ...c5 to challenge d4 and open lines against White's centre.",
+      "Exchange on c3 or reroute the knight to provoke structural concessions.",
+      "Complete development with ...Be7, ...O-O, and ...Nc6 or ...Nd7, targeting d4.",
+      "Provoke White to overextend, then win the d4/e4 pawns with timely exchanges."
+    ]
+  },
+  "related": [
+    "queens-indian-defense",
+    "nimzo-indian-defense",
+    "bogo-indian-defense",
+    "catalan-opening",
+    "catalan-closed"
+  ]
+}

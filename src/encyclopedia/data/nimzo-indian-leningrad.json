@@ -1,0 +1,128 @@
+{
+  "slug": "nimzo-indian-leningrad",
+  "eco": "E30",
+  "name": "Nimzo-Indian Defense: Leningrad Variation",
+  "aka": ["Nimzo-Indian, Leningrad System, 4.Bg5"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "Nimzo-Indian Leningrad: 1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Bg5, Spassky's aggressive pin of the f6-knight, met by ...h6, ...c5 and ...d6.",
+  "intro": "The Leningrad Variation of the Nimzo-Indian Defense arises after 1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Bg5, when White immediately pins the f6-knight instead of choosing the more common Rubinstein 4.e3. Favoured by Boris Spassky, the line increases pressure on the kingside and the e4- and d5-squares from the first moves. Black challenges the pin with 4...h6 5.Bh4 and strikes at the centre with 5...c5 6.d5 d6, entering a Benoni-flavoured structure. The result is sharp, strategically unbalanced play centred on the doubled c-pawns, the bishop pair, and dark-square control.",
+  "line": "d4 Nf6 c4 e6 Nc3 Bb4 Bg5 h6 Bh4 c5 d5 d6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Bb4",
+      "from": 5,
+      "to": 33
+    },
+    {
+      "san": "Bg5",
+      "from": 58,
+      "to": 30
+    },
+    {
+      "san": "h6",
+      "from": 15,
+      "to": 23
+    },
+    {
+      "san": "Bh4",
+      "from": 30,
+      "to": 39
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "d5",
+      "from": 35,
+      "to": 27
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    }
+  ],
+  "fen": "rnbqk2r/pp3pp1/3ppn1p/2pP4/1bP4B/2N5/PP2PPPP/R2QKBNR w KQkq - 0 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "White's fourth move sets the tone: by pinning the f6-knight, White fights for e4 and d5 and hopes to prove that Black's ...Bb4 is misplaced. If Black ever captures on c3, White accepts doubled c-pawns in return for the bishop pair and central mass, a classic Nimzo-Indian trade-off that here comes with the extra pressure of the g5-bishop. The advance ...h6 questions the bishop; after Bh4 the pin persists, and a later ...g5 to break it can weaken Black's kingside, a double-edged decision. Control of d5 and the fate of the pinned knight run through the whole variation.",
+        "After 5...c5 6.d5 the centre takes on a Benoni character, and 6...d6 fixes the structure. Black obtains dark-square counterplay, pressure against c4 and e4, and the possibility of ...exd5 or ...e5 depending on circumstances, while White enjoys space and the two bishops if the pin is exploited. A recurring theme is the tension between White's centre and Black's piece activity: White wants to consolidate the extra space and open the position for the bishops, whereas Black seeks to blockade on the dark squares, target the c4-pawn, and generate play on the half-open e-file or the queenside."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The tabiya after 6...d6 can develop in several directions. White frequently plays e3, Bd3 or Be2 and Ne2, keeping the option of f3 and e4, while Black completes development with ...Nbd7, ...g5 at the right moment, and ...Nf8-g6 rerouting to pressure the centre. An important alternative for Black is the earlier capture ...Bxc3+, doubling White's pawns before continuing with ...d6 and ...e5 to blockade; then Black's play revolves around the light squares and the weakened c4-pawn. White's counter is to open lines for the bishop pair and to use the central pawns as a battering ram.",
+        "Move-order finesse matters greatly in the Leningrad. Black must judge when to release the pin with ...g5, since doing so gains the bishop pair or space but concedes kingside weaknesses that White can target with h4. If Black delays ...g5, White may reinforce the pin and build with Qc2, e3 and Bd3. Typical middlegames see White pushing e4 and f4 to expand, while Black counters with ...e5 or ...b5 breaks and manoeuvres a knight to the fine c5 or e5 outpost. The struggle between the bishop pair and the dark-square blockade defines nearly every resulting position."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Leningrad Variation is named for the city (now St Petersburg) whose strong chess school championed the early Bg5 idea, and it is closely associated with Boris Spassky, who employed 4.Bg5 as a favourite aggressive weapon on his way to the World Championship. More combative than the positional Rubinstein 4.e3, the line appealed to players seeking to seize the initiative against the Nimzo-Indian. Although it demands precise handling of the pin and the doubled-pawn structures, it has retained a loyal following among ambitious attacking players and remains a fully respectable try for the advantage."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "4.Bg5 pins the f6-knight and fights for e4 and d5",
+    "White welcomes ...Bxc3+ for the bishop pair and a broad centre",
+    "...h6 and a later ...g5 question the pin but weaken the kingside",
+    "...c5 and ...d6 create a Benoni structure with dark-square play",
+    "Doubled c-pawns versus the bishop pair is the core imbalance",
+    "Black blockades the dark squares and targets the c4-pawn"
+  ],
+  "plans": {
+    "white": [
+      "Maintain the pin with Bh4 and pressure the f6-knight",
+      "Recapture toward the centre after ...Bxc3+ and use the bishop pair",
+      "Expand with e3, Bd3 and the e4-f4 pawn advance",
+      "Meet ...g5 with h4 to open lines against Black's king",
+      "Convert central space by opening the position for the two bishops"
+    ],
+    "black": [
+      "Challenge the pin with ...h6 and, when ready, ...g5",
+      "Strike the centre with ...c5 and fix it with ...d6",
+      "Double White's pawns with ...Bxc3+ and blockade the dark squares",
+      "Target the c4-pawn and play on the half-open e-file",
+      "Reroute a knight to the c5 or e5 outpost for pressure"
+    ]
+  },
+  "related": [
+    "nimzo-indian-defense",
+    "nimzo-indian-classical",
+    "nimzo-indian-rubinstein",
+    "nimzo-indian-samisch",
+    "queens-indian-defense"
+  ]
+}

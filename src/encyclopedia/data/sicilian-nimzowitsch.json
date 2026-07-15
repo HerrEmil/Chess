@@ -1,0 +1,138 @@
+{
+  "slug": "sicilian-nimzowitsch",
+  "eco": "B29",
+  "name": "Sicilian Defense: Nimzowitsch Variation",
+  "aka": ["Sicilian, Nimzowitsch Variation, 2...Nf6"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Sicilian Nimzowitsch Variation (1.e4 c5 2.Nf3 Nf6) provokes 3.e5 Nd5, betting active pieces against a looser pawn structure.",
+  "intro": "The Nimzowitsch Variation of the Sicilian begins 1.e4 c5 2.Nf3 Nf6, an immediate, Alekhine-flavored provocation that invites 3.e5 Nd5. Rather than defend a broad center, Black lets White advance and then targets the overextended pawns with piece play. The line shown continues 4.Nc3 e6 5.Nxd5 exd5 6.d4 Nc6 7.dxc5 Bxc5, reaching a position with an isolated central pawn where Black's active bishop on c5 and quick development supply compensation. It is a sharp, offbeat system prizing dynamism over a pristine pawn structure.",
+  "line": "e4 c5 Nf3 Nf6 e5 Nd5 Nc3 e6 Nxd5 exd5 d4 Nc6 dxc5 Bxc5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "e5",
+      "from": 36,
+      "to": 28
+    },
+    {
+      "san": "Nd5",
+      "from": 21,
+      "to": 27
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nxd5",
+      "from": 42,
+      "to": 27
+    },
+    {
+      "san": "exd5",
+      "from": 20,
+      "to": 27
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "dxc5",
+      "from": 35,
+      "to": 26
+    },
+    {
+      "san": "Bxc5",
+      "from": 5,
+      "to": 26
+    }
+  ],
+  "fen": "r1bqk2r/pp1p1ppp/2n5/2bpP3/8/5N2/PPP2PPP/R1BQKB1R w KQkq - 0 8",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The whole point of 2...Nf6 is provocation. By attacking e4 at once, Black tempts White into 3.e5, gaining space but committing a pawn that can later become a target. After 3...Nd5 the knight sits actively in the center; White can challenge it, chase it, or support the advance. Black's strategy echoes the Alekhine Defense: allow White a big pawn front, then undermine it with ...e6, ...d6, ...cxd4 and piece pressure. The trade-off is structural. Black often accepts doubled or isolated pawns in return for open lines, rapid development, and active minor pieces.",
+        "In the chosen line, the exchanges 4.Nc3 e6 5.Nxd5 exd5 leave Black with a central pawn on d5 that becomes isolated after 6.d4 Nc6 7.dxc5 Bxc5. The bishop springs to c5 with tempo, aiming toward f2, and Black enjoys easy, harmonious development with ...O-O, ...Bg4 or ...Be6, and rook activity on the e- and c-files. White, for his part, wants to blockade and besiege the isolated d5-pawn, trade active pieces, and reach an endgame where the static weakness tells. The middlegame is a classic isolated-pawn struggle: Black seeks activity and attack, White seeks control and simplification."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The tabiya after 7...Bxc5 features Black's isolated d5-pawn balanced by active pieces. Typical play continues ...O-O, the already developed ...Nc6, ...Bg4 pinning or ...Be6 guarding d5, and ...Re8 seizing the open file. White develops with Be2 or Bd3, O-O, and pieces aimed at the d5 blockade square, often rerouting a knight to d4 or f4. If White succeeds in trading Black's active bishops and rooks, the isolated pawn can become chronically weak; if Black keeps pieces on and generates threats, the same pawn fuels open, dynamic play.",
+        "The 2...Nf6 move order carries independent significance. White's sharpest and most principled test is 3.e5 Nd5 4.Nc3, inviting the mass exchanges seen in this line. Quieter tries such as 3.d3 or an early 3.Nc3 steer toward Alapin- or Open-Sicilian-flavored positions where Black's provocative knight sortie loses some of its point. Black, in turn, must know the Alekhine-like ideas cold, since a single wasted tempo can leave the advanced knight offside or the center overrun. The variation rewards concrete calculation and comfort in isolated-pawn and hanging-pawn middlegames."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation bears the name of Aron Nimzowitsch, the great hypermodern theorist whose book My System reshaped how players think about the center, blockade, and prophylaxis. It is fitting that a provocative, structure-defying idea like 2...Nf6 should carry his name, since Nimzowitsch championed inviting the opponent to overextend and then undermining the result. Never a mainstream choice, the Nimzowitsch Variation has always appealed to creative players seeking to sidestep heavy Sicilian theory. Its kinship with the Alekhine Defense and its reliance on dynamic compensation keep it a respected surprise weapon."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Provoke 3.e5 with 2...Nf6 to create a target on e5",
+    "Post the knight actively on d5 after 3...Nd5",
+    "Undermine White's center with ...e6, ...cxd4 and piece play",
+    "Develop the bishop to c5 with tempo after ...Bxc5",
+    "Accept an isolated d5-pawn in return for active pieces",
+    "Occupy the open e- and c-files with the rooks"
+  ],
+  "plans": {
+    "white": [
+      "Blockade and besiege Black's isolated d5-pawn",
+      "Trade Black's active bishops to expose the weak pawn",
+      "Route a knight to d4 or f4 against the blockade square",
+      "Simplify toward an endgame where the isolani tells",
+      "Complete development with Be2, O-O and pressure on d5"
+    ],
+    "black": [
+      "Develop rapidly with ...O-O, ...Be6 or ...Bg4 and ...Re8",
+      "Use the active bishop on c5 to generate kingside threats",
+      "Keep pieces on to fuel dynamic play around the isolani",
+      "Pressure White's position along the open central files",
+      "Aim for a well-timed ...d4 pawn break to free the position"
+    ]
+  },
+  "related": [
+    "sicilian-defense",
+    "sicilian-alapin",
+    "alekhine-defense",
+    "sicilian-four-knights",
+    "scandinavian-defense"
+  ]
+}

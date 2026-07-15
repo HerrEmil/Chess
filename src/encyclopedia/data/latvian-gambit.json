@@ -1,0 +1,128 @@
+{
+  "slug": "latvian-gambit",
+  "eco": "C40",
+  "name": "Latvian Gambit",
+  "aka": ["Greco Countergambit"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Latvian Gambit (1.e4 e5 2.Nf3 f5) is a sharp, dubious mirror of the King's Gambit where Black sacrifices for attacking chances.",
+  "intro": "The Latvian Gambit is a rare, aggressive, and objectively dubious opening that begins 1.e4 e5 2.Nf3 f5, in effect a mirror image of the King's Gambit with the colors reversed. Black sacrifices material for open lines and quick attacking chances, most testingly met by 3.Nxe5 Qf6. The line shown continues 4.d4 d6 5.Nc4 fxe4 6.Nc3 Qg6, where Black regains some material and fights for the initiative. Extremely double-edged and tricky in practice, it remains a surprise weapon rather than a sound main-line defense.",
+  "line": "e4 e5 Nf3 f5 Nxe5 Qf6 d4 d6 Nc4 fxe4 Nc3 Qg6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "f5",
+      "from": 13,
+      "to": 29
+    },
+    {
+      "san": "Nxe5",
+      "from": 45,
+      "to": 28
+    },
+    {
+      "san": "Qf6",
+      "from": 3,
+      "to": 21
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "Nc4",
+      "from": 28,
+      "to": 34
+    },
+    {
+      "san": "fxe4",
+      "from": 29,
+      "to": 36
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Qg6",
+      "from": 21,
+      "to": 22
+    }
+  ],
+  "fen": "rnb1kbnr/ppp3pp/3p2q1/8/2NPp3/2N5/PPP2PPP/R1BQKB1R w KQkq - 2 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Latvian Gambit is all about the initiative. With 2...f5 Black immediately opens lines toward White's king and tries to seize the attack, exactly as White does in the King's Gambit, but a tempo behind, which is why the whole idea is theoretically suspect. Black is happy to sacrifice a pawn, sometimes more, for rapid piece activity, open files, and swindling chances against an unprepared opponent. The downside is concrete: the f5 advance weakens Black's own king, exposes the a2-g8 diagonal and the e-file, and hands White a lasting structural and developmental edge with accurate play.",
+        "Practical results explain the gambit's stubborn following. Over the board it sets immediate problems, and a defender who does not know the refutations can quickly drift into a lost position. Theoretically, however, White is understood to obtain a clear advantage in every main line by returning material at the right moment and completing development. Black's compensation is dynamic rather than structural, so exchanges usually favor White. The recurring themes for Black are the queen sortie to f6 and g6, pressure down the f-file after castling, and central breaks; for White, the themes are king safety, an extra pawn, and exploiting Black's loose kingside."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The critical main line runs 3.Nxe5, when 3...Qf6 is the principal tabiya, attacking the knight and preparing to recapture toward the center. After 4.d4 d6 5.Nc4 fxe4 6.Nc3 Qg6, Black eyes both e4 and the White king while White enjoys a big center and easy development. White typically continues with piece play against the e4 pawn, keeping the extra material and the safer king. The alternative 3.Bc4 is considered the sharpest independent try, immediately targeting f7 and often leading to forcing complications where precise defense is essential for Black.",
+        "Beyond the main line, White has several pleasant options. The quiet 3.exf5 or 3.Nc3 sidestep the theoretical debate while keeping an edge, and 3.d4 is a solid central try. Black's setups revolve around the ...Qf6, ...d6 and ...fxe4 structure seen here, or the older ...e4 lines where the pawn is pushed rather than captured. Because the margins are thin, both sides must know concrete variations: for Black, a single tempo lost can be fatal; for White, over-greedy play can hand Black exactly the open, attacking position the gambit seeks. Preparation decides most games."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The opening is named for the Latvian analysts who championed it in the early twentieth century, most prominently Karlis Betins, whose research gave the gambit its modern name and much of its theory. Before that it was known as the Greco Countergambit, after the seventeenth-century Italian master Gioachino Greco, who recorded early examples. Despite generations of dedicated analysis, the Latvian has never achieved respectability at the top level, since best play favors White. It survives instead as a romantic, combative surprise weapon, kept alive by correspondence players and club enthusiasts who relish its sharp, uncompromising positions."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Strike with 2...f5 to open lines against White's king",
+    "Sacrifice material for activity and attacking chances",
+    "Deploy the queen to f6 and g6 to pressure e4 and the king",
+    "Regain a pawn with ...fxe4 while keeping the initiative",
+    "Aim for f-file pressure and central breaks after developing",
+    "Rely on surprise value against unprepared opponents"
+  ],
+  "plans": {
+    "white": [
+      "Return material at the right moment to complete development",
+      "Keep the king safe and exploit Black's weakened kingside",
+      "Build and maintain a strong central pawn duo",
+      "Trade pieces to blunt Black's dynamic compensation",
+      "Target the loose f5 and e4 pawns and the a2-g8 diagonal"
+    ],
+    "black": [
+      "Open the f-file and attack toward White's king",
+      "Use the queen actively on f6 and g6",
+      "Regain material with ...fxe4 and central play",
+      "Generate tactical complications and swindling chances",
+      "Castle and pile up on f2 and the kingside"
+    ]
+  },
+  "related": [
+    "kings-gambit",
+    "elephant-gambit",
+    "petrov-defense",
+    "philidor-defense",
+    "open-game"
+  ]
+}

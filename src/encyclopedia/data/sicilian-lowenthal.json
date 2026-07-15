@@ -1,0 +1,138 @@
+{
+  "slug": "sicilian-lowenthal",
+  "eco": "B32",
+  "name": "Sicilian Defense: Löwenthal Variation",
+  "aka": ["Sicilian, Loewenthal Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Sicilian Löwenthal Variation (1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e5) trades the dark-squared bishop for activity and a fight over d5.",
+  "intro": "The Löwenthal Variation is a sharp, old branch of the Sicilian that begins 1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e5, immediately staking a claim in the center and hitting the d4-knight. After 5.Nb5 a6 6.Nd6+ Bxd6 7.Qxd6 Qf6, Black gives up the dark-squared bishop for White's intrusive knight and offers a queen trade. It is a close relative of the Kalashnikov (5...d6) and Sveshnikov (4...Nf6), sharing their fight over the d5 square. The result is an imbalanced, strategically rich middlegame or endgame.",
+  "line": "e4 c5 Nf3 Nc6 d4 cxd4 Nxd4 e5 Nb5 a6 Nd6 Bxd6 Qxd6 Qf6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nb5",
+      "from": 35,
+      "to": 25
+    },
+    {
+      "san": "a6",
+      "from": 8,
+      "to": 16
+    },
+    {
+      "san": "Nd6",
+      "from": 25,
+      "to": 19
+    },
+    {
+      "san": "Bxd6",
+      "from": 5,
+      "to": 19
+    },
+    {
+      "san": "Qxd6",
+      "from": 59,
+      "to": 19
+    },
+    {
+      "san": "Qf6",
+      "from": 3,
+      "to": 21
+    }
+  ],
+  "fen": "r1b1k1nr/1p1p1ppp/p1nQ1q2/4p3/4P3/8/PPP2PPP/RNB1KB1R w KQkq - 1 8",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The move 4...e5 is the thematic idea uniting the Löwenthal, Kalashnikov and Sveshnikov: Black grabs central space and challenges the d4-knight, accepting a potential hole on d5 in exchange for activity and open lines. In the Löwenthal proper, 5...a6 forces 6.Nd6+, and after the bishop takes and 7.Qxd6, Black continues 7...Qf6. Trading the dark-squared bishop concedes the bishop pair, but it also removes White's best-placed piece and gains time by harassing the queen. Black's compensation is rapid development, pressure on b2 and the e-file, and the resource of trading queens to blunt White's edge.",
+        "After 7...Qf6 Black offers to swap queens, and White must choose. Declining with a retreat keeps more pieces on but cedes time, while accepting with 8.Qxf6 Nxf6 steers into a characteristic endgame. There White owns the bishop pair and a developmental lead, plus the long-term target of the d5 square; Black has a compact center, active pieces, and few weaknesses beyond that central hole. The middlegame and endgame both revolve around whether White can plant a knight on d5 and exploit the bishops, or whether Black's activity and dark-square control hold the balance despite the structural concession."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The tabiya after 7.Qxd6 Qf6 turns on White's eighth move. The solid main choice is 8.Qd1, returning the queen to safety and banking the bishop pair, after which Black develops actively with ...Nge7, ...O-O, ...d6 and ...Be6, using the tempi gained to complete development and eye the d4 square. White can instead force matters with 8.Qxf6 Nxf6, heading straight for the endgame. Adventurous queen sorties are risky, since Black's fast development can leave the White queen short of good squares. Throughout, Black's play centers on activity and control of the dark squares.",
+        "The Löwenthal is best understood alongside its siblings. Choosing 5...d6 instead of 5...a6 enters the Kalashnikov, where Black keeps the dark-squared bishop but allows White a lasting grip on d5. Playing 4...Nf6 first, and only later ...e5, reaches the Sveshnikov, the most theoretically respected of the family. The Löwenthal's early ...a6 and the forced bishop trade give it an independent character: less flexible than the Sveshnikov, but principled and concrete. Understanding the recurring battle over d5 and the value of Black's activity carries across all three systems."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation honors Johann Löwenthal, a Hungarian-born master of the nineteenth century who settled in England and was among the strongest players of his era. The 4...e5 idea he explored looked structurally suspect to classical eyes because of the d5 hole, and for decades it was viewed skeptically. Modern understanding, driven by the success of the related Sveshnikov and Kalashnikov, rehabilitated the whole ...e5 complex by showing that Black's activity and piece play compensate for the static weakness. The Löwenthal remains a respected, if less common, member of that dynamic family."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Play ...e5 to grab central space and hit the d4-knight",
+    "Force 6.Nd6+ with ...a6 and trade off White's intrusive knight",
+    "Concede the bishop pair to gain time and open lines",
+    "Fight for control of the weak d5 square",
+    "Offer the queen trade with ...Qf6 to blunt White's initiative",
+    "Develop quickly with ...Nge7, ...d6, ...Be6 and ...O-O"
+  ],
+  "plans": {
+    "white": [
+      "Exploit the bishop pair after the dark-squared trade",
+      "Install a knight on the d5 outpost",
+      "Retreat the queen safely with 8.Qd1 and consolidate",
+      "Pressure Black's central pawns and the d-file",
+      "Trade into a favorable endgame with 8.Qxf6"
+    ],
+    "black": [
+      "Use gained tempi to develop rapidly",
+      "Control d4 and the dark squares with the pieces",
+      "Complete development with ...Nge7, ...Be6 and ...O-O",
+      "Neutralize White's bishop pair through activity",
+      "Steer toward a balanced endgame after the queen trade"
+    ]
+  },
+  "related": [
+    "sicilian-defense",
+    "sicilian-kalashnikov",
+    "sicilian-sveshnikov",
+    "sicilian-classical",
+    "sicilian-najdorf"
+  ]
+}
