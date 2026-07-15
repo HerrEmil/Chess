@@ -286,6 +286,84 @@ const bishopPairDelta = (
 };
 
 /*
+ * Rook on an open / half-open file.
+ *
+ * A rook's strength is dominated by the file it controls, yet the rook piece-
+ * square table is pawn-blind — it scores a rook the same whether the file in
+ * front of it is wide open or clogged with its own pawns. This term closes that
+ * gap: a rook earns a bonus on a file with no friendly pawns (half-open, enemy
+ * pawns only) and a larger bonus on a fully open file (no pawns of either
+ * color); a file blocked by a friendly pawn gives nothing. Returned as a White-
+ * minus-Black delta from `currentColor`'s perspective, antisymmetric by
+ * construction (it depends only on pawn/rook placement, so a mirror-image
+ * position nets 0).
+ *
+ * Like the bishop-pair term (#6) and unlike the rejected passed-pawn term (#3),
+ * it is non-committal: it rewards a rook for the file it already occupies and
+ * biases a rook toward an open file, but a rook move is cheap and reversible —
+ * it commits no pawn and creates no weakness — so it cannot steer the shallow
+ * search into material it can't convert. A clearly winning capture still
+ * outweighs it.
+ */
+const ROOK_OPEN_FILE_BONUS = 16;
+const ROOK_HALF_OPEN_FILE_BONUS = 8;
+
+// Bonus for a rook on a file, given whether a friendly / an enemy pawn stands on
+// it. A friendly pawn closes the file for this rook (no bonus); otherwise an
+// open file (no pawns) beats a half-open one (enemy pawns only).
+const rookFileScore = (friendlyPawn: boolean, enemyPawn: boolean): number => {
+  if (friendlyPawn) return 0;
+  return enemyPawn ? ROOK_HALF_OPEN_FILE_BONUS : ROOK_OPEN_FILE_BONUS;
+};
+
+const rookFileDelta = (
+  board: readonly string[],
+  currentColor: color,
+): number => {
+  // Pawn occupancy per file (file = board index % 8, 0 = a-file). Two passes:
+  // all pawns must be seen before a rook's file can be classified.
+  const whitePawnFile = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
+  const blackPawnFile = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
+  for (let sq = 0; sq < 64; sq += 1) {
+    const ch = board[mailboxIndex[sq]];
+    if (ch === 'p') whitePawnFile[sq % 8] = true;
+    else if (ch === 'P') blackPawnFile[sq % 8] = true;
+  }
+  let whiteScore = 0;
+  let blackScore = 0;
+  for (let sq = 0; sq < 64; sq += 1) {
+    const ch = board[mailboxIndex[sq]];
+    const file = sq % 8;
+    if (ch === 'r') {
+      whiteScore += rookFileScore(whitePawnFile[file], blackPawnFile[file]);
+    } else if (ch === 'R') {
+      blackScore += rookFileScore(blackPawnFile[file], whitePawnFile[file]);
+    }
+  }
+  return currentColor === 'white'
+    ? whiteScore - blackScore
+    : blackScore - whiteScore;
+};
+
+/*
  * Queen piece-square table.
  *
  * Every other piece already reads a piece-square table, but the queen was
@@ -307,6 +385,9 @@ const bishopPairDelta = (
 // the pre-#6 behaviour), keeping every existing caller byte-for-byte unchanged.
 // `queenPst` adds the queen piece-square table (default false = flat queen
 // material, the pre-#7 behaviour).
+// `rookFile` adds the rook open/half-open-file bonus (default false = no rook-
+// file term, the pre-#8 behaviour), keeping every existing caller byte-for-byte
+// unchanged.
 export const evaluate = (
   board: readonly string[],
   currentColor: color,
@@ -314,6 +395,7 @@ export const evaluate = (
   tapered = false,
   bishopPair = false,
   queenPst = false,
+  rookFile = false,
 ): number => {
   const opponent = oppositeColor(currentColor);
   const checkBonus = isInCheck(board, opponent) ? 50 : 0;
@@ -341,8 +423,11 @@ export const evaluate = (
   const materialDiff = currentValue - opponentValue;
   const endgame = materialDiff > 300 ? endgameBonus(board, currentColor) : 0;
   const pairDelta = bishopPair ? bishopPairDelta(board, currentColor) : 0;
+  const rookDelta = rookFile ? rookFileDelta(board, currentColor) : 0;
 
-  return checkBonus - checkPenalty + materialDiff + endgame + pairDelta;
+  return (
+    checkBonus - checkPenalty + materialDiff + endgame + pairDelta + rookDelta
+  );
 };
 
 /*
@@ -379,6 +464,17 @@ const DELTA_MARGIN = 200;
  * swing would reach alpha; with the flag off the margin is exactly DELTA_MARGIN.
  */
 const QUEEN_PST_MARGIN = 50;
+
+/*
+ * Extra delta-pruning slack for the rook-file term. A side has at most two rooks
+ * — the game never under-promotes (pawns auto-queen), so no third rook can
+ * appear — each worth at most ROOK_OPEN_FILE_BONUS, so the whole White-minus-
+ * Black rook-file delta lies in [-32, +32] and any single-capture swing is at
+ * most 64. Widening the margin by this when the term is active keeps delta
+ * pruning from discarding a capture whose rook-file swing would reach alpha;
+ * with the flag off the margin is exactly DELTA_MARGIN.
+ */
+const ROOK_FILE_MARGIN = 64;
 
 // A pseudo-legal capture for quiescence, pre-scored for MVV-LVA ordering.
 // `gain` is the captured material (plus promotion), used for delta pruning.
@@ -457,6 +553,7 @@ export const quiesce = (
   tapered = false,
   bishopPair = false,
   queenPst = false,
+  rookFile = false,
 ): number => {
   // Stand-pat: the side to move may always decline to capture, so the static
   // score is a lower bound on what it can achieve.
@@ -467,6 +564,7 @@ export const quiesce = (
     tapered,
     bishopPair,
     queenPst,
+    rookFile,
   );
   if (standPat >= beta) return beta;
   let localAlpha = standPat > alpha ? standPat : alpha;
@@ -477,14 +575,16 @@ export const quiesce = (
 
   // Delta-pruning margin bounds the positional (non-material) score a capture
   // can add on top of its raw material gain. The bishop-pair term can swing by
-  // at most one bonus when a capture removes the enemy's second bishop, and the
-  // queen table by at most QUEEN_PST_MARGIN, so widen the margin by each active
-  // term; with both flags off the margin is exactly DELTA_MARGIN, keeping
-  // quiescentEval / quiescentEvalTapered byte-for-byte unchanged.
+  // at most one bonus when a capture removes the enemy's second bishop, the
+  // queen table by at most QUEEN_PST_MARGIN, and the rook-file term by at most
+  // ROOK_FILE_MARGIN, so widen the margin by each active term; with all flags
+  // off the margin is exactly DELTA_MARGIN, keeping quiescentEval /
+  // quiescentEvalTapered byte-for-byte unchanged.
   const deltaMargin =
     DELTA_MARGIN +
     (bishopPair ? BISHOP_PAIR_BONUS : 0) +
-    (queenPst ? QUEEN_PST_MARGIN : 0);
+    (queenPst ? QUEEN_PST_MARGIN : 0) +
+    (rookFile ? ROOK_FILE_MARGIN : 0);
 
   for (const { start, goal, gain } of captures) {
     // Delta pruning: skip captures whose best-case material can't reach alpha.
@@ -501,6 +601,7 @@ export const quiesce = (
         tapered,
         bishopPair,
         queenPst,
+        rookFile,
       );
       if (score >= beta) return beta;
       if (score > localAlpha) localAlpha = score;
@@ -567,6 +668,29 @@ export const quiescentEvalQueenPst = (
     -100000,
     100000,
     QUIESCENCE_MAX_DEPTH,
+    true,
+    true,
+    true,
+  );
+
+/*
+ * Production leaf (experiment #8): the accepted queen-PST quiescence leaf
+ * (experiment #7) plus the rook open/half-open-file bonus. Same capture
+ * resolution, tapered king, bishop-pair bonus, and queen table as
+ * `quiescentEvalQueenPst`; only the added rook-file term differs, isolating the
+ * rook-file contribution in self-play (new here vs `quiescentEvalQueenPst`).
+ */
+export const quiescentEvalRookFile = (
+  board: readonly string[],
+  currentColor: color,
+): number =>
+  quiesce(
+    board,
+    currentColor,
+    -100000,
+    100000,
+    QUIESCENCE_MAX_DEPTH,
+    true,
     true,
     true,
     true,
@@ -667,7 +791,7 @@ export const negamax = (
   evaluateFn: (
     b: readonly string[],
     c: color,
-  ) => number = quiescentEvalQueenPst,
+  ) => number = quiescentEvalRookFile,
   checkExtend = true,
   extLeft: number = CHECK_EXTENSION_BUDGET,
 ): readonly number[] => {

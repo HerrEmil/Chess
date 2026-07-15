@@ -293,14 +293,99 @@ describe('queen piece-square table', () => {
   });
 });
 
+/*
+ * Experiment #8: rook open/half-open-file bonus. The rook piece-square table is
+ * pawn-blind, so the engine valued a rook the same on a wide-open file as behind
+ * its own pawns. This term rewards a rook on a file with no friendly pawns (a
+ * larger bonus when the file is fully open, a smaller one when only enemy pawns
+ * remain). These tests pin the correctness properties: it is color-symmetric and
+ * a no-op with the flag off (so every pre-#8 caller is unchanged), it rewards
+ * the side whose rook holds an open file, open beats half-open beats closed, and
+ * it only touches rooks.
+ */
+describe('rook open/half-open-file bonus', () => {
+  it('is unchanged and color-symmetric at the full-material start', () => {
+    // Every rook starts on the a/h files, which carry pawns of both colors, so
+    // every file is closed => the term is 0 (and the position is symmetric). And
+    // with the flag off the eval is byte-for-byte the pre-#8 (queen-PST) value.
+    expect(
+      evaluate(STARTING_BOARD, 'white', true, true, true, true, true),
+    ).toBe(0);
+    expect(
+      evaluate(STARTING_BOARD, 'black', true, true, true, true, true),
+    ).toBe(0);
+    expect(
+      evaluate(STARTING_BOARD, 'white', true, true, true, true, false),
+    ).toBe(evaluate(STARTING_BOARD, 'white', true, true, true, true));
+  });
+
+  it('rewards the side whose rook holds an open file', () => {
+    // White's rook (d1) sits on a fully open d-file; Black's rook (a8) is behind
+    // its own a7 pawn (closed). The extra pawns (white h2, black a7) balance
+    // material and keep the d-file clear, so toggling the flag isolates the
+    // rook-file term: it must raise White's score and, by symmetry, lower
+    // Black's.
+    const board = boardWithPieces([
+      { piece: 'k', index: 62 }, // white king g1
+      { piece: 'K', index: 17 }, // black king b6
+      { piece: 'r', index: 59 }, // white rook d1 (open file)
+      { piece: 'R', index: 0 }, // black rook a8 (closed by a7)
+      { piece: 'p', index: 55 }, // white pawn h2
+      { piece: 'P', index: 8 }, // black pawn a7
+    ]);
+    expect(
+      evaluate(board, 'white', true, true, true, true, true),
+    ).toBeGreaterThan(evaluate(board, 'white', true, true, true, true, false));
+    expect(evaluate(board, 'black', true, true, true, true, true)).toBeLessThan(
+      evaluate(board, 'black', true, true, true, true, false),
+    );
+  });
+
+  it('scores open above half-open above closed for the same rook', () => {
+    // Toggling the flag on one board yields exactly the rook-file term (every
+    // other component is identical), isolating open vs half-open vs closed for a
+    // lone white rook on d1 as only the d-file pawns change.
+    const base = [
+      { piece: 'k', index: 62 }, // white king g1
+      { piece: 'K', index: 17 }, // black king b6
+      { piece: 'r', index: 59 }, // white rook d1
+    ];
+    const rookTerm = (extra: { piece: string; index: number }[]): number => {
+      const b = boardWithPieces([...base, ...extra]);
+      return (
+        evaluate(b, 'white', true, true, true, true, true) -
+        evaluate(b, 'white', true, true, true, true, false)
+      );
+    };
+    const open = rookTerm([]); // no d-file pawn
+    const halfOpen = rookTerm([{ piece: 'P', index: 11 }]); // black pawn d7
+    const closed = rookTerm([{ piece: 'p', index: 51 }]); // white pawn d2
+    expect(open).toBeGreaterThan(halfOpen);
+    expect(halfOpen).toBeGreaterThan(closed);
+    expect(closed).toBe(0);
+  });
+
+  it('is a no-op on a position with no rook', () => {
+    // A queen on the open a-file, not a rook: the rook-file flag is a no-op.
+    const board = boardWithPieces([
+      { piece: 'k', index: 62 }, // white king g1
+      { piece: 'K', index: 17 }, // black king b6
+      { piece: 'q', index: 56 }, // white queen a1
+    ]);
+    expect(evaluate(board, 'white', true, true, true, true, true)).toBe(
+      evaluate(board, 'white', true, true, true, true, false),
+    );
+  });
+});
+
 describe('self-play non-regression', () => {
   it('new engine does not regress vs the previous engine', () => {
     // Deterministic (seeded PRNG + deterministic search), so this is a stable
     // guardrail, not a flaky benchmark. The full multi-depth validation is
-    // recorded in tools/engine-lab/experiments.jsonl. Experiment #7 compares the
-    // queen-PST leaf (new) vs the bishop-pair leaf (old); both use the
-    // quiescence leaf, shipped check extensions, the tapered king table, and the
-    // bishop-pair bonus.
+    // recorded in tools/engine-lab/experiments.jsonl. Experiment #8 compares the
+    // rook-file leaf (new) vs the queen-PST leaf (old); both use the quiescence
+    // leaf, shipped check extensions, the tapered king table, the bishop-pair
+    // bonus, and the queen piece-square table.
     const result = runMatch({ games: 24, depth: 2, seed: 1 });
     expect(result.games).toBe(24);
     expect(result.newScore).toBeGreaterThanOrEqual(result.oldScore);
