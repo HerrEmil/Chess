@@ -16,7 +16,7 @@ import {
   color,
   negamax,
   quiescentEvalMobility,
-  quiescentEvalRookFile,
+  quiescentEvalPassedPawns,
 } from '../../src/chess/ai.js';
 import {
   applyMove,
@@ -34,16 +34,17 @@ export type EngineEval = (b: readonly string[], c: color) => number;
 // The two engines under comparison. Both search with the same negamax and the
 // same alpha-beta / check-extension search; what differs is the leaf evaluator.
 //
-// Experiment #10: mobility. Both engines use the accepted quiescence leaf
-// (experiment #2), shipped check extensions (experiment #4, both check-extend
-// flags true), the tapered king table (experiment #5), the bishop-pair bonus
-// (experiment #6), the queen piece-square table (experiment #7), and the
-// rook-file bonus (experiment #8). The new engine's leaf adds the mobility term
-// (`quiescentEvalMobility`); the previous accepted engine's leaf is the same
-// without it (`quiescentEvalRookFile`). Isolating the leaf measures the
-// mobility contribution alone.
-export const newEval: EngineEval = quiescentEvalMobility;
-export const legacyEval: EngineEval = quiescentEvalRookFile;
+// Experiment #12 (Ladder 2 item 2): endgame-scaled passed pawns. Both engines
+// use the accepted quiescence leaf (experiment #2), shipped check extensions
+// (experiment #4, both check-extend flags true), the tapered king table
+// (experiment #5), the bishop-pair bonus (experiment #6), the queen piece-square
+// table (experiment #7), the rook-file bonus (experiment #8) and the mobility
+// term (experiment #10). The new engine's leaf adds the endgame-scaled passed-
+// pawn bonus (`quiescentEvalPassedPawns`); the previous accepted engine's leaf is
+// the same without it (`quiescentEvalMobility`). Isolating the leaf measures the
+// passed-pawn contribution alone.
+export const newEval: EngineEval = quiescentEvalPassedPawns;
+export const legacyEval: EngineEval = quiescentEvalMobility;
 const NEW_CHECK_EXTEND = true;
 const OLD_CHECK_EXTEND = true;
 

@@ -428,6 +428,110 @@ const mobilityDelta = (
 const MOBILITY_WEIGHT = 3;
 
 /*
+ * Passed pawns (endgame-scaled).
+ *
+ * A passed pawn — one with no enemy pawn ahead of it on its own or an adjacent
+ * file — has an unobstructed road to promotion and grows more dangerous the
+ * further it advances. But that value is overwhelmingly an ENDGAME asset: in the
+ * middlegame a pawn "passed" on paper is usually blockaded or drowned out by the
+ * pieces, and rewarding its advance there is exactly what sank the earlier pawn-
+ * structure term (experiment #3 — the shallow search pushed passers it could not
+ * support, a regression that grew monotonically with the bonus). This term fixes
+ * that by scaling the whole bonus by the ENDGAME weight (1 - gamePhaseMg): ~0 at
+ * full material, full value only as the board empties and a passed pawn genuinely
+ * decides the game (and the horizon is short enough for a shallow search to
+ * convert it). Only passed pawns are scored here; doubled/isolated penalties are
+ * deliberately kept separate (a later ladder item) so this retry stays isolated.
+ *
+ * Detection is a two-pass file scan like rookFileDelta: record each color's
+ * most-advanced pawn per file, then a pawn is passed iff no enemy pawn stands on
+ * the same or an adjacent file on any rank AHEAD of it (toward its promotion
+ * rank — smaller ranks for White, which promotes at rank 0; larger ranks for
+ * Black, which promotes at rank 7). Returned as a White-minus-Black delta from
+ * `currentColor`'s perspective, antisymmetric by construction (it depends only on
+ * pawn placement, so a mirror-image position nets 0). The per-rank bonus below is
+ * the full endgame value, indexed by the pawn's rank from its own side (1 = just
+ * off the start rank … 6 = one rank from queening); indices 0 and 7 are unused (a
+ * pawn never lives on its own back rank or the promotion rank) and left at 0.
+ */
+// prettier-ignore
+const PASSED_PAWN_BONUS = [0, 5, 12, 22, 36, 55, 80, 0];
+
+// Most-advanced pawn rank per file, per color, for passed detection. White
+// promotes toward rank 0, so a black sentry is one at a SMALLER rank => track the
+// min black rank (8 = none). Black promotes toward rank 7, so a white sentry is
+// one at a LARGER rank => track the max white rank (-1 = none).
+const pawnSentryRanks = (
+  board: readonly string[],
+): { blackMin: number[]; whiteMax: number[] } => {
+  const blackMin = [8, 8, 8, 8, 8, 8, 8, 8];
+  const whiteMax = [-1, -1, -1, -1, -1, -1, -1, -1];
+  for (let sq = 0; sq < 64; sq += 1) {
+    const ch = board[mailboxIndex[sq]];
+    const file = sq % 8;
+    const rank = Math.floor(sq / 8);
+    if (ch === 'p') {
+      if (rank > whiteMax[file]) whiteMax[file] = rank;
+    } else if (ch === 'P' && rank < blackMin[file]) {
+      blackMin[file] = rank;
+    }
+  }
+  return { blackMin, whiteMax };
+};
+
+// True when no enemy sentry stands ahead of a pawn on (file, rank), scanning its
+// own and both adjacent files. `sentry[f]` is the enemy's most-advanced rank on
+// file f. For a White pawn a sentry is a black pawn AHEAD at a smaller rank
+// (`forWhite` true, compare `<`); for a Black pawn it is a white pawn ahead at a
+// larger rank (compare `>`). The sentinels (8 for blackMin, -1 for whiteMax)
+// never satisfy either comparison, so an empty file never blocks.
+const noSentryAhead = (
+  sentry: readonly number[],
+  file: number,
+  rank: number,
+  forWhite: boolean,
+): boolean => {
+  for (let f = file - 1; f <= file + 1; f += 1) {
+    const onBoard = f >= 0 && f <= 7;
+    if (onBoard && (forWhite ? sentry[f] < rank : sentry[f] > rank)) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const passedPawnDelta = (
+  board: readonly string[],
+  currentColor: color,
+  mgWeight: number,
+): number => {
+  const endWeight = 1 - mgWeight;
+  if (endWeight <= 0) return 0;
+  const { blackMin, whiteMax } = pawnSentryRanks(board);
+  let whiteScore = 0;
+  let blackScore = 0;
+  for (let sq = 0; sq < 64; sq += 1) {
+    const ch = board[mailboxIndex[sq]];
+    const rank = Math.floor(sq / 8);
+    const file = sq % 8;
+    if (ch === 'p') {
+      if (noSentryAhead(blackMin, file, rank, true)) {
+        whiteScore += PASSED_PAWN_BONUS[7 - rank];
+      }
+    } else if (ch === 'P' && noSentryAhead(whiteMax, file, rank, false)) {
+      blackScore += PASSED_PAWN_BONUS[rank];
+    }
+  }
+  // Round the perspective-independent White-minus-Black delta once, then flip
+  // sign for the side to move. Rounding here (rather than after the perspective
+  // flip) keeps the term exactly antisymmetric — evaluate(pos, white) is the
+  // exact negation of evaluate(pos, black) — matching the integer sibling deltas;
+  // rounding a perspective-dependent value would disagree by 1cp on a .5 result.
+  const whiteMinusBlack = Math.round((whiteScore - blackScore) * endWeight);
+  return currentColor === 'white' ? whiteMinusBlack : -whiteMinusBlack;
+};
+
+/*
  * Queen piece-square table.
  *
  * Every other piece already reads a piece-square table, but the queen was
@@ -455,6 +559,10 @@ const MOBILITY_WEIGHT = 3;
 // `mobility` is the centipawns-per-move weight of the mobility term (default 0 =
 // off, the pre-#9 behaviour); a positive weight adds it, so every existing
 // caller that omits it is byte-for-byte unchanged.
+// `passedPawn` adds the endgame-scaled passed-pawn bonus (default false = no
+// passed-pawn term, the pre-#12 behaviour). It reads the same `mgWeight` used for
+// tapering, so it is a no-op unless `tapered` is on (the middlegame weight is 1,
+// giving endWeight 0); with the flag off every existing caller is unchanged.
 export const evaluate = (
   board: readonly string[],
   currentColor: color,
@@ -464,6 +572,7 @@ export const evaluate = (
   queenPst = false,
   rookFile = false,
   mobility = 0,
+  passedPawn = false,
 ): number => {
   const opponent = oppositeColor(currentColor);
   const checkBonus = isInCheck(board, opponent) ? 50 : 0;
@@ -493,6 +602,9 @@ export const evaluate = (
   const pairDelta = bishopPair ? bishopPairDelta(board, currentColor) : 0;
   const rookDelta = rookFile ? rookFileDelta(board, currentColor) : 0;
   const mobilityScore = mobilityDelta(board, currentColor, mobility);
+  const passedDelta = passedPawn
+    ? passedPawnDelta(board, currentColor, mgWeight)
+    : 0;
 
   return (
     checkBonus -
@@ -501,7 +613,8 @@ export const evaluate = (
     endgame +
     pairDelta +
     rookDelta +
-    mobilityScore
+    mobilityScore +
+    passedDelta
   );
 };
 
@@ -563,6 +676,19 @@ const ROOK_FILE_MARGIN = 64;
  * DELTA_MARGIN, keeping the pre-mobility leaves byte-for-byte unchanged.
  */
 const MOBILITY_MAX_SWING = 60;
+
+/*
+ * Extra delta-pruning slack for the passed-pawn term, scaled by the endgame
+ * weight so it tracks the term (which is itself endgame-scaled): ~0 in the
+ * middlegame — where the term contributes nothing, keeping pruning as tight as
+ * the pre-#12 leaves — rising to its full bound as the board empties. A single
+ * capture can at most convert a handful of friendly pawns to passers and strip an
+ * enemy passer; this bounds that swing generously (over-estimating only relaxes
+ * pruning, it never prunes a capture that could reach alpha). With the flag off
+ * the margin is exactly DELTA_MARGIN, keeping the pre-#12 leaves byte-for-byte
+ * unchanged.
+ */
+const PASSED_PAWN_MAX_SWING = 320;
 
 // A pseudo-legal capture for quiescence, pre-scored for MVV-LVA ordering.
 // `gain` is the captured material (plus promotion), used for delta pruning.
@@ -631,6 +757,34 @@ const captureChild = (
   return child;
 };
 
+/*
+ * Delta-pruning margin: an upper bound on the positional (non-material) score a
+ * single capture can add on top of its raw material gain. The bishop-pair term
+ * can swing by at most one bonus when a capture removes the enemy's second
+ * bishop, the queen table by at most QUEEN_PST_MARGIN, the rook-file term by at
+ * most ROOK_FILE_MARGIN, mobility by MOBILITY_MAX_SWING per unit weight, and the
+ * passed-pawn term by PASSED_PAWN_MAX_SWING scaled to the board's endgame weight;
+ * widen the margin by each active term. With all flags off it is exactly
+ * DELTA_MARGIN, keeping quiescentEval / quiescentEvalTapered byte-for-byte
+ * unchanged.
+ */
+const quiesceDeltaMargin = (
+  board: readonly string[],
+  bishopPair: boolean,
+  queenPst: boolean,
+  rookFile: boolean,
+  mobility: number,
+  passedPawn: boolean,
+): number =>
+  DELTA_MARGIN +
+  (bishopPair ? BISHOP_PAIR_BONUS : 0) +
+  (queenPst ? QUEEN_PST_MARGIN : 0) +
+  (rookFile ? ROOK_FILE_MARGIN : 0) +
+  Math.abs(mobility) * MOBILITY_MAX_SWING +
+  (passedPawn
+    ? Math.round(PASSED_PAWN_MAX_SWING * (1 - gamePhaseMg(board)))
+    : 0);
+
 // Negamax capture-only search returning the quiet score for `currentColor`.
 export const quiesce = (
   board: readonly string[],
@@ -643,6 +797,7 @@ export const quiesce = (
   queenPst = false,
   rookFile = false,
   mobility = 0,
+  passedPawn = false,
 ): number => {
   // Stand-pat: the side to move may always decline to capture, so the static
   // score is a lower bound on what it can achieve.
@@ -655,6 +810,7 @@ export const quiesce = (
     queenPst,
     rookFile,
     mobility,
+    passedPawn,
   );
   if (standPat >= beta) return beta;
   let localAlpha = standPat > alpha ? standPat : alpha;
@@ -662,20 +818,14 @@ export const quiesce = (
 
   const captures = generateCaptures(board, currentColor);
   captures.sort((a, b) => b.orderScore - a.orderScore);
-
-  // Delta-pruning margin bounds the positional (non-material) score a capture
-  // can add on top of its raw material gain. The bishop-pair term can swing by
-  // at most one bonus when a capture removes the enemy's second bishop, the
-  // queen table by at most QUEEN_PST_MARGIN, and the rook-file term by at most
-  // ROOK_FILE_MARGIN, so widen the margin by each active term; with all flags
-  // off the margin is exactly DELTA_MARGIN, keeping quiescentEval /
-  // quiescentEvalTapered byte-for-byte unchanged.
-  const deltaMargin =
-    DELTA_MARGIN +
-    (bishopPair ? BISHOP_PAIR_BONUS : 0) +
-    (queenPst ? QUEEN_PST_MARGIN : 0) +
-    (rookFile ? ROOK_FILE_MARGIN : 0) +
-    Math.abs(mobility) * MOBILITY_MAX_SWING;
+  const deltaMargin = quiesceDeltaMargin(
+    board,
+    bishopPair,
+    queenPst,
+    rookFile,
+    mobility,
+    passedPawn,
+  );
 
   for (const { start, goal, gain } of captures) {
     // Delta pruning: skip captures whose best-case material can't reach alpha.
@@ -694,6 +844,7 @@ export const quiesce = (
         queenPst,
         rookFile,
         mobility,
+        passedPawn,
       );
       if (score >= beta) return beta;
       if (score > localAlpha) localAlpha = score;
@@ -813,6 +964,34 @@ export const quiescentEvalMobility = (
   );
 
 /*
+ * Production leaf (experiment #12, Ladder 2 item 2): the accepted mobility
+ * quiescence leaf (experiment #10) plus the endgame-scaled passed-pawn bonus.
+ * Same capture resolution, tapered king, bishop-pair bonus, queen table, rook-
+ * file bonus and mobility term as `quiescentEvalMobility`; only the added passed-
+ * pawn term differs, isolating its contribution in self-play (new here vs
+ * `quiescentEvalMobility`). The bonus is ~0 in the middlegame and rises as the
+ * board empties, so it only steers the search where a passer can actually be
+ * converted — the retry condition the rejected pawn-structure term (#3) failed.
+ */
+export const quiescentEvalPassedPawns = (
+  board: readonly string[],
+  currentColor: color,
+): number =>
+  quiesce(
+    board,
+    currentColor,
+    -100000,
+    100000,
+    QUIESCENCE_MAX_DEPTH,
+    true,
+    true,
+    true,
+    true,
+    MOBILITY_WEIGHT,
+    true,
+  );
+
+/*
  * Negamax with alpha-beta pruning.
  * Returns [bestMoveStart, bestMoveGoal, score].
  * Score is always from the perspective of the current player.
@@ -907,7 +1086,7 @@ export const negamax = (
   evaluateFn: (
     b: readonly string[],
     c: color,
-  ) => number = quiescentEvalMobility,
+  ) => number = quiescentEvalPassedPawns,
   checkExtend = true,
   extLeft: number = CHECK_EXTENSION_BUDGET,
 ): readonly number[] => {
