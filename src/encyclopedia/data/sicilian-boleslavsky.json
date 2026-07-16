@@ -1,0 +1,129 @@
+{
+  "slug": "sicilian-boleslavsky",
+  "eco": "B58",
+  "name": "Sicilian Defense, Boleslavsky Variation",
+  "aka": ["Boleslavsky Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Boleslavsky Variation (B58) is a Classical Sicilian where Black plays the freeing ...e5, accepting a backward d6-pawn and a d5 hole for active piece play.",
+  "intro": "The Boleslavsky Variation is a cornerstone of the Classical Sicilian, arising after 1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 d6 6.Be2 e5. With the freeing thrust 6...e5, Black chases the centralised knight and stakes a claim in the centre, deliberately accepting a backward d6-pawn and a permanent hole on d5, the so-called Boleslavsky hole. In return Black gains space, rapid development and easy, active play for every piece. Named for Isaac Boleslavsky, whose reassessment of this structure in the 1940s and 1950s reshaped Sicilian theory, the variation trades a static weakness for dynamic freedom and underpins ideas seen in the Najdorf and Sveshnikov.",
+  "line": "e4 c5 Nf3 Nc6 d4 cxd4 Nxd4 Nf6 Nc3 d6 Be2 e5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "Be2",
+      "from": 61,
+      "to": 52
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    }
+  ],
+  "fen": "r1bqkb1r/pp3ppp/2np1n2/4p3/3NP3/2N5/PPP1BPPP/R1BQK2R w KQkq e6 0 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining feature of the Boleslavsky is the trade of structure for activity. By playing ...e5, Black seizes central space and frees every minor piece, but concedes the d5 square and leaves the d6-pawn backward on a half-open file. The whole middlegame turns on that d5 hole: White wants to occupy and dominate it with a knight, typically by manoeuvring Nc3-d5 and swapping off Black's defenders with Bg5xf6, while Black fights to keep the square under control with pieces and to make the extra central space and free development count.",
+        "Black's counterplay flows naturally from the freer position. The light-squared bishop develops actively to e6 or g4, ...a5 gains queenside space and harasses a knight on b3, and in many lines Black eventually achieves the equalising break ...d5. If White is allowed to plant a piece firmly on d5 and trade away Black's control of it, the backward d6-pawn can become a genuine weakness; if Black neutralises the outpost, the space and activity promise comfortable, dynamic equality."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 6...e5 the attacked knight retreats, most often with 7.Nb3, keeping options on the queenside, though 7.Nf3 is also seen. Play typically continues 7.Nb3 Be7 8.O-O O-O 9.Be3 Be6, when Black completes development and prepares ...a5 and, when possible, the freeing ...d5. White's principal method is to fight for the hole with Nd5 and Bg5, exchanging on f6 to loosen Black's grip on the central square before deciding between play on the kingside or the queenside.",
+        "Black must handle the resulting positions accurately. Allowing a permanent, well-supported knight on d5 without compensation can hand White a lasting positional bind, so Black meets Nd5 with timely piece trades or the ...d5 break, and uses ...a5-a4 to gain space and drive the knight from b3. When Black coordinates these ideas, the backward d6-pawn is comfortably held and the extra central activity tells; when Black drifts, the d5 outpost and pressure down the d-file give White the more pleasant game."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is named for Isaac Boleslavsky, a leading Soviet grandmaster and renowned opening theoretician of the 1940s and 1950s. His revolutionary reassessment, that Black could voluntarily accept a backward d6-pawn and a hole on d5 in exchange for free, active piece play, overturned older dogma about weak squares and helped reshape the whole of Sicilian theory. The idea proved so fertile that its echoes are felt in the Najdorf, where a later ...e5 is a key resource, and in the Sveshnikov, which is built on the very same structural bargain."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Play the freeing ...e5 to gain central space and free every piece.",
+    "Accept a backward d6-pawn and a hole on d5 (the Boleslavsky hole) as the price.",
+    "The battle for the d5 square defines the whole middlegame.",
+    "Black neutralises the outpost with ...Be6, timely trades and the ...d5 break.",
+    "Use ...a5-a4 to gain queenside space and harass the knight on b3.",
+    "A dynamic structural bargain that inspired the Najdorf and Sveshnikov."
+  ],
+  "plans": {
+    "white": [
+      "Retreat the knight with Nb3 or Nf3 and complete development.",
+      "Fight for the d5 hole by manoeuvring a knight there via Nc3-d5.",
+      "Play Bg5 and Bxf6 to weaken Black's control of the central square.",
+      "Target the backward d6-pawn down the half-open d-file.",
+      "Restrain the ...d5 and ...a5-a4 breaks to keep a positional bind."
+    ],
+    "black": [
+      "Strike with ...e5 to seize the centre and free the pieces.",
+      "Develop the bishop actively to e6 and control the d5 square.",
+      "Expand with ...a5-a4 to harass the knight on b3.",
+      "Prepare and time the equalising ...d5 break.",
+      "Meet Nd5 with piece trades so the d6-pawn stays safely held."
+    ]
+  },
+  "related": [
+    "sicilian-classical",
+    "sicilian-sveshnikov",
+    "sicilian-najdorf",
+    "sicilian-richter-rauzer",
+    "sicilian-defense",
+    "sicilian-lowenthal"
+  ]
+}

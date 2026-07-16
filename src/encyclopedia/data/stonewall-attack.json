@@ -1,0 +1,114 @@
+{
+  "slug": "stonewall-attack",
+  "eco": "D00",
+  "name": "Stonewall Attack",
+  "aka": ["Stonewall System"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Stonewall Attack (D00) builds a d4-e3-f4-c3 pawn wall with Bd3 and storms the kingside via Ne5 and Rf3-h3, a direct and easy-to-learn attacking system.",
+  "intro": "The Stonewall Attack is a White system, most naturally reached by 1.d4 d5 2.e3 Nf6 3.Bd3 c5 4.c3 Nc6 5.f4, in which White erects the characteristic d4-e3-f4-c3 pawn chain and develops the king's bishop to d3. The plan is blunt and aggressive: White castles short, swings a knight to e5, and throws the pieces at Black's king with Rf1-f3-h3 and the queen to f3 or h5. What the wall gains in attacking potential it pays for in flexibility, since the pawns are fixed early and the e4- and e5-squares are permanent concerns should Black neutralize the initiative. Even so, the system is prized as a practical, easy-to-learn attacking weapon that can be wheeled out against almost any Black set-up.",
+  "line": "d4 d5 e3 Nf6 Bd3 c5 c3 Nc6 f4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "e3",
+      "from": 52,
+      "to": 44
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Bd3",
+      "from": 61,
+      "to": 43
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "c3",
+      "from": 50,
+      "to": 42
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "f4",
+      "from": 53,
+      "to": 37
+    }
+  ],
+  "fen": "r1bqkb1r/pp2pppp/2n2n2/2pp4/3P1P2/2PBP3/PP4PP/RNBQK1NR b KQkq f3 0 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "Everything about the Stonewall Attack serves a single idea: a direct assault on the enemy king. The pawns on d4, e3, f4 and c3 form a rigid wall that cedes the centre's fluidity in exchange for a dependable outpost on e5 and a clear plan of attack. The bishop on d3 rakes toward h7, a knight lands on e5 supported by the f4-pawn, and the rook lifts via f3 to h3 while the queen eyes h5 and h7. Against a passive defence this build-up can crash through quickly.",
+        "The flip side is structural. Because the pawns commit so early, White permanently concedes the e4-square once the f-pawn advances, and the dark-squared bishop on c1 can become a problem piece hemmed in by its own chain. If Black exchanges the dangerous d3-bishop, blockades on e4 with a knight, or opens the queenside before White's attack arrives, the wall's inflexibility tells. The system therefore thrives on initiative and fares worse in slow, symmetrical struggles."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "In the diagram position after 5.f4, Black usually develops soundly and prepares to challenge White's plan. A typical continuation is 5...e6 6.Nf3 Bd6 7.O-O O-O, when White heads for the thematic 8.Ne5, planting the knight on its ideal square. Black then fights back with ...Ne4, blockading and contesting the light squares, or strikes in the centre with ...cxd4 and ...f6 to dislodge the e5-knight.",
+        "Black's other reliable idea is to neutralize White's attacking bishop. After ...b6 and ...Ba6, Black offers to trade the d3-bishop and blunt the assault on h7 before it gathers steam. Whenever Black manages ...Ne4 on a firm footing and completes development, the position tends to balance out, since White's kingside build-up loses its sting once its key attackers are exchanged. Precise, active defence is the standard antidote to the Stonewall."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Stonewall formation is one of the oldest attacking recipes in chess, and its White version grew popular in the club and correspondence play of the late nineteenth and early twentieth centuries as a system that required little memorization. It should not be confused with the Dutch Stonewall, in which Black builds the mirror-image structure with pawns on d5, e6, f5 and c6 after 1.d4 f5. As master practice grew more precise, the Attack lost some of its sting at the top level, but it endures as a practical, plan-based weapon, especially effective against unprepared opponents."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Erect the d4-e3-f4-c3 pawn wall with the bishop developed to d3.",
+    "Install a knight on e5, supported by the f4-pawn, as the attack's spearhead.",
+    "Lift the rook with Rf3-h3 and bring the queen to f3 or h5 against the king.",
+    "Accept that the e4- and e5-squares are chronic long-term weaknesses.",
+    "Watch for Black's ...Ne4 blockade and the trade of the d3-bishop.",
+    "Distinct from the Dutch Stonewall, which is Black's mirror-image formation."
+  ],
+  "plans": {
+    "white": [
+      "Castle short and build the standard f4-supported knight outpost on e5.",
+      "Swing the rook to h3 and post the queen on f3 or h5 for a kingside attack.",
+      "Aim the d3-bishop at h7 and prepare sacrifices on that square.",
+      "Keep the wall intact and avoid premature central exchanges.",
+      "Reroute or trade the passive c1-bishop to cure its confinement."
+    ],
+    "black": [
+      "Contest the e4-square with a well-supported ...Ne4 blockade.",
+      "Trade White's dangerous d3-bishop with ...b6 and ...Ba6.",
+      "Undermine the wall with ...cxd4 and ...f6 to hit the e5-knight.",
+      "Develop quickly, castle, and complete kingside safety before the attack lands.",
+      "Open a second front on the queenside with ...c4 or ...b5."
+    ]
+  },
+  "related": [
+    "dutch-stonewall",
+    "colle-system",
+    "colle-zukertort",
+    "london-system",
+    "torre-attack",
+    "richter-veresov-attack"
+  ]
+}

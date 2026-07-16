@@ -1,0 +1,112 @@
+{
+  "slug": "scotch-four-knights",
+  "eco": "C47",
+  "name": "Scotch Four Knights",
+  "aka": ["Scotch Four Knights Game"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Scotch Four Knights (C47) blends Scotch and Four Knights via 4.d4 exd4 5.Nxd4, a solid, low-theory route to sound symmetrical middlegames.",
+  "intro": "The Scotch Four Knights arises after 1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 exd4 5.Nxd4, a natural blend of the Scotch Game and the Four Knights. Instead of the sharp Belgrade Gambit try 5.Nd5, White simply recaptures on d4, reaching a sound, classical middlegame with harmonious development and a small space edge. The opening is prized for its solidity and low theoretical burden: both sides place their pieces on natural squares and the play is strategically clear rather than tactically forcing. Black has a comfortable, well-tested route to equality, which makes the line a dependable choice for players who want a calm, principled struggle without memorising reams of forcing variations.",
+  "line": "e4 e5 Nf3 Nc6 Nc3 Nf6 d4 exd4 Nxd4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "exd4",
+      "from": 28,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    }
+  ],
+  "fen": "r1bqkb1r/pppp1ppp/2n2n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 0 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "With the centre already resolved, the Scotch Four Knights becomes a contest of piece placement and small structural nuances. White enjoys a modest lead in development and central space, and would like to exploit the reach of the d4-knight and the half-open lines that follow exchanges. Black neutralises this by developing actively, pinning with ...Bb4 and striking in the centre with a timely ...d5. Because the pawn structures are near-symmetrical, the resulting positions are balanced and manoeuvring, with both sides aiming to accumulate tiny edges rather than launch immediate attacks."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The classical main line runs 5...Bb4 6.Nxc6 bxc6 7.Bd3 d5, when Black frees the position with ...d5 and reaches comfortable equality; play often continues 8.exd5 cxd5 9.O-O O-O with a symmetrical, balanced middlegame. Black can also meet 5.Nxd4 with 5...Bc5, pressuring d4 and f2, when 6.Be3 keeps things solid.",
+        "White, for his part, sometimes prefers the simplifying 6.Nxc6 followed by Bd3 and O-O to steer into quiet, healthy structures. Throughout, the exchange on c6 and the central break ...d5 are the defining strategic transactions of the variation. Neither side can force much, so understanding of typical piece placement and pawn breaks matters more than deep memorisation, and the game is usually decided in the middlegame or endgame."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "As a fusion of two of the oldest open-game systems, the Scotch Four Knights has been part of master practice since the nineteenth century. It gained renewed attention when the Scotch itself was revived at the top level, offering a straightforward, respectable alternative to the sharper Four Knights branches such as the Belgrade Gambit and the Spanish Four Knights. Its enduring appeal lies in its reliability: it promises no theoretical knockout, but delivers sound, understandable positions in which good general play counts for more than memorised analysis."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A hybrid of the Scotch and Four Knights reached by 4.d4 exd4 5.Nxd4.",
+    "Solid and classical, with natural development and a small space edge.",
+    "The main line 5...Bb4 6.Nxc6 bxc6 7.Bd3 d5 gives Black easy equality.",
+    "The exchange on c6 and the ...d5 break define the strategic play.",
+    "Near-symmetrical structures lead to balanced, manoeuvring middlegames.",
+    "A dependable, low-theory choice for principled, calm chess."
+  ],
+  "plans": {
+    "white": [
+      "Recapture with 5.Nxd4 and complete development to natural squares.",
+      "Exchange on c6 to damage Black's pawns and open lines for the bishops.",
+      "Develop with Bd3, O-O and Re1, pressing on the central files.",
+      "Nurse a small space and development edge into the middlegame."
+    ],
+    "black": [
+      "Pin with ...Bb4 and prepare the freeing ...d5 break.",
+      "Play ...d5 at the right moment to equalise in the centre.",
+      "Recapture with ...bxc6 and use the half-open b-file and bishop prospects.",
+      "Develop smoothly and castle, keeping the symmetrical structure sound.",
+      "Trade into balanced middlegames where accurate play holds the balance."
+    ]
+  },
+  "related": [
+    "four-knights-game",
+    "scotch-game",
+    "scotch-classical",
+    "belgrade-gambit",
+    "three-knights-game",
+    "four-knights-spanish"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "kings-gambit-allgaier",
+  "eco": "C39",
+  "name": "King’s Gambit, Allgaier Gambit",
+  "aka": ["Allgaier Gambit"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Allgaier Gambit (C39) is a romantic King's Gambit knight sacrifice, 5.Ng5 and 6.Nxf7, dragging the black king into the open for a fierce attack.",
+  "intro": "The Allgaier Gambit is one of the most reckless offshoots of the King's Gambit, arising after 1.e4 e5 2.f4 exf4 3.Nf3 g5 4.h4 g4 5.Ng5. Rather than retreat the attacked knight, White leaves it en prise on g5 and invites 5...h6 6.Nxf7, a piece sacrifice that drags the black king out to f7 in the middlegame. The point is raw attacking energy: with the king exposed and lines flying open, White throws everything forward in classic romantic style. Objectively the sacrifice is dubious and modern defence holds, but over the board the Allgaier is extremely dangerous, and one careless move by Black can lead to a swift and spectacular finish.",
+  "line": "e4 e5 f4 exf4 Nf3 g5 h4 g4 Ng5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "f4",
+      "from": 53,
+      "to": 37
+    },
+    {
+      "san": "exf4",
+      "from": 28,
+      "to": 37
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "g5",
+      "from": 14,
+      "to": 30
+    },
+    {
+      "san": "h4",
+      "from": 55,
+      "to": 39
+    },
+    {
+      "san": "g4",
+      "from": 30,
+      "to": 38
+    },
+    {
+      "san": "Ng5",
+      "from": 45,
+      "to": 30
+    }
+  ],
+  "fen": "rnbqkbnr/pppp1p1p/8/6N1/4PppP/8/PPPP2P1/RNBQKB1R b KQkq - 1 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Allgaier is pure attack. By sacrificing a knight on f7, White removes the pawn shielding Black's king and forces it into the open, where it can be harried by pawns and pieces. In return for the material White wants rapid development, central pawns with d4, and the recapture of the f4-pawn to open the position further. Black's defensive challenge is to give back some material at the right moment, blunt the initiative and shepherd the king to safety, after which the extra piece should decide. The whole line is a race between White's attacking speed and Black's ability to consolidate."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line is 5...h6 6.Nxf7 Kxf7, when White chooses how to develop the attack: 7.d4 grabs the centre and prepares Bxf4, while 7.Bc4+ d5 8.Bxd5+ is another aggressive try aimed at the exposed king. A characteristic branch runs 7.d4 d5 8.Bxf4, when White has two pawns and open lines as compensation for the sacrificed knight.",
+        "The Allgaier is closely related to the Kieseritzky Gambit, where White instead plays the sounder 5.Ne5 rather than 5.Ng5. By choosing the knight leap to g5 and the follow-up 6.Nxf7, White deliberately opts for the sharper, more speculative sacrifice. Black, well prepared, can return material to defuse the attack and emerge on top, but the practical burden of accurate defence rests entirely on his shoulders."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The gambit is named after Johann Baptist Allgaier, an early nineteenth-century master and theoretician, and it belongs squarely to the romantic era when bold sacrifices were the height of fashion. As defensive technique matured, the Allgaier faded from serious competitive play because Black's resources against the f7-sacrifice became well understood. It survives today chiefly as a surprise weapon and a nostalgic tribute to attacking chess, capable of producing brilliant miniatures against an unprepared opponent even if a well-booked defender can refute it."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A sharp King's Gambit line with 3...g5 4.h4 g4 5.Ng5.",
+    "White sacrifices a knight with 6.Nxf7, exposing the black king.",
+    "The king is dragged to f7 and hunted with pawns and pieces.",
+    "Objectively dubious but extremely dangerous in practical play.",
+    "Closely related to the sounder Kieseritzky Gambit (5.Ne5).",
+    "Named after Johann Baptist Allgaier, a romantic-era master."
+  ],
+  "plans": {
+    "white": [
+      "Sacrifice on f7 with 6.Nxf7 to expose the black king.",
+      "Build the centre with d4 and recapture the f4-pawn via Bxf4.",
+      "Develop rapidly with Bc4 and checks to keep the king unsettled.",
+      "Throw pieces and pawns forward before Black consolidates."
+    ],
+    "black": [
+      "Accept the piece with 6...Kxf7 and prepare to return material.",
+      "Strike back in the centre with ...d5 to blunt the attack.",
+      "Give the king shelter and complete development quickly.",
+      "Consolidate the extra piece to convert the material edge.",
+      "Avoid greed and neutralise White's initiative move by move."
+    ]
+  },
+  "related": [
+    "kieseritzky-gambit",
+    "kings-gambit",
+    "king-gambit-accepted",
+    "muzio-gambit",
+    "kings-gambit-fischer-defense",
+    "kings-gambit-bishops-gambit"
+  ]
+}

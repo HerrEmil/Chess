@@ -1,0 +1,135 @@
+{
+  "slug": "benoni-fianchetto",
+  "eco": "A62",
+  "name": "Modern Benoni, Fianchetto Variation",
+  "aka": ["Benoni Fianchetto Variation"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Fianchetto Modern Benoni (A62) meets Black's dynamic setup with g3 and Bg2, reinforcing d5 and e4 to defuse the queenside pawn-storm and piece play.",
+  "intro": "The Fianchetto Variation is White's calm, positional answer to the Modern Benoni, reached after 1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6 6.Nf3 g6 7.g3. Instead of building the aggressive pawn front with e4 and f4, White fianchettoes the king's bishop to g2, where it reinforces control of the key central squares d5 and e4. The idea is prophylactic: by keeping a firm grip on e4 and neutralizing the a8-h1 diagonal, White blunts the two engines of Benoni counterplay — the ...b5 pawn-storm and the pressure of Black's fianchettoed bishop. Black in turn develops naturally with ...Bg7, ...O-O, ...Re8 and the ...Na6-c7 manoeuvre, working patiently toward the freeing ...b5 break. The result is a nuanced strategic battle rather than the headlong tactical race of the mainline Benoni.",
+  "line": "d4 Nf6 c4 c5 d5 e6 Nc3 exd5 cxd5 d6 Nf3 g6 g3",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "d5",
+      "from": 35,
+      "to": 27
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "exd5",
+      "from": 20,
+      "to": 27
+    },
+    {
+      "san": "cxd5",
+      "from": 34,
+      "to": 27
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "g3",
+      "from": 54,
+      "to": 46
+    }
+  ],
+  "fen": "rnbqkb1r/pp3p1p/3p1np1/2pP4/8/2N2NP1/PP2PP1P/R1BQKB1R b KQkq - 0 7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Modern Benoni is one of Black's most combative replies to 1.d4: the ...c5 and ...exd5 structure hands Black a queenside pawn majority and a half-open e-file, while the fianchettoed g7-bishop and the eventual ...b5 give the position enormous dynamism. White's sharpest tries meet this with a big centre and f4, but the Fianchetto Variation takes the opposite approach. By placing the bishop on g2, White reinforces d5 and, crucially, the e4-square, so that Black's thematic ...b5 and ...f5 breaks lose much of their sting.",
+        "With the light squares under control, White develops smoothly with O-O and Re1, reroutes the knight with Nd2 toward c4, and often prepares a4 to restrain ...b5 or plays down the c-file. Black, denied an easy pawn-storm, must prepare ...b5 with ...a6 and ...Rb8 or seek activity with ...Re8 and ...Nbd7-e5, keeping the position sharp. The game usually revolves around the fate of the backward d6-pawn and the timing of the ...b5 break rather than a direct assault on either king."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The main line runs 7...Bg7 8.Bg2 O-O 9.O-O, and now Black must choose a plan. The classical continuation is 9...Re8, placing the rook on the half-open e-file and preparing the ...Nbd7-e5 manoeuvre; White typically replies 10.Nd2, rerouting the knight toward c4 to press on d6 and eye e4. A major alternative is the 9...Na6 development, heading for c7 to support the ...b5 advance, when White often meets it with 10.Nd2 and a later a4.",
+        "Move orders abound, and Black may insert ...a6 and ...Rb8 to force through ...b5, while White uses a4 and Nc4 to blockade and pressure d6. Because the fianchetto keeps e4 and d5 under firm control, the sharp piece sacrifices and pawn-storms that enliven the mainline Benoni are far harder to justify. The struggle instead centres on whether Black can achieve ...b5 under good circumstances or whether White can fix and win the weak d6-pawn."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Modern Benoni rose to prominence in the mid-twentieth century as a fighting weapon for players seeking imbalance and winning chances with Black, and it became forever associated with Mikhail Tal and later Garry Kasparov, who wielded its dynamism to great effect. White's search for a safe antidote led to the Fianchetto Variation, whose restrained g3 and Bg2 setup was refined into a reliable, low-risk method of blunting Black's counterplay.",
+        "Prized for soundness rather than fireworks, the Fianchetto remains a respected main-line choice for those who prefer to meet the Benoni's energy with control of the light squares and patient positional pressure. Its enduring popularity rests on a simple bargain: White forgoes an early initiative in exchange for a durable structural grip that is hard for Black to overturn."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Fianchetto with g3 and Bg2 to reinforce d5 and control e4.",
+    "Neutralize the a8-h1 diagonal and Black's g7-bishop pressure.",
+    "Blunt the thematic ...b5 pawn-storm before it gains steam.",
+    "Reroute the knight with Nd2-c4 to pressure d6 and blockade.",
+    "Use a4 to restrain Black's queenside ...b5 expansion.",
+    "Aim for a positional squeeze rather than a sharp tactical race."
+  ],
+  "plans": {
+    "white": [
+      "Fianchetto with g3 and Bg2, castling short.",
+      "Reroute the knight via Nd2 to c4, targeting d6.",
+      "Play a4 to restrain and slow Black's ...b5 break.",
+      "Control the light squares e4 and d5 to smother counterplay.",
+      "Press patiently against the backward d6-pawn."
+    ],
+    "black": [
+      "Develop with ...Bg7, ...O-O and ...Re8 on the half-open e-file.",
+      "Manoeuvre ...Na6-c7 to support the ...b5 advance.",
+      "Prepare ...b5 with ...a6 and ...Rb8 for queenside play.",
+      "Seek activity with ...Nbd7-e5 and pressure on the centre.",
+      "Keep the position dynamic to exploit the queenside majority."
+    ]
+  },
+  "related": [
+    "modern-benoni",
+    "benoni-taimanov",
+    "czech-benoni",
+    "benko-gambit",
+    "kings-indian-fianchetto",
+    "dutch-leningrad"
+  ]
+}

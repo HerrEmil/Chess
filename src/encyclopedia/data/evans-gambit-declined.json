@@ -1,0 +1,109 @@
+{
+  "slug": "evans-gambit-declined",
+  "eco": "C51",
+  "name": "Evans Gambit Declined",
+  "aka": ["Evans Gambit, Declined"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Evans Gambit Declined (C51) answers 4.b4 with 4...Bb6, sidestepping the sharp accepted lines while White grabs space with a4 and c3-d4.",
+  "intro": "The Evans Gambit Declined arises after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bb6, where Black simply retreats the bishop instead of snatching the offered b-pawn. White's 4.b4 is the famous Evans Gambit, a wing sacrifice designed to deflect the c5-bishop and seize the centre with c3 and d4. By declining with 4...Bb6, Black steps around the wild, heavily analysed accepted lines and keeps a sound, solid position. The cost is that White develops easily and gains space, typically with a4, threatening a5 to harass the bishop, followed by c3 and d4. The result is a calmer, more manoeuvring struggle in which White enjoys a pleasant initiative but nothing like the fireworks of the main gambit.",
+  "line": "e4 e5 Nf3 Nc6 Bc4 Bc5 b4 Bb6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "Bc5",
+      "from": 5,
+      "to": 26
+    },
+    {
+      "san": "b4",
+      "from": 49,
+      "to": 33
+    },
+    {
+      "san": "Bb6",
+      "from": 26,
+      "to": 17
+    }
+  ],
+  "fen": "r1bqk1nr/pppp1ppp/1bn5/4p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R w KQkq - 1 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "By declining the pawn, Black keeps the position closed to the immediate tactical storms of the accepted gambit and relies on solidity. The dark-squared bishop, no longer chased with tempo by c3 after ...Bxb4, retreats to b6, where it eyes the a7-g1 diagonal and can prove awkward for White once a pawn lands on d4. White, for his part, has not truly sacrificed anything and simply enjoys extra space. The central question is whether the c3 and d4 advance yields a genuine edge or whether Black's compact structure holds comfortably.",
+        "Because the b4-pawn is not recaptured, a4 becomes a natural gain of tempo: it threatens a5, forcing Black to react with ...a6 and fixing the queenside. Black aims to complete development with ...d6, ...Nf6 and ...O-O, keep the b6-bishop safe, and look for a well-timed ...Nxd4 or ...exd4 to relieve White's central pressure. Trading pieces generally suits Black, who is content with equality against White's greater space."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The principal continuation is 5.a4 a6, forestalling the threat of 6.a5, which would otherwise harass the b6-bishop; after 5...a5 instead, White gains space with 6.b5, hitting the c6-knight. White then develops naturally with Nc3 or plays the immediate 6.c3, preparing the central advance d4. Once d4 arrives the play often resembles a favourable Giuoco Piano in which White has inserted the useful moves b4 and a4, while Black stays compact with ...d6, ...Nf6 and ...O-O.",
+        "A sharper alternative is 5.b5, challenging the c6-knight at once. Black usually replies 5...Nd4, and after 6.Nxd4 Bxd4 7.c3 Bb6 8.d4 White erects a broad pawn centre with easy development. White may also simply castle with 5.O-O before committing in the centre. Across these lines Black accepts a slightly passive but resilient position, trusting that solid piece play and timely exchanges neutralize White's extra space, in sharp contrast to the tactical melee of the accepted 4...Bxb4 5.c3."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Evans Gambit was introduced by the Welsh sea captain William Davies Evans in the 1820s and became one of the most feared attacking weapons of the Romantic era, wielded with great success by Anderssen and Morphy. Declining the gambit with 4...Bb6 emerged as a practical, low-risk answer for players unwilling to enter the fierce complications of 4...Bxb4. While it concedes White easy development and central space, it has long been regarded as one of the soundest ways to take the sting out of White's ambitious wing sacrifice."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Decline the b-pawn with 4...Bb6 to avoid the sharp accepted lines.",
+    "White gains space and easy development with a4, c3 and d4 rather than a real sacrifice.",
+    "a4 threatens a5, harassing the b6-bishop and provoking ...a6.",
+    "Black stays solid with ...d6, ...Nf6 and ...O-O, seeking timely exchanges.",
+    "Play often transposes to a favourable Giuoco Piano structure for White.",
+    "A calmer, more positional battle than the tactical 4...Bxb4."
+  ],
+  "plans": {
+    "white": [
+      "Play a4 to threaten a5 and fix the queenside with ...a6.",
+      "Prepare the central break d4 with c3 and natural development.",
+      "Aim for a favourable Giuoco Piano structure with the extra tempo b4.",
+      "Challenge the c6-knight directly with b5 when it suits.",
+      "Use the space advantage to press without any material risk."
+    ],
+    "black": [
+      "Retreat the bishop to b6, keeping it on the strong a7-g1 diagonal.",
+      "Answer a4 with ...a6 to blunt the a5 advance.",
+      "Complete development with ...d6, ...Nf6 and ...O-O.",
+      "Seek piece exchanges such as ...Nxd4 to relieve central pressure.",
+      "Stay solid and aim for comfortable equality against White's space."
+    ]
+  },
+  "related": [
+    "evans-gambit",
+    "evans-gambit-accepted",
+    "italian-game",
+    "giuoco-piano",
+    "hungarian-defense",
+    "two-knights-defense"
+  ]
+}

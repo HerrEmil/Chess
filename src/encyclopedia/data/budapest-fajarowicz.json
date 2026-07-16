@@ -1,0 +1,99 @@
+{
+  "slug": "budapest-fajarowicz",
+  "eco": "A51",
+  "name": "Budapest Gambit, Fajarowicz Variation",
+  "aka": ["Fajarowicz Variation", "Fajarowicz Gambit"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Fajarowicz Variation of the Budapest Gambit (A51) meets 3.dxe5 with 3...Ne4, chasing piece activity and dark-square play instead of an immediate pawn recovery.",
+  "intro": "The Fajarowicz Variation is a sharp, provocative branch of the Budapest Gambit, arising after 1.d4 Nf6 2.c4 e5 3.dxe5 Ne4. Where the main Budapest recaptures the pawn with 3...Ng4, the Fajarowicz leaves the e5-pawn alone and instead flings the knight to e4, betting everything on rapid piece activity, pressure on the dark squares and the annoying check ...Bb4+. Black's development can be lightning-quick, with ...Nc6, ...Bb4+ and ...Qe7 or ...d6 all arriving with tempo, and the resulting positions bristle with tactical traps for an unwary White player. The line's reputation, however, is that of a surprise weapon: against accurate, unhurried defence it is considered objectively dubious, since White can consolidate the extra pawn and blunt the activity.",
+  "line": "d4 Nf6 c4 e5 dxe5 Ne4",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "dxe5",
+      "from": 35,
+      "to": 28
+    },
+    {
+      "san": "Ne4",
+      "from": 21,
+      "to": 36
+    }
+  ],
+  "fen": "rnbqkb1r/pppp1ppp/8/4P3/2P1n3/8/PP2PPPP/RNBQKBNR w KQkq - 1 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Fajarowicz is all about initiative in return for a pawn. By planting the knight on e4 rather than recovering material, Black keeps White's pieces tied down and generates threats along the dark squares and the e-file. The check ...Bb4+ is a recurring motif, dragging a White piece to an awkward square or provoking a weakening, and ...Nc6, ...d6 or ...Qe7 pile pressure on the loose e5-pawn. If White is careless, Black regains the pawn with a superior position or lands a quick tactic.",
+        "Objectively, though, the compensation is thin. White's most reliable response is not to cling greedily to the pawn but to complete development, challenge the e4-knight and return the material at a favourable moment, emerging with a healthy structure and the better minor pieces. Because so much of Black's play depends on tricks, the variation rewards preparation on both sides: Black hopes to spring a trap, while a well-booked White player simply neutralizes the activity and keeps a lasting edge."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "White's soundest approach is quiet development. A well-regarded line is 4.Nf3 Bb4+ 5.Nbd2 Nc6 6.a3, when 6...Nxd2 7.Bxd2 Bxd2+ 8.Qxd2 leaves White with the bishop pair and a comfortable game after the pawn is eventually returned. Prophylactic options are also popular: 4.a3 simply rules out ...Bb4+ before Black can use it, while 4.Qc2 challenges the e4-knight at once, meeting 4...d5 with 5.exd6 and 4...Bf5 with further development.",
+        "A more direct attempt is 4.Nd2, offering to trade off Black's active knight; play may continue 4...Nc5, retreating to keep pieces on while still eyeing the e5-pawn and White's centre. Whichever path White chooses, the strategic message is the same: return the extra pawn if necessary, but only in exchange for development and the two bishops. Black, for his part, must generate concrete threats quickly, because a slow game favours White's sounder structure."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is named after Sammi Fajarowicz, a German master who employed and analysed 3...Ne4 in the late 1920s and early 1930s, giving the idea its enduring identity. It has always lived on the fringes of respectability: too dubious for regular top-level use, yet dangerous enough to score points as a surprise weapon at club and rapid play, where its traps catch the unprepared. Devotees prize it for exactly that practical bite, while theory continues to regard careful development and a timely return of the pawn as White's clearest route to an advantage."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Meet 3.dxe5 with 3...Ne4, prizing activity over immediate pawn recovery.",
+    "Use ...Bb4+ as a recurring tempo-gaining and provoking motif.",
+    "Pile up on the e5-pawn with ...Nc6, ...d6 and ...Qe7.",
+    "Bank on tactical traps against an unprepared White defender.",
+    "Accept that the line is objectively dubious versus precise play.",
+    "A dangerous surprise weapon best suited to faster time controls."
+  ],
+  "plans": {
+    "white": [
+      "Develop calmly with Nf3 and challenge the e4-knight.",
+      "Play a3 to rule out the annoying ...Bb4+ check.",
+      "Hit the e4-knight at once with Qc2 and answer ...d5 with exd6.",
+      "Return the extra pawn only for development and the bishop pair.",
+      "Consolidate into a sound structure and exploit the better minor pieces."
+    ],
+    "black": [
+      "Fling the knight to e4 and keep White's pieces tied down.",
+      "Check with ...Bb4+ to drag a White piece offside or force concessions.",
+      "Regain the pawn by pressuring e5 with ...Nc6 and ...Qe7.",
+      "Develop with maximum speed and set concrete tactical traps.",
+      "Open lines quickly before White consolidates the extra pawn."
+    ]
+  },
+  "related": [
+    "budapest-gambit",
+    "old-indian-defense",
+    "benko-gambit",
+    "albin-countergambit",
+    "elephant-gambit",
+    "blackmar-diemer-gambit"
+  ]
+}

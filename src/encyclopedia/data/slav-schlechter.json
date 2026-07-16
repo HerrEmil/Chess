@@ -1,0 +1,109 @@
+{
+  "slug": "slav-schlechter",
+  "eco": "D94",
+  "name": "Slav Defense, Schlechter Variation",
+  "aka": ["Schlechter Slav", "Schlechter Variation"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Schlechter Slav (D94) meets 1.d4 d5 2.c4 c6 with an early ...g6 and ...Bg7, blending Slav solidity with a flexible Grünfeld-style fianchetto.",
+  "intro": "The Schlechter Variation of the Slav Defence arises after 1.d4 d5 2.c4 c6 3.Nf3 Nf6 4.Nc3 g6, a solid hybrid in which Black combines the Slav pawn skeleton with a kingside fianchetto. Instead of developing the queen's bishop to f5 or g4 in classical Slav fashion, Black prepares ...Bg7, aiming the bishop down the long diagonal at d4 and the queenside. The little pawn on c6 lends the whole structure its resilience: it braces d5, keeps the ...dxc4 capture in reserve and can later support an ...e5 or ...b5 break. Compared with the Grünfeld, where Black concedes the centre and strikes at it, the Schlechter keeps a firm pawn on d5, trading dynamism for a sturdier, more controlled position.",
+  "line": "d4 d5 c4 c6 Nf3 Nf6 Nc3 g6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    }
+  ],
+  "fen": "rnbqkb1r/pp2pp1p/2p2np1/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The defining feature is the pawn on c6 supporting d5 while Black fianchettoes with ...g6 and ...Bg7. This gives a Grünfeld-like piece deployment but with a solid, unbroken centre rather than an exchanged one. Black's bishop pressures d4 along the long diagonal, and the c6-pawn keeps two useful ideas alive: the capture ...dxc4, gaining a tempo on White's bishop, and the freeing central break ...e5 once the pieces are ready. The result is a position that is hard to storm and rich in slow-burning strategic play.",
+        "White typically seeks the extra space that a big pawn centre confers, meeting Black's set-up with e3 or Bf4 and hoping to prove that the fianchettoed bishop bites on granite. Black, in turn, castles quickly, completes development with ...O-O and ...Bf5 or ...Bg4, and looks to the ...dxc4 and ...e5 breaks to free the game. If White overextends, the latent central counterplay and the well-placed g7-bishop reward Black's patience."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 4...g6 White has several tries. The straightforward 5.e3 Bg7 6.Be2 O-O 7.O-O keeps a compact centre and reaches a rich manoeuvring middlegame. The developing 5.Bf4 puts the bishop on an active diagonal before castling, when Black can consider ...O-O and ...dxc4 or ...Bf5. White may also grab space with 5.Qb3, adding pressure to the d5-pawn and discouraging an early ...dxc4.",
+        "A principled alternative is 5.cxd5 cxd5, when the symmetrical pawns leave a structure closely related to the Exchange Slav and Grünfeld. Play often continues 6.Bf4 Bg7 7.e3 O-O, with both sides manoeuvring around the c-file and the e4- and e5-squares. Throughout these lines Black's set-up is reliable rather than ambitious: the aim is equality and a sound, playable middlegame rather than an immediate fight for the initiative."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation bears the name of Carl Schlechter, the great Austrian master of the early twentieth century renowned for his positional finesse and rock-solid defensive technique. The hybrid of Slav and fianchetto set-ups suits that legacy: it offers Black a dependable, low-maintenance answer to the Queen's Gambit that avoids the sharpest theory of the main-line Slav and Grünfeld. Modern players value it as a flexible transpositional tool, since ...g6 systems with an early ...c6 can steer the game toward calmer, strategically clear waters."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Combine the Slav pawn on c6 with a kingside fianchetto by ...g6 and ...Bg7.",
+    "Keep a firm pawn on d5 rather than conceding the centre as in the Grünfeld.",
+    "The ...dxc4 capture gains a tempo and remains a standing resource.",
+    "Aim for the freeing ...e5 break once development is complete.",
+    "Castle quickly and complete development with ...Bf5 or ...Bg4.",
+    "A sound, positional system prizing resilience over early sharpness."
+  ],
+  "plans": {
+    "white": [
+      "Claim central space with e3 and natural piece development.",
+      "Post the queen's bishop actively with Bf4 before castling.",
+      "Pressure the d5-pawn with Qb3 to restrain ...dxc4.",
+      "Exchange on d5 with cxd5 to steer into a clear, symmetrical structure.",
+      "Use the space advantage to restrict Black's ...e5 and ...b5 breaks."
+    ],
+    "black": [
+      "Fianchetto with ...Bg7 to eye d4 and the long diagonal.",
+      "Capture ...dxc4 at the right moment to gain a tempo.",
+      "Prepare the central break ...e5 to free the position.",
+      "Develop the light-squared bishop to f5 or g4 and castle.",
+      "Expand on the queenside with ...b5 if White allows it."
+    ]
+  },
+  "related": [
+    "slav-defense",
+    "slav-exchange",
+    "slav-czech",
+    "slav-chebanenko",
+    "grunfeld-fianchetto",
+    "queens-gambit-declined"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "queens-indian-nimzowitsch",
+  "eco": "E15",
+  "name": "Queen's Indian, Nimzowitsch Variation",
+  "aka": ["Nimzowitsch Variation", "Queen's Indian 4...Ba6"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Nimzowitsch Variation of the Queen's Indian (E15) answers 4.g3 with 4...Ba6, hitting the c4-pawn at once and forcing White into an early concession.",
+  "intro": "The Nimzowitsch Variation is the modern main line of the Queen's Indian Defence, reached after 1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.g3 Ba6. Rather than the classical 4...Bb7, Black immediately swings the bishop to a6, where it strikes at the undefended c4-pawn and asks White an awkward question before the kingside fianchetto is complete. White must react: the pawn is typically shored up with b3, or the queen steps in with Qc2, Qb3 or Qa4, or the knight goes to d2, each concession subtly loosening White's grip or costing time. Having extracted that small commitment, Black usually returns the bishop to b7 or keeps it active, playing for the light squares and the freeing breaks ...c5 and ...d5. It is one of the most heavily analysed and theoretically important lines in the whole Queen's Indian.",
+  "line": "d4 Nf6 c4 e6 Nf3 b6 g3 Ba6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "b6",
+      "from": 9,
+      "to": 17
+    },
+    {
+      "san": "g3",
+      "from": 54,
+      "to": 46
+    },
+    {
+      "san": "Ba6",
+      "from": 2,
+      "to": 16
+    }
+  ],
+  "fen": "rn1qkb1r/p1pp1ppp/bp2pn2/8/2PP4/5NP1/PP2PP1P/RNBQKB1R w KQkq - 1 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The point of 4...Ba6 is to exploit the moment when White has fianchettoed with g3 but not yet played Bg2 to defend c4. By attacking the pawn at once, Black forces White to make a structural or developmental concession, pushing b3, blocking the diagonal with Nbd2, or spending a queen move, before the bishop can retreat to its long-term home on b7. In this way Black challenges White's set-up on move four rather than settling into a passive wait-and-see posture.",
+        "The strategic themes then follow familiar Queen's Indian lines: a fight for the central light squares, especially e4 and d5, and the well-timed pawn breaks ...c5 and ...d5. Depending on White's reply, Black may keep the bishop actively placed on a6 to nag at the queenside, or reroute it to b7 to bear down on the long diagonal. The concession White made to defend c4 often gives Black a comfortable, harmonious position with clear plans on both wings."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The principal reply is 5.b3, defending c4 with the pawn so that Bg2 and castling can follow; Black continues 5...Bb4+ 6.Bd2 Be7, having provoked b3 and gained useful tempi before regrouping. White may instead keep the pieces flexible with 5.Nbd2, when 5...Bb7 6.Bg2 leads to rich manoeuvring, or 5.Qc2, meeting 5...Bb7 6.Bg2 c5 7.d5 with a sharp central skirmish.",
+        "A more forcing try is 5.Qa4, pinning down the queenside and inviting 5...c5, when Black strikes at the centre and prepares to exploit the queen's exposed post. Across all of these lines the recurring debate is whether White's grip on the centre and the bishop pair outweigh the concessions squeezed out by ...Ba6. Decades of grandmaster practice have kept the assessment close to equal, which is exactly why the variation remains a staple of elite preparation."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The 4...Ba6 idea carries the name of Aron Nimzowitsch, the hypermodern pioneer whose thinking on undermining the enemy centre with pieces rather than pawns lies behind the bishop's aggressive foray. Though the move appeared in his era, it was refined and popularized much later, becoming a principal battleground of Queen's Indian theory from the 1980s onward. World Champions and elite grandmasters, Garry Kasparov prominent among them, developed its intricacies at the highest level, and it remains one of the most respected and deeply explored replies to White's g3 systems."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Answer 4.g3 with 4...Ba6 to hit the still-undefended c4-pawn.",
+    "Force White into a concession such as b3, Qc2, Qb3, Qa4 or Nbd2.",
+    "Reroute the bishop to b7 or keep it active on a6 as circumstances dictate.",
+    "Fight for the central light squares, above all e4 and d5.",
+    "Use the freeing breaks ...c5 and ...d5 to complete equalization.",
+    "One of the most theoretically important lines in the Queen's Indian."
+  ],
+  "plans": {
+    "white": [
+      "Defend c4 with 5.b3 so that Bg2 and castling can follow.",
+      "Keep pieces flexible with Nbd2, blocking the a6-f1 diagonal.",
+      "Bring the queen to c2, b3 or a4 to guard c4 and contest the centre.",
+      "Complete the fianchetto and aim to expand with a later e4.",
+      "Bank on central space and the bishop pair to outweigh the concession."
+    ],
+    "black": [
+      "Play ...Ba6 to attack c4 and force an early concession.",
+      "Check with ...Bb4+ to gain tempo before retreating the bishop.",
+      "Reposition the bishop to b7 to control e4 and the long diagonal.",
+      "Break with ...c5 and ...d5 to free the position and fight for the centre.",
+      "Exploit the loosening of White's queenside after b3 or an early queen move."
+    ]
+  },
+  "related": [
+    "queens-indian-defense",
+    "queens-indian-classical",
+    "queens-indian-petrosian",
+    "nimzo-indian-defense",
+    "bogo-indian-defense",
+    "catalan-opening"
+  ]
+}

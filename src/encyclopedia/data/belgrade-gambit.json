@@ -1,0 +1,113 @@
+{
+  "slug": "belgrade-gambit",
+  "eco": "C47",
+  "name": "Belgrade Gambit",
+  "aka": [],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Belgrade Gambit (C47) springs from the Four Knights, meeting 4.d4 exd4 with 5.Nd5, sacrificing the d-pawn for a sharp, trap-laden initiative.",
+  "intro": "The Belgrade Gambit arises from the Four Knights Game after 1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 exd4 5.Nd5, when White declines to recapture on d4 and instead plants a knight on the outpost, offering the extra pawn for a fast, aggressive initiative. The point is to unbalance a normally symmetrical opening and lure Black into tactical complications, where a single inaccurate move can prove fatal. It is sharp and thoroughly trap-laden, which has made it a favourite in club, blitz and correspondence play. With accurate defence Black can neutralise the pressure and reach at least equality, but the practical dangers are real and the resulting middlegames are anything but quiet.",
+  "line": "e4 e5 Nf3 Nc6 Nc3 Nf6 d4 exd4 Nd5",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "exd4",
+      "from": 28,
+      "to": 35
+    },
+    {
+      "san": "Nd5",
+      "from": 42,
+      "to": 27
+    }
+  ],
+  "fen": "r1bqkb1r/pppp1ppp/2n2n2/3N4/3pP3/5N2/PPP2PPP/R1BQKB1R b KQkq - 1 5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The gambit trades material for time and piece activity. By meeting 4...exd4 with 5.Nd5 rather than 5.Nxd4, White ignores the pawn on d4 and posts a knight in the heart of Black's position, threatening ideas against c7 and f6 while opening lines for rapid development. Black's task is to give the intruding pieces something to be challenged, blunt the initiative and eventually convert the extra material. If White's attack is parried, the d4-pawn and Black's sound structure become the decisive factors, so White must play energetically and keep creating problems rather than drifting."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The critical test is 5...Nxe4, grabbing a second pawn, when 6.Qe2 hits the knight and pins along the e-file; Black holds with 6...f5 7.Ng5 d3! 8.cxd3 Nd4, returning material to untangle. A calmer, fully reliable equalizer is 5...Be7, simply developing and inviting 6.Bf4 d6, when Black completes development and stays a pawn up with a solid game. Also good is 5...Nb4, challenging the d5-knight, when 6.Nxb4 Bxb4+ regains the pawn with easy play.",
+        "In every branch precise move orders matter, because White's whole idea is to profit from imprecise defence. Black should challenge or exchange the advanced knight, complete development and castle before worrying about the extra pawn. Once the pieces are untangled and the king is safe, the material and the healthy structure tell in Black's favour, and White's initiative tends to burn out."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Belgrade Gambit takes its name from the Yugoslav masters and analysts of Belgrade who developed and popularised it in the mid-twentieth century. It never became a mainstream weapon at the highest level, where Black's defensive resources are well established, but it earned a lasting following among attacking players and correspondence enthusiasts drawn to its sharp, forcing character. As a surprise weapon it retains real bite, since an opponent unfamiliar with the precise refutations can quickly stumble into one of its many traps."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Springs from the Four Knights: meet 4...exd4 with 5.Nd5 rather than recapturing.",
+    "Sacrifices the d4-pawn for rapid development and an aggressive initiative.",
+    "The knight outpost on d5 pressures c7 and f6 and unbalances a symmetrical opening.",
+    "5...Nxe4 6.Qe2 f5 7.Ng5 d3 is the critical, heavily analysed main line.",
+    "Solid equalizers include 5...Be7 and 5...Nb4, keeping a sound extra pawn.",
+    "A trap-laden surprise weapon, dangerous in blitz and correspondence play."
+  ],
+  "plans": {
+    "white": [
+      "Plant the knight on d5 and develop quickly to attack before Black consolidates.",
+      "Follow up with Bc4, O-O and pressure on f7 and the e-file.",
+      "Keep the initiative alive rather than hurrying to regain the d4-pawn.",
+      "Set practical traps and punish imprecise defence.",
+      "Aim pieces at c7, f6 and the black king while the lines stay open."
+    ],
+    "black": [
+      "Challenge or exchange the d5-knight to blunt White's initiative.",
+      "Consider the sharp 5...Nxe4, meeting 6.Qe2 f5 7.Ng5 with 7...d3.",
+      "Choose a solid path with 5...Be7 or 5...Nb4 to keep the extra pawn safely.",
+      "Complete development and castle before grabbing further material.",
+      "Convert the sound structure and material edge once the attack is parried."
+    ]
+  },
+  "related": [
+    "four-knights-game",
+    "scotch-four-knights",
+    "three-knights-game",
+    "halloween-gambit",
+    "four-knights-spanish",
+    "italian-game"
+  ]
+}

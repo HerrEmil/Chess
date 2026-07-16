@@ -1,0 +1,99 @@
+{
+  "slug": "philidor-hanham",
+  "eco": "C41",
+  "name": "Philidor Defense, Hanham Variation",
+  "aka": ["Hanham Variation"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Hanham Variation of the Philidor (C41) props up the e5-pawn with 3...Nd7, a compact but passive small-centre setup aiming for ...Ngf6 and ...Be7.",
+  "intro": "The Hanham Variation is a solid interpretation of the Philidor Defense that arises after 1.e4 e5 2.Nf3 d6 3.d4 Nd7. Instead of the older 3...exd4 or the risky 3...f5, Black bolsters the e5-pawn with the knight, intending to erect a compact little fortress with ...Ngf6, ...Be7, ...c6 and ...O-O. This restrained, somewhat passive setup keeps a small but sturdy pawn centre and avoids opening the position while Black finishes development. Because the direct move order invites some sharp attacking tries, many modern players reach the Hanham through a Pirc-like path such as 1.e4 d6 2.d4 Nf6 3.Nc3 e5, sidestepping White's most dangerous options while steering into the same solid structure.",
+  "line": "e4 e5 Nf3 d6 d4 Nd7",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nd7",
+      "from": 1,
+      "to": 11
+    }
+  ],
+  "fen": "r1bqkbnr/pppn1ppp/3p4/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Hanham is built on restraint. By defending e5 with ...Nd7 rather than capturing on d4, Black keeps a foothold in the centre and declines to hand White free space. The trade-off is passivity: the pieces sit behind their own pawns, the light-squared bishop can be hard to activate, and White enjoys more room. Black's whole plan is to complete the ...c6, ...Be7, ...Qc7 and ...O-O formation safely, after which the position is difficult to break down and Black can look for the freeing breaks ...exd4 or, in some lines, ...d5.",
+        "White's advantage in space means Black must handle the opening precisely, especially the tension on e5. If White captures with dxe5, Black is usually happy to recapture and reach a sound structure; the danger lies in the tactical tricks that appear when Black develops carelessly. Patience and accurate move order are the defining requirements for the second player."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "White's most testing plan is rapid development with 4.Bc4, eyeing f7. Here accuracy matters: the natural 4...Ngf6? walks into the classic trap 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Bxf7+! Kxf7 8.Qxd8, winning the queen. Black must therefore insert 4...c6, defending d5 and preparing ...Be7 and ...Qc7, before completing the setup with ...Ngf6 and ...O-O.",
+        "Beyond 4.Bc4, White can clarify the centre with 4.dxe5, when 4...Nxe5 5.Nxe5 dxe5 6.Qxd8+ Kxd8 leads to a level endgame, or develop quietly with 4.Nc3. In every case Black follows the same blueprint of ...c6, ...Be7, ...Ngf6 and ...O-O, and if allowed will challenge the centre with a timely ...exd4 or ...d5 to gain breathing room."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Philidor Defense honours François-André Danican Philidor, the eighteenth-century master who championed the idea that pawns are the soul of chess. The Hanham treatment is named after the American player James Moore Hanham, active in the late nineteenth century, who advocated supporting e5 with the knight on d7. Long considered too passive for ambitious players, the variation was rehabilitated in modern practice, partly thanks to the Pirc-style move orders that dodge White's sharpest lines, and it remains a dependable choice for those who value solidity over early counterattack."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Support the e5-pawn with 3...Nd7 instead of releasing the tension with ...exd4.",
+    "Aim for the compact setup ...c6, ...Be7, ...Ngf6, ...Qc7 and ...O-O.",
+    "The structure is solid but passive, conceding White more space.",
+    "Beware the trap 4.Bc4 Ngf6? 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Bxf7+ winning the queen.",
+    "Modern move orders via 1.e4 d6 sidestep White's sharpest attacking tries.",
+    "Look for the freeing breaks ...exd4 or ...d5 once development is complete."
+  ],
+  "plans": {
+    "white": [
+      "Develop actively with Bc4, targeting the f7-square.",
+      "Keep the central tension to pressure Black's cramped position.",
+      "Use the extra space to restrain the freeing ...d5 break.",
+      "Consider dxe5 to open the position when it favours development.",
+      "Castle and build a central or kingside initiative against the passive setup."
+    ],
+    "black": [
+      "Prop up e5 with ...Nd7 and refuse to cede the centre cheaply.",
+      "Insert ...c6 before ...Ngf6 to avoid the Bc4 tactics.",
+      "Complete the ...Be7, ...Qc7 and ...O-O fortress safely.",
+      "Prepare the freeing ...exd4 or ...d5 once fully developed.",
+      "Reach the setup via 1.e4 d6 move orders to dodge sharp lines."
+    ]
+  },
+  "related": [
+    "philidor-defense",
+    "pirc-defense",
+    "old-indian-defense",
+    "hungarian-defense",
+    "petrov-defense",
+    "italian-game"
+  ]
+}

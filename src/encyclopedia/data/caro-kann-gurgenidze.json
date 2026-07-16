@@ -1,0 +1,99 @@
+{
+  "slug": "caro-kann-gurgenidze",
+  "eco": "B15",
+  "name": "Caro-Kann, Gurgenidze System",
+  "aka": ["Gurgenidze System", "Gurgenidze Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Gurgenidze System (B15) meets the Caro-Kann with an early ...g6 and ...Bg7, a hypermodern dark-square setup using ...h5 and ...f6 to fight the centre.",
+  "intro": "The Gurgenidze System is a hypermodern, dark-square interpretation of the Caro-Kann, reached after 1.e4 c6 2.d4 d5 3.Nc3 g6. Rather than contest the centre with the usual 3...dxe4, Black fianchettoes with ...Bg7 and invites 4.e5, which fixes the pawn chain and hands Black a clear plan: undermine the centre with the ...h5 and ...f6 breaks while the dark-squared bishop rakes the long diagonal. The result blends the Caro-Kann's structural solidity with the flexible, provocative strategy of the Modern and Pirc. Named for the Georgian grandmaster Bukhuti Gurgenidze, who developed it as a reliable, low-theory drawing weapon, the system suits players who relish patient, strategic manoeuvring.",
+  "line": "e4 c6 d4 d5 Nc3 g6",
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    }
+  ],
+  "fen": "rnbqkbnr/pp2pp1p/2p3p1/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Gurgenidze System is founded on a dark-square strategy borrowed from the Modern and Pirc. By fianchettoing with ...g6 and ...Bg7 and inviting 4.e5, Black cedes the centre for the moment but obtains a clear, low-maintenance plan: chip away at White's pawn chain with the ...f6 and ...h5 breaks while the g7-bishop pressures the long diagonal. The typical ...h5 both restrains White's kingside expansion with g4 and prepares ...Bg4 or a later ...h4, giving Black a compact, resilient position without the memorisation the main-line Caro-Kann demands.",
+        "Play tends to be strategic and slow-burning. Black's structure is solid and hard to break down, and the thematic ...f6 break, at the right moment, challenges White's e5-spearhead and opens lines for the pieces. White, enjoying more central space, tries to keep the chain intact, complete development harmoniously and exploit the slight looseness that ...g6 and ...h5 leave around Black's king. The middlegames reward understanding of pawn-chain play and the timing of Black's central and kingside breaks over sharp forcing lines."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The critical continuation is 4.e5, when White fixes the centre and the true Gurgenidze battle begins; a typical sequence is 4...Bg7 5.f4 h5, clamping down on g4, followed by ...Bg4, ...e6 and a well-timed ...f6 to strike at the chain. White can also keep things flexible with 4.Nf3 Bg7 5.h3, or with 4.h3, developing naturally and delaying the central commitment. In each case Black follows the same blueprint of ...Bg7, ...h5 and ...f6.",
+        "Because the system is built on plans rather than forcing tactics, move orders are flexible and often transpose. Black must simply take care not to become passive: delaying the ...f6 break too long can leave White with a durable space clamp, while playing it prematurely can open the position in White's favour. Handled well, Black reaches a solid, strategically clear game; the dark-squared bishop and the resilient pawn structure provide long-term counterweights to White's central majority."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The system is named for Bukhuti Gurgenidze, the Georgian grandmaster who from the 1960s onward developed ...g6 as a dependable, sound treatment of the Caro-Kann. Seeking a solid, low-risk drawing weapon that avoided the heavy theory of the classical lines, he fused the Caro-Kann's structural soundness with the flexible dark-square strategy of the Modern Defence. Though never the most fashionable of Caro-Kann systems, it retains a loyal following among players who prize resilience, clear plans and a light theoretical burden, and it can transpose to Modern and Pirc structures."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Fianchetto with ...g6 and ...Bg7 for a dark-square strategy in the Caro-Kann.",
+    "Invite 4.e5 to fix the centre, then undermine it with ...f6 and ...h5.",
+    "...h5 restrains White's kingside expansion and prepares ...Bg4 or ...h4.",
+    "The g7-bishop and a solid structure are Black's long-term counterweights.",
+    "A low-theory, resilient system blending Caro-Kann solidity with Modern ideas.",
+    "Timing the ...f6 break correctly is the key strategic skill."
+  ],
+  "plans": {
+    "white": [
+      "Play e5 to fix the centre and claim more space.",
+      "Support the pawn chain with f4 and develop harmoniously.",
+      "Expand on the kingside and exploit the looseness around ...g6 and ...h5.",
+      "Keep the centre intact and deny Black an easy ...f6 break.",
+      "Aim to convert the central space advantage in a slow middlegame."
+    ],
+    "black": [
+      "Fianchetto with ...Bg7 and pressure the long diagonal.",
+      "Play ...h5 to restrain White's g4 and prepare ...Bg4 or ...h4.",
+      "Prepare and time the ...f6 break to challenge the e5-chain.",
+      "Keep the structure solid and avoid drifting into passivity.",
+      "Steer toward strategic middlegames that reward clear plans over theory."
+    ]
+  },
+  "related": [
+    "caro-kann-defense",
+    "caro-kann-advance",
+    "caro-kann-classical",
+    "modern-defense",
+    "pirc-defense",
+    "caro-kann-fantasy"
+  ]
+}
