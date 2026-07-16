@@ -1,0 +1,56 @@
+{
+  "slug": "discovered-attack",
+  "category": "tactic",
+  "name": "The Discovered Attack",
+  "tag": "Discovery",
+  "group": "Discovered Attacks & Checks",
+  "order": 1,
+  "summary": "One piece steps aside to unleash a second piece behind it, creating two threats at once and winning the black queen.",
+  "intro": "A discovered attack is one of the most efficient weapons in chess: a single move creates two threats. When a piece moves out of the way, a second piece lurking behind it suddenly springs to life along the newly opened line. The mover can make a threat of its own while the unmasked piece strikes elsewhere, leaving the defender unable to parry both.",
+  "boardCaption": "White plays Bc4+, moving the bishop with check while unveiling the d1-rook's fire down the d-file straight at the black queen on d8.",
+  "startFen": "3q2k1/pp4pp/8/8/8/3B4/6PP/3R2K1 w - - 0 1",
+  "line": "Bc4+ Kf8 Rxd8+",
+  "sections": [
+    {
+      "heading": "The Motif",
+      "paragraphs": [
+        "In a discovered attack, one piece unmasks the power of another that stands behind it on the same line. The moving piece and the revealed piece each carry their own threat, and the opponent gets only one move to respond. This double-barreled action is why discoveries so often win material outright.",
+        "The trick is to arrange your pieces on a shared rank, file, or diagonal with an enemy target at the far end. Move the front piece to make a threat of its own, and the back piece delivers a second blow the defender cannot also meet. When the front piece checks the king, the discovery becomes practically unstoppable."
+      ]
+    },
+    {
+      "heading": "The Line",
+      "paragraphs": [
+        "White begins with 1.Bc4+. The bishop leaves d3 with check, and in doing so it clears the d-file so the rook on d1 now bears down directly on the black queen sitting on d8. Two threats appear in a single stroke: the check against the king and the rook's attack on the queen.",
+        "Black must answer the check first, and after 1...Kf8 the king steps aside but the queen remains undefended on d8. White then plays 2.Rxd8+, capturing the queen with check. Because the discovery forced Black to deal with the bishop's check, there was never time to save the queen, and White emerges a full queen ahead."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A discovered attack creates two threats with one move.",
+    "The front piece moves aside to unveil the piece behind it.",
+    "Line up your pieces on a file or diagonal with an enemy target.",
+    "When the front piece gives check, the discovery is nearly unanswerable.",
+    "Here Bc4+ checks while the rook unmasks an attack on the queen.",
+    "Black answers the check, and Rxd8+ collects the queen."
+  ],
+  "related": ["discovered-check", "double-check", "double-attack", "fork"],
+  "moves": [
+    {
+      "san": "Bc4",
+      "from": 43,
+      "to": 34
+    },
+    {
+      "san": "Kf8",
+      "from": 6,
+      "to": 5
+    },
+    {
+      "san": "Rxd8",
+      "from": 59,
+      "to": 3
+    }
+  ],
+  "fen": "3R1k2/pp4pp/8/8/2B5/8/6PP/6K1 b - - 0 2"
+}

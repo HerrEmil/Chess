@@ -1,0 +1,58 @@
+{
+  "slug": "arabian-mate",
+  "category": "tactic",
+  "name": "The Arabian Mate",
+  "tag": "Mating Pattern",
+  "group": "Mating Patterns",
+  "order": 4,
+  "summary": "An ancient corner mate from medieval Arabic chess: a rook checks the cornered king while a knight guards the rook.",
+  "intro": "The Arabian Mate is one of the oldest checkmates on record, reaching back to shatranj, the medieval Arabic forerunner of chess. It pairs a rook and a knight against a king trapped in the corner: the rook gives check from point-blank range while the knight both guards the rook and steals an escape square. Simple, ancient, and utterly lethal.",
+  "boardCaption": "The starting position with White's rook on a7 and knight on f6; 1.Rh7# swings the rook into the corner for checkmate.",
+  "startFen": "7k/R7/pp3N2/8/8/8/2r3PP/6K1 w - - 0 1",
+  "line": "Rh7#",
+  "sections": [
+    {
+      "heading": "The corner trap",
+      "paragraphs": [
+        "The Arabian Mate works by planting a rook right next to the enemy king while a knight stands guard nearby. Positioned a knight's move away, here on f6, the knight covers g8 and h7 at the same time. Those are exactly the squares the mating rook will need, so the knight both shields the rook and takes away a flight square.",
+        "The knight's protection is the whole point of the pattern. A lone rook beside the king would simply be captured, but because the knight defends the square the rook lands on, the king cannot take it. With the corner and the neighbouring squares all controlled, the trapped king has nowhere to turn."
+      ]
+    },
+    {
+      "heading": "The finish",
+      "paragraphs": [
+        "From the diagram White plays 1.Rh7#. The rook slides across the seventh rank from a7 to h7, arriving directly in front of the king on h8 and delivering check straight up the h-file. The blow lands with nothing standing in its way.",
+        "The king is out of options. It cannot capture on h7 because the knight on f6 defends the square; g8 is covered by that same knight; and g7 falls under the rook's control along the seventh rank. No piece can interpose on so short a check, so it is checkmate."
+      ]
+    },
+    {
+      "heading": "An ancient pattern",
+      "paragraphs": [
+        "This mate predates the modern queen and bishop. In shatranj those pieces were feeble, moving only a step or two, so games were frequently decided by rooks and knights, and the knight-plus-rook corner mate became a staple of the old Arabic problem literature.",
+        "The tell-tale sign is a knight roughly a knight's-move from a cornered king with a rook or open line available. Whenever your knight already guards the square right beside the king, start looking for a rook that can swing in and deliver the final blow."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The knight on f6 guards both g8 and the h7 landing square.",
+    "1.Rh7# places the rook beside the king with check.",
+    "The king cannot capture the rook because the knight defends h7.",
+    "Both g8 and g7 are covered, leaving no escape.",
+    "Knight and rook form an ancient, lethal cornering duo.",
+    "Recognise it whenever a knight already guards a square next to the king."
+  ],
+  "related": [
+    "anastasias-mate",
+    "back-rank-mate",
+    "bodens-mate",
+    "smothered-mate"
+  ],
+  "moves": [
+    {
+      "san": "Rh7",
+      "from": 8,
+      "to": 15
+    }
+  ],
+  "fen": "7k/7R/pp3N2/8/8/8/2r3PP/6K1 b - - 1 1"
+}

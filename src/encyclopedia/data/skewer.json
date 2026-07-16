@@ -1,0 +1,64 @@
+{
+  "slug": "skewer",
+  "category": "tactic",
+  "name": "The Skewer",
+  "aka": ["The X-Ray Attack"],
+  "tag": "Fundamental Tactic",
+  "group": "Fundamental Tactics",
+  "order": 4,
+  "summary": "A rook check forces the front king aside and captures the queen standing behind it on the same file",
+  "intro": "A skewer is a pin turned back to front. A long-range piece attacks a valuable piece that is forced to move, revealing a lesser or equal piece behind it that is then captured. Where a pin freezes the front piece, a skewer forces the front piece out of the way. Only rooks, bishops, and queens can skewer, and the sharpest version uses a check.",
+  "boardCaption": "White rook swings to a1 with check; the black king on a5 must step off the a-file, exposing the queen on a8 to capture.",
+  "startFen": "q7/1pp5/8/k7/8/7K/6P1/7R w - - 0 1",
+  "line": "Ra1+ Kb5 Rxa8",
+  "sections": [
+    {
+      "heading": "What a Skewer Is",
+      "paragraphs": [
+        "A skewer, sometimes called a thrust or an x-ray attack, lines up two enemy pieces along a rank, file, or diagonal. The more valuable piece stands in front and is attacked directly. When it moves off the line to safety, the piece behind it, previously screened, is left exposed and is captured. It is the mirror image of the pin, where instead the front piece is the less valuable one.",
+        "Because only pieces that attack along lines can skewer, the knight and pawn are excluded. The most forcing skewers use a check, since a king in front has no choice but to step aside, and it cannot legally stay to shield the piece behind. That guarantees the rear piece falls, making king-and-queen alignments especially dangerous for the defender."
+      ]
+    },
+    {
+      "heading": "The Line Move by Move",
+      "paragraphs": [
+        "White plays 1.Ra1+, sliding the rook to the a-file and checking the black king on a5. The king, the more valuable piece, stands in front of the queen back on a8, so the two are skewered along the file. The check is absolute and forcing, and the king cannot remain where it is or block the attack on this open line.",
+        "Black must move the king out of check with 1...Kb5, stepping off the a-file. That clears the way to the queen, which was hiding directly behind the king. White plays 2.Rxa8, capturing the queen and winning decisive material. The whole idea depends on the king being forced to vacate the line, leaving the piece behind it defenceless."
+      ]
+    },
+    {
+      "heading": "Spotting and Avoiding Skewers",
+      "paragraphs": [
+        "Hunt for enemy pieces aligned on the same rank, file, or diagonal with the more valuable one in front, then attack the front piece with a rook, bishop, or queen, ideally with check. Open lines and exposed kings make skewers possible, so look hardest when the enemy king has little shelter and a heavy piece sits behind it.",
+        "To defend, avoid placing your king and queen on the same open line where a single check can skewer them. If you are already aligned, break the geometry before your opponent seizes the line, or keep the potential skewering file or diagonal blocked. Remember that a skewer differs from a pin only by which piece stands in front, so treat any such alignment with respect."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A skewer forces a valuable front piece to move, exposing the one behind.",
+    "It is the mirror image of a pin, with the roles reversed.",
+    "Only rooks, bishops, and queens can skewer along lines.",
+    "A skewer with check is the most forcing, since the king must step aside.",
+    "King and queen on the same open line are a classic skewer target.",
+    "Break dangerous alignments before the opponent claims the line."
+  ],
+  "related": ["pin", "double-attack", "fork", "queen-versus-pawn"],
+  "moves": [
+    {
+      "san": "Ra1",
+      "from": 63,
+      "to": 56
+    },
+    {
+      "san": "Kb5",
+      "from": 24,
+      "to": 25
+    },
+    {
+      "san": "Rxa8",
+      "from": 56,
+      "to": 0
+    }
+  ],
+  "fen": "R7/1pp5/8/1k6/8/7K/6P1/8 b - - 0 2"
+}

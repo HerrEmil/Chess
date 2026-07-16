@@ -1,0 +1,59 @@
+{
+  "slug": "pin",
+  "category": "tactic",
+  "name": "The Pin",
+  "aka": ["The Absolute Pin"],
+  "tag": "Fundamental Tactic",
+  "group": "Fundamental Tactics",
+  "order": 3,
+  "summary": "The black queen is pinned to its king and cannot recapture, so White simply takes it with the bishop",
+  "intro": "A pin is a tactic in which a piece cannot or dare not move because doing so would expose a more valuable piece behind it to attack. When the piece shielded is the king, the pinned piece is frozen by law and can be captured for free. The pin restrains, immobilises, and wins material, and it is one of the most common patterns in all of chess.",
+  "boardCaption": "White rook on e1 pins the black queen on e7 to the king on e8; the bishop from b4 captures the paralysed queen.",
+  "startFen": "4k3/4qppp/8/8/1B6/8/5PPP/4R1K1 w - - 0 1",
+  "line": "Bxe7 Kd7",
+  "sections": [
+    {
+      "heading": "What a Pin Is",
+      "paragraphs": [
+        "A pin occurs along a straight line held by a rook, bishop, or queen. The pinned piece stands between the attacker and a piece of greater value behind it. If a king is the piece behind, the pin is absolute: moving the pinned piece would be an illegal move, so it is stuck completely. When only a valuable piece stands behind, the pin is relative, and moving is legal but usually costly.",
+        "The power of an absolute pin is that the pinned piece loses its ability to defend or recapture. It sits on its square like a target painted on the board. Attackers pile pressure onto the frozen piece, often adding a second attacker, because the pinned unit cannot run and its own king cannot help it escape the line of fire."
+      ]
+    },
+    {
+      "heading": "The Line Move by Move",
+      "paragraphs": [
+        "The black queen on e7 is pinned to the king on e8 by the white rook on e1, so it cannot legally leave the e-file. Crucially, the king cannot recapture on e7 either, because the rook already covers that square through the queen. The queen is therefore both immobile and, in effect, undefended against a capture on its own square.",
+        "White exploits this with 1.Bxe7, taking the queen with a mere bishop. Black cannot answer 1...Kxe7 because stepping onto e7 would leave the king in check from the rook. Instead Black plays 1...Kd7, and the material verdict is stark: White has won a queen for a bishop. The pin did all the work, turning a defended queen into free material."
+      ]
+    },
+    {
+      "heading": "Recognising and Using Pins",
+      "paragraphs": [
+        "Look for enemy pieces lined up with their king or queen on a rank, file, or diagonal, then place a long-range piece on that line. Once a piece is pinned, attack it again with pawns or minor pieces, since it cannot flee. Absolute pins against the king are the most valuable, because the pinned piece is completely helpless and cannot even guard its own square.",
+        "When defending, unpin as soon as you can: interpose another piece, move the shielded king or queen off the line, or challenge the pinning piece. Avoid lining your king up behind a valuable piece opposite an enemy rook, bishop, or queen. If a piece of yours is pinned, do not rely on it to defend anything, because in practice it is not defending at all."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A pin freezes a piece shielding a more valuable one behind it.",
+    "An absolute pin is against the king and makes moving illegal.",
+    "A pinned piece cannot defend or recapture, so it counts as loose.",
+    "Attack a pinned piece again, since it cannot run away.",
+    "Unpin by interposing, moving the shielded piece, or trading the pinner.",
+    "Never line your king up behind a valuable piece on an open line."
+  ],
+  "related": ["skewer", "removing-the-defender", "fork", "overloading"],
+  "moves": [
+    {
+      "san": "Bxe7",
+      "from": 33,
+      "to": 12
+    },
+    {
+      "san": "Kd7",
+      "from": 4,
+      "to": 11
+    }
+  ],
+  "fen": "8/3kBppp/8/8/8/8/5PPP/4R1K1 w - - 1 2"
+}

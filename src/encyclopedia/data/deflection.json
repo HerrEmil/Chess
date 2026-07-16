@@ -1,0 +1,64 @@
+{
+  "slug": "deflection",
+  "category": "tactic",
+  "name": "Deflection",
+  "aka": ["The Overloading Sacrifice"],
+  "tag": "Combination",
+  "group": "Combinations & Sacrifices",
+  "order": 1,
+  "summary": "Deflection sacrifices a rook to drag the lone defender off the d-file, then wins the now-undefended black queen.",
+  "intro": "Deflection is the art of forcing an enemy piece to abandon a job it cannot leave. When a single unit guards a critical square, a queen, or a mating net, you strike it with a check or a threat it must answer. Once the overworked defender is dragged away, the point it protected collapses.",
+  "boardCaption": "White to move; the black rook on d8 is the sole defender of the queen on d5, and 1.Re8+ deflects it away.",
+  "startFen": "3r2k1/pp3ppp/8/3q4/8/8/Q5PP/4R1K1 w - - 0 1",
+  "line": "Re8+ Rxe8 Qxd5",
+  "sections": [
+    {
+      "heading": "The Idea",
+      "paragraphs": [
+        "A defensive piece is only as reliable as its freedom to stay put. Deflection exploits pieces that are tied to a duty, guarding a square, shielding a king, or protecting a more valuable friend. By threatening something the defender must respond to, usually with a check or an unrefusable sacrifice, you compel it to move.",
+        "The key is that the deflecting move cannot be ignored. A check leaves no choice, and a sacrifice on a vital square must be captured. The moment the defender steps aside, the piece or square it was guarding falls, and the material or mate you were after is yours."
+      ]
+    },
+    {
+      "heading": "The Line",
+      "paragraphs": [
+        "Here the black queen on d5 is defended only by the rook on d8. That rook is overworked, and White proves it. The blow is 1.Re8+, a rook sacrifice delivered with check. Because it is check, Black cannot pause to save the queen; the king is under immediate fire and the threat must be met at once.",
+        "Black is forced to reply 1...Rxe8, capturing the intruder. But in doing so the rook has left the d-file, and the queen on d5 is suddenly hanging with no protector in sight. White collects it with 2.Qxd5, emerging a whole queen for a rook. The sacrifice was never a gift; it was a summons the defender could not refuse."
+      ]
+    },
+    {
+      "heading": "How To Spot It",
+      "paragraphs": [
+        "Look for enemy pieces doing double duty, especially a lone guardian of your target. When one defender is the only thing standing between you and a decisive gain, ask what would force it to move. Checks are the loudest tool, but any threat weightier than the defender's current task can serve.",
+        "Count defenders and attackers on the square you covet. If the balance is even, a deflection that removes just one guardian tips it in your favor. Train yourself to see the overworked piece first, then find the move that yanks it off the job it is desperately trying to hold."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Deflection forces a defender to abandon the square or piece it guards.",
+    "Checks are the strongest deflecting tool because they cannot be ignored.",
+    "Look for enemy pieces tied to a single defensive duty.",
+    "Here 1.Re8+ drags the only defender off the d-file.",
+    "After 1...Rxe8 the queen on d5 falls to 2.Qxd5.",
+    "A sound sacrifice becomes a summons the defender cannot refuse."
+  ],
+  "related": ["decoy", "removing-the-defender", "overloading", "double-attack"],
+  "moves": [
+    {
+      "san": "Re8",
+      "from": 60,
+      "to": 4
+    },
+    {
+      "san": "Rxe8",
+      "from": 3,
+      "to": 4
+    },
+    {
+      "san": "Qxd5",
+      "from": 48,
+      "to": 27
+    }
+  ],
+  "fen": "4r1k1/pp3ppp/8/3Q4/8/8/6PP/6K1 b - - 0 2"
+}

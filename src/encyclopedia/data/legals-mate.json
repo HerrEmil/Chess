@@ -1,0 +1,74 @@
+{
+  "slug": "legals-mate",
+  "category": "tactic",
+  "name": "Légal's Mate",
+  "aka": ["Legall's Pseudo-Sacrifice"],
+  "tag": "Mating Pattern",
+  "group": "Mating Patterns",
+  "order": 6,
+  "summary": "A famous opening trap where a queen sacrifice lets two knights and a bishop mate the black king in the centre.",
+  "intro": "Legal's Mate is one of the most celebrated opening traps in chess, named for the Sire de Legal, a leading French player of the eighteenth century. It springs from a pinned knight: instead of respecting the pin, White moves the knight anyway, seemingly hanging the queen. If the opponent takes the bait, a bishop and two knights weave a swift mating net around the uncastled king.",
+  "boardCaption": "The starting position with Black's bishop pinning the f3-knight; the trap culminates in Nd5#, the second knight mating the king on e7.",
+  "startFen": "r2qkbnr/ppp2ppp/2np4/4p3/2B1P1b1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 2 5",
+  "line": "Nxe5 Bxd1 Bxf7+ Ke7 Nd5#",
+  "sections": [
+    {
+      "heading": "The pin and the pseudo-sacrifice",
+      "paragraphs": [
+        "The position arises after 1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.Nc3 Bg4, when Black's bishop on g4 pins White's knight on f3 to the queen on d1. Conventional wisdom says a pinned knight is frozen in place. Legal's trap exploits the fact that this pin offers only the illusion of safety.",
+        "White breaks the pin by moving the very piece that is pinned. Capturing on e5 appears to hang the queen outright, but if Black grabs it, the king is left stranded in the centre with most of its pieces still on their starting squares, exactly the conditions needed for a quick mate."
+      ]
+    },
+    {
+      "heading": "The finish",
+      "paragraphs": [
+        "White plays 1.Nxe5, offering the queen. After the greedy 1...Bxd1, White ignores the loss and strikes back with 2.Bxf7+. This forces the king to e7, because the bishop on f7 is defended by the knight on e5 and so cannot be captured by the king.",
+        "Now 3.Nd5# is checkmate. The knight on d5 checks the king on e7, and the king is trapped: its own pieces and pawns block several squares while the bishop on f7 and the two knights cover the rest. A whole queen has been given up in exchange for a perfect mating picture."
+      ]
+    },
+    {
+      "heading": "The name and the lesson",
+      "paragraphs": [
+        "The trap is named after the Sire de Legal, a leading French player of the eighteenth century and a mentor of the great Philidor. The idea has ensnared beginners for over two hundred years and remains one of the most popular teaching examples in the whole of chess.",
+        "The point is that this is a pseudo-sacrifice: Black is never obliged to accept the queen. The correct reply to 1.Nxe5 is simply 1...Nxe5, after which Black wins a clean piece. The trap is a lasting lesson in looking past the obvious capture before reaching out to grab material."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black's bishop on g4 pins the f3-knight to White's queen.",
+    "1.Nxe5 breaks the pin and appears to hang the queen.",
+    "After 1...Bxd1 White ignores the queen and plays 2.Bxf7+.",
+    "The king is forced to e7, then 3.Nd5# mates in the centre.",
+    "Two knights and a bishop trap the uncastled black king.",
+    "Black should decline with 1...Nxe5, simply winning a piece."
+  ],
+  "related": ["smothered-mate", "fork", "greek-gift-sacrifice", "double-check"],
+  "moves": [
+    {
+      "san": "Nxe5",
+      "from": 45,
+      "to": 28
+    },
+    {
+      "san": "Bxd1",
+      "from": 38,
+      "to": 59
+    },
+    {
+      "san": "Bxf7",
+      "from": 34,
+      "to": 13
+    },
+    {
+      "san": "Ke7",
+      "from": 4,
+      "to": 12
+    },
+    {
+      "san": "Nd5",
+      "from": 42,
+      "to": 27
+    }
+  ],
+  "fen": "r2q1bnr/ppp1kBpp/2np4/3NN3/4P3/8/PPPP1PPP/R1BbK2R b KQ - 2 7"
+}

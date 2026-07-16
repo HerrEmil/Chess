@@ -1,0 +1,94 @@
+{
+  "slug": "windmill",
+  "category": "tactic",
+  "name": "The Windmill",
+  "aka": ["The See-Saw"],
+  "tag": "Combination",
+  "group": "Combinations & Sacrifices",
+  "order": 4,
+  "summary": "The windmill uses repeated discovered checks from a see-sawing rook to harvest black pawns while the king stays helpless.",
+  "intro": "The windmill, or see-saw, is a devastating pattern in which a rook swings back and forth, each move arriving with check. A bishop pins the enemy king on a diagonal while the rook alternates discovered checks and direct checks, gobbling material on every swing. The king can never intervene because it is perpetually in check.",
+  "boardCaption": "White to move; the bishop on f6 rakes the long diagonal at the king on h8, and 1.Rxf7+ opens a discovered-check windmill.",
+  "startFen": "2q2r1k/pp3pRp/5B2/8/8/8/6PP/6K1 w - - 0 1",
+  "line": "Rxf7+ Kg8 Rg7+ Kh8 Rxb7+ Kg8 Rg7+ Kh8",
+  "sections": [
+    {
+      "heading": "The Idea",
+      "paragraphs": [
+        "A windmill combines a fixed attacking piece, usually a bishop, with a swinging rook. The bishop stares at the enemy king along a diagonal. When the rook steps off that diagonal it uncovers a discovered check; when it steps back onto the file beside the king it delivers a direct check. Between these two poles the rook harvests everything in reach.",
+        "The victim is powerless because every rook move is check. The king can only shuffle between two squares, unable to capture the rook or address the mounting losses. The see-saw motion, back and forth, back and forth, is where both names come from. It does not always mate, but it strips the position bare of material."
+      ]
+    },
+    {
+      "heading": "The Line",
+      "paragraphs": [
+        "White opens with 1.Rxf7+, a discovered check: the rook leaves g7, unveiling the bishop's check on h8, and grabs the f7-pawn along the way. Black must answer the check with 1...Kg8. Now 2.Rg7+ returns the rook to g7, this time a direct check down the g-file, and the king shuffles back with 2...Kh8.",
+        "The see-saw repeats: 3.Rxb7+ is another discovered check, snatching the b7-pawn as the rook slides across the seventh rank, and 3...Kg8 is forced. Then 4.Rg7+ Kh8 resets the pattern. The rook could keep swinging along the rank, collecting pawns at will. This is the mechanism behind the famous Torre-Lasker game of 1925; it wins material rather than delivering mate."
+      ]
+    },
+    {
+      "heading": "How To Spot It",
+      "paragraphs": [
+        "The trigger is a bishop already trained on the enemy king along a diagonal, with a rook positioned to step in and out of the line. Look for an exposed king boxed onto squares where each rook move renews the check. The seventh rank is prime territory, since rooks there feast on undefended pawns.",
+        "Before committing, confirm the king truly has only two squares and that no defender can block the diagonal or interpose against the rook. The beauty of the windmill is its inevitability once it starts, but that inevitability depends on the checks never lapsing. Trace the swing to the end and count the material you will collect."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A windmill pairs a pinning bishop with a rook that swings on and off the diagonal.",
+    "Every rook move delivers check, so the king can never intervene.",
+    "Discovered checks alternate with direct checks as the rook see-saws.",
+    "Here 1.Rxf7+ and 3.Rxb7+ are discovered checks that grab pawns.",
+    "The pattern can repeat along the rank, harvesting material each swing.",
+    "This windmill wins material rather than forcing checkmate."
+  ],
+  "related": [
+    "discovered-check",
+    "double-check",
+    "deflection",
+    "back-rank-mate"
+  ],
+  "moves": [
+    {
+      "san": "Rxf7",
+      "from": 14,
+      "to": 13
+    },
+    {
+      "san": "Kg8",
+      "from": 7,
+      "to": 6
+    },
+    {
+      "san": "Rg7",
+      "from": 13,
+      "to": 14
+    },
+    {
+      "san": "Kh8",
+      "from": 6,
+      "to": 7
+    },
+    {
+      "san": "Rxb7",
+      "from": 14,
+      "to": 9
+    },
+    {
+      "san": "Kg8",
+      "from": 7,
+      "to": 6
+    },
+    {
+      "san": "Rg7",
+      "from": 9,
+      "to": 14
+    },
+    {
+      "san": "Kh8",
+      "from": 6,
+      "to": 7
+    }
+  ],
+  "fen": "2q2r1k/p5Rp/5B2/8/8/8/6PP/6K1 w - - 3 5"
+}

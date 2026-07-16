@@ -1,0 +1,63 @@
+{
+  "slug": "double-attack",
+  "category": "tactic",
+  "name": "The Double Attack",
+  "tag": "Fundamental Tactic",
+  "group": "Fundamental Tactics",
+  "order": 2,
+  "summary": "One queen move both checks the king and hits a loose knight, so the check is met and the knight falls",
+  "intro": "A double attack is a single move that creates two threats at once. Since the opponent can usually meet only one threat per turn, the second one succeeds. It is the mechanism underneath nearly every tactic: forks, discovered attacks, and many combinations are all double attacks in disguise. Learning to generate two threats in one stroke is the heart of tactical chess.",
+  "boardCaption": "White queen on d1 springs to d5 with check, striking the king on g8 down the diagonal and the stranded knight on a5 along the rank.",
+  "startFen": "6k1/1pp3pp/8/n7/8/8/6PP/3Q2K1 w - - 0 1",
+  "line": "Qd5+ Kf8 Qxa5",
+  "sections": [
+    {
+      "heading": "What a Double Attack Is",
+      "paragraphs": [
+        "In a double attack, one move produces two separate threats that cannot both be answered. The defender chooses which to parry, and the attacker collects on the other. A fork is simply a double attack delivered by a single piece against two pieces, but the family is broader, covering any move that threatens two things, whether that is material, mate, or both together.",
+        "The most reliable double attacks combine a check with a threat against a loose piece. Because a check demands an immediate response, the defender has no spare tempo to save the second target. Long-range pieces excel at this: the queen in particular can radiate along a rank, file, and diagonal from one square, letting it menace two widely separated points simultaneously."
+      ]
+    },
+    {
+      "heading": "The Line Move by Move",
+      "paragraphs": [
+        "White plays 1.Qd5+, and the queen does two jobs from a single square. Along the a2-g8 diagonal it delivers check to the black king on g8, while along the fifth rank it eyes the undefended knight sitting on a5. Both threats spring to life on the very same move, and only one of them can be dealt with.",
+        "The check comes first, so Black must respond with 1...Kf8, tucking the king away. That move does nothing for the abandoned knight, which is still under fire from the queen. White scoops it up with 2.Qxa5, winning a piece. The knight's exposed post on the rim, far from any defender, is exactly what made the double attack possible."
+      ]
+    },
+    {
+      "heading": "How to Create Them",
+      "paragraphs": [
+        "Look for a single square from which one of your pieces can threaten two targets, and prize checks that also hit a loose piece. The queen is the supreme double-attacker because it combines rook and bishop lines, so centralising it often reveals two threats at once. Undefended enemy pieces, wherever they sit, are the fuel that makes these shots work.",
+        "Defensively, the antidote is to avoid leaving pieces loose, particularly when your king can be checked from a square that also sees them. Coordinate your pieces so each is guarded, and be wary of powerful enemy queen posts in the centre. Before moving, check whether your intended position allows a single enemy move to attack two of your pieces together."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A double attack is one move that makes two threats at once.",
+    "The defender can meet only one threat, so the other succeeds.",
+    "Combining a check with a threat on a loose piece is deadly.",
+    "The queen doubles best, radiating along rank, file, and diagonal.",
+    "Undefended pieces, especially on the rim, invite double attacks.",
+    "A fork is just a double attack delivered by one piece."
+  ],
+  "related": ["fork", "skewer", "discovered-attack", "deflection"],
+  "moves": [
+    {
+      "san": "Qd5",
+      "from": 59,
+      "to": 27
+    },
+    {
+      "san": "Kf8",
+      "from": 6,
+      "to": 5
+    },
+    {
+      "san": "Qxa5",
+      "from": 27,
+      "to": 24
+    }
+  ],
+  "fen": "5k2/1pp3pp/8/Q7/8/8/6PP/6K1 b - - 0 2"
+}

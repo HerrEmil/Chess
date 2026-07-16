@@ -1,0 +1,57 @@
+{
+  "slug": "back-rank-mate",
+  "category": "tactic",
+  "name": "The Back-Rank Mate",
+  "aka": ["The Corridor Mate"],
+  "tag": "Mating Pattern",
+  "group": "Mating Patterns",
+  "order": 1,
+  "summary": "Doubled rooks batter the eighth rank against a king trapped behind its own pawns, forcing checkmate on the back rank.",
+  "intro": "The back-rank mate, also called the corridor mate, punishes a castled king that has no escape square, or luft. Walled in by its own pawns, the king is confined to the back rank, where an enemy rook or queen can deliver mate along the open eighth or first line. It is one of the most common finishes in practical play and a constant hazard to watch for.",
+  "boardCaption": "White's doubled rooks on d1 and d2 target the eighth rank behind Black's king on g8, which is boxed in by its own pawns; White plays Rd8+.",
+  "startFen": "1r4k1/5ppp/8/8/8/8/3R2P1/3R2K1 w - - 0 1",
+  "line": "Rd8+ Rxd8 Rxd8#",
+  "sections": [
+    {
+      "heading": "The Motif",
+      "paragraphs": [
+        "A back-rank mate strikes a king trapped on its own first or eighth rank by the very pawns that shelter it. With no luft, the king cannot step forward to escape a check delivered along the rank. A rook or queen that reaches the back rank with support then delivers checkmate down the open corridor.",
+        "Doubled rooks are ideal for the job. The first rook forces its way onto the back rank as a sacrifice or a battering ram, and the second stands ready to recapture and renew the check. Against a king with no escape square, this heavy-piece pressure crashes through with decisive effect."
+      ]
+    },
+    {
+      "heading": "The Line",
+      "paragraphs": [
+        "White starts with 1.Rd8+, planting a rook on the eighth rank with check. The black king on g8 is fenced in by its pawns on f7, g7, and h7, so it cannot escape forward. Black's only way to answer the check is to capture the intruder with 1...Rxd8, bringing the b8-rook across to d8.",
+        "Now the second rook strikes: 2.Rxd8#. It recaptures on d8, once again checking along the eighth rank, and this time the check is fatal. The king still has no luft and no defender can interpose, so the recapture on d8 delivers checkmate straight down the back-rank corridor."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A back-rank mate hits a king trapped behind its own pawns.",
+    "Without luft, the king cannot escape a check along the rank.",
+    "Doubled rooks batter the back rank one after the other.",
+    "Here Rd8+ forces the reply Rxd8 by the defending rook.",
+    "The second rook recaptures with Rxd8# for checkmate.",
+    "Giving the king an escape square is the standard prevention."
+  ],
+  "related": ["smothered-mate", "deflection", "overloading", "arabian-mate"],
+  "moves": [
+    {
+      "san": "Rd8",
+      "from": 51,
+      "to": 3
+    },
+    {
+      "san": "Rxd8",
+      "from": 1,
+      "to": 3
+    },
+    {
+      "san": "Rxd8",
+      "from": 59,
+      "to": 3
+    }
+  ],
+  "fen": "3R2k1/5ppp/8/8/8/8/6P1/6K1 b - - 0 2"
+}

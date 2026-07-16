@@ -1,0 +1,74 @@
+{
+  "slug": "decoy",
+  "category": "tactic",
+  "name": "The Decoy",
+  "aka": ["The Lure"],
+  "tag": "Combination",
+  "group": "Combinations & Sacrifices",
+  "order": 2,
+  "summary": "A rook sacrifice lures the black queen to c8, where a knight fork on e7 wins it back with interest.",
+  "intro": "A decoy lures an enemy piece onto a square where it can be attacked, forked, or trapped. It is the mirror image of deflection: where deflection drags a defender away from its post, a decoy tempts a piece toward a fatal square. The bait is usually a sacrifice the opponent is compelled to accept.",
+  "boardCaption": "White to move; 1.Rc8+ offers the rook to lure the black queen onto c8, setting up a knight fork on e7.",
+  "startFen": "q5k1/1p3ppp/8/3N4/8/8/6PP/2R3K1 w - - 0 1",
+  "line": "Rc8+ Qxc8 Ne7+ Kh8 Nxc8",
+  "sections": [
+    {
+      "heading": "The Idea",
+      "paragraphs": [
+        "The decoy, sometimes called the lure, works by invitation rather than eviction. You place a sacrifice on a square so that capturing it drags the enemy piece exactly where you want it. Once the piece arrives, a second blow, often a fork or a check, punishes it for stepping onto the poisoned square.",
+        "The distinction from deflection is worth fixing in memory. Deflection pulls a defender AWAY from a duty; a decoy lures a piece TO a specific square. Both use forcing moves, but the decoy's aim is the destination, not the departure. The lured piece walks into the trap under its own power."
+      ]
+    },
+    {
+      "heading": "The Line",
+      "paragraphs": [
+        "White begins with 1.Rc8+, throwing the rook onto the back rank with check. The queen on a8 is the natural capturer, and after 1...Qxc8 it has been decoyed onto c8, the very square the knight on d5 covets. The rook was bait, and the queen has swallowed it whole.",
+        "Now comes 2.Ne7+, a knight fork striking the king on g8 and the freshly lured queen on c8 at the same time. Black must save the king, playing 2...Kh8, and White scoops the queen with 3.Nxc8. The tidy result is a queen won for a rook, all because the queen was tempted onto the forking square."
+      ]
+    },
+    {
+      "heading": "How To Spot It",
+      "paragraphs": [
+        "Hunt for enemy pieces that could be forked, skewered, or trapped if only they stood one square over. Then ask what would force them there. A check or a hanging piece on the target square is the classic invitation, since the opponent often has no choice but to accept the offering.",
+        "Knights are the great collaborators in decoy combinations because their forks land on squares other pieces cannot defend. Whenever your knight is a move away from a royal fork, look for a sacrifice that plants the enemy queen or rook onto the vulnerable square. The lure and the fork work as one motion."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A decoy lures an enemy piece onto a square where it can be punished.",
+    "Deflection drags a piece away; a decoy tempts it toward a square.",
+    "The sacrifice 1.Rc8+ forces 1...Qxc8, planting the queen on c8.",
+    "The knight fork 2.Ne7+ hits the king and the lured queen.",
+    "After 2...Kh8 White wins the queen with 3.Nxc8.",
+    "Knights excel at decoys because their forks reach undefendable squares."
+  ],
+  "related": ["deflection", "fork", "greek-gift-sacrifice", "double-check"],
+  "moves": [
+    {
+      "san": "Rc8",
+      "from": 58,
+      "to": 2
+    },
+    {
+      "san": "Qxc8",
+      "from": 0,
+      "to": 2
+    },
+    {
+      "san": "Ne7",
+      "from": 27,
+      "to": 12
+    },
+    {
+      "san": "Kh8",
+      "from": 6,
+      "to": 7
+    },
+    {
+      "san": "Nxc8",
+      "from": 12,
+      "to": 2
+    }
+  ],
+  "fen": "2N4k/1p3ppp/8/8/8/8/6PP/6K1 b - - 0 3"
+}

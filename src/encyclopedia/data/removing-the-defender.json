@@ -1,0 +1,64 @@
+{
+  "slug": "removing-the-defender",
+  "category": "tactic",
+  "name": "Removing the Defender",
+  "aka": ["Removing the Guard"],
+  "tag": "Fundamental Tactic",
+  "group": "Fundamental Tactics",
+  "order": 5,
+  "summary": "Capturing the knight that guards the bishop leaves it undefended, so White wins it with the rook",
+  "intro": "Removing the defender is the tactic of eliminating the piece that guards a target, so the target can then be captured for free. Also called removing the guard, it turns a protected piece into a loose one by dealing with its protector first. Whenever an enemy piece is defended exactly once, ask how you might remove, trade, or drive away that single defender.",
+  "boardCaption": "The black bishop on d4 is guarded only by the knight on c6; White takes that knight with check, then wins the loose bishop.",
+  "startFen": "4k3/1p3ppp/2n5/1B6/3b4/8/P4PPP/3R2K1 w - - 0 1",
+  "line": "Bxc6+ bxc6 Rxd4",
+  "sections": [
+    {
+      "heading": "What Removing the Defender Is",
+      "paragraphs": [
+        "A defended piece is only as safe as its defender. Remove that defender, and the piece it was guarding becomes free to take. The defender can be eliminated by capturing it, exchanged off with a trade, chased away by attack, or deflected to another duty. Each method leaves the original target hanging, and the tactic is most reliable when the target has exactly one defender.",
+        "This idea underlies many combinations, because much of a defensive structure rests on single guards. Before calculating captures on a protected piece, count its defenders and identify each one. If only a single piece holds the target together, that defender becomes your real objective. Deal with it, and the rest of the position often collapses in your favour."
+      ]
+    },
+    {
+      "heading": "The Line Move by Move",
+      "paragraphs": [
+        "Look first at the black bishop on d4: it is attacked by White's rook on d1 but defended by the knight on c6. As long as the knight guards it, capturing the bishop would just be an even trade. White's plan is to strip away that lone defender before touching the bishop itself, and there is a forcing way to do exactly that.",
+        "White plays 1.Bxc6+, capturing the guarding knight with check so Black has no time for anything else. After the forced 1...bxc6, the knight is gone and the bishop on d4 stands undefended. White finishes with 2.Rxd4, winning a clean piece. The check was the key detail, denying Black any zwischenzug and ensuring the defender was removed on White's terms."
+      ]
+    },
+    {
+      "heading": "How to Apply It",
+      "paragraphs": [
+        "When you eye a defended enemy piece, count its guards. If there is only one, treat that defender as the target and look for a way to capture it, trade it off, or force it to move. A capture with check is ideal, because it removes the guard while denying the opponent a chance to reorganise or counterattack in between.",
+        "On defence, avoid resting the safety of an important piece on a single, vulnerable guard. Give key pieces more than one defender where you can, and beware of guards that can be taken with check or attacked for free. Whenever an opponent captures or trades near your position, recheck what each remaining piece is still defending before you assume it is safe."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A defended piece is only as safe as its defender.",
+    "Remove, trade, or chase away the guard, then take the target.",
+    "The tactic is most reliable when the target has exactly one defender.",
+    "Capturing the defender with check denies the opponent time to react.",
+    "Always count how many pieces defend a target before calculating.",
+    "Give important pieces more than one guard to blunt this tactic."
+  ],
+  "related": ["deflection", "overloading", "pin", "decoy"],
+  "moves": [
+    {
+      "san": "Bxc6",
+      "from": 25,
+      "to": 18
+    },
+    {
+      "san": "bxc6",
+      "from": 9,
+      "to": 18
+    },
+    {
+      "san": "Rxd4",
+      "from": 59,
+      "to": 35
+    }
+  ],
+  "fen": "4k3/5ppp/2p5/8/3R4/8/P4PPP/6K1 b - - 0 2"
+}

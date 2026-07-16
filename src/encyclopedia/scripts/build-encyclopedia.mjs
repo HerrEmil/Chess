@@ -209,25 +209,45 @@ const breadcrumbJsonLd = (crumbs) =>
     })),
   });
 
-// Openings and endgames share one template; a handful of fields switch on
-// entry.category. Endgames have no ECO code (a `tag` names the family instead),
-// their headline diagram is the *starting* named position rather than the
-// position after the line, and their prose cross-links other endgames.
-const CAT_LABEL = { opening: 'Openings', endgame: 'Endgames' };
+// Openings, endgames and tactics share one template; a handful of fields switch
+// on entry.category. Only openings carry an ECO code and show the position
+// *after* the line; endgames and tactics instead show a named `startFen`, badge
+// their `tag`, and cross-link within their own category.
+const CAT = {
+  opening: {
+    label: 'Openings',
+    titleSuffix: 'Chess Openings',
+    relatedNoun: 'openings',
+    encyc: 'Openings',
+  },
+  endgame: {
+    label: 'Endgames',
+    titleSuffix: 'Chess Endgames',
+    relatedNoun: 'endgames',
+    encyc: 'Endgame',
+  },
+  tactic: {
+    label: 'Tactics',
+    titleSuffix: 'Chess Tactics',
+    relatedNoun: 'tactics',
+    encyc: 'Tactics',
+  },
+};
 
 const renderPage = (entry, nameBySlug) => {
   const { startFen, fen } = assertFresh(entry);
-  const isEndgame = entry.category === 'endgame';
-  const catLabel = CAT_LABEL[entry.category] ?? 'Openings';
+  const cat = CAT[entry.category] ?? CAT.opening;
+  const isOpening = cat === CAT.opening;
+  const catLabel = cat.label;
   const canonical = `${SITE}encyclopedia/${entry.slug}.html`;
-  const title = isEndgame
-    ? `${entry.name} – Chess Endgames`
-    : `${entry.name} (${entry.eco}) – Chess Openings`;
-  const badge = isEndgame ? entry.tag : `ECO ${entry.eco}`;
-  const diagramFen = isEndgame ? startFen : fen;
-  const caption = isEndgame
-    ? entry.boardCaption
-    : `${entry.name}: position after ${plainMoveLine(entry)}.`;
+  const title = isOpening
+    ? `${entry.name} (${entry.eco}) – Chess Openings`
+    : `${entry.name} – ${cat.titleSuffix}`;
+  const badge = isOpening ? `ECO ${entry.eco}` : entry.tag;
+  const diagramFen = isOpening ? fen : startFen;
+  const caption = isOpening
+    ? `${entry.name}: position after ${plainMoveLine(entry)}.`
+    : entry.boardCaption;
 
   const sections = (entry.sections ?? [])
     .map((s) => `<h2>${esc(s.heading)}</h2>${paragraphs(s.paragraphs)}`)
@@ -245,7 +265,7 @@ const renderPage = (entry, nameBySlug) => {
     : '';
 
   const related = entry.related?.length
-    ? `<h2>Related ${isEndgame ? 'endgames' : 'openings'}</h2><ul class="related">` +
+    ? `<h2>Related ${cat.relatedNoun}</h2><ul class="related">` +
       entry.related
         .filter((slug) => nameBySlug.has(slug))
         .map(
@@ -282,7 +302,7 @@ ${plans}
 ${related}
 </main>
 <footer>
-<p>Part of the <a href="index.html">Chess ${isEndgame ? 'Endgame' : 'Openings'} Encyclopedia</a> · <a href="../">play the game</a>. Positions are verified move-by-move against the game&#39;s own engine.</p>
+<p>Part of the <a href="index.html">Chess ${cat.encyc} Encyclopedia</a> · <a href="../">play the game</a>. Positions are verified move-by-move against the game&#39;s own engine.</p>
 </footer>
 <script type="application/ld+json">${jsonld}</script>
 </body>
@@ -332,27 +352,40 @@ const HUB_CATEGORIES = [
       'Endgame Concepts',
     ],
   },
+  {
+    key: 'tactic',
+    label: 'Tactics',
+    groups: [
+      'Fundamental Tactics',
+      'Combinations & Sacrifices',
+      'Discovered Attacks & Checks',
+      'Mating Patterns',
+    ],
+  },
 ];
 
 const hubItem = (e) =>
-  e.category === 'endgame'
+  (e.category ?? 'opening') !== 'opening'
     ? `<li><a href="${e.slug}.html"><span class="nm">${esc(e.name)}</span></a></li>`
     : `<li><a href="${e.slug}.html"><span class="ec">${esc(e.eco)}</span> ` +
       `<span class="nm">${esc(e.name)}</span></a></li>`;
 
 const hubSort = (a, b) =>
-  a.category === 'endgame'
+  (a.category ?? 'opening') !== 'opening'
     ? (a.order ?? 0) - (b.order ?? 0) || a.name.localeCompare(b.name)
     : a.eco.localeCompare(b.eco);
 
 const renderHub = (entries) => {
   const canonical = HUB_URL;
-  const title = 'Chess Encyclopedia – Openings & Endgames';
+  const title = 'Chess Encyclopedia – Openings, Endgames & Tactics';
   const description =
-    'A growing, SEO-friendly chess encyclopedia: opening theory by ECO code plus essential endgames — checkmates, pawn, rook, queen and minor-piece play — every position verified against a real chess engine.';
+    'A growing, SEO-friendly chess encyclopedia: opening theory by ECO code, essential endgames, and the tactical motifs — forks, pins, skewers, sacrifices and mating patterns — every position verified against a real chess engine.';
 
-  const nOpenings = entries.filter((e) => e.category !== 'endgame').length;
+  const nOpenings = entries.filter(
+    (e) => (e.category ?? 'opening') === 'opening',
+  ).length;
   const nEndgames = entries.filter((e) => e.category === 'endgame').length;
+  const nTactics = entries.filter((e) => e.category === 'tactic').length;
 
   const blocks = [];
   for (const cat of HUB_CATEGORIES) {
@@ -382,11 +415,11 @@ const renderHub = (entries) => {
 <div class="bar"><nav><a href="../">Chess</a><span>›</span>Encyclopedia</nav></div>
 <main>
 <h1>Chess Encyclopedia</h1>
-<p class="lede">A growing reference for the royal game: the great openings by ECO code and the essential endgames every player must know. Each page gives the key moves, the ideas for both sides, and a board diagram — and every move is replayed through this site&#39;s own chess engine, so the theory you see is provably legal.</p>
+<p class="lede">A growing reference for the royal game: the great openings by ECO code, the essential endgames every player must know, and the tactical motifs that decide games. Each page gives the key moves, the ideas behind them, and a board diagram — and every move is replayed through this site&#39;s own chess engine, so the theory you see is provably legal.</p>
 ${blocks.join('')}
 </main>
 <footer>
-<p>${nOpenings} openings and ${nEndgames} endgames and counting · <a href="../">Play chess</a>. This encyclopedia grows over time.</p>
+<p>${nOpenings} openings, ${nEndgames} endgames and ${nTactics} tactics and counting · <a href="../">Play chess</a>. This encyclopedia grows over time.</p>
 </footer>
 <script type="application/ld+json">${jsonld}</script>
 </body>

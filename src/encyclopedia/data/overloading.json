@@ -1,0 +1,64 @@
+{
+  "slug": "overloading",
+  "category": "tactic",
+  "name": "Overloading",
+  "aka": ["The Overworked Piece"],
+  "tag": "Fundamental Tactic",
+  "group": "Fundamental Tactics",
+  "order": 6,
+  "summary": "The black queen guards both a rook and a bishop; forcing it to recapture one abandons the other, which White wins",
+  "intro": "Overloading is the tactic of exploiting a piece that has too many defensive jobs. When one piece is the sole guardian of two important points, it can be forced to fail one of them. By attacking one of its charges, you make the overworked piece choose, and whatever it abandons falls. Spotting pieces burdened with more than one duty is a core tactical skill.",
+  "boardCaption": "The black queen on d7 alone defends both the rook on d8 and the bishop on b5; White trades off the rook to pull the queen away.",
+  "startFen": "R2r2k1/p2q1ppp/8/1b6/8/8/6PP/1R4K1 w - - 0 1",
+  "line": "Rxd8+ Qxd8 Rxb5",
+  "sections": [
+    {
+      "heading": "What Overloading Is",
+      "paragraphs": [
+        "An overloaded, or overworked, piece is one saddled with two or more defensive tasks at the same time. Such a piece cannot be in two places at once. If you challenge one of its responsibilities, it must respond there and thereby desert the other. The abandoned target is then yours. The tactic is really a matter of counting duties and finding a defender that is stretched too thin.",
+        "Overloading is closely related to deflection and removing the defender, but its signature is the single piece doing double duty. The queen, being valuable and mobile, is often pressed into guarding several points and so is a frequent victim. To find the tactic, look for one enemy piece that is the only protector of two separate units, then strike at one of them."
+      ]
+    },
+    {
+      "heading": "The Line Move by Move",
+      "paragraphs": [
+        "Here the black queen on d7 is overworked: it is the only defender of both the rook on d8 and the bishop on b5. If it could relax either duty it would be fine, but a forcing sequence exposes the strain. White targets the rook first, knowing the queen cannot both recapture there and continue to shield the bishop across the board.",
+        "White plays 1.Rxd8+, capturing the rook with check and compelling 1...Qxd8, since the queen must recapture to answer the check and save face on the d-file. But in stepping to d8, the queen has deserted the bishop on b5, which is now completely undefended. White collects it with 2.Rxb5, emerging a clean piece ahead thanks to the overworked queen."
+      ]
+    },
+    {
+      "heading": "How to Spot It",
+      "paragraphs": [
+        "Scan for an enemy piece that is the lone defender of two different targets, especially a busy queen or an active rook. Then ask what happens if you attack, capture, or trade one of the pieces it guards. If answering there forces it to release the other, you have found an overload. Checks and captures that demand an immediate reply make the tactic especially forcing.",
+        "Defensively, be alert whenever one of your pieces is quietly holding two things together. Share the defensive load across several pieces so no single unit is indispensable in two places. When calculating, imagine your opponent striking at each of an overworked piece's charges in turn, and make sure it can actually cover everything you are asking of it."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "An overloaded piece has too many defensive duties to fulfil at once.",
+    "Attack one of its charges to force it to abandon the other.",
+    "Queens and active rooks are the most common overworked pieces.",
+    "Forcing moves like checks and captures make the overload decisive.",
+    "Find pieces that are the sole defender of two separate targets.",
+    "Share defensive duties so no single piece is stretched too thin."
+  ],
+  "related": ["removing-the-defender", "deflection", "decoy", "double-attack"],
+  "moves": [
+    {
+      "san": "Rxd8",
+      "from": 0,
+      "to": 3
+    },
+    {
+      "san": "Qxd8",
+      "from": 11,
+      "to": 3
+    },
+    {
+      "san": "Rxb5",
+      "from": 57,
+      "to": 25
+    }
+  ],
+  "fen": "3q2k1/p4ppp/8/1R6/8/8/6PP/6K1 b - - 0 2"
+}
