@@ -1,0 +1,119 @@
+{
+  "slug": "petrov-classical",
+  "eco": "C42",
+  "name": "Petrov Defense: Classical Attack",
+  "aka": ["Russian Defense: Classical Attack"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Petrov Classical Attack (1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Nxe4 5.d4 d5) is a solid, symmetrical main line favoured by elite players.",
+  "intro": "The Classical Attack is the principal main line of the Petrov Defense, arising after 1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Nxe4 5.d4 d5. Instead of striving for the initiative, Black meets White's symmetry with symmetry, planting a well-supported knight on e4 and mirroring the central pawn structure. The resulting positions are famously solid and difficult to crack, which has made the Petrov one of the most trusted drawing weapons at the highest level. Elite adherents such as Vladimir Kramnik, Anatoly Karpov, and Fabiano Caruana have relied on it to neutralize 1.e4, steering the game toward calm, well-understood middlegames where deep preparation and technique matter more than early fireworks.",
+  "line": "e4 e5 Nf3 Nf6 Nxe5 d6 Nf3 Nxe4 d4 d5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "By recapturing on e4 and then supporting the knight with 5...d5, Black establishes a firm central foothold and a symmetrical pawn structure that is very hard to undermine. The knight on e4 is a key strategic asset, and much of Black's play revolves around keeping it secure or exchanging it on favourable terms. Piece development is natural and harmonious: the bishop goes to d6 or e7, the king castles short, and the light-squared bishop finds active diagonals once the position opens.",
+        "White, for his part, seeks to exploit a slight lead in development and the tempo gained by the standard c4 break, which challenges Black's d5-pawn and questions the support of the e4-knight. The struggle is typically positional and manoeuvring in nature, with both sides angling for small structural or piece-activity advantages. Because the pawn skeleton is symmetrical and the lines are well analyzed, the theory rewards precise handling and a sound grasp of the resulting endgames."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 5.d4 d5 the principal continuation is 6.Bd3, developing toward the e4-knight, when Black replies 6...Bd6, 7.O-O O-O, and 8.c4 strikes at the centre. A major branch involves ...Nc6 developing with pressure on d4, while White may exchange on d5 or maintain the tension to keep the knight on e4 under scrutiny. These lines have been examined in great depth, and precise move orders determine whether White can extract any lasting pull from the symmetrical structure.",
+        "Players seeking to avoid the mainstream can deviate earlier, for example with 5.Nc3 inviting exchanges, or with quieter setups against the Petrov altogether. Within the Classical Attack itself, the recurring themes are White's c4 break and piece pressure against e4, met by Black's solid development and timely simplification. The overall verdict is that Black equalizes comfortably with accurate play, which is precisely why the variation enjoys such a strong reputation."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Petrov Defense is named after the nineteenth-century Russian master Alexander Petrov, and for this reason it is also widely called the Russian Defense. Long viewed as a symbol of solidity, it rose to prominence at the elite level in the late twentieth and early twenty-first centuries as top players sought reliable ways to defuse 1.e4. Its symmetrical, low-risk character made it a favourite match weapon, and figures such as Karpov, Kramnik, and Caruana have contributed important theoretical ideas. The Classical Attack remains the central battleground of the opening and a benchmark for defensive soundness."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black mirrors White's play with 3...d6, 4...Nxe4, and 5...d5.",
+    "The well-supported knight on e4 is Black's central strategic asset.",
+    "The symmetrical pawn structure is solid and very hard to break down.",
+    "White's main idea is the c4 break to challenge d5 and the e4-knight.",
+    "A trusted drawing weapon used by Kramnik, Karpov, and Caruana.",
+    "Play is positional and manoeuvring rather than sharply tactical."
+  ],
+  "plans": {
+    "white": [
+      "Develop with Bd3 to pressure the black knight on e4.",
+      "Play the thematic c4 break to challenge d5 and undermine the knight.",
+      "Exploit the small lead in development and the extra tempo.",
+      "Aim for piece activity and minor structural pulls in the endgame.",
+      "Keep pieces on to pose Black practical problems rather than trade off."
+    ],
+    "black": [
+      "Support the e4-knight with ...d5 and maintain the central foothold.",
+      "Develop naturally with ...Bd6 or ...Be7 and castle short.",
+      "Meet the c4 break with sound piece play and timely exchanges.",
+      "Activate the light-squared bishop once the position opens.",
+      "Lean on the symmetrical structure to simplify toward equality."
+    ]
+  },
+  "related": [
+    "petrov-defense",
+    "petrov-modern-attack",
+    "cochrane-gambit",
+    "philidor-defense",
+    "italian-game",
+    "ruy-lopez"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nxe5",
+      "from": 45,
+      "to": 28
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "Nf3",
+      "from": 28,
+      "to": 45
+    },
+    {
+      "san": "Nxe4",
+      "from": 21,
+      "to": 36
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 19,
+      "to": 27
+    }
+  ],
+  "fen": "rnbqkb1r/ppp2ppp/8/3p4/3Pn3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 6"
+}

@@ -1,0 +1,151 @@
+{
+  "slug": "kings-indian-bayonet",
+  "eco": "E97",
+  "name": "King's Indian Defense: Bayonet Attack",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Bayonet Attack answers the Classical King's Indian with 9.b4, racing White's queenside expansion against Black's kingside pawn storm.",
+  "intro": "The Bayonet Attack arises after 1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.Nf3 O-O 6.Be2 e5 7.O-O Nc6 8.d5 Ne7 9.b4, one of the most respected anti-King's-Indian weapons at the highest level. Reaching the classic Mar del Plata tabiya, White declines slow maneuvering and thrusts the b-pawn forward at once, signalling an immediate queenside offensive. The plan is direct: expand with b4-c5, prise open the c-file, and generate pressure against Black's backward d6-pawn and queenside. Black, meanwhile, launches the thematic King's Indian counterattack on the opposite wing with ...Ne8, ...f5, ...f4 and a rolling kingside pawn storm. The result is a razor-sharp race in which both sides attack toward opposite castled positions.",
+  "line": "d4 Nf6 c4 g6 Nc3 Bg7 e4 d6 Nf3 O-O Be2 e5 O-O Nc6 d5 Ne7 b4",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Bayonet crystallises the essential King's Indian bargain: White attacks on the queenside, Black on the kingside, and whoever arrives first usually wins. By committing to 9.b4, White gains space and a clear plan of b4-c5, a4-a5 and pressure down the half-open c-file, aiming to break through before Black's counterplay matures. Black accepts a cramped but resilient position and heads for the other flank, closing the centre with ...f5-f4 and then throwing forward the g- and h-pawns. Precise timing is everything, since a single tempo lost in this mutual assault can prove decisive."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 9.b4 Black's principal tries are 9...Nh5, preparing ...f5 while eyeing the f4-square, and 9...a5, immediately challenging White's advancing queenside pawns. A major alternative is 9...Ne8, the classical route to ...f5, when play often continues with c5 for White and ...f4, ...g5, ...Ng6 and ...Rf6 for Black. White typically follows up with Nd3, Ba3 or Re1 to prise open lines, while Black reroutes pieces toward the enemy king. Theory here is deep and forcing, and many lines have been analysed far into the middlegame."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Bayonet Attack takes its name from the aggressive lunge of the b-pawn, likened to a bayonet thrust into Black's position. Although 9.b4 had been known for decades, it rose to prominence in the 1990s and early 2000s, when leading players sought antidotes to the fashionable King's Indian. Vladimir Kramnik was among its most influential champions, employing 9.b4 with great success and adding heavily to its theory. His results helped establish the Bayonet as a principled, deeply analysed way for White to meet the King's Indian on its own combative terms."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The Bayonet is 9.b4 in the Classical Mar del Plata main line, reached after 8.d5 Ne7.",
+    "White expands with b4-c5 and plays down the half-open c-file.",
+    "Black counterattacks on the kingside with ...Ne8, ...f5, ...f4 and ...g5.",
+    "The struggle is a race between attacks on opposite wings.",
+    "Main replies include 9...Nh5, 9...a5 and 9...Ne8.",
+    "Kramnik's advocacy made it a leading anti-King's-Indian weapon."
+  ],
+  "plans": {
+    "white": [
+      "Advance b4-c5 to open the c-file and pressure the d6-pawn.",
+      "Support the queenside push with a4-a5 and pieces like Ba3 and Nd3.",
+      "Break through on the queenside before Black's kingside storm lands.",
+      "Trade off Black's key defenders when the chance arises.",
+      "Keep the centre closed on White's terms to channel play to the wings."
+    ],
+    "black": [
+      "Play ...Ne8 or ...Nh5 to prepare the freeing ...f5 advance.",
+      "Roll the kingside pawns with ...f4, ...g5 and ...h5 toward White's king.",
+      "Reroute pieces such as ...Ng6 and ...Rf6-g6 into the attack.",
+      "Meet b4 with ...a5 to create counterplay against the queenside pawns.",
+      "Win the race by generating mating threats faster than White's break."
+    ]
+  },
+  "related": [
+    "kings-indian-mar-del-plata",
+    "kings-indian-classical",
+    "kings-indian-defense",
+    "kings-indian-petrosian",
+    "kings-indian-samisch"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Bg7",
+      "from": 5,
+      "to": 14
+    },
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "san": "Be2",
+      "from": 61,
+      "to": 52
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "d5",
+      "from": 35,
+      "to": 27
+    },
+    {
+      "san": "Ne7",
+      "from": 18,
+      "to": 12
+    },
+    {
+      "san": "b4",
+      "from": 49,
+      "to": 33
+    }
+  ],
+  "fen": "r1bq1rk1/ppp1npbp/3p1np1/3Pp3/1PP1P3/2N2N2/P3BPPP/R1BQ1RK1 b - b3 0 9"
+}

@@ -1,0 +1,138 @@
+{
+  "slug": "sicilian-dragon-classical",
+  "eco": "B73",
+  "name": "Sicilian Dragon: Classical Variation",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Classical Dragon (6.Be2 Bg7 7.O-O O-O) is the positional Sicilian Dragon where both sides castle short instead of entering the sharp Yugoslav Attack.",
+  "intro": "The Classical Variation is the positional treatment of the Sicilian Dragon, arising after 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 g6 6.Be2 Bg7 7.O-O O-O. Instead of the ferocious 6.Be3 Yugoslav Attack, in which White castles queenside and storms Black's king, here White develops the bishop to e2 and castles short. With both kings safely on the same wing, the sharp opposite-side pawn races disappear, and the game becomes a slower struggle for the center and the queenside. White relies on moves like Nb3, f4, Bf3, and Be3, while Black leans on the powerful fianchettoed g7-bishop, the half-open c-file, and ...a6 and ...b5 expansion. It is a far less forcing but strategically rich alternative to the main-line Dragon battles.",
+  "line": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 g6 Be2 Bg7 O-O O-O",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Classical Dragon is defined by mutual short castling, which removes the mutual-attack character of the Yugoslav lines. Because White is not throwing pawns at Black's king, the struggle is positional: White seeks to exploit a small central and kingside space edge, reroute the d4-knight to b3, and use the e2-bishop actively via f3 or the d1-h5 diagonal. The maneuver Be3 and Bf3 supports e4 and prepares f4, giving White a harmonious, flexible setup without committing to a direct attack.",
+        "Black's play flows from the fianchettoed g7-bishop, which rakes the long diagonal toward White's queenside and center. Typical plans include ...Nc6 or ...Nbd7, ...a6 and ...b5 to gain queenside space, and pressure down the half-open c-file with ...Rc8 and ...Qa5 or ...Qb6. Because White's king is not under direct assault, Black plays for a gradual queenside initiative and piece activity rather than a headlong attack, often aiming to provoke weaknesses and occupy the d4- and c4-squares."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "From the tabiya after 7...O-O, a principal continuation is 8.Nb3, clearing d4 and eyeing a4 or Be3, after which White develops with Be3, f4 or the calmer f3, and Bf3 to reinforce the center. Black responds with ...Be6, ...a5 or ...a6, and ...Nc6 or ...Nbd7, contesting the queenside and the long diagonal. Another common setup keeps things solid with an early Be3 and Qd2 but no pawn storm, maintaining a firm grip while Black organizes ...Rc8 and queenside expansion.",
+        "Compared with the Yugoslav Attack, these lines are markedly less theoretical, since neither side is calculating a forced mating race. Move orders are flexible, and both players are guided by structure and piece activity rather than memorized sacrifices. This makes the Classical Variation a practical choice for players who enjoy the Dragon's bishop and pawn structure but prefer to avoid the immense, ever-shifting theory of the opposite-side castling main lines."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Classical Variation is among the oldest ways of handling the Dragon, predating the razor-sharp Yugoslav Attack that later came to dominate the opening's theory. In the early and mid-twentieth century, kingside development with Be2 and O-O was a natural and respected approach, and many classical masters employed it to reach rich, maneuvering middlegames. Although the Yugoslav Attack eventually became the critical test of the Dragon, the Classical remains a sound, well-regarded system, appealing to players who want the Dragon's characteristic structures without the extreme theoretical demands and mutual king-hunts of the opposite-side castling lines."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White meets the Dragon with 6.Be2 and short castling, not 6.Be3.",
+    "Both kings castle kingside, eliminating opposite-side pawn storms.",
+    "The game is positional, centered on the center and the queenside.",
+    "White reroutes with Nb3 and builds with Be3, Bf3, and f4.",
+    "Black exploits the g7-bishop, the c-file, and ...a6 and ...b5 expansion.",
+    "Much less forcing and theoretical than the Yugoslav Attack."
+  ],
+  "plans": {
+    "white": [
+      "Castle kingside and develop harmoniously with Nb3, Be3, and Bf3.",
+      "Support e4 and prepare f4 to gain central and kingside space.",
+      "Neutralize the g7-bishop's pressure on the long diagonal.",
+      "Restrain Black's ...b5 with a4 when queenside expansion looms.",
+      "Play for a small, safe positional edge rather than a mating attack."
+    ],
+    "black": [
+      "Activate the g7-bishop's pressure along the a1-h8 diagonal.",
+      "Expand on the queenside with ...a6 and ...b5 to gain space.",
+      "Pressure the half-open c-file with ...Rc8 and the queen.",
+      "Maneuver knights toward the c4, d4, or e5 outposts for activity.",
+      "Seek a gradual queenside initiative instead of a direct king attack."
+    ]
+  },
+  "related": [
+    "sicilian-dragon",
+    "sicilian-yugoslav-attack",
+    "accelerated-dragon",
+    "sicilian-hyperaccelerated-dragon",
+    "sicilian-classical"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "Be2",
+      "from": 61,
+      "to": 52
+    },
+    {
+      "san": "Bg7",
+      "from": 5,
+      "to": 14
+    },
+    {
+      "san": "O-O",
+      "from": 60,
+      "to": 62
+    },
+    {
+      "san": "O-O",
+      "from": 4,
+      "to": 6
+    }
+  ],
+  "fen": "rnbq1rk1/pp2ppbp/3p1np1/8/3NP3/2N5/PPP1BPPP/R1BQ1RK1 w - - 4 8"
+}

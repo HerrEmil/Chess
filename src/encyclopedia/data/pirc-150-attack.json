@@ -1,0 +1,123 @@
+{
+  "slug": "pirc-150-attack",
+  "eco": "B07",
+  "name": "Pirc Defense: 150 Attack",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The 150 Attack (1.e4 d6 2.d4 Nf6 3.Nc3 g6 4.Be3, Qd2 and f3) is a direct anti-Pirc plan of long castling and a kingside pawn storm.",
+  "intro": "The 150 Attack is a straightforward and aggressive way to meet the Pirc Defense, reached after 1.e4 d6 2.d4 Nf6 3.Nc3 g6 4.Be3 Bg7 5.Qd2 c6 6.f3. White adopts a simple, easily memorized formation of Be3, Qd2 and f3, intending to castle queenside and roll the h- and g-pawns forward against Black's fianchettoed king. A central plan is Bh6 to trade off the powerful g7-bishop, after which the kingside attack gains real teeth. Because it substitutes clear attacking ideas for heavy theory, the system is especially popular at club level, and its very name reflects that accessibility.",
+  "line": "e4 d6 d4 Nf6 Nc3 g6 Be3 Bg7 Qd2 c6 f3",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The 150 Attack is fundamentally a race between White's kingside pawn storm and Black's counterplay in the center and on the queenside. White plants a pawn on f3 to support e4 and prepare g4, develops the dark-squared bishop to e3, and lines up the queen on d2 both to connect with the bishop and to prepare the maneuver Bh6. Exchanging the fianchettoed bishop on g7 is a key strategic goal, since it strips away the main defender of Black's king and opens the dark squares for an assault with h4-h5 and g4.",
+        "Black, meanwhile, must generate activity before White's attack lands. The modest ...c6 preparing ...b5 and ...Qa5 or ...Nbd7 aims at queenside counterplay, while the central breaks ...e5 and ...c5 are the classical Pirc antidotes to a big pawn center. If Black reacts too slowly, White's pawns and pieces can crash through on the h-file; if Black strikes in the center at the right moment, White's committal setup can rebound. The result is a sharp, mutually risky middlegame with opposite-side castling as its backbone."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 4.Be3 Bg7 5.Qd2, Black most often continues with the flexible 5...c6, preparing ...b5 and keeping options open, when White plays 6.f3 and prepares to castle long. A thematic sequence is then Bh6, exchanging bishops, followed by h4-h5 to pry open the h-file. Black counters with ...b5, ...Qa5 and ...Nbd7, or seeks central relief with a timely ...e5 or ...c5.",
+        "The same Be3-Qd2-f3 formation is a versatile anti-fianchetto weapon and is regularly employed against the Modern Defense move order 1.e4 g6, often transposing directly into 150 Attack positions. Move-order subtleties matter: Black can insert an early ...a6 or delay ...Nf6, and White must decide when to commit to Bh6 and the pawn storm. Despite these nuances, the underlying plan of opposite-side castling and a direct attack remains constant."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Pirc Defense, in which Black cedes the center early and fianchettoes with ...g6 and ...Bg7, is named after the Slovenian grandmaster Vasja Pirc, who helped bring it into serious tournament practice in the mid-twentieth century. The 150 Attack takes its unusual name from the old English BCF grading system, in which a rating of 150 corresponds to roughly 1800 Elo: the implication was that the setup was so clear and effective that any reasonably strong club player could handle it. Straightforward yet genuinely dangerous, it grew in popularity through the 1990s and remains a well-respected try for the initiative against the Pirc and Modern."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Set up the simple Be3, Qd2 and f3 formation against the Pirc.",
+    "Prepare queenside castling and a kingside pawn storm with h4-h5 and g4.",
+    "Play Bh6 to trade Black's key defensive g7-bishop.",
+    "Support e4 with f3 so the g- and h-pawns can advance freely.",
+    "The system doubles as an anti-Modern weapon and often transposes.",
+    "The name comes from the BCF 150 grade, about 1800 Elo."
+  ],
+  "plans": {
+    "white": [
+      "Castle queenside and launch the h- and g-pawns at Black's king.",
+      "Exchange dark-squared bishops with Bh6 to weaken the fianchetto.",
+      "Keep the center firm with f3 while the kingside pawns advance.",
+      "Open the h-file with h4-h5 and seek a direct mating attack.",
+      "Meet Black's ...b5 counterplay with a race to attack first."
+    ],
+    "black": [
+      "Generate queenside counterplay with ...c6, ...b5 and ...Qa5.",
+      "Strike the center at the right moment with ...e5 or ...c5.",
+      "Avoid or delay the trade of the strong g7-bishop where possible.",
+      "Develop with ...Nbd7 and coordinate pieces before White attacks.",
+      "Race White's pawn storm by opening lines toward the white king."
+    ]
+  },
+  "related": [
+    "pirc-defense",
+    "pirc-classical",
+    "pirc-austrian-attack",
+    "modern-defense",
+    "kings-indian-defense"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "Be3",
+      "from": 58,
+      "to": 44
+    },
+    {
+      "san": "Bg7",
+      "from": 5,
+      "to": 14
+    },
+    {
+      "san": "Qd2",
+      "from": 59,
+      "to": 51
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    },
+    {
+      "san": "f3",
+      "from": 53,
+      "to": 45
+    }
+  ],
+  "fen": "rnbqk2r/pp2ppbp/2pp1np1/8/3PP3/2N1BP2/PPPQ2PP/R3KBNR b KQkq - 0 6"
+}

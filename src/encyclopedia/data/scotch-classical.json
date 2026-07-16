@@ -1,0 +1,119 @@
+{
+  "slug": "scotch-classical",
+  "eco": "C45",
+  "name": "Scotch Game: Classical Variation",
+  "aka": ["Scotch Game: Bardeleben Variation"],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Scotch Classical (1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Bc5 5.Be3 Qf6) develops the bishop with tempo and pressures the d4-knight.",
+  "intro": "The Classical Variation is Black's most natural reply to the Scotch Game, arising after 1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Bc5. By developing the bishop to c5 with gain of tempo against the knight on d4, Black immediately contests the centre and prepares rapid, harmonious development. White's principled answer is 5.Be3, defending the knight and challenging the bishop, when 5...Qf6 continues to bear down on d4 and prepares to complete Black's setup. Sound and less forcing than the modern main line 4...Nf6, the Classical leads to rich middlegames in which Black seeks active piece play while White angles for the bishop pair or a favourable structure from the Nxc6 exchange.",
+  "line": "e4 e5 Nf3 Nc6 d4 exd4 Nxd4 Bc5 Be3 Qf6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The central tension in the Classical Scotch revolves around the strongly posted knight on d4. Black's 4...Bc5 and 5...Qf6 pile pressure on it, hoping either to win the bishop pair after a later exchange or to provoke concessions in White's structure. Black develops quickly and often castles queenside, generating active play with the pieces rather than committing to a fixed pawn plan. The early queen sortie to f6 is well justified here because it supports the pressure on d4 without exposing the queen to easy harassment.",
+        "White typically resolves the tension by capturing on c6, doubling Black's pawns while gaining time or the two bishops, and then developing behind a solid pawn front with c3 and Nd2. The middlegames feature a familiar imbalance: White's superior structure and bishop pair against Black's active pieces and open lines. Understanding when to exchange on d4 or c6, and how to handle the resulting pawn formations, is the key strategic skill in this variation."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 5.Be3 Qf6 the main line continues 6.c3, buttressing d4 and preparing to meet ...Nge7 with careful development, when a typical sequence runs 6...Nge7 7.Bc4 with mutual castling and manoeuvring to follow. White frequently exchanges on c6 at an opportune moment, saddling Black with doubled pawns in return for structural targets, while Black relies on piece activity and pressure down the half-open files. Precise handling of the d4-square and the timing of exchanges shape the character of the ensuing struggle.",
+        "An important alternative for White is 5.Nb3, sidestepping the pressure on d4 by retreating the knight and questioning the c5-bishop, which can transpose to independent positions. Within the 5.Be3 Qf6 main line, the recurring themes are White's c3 support point, the Bc4 development, and the well-timed Nxc6 exchange, all met by Black's swift mobilization and active queen. The variation is regarded as sound and fully playable for both sides."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Scotch Game dates to the early nineteenth century and takes its name from a celebrated correspondence match between Edinburgh and London. The Classical 4...Bc5 is among its oldest and most respected replies, long a staple of principled open-game play before the modern 4...Nf6 lines rose to prominence. The variation is sometimes associated with Curt von Bardeleben, reflecting its classical pedigree. The Scotch as a whole enjoyed a notable revival when Garry Kasparov employed it at the elite level in the 1990s, and the Classical Variation endures as a reliable, developing choice for players who favour clear piece play over sharp theoretical duels."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black develops 4...Bc5 with tempo against the knight on d4.",
+    "The follow-up 5...Qf6 keeps up the pressure on the d4-square.",
+    "A sound, less forcing alternative to the modern main line 4...Nf6.",
+    "White supports d4 with c3 and often exchanges with Nxc6.",
+    "The Nxc6 trade concedes structure but gains the bishop pair or tempo.",
+    "Black seeks rapid development and active piece play, often castling queenside."
+  ],
+  "plans": {
+    "white": [
+      "Defend the d4-knight with Be3 and reinforce the square with c3.",
+      "Exchange on c6 to inflict doubled pawns and gain the bishop pair.",
+      "Develop the light-squared bishop to c4 and castle into safety.",
+      "Retreat with Nb3 to avoid the pressure and question the c5-bishop.",
+      "Exploit the superior pawn structure in the resulting middlegame."
+    ],
+    "black": [
+      "Pressure the d4-knight with the ...Bc5 and ...Qf6 battery.",
+      "Complete development quickly with ...Nge7 and prepare to castle.",
+      "Consider queenside castling to generate active piece play.",
+      "Aim to win the bishop pair by provoking an exchange on d4.",
+      "Use the open lines and active queen to offset any structural weaknesses."
+    ]
+  },
+  "related": [
+    "scotch-game",
+    "scotch-mieses",
+    "scotch-gambit",
+    "goring-gambit",
+    "italian-game",
+    "ponziani-opening"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "exd4",
+      "from": 28,
+      "to": 35
+    },
+    {
+      "san": "Nxd4",
+      "from": 45,
+      "to": 35
+    },
+    {
+      "san": "Bc5",
+      "from": 5,
+      "to": 26
+    },
+    {
+      "san": "Be3",
+      "from": 58,
+      "to": 44
+    },
+    {
+      "san": "Qf6",
+      "from": 3,
+      "to": 21
+    }
+  ],
+  "fen": "r1b1k1nr/pppp1ppp/2n2q2/2b5/3NP3/4B3/PPP2PPP/RN1QKB1R w KQkq - 3 6"
+}

@@ -1,0 +1,99 @@
+{
+  "slug": "kings-gambit-bishops-gambit",
+  "eco": "C33",
+  "name": "King's Gambit: Bishop's Gambit",
+  "aka": [],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Bishop's Gambit (1.e4 e5 2.f4 exf4 3.Bc4) develops the bishop before Nf3 and welcomes 3...Qh4+ 4.Kf1, trading castling for fast development.",
+  "intro": "The Bishop's Gambit is a Romantic-era branch of the King's Gambit Accepted that arises after 1.e4 e5 2.f4 exf4 3.Bc4. Instead of the usual 3.Nf3, White develops the light-squared bishop straight to c4, eyeing the sensitive f7-square and deliberately inviting the check 3...Qh4+. After 4.Kf1 White gives up the right to castle but gains time, because the knight will soon come to f3 harassing the exposed queen. The result is a razor-sharp, open struggle in which rapid piece play and attacking chances are offered in return for the sacrificed f-pawn and the misplaced king.",
+  "line": "e4 e5 f4 exf4 Bc4 Qh4+",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Bishop's Gambit is built on a simple trade: White forfeits castling rights with 4.Kf1 but obtains fast development and open lines. The bishop on c4 bears down on f7, the f-file is half-open for the rook once the king steps aside, and Nf3 will come with tempo against the black queen on h4. White is happy to invest the f-pawn for this activity and initiative.",
+        "For Black, the extra pawn and the provoked king move are the compensation. The queen sortie to h4 looks aggressive but can become a target, so Black must develop quickly, castle if possible, and try to blunt White's attack before the missing pawn on f4 is regained. Careful handling of the g5 and f4 pawn chain, together with timely returns of material, often steers the game toward a safer structural edge."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The characteristic line runs 3...Qh4+ 4.Kf1, after which Black usually continues developing with moves like ...d6, ...g5, ...Nc6, or ...Bc5, aiming to hold the extra f4-pawn and keep the queen active. White answers with Nf3 to gain a tempo on the queen, then Nc3, d4, and often g3 to challenge the pawn on f4 and open lines toward the black king and the f7-square.",
+        "Black is not obliged to check on h4. Solid alternatives such as 3...Nf6, hitting e4, or 3...d5, striking in the center, avoid the committal queen move and lead to less forcing play. These lines transpose into calmer King's Gambit structures, whereas 3...Qh4+ remains the most testing and thematic try, keeping the game in the sharp, attacking spirit for which the Bishop's Gambit is known."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Bishop's Gambit belongs to the great age of Romantic chess, when the King's Gambit dominated open-game practice and sacrificial attack was prized above material. Its willingness to give up castling in exchange for rapid development typified nineteenth-century play, and the line features in the games and analysis of the era's leading masters. Like the King's Gambit as a whole, it later fell out of top-level fashion as defensive technique improved, but it endures as an instructive, combative choice that continues to appeal to attacking players and to reward accurate calculation from both sides."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Develop the bishop to c4 before Nf3, eyeing the f7-square.",
+    "White welcomes 3...Qh4+ 4.Kf1, trading castling for development.",
+    "Nf3 will later hit the queen on h4 with gain of tempo.",
+    "The sacrificed f-pawn buys open lines and attacking initiative.",
+    "Black can avoid the check with solid tries like 3...Nf6 or 3...d5.",
+    "A sharp, Romantic-era line rewarding precise, active play."
+  ],
+  "plans": {
+    "white": [
+      "Play Nf3 to harass the black queen and gain a tempo.",
+      "Exploit the bishop on c4 and the half-open f-file against f7.",
+      "Support and open lines with d4, Nc3, and a timely g3 against f4.",
+      "Activate the king's rook once the king is settled on f1.",
+      "Keep the initiative rolling to justify the sacrificed pawn."
+    ],
+    "black": [
+      "Hold the extra f4-pawn while completing development quickly.",
+      "Avoid leaving the h4-queen exposed to Nf3 and g3 tempi.",
+      "Consider quieter tries like 3...Nf6 or 3...d5 to sidestep the check.",
+      "Return material when needed to defuse White's attack.",
+      "Aim to reach a safer structure with a lasting extra pawn."
+    ]
+  },
+  "related": [
+    "kings-gambit",
+    "king-gambit-accepted",
+    "kieseritzky-gambit",
+    "muzio-gambit",
+    "kings-gambit-declined",
+    "falkbeer-countergambit"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "f4",
+      "from": 53,
+      "to": 37
+    },
+    {
+      "san": "exf4",
+      "from": 28,
+      "to": 37
+    },
+    {
+      "san": "Bc4",
+      "from": 61,
+      "to": 34
+    },
+    {
+      "san": "Qh4",
+      "from": 3,
+      "to": 39
+    }
+  ],
+  "fen": "rnb1kbnr/pppp1ppp/8/8/2B1Pp1q/8/PPPP2PP/RNBQK1NR w KQkq - 2 4"
+}

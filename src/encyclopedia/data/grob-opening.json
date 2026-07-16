@@ -1,0 +1,88 @@
+{
+  "slug": "grob-opening",
+  "eco": "A00",
+  "name": "Grob Opening",
+  "aka": ["Grob Attack", "Spike"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Grob Opening (1.g4) fianchettoes the g2-bishop against d5 but weakens White's kingside; after 1...d5 2.Bg2 c6 Black stays solid.",
+  "intro": "The Grob Opening begins with the startling 1.g4, an extreme flank thrust that immediately prepares to fianchetto the bishop to g2 against the d5-square and the long h1-a8 diagonal. The gain in kingside space comes at a heavy price, since the move badly loosens White's own king position. After the principled 1...d5 Black grabs the center, and 2.Bg2 c6 defends the pawn solidly, leaving Black comfortably placed. Objectively dubious and rarely seen at the top level, it is a provocative surprise weapon most closely associated with the Swiss master Henri Grob.",
+  "line": "g4 d5 Bg2 c6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Grob's guiding idea is to fianchetto the bishop to g2, where it bears down on d5 and the long h1-a8 diagonal, challenging Black's center from the flank rather than the middle. The advanced g-pawn also seizes kingside space and can support a later g5 advance to gain time against Black's pieces. In sharper gambit lines White may even offer the g-pawn outright, hoping to accelerate development and open attacking avenues toward the opposing position.",
+        "The obvious drawback is that 1.g4 seriously weakens White's own kingside, loosening the f3- and h3-squares and making short castling precarious. Objectively the move is considered dubious, and accurate play by Black should secure a pleasant game. White therefore relies less on theory than on surprise, aiming to draw the opponent into unfamiliar, tactical positions where a single careless move can quickly prove costly."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The critical reply is 1...d5, occupying the center and blunting the g2-bishop's diagonal. After 2.Bg2 Black defends the pawn solidly with 2...c6, when the d5-point is secure and Black stands well. The sharper 2...Bxg4 accepts the pawn and enters the Grob Gambit, where White seeks activity with c4 or h3 against Black's extended kingside. Both approaches leave Black with a healthy game if the follow-up is handled precisely.",
+        "Black has other sensible options as well. The natural 1...e5 answers the flank thrust with a central pawn of its own, while 1...d5 followed by ...e6 or ...Bf5 develops soundly and keeps the extra kingside space under observation. White, for his part, frequently supports g4 with h3 or expands with c4, trying to justify the opening's unusual first move through concrete, unbalanced play."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The opening takes its name from the Swiss master Henri Grob (1904-1974), an International Master and prolific correspondence player who championed 1.g4 and analyzed it at length, contesting countless games with it by post. Because of the pawn's aggressive lunge, the move is also nicknamed the Spike. Despite its dubious reputation, the Grob has retained a devoted cult following among club players and surprise-weapon enthusiasts, and it still surfaces in blitz and online play, where its shock value and tactical traps can catch an unprepared opponent off guard."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Open with 1.g4 to fianchetto the bishop and pressure d5.",
+    "The g2-bishop targets the long h1-a8 diagonal and Black's center.",
+    "1.g4 badly weakens White's own kingside and king safety.",
+    "The line is objectively dubious but rich in surprise value.",
+    "After 1...d5 2.Bg2 c6 Black defends the center and stands well.",
+    "Henri Grob's analysis and games gave the opening its name."
+  ],
+  "plans": {
+    "white": [
+      "Fianchetto the bishop to g2 to pressure d5 and the long diagonal.",
+      "Gain kingside space and prepare a possible g5 advance.",
+      "Offer the g-pawn in gambit lines to speed development.",
+      "Lure Black into unfamiliar, tactical positions.",
+      "Support the g4-pawn with h3 when Black targets it."
+    ],
+    "black": [
+      "Seize the center with 1...d5 to blunt the g2-bishop.",
+      "Defend d5 solidly with ...c6 for a comfortable game.",
+      "Consider grabbing the g4-pawn with ...Bxg4 in sharp lines.",
+      "Exploit White's weakened kingside and king safety.",
+      "Develop soundly and convert the structural edge."
+    ]
+  },
+  "related": [
+    "birds-opening",
+    "nimzo-larsen-attack",
+    "polish-opening",
+    "reti-opening",
+    "english-opening"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "g4",
+      "from": 54,
+      "to": 38
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Bg2",
+      "from": 61,
+      "to": 54
+    },
+    {
+      "san": "c6",
+      "from": 10,
+      "to": 18
+    }
+  ],
+  "fen": "rnbqkbnr/pp2pppp/2p5/3p4/6P1/8/PPPPPPBP/RNBQK1NR w KQkq - 0 3"
+}

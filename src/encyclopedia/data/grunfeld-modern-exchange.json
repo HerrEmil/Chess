@@ -1,0 +1,138 @@
+{
+  "slug": "grunfeld-modern-exchange",
+  "eco": "D85",
+  "name": "Grünfeld Defense: Modern Exchange",
+  "aka": [],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Modern Exchange Grünfeld (4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3 Bg7 7.Nf3 c5) develops the knight to f3, meeting Black's ...c5 pressure on d4.",
+  "intro": "The Modern Exchange is the leading contemporary interpretation of the Grünfeld Exchange, reached after 1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3 Bg7 7.Nf3. Instead of the classical developing move 7.Bc4, White brings the knight to f3 first, keeping the bishop's future flexible and preparing a rapid, harmonious build-up. As in every Grünfeld, White erects a broad pawn centre on c3, d4 and e4, while Black hits back immediately with 7...c5, striking at d4 and unleashing the fianchettoed bishop on the long diagonal. The resulting positions are richly strategic, balancing White's central mass against Black's dynamic piece pressure, and the line has been a fixture of elite practice for decades.",
+  "line": "d4 Nf6 c4 g6 Nc3 d5 cxd5 Nxd5 e4 Nxc3 bxc3 Bg7 Nf3 c5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Modern Exchange crystallizes the central conflict at the heart of the Grünfeld. White accepts a mobile but potentially overextended pawn centre and hopes to consolidate it into a lasting space advantage, using the pawns on d4 and e4 to cramp Black and support a kingside initiative. Developing with 7.Nf3 rather than 7.Bc4 keeps the light-squared bishop uncommitted, allowing setups with Be2 or Bb5+ and quick castling before deciding on the bishop's best post.",
+        "Black's counterplay is thematic and immediate: the fianchettoed bishop on g7 and the thrust ...c5 combine to pressure d4, and moves like ...Bg4, ...Nc6, ...Qa5 and ...cxd4 aim to provoke concessions or win the central pawns. If Black succeeds in liquidating or blockading White's centre, the two bishops and superior pawn structure often tell in the endgame. The struggle is a classic clash of static centre versus dynamic piece play."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 7.Nf3 c5, the tabiya is typically reached following 8.Be2 (or 8.Bb5+ and 8.Rb1), 8...Nc6 9.d5, when White gains space by advancing the pawn and Black chases activity with ...Bxc3+ or a quick queenside break. A major alternative keeps tension with 8.Rb1, sidestepping the ...Qa5 pin and preparing to develop smoothly. The 8.Be3 lines lead to sharp play where Black often meets the centre with ...Qa5 and ...cxd4.",
+        "Black's most reliable equalizing schemes involve rapid pressure on d4 with ...Nc6, ...Bg4 and ...cxd4, forcing White to prove the value of the pawn centre. If White overextends with an early d5, Black obtains excellent piece activity; if White plays too cautiously, the ...cxd4 break dissolves the centre and highlights Black's structural soundness. Precise move orders are essential, since a single tempo can determine who dictates the central tension."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Grünfeld Defense was introduced into top-level play by the Austrian grandmaster Ernst Grünfeld in the early 1920s, embodying the hypermodern idea of conceding the centre only to attack it with pieces. The Exchange Variation with 4.cxd5 became White's principal test, and over time the flexible 7.Nf3 move order supplanted the older 7.Bc4 as the modern main line. It gained enormous prestige through the practice of world-class players, with Garry Kasparov among its most influential exponents on both sides, and it remains a central battleground of contemporary opening theory."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Reached via the Exchange 4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3, then the modern 7.Nf3.",
+    "7.Nf3 keeps the light-squared bishop flexible, unlike the classical 7.Bc4.",
+    "Black strikes immediately at the d4-pawn with ...c5 and the g7-bishop.",
+    "White seeks to consolidate the broad c3-d4-e4 centre into lasting space.",
+    "Thematic breaks ...cxd4, ...Bg4 and ...Nc6 fuel Black's piece counterplay.",
+    "A defining clash of White's static centre against Black's dynamic activity."
+  ],
+  "plans": {
+    "white": [
+      "Consolidate the d4-e4 centre and convert it into a durable space edge.",
+      "Develop flexibly with Be2, castle quickly, and choose the bishop's post later.",
+      "Advance d4-d5 at the right moment to gain space and blunt the g7-bishop.",
+      "Use Rb1 to dodge the ...Qa5 pin and support the c3-pawn.",
+      "Aim for a kingside initiative once the centre is secured."
+    ],
+    "black": [
+      "Pressure d4 immediately with ...c5, ...Nc6 and the fianchettoed bishop.",
+      "Provoke concessions with ...Bg4, ...Qa5 and the ...cxd4 break.",
+      "Liquidate or blockade White's centre to reach a favorable endgame.",
+      "Exploit White's queenside pawn weaknesses on c3 and c4 in simplified play.",
+      "Punish any overextension of the centre with active piece play."
+    ]
+  },
+  "related": [
+    "grunfeld-exchange",
+    "grunfeld-defense",
+    "grunfeld-russian-system",
+    "grunfeld-fianchetto",
+    "neo-grunfeld"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "g6",
+      "from": 14,
+      "to": 22
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "cxd5",
+      "from": 34,
+      "to": 27
+    },
+    {
+      "san": "Nxd5",
+      "from": 21,
+      "to": 27
+    },
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "Nxc3",
+      "from": 27,
+      "to": 42
+    },
+    {
+      "san": "bxc3",
+      "from": 49,
+      "to": 42
+    },
+    {
+      "san": "Bg7",
+      "from": 5,
+      "to": 14
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    }
+  ],
+  "fen": "rnbqk2r/pp2ppbp/6p1/2p5/3PP3/2P2N2/P4PPP/R1BQKB1R w KQkq c6 0 8"
+}

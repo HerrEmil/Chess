@@ -1,0 +1,118 @@
+{
+  "slug": "french-fort-knox",
+  "eco": "C10",
+  "name": "French Defense: Fort Knox Variation",
+  "aka": [],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Fort Knox (1.e4 e6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Bd7 5.Nf3 Bc6) is a rock-solid Rubinstein French that trades off Black's problem bishop.",
+  "intro": "The Fort Knox Variation arises after 1.e4 e6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Bd7, a refinement of the Rubinstein French in which Black prepares the immediate 5...Bc6. The point is to solve the perennial French headache of the passive light-squared bishop, offering it for exchange on the a8-h1 diagonal or against White's centralized knight. In return for a small concession of space, Black obtains an exceptionally durable, nearly weakness-free structure that is difficult to crack. The nickname captures the setup's fortress-like solidity, and it has earned a reputation as one of the safest and lowest-risk answers to 1.e4.",
+  "line": "e4 e6 d4 d5 Nc3 dxe4 Nxe4 Bd7 Nf3 Bc6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Fort Knox is built on a single strategic theme: neutralizing Black's traditionally bad bishop before it can become a long-term liability. In many French structures the light-squared bishop is hemmed in behind its own pawns on e6 and d5, but here Black plays ...Bd7 and ...Bc6 to trade it for an active piece or White's knight. Once that exchange is achieved, Black is left with a compact, solid pawn skeleton and no obvious targets, happy to develop calmly and absorb any pressure.",
+        "The trade-off is space and a slight lack of dynamism. White typically enjoys freer development and a modest central and kingside space edge, and must probe patiently to make anything of it. Black, for his part, accepts a passive but resilient game, completing development with ...Nd7, ...Ngf6, ...Be7 and castling, then looking for simplifications and the occasional freeing break with ...c5. The resulting middlegames reward accurate defense and often steer toward drawish, maneuvering positions."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 4...Bd7 5.Nf3 Bc6, play usually continues with White completing development and Black exchanging on e4 or f3 at an opportune moment. A common continuation is 6.Bd3 Nd7 7.O-O Ngf6, when Black may capture the e4-knight to relieve any pressure and reach the characteristic solid structure. White can also try 6.Ng3 or 6.Nxc6+ hoping the resulting pawn on c6 will restrict Black slightly, though the doubling is not easy to exploit.",
+        "The Fort Knox can be reached through several move orders, since the Rubinstein capture 3...dxe4 is available against both 3.Nc3 and the Tarrasch move 3.Nd2. Whichever knight recaptures, Black's plan of ...Bd7-c6 remains the unifying idea. White's most testing tries involve keeping pieces on the board and using the extra space to squeeze, but Black's structure is so sound that clear-cut winning attempts are rare."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The Rubinstein Variation of the French, in which Black surrenders the center with 3...dxe4, is named after Akiba Rubinstein, one of the great positional players of the early twentieth century, who helped establish it as a respectable solid line. The Fort Knox interpretation, with its early ...Bd7 and ...Bc6, is a more modern refinement aimed specifically at exchanging the light-squared bishop. Its combination of simplicity and durability has made it a favorite practical weapon for players who value safety and easy-to-remember plans over sharp theoretical duels, and it remains a dependable drawing tool at every level."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Meet 3.Nc3 (or 3.Nd2) with the Rubinstein capture 3...dxe4.",
+    "Follow up with ...Bd7 and ...Bc6 to trade the bad French bishop.",
+    "Accept slightly less space for a rock-solid, weakness-free structure.",
+    "Complete development with ...Nd7, ...Ngf6, ...Be7 and short castling.",
+    "Aim for simplification and the freeing break ...c5 when convenient.",
+    "A low-risk, low-maintenance system prized as a reliable drawing weapon."
+  ],
+  "plans": {
+    "white": [
+      "Develop naturally with Bd3, O-O and c-file or central pressure.",
+      "Use the space advantage to restrict Black and probe patiently.",
+      "Consider Nxc6+ to saddle Black with a slightly passive pawn on c6.",
+      "Keep pieces on the board to avoid mass simplification into a draw.",
+      "Prepare central or kingside expansion to exploit greater freedom."
+    ],
+    "black": [
+      "Play ...Bd7 and ...Bc6 to exchange the problem light-squared bishop.",
+      "Build the solid setup with ...Nd7, ...Ngf6, ...Be7 and ...O-O.",
+      "Trade on e4 or f3 to relieve any pressure and stay compact.",
+      "Look for the freeing break ...c5 to challenge White's center.",
+      "Head for simplified, drawish positions with no structural weaknesses."
+    ]
+  },
+  "related": [
+    "french-rubinstein",
+    "french-defense",
+    "french-classical",
+    "french-winawer",
+    "caro-kann-classical"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "d5",
+      "from": 11,
+      "to": 27
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "dxe4",
+      "from": 27,
+      "to": 36
+    },
+    {
+      "san": "Nxe4",
+      "from": 42,
+      "to": 36
+    },
+    {
+      "san": "Bd7",
+      "from": 2,
+      "to": 11
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Bc6",
+      "from": 11,
+      "to": 18
+    }
+  ],
+  "fen": "rn1qkbnr/ppp2ppp/2b1p3/8/3PN3/5N2/PPP2PPP/R1BQKB1R w KQkq - 3 6"
+}

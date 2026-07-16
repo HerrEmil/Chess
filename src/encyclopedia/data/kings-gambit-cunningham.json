@@ -1,0 +1,98 @@
+{
+  "slug": "kings-gambit-cunningham",
+  "eco": "C35",
+  "name": "King's Gambit: Cunningham Defense",
+  "aka": [],
+  "category": "opening",
+  "group": "Open Games (1.e4 e5)",
+  "summary": "The Cunningham Defense (1.e4 e5 2.f4 exf4 3.Nf3 Be7) prepares the annoying ...Bh4+, forcing White to weaken with g3 or step the king to f1.",
+  "intro": "The Cunningham Defense is a classical reply in the King's Gambit Accepted, reached after 1.e4 e5 2.f4 exf4 3.Nf3 Be7. Black's modest bishop move prepares the irritating 4...Bh4+, a check that either provokes the weakening 5.g3 or invites 5.Kf1, costing White the right to castle. In its sharpest form Black follows up with the aggressive Three Pawns Gambit, sacrificing further material to open lines against the white king. The modern, sounder treatment is quieter: after 4.Bc4 Nf6 Black turns attention to the e4-pawn and aims for healthy development rather than immediate complications.",
+  "line": "e4 e5 f4 exf4 Nf3 Be7",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Cunningham revolves around the latent threat of ...Bh4+. Even before the bishop moves to h4, its potential check shapes White's choices: allowing g3 loosens the kingside, while Kf1 concedes castling. Black thus uses a single developing move to pose a concrete question and to gain a say over the coming structure, all while keeping the extra f4-pawn from the gambit.",
+        "White's counterplay flows from the usual King's Gambit sources: rapid development, pressure on f7 with the bishop on c4, and central expansion with d4. In the modern lines Black meets Bc4 with ...Nf6, immediately contesting e4 and steering toward a sound, well-developed position. The strategic battle then hinges on whether White can generate enough initiative to compensate for the pawn before Black consolidates."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The classical and most combative path is 4.Bc4 Bh4+, when 5.g3 fxg3 opens the game and can lead to the Three Pawns Gambit, in which Black grabs additional pawns and White seeks a raging attack in return. Alternatively 5.Kf1 keeps the position tense at the cost of the white king's safety. These lines are rich in tactics and reward energetic play, but they demand precise defense and calculation from both sides.",
+        "The modern main line prefers the calmer 4.Bc4 Nf6, when Black leaves the bishop on e7 and instead pressures e4, often continuing with ...Nc6, ...d6, and quiet development. White supports the center and tries to make the extra tempo count, but Black's setup is solid and low-risk. This restrained approach has become the recommended way to handle the Cunningham, trading fireworks for a reliable, well-founded position."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The defense is named after Alexander Cunningham, a Scottish player and scholar active in the early eighteenth century whose analysis of the line preserved his name in the opening's nomenclature. Belonging to the venerable King's Gambit family, the Cunningham reflects the Romantic era's taste for early checks and sharp attacking play. As with much King's Gambit theory, the fiercest gambit continuations gave way over time to more circumspect, positionally sound handling, and the modern ...Nf6 approach represents the accumulated verdict of later practice on how Black can meet the King's Gambit safely."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Play 3...Be7 to prepare the awkward check 4...Bh4+.",
+    "The check forces either the weakening 5.g3 or the king move 5.Kf1.",
+    "The sharp Three Pawns Gambit sacrifices material for an attack.",
+    "The modern, sound plan is 4.Bc4 Nf6, targeting the e4-pawn.",
+    "Black keeps the extra f4-pawn while completing development.",
+    "Named after the Scottish player Alexander Cunningham."
+  ],
+  "plans": {
+    "white": [
+      "Develop the bishop to c4 to bear down on the f7-square.",
+      "Decide between 5.g3 and 5.Kf1 when met by ...Bh4+.",
+      "Expand in the center with d4 to open lines for the pieces.",
+      "Generate rapid initiative to offset the gambit pawn.",
+      "Contest e4 and neutralize Black's ...Nf6 pressure."
+    ],
+    "black": [
+      "Use the ...Bh4+ check to provoke a concession from White.",
+      "Choose between the sharp Three Pawns Gambit and quiet play.",
+      "Adopt the modern 4.Bc4 Nf6, pressuring the e4-pawn.",
+      "Complete development with ...Nc6 and ...d6 for a solid setup.",
+      "Hold the extra pawn while keeping the king safe."
+    ]
+  },
+  "related": [
+    "kings-gambit",
+    "king-gambit-accepted",
+    "kieseritzky-gambit",
+    "muzio-gambit",
+    "kings-gambit-bishops-gambit"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "e5",
+      "from": 12,
+      "to": 28
+    },
+    {
+      "san": "f4",
+      "from": 53,
+      "to": 37
+    },
+    {
+      "san": "exf4",
+      "from": 28,
+      "to": 37
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Be7",
+      "from": 5,
+      "to": 12
+    }
+  ],
+  "fen": "rnbqk1nr/ppppbppp/8/8/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 2 4"
+}

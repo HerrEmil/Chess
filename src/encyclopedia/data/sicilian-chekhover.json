@@ -1,0 +1,113 @@
+{
+  "slug": "sicilian-chekhover",
+  "eco": "B53",
+  "name": "Sicilian Defense: Chekhover Variation",
+  "aka": ["Sicilian: Hungarian Variation"],
+  "category": "opening",
+  "group": "Semi-Open Games (1.e4)",
+  "summary": "The Chekhover Variation (1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Qxd4 Nc6 5.Bb5) recaptures on d4 with the queen for a positional, low-theory Sicilian.",
+  "intro": "The Chekhover Variation is an Open Sicilian sideline that arises after 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Qxd4, where White recaptures on d4 with the queen rather than the more common 4.Nxd4. Following 4...Nc6 the queen must move, and 5.Bb5 pins the knight to the king so that Bxc6+ can double Black's pawns, steering the game toward a positional, low-theory middlegame. White frequently castles queenside and plays for a small, durable pull rather than a direct attack. Named after the Soviet master and endgame study composer Vitaly Chekhover, the line appeals to players who prefer maneuvering to memorizing sharp theory. It is also known as the Hungarian Variation.",
+  "line": "e4 c5 Nf3 d6 d4 cxd4 Qxd4 Nc6 Bb5",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The point of 4.Qxd4 is to sidestep the dense theory of the main Open Sicilians while keeping a healthy, flexible position. After 4...Nc6 5.Bb5 White threatens to exchange on c6, saddling Black with doubled pawns and clarifying the structure. If Black breaks the pin with 5...Bd7, White can trade or retreat, retaining a small lead in development and comfortable piece play. The whole system trades ambition for solidity and clarity, and White is happy to reach a slightly better endgame or a pleasant maneuvering middlegame.",
+        "Black, for his part, is comfortable. The pawn on d6 already restrains White's e5 break, and Black completes development with ...Nf6, ...g6 or ...e6, and ...Be7, aiming to exploit the slightly exposed white queen with tempo gains. Any doubled c-pawns are offset by the bishop pair and a half-open b-file. Because play is quieter than in the Najdorf or Dragon, understanding of pawn structures and piece coordination counts for more than concrete home preparation."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "The tabiya arises after 4...Nc6 5.Bb5, when the knight is pinned to the king along the b5-e8 diagonal. Black's principal reply is 5...Bd7, breaking the pin; after 6.Bxc6 Bxc6 Black recaptures with the bishop and keeps the bishop pair, while White enjoys a slight lead in development and often continues with Nc3, O-O-O, and a later pawn advance. If Black delays ...Bd7, White can play Bxc6+ followed by ...bxc6, inflicting the doubled c-pawns that give the line its positional character.",
+        "A common alternative is a Maroczy-style plan with c4, where White renounces quick attacking chances in favor of a space-gaining bind that restrains the freeing ...d5 break. Black counters with standard Sicilian resources: pressure on the c-file, the ...e6 and ...d5 breaks when available, and active piece play around the slightly exposed white queen. Because the resulting positions are not forcing, both sides rely on general understanding rather than long forced lines, which is precisely the appeal of the Chekhover for practical players."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "Vitaly Chekhover was a Soviet master best remembered as a composer of endgame studies, and the variation bearing his name reflects a preference for clear, technical positions over chaotic complications. The 4.Qxd4 recapture had been played earlier, but his advocacy helped give it a distinct identity and name. Because the system sidesteps the immense theory of the Najdorf, Dragon, and Scheveningen, it has retained value as a practical surprise weapon, occasionally surfacing in grandmaster practice as a way to avoid an opponent's deep preparation. In older sources it is also catalogued as the Hungarian Variation."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "White recaptures on d4 with the queen, 4.Qxd4, instead of 4.Nxd4.",
+    "After 4...Nc6 the queen is hit, and 5.Bb5 pins the knight to the king.",
+    "The threat of Bxc6+ can hand Black doubled c-pawns and a fixed structure.",
+    "5...Bd7 breaks the pin; after 6.Bxc6 Bxc6 Black keeps the bishop pair.",
+    "A low-theory, positional line often featuring queenside castling for White.",
+    "Named after Soviet master and study composer Vitaly Chekhover."
+  ],
+  "plans": {
+    "white": [
+      "Play Bxc6 at the right moment to inflict doubled c-pawns.",
+      "Develop smoothly with Nc3 and castle queenside for a maneuvering game.",
+      "Consider a c4 bind to gain space and restrain Black's ...d5 break.",
+      "Keep the queen actively but safely placed, avoiding tempo losses.",
+      "Aim for a small, durable positional edge rather than a direct attack."
+    ],
+    "black": [
+      "Break the b5-pin quickly with ...Bd7 to safeguard the knight.",
+      "Harass the exposed white queen with developing moves that gain tempo.",
+      "Lean on the bishop pair when White exchanges on c6.",
+      "Prepare the freeing ...d5 or ...e6 breaks for central counterplay.",
+      "Use the half-open c-file for pressure in typical Sicilian fashion."
+    ]
+  },
+  "related": [
+    "sicilian-defense",
+    "sicilian-moscow",
+    "sicilian-rossolimo",
+    "sicilian-classical",
+    "sicilian-najdorf"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "e4",
+      "from": 52,
+      "to": 36
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "cxd4",
+      "from": 26,
+      "to": 35
+    },
+    {
+      "san": "Qxd4",
+      "from": 59,
+      "to": 35
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Bb5",
+      "from": 61,
+      "to": 25
+    }
+  ],
+  "fen": "r1bqkbnr/pp2pppp/2np4/1B6/3QP3/5N2/PPP2PPP/RNB1K2R b KQkq - 2 5"
+}

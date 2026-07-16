@@ -1,0 +1,136 @@
+{
+  "slug": "nimzo-indian-huebner",
+  "eco": "E41",
+  "name": "Nimzo-Indian Defense: Hübner Variation",
+  "aka": ["Nimzo-Indian: Hübner, Main Line"],
+  "category": "opening",
+  "group": "Closed & Flank Openings",
+  "summary": "The Hübner Variation of the Nimzo-Indian plays ...Bxc3+, doubling White's c-pawns before blockading with ...d6 and ...e5.",
+  "intro": "The Hübner Variation arises after 1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 c5 5.Bd3 Nc6 6.Nf3 Bxc3+ 7.bxc3 d6, a strategically rich branch of the Rubinstein Nimzo-Indian. Black voluntarily parts with the bishop pair to inflict doubled c-pawns on White and then clamps down on the centre with ...d6 and ...e5. The pawn on d6 and the coming ...e5 build a firm dark-squared blockade, betting that White's structural weaknesses will outweigh the two bishops. It is a classic illustration of the Nimzo-Indian philosophy of trading a bishop for lasting positional concessions. The line is named after the German grandmaster Robert Hübner, one of its foremost pioneers and practitioners.",
+  "line": "d4 Nf6 c4 e6 Nc3 Bb4 e3 c5 Bd3 Nc6 Nf3 Bxc3+ bxc3 d6",
+  "sections": [
+    {
+      "heading": "Strategic ideas",
+      "paragraphs": [
+        "The Hübner is built around a permanent structural imbalance. By capturing on c3, Black saddles White with doubled c-pawns and hands over the bishop pair, then erects a blockade with ...d6 and ...e5 that freezes White's centre and blunts the bishops' scope. Black's plans revolve around the light squares and the c5-outpost, pressuring the fixed c-pawns and manoeuvring knights to dominate the closed position. White counts on the two bishops and the potential energy of the pawn centre, striving to open the game with e4 or f4 so that the bishops can breathe and the c-pawns advance."
+      ]
+    },
+    {
+      "heading": "Main variations",
+      "paragraphs": [
+        "After 7...d6 the critical continuation is 8.e4 e5, when the centre locks and both sides pursue their thematic plans; 9.d5 is a principal try, shutting the position and giving White queenside space at the cost of releasing central tension. If White delays or omits e4, Black completes development with ...e5, ...Qe7 and ...Nd7 or ...Ne8, rerouting knights toward the weak c-pawns and the c5-outpost. A key strategic question throughout is whether White can engineer a favourable e4 or f4 break to activate the bishops before Black's blockade becomes overwhelming."
+      ]
+    },
+    {
+      "heading": "History and background",
+      "paragraphs": [
+        "The variation is named after Robert Hübner, the German grandmaster and repeated World Championship Candidate, who did much to develop and popularise it from the late 1960s onward. Its most celebrated outing came in Game 5 of the 1972 World Championship, where Boris Spassky adopted the Hübner set-up against Bobby Fischer and won a memorable strategic battle. That game showcased the variation's core idea of turning doubled pawns and a dark-squared blockade into a durable, long-term advantage, and it cemented the line's place in Nimzo-Indian theory. The Hübner remains a respected choice for players seeking a solid, structurally motivated defence."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Black gives up the bishop pair with ...Bxc3+ to double White's c-pawns.",
+    "The ...d6 and ...e5 setup builds a firm dark-squared blockade.",
+    "Black targets the fixed c-pawns and the c4 and c5 light squares.",
+    "White relies on the two bishops and a timely e4 or f4 break.",
+    "A central Nimzo-Indian trade of a bishop for lasting structure.",
+    "Spassky used it to beat Fischer in Game 5 of the 1972 title match."
+  ],
+  "plans": {
+    "white": [
+      "Prepare e4 to gain a broad centre and open lines for the bishops.",
+      "Look for the f4 break to activate the pieces and challenge ...e5.",
+      "Use the bishop pair to pressure the kingside and light squares.",
+      "Advance or exchange the c-pawns to escape the doubling.",
+      "Avoid a permanent blockade that leaves the bishops biting on granite."
+    ],
+    "black": [
+      "Lock the centre with ...d6 and ...e5 to fix White's weaknesses.",
+      "Blockade on the dark squares and restrain White's e4 break.",
+      "Post knights on c5 and other outposts to hit the doubled pawns.",
+      "Pressure the c4-pawn along the c-file and the a6-f1 diagonal.",
+      "Keep the position closed so the bishop pair stays passive."
+    ]
+  },
+  "related": [
+    "nimzo-indian-rubinstein",
+    "nimzo-indian-defense",
+    "nimzo-indian-classical",
+    "nimzo-indian-samisch",
+    "queens-indian-defense"
+  ],
+  "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [
+    {
+      "san": "d4",
+      "from": 51,
+      "to": 35
+    },
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "c4",
+      "from": 50,
+      "to": 34
+    },
+    {
+      "san": "e6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Nc3",
+      "from": 57,
+      "to": 42
+    },
+    {
+      "san": "Bb4",
+      "from": 5,
+      "to": 33
+    },
+    {
+      "san": "e3",
+      "from": 52,
+      "to": 44
+    },
+    {
+      "san": "c5",
+      "from": 10,
+      "to": 26
+    },
+    {
+      "san": "Bd3",
+      "from": 61,
+      "to": 43
+    },
+    {
+      "san": "Nc6",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "san": "Nf3",
+      "from": 62,
+      "to": 45
+    },
+    {
+      "san": "Bxc3",
+      "from": 33,
+      "to": 42
+    },
+    {
+      "san": "bxc3",
+      "from": 49,
+      "to": 42
+    },
+    {
+      "san": "d6",
+      "from": 11,
+      "to": 19
+    }
+  ],
+  "fen": "r1bqk2r/pp3ppp/2nppn2/2p5/2PP4/2PBPN2/P4PPP/R1BQK2R w KQkq - 0 8"
+}
