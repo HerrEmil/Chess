@@ -364,6 +364,70 @@ const rookFileDelta = (
 };
 
 /*
+ * Mobility.
+ *
+ * A piece's worth is not just its material and its square but how many squares
+ * it commands: a knight on the rim or a rook hemmed in behind its own pawns is
+ * worth far less than the material table credits, and the piece-square and rook-
+ * file terms only partly capture it (a rook on a half-open file can still be
+ * walled in by an enemy piece two squares ahead). This term counts each side's
+ * pseudo-legal moves for its mobile pieces — knights, bishops, rooks and queens
+ * — and rewards the more active side.
+ *
+ * Pawns and kings are excluded on purpose. A pawn's two push squares say nothing
+ * about its strength (its value is structural, already scored by the pawn table),
+ * and king "mobility" in the middlegame measures exposure — a mobility bonus
+ * would reward walking the king into the open, exactly backwards. Counting is
+ * pseudo-legal (pins are not discounted) to stay cheap: it reuses the same
+ * generator quiescence already calls, and the small symmetric overcount from
+ * pinned pieces washes out in the White-minus-Black delta.
+ *
+ * Returned as `weight * (White mobile-move count - Black mobile-move count)` from
+ * `currentColor`'s perspective, antisymmetric by construction (a mirror-image
+ * position nets 0) so the evaluation stays color-symmetric. Like the bishop-pair
+ * (#6), queen-PST (#7) and rook-file (#8) terms and unlike the rejected pawn-
+ * structure term (#3), it induces no committal move — it rewards activity the
+ * pieces already have, and every mobile move is cheap and reversible, so it
+ * cannot steer the shallow search into material it can't hold. A clearly winning
+ * capture still outweighs it.
+ */
+const MOBILE_PIECES = new Set(['n', 'b', 'r', 'q']);
+
+// Total pseudo-legal moves available to `color`'s mobile pieces (N/B/R/Q).
+const sideMobility = (board: readonly string[], color: color): number => {
+  const pieces = getPiecesOfColor(board, color).filter((idx) =>
+    MOBILE_PIECES.has(board[mailboxIndex[idx]].toLowerCase()),
+  );
+  const perPiece = getAllValidMovesNoCheck(board, pieces);
+  let count = 0;
+  for (const moves of perPiece) count += moves.length;
+  return count;
+};
+
+// White-minus-Black mobile-move-count delta from `currentColor`'s perspective,
+// scaled by `weight`. `weight === 0` short-circuits so no move generation runs,
+// keeping the term a true no-op for every caller that leaves it off.
+const mobilityDelta = (
+  board: readonly string[],
+  currentColor: color,
+  weight: number,
+): number => {
+  if (weight === 0) return 0;
+  const white = sideMobility(board, 'white');
+  const black = sideMobility(board, 'black');
+  const diff = currentColor === 'white' ? white - black : black - white;
+  return diff * weight;
+};
+
+/*
+ * Weight (centipawns per mobile move of advantage) for the mobility term, tuned
+ * by self-play in tools/engine-lab (see experiments.jsonl). The production leaf
+ * `quiescentEvalMobility` passes this; every other caller leaves the weight at 0
+ * (off), so those code paths are byte-for-byte unchanged.
+ */
+const MOBILITY_WEIGHT = 3;
+
+/*
  * Queen piece-square table.
  *
  * Every other piece already reads a piece-square table, but the queen was
@@ -388,6 +452,9 @@ const rookFileDelta = (
 // `rookFile` adds the rook open/half-open-file bonus (default false = no rook-
 // file term, the pre-#8 behaviour), keeping every existing caller byte-for-byte
 // unchanged.
+// `mobility` is the centipawns-per-move weight of the mobility term (default 0 =
+// off, the pre-#9 behaviour); a positive weight adds it, so every existing
+// caller that omits it is byte-for-byte unchanged.
 export const evaluate = (
   board: readonly string[],
   currentColor: color,
@@ -396,6 +463,7 @@ export const evaluate = (
   bishopPair = false,
   queenPst = false,
   rookFile = false,
+  mobility = 0,
 ): number => {
   const opponent = oppositeColor(currentColor);
   const checkBonus = isInCheck(board, opponent) ? 50 : 0;
@@ -424,9 +492,16 @@ export const evaluate = (
   const endgame = materialDiff > 300 ? endgameBonus(board, currentColor) : 0;
   const pairDelta = bishopPair ? bishopPairDelta(board, currentColor) : 0;
   const rookDelta = rookFile ? rookFileDelta(board, currentColor) : 0;
+  const mobilityScore = mobilityDelta(board, currentColor, mobility);
 
   return (
-    checkBonus - checkPenalty + materialDiff + endgame + pairDelta + rookDelta
+    checkBonus -
+    checkPenalty +
+    materialDiff +
+    endgame +
+    pairDelta +
+    rookDelta +
+    mobilityScore
   );
 };
 
@@ -475,6 +550,19 @@ const QUEEN_PST_MARGIN = 50;
  * with the flag off the margin is exactly DELTA_MARGIN.
  */
 const ROOK_FILE_MARGIN = 64;
+
+/*
+ * Extra delta-pruning slack per unit of mobility weight. A single capture can
+ * shift the White-minus-Black mobile-move-count delta by removing an enemy
+ * mobile piece (up to ~27 of a central queen's moves), relocating the capturing
+ * piece, and opening or closing lines for sliders behind it; MOBILITY_MAX_SWING
+ * bounds that count swing generously (over-estimating only relaxes pruning, it
+ * never prunes a capture that could reach alpha). Multiplied by the active
+ * weight, it widens the margin so a capture whose mobility swing would reach
+ * alpha is not discarded; with the weight at 0 the margin is exactly
+ * DELTA_MARGIN, keeping the pre-mobility leaves byte-for-byte unchanged.
+ */
+const MOBILITY_MAX_SWING = 60;
 
 // A pseudo-legal capture for quiescence, pre-scored for MVV-LVA ordering.
 // `gain` is the captured material (plus promotion), used for delta pruning.
@@ -554,6 +642,7 @@ export const quiesce = (
   bishopPair = false,
   queenPst = false,
   rookFile = false,
+  mobility = 0,
 ): number => {
   // Stand-pat: the side to move may always decline to capture, so the static
   // score is a lower bound on what it can achieve.
@@ -565,6 +654,7 @@ export const quiesce = (
     bishopPair,
     queenPst,
     rookFile,
+    mobility,
   );
   if (standPat >= beta) return beta;
   let localAlpha = standPat > alpha ? standPat : alpha;
@@ -584,7 +674,8 @@ export const quiesce = (
     DELTA_MARGIN +
     (bishopPair ? BISHOP_PAIR_BONUS : 0) +
     (queenPst ? QUEEN_PST_MARGIN : 0) +
-    (rookFile ? ROOK_FILE_MARGIN : 0);
+    (rookFile ? ROOK_FILE_MARGIN : 0) +
+    Math.abs(mobility) * MOBILITY_MAX_SWING;
 
   for (const { start, goal, gain } of captures) {
     // Delta pruning: skip captures whose best-case material can't reach alpha.
@@ -602,6 +693,7 @@ export const quiesce = (
         bishopPair,
         queenPst,
         rookFile,
+        mobility,
       );
       if (score >= beta) return beta;
       if (score > localAlpha) localAlpha = score;
@@ -694,6 +786,30 @@ export const quiescentEvalRookFile = (
     true,
     true,
     true,
+  );
+
+/*
+ * Production leaf (experiment #10): the accepted rook-file quiescence leaf
+ * (experiment #8) plus the mobility term at MOBILITY_WEIGHT. Same capture
+ * resolution, tapered king, bishop-pair bonus, queen table and rook-file bonus
+ * as `quiescentEvalRookFile`; only the added mobility term differs, isolating
+ * the mobility contribution in self-play (new here vs `quiescentEvalRookFile`).
+ */
+export const quiescentEvalMobility = (
+  board: readonly string[],
+  currentColor: color,
+): number =>
+  quiesce(
+    board,
+    currentColor,
+    -100000,
+    100000,
+    QUIESCENCE_MAX_DEPTH,
+    true,
+    true,
+    true,
+    true,
+    MOBILITY_WEIGHT,
   );
 
 /*
@@ -791,7 +907,7 @@ export const negamax = (
   evaluateFn: (
     b: readonly string[],
     c: color,
-  ) => number = quiescentEvalRookFile,
+  ) => number = quiescentEvalMobility,
   checkExtend = true,
   extLeft: number = CHECK_EXTENSION_BUDGET,
 ): readonly number[] => {

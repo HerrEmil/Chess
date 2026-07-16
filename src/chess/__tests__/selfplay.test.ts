@@ -378,14 +378,82 @@ describe('rook open/half-open-file bonus', () => {
   });
 });
 
+/*
+ * Experiment #10: mobility. A piece's worth depends on how many squares it
+ * commands, which neither the piece-square tables nor the rook-file term fully
+ * captures. This term counts each side's pseudo-legal moves for its mobile
+ * pieces (knights, bishops, rooks, queens — pawns and the king are excluded) and
+ * rewards the more active side, scaled by a per-move weight. These tests pin the
+ * correctness properties: it is color-symmetric and a no-op with the weight at 0
+ * (so every pre-#10 caller is unchanged), it rewards the side with the more
+ * mobile pieces, and it ignores pawns and kings entirely.
+ */
+describe('mobility evaluation', () => {
+  const W = 3; // a positive weight activates the term
+
+  it('is unchanged and color-symmetric at the full-material start', () => {
+    // Both sides have identical mobility at the start (each knight has two
+    // moves, everything else is blocked) => the delta is 0 and the position is
+    // symmetric. And with the weight at 0 the eval is byte-for-byte the pre-#10
+    // (rook-file) value.
+    expect(
+      evaluate(STARTING_BOARD, 'white', true, true, true, true, true, W),
+    ).toBe(0);
+    expect(
+      evaluate(STARTING_BOARD, 'black', true, true, true, true, true, W),
+    ).toBe(0);
+    expect(
+      evaluate(STARTING_BOARD, 'white', true, true, true, true, true, 0),
+    ).toBe(evaluate(STARTING_BOARD, 'white', true, true, true, true, true));
+  });
+
+  it('rewards the side whose pieces command more squares', () => {
+    // Equal material (one rook each), no check, no endgame mop-up. White's rook
+    // sits on an open central square (d4, many moves); Black's is boxed in its
+    // own corner behind the king (a8, few moves). Toggling the weight isolates
+    // the mobility term: it must raise White's score and, by symmetry, lower
+    // Black's.
+    const board = boardWithPieces([
+      { piece: 'k', index: 60 }, // white king e1
+      { piece: 'K', index: 4 }, // black king e8
+      { piece: 'r', index: 35 }, // white rook d4 (open)
+      { piece: 'R', index: 0 }, // black rook a8 (boxed in)
+    ]);
+    expect(
+      evaluate(board, 'white', true, true, true, true, true, W),
+    ).toBeGreaterThan(
+      evaluate(board, 'white', true, true, true, true, true, 0),
+    );
+    expect(
+      evaluate(board, 'black', true, true, true, true, true, W),
+    ).toBeLessThan(evaluate(board, 'black', true, true, true, true, true, 0));
+  });
+
+  it('ignores pawns and kings (no mobile pieces => a no-op)', () => {
+    // Only kings and pawns, placed asymmetrically so the base eval is non-zero.
+    // Neither pawns (structural, scored by the pawn table) nor kings count
+    // toward mobility, so with no knight/bishop/rook/queen on the board the
+    // weight must not change the score at all.
+    const board = boardWithPieces([
+      { piece: 'k', index: 56 }, // white king a1
+      { piece: 'K', index: 7 }, // black king h8
+      { piece: 'p', index: 52 }, // white pawn e2
+      { piece: 'P', index: 8 }, // black pawn a7
+    ]);
+    expect(evaluate(board, 'white', true, true, true, true, true, W)).toBe(
+      evaluate(board, 'white', true, true, true, true, true, 0),
+    );
+  });
+});
+
 describe('self-play non-regression', () => {
   it('new engine does not regress vs the previous engine', () => {
     // Deterministic (seeded PRNG + deterministic search), so this is a stable
     // guardrail, not a flaky benchmark. The full multi-depth validation is
-    // recorded in tools/engine-lab/experiments.jsonl. Experiment #8 compares the
-    // rook-file leaf (new) vs the queen-PST leaf (old); both use the quiescence
-    // leaf, shipped check extensions, the tapered king table, the bishop-pair
-    // bonus, and the queen piece-square table.
+    // recorded in tools/engine-lab/experiments.jsonl. Experiment #10 compares
+    // the mobility leaf (new) vs the rook-file leaf (old); both use the
+    // quiescence leaf, shipped check extensions, the tapered king table, the
+    // bishop-pair bonus, the queen piece-square table, and the rook-file bonus.
     const result = runMatch({ games: 24, depth: 2, seed: 1 });
     expect(result.games).toBe(24);
     expect(result.newScore).toBeGreaterThanOrEqual(result.oldScore);
