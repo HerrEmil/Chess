@@ -1,0 +1,81 @@
+{
+  "slug": "checkmate-two-bishops",
+  "category": "endgame",
+  "name": "Two-Bishop Checkmate",
+  "aka": ["Two Bishops Mate"],
+  "tag": "Basic Checkmate",
+  "group": "Basic Checkmates",
+  "order": 4,
+  "summary": "Two bishops and the king force mate by driving a lone king into a corner, where the bishops work on adjacent diagonals to seal every escape.",
+  "intro": "Two bishops of opposite colours, with the help of their king, force checkmate against a lone king. Unlike the queen or rook, this mate can only be delivered with the enemy king driven into a corner, though any corner will do. The bishops work on adjacent diagonals to build a barrier the defending king cannot cross, while the stronger king shoulders it toward the corner. It is a forced win and not too difficult, but stalemate remains a hazard as the king nears the corner.",
+  "boardCaption": "Two bishops and the king corner the lone king: 1.Ba2+ forces it to h8 and 2.Be5 is mate.",
+  "startFen": "6k1/8/3B2K1/8/8/8/8/1B6 w - - 0 1",
+  "line": "Ba2+ Kh8 Be5#",
+  "sections": [
+    {
+      "heading": "Why the corner matters",
+      "paragraphs": [
+        "A lone king can be mated by two bishops only in a corner, because that is the one place where two diagonals and the stronger king can cover every flight square at once. The bishops are of opposite colours, so between them they can attack squares of both shades, and side by side on adjacent diagonals they form a wall the enemy king cannot step through.",
+        "The king plays an active role too. It shoulders the defender, taking away the squares the bishops cannot, and drives it steadily toward the edge and then the corner. Two knights, by contrast, cannot force mate at all, which makes this one of only two ways two minor pieces can win."
+      ]
+    },
+    {
+      "heading": "The demonstration",
+      "paragraphs": [
+        "The diagram shows the finish of the technique, with the black king already forced to the edge on g8. 1.Ba2+ is the light-squared bishop checking along the a2-g8 diagonal, and the king has only one square: 1...Kh8, into the corner. The bishop has herded the king exactly where it must go.",
+        "Now 2.Be5# completes the mate. The dark-squared bishop reaches the long diagonal and checks the king on h8, while the light-squared bishop on a2 still covers g8 and the white king on g6 covers g7 and h7. Every escape is sealed, so the corner check is mate."
+      ]
+    },
+    {
+      "heading": "Technique and pitfalls",
+      "paragraphs": [
+        "The heart of the method is the barrier: keep the bishops on adjacent diagonals so they fence off a growing region, then push with the king until the defender is cornered. Because the two pieces of opposite colour complement each other, there is no square the defender can safely occupy once the wall is built next to the corner.",
+        "The one thing to watch is stalemate near the corner. As the net tightens it is easy to leave the lone king with no legal move while it is not in check, which draws instantly. Give the king a square to move until the moment the check is mate, exactly as in the diagram, where 1...Kh8 was still available before 2.Be5#."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Two bishops of opposite colours plus the king force mate against a lone king.",
+    "The mate is only possible with the enemy king in a corner, any corner.",
+    "The bishops work on adjacent diagonals to build a barrier the king cannot cross.",
+    "The king shoulders the defender toward the corner.",
+    "It is a forced win and not too hard, but stalemate near the corner is a real danger.",
+    "Two knights cannot force mate, so this is one of only two minor-piece mates."
+  ],
+  "plans": {
+    "white": [
+      "Place the bishops on adjacent diagonals to build an advancing barrier.",
+      "Use the king to shoulder the defender toward a corner.",
+      "Deliver the corner mate, leaving the king a square until the final check."
+    ],
+    "black": [
+      "Head for the centre and away from any corner for as long as possible.",
+      "Aim for a stalemate if the stronger side crowds the corner carelessly.",
+      "Make White demonstrate the full cornering technique before giving up."
+    ]
+  },
+  "related": [
+    "checkmate-bishop-knight",
+    "checkmate-king-queen",
+    "opposite-colored-bishops",
+    "wrong-bishop"
+  ],
+  "moves": [
+    {
+      "san": "Ba2",
+      "from": 57,
+      "to": 48
+    },
+    {
+      "san": "Kh8",
+      "from": 6,
+      "to": 7
+    },
+    {
+      "san": "Be5",
+      "from": 19,
+      "to": 28
+    }
+  ],
+  "fen": "7k/8/6K1/4B3/8/8/B7/8 b - - 3 2"
+}

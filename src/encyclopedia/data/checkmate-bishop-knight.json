@@ -1,0 +1,80 @@
+{
+  "slug": "checkmate-bishop-knight",
+  "category": "endgame",
+  "name": "Bishop and Knight Checkmate",
+  "aka": ["Bishop-Knight Mate", "The B+N Mate"],
+  "tag": "Basic Checkmate",
+  "group": "Basic Checkmates",
+  "order": 5,
+  "summary": "Bishop and knight force mate against a lone king, the hardest basic checkmate, by driving the king into a corner the colour of the bishop.",
+  "intro": "King, bishop and knight against a lone king is a forced win, but it is the hardest of the basic mates. It can take up to thirty-three moves and demands precise technique from start to finish. The king can only be mated in a corner of the same colour as the bishop, so the whole task is to herd it to the right corner. The bishop and knight use a W-shaped knight route, the W-manoeuvre, to shepherd the defender along the edge to that corner.",
+  "boardCaption": "Bishop and knight versus a lone king: White drives the king into the light corner — 1.Nd7+ Ka8 2.Bd5 mate.",
+  "startFen": "1k6/8/1K2BN2/8/8/8/8/8 w - - 0 1",
+  "line": "Nd7+ Ka8 Bd5#",
+  "sections": [
+    {
+      "heading": "The hardest basic mate",
+      "paragraphs": [
+        "Bishop and knight is a forced win, but it is the most demanding of the elementary mates. It can last up to thirty-three moves and requires exact play throughout, with no mechanical shortcut like the two-rook ladder. For that reason it is a famous test of endgame skill, and knowing it matters under the fifty-move rule.",
+        "The defining constraint is colour. A lone king can only be mated in a corner the same colour as the bishop, so a light-squared bishop must drive the king into a light corner. The defender will naturally flee toward a corner of the wrong colour, and the stronger side's task is to escort it, along the edge, to the corner where mate is possible."
+      ]
+    },
+    {
+      "heading": "The demonstration",
+      "paragraphs": [
+        "The diagram shows the finish, with a light-squared bishop, so the target is the light corner a8. 1.Nd7+ checks and leaves the black king a single square: 1...Ka8, into the corner. The knight has taken away b8 and forced the king exactly where it needs to be.",
+        "Then 2.Bd5# is mate along the a8-h1 diagonal. The bishop checks the king in the corner, the knight on d7 covers b8, and the white king on b6 covers a7 and b7. With no square left, the corner check ends the game."
+      ]
+    },
+    {
+      "heading": "The W-manoeuvre and its significance",
+      "paragraphs": [
+        "Getting to this finish is the hard part. The bishop and knight cooperate to shepherd the king along the edge, and the knight travels a W-shaped route, the W-manoeuvre, to control the string of squares the bishop cannot reach. Coordinating the two pieces so the king is always pushed toward the right corner is what makes the mate so exacting.",
+        "Bishop and knight is one of only two ways two minor pieces can force mate; the other is the two bishops. Because it is so easy to drift and lose track under the fifty-move rule, it is prized as a genuine measure of technique, and mastering the drive to the correct corner is the whole lesson of the ending."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "King, bishop and knight versus a lone king is a forced win.",
+    "It is the hardest basic mate and can take up to thirty-three moves.",
+    "Mate is only possible in a corner the same colour as the bishop.",
+    "The knight follows a W-shaped route, the W-manoeuvre, to shepherd the king.",
+    "Precise coordination matters because of the fifty-move rule.",
+    "Only two bishops or bishop and knight can force mate with two minor pieces."
+  ],
+  "plans": {
+    "white": [
+      "Drive the enemy king toward a corner the colour of the bishop.",
+      "Use the W-manoeuvre to steer the king along the edge with the knight.",
+      "Coordinate bishop, knight and king to deliver the corner mate accurately."
+    ],
+    "black": [
+      "Flee toward a corner of the wrong colour, where no mate is possible.",
+      "Stall for the fifty-move rule by keeping the king off the right corner.",
+      "Break the coordination of bishop and knight wherever the king can."
+    ]
+  },
+  "related": [
+    "checkmate-two-bishops",
+    "checkmate-king-queen",
+    "opposite-colored-bishops"
+  ],
+  "moves": [
+    {
+      "san": "Nd7",
+      "from": 21,
+      "to": 11
+    },
+    {
+      "san": "Ka8",
+      "from": 1,
+      "to": 0
+    },
+    {
+      "san": "Bd5",
+      "from": 20,
+      "to": 27
+    }
+  ],
+  "fen": "k7/3N4/1K6/3B4/8/8/8/8 b - - 3 2"
+}

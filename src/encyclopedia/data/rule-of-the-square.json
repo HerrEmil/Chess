@@ -1,0 +1,87 @@
+{
+  "slug": "rule-of-the-square",
+  "category": "endgame",
+  "name": "The Rule of the Square",
+  "aka": ["Square of the Pawn"],
+  "tag": "Pawn Endgame",
+  "group": "Pawn Endgames",
+  "order": 3,
+  "summary": "The rule of the square tells you at a glance whether a lone king can catch a passed pawn — inside it stops the pawn, outside the pawn queens.",
+  "intro": "The rule of the square is a shortcut for judging a pawn race without counting a single move. Picture a square whose side runs from the pawn to its promotion square and which stretches the same number of files across the board; if the defending king stands inside that square, or can step into it on its move, it catches the pawn, and if it stands outside, the pawn queens. In the diagram the black king on h5 lies outside the square of the a5-pawn, so it can never reach the runner. White simply pushes the pawn and promotes while the king is still trudging across the board. The method reads the position instantly.",
+  "boardCaption": "The black king on h5 lies outside the square of the a5-pawn, so it cannot stop the pawn from queening.",
+  "startFen": "8/8/8/P6k/8/8/8/K7 w - - 0 1",
+  "line": "a6 Kg5 a7 Kf5 a8=Q",
+  "sections": [
+    {
+      "heading": "The square of the pawn",
+      "paragraphs": [
+        "To draw the square, take the file the pawn will travel to reach its promotion square and complete a square of that side length toward the defending king. If the defending king is inside the square, or can step into it on its move, it catches the pawn; if it is outside, the pawn runs through and queens. The whole race is settled at a glance, with no need to count moves.",
+        "Whose move it is matters. If the pawn moves first, it effectively shrinks the square by one, so a king just on the border may fall behind. A pawn still on its starting square can advance two squares in one move, so the square is measured from the square just in front of it rather than from the pawn itself."
+      ]
+    },
+    {
+      "heading": "The winning line",
+      "paragraphs": [
+        "The black king on h5 begins outside the square of the a5-pawn, so it cannot catch the runner however it hurries. 1.a6 Kg5 sees the king chase, but it is already a step too slow. 2.a7 Kf5 continues the vain pursuit as the pawn nears its goal.",
+        "3.a8=Q completes the race with a new queen while the black king is still far away on f5. The square told the result before a move was played: outside the square, the king can only follow the pawn home."
+      ]
+    },
+    {
+      "heading": "Using the rule",
+      "paragraphs": [
+        "The strength of the rule of the square is speed: it evaluates a pawn race instantly, replacing move-by-move counting with a single geometric picture. In sharp endings where both sides are pushing passed pawns, being able to see at a glance which runners are caught and which promote is often the difference between a win and a loss.",
+        "The rule assumes a lone defending king with no other help; extra pieces or pawns can change the verdict. Kept in mind, this geometry is the foundation for deeper ideas about how far a king really is from a distant pawn, the theme that runs through the most famous king-and-pawn studies."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The rule of the square judges a pawn race at a glance, without counting moves.",
+    "Picture a square from the pawn to its promotion square, the same number of files wide.",
+    "If the king is inside the square, or can step in on its move, it catches the pawn.",
+    "If the king is outside the square, the pawn promotes.",
+    "If the pawn moves first, it effectively shrinks the square by one.",
+    "A pawn on its starting square can move two, so measure the square from just in front of it."
+  ],
+  "plans": {
+    "white": [
+      "Push the passed pawn straight for promotion while the king is outside the square.",
+      "Use the pawn's two-square first move to win the tempo that keeps the king out.",
+      "Queen before the defending king can step into the square."
+    ],
+    "black": [
+      "Rush the king toward the square of the pawn to get inside it.",
+      "Step into the square on the move while the pawn has not yet advanced.",
+      "Remember the rule assumes a lone king, so bring any other help to bear."
+    ]
+  },
+  "related": ["opposition", "key-squares", "reti-endgame-study"],
+  "moves": [
+    {
+      "san": "a6",
+      "from": 24,
+      "to": 16
+    },
+    {
+      "san": "Kg5",
+      "from": 31,
+      "to": 30
+    },
+    {
+      "san": "a7",
+      "from": 16,
+      "to": 8
+    },
+    {
+      "san": "Kf5",
+      "from": 30,
+      "to": 29
+    },
+    {
+      "san": "a8=Q",
+      "from": 8,
+      "to": 0,
+      "promo": "q"
+    }
+  ],
+  "fen": "Q7/8/8/5k2/8/8/8/K7 b - - 0 3"
+}

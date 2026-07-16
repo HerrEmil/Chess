@@ -1,0 +1,102 @@
+{
+  "slug": "zugzwang",
+  "category": "endgame",
+  "name": "Zugzwang",
+  "aka": ["Compulsion to Move"],
+  "tag": "Endgame Concept",
+  "group": "Endgame Concepts",
+  "order": 1,
+  "summary": "Zugzwang is a position where every legal move worsens your own — the compulsion to move that decides many king-and-pawn endings.",
+  "intro": "Zugzwang, German for \"compulsion to move,\" describes a position in which a player would prefer to do nothing but is forced by the rules to move — and every legal move makes matters worse. It is one of the defining ideas of the endgame, above all in king-and-pawn play, where the side compelled to move must give ground and surrender the opposition. In the diagram the kings face each other on the g-file with Black to move, and Black has no move that does not lose the race for the g-pawn. Because passing is illegal, Black must step aside and let the white king and pawn through. The same mechanism, harnessed deliberately, is how the stronger side converts many simplified positions.",
+  "boardCaption": "The kings stand in opposition with Black to move — Black is in zugzwang and any move loses the g-pawn race.",
+  "startFen": "6k1/8/6K1/6P1/8/8/8/8 b - - 0 1",
+  "line": "Kf8 Kh7 Kf7 g6 Kf6 g7 Kf7 g8=Q",
+  "sections": [
+    {
+      "heading": "A position where every move loses",
+      "paragraphs": [
+        "Zugzwang arises when it is your turn but no legal move improves or even holds your position; each one worsens it. If the rules allowed you to pass, you would gladly do so, but chess requires a move, and that compulsion is itself the losing factor. The concept is rare in the crowded middlegame, where there is almost always a useful move to make, but it becomes decisive in simplified endings with few pieces.",
+        "A special form is reciprocal, or mutual, zugzwang, in which whoever is to move is the worse for it. The classic example is the trebuchet, where two kings each guard their own pawn while attacking the other's, so that the player on move must abandon a pawn. Zugzwang is closely bound up with the opposition: the side that does not hold the opposition is often the side placed in zugzwang."
+      ]
+    },
+    {
+      "heading": "The demonstration",
+      "paragraphs": [
+        "In the diagram the white and black kings stand in direct opposition on the g-file, g6 against g8, with Black to move. Black holds no useful square: 1...Kf8 steps away from the pawn, and White outflanks with 2.Kh7, seizing the route forward. After 2...Kf7 the pawn is free to run.",
+        "The advance follows: 3.g6+ Kf6 4.g7 Kf7 5.g8=Q+, and White has a new queen. Black lost for one reason only — the obligation to move. Had Black been allowed to pass with the kings in opposition, White could make no progress and the position would be a draw."
+      ]
+    },
+    {
+      "heading": "Opposition, triangulation, and significance",
+      "paragraphs": [
+        "Because zugzwang so often turns on who must move, the practical skill is learning to pass the move to the opponent. In king-and-pawn endings this is done through the opposition and through triangulation — maneuvering the king over three squares to return to the same position with the other side to move.",
+        "Zugzwang should not be confused with stalemate: in zugzwang a player still has legal moves but every one of them is bad, whereas in stalemate there is no legal move at all. Uncommon in the middlegame, zugzwang is one of the sharpest weapons of the endgame, and recognizing it is essential to winning routine king-and-pawn positions."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Zugzwang is a position in which every legal move worsens your own position.",
+    "The German term means \"compulsion to move\": you would rather pass, but the rules forbid it.",
+    "It is central to king-and-pawn endings, where the side forced to move gives ground and loses the opposition.",
+    "In reciprocal zugzwang, whoever is to move is worse — the trebuchet is the classic case.",
+    "Zugzwang is fought with the opposition and with triangulation, the art of losing a tempo to pass the move.",
+    "It is rare in the middlegame but decisive in simplified endings."
+  ],
+  "plans": {
+    "white": [
+      "Hold the opposition so that the defender, not you, is the one compelled to move.",
+      "When the enemy king gives way, outflank it and clear the path for the pawn.",
+      "Escort the pawn forward to promotion once the king has been driven aside."
+    ],
+    "black": [
+      "Try to reach the position with White, not Black, to move, so the compulsion falls on the opponent.",
+      "Contest the opposition to keep the white king from advancing.",
+      "Recognize that if passing were allowed the position would be drawn, and seek any setup that avoids the losing compulsion."
+    ]
+  },
+  "related": ["opposition", "stalemate", "key-squares", "philidor-position"],
+  "moves": [
+    {
+      "san": "Kf8",
+      "from": 6,
+      "to": 5
+    },
+    {
+      "san": "Kh7",
+      "from": 22,
+      "to": 15
+    },
+    {
+      "san": "Kf7",
+      "from": 5,
+      "to": 13
+    },
+    {
+      "san": "g6",
+      "from": 30,
+      "to": 22
+    },
+    {
+      "san": "Kf6",
+      "from": 13,
+      "to": 21
+    },
+    {
+      "san": "g7",
+      "from": 22,
+      "to": 14
+    },
+    {
+      "san": "Kf7",
+      "from": 21,
+      "to": 13
+    },
+    {
+      "san": "g8=Q",
+      "from": 14,
+      "to": 6,
+      "promo": "q"
+    }
+  ],
+  "fen": "6Q1/5k1K/8/8/8/8/8/8 b - - 0 5"
+}

@@ -1,0 +1,131 @@
+{
+  "slug": "lucena-position",
+  "category": "endgame",
+  "name": "The Lucena Position",
+  "aka": ["Building a Bridge"],
+  "tag": "Rook Endgame",
+  "group": "Rook Endgames",
+  "order": 1,
+  "summary": "The Lucena position is the fundamental win in rook-and-pawn versus rook, won by \"building a bridge\" to shield the king and promote the pawn.",
+  "intro": "The Lucena position is the most important winning position in all of rook-and-pawn endgames, and every serious player is expected to know it by heart. It arises when the attacking side has a pawn on the seventh rank with its own king in front on the promotion square, while the defending king is cut off to the side. The problem is that the attacking king blocks its own pawn and cannot simply step aside without allowing a stream of rook checks. The solution, known as \"building a bridge,\" uses the rook to shield the king so the pawn can finally queen. Together with the drawn Philidor position, it forms the foundation of the most common of all endings.",
+  "boardCaption": "The Lucena position: White to play and win by building a bridge with the rook to escort the b-pawn home.",
+  "startFen": "1K1k4/1P6/8/8/8/8/r7/2R5 w - - 0 1",
+  "line": "Rd1+ Ke7 Rd4 Ra1 Kc7 Rc1+ Kb6 Rb1+ Kc6 Rc1+ Kb5 Rb1+ Rb4",
+  "sections": [
+    {
+      "heading": "The fundamental winning position",
+      "paragraphs": [
+        "The Lucena position is the basic win in rook-and-pawn versus rook. Its defining features are a pawn on the seventh rank, the attacking king standing in front of it on the promotion square, and the defending king cut off by at least one file. In the diagram White has exactly this: the king on b8, the pawn on b7, and the black king pushed away to d8.",
+        "The position is won for every pawn but one. With a rook-pawn — an a- or h-pawn — there is no room on the edge to build the bridge, and the win becomes a draw. For all other pawns the technique is reliable, which is why Lucena, the win, and Philidor, the draw, are learned as a pair."
+      ]
+    },
+    {
+      "heading": "The demonstration",
+      "paragraphs": [
+        "White begins by pushing the defending king further away: 1.Rd1+ Ke7 drives it one file back. Then comes the key preparation, 2.Rd4, placing the rook on the fourth rank where it will later form the shield. Black switches to checking from the side with 2...Ra1.",
+        "Now the king emerges: 3.Kc7 Rc1+ 4.Kb6 Rb1+ 5.Kc6 Rc1+ 6.Kb5 Rb1+, and Black keeps checking. But with 7.Rb4 the rook interposes on the fourth rank, blocking the check with tempo. The black rook can no longer check without being exchanged for the rook, so the pawn will promote on b8. That interposing rook is the \"bridge.\""
+      ]
+    },
+    {
+      "heading": "Building the bridge in practice",
+      "paragraphs": [
+        "The whole technique turns on the rook reaching the fourth rank in advance. Without that resource the attacking king could never escape its own pawn, because the checks from the side would never end. Placing the rook on the fourth rank means that at the critical moment it can drop in front of the king and cut the checking line.",
+        "The one precondition is that the defending king be cut off by at least a file, giving the attacking king room to work. Mastering Lucena, alongside the defensive Philidor position, is the foundation of rook-endgame play — the most frequently occurring endings in practical chess."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The Lucena position is the fundamental win in rook-and-pawn versus rook.",
+    "It requires a pawn on the seventh, the attacking king in front on the queening square, and the defending king cut off.",
+    "The winning method is \"building a bridge\" with the rook on the fourth rank.",
+    "Once the king emerges, the rook interposes with tempo and shields it from the checks.",
+    "It wins for every pawn except a rook-pawn, where there is no room to build the bridge.",
+    "Lucena the win and Philidor the draw are the foundation of all rook endings."
+  ],
+  "plans": {
+    "white": [
+      "Drive the defending king further away with a rook check, then place the rook on the fourth rank.",
+      "March the king out from in front of the pawn, meeting the side checks.",
+      "At the right moment interpose the rook — the bridge — to block the checks and promote the pawn."
+    ],
+    "black": [
+      "Check the emerging king from the side to prevent it from sheltering the pawn.",
+      "Keep checking for as long as the rook cannot safely interpose.",
+      "Aim for setups where the king is not cut off, or where a rook-pawn denies White the bridge."
+    ]
+  },
+  "related": [
+    "philidor-position",
+    "rook-versus-pawn",
+    "checkmate-king-rook",
+    "opposition"
+  ],
+  "moves": [
+    {
+      "san": "Rd1",
+      "from": 58,
+      "to": 59
+    },
+    {
+      "san": "Ke7",
+      "from": 3,
+      "to": 12
+    },
+    {
+      "san": "Rd4",
+      "from": 59,
+      "to": 35
+    },
+    {
+      "san": "Ra1",
+      "from": 48,
+      "to": 56
+    },
+    {
+      "san": "Kc7",
+      "from": 1,
+      "to": 10
+    },
+    {
+      "san": "Rc1",
+      "from": 56,
+      "to": 58
+    },
+    {
+      "san": "Kb6",
+      "from": 10,
+      "to": 17
+    },
+    {
+      "san": "Rb1",
+      "from": 58,
+      "to": 57
+    },
+    {
+      "san": "Kc6",
+      "from": 17,
+      "to": 18
+    },
+    {
+      "san": "Rc1",
+      "from": 57,
+      "to": 58
+    },
+    {
+      "san": "Kb5",
+      "from": 18,
+      "to": 25
+    },
+    {
+      "san": "Rb1",
+      "from": 58,
+      "to": 57
+    },
+    {
+      "san": "Rb4",
+      "from": 35,
+      "to": 33
+    }
+  ],
+  "fen": "8/1P2k3/8/1K6/1R6/8/8/1r6 b - - 13 7"
+}

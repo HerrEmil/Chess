@@ -1,0 +1,86 @@
+{
+  "slug": "wrong-bishop",
+  "category": "endgame",
+  "name": "The Wrong Bishop",
+  "aka": ["Wrong Rook-Pawn", "Wrong-Colored Bishop"],
+  "tag": "Minor-Piece Endgame",
+  "group": "Queen & Minor-Piece Endgames",
+  "order": 2,
+  "summary": "A rook-pawn with a bishop that cannot control the promotion square is only a draw: the lone king holds the corner and cannot be evicted.",
+  "intro": "The wrong bishop, also called the wrong rook-pawn, is one of the most famous draws in the endgame. King, a rook-pawn and a bishop against a lone king is only a draw when the bishop does not control the pawn's promotion square, provided the defending king reaches the corner. The reason is fixed geometry: a rook-pawn promotes on a single corner square of one unchangeable colour, and a bishop travelling on the other colour can never cover it or drive the king off it. The defender simply sits in the corner, and every attempt to promote ends in stalemate. When the bishop is the wrong colour, the extra piece and pawn are worthless.",
+  "boardCaption": "A rook-pawn with the wrong-coloured bishop: the light bishop can never control h8, so the black king holds the corner — a draw.",
+  "startFen": "7k/8/5K1P/8/8/8/8/5B2 b - - 0 1",
+  "line": "Kg8 Bd3 Kh8 Bf1",
+  "sections": [
+    {
+      "heading": "A draw despite the extra material",
+      "paragraphs": [
+        "The wrong bishop, also called the wrong rook-pawn, is one of the most famous draws in the endgame. King, a rook-pawn and a bishop against a lone king is only a draw when the bishop does not control the pawn's promotion square, provided the defending king can reach the corner in front of the pawn. All the extra material counts for nothing.",
+        "The cause is fixed geometry. A rook-pawn promotes on a single corner square of one unchangeable colour. If the bishop travels on the other colour it can never cover that square and never drive the defending king off it, so the king simply sits in the corner and cannot be evicted."
+      ]
+    },
+    {
+      "heading": "The demonstration",
+      "paragraphs": [
+        "In the diagram White has a bishop and an h-pawn, but the pawn queens on h8, a dark square, while the bishop is light-squared. The black king is already in the corner. It shuffles between the corner and the square beside it while White's bishop wanders without effect: 1...Kg8 2.Bd3 Kh8 3.Bf1, and the position simply repeats.",
+        "White can make no progress. The king cannot be forced out of the corner, and if the pawn is ever pushed the black king is left stalemated rather than mated. With no way to promote and no way to evict the defender, the game is drawn."
+      ]
+    },
+    {
+      "heading": "One colour decides everything",
+      "paragraphs": [
+        "The rule applies to both rook-pawns, the a-pawn and the h-pawn, because each has a promotion square of a fixed colour. When the bishop is the wrong colour for that square, the extra bishop and pawn are worthless, a full piece and a pawn that together cannot win. Recognising the drawn colour combination before entering the ending is essential.",
+        "The contrast could hardly be sharper. The \"right\" bishop, one that does control the queening square, wins the same position easily by covering the corner and driving the king away. The whole difference between a simple win and a dead draw is the single colour of one bishop."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A rook-pawn with a bishop that cannot control the promotion square is only a draw.",
+    "The defending king holds the corner in front of the pawn and cannot be driven out.",
+    "Any attempt to promote leaves the lone king stalemated, not mated.",
+    "The rule applies to both a- and h-pawns, whose promotion squares are a fixed colour.",
+    "With the wrong bishop the extra piece and pawn are worthless.",
+    "The \"right\" bishop, controlling the queening square, wins the same position easily."
+  ],
+  "plans": {
+    "white": [
+      "Advance the rook-pawn and bishop and try to prise the king out of the corner.",
+      "Recognise that with the wrong bishop no method can promote the pawn.",
+      "Settle for the draw, since the extra piece and pawn cannot win."
+    ],
+    "black": [
+      "March the king to the corner in front of the pawn before White can seal it off.",
+      "Shuffle between the corner and the adjacent square, ignoring the roaming bishop.",
+      "Rely on stalemate to meet any attempt to push the pawn through."
+    ]
+  },
+  "related": [
+    "opposite-colored-bishops",
+    "key-squares",
+    "stalemate",
+    "rule-of-the-square"
+  ],
+  "moves": [
+    {
+      "san": "Kg8",
+      "from": 7,
+      "to": 6
+    },
+    {
+      "san": "Bd3",
+      "from": 61,
+      "to": 43
+    },
+    {
+      "san": "Kh8",
+      "from": 6,
+      "to": 7
+    },
+    {
+      "san": "Bf1",
+      "from": 43,
+      "to": 61
+    }
+  ],
+  "fen": "7k/8/5K1P/8/8/8/8/5B2 b - - 4 3"
+}

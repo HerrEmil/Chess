@@ -1,0 +1,92 @@
+{
+  "slug": "key-squares",
+  "category": "endgame",
+  "name": "Key Squares",
+  "aka": ["Critical Squares"],
+  "tag": "Pawn Endgame",
+  "group": "Pawn Endgames",
+  "order": 2,
+  "summary": "Key squares are the squares a king must reach to guarantee promoting its pawn — occupy one and it queens by force, whoever is to move.",
+  "intro": "Key squares are the squares a king must occupy to guarantee that its pawn will promote, no matter who holds the opposition or whose turn it is to move. For a pawn on the fourth rank or lower they lie two ranks ahead of the pawn; once the pawn reaches the fifth or sixth rank they are the three squares directly in front of and beside it. In the diagram White's king already stands on f7, a key square for the e5-pawn, so the win needs no further finesse. Wherever the black king turns, the pawn marches through under the shelter of its own king. Reaching a key square, rather than winning the opposition, is the real goal.",
+  "boardCaption": "White's king stands on a key square (f7) for the e5-pawn — the pawn now promotes by force, whoever is to move.",
+  "startFen": "4k3/5K2/8/4P3/8/8/8/8 b - - 0 1",
+  "line": "Kd7 e6 Kd6 e7 Kd7 e8=Q",
+  "sections": [
+    {
+      "heading": "What a key square is",
+      "paragraphs": [
+        "A key square is a square that, once occupied by the attacking king, forces the pawn through regardless of the opposition or whose move it is. For a pawn on the fourth rank or lower and not a rook-pawn, the three key squares lie two ranks in front of the pawn. For a pawn already on the fifth or sixth rank, they are the three squares directly in front of and beside it.",
+        "The rule holds for every pawn except the rook-pawn. An a- or h-pawn has no winning key squares against a defending king that reaches the corner, because there is no room to outflank on the edge of the board. For all other pawns, reaching a key square means the game is won."
+      ]
+    },
+    {
+      "heading": "The winning line",
+      "paragraphs": [
+        "White's king on f7 is already on a key square for the e5-pawn, so the outcome does not depend on the opposition. Black tries to blockade with 1...Kd7, but 2.e6 checks and 2...Kd6 must give way. The king on f7 shields the pawn's advance at every step.",
+        "The pawn continues 3.e7, and after 3...Kd7 the promotion square is out of the black king's reach: 4.e8=Q makes a new queen. Because White stood on a key square from the start, the pawn queened by force whoever was to move."
+      ]
+    },
+    {
+      "heading": "Two sides of one coin",
+      "paragraphs": [
+        "Key squares and the opposition describe the same struggle from different angles. The opposition is the tool a king uses to fight its way onto a key square; once the square is reached, the opposition no longer matters, because the pawn promotes by force. This is why understanding key squares clarifies exactly what the opposition is trying to achieve.",
+        "In practice the attacker aims the king at the key squares and uses the opposition to seize one. The defender contests those same squares, and the rook-pawn exception is the one case where the king can hold the corner and no key square can be won at all."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Key squares are the squares a king must reach to force its pawn to promote.",
+    "Reaching a key square wins regardless of the opposition or whose move it is.",
+    "For a pawn on the fourth rank or lower, the key squares lie two ranks in front of it.",
+    "For a pawn on the fifth or sixth rank, they are the three squares in front of and beside it.",
+    "Key squares and the opposition are two sides of the same coin.",
+    "Rook-pawns are the exception, with no winning key squares against a king in the corner."
+  ],
+  "plans": {
+    "white": [
+      "Steer the king onto a key square in front of the pawn.",
+      "Use the opposition to fight your way onto one of the key squares.",
+      "Advance and promote the pawn behind the shelter of the king."
+    ],
+    "black": [
+      "Keep the king close and blockade in front of the pawn.",
+      "Contest the key squares with the opposition before the enemy king arrives.",
+      "Steer for rook-pawn setups where no winning key squares exist."
+    ]
+  },
+  "related": ["opposition", "rule-of-the-square", "zugzwang", "wrong-bishop"],
+  "moves": [
+    {
+      "san": "Kd7",
+      "from": 4,
+      "to": 11
+    },
+    {
+      "san": "e6",
+      "from": 28,
+      "to": 20
+    },
+    {
+      "san": "Kd6",
+      "from": 11,
+      "to": 19
+    },
+    {
+      "san": "e7",
+      "from": 20,
+      "to": 12
+    },
+    {
+      "san": "Kd7",
+      "from": 19,
+      "to": 11
+    },
+    {
+      "san": "e8=Q",
+      "from": 12,
+      "to": 4,
+      "promo": "q"
+    }
+  ],
+  "fen": "4Q3/3k1K2/8/8/8/8/8/8 b - - 0 4"
+}

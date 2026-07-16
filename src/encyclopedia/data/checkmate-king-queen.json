@@ -1,0 +1,81 @@
+{
+  "slug": "checkmate-king-queen",
+  "category": "endgame",
+  "name": "King and Queen Checkmate",
+  "aka": ["Queen Mate"],
+  "tag": "Basic Checkmate",
+  "group": "Basic Checkmates",
+  "order": 2,
+  "summary": "King and queen against a lone king is the commonest basic checkmate, a forced win where the queen confines the king to the edge and the king helps mate.",
+  "intro": "King and queen against a lone king is the most common basic mate and a forced win. The queen cannot do the job alone; the king must come up to help. The winning method is to use the queen to confine the enemy king inside a shrinking box, then to march your own king forward until it supports a mate on the edge of the board. The one real danger is stalemate, because the queen so easily strips the lone king of every square.",
+  "boardCaption": "King and queen versus a lone king: White confines the king to the edge and mates.",
+  "startFen": "4k3/8/3K4/8/8/8/6Q1/8 w - - 0 1",
+  "line": "Qg7 Kd8 Qg8#",
+  "sections": [
+    {
+      "heading": "The commonest basic mate",
+      "paragraphs": [
+        "King and queen versus a lone king is the checkmate you will meet most often, and it is always a forced win. The queen by itself can never deliver mate; it needs its own king to guard the squares next to the enemy king. That partnership is the whole idea of the ending.",
+        "The method is to shrink the enemy king's freedom step by step. The queen confines the king to an ever-smaller box, and a classic way to do this safely is to keep the queen a knight's-move away from the enemy king, which controls squares without taking away its last move. Once the king is pinned to an edge, the white king comes up to complete the net."
+      ]
+    },
+    {
+      "heading": "The demonstration",
+      "paragraphs": [
+        "In the diagram the white king already stands close on d6, so the finish is short. 1.Qg7 confines the black king to the eighth rank: the queen covers the whole seventh rank and the white king covers d7 and e7. Black's only legal move is 1...Kd8. Then 2.Qg8# is mate, the queen checking along the eighth rank.",
+        "The mate works only because of the king. With the white king on d6 guarding c7, d7 and e7, the checked king on d8 has nowhere to run, and the queen on g8 covers the rest of the back rank. Take the white king away and it would be a harmless check, which is exactly why the queen cannot mate on its own."
+      ]
+    },
+    {
+      "heading": "Avoiding stalemate",
+      "paragraphs": [
+        "The biggest danger in this ending is stalemate, not any resistance from the defender. Because the queen controls so many squares at once, it is easy to leave the lone king with no legal move while it is not in check, which is an immediate draw. The whole point of the confining technique is to keep tightening the box without ever crossing that line.",
+        "The safe rule is to leave the lone king one square to move until the very move that is checkmate. Keeping the queen a knight's-move from the enemy king is a reliable habit that shrinks the box while always leaving an escape square, so the king can be walked to the edge and mated cleanly."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "King and queen versus a lone king is the commonest basic mate and a forced win.",
+    "The queen cannot mate alone; the king must come up to guard the escape squares.",
+    "Use the queen to confine the enemy king inside a shrinking box.",
+    "Keeping the queen a knight's-move away is a classic way to confine without stalemate.",
+    "Bring the king forward to support the mate on an edge of the board.",
+    "The one real hazard is stalemate: always leave the lone king a move until it is mate."
+  ],
+  "plans": {
+    "white": [
+      "Confine the enemy king to a shrinking box with the queen.",
+      "March the king up to support a mate on the edge.",
+      "Deliver mate only when the king is trapped and always leave a square until then."
+    ],
+    "black": [
+      "Keep the king as central as possible to stay out of the box.",
+      "Head for squares where a careless check would leave no move and force stalemate.",
+      "Make the stronger side prove the technique rather than resigning the corner early."
+    ]
+  },
+  "related": [
+    "checkmate-king-rook",
+    "checkmate-two-rooks",
+    "queen-versus-pawn",
+    "stalemate"
+  ],
+  "moves": [
+    {
+      "san": "Qg7",
+      "from": 54,
+      "to": 14
+    },
+    {
+      "san": "Kd8",
+      "from": 4,
+      "to": 3
+    },
+    {
+      "san": "Qg8",
+      "from": 14,
+      "to": 6
+    }
+  ],
+  "fen": "3k2Q1/8/3K4/8/8/8/8/8 b - - 3 2"
+}

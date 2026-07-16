@@ -1,0 +1,107 @@
+{
+  "slug": "opposition",
+  "category": "endgame",
+  "name": "The Opposition",
+  "aka": ["Direct Opposition"],
+  "tag": "Pawn Endgame",
+  "group": "Pawn Endgames",
+  "order": 1,
+  "summary": "The opposition arises when the kings face off with one square between them and the other side must move — the key to king-and-pawn endings.",
+  "intro": "When two kings stand on the same line with a single square between them, the player who does not have to move is said to hold the opposition and controls the squares in front of the kings. In king-and-pawn endings this is the decisive weapon: the side holding the opposition can force the enemy king to give way, letting its own king outflank the defender and escort a pawn to promotion. In the diagram the kings face each other on the e-file with Black to move, so White holds the opposition. Because Black must step aside, White's king slips around the defender and shepherds the e-pawn home. The entire win flows from who is forced to move.",
+  "boardCaption": "Direct opposition with Black to move: White holds the opposition and outflanks to promote the e-pawn.",
+  "startFen": "4k3/8/4K3/4P3/8/8/8/8 b - - 0 1",
+  "line": "Kd8 Kf7 Kd7 e6 Kd8 e7 Kd7 e8=Q",
+  "sections": [
+    {
+      "heading": "What the opposition is",
+      "paragraphs": [
+        "The opposition is the position in which the two kings face each other with one square between them and it is the other side to move. The player who is not to move holds the opposition and controls the key squares; the player forced to move must give ground, because a king cannot stand still.",
+        "Direct opposition, with the kings a single square apart, is the basic form. The same idea reaches further as the distant opposition, with three or five squares between the kings, and as the diagonal opposition, when the kings stand on the same diagonal. All are expressions of the same rule about whose turn it is to move."
+      ]
+    },
+    {
+      "heading": "The winning line",
+      "paragraphs": [
+        "With the kings in direct opposition on e6 and e8 and Black to move, White holds the opposition and Black must yield. 1...Kd8 steps aside, and 2.Kf7 outflanks to the very side the black king has just left, pushing past the defender. After 2...Kd7 the white king has broken through in front of its pawn.",
+        "Now the pawn advances under the king's shelter: 3.e6 checks and drives 3...Kd8, 4.e7 checks again and forces 4...Kd7, and 5.e8=Q brings the new queen. The opposition let the white king penetrate first and then escort the e-pawn all the way to promotion."
+      ]
+    },
+    {
+      "heading": "Fighting for the key squares",
+      "paragraphs": [
+        "To win, the attacking king must get in front of its own pawn and then seize the opposition, so that the defender is the one compelled to move. Once the enemy king gives way, the attacker outflanks to the side it vacates and the pawn follows. Grabbing the opposition too early, while the king is still behind the pawn, achieves nothing.",
+        "The defence rests on the same principle in reverse: if the defending king can hold the opposition, it keeps the attacker off the key squares and the ending is often drawn. The opposition and the key squares are two sides of one coin, and the opposition is simply the tool used to fight for those squares."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The opposition is when the kings face each other with one square between them and the other side is to move.",
+    "The side not to move holds the opposition and controls the squares in front of the kings.",
+    "Holding the opposition lets the stronger king outflank the defender and escort a pawn to promotion.",
+    "The attacking king should get in front of its pawn before seizing the opposition.",
+    "If the defender holds the opposition, the ending is often drawn.",
+    "Direct, distant, and diagonal opposition are forms of the same idea."
+  ],
+  "plans": {
+    "white": [
+      "Bring the king in front of the pawn and take the opposition so Black must give way.",
+      "Outflank to the side the enemy king vacates, penetrating with the king.",
+      "Advance and escort the pawn to promotion once the king has broken through."
+    ],
+    "black": [
+      "Meet the enemy king head-on to seize the opposition and hold the key squares.",
+      "Give ground only straight back, staying in front of the pawn.",
+      "Steer for the setups where the defender keeps the opposition and draws."
+    ]
+  },
+  "related": [
+    "key-squares",
+    "zugzwang",
+    "rule-of-the-square",
+    "checkmate-king-rook"
+  ],
+  "moves": [
+    {
+      "san": "Kd8",
+      "from": 4,
+      "to": 3
+    },
+    {
+      "san": "Kf7",
+      "from": 20,
+      "to": 13
+    },
+    {
+      "san": "Kd7",
+      "from": 3,
+      "to": 11
+    },
+    {
+      "san": "e6",
+      "from": 28,
+      "to": 20
+    },
+    {
+      "san": "Kd8",
+      "from": 11,
+      "to": 3
+    },
+    {
+      "san": "e7",
+      "from": 20,
+      "to": 12
+    },
+    {
+      "san": "Kd7",
+      "from": 3,
+      "to": 11
+    },
+    {
+      "san": "e8=Q",
+      "from": 12,
+      "to": 4,
+      "promo": "q"
+    }
+  ],
+  "fen": "4Q3/3k1K2/8/8/8/8/8/8 b - - 0 5"
+}

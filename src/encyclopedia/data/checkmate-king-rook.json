@@ -1,0 +1,141 @@
+{
+  "slug": "checkmate-king-rook",
+  "category": "endgame",
+  "name": "King and Rook Checkmate",
+  "aka": ["Rook Mate"],
+  "tag": "Basic Checkmate",
+  "group": "Basic Checkmates",
+  "order": 3,
+  "summary": "King and rook against a lone king is a forced win: the rook confines the king to an edge while the king marches up to support the mate.",
+  "intro": "King and rook against a lone king is a forced win, though it takes longer than the queen. The rook cannot mate on its own; it needs its king to help. The method is to confine the enemy king inside a shrinking box, bring the kings into opposition, and drive the defender to the edge, where a rook check finishes the game. A rook waiting move is often needed to pass the move and squeeze the defender into the mate.",
+  "boardCaption": "King and rook versus a lone king: the rook confines the king to the h-file while White's king marches up to help mate.",
+  "startFen": "7k/8/8/8/8/8/6R1/K7 w - - 0 1",
+  "line": "Kb2 Kh7 Kc3 Kh8 Kd4 Kh7 Ke5 Kh8 Kf6 Kh7 Kf7 Kh8 Rg1 Kh7 Rh1#",
+  "sections": [
+    {
+      "heading": "How the rook confines the king",
+      "paragraphs": [
+        "The rook does the containing and the king does the driving. Here the rook on g2 controls the whole g-file, so the black king is cut off on the h-file and can only shuffle between h7 and h8. That cut-off is the foundation of the technique: the rook fixes a wall the enemy king cannot cross while the stronger king advances in safety.",
+        "The rook alone can never deliver mate. To finish, the two kings must be brought face to face in opposition, so the defending king is forced to the very edge with no room behind it. Only then does a rook check become mate rather than a check the king can simply walk away from."
+      ]
+    },
+    {
+      "heading": "The demonstration",
+      "paragraphs": [
+        "With the black king penned on the h-file, White simply walks the king the whole way across the board: 1.Kb2 Kh7 2.Kc3 Kh8 3.Kd4 Kh7 4.Ke5 Kh8 5.Kf6 Kh7 6.Kf7 Kh8. The black king can only rock between h7 and h8 while the white king climbs to f7, where it covers g6, g7 and g8.",
+        "Now White needs to pass the move so that the defender is caught with the king on h8. The rook makes a waiting move, 7.Rg1, keeping the g-file wall; after 7...Kh7 the king must step up, and 8.Rh1# is mate along the h-file, the white king on f7 covering every g-square the defender might use."
+      ]
+    },
+    {
+      "heading": "Opposition, zugzwang and stalemate",
+      "paragraphs": [
+        "Two ideas make this mate work. The kings come into opposition so the defender is squeezed to the edge, and the rook waiting move puts the defender in zugzwang, forced to move into the mate. Moving the rook rather than the king lets White lose a tempo without giving up the confining file.",
+        "The same stalemate caution applies as in every basic mate. Because the rook and king between them take away so many squares, a careless check can leave the lone king with no legal move while it is not in check, an immediate draw. Make sure the king always has a step until the move that is checkmate."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "King and rook versus a lone king is a forced win, but slower than the queen.",
+    "The rook cannot mate alone; the king must come up to help.",
+    "The rook confines the enemy king to a file or rank and shrinks the box.",
+    "The kings come to opposition and the defender is driven to the edge.",
+    "A rook waiting move loses a tempo to put the defender in zugzwang.",
+    "Watch for stalemate: never give a check that leaves the king no move unless it is mate."
+  ],
+  "plans": {
+    "white": [
+      "Use the rook to confine the enemy king to an edge file or rank.",
+      "March the king across to take the opposition and drive the defender to the edge.",
+      "Make a rook waiting move to pass the move, then mate along the edge."
+    ],
+    "black": [
+      "Shuffle the king along the confining file to delay the advance.",
+      "Aim for stalemate if the stronger side gives a careless check.",
+      "Stay off the edge for as long as the rook's cut-off allows."
+    ]
+  },
+  "related": [
+    "checkmate-two-rooks",
+    "checkmate-king-queen",
+    "opposition",
+    "lucena-position"
+  ],
+  "moves": [
+    {
+      "san": "Kb2",
+      "from": 56,
+      "to": 49
+    },
+    {
+      "san": "Kh7",
+      "from": 7,
+      "to": 15
+    },
+    {
+      "san": "Kc3",
+      "from": 49,
+      "to": 42
+    },
+    {
+      "san": "Kh8",
+      "from": 15,
+      "to": 7
+    },
+    {
+      "san": "Kd4",
+      "from": 42,
+      "to": 35
+    },
+    {
+      "san": "Kh7",
+      "from": 7,
+      "to": 15
+    },
+    {
+      "san": "Ke5",
+      "from": 35,
+      "to": 28
+    },
+    {
+      "san": "Kh8",
+      "from": 15,
+      "to": 7
+    },
+    {
+      "san": "Kf6",
+      "from": 28,
+      "to": 21
+    },
+    {
+      "san": "Kh7",
+      "from": 7,
+      "to": 15
+    },
+    {
+      "san": "Kf7",
+      "from": 21,
+      "to": 13
+    },
+    {
+      "san": "Kh8",
+      "from": 15,
+      "to": 7
+    },
+    {
+      "san": "Rg1",
+      "from": 54,
+      "to": 62
+    },
+    {
+      "san": "Kh7",
+      "from": 7,
+      "to": 15
+    },
+    {
+      "san": "Rh1",
+      "from": 62,
+      "to": 63
+    }
+  ],
+  "fen": "8/5K1k/8/8/8/8/8/7R b - - 15 8"
+}

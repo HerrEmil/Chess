@@ -1,0 +1,85 @@
+{
+  "slug": "opposite-colored-bishops",
+  "category": "endgame",
+  "name": "Opposite-Colored Bishops",
+  "aka": ["Bishops of Opposite Colors"],
+  "tag": "Minor-Piece Endgame",
+  "group": "Queen & Minor-Piece Endgames",
+  "order": 3,
+  "summary": "With bishops on opposite colours the endgame is famously drawish; the defender blockades on the colour the enemy bishop can never attack.",
+  "intro": "An endgame with opposite-coloured bishops, one player's bishop moving only on light squares and the other's only on dark, is famously drawish. Because the bishops travel on opposite colours they can never attack one another or contest the same square, so the defender can build a blockade the attacker's bishop is powerless to break. Extra material often fails to win: the defender posts king and bishop on the colour the enemy bishop cannot touch and stops the pawns there. Even an extra pawn is frequently not enough. The defender's whole plan is a fortress on squares the attacking bishop can never reach.",
+  "boardCaption": "Opposite-coloured bishops: Black's light bishop guards the e8 queening square that White's dark bishop can never reach — a fortress draw.",
+  "startFen": "4k3/8/3KP3/7b/5B2/8/8/8 w - - 0 1",
+  "line": "Bg5 Bg6 Bf4 Bh5",
+  "sections": [
+    {
+      "heading": "Why they draw",
+      "paragraphs": [
+        "In an ending with opposite-coloured bishops, one player's bishop moves only on light squares and the other's only on dark. Because they travel on opposite colours they can never attack one another or contest the same square, so the defender can raise a blockade the attacker's bishop is powerless to break.",
+        "The practical effect is that extra material often fails to win. The defender places king and bishop on the colour the enemy bishop cannot touch and stops the pawns there; the attacking bishop, confined to the other colour, can never dislodge the blockade. Even an extra pawn is frequently not enough to force a way through."
+      ]
+    },
+    {
+      "heading": "The demonstration",
+      "paragraphs": [
+        "In the diagram White is a clean pawn up, the pawn on e6 supported by the king on d6, but the advantage is an illusion. The pawn must promote on e8, a light square, and that square is guarded by Black's light-squared bishop. White's bishop is dark-squared and can never contest e8, so the promotion square is permanently controlled by the defender.",
+        "With the black king blockading on e8 and the bishop covering the queening square, White has no way through: 1.Bg5 Bg6 2.Bf4 Bh5, and the dark-squared bishop shuffles while the light-squared bishop keeps its guard. The position is a fortress and the game is drawn."
+      ]
+    },
+    {
+      "heading": "The fortress and its exception",
+      "paragraphs": [
+        "The drawing tendency is remarkably strong. A well-known rule of thumb holds that even two extra connected passed pawns can often be held, provided the defender blockades them on the right colour and they are not too far apart. The defender's whole plan is a fortress: king and bishop posted on the colour the enemy bishop can never attack.",
+        "The middlegame tells the opposite story. There opposite-coloured bishops tend to favour the attacker, whose bishop operates on squares the defender's bishop can never guard. The same imbalance that draws a bare ending can be a powerful weapon while many pieces remain on the board."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Opposite-coloured bishops move on different colours and can never contest the same squares.",
+    "The ending is strongly drawish, and even an extra pawn is often not enough to win.",
+    "The defender blockades on the colour the attacking bishop cannot control.",
+    "The promotion square is held by the bishop that travels on its colour.",
+    "As a rule of thumb, even two extra connected passed pawns can often be held.",
+    "In the middlegame, by contrast, opposite bishops tend to favour the attacker."
+  ],
+  "plans": {
+    "white": [
+      "Advance the extra pawn and try to force a breakthrough on the queening square.",
+      "Probe with the dark-squared bishop and king for any weakness in the blockade.",
+      "Accept that against a correct fortress the extra pawn cannot promote."
+    ],
+    "black": [
+      "Blockade the pawn with the king on the colour White's bishop cannot attack.",
+      "Keep the light-squared bishop guarding the e8 promotion square.",
+      "Hold the fortress by shuffling the bishop while the blockade stands."
+    ]
+  },
+  "related": [
+    "wrong-bishop",
+    "checkmate-two-bishops",
+    "checkmate-bishop-knight"
+  ],
+  "moves": [
+    {
+      "san": "Bg5",
+      "from": 37,
+      "to": 30
+    },
+    {
+      "san": "Bg6",
+      "from": 31,
+      "to": 22
+    },
+    {
+      "san": "Bf4",
+      "from": 30,
+      "to": 37
+    },
+    {
+      "san": "Bh5",
+      "from": 22,
+      "to": 31
+    }
+  ],
+  "fen": "4k3/8/3KP3/7b/5B2/8/8/8 w - - 4 3"
+}
