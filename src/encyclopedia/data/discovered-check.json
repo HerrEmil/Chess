@@ -37,7 +37,7 @@
   "related": ["discovered-attack", "double-check", "windmill", "fork"],
   "moves": [
     {
-      "san": "Nxc4",
+      "san": "Nxc4+",
       "from": 28,
       "to": 34
     },

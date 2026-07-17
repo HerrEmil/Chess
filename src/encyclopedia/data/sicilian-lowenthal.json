@@ -7,7 +7,7 @@
   "group": "Semi-Open Games (1.e4)",
   "summary": "The Sicilian Löwenthal Variation (1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e5) trades the dark-squared bishop for activity and a fight over d5.",
   "intro": "The Löwenthal Variation is a sharp, old branch of the Sicilian that begins 1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e5, immediately staking a claim in the center and hitting the d4-knight. After 5.Nb5 a6 6.Nd6+ Bxd6 7.Qxd6 Qf6, Black gives up the dark-squared bishop for White's intrusive knight and offers a queen trade. It is a close relative of the Kalashnikov (5...d6) and Sveshnikov (4...Nf6), sharing their fight over the d5 square. The result is an imbalanced, strategically rich middlegame or endgame.",
-  "line": "e4 c5 Nf3 Nc6 d4 cxd4 Nxd4 e5 Nb5 a6 Nd6 Bxd6 Qxd6 Qf6",
+  "line": "e4 c5 Nf3 Nc6 d4 cxd4 Nxd4 e5 Nb5 a6 Nd6+ Bxd6 Qxd6 Qf6",
   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
   "moves": [
     {
@@ -61,7 +61,7 @@
       "to": 16
     },
     {
-      "san": "Nd6",
+      "san": "Nd6+",
       "from": 25,
       "to": 19
     },

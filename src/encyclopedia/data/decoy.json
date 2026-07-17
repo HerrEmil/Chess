@@ -45,7 +45,7 @@
   "related": ["deflection", "fork", "greek-gift-sacrifice", "double-check"],
   "moves": [
     {
-      "san": "Rc8",
+      "san": "Rc8+",
       "from": 58,
       "to": 2
     },
@@ -55,7 +55,7 @@
       "to": 2
     },
     {
-      "san": "Ne7",
+      "san": "Ne7+",
       "from": 27,
       "to": 12
     },

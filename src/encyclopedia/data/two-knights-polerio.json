@@ -7,7 +7,7 @@
   "group": "Open Games (1.e4 e5)",
   "summary": "The Polerio Defense is the main line of the Two Knights, where Black sacrifices a pawn with 5...Na5 for the bishop pair and a big lead in development.",
   "intro": "Arising after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Na5 6.Bb5+ c6 7.dxc6 bxc6 8.Be2, the Polerio Defense answers the aggressive 4.Ng5 by declining the greedy 5...Nxd5. Instead Black plays 5...Na5, chasing the c4-bishop and giving up a pawn for open lines, the bishop pair, and a powerful initiative.",
-  "line": "e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5 d5 exd5 Na5 Bb5 c6 dxc6 bxc6 Be2",
+  "line": "e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5 d5 exd5 Na5 Bb5+ c6 dxc6 bxc6 Be2",
   "sections": [
     {
       "heading": "Strategic ideas",
@@ -112,7 +112,7 @@
       "to": 24
     },
     {
-      "san": "Bb5",
+      "san": "Bb5+",
       "from": 34,
       "to": 25
     },

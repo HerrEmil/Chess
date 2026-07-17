@@ -45,7 +45,7 @@
   "related": ["double-check", "smothered-mate", "decoy", "back-rank-mate"],
   "moves": [
     {
-      "san": "Bxh7",
+      "san": "Bxh7+",
       "from": 43,
       "to": 15
     },
@@ -55,7 +55,7 @@
       "to": 15
     },
     {
-      "san": "Ng5",
+      "san": "Ng5+",
       "from": 45,
       "to": 30
     },
@@ -75,7 +75,7 @@
       "to": 4
     },
     {
-      "san": "Qh7",
+      "san": "Qh7+",
       "from": 31,
       "to": 15
     },
@@ -85,7 +85,7 @@
       "to": 5
     },
     {
-      "san": "Qh8",
+      "san": "Qh8#",
       "from": 15,
       "to": 7
     }

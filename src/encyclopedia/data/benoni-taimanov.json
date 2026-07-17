@@ -7,7 +7,7 @@
   "group": "Closed & Flank Openings",
   "summary": "The Taimanov Variation is the Modern Benoni's sharpest test, uniting the d5/e4 centre with f4 and the disruptive 8.Bb5+ check.",
   "intro": "In the Taimanov Variation of the Modern Benoni, White answers 1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6 6.e4 g6 7.f4 Bg7 with 8.Bb5+. The check disrupts Black's development before the fianchetto bishop comes to life, and White's broad pawn centre backed by f4 has long been regarded as the most testing weapon against the Benoni.",
-  "line": "d4 Nf6 c4 c5 d5 e6 Nc3 exd5 cxd5 d6 e4 g6 f4 Bg7 Bb5",
+  "line": "d4 Nf6 c4 c5 d5 e6 Nc3 exd5 cxd5 d6 e4 g6 f4 Bg7 Bb5+",
   "sections": [
     {
       "heading": "Strategic ideas",
@@ -128,7 +128,7 @@
       "to": 14
     },
     {
-      "san": "Bb5",
+      "san": "Bb5+",
       "from": 61,
       "to": 25
     }

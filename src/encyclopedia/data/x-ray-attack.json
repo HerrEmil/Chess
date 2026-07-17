@@ -1,0 +1,63 @@
+{
+  "slug": "x-ray-attack",
+  "category": "tactic",
+  "name": "The X-Ray Attack",
+  "aka": ["The X-Ray Defence"],
+  "tag": "Fundamental Tactic",
+  "group": "Fundamental Tactics",
+  "order": 9,
+  "summary": "White's bishop steps to d6 where it looks free, because the rook on d1 guards it through the black rook in between",
+  "intro": "An x-ray is a long-range piece acting through another piece standing on its line. The rook, bishop, or queen cannot move past the blocker, but the moment that blocker leaves, the line opens and the influence becomes real. The most useful form is the x-ray defence: a piece guarding one of its own pieces through an intervening enemy unit, so that if the front piece is taken, the rear piece recaptures.",
+  "boardCaption": "White plays Bd6, a square the black rook attacks; the rook on d1 defends d6 through the black rook on d4, so the capture backfires.",
+  "startFen": "2b3k1/5ppp/8/2p5/3r1B2/8/P1K2PPP/3R4 w - - 0 1",
+  "line": "Bd6 Rxd6 Rxd6",
+  "sections": [
+    {
+      "heading": "What an X-Ray Defence Is",
+      "paragraphs": [
+        "The word x-ray is used for two related things. A piece can attack an enemy piece through another enemy piece, which is really the pin and skewer family under a different name. Or a piece can defend one of its own pieces through an intervening unit. This entry teaches the second sense, the x-ray defence, because it is the one the other names do not already cover.",
+        "An x-ray defence works because the enemy piece blocking the line is usually the very piece that must capture. When it takes your front piece, it removes itself from the line, and your rear piece recaptures on a square it seemed unable to reach. Counting attackers and defenders by eye fails here. The front piece looks loose, and that illusion is exactly what wins material."
+      ]
+    },
+    {
+      "heading": "The Line Move by Move",
+      "paragraphs": [
+        "White's bishop stands on f4, and the rook on d1 is guarded by the king on c2. Black's rook sits on d4, held in place by the pawn on c5. White plays 1.Bd6, stepping onto a square the black rook attacks while hitting the c5 pawn that props the rook up. The bishop appears to hang, because the rook on d1 cannot see past the black rook on d4.",
+        "Black grabs it with 1...Rxd6, and the trap closes. The black rook has vacated d4, so the d-file now runs clear from d1 to d6, and 2.Rxd6 recaptures. White has given a bishop and taken a rook. Black was never forced to take: 1...Rxd1 2.Kxd1 simply trades rooks. That is the point of the idea. The x-ray defence threatens nothing by itself; it is the reason 1.Bd6 is playable at all."
+      ]
+    },
+    {
+      "heading": "How It Differs From a Pin or a Skewer",
+      "paragraphs": [
+        "A pin, a skewer, and an x-ray defence all put two pieces on one line with a long-range piece aimed down it. In a pin and a skewer, both pieces on the line belong to the defender and the attacker is hostile to both; the only difference between those two is which piece stands in front. The x-ray defence flips the ownership: the rear piece and the front piece are both yours, and the enemy piece is the filling in between.",
+        "That flip changes the purpose. A pin freezes a piece, and a skewer drives a piece away to collect what was behind it. An x-ray defence takes nothing and threatens nothing. It quietly makes a square safe. Read it from the rear piece outward: pick a rook or bishop, follow its file or diagonal, and ask what it would guard if the pieces in the way vanished. Any square whose only blocker is an enemy piece that captures is already defended."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "An x-ray is a line piece acting through another piece on its line.",
+    "In an x-ray defence, the rear piece guards a friendly piece through an enemy blocker.",
+    "It works because the blocker vacates the line when it captures.",
+    "A pin and a skewer aim at two enemy pieces; an x-ray defence shields your own.",
+    "Trace each rook and bishop's line and ask what it would guard if the blockers were gone."
+  ],
+  "related": ["pin", "skewer", "battery", "removing-the-defender"],
+  "moves": [
+    {
+      "san": "Bd6",
+      "from": 37,
+      "to": 19
+    },
+    {
+      "san": "Rxd6",
+      "from": 35,
+      "to": 19
+    },
+    {
+      "san": "Rxd6",
+      "from": 59,
+      "to": 19
+    }
+  ],
+  "fen": "2b3k1/5ppp/3R4/2p5/8/8/P1K2PPP/8 b - - 0 2"
+}

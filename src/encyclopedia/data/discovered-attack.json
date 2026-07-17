@@ -37,7 +37,7 @@
   "related": ["discovered-check", "double-check", "double-attack", "fork"],
   "moves": [
     {
-      "san": "Bc4",
+      "san": "Bc4+",
       "from": 43,
       "to": 34
     },
@@ -47,7 +47,7 @@
       "to": 5
     },
     {
-      "san": "Rxd8",
+      "san": "Rxd8+",
       "from": 59,
       "to": 3
     }

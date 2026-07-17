@@ -45,7 +45,7 @@
   "related": ["decoy", "removing-the-defender", "overloading", "double-attack"],
   "moves": [
     {
-      "san": "Re8",
+      "san": "Re8+",
       "from": 60,
       "to": 4
     },

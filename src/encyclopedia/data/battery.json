@@ -1,0 +1,64 @@
+{
+  "slug": "battery",
+  "category": "tactic",
+  "name": "The Battery",
+  "aka": ["Doubled Rooks"],
+  "tag": "Fundamental Tactic",
+  "group": "Fundamental Tactics",
+  "order": 8,
+  "summary": "Two pieces stacked on one line combine their force; here a queen-and-rook battery on the e-file sacrifices the queen with Qxe8 to mate with Rxe8",
+  "intro": "A battery is two pieces of like line-power lined up on the same rank, file, or diagonal so that their strength is added together and aimed at a single point. The piece in front can even be given up to blast open the path for the piece behind. In the diagram White has stacked the queen on e3 and the rook on e1 on the open e-file, both trained on the black rook guarding e8. The doubled force is about to break through to the back rank.",
+  "boardCaption": "White to move: a queen-and-rook battery on the e-file fires with Qxe8, the bishop on d7 recaptures, and Rxe8 mates on the back rank.",
+  "startFen": "4r1k1/p2b1ppp/8/8/8/4Q3/5PPP/4R1K1 w - - 0 26",
+  "line": "Qxe8+ Bxe8 Rxe8#",
+  "sections": [
+    {
+      "heading": "What a battery is",
+      "paragraphs": [
+        "A battery is formed when two pieces that move along lines, queens and rooks along ranks and files, queens and bishops along diagonals, are placed one behind the other on the same line and pointed at the same target. Their power stacks: an attacker who must be met once by the defender now has to be met twice. The classic doubling of rooks on an open file, or a queen backed by a rook, is a battery.",
+        "The special virtue of a battery is that the front piece becomes expendable. Because a second attacker stands right behind it, the leading piece can capture or be sacrificed on the target square, and the piece behind immediately recaptures or occupies the same square with undiminished force. This is how a battery breaks down a defended point: the first piece removes the guard or clears the path, and the second delivers the real blow."
+      ]
+    },
+    {
+      "heading": "The line move by move",
+      "paragraphs": [
+        "White fires the battery with Qxe8, the front piece capturing the black rook on e8 with check. Black must answer the check, and the only defender of that rook is the bishop on d7, so Bxe8 is forced; the king on g8 is two files away and cannot reach e8 to recapture. White has surrendered the queen, but in doing so has drawn off the bishop and stripped the last guard from the back rank.",
+        "Now the rear piece delivers the blow: Rxe8, the rook sweeping in from e1 to recapture on e8 with check along the eighth rank. It is checkmate. The black king on g8 has no escape: its own pawns on f7, g7, and h7 leave it no luft, and both f8 and h8 lie on the eighth rank the rook now commands — a king may not sidestep along the line of the rook checking it, so h8 is no refuge either. With no flight square and no way to block or capture, Rxe8 ends the game."
+      ]
+    },
+    {
+      "heading": "Building and using batteries",
+      "paragraphs": [
+        "To build a battery, double your heavy pieces on an open or half-open file, or line a queen up behind a rook or bishop aimed at a weakness in the enemy camp. The back rank is a favourite target when the defending king has no luft, exactly the situation on g8 here. Look for a defended square where, if you could trade off the single defender, the point behind it would collapse.",
+        "The battery answers that by sacrificing the front piece to remove the defender, then recapturing with the piece behind. When you are on the receiving end, treat a stacked queen and rook, or doubled rooks, aimed at your king as a serious warning. Give the king luft, add a second defender to the targeted square, or exchange off one of the battery's pieces before the front unit can crash through with a decisive capture."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A battery is two line-pieces stacked on the same rank, file, or diagonal so their force combines on one target.",
+    "The front piece can be sacrificed to clear the path or remove a guard for the piece behind.",
+    "Here the queen on e3 and rook on e1 form a battery aimed at e8 on the open e-file.",
+    "Qxe8 gives up the queen to strip the defender; Bxe8 is forced, then Rxe8 mates.",
+    "The mate works because the g8 king has no luft behind its f7, g7, and h7 pawns, and the rook on e8 sweeps both f8 and h8.",
+    "Defend a battery by giving the king luft, adding a defender, or trading off a battery piece."
+  ],
+  "related": ["pin", "skewer", "back-rank-mate", "discovered-attack"],
+  "moves": [
+    {
+      "san": "Qxe8+",
+      "from": 44,
+      "to": 4
+    },
+    {
+      "san": "Bxe8",
+      "from": 11,
+      "to": 4
+    },
+    {
+      "san": "Rxe8#",
+      "from": 60,
+      "to": 4
+    }
+  ],
+  "fen": "4R1k1/p4ppp/8/8/8/8/5PPP/6K1 b - - 0 27"
+}

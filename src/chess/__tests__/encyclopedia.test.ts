@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { getValid } from '../moveGen.js';
+import { getValid, isInCheck } from '../moveGen.js';
+import { getPiecesOfColor } from '../util.js';
 import {
   applyMove,
   mailboxIndex,
@@ -132,6 +133,15 @@ const repoToStandardFen = (st: RepoState): string => {
   return `${rows.join('/')} ${st.active} ${castle} ${ep} ${String(st.half)} ${String(st.full)}`;
 };
 
+// True when `color` has at least one legal move. getValid already discards
+// moves that would leave the king in check, so "no valid move anywhere" is
+// exactly stalemate-or-mate depending on whether the king is currently checked.
+const hasLegalMove = (game: GlobalChess, color: 'white' | 'black'): boolean =>
+  getPiecesOfColor(game.board, color).some(
+    (piece) =>
+      getValid(piece, game.board, game.enPassantTarget, game.castle).length > 0,
+  );
+
 const makeGame = (st: RepoState): GlobalChess => ({
   board: st.board,
   boardIndex: mailboxIndex,
@@ -173,7 +183,7 @@ describe('encyclopedia data', () => {
       const sanTokens = entry.line.trim().split(/\s+/u).filter(Boolean);
       expect(sanTokens.length).toBe(entry.moves.length);
 
-      for (const mv of entry.moves) {
+      for (const [ply, mv] of entry.moves.entries()) {
         const pieceChar = game.board[mailboxIndex[mv.from]];
         const pieceColor = pieceChar === pieceChar.toLowerCase() ? 'w' : 'b';
         expect(pieceColor).toBe(active);
@@ -200,6 +210,30 @@ describe('encyclopedia data', () => {
 
         if (active === 'b') full += 1;
         active = active === 'w' ? 'b' : 'w';
+
+        // A check/mate suffix is a published claim: "1.Rh3#" prints as mate on
+        // the page and the prose reads it as mate. The authored `line` states
+        // it and chess.mjs re-derives it into `san`; hold BOTH to this engine's
+        // verdict, so neither a bad line nor a bad derivation can ship.
+        const opponent = active === 'w' ? 'white' : 'black';
+        const checked = isInCheck(game.board, opponent);
+        const verdict = checked
+          ? hasLegalMove(game, opponent)
+            ? 'check'
+            : 'mate'
+          : 'quiet';
+        const claimOf = (san: string): string => {
+          const t = san.replace(/[!?]+$/u, '');
+          return t.endsWith('#') ? 'mate' : t.endsWith('+') ? 'check' : 'quiet';
+        };
+        for (const [source, san] of [
+          ['authored line', sanTokens[ply]],
+          ['derived san', mv.san],
+        ] as const) {
+          expect(`${san} (${source}) is ${claimOf(san)}`).toBe(
+            `${san} (${source}) is ${verdict}`,
+          );
+        }
       }
 
       const finalFen = repoToStandardFen({

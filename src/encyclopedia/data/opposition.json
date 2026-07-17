@@ -10,7 +10,7 @@
   "intro": "When two kings stand on the same line with a single square between them, the player who does not have to move is said to hold the opposition and controls the squares in front of the kings. In king-and-pawn endings this is the decisive weapon: the side holding the opposition can force the enemy king to give way, letting its own king outflank the defender and escort a pawn to promotion. In the diagram the kings face each other on the e-file with Black to move, so White holds the opposition. Because Black must step aside, White's king slips around the defender and shepherds the e-pawn home. The entire win flows from who is forced to move.",
   "boardCaption": "Direct opposition with Black to move: White holds the opposition and outflanks to promote the e-pawn.",
   "startFen": "4k3/8/4K3/4P3/8/8/8/8 b - - 0 1",
-  "line": "Kd8 Kf7 Kd7 e6 Kd8 e7 Kd7 e8=Q",
+  "line": "Kd8 Kf7 Kd7 e6+ Kd8 e7+ Kd7 e8=Q+",
   "sections": [
     {
       "heading": "What the opposition is",
@@ -77,7 +77,7 @@
       "to": 11
     },
     {
-      "san": "e6",
+      "san": "e6+",
       "from": 28,
       "to": 20
     },
@@ -87,7 +87,7 @@
       "to": 3
     },
     {
-      "san": "e7",
+      "san": "e7+",
       "from": 20,
       "to": 12
     },
@@ -97,7 +97,7 @@
       "to": 11
     },
     {
-      "san": "e8=Q",
+      "san": "e8=Q+",
       "from": 12,
       "to": 4,
       "promo": "q"

@@ -1,0 +1,59 @@
+{
+  "slug": "scholars-mate",
+  "category": "tactic",
+  "name": "Scholar's Mate",
+  "aka": ["The Four-Move Checkmate"],
+  "tag": "Mating Pattern",
+  "group": "Mating Patterns",
+  "order": 7,
+  "summary": "Scholar's Mate is the four-move checkmate in which the queen and bishop gang up on f7, mating a careless Black with Qxf7",
+  "intro": "Scholar's Mate, the notorious four-move checkmate, is the first trap most beginners meet. White develops the bishop to c4 and swings the queen out to h5, and together they train their fire on f7, the square defended only by Black's king at the start of the game. If Black overlooks the danger and reaches for counterplay, the queen dives in and mates in a single stroke. In the diagram White has just played Qh5, threatening Qxf7 mate, and Black must find a defence.",
+  "boardCaption": "Black to move after White's Qh5: the queen and the c4 bishop both bear down on f7, and the threat is Qxf7 mate in one.",
+  "startFen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b - - 3 3",
+  "line": "Nf6 Qxf7#",
+  "sections": [
+    {
+      "heading": "What Scholar's Mate is",
+      "paragraphs": [
+        "Scholar's Mate is a queen-and-bishop attack on f7, the weakest point in Black's camp at the start of the game because only the king defends it. White places the bishop on c4, where it eyes f7 along the a2-g8 diagonal, and brings the queen to h5, from where it strikes down the h5-f7 diagonal at the same pawn. Two attackers bear on a square with a single defender, and the direct threat is simply Qxf7 mate.",
+        "Because the bishop already covers f7, the queen can capture the pawn there and remain protected, so the black king cannot take the intruder. That is the whole mechanism: a supported queen lands next to the king with no way to be removed. The catch is that the threat is crude and obvious, and a single accurate defensive move neutralises it. Scholar's Mate therefore works only when the opponent overlooks the threat entirely."
+      ]
+    },
+    {
+      "heading": "The line move by move",
+      "paragraphs": [
+        "It is Black to move, three moves into the game, and the tempting reply is 3...Nf6. The knight develops and attacks the white queen on h5, so it feels both natural and aggressive. Yet it does nothing about f7, and attacking the queen does not force White to move it. Meeting the wrong threat while the mating threat still stands is the classic error, and the knight jab is exactly such a wasted tempo.",
+        "White ignores the attack on the queen and plays 4.Qxf7#. The queen captures the f7 pawn and gives check from right beside the king, protected by the bishop on c4 so it cannot be taken. The king on e8 has nowhere to run: d8 holds its own queen, f8 its own bishop, d7 its own pawn, and the queen on f7 covers e7. With no capture, no block, and no flight, it is checkmate in four moves."
+      ]
+    },
+    {
+      "heading": "Defending and using it",
+      "paragraphs": [
+        "Defending against Scholar's Mate is straightforward once the threat is seen. Black must keep f7 covered rather than grab at the queen. The move 3...g6 hits the h5 queen and blocks the h5-f7 diagonal at the same time, while 3...Qe7 simply adds a second guard to f7. Either way the mate evaporates, and White's early queen sortie turns into a liability that Black can harry with gains of time.",
+        "As an attacking weapon, then, Scholar's Mate is unreliable: it wins only against an opponent who misses a one-move threat, and it commits the queen far too early against anyone who does not. Treat it as a lesson rather than a plan. The lasting takeaways are to watch f7 (and f2 for White) in the opening, to answer a threat before pursuing your own ideas, and never to assume that an attack on the queen forces it to retreat."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Scholar's Mate is the four-move checkmate in which the queen and bishop combine to strike f7.",
+    "The f7 square begins the game defended only by the king, making it the natural target of an early attack.",
+    "After the careless Nf6, Qxf7 is mate because the c4 bishop guards the queen and the king cannot recapture.",
+    "The king on e8 has no flight square: its own queen, bishop, and pawn hem it in and the queen covers e7.",
+    "An early Qh5 is easily parried, so Scholar's Mate is only a trap against an unwary opponent, not a sound plan.",
+    "Defend by keeping f7 guarded, for example with 3...g6 or 3...Qe7, instead of grabbing at the queen."
+  ],
+  "related": ["fools-mate", "legals-mate", "damiano-mate", "back-rank-mate"],
+  "moves": [
+    {
+      "san": "Nf6",
+      "from": 6,
+      "to": 21
+    },
+    {
+      "san": "Qxf7#",
+      "from": 31,
+      "to": 13
+    }
+  ],
+  "fen": "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b - - 0 4"
+}

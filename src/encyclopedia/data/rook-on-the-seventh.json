@@ -1,0 +1,105 @@
+{
+  "slug": "rook-on-the-seventh",
+  "category": "endgame",
+  "name": "Rook on the Seventh Rank",
+  "aka": ["The Absolute Seventh"],
+  "tag": "Rook Endgame",
+  "group": "Rook Endgames",
+  "order": 5,
+  "summary": "A rook planted on the seventh rank attacks the unmoved enemy pawns and pins the enemy king to the eighth at the same time, often turning level material into a win.",
+  "intro": "A rook on the seventh rank is the single most valuable square a rook can occupy in an endgame, and the reason is that it does two jobs with one piece. The enemy pawns that have never moved all stand on the seventh, so the rook attacks them without leaving its post. At the same time it rakes every square of that rank, so the enemy king cannot step off the eighth to defend them. Defender and defended are separated by one piece. This is why experienced players will give up a pawn, or accept a slightly worse structure, for the chance to invade on the seventh — and why the position below, with material dead level, is already winning.",
+  "boardCaption": "White to move: material is level, but the rook on d7 rakes the seventh rank while the black king is stuck on the eighth.",
+  "startFen": "2r3k1/pp1R2pp/8/8/8/4P1P1/5PKP/8 w - - 0 1",
+  "line": "Rxb7 Rc2 Rxa7 Rb2 h4 Rb6 Rd7 Kf8",
+  "sections": [
+    {
+      "heading": "Why the seventh rank",
+      "paragraphs": [
+        "A rook on the seventh does two things at once, and that is why it is worth so much more than a rook anywhere else on the board. It attacks the pawns that have never moved, because those pawns all sit on the seventh. And it seals the enemy king onto the eighth rank, because every square of the seventh is under fire. One piece, two functions, and the defender usually cannot answer both.",
+        "The diagram is deliberately level: rook and four pawns each. Nothing separates the two sides except that White's rook stands on d7 and Black's sits at home on c8. That one difference decides the game. From d7 the rook already attacks b7 and g7, and it denies the black king both e7 and f7, so the king has nowhere to go but shuffle along the back rank."
+      ]
+    },
+    {
+      "heading": "The harvest",
+      "paragraphs": [
+        "1.Rxb7 wins a pawn on the spot. The a7-pawn does not defend b7 — pawns capture diagonally forward, so a7 covers b6 — and the rook on c8 guards only the c-file and the eighth rank. Black answers 1...Rc2, seizing the second rank, the exact mirror of White's idea. It looks symmetrical. It is not. White's second rank has nothing to eat: the pawns on f2 and h2 are both defended by the king on g2, and the pawn on e3 is not on the second rank at all.",
+        "So 2.Rxa7 simply takes a second pawn, and White is two pawns up with the rook still on the seventh. Black shuffles with 2...Rb2 and 3...Rb6, but there was never anything to attack, which lets White throw in the free move 3.h4. Then 4.Rd7 re-centralises without leaving the rank, and 4...Kf8 changes nothing: the rook still forbids e7 and f7, so the king cannot come out. Black spent the whole sequence locked on the back rank while his pawns vanished."
+      ]
+    },
+    {
+      "heading": "Getting there, and when not to",
+      "paragraphs": [
+        "The seventh rank is entered through an open or half-open file, so most of the work happens earlier: trade off the pawn that blocks a file, then invade. Two rooks doubled on the seventh are stronger still, powerful enough to hunt the king down on their own without help. A single rook needs targets, and the classic targets are exactly those unmoved pawns.",
+        "The rook belongs there only when it has work to do. If the enemy pawns have all advanced off the seventh and the king already has an escape square, an invading rook can end up stranded and out of play while the defender gets on with something useful. Check three things before you go in: are there pawns to take, is the enemy king confined, and can the enemy rook be traded off or driven away? In the diagram all three answer yes, and level material becomes a straightforward win."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A rook on the seventh attacks the unmoved pawns and cuts the king off on the eighth at once.",
+    "Here material is level; the rook on d7 against the rook on c8 is the whole difference.",
+    "1.Rxb7 and 2.Rxa7 harvest two pawns while the rook never leaves the rank.",
+    "Black's mirror invasion 1...Rc2 fails because f2 and h2 are defended by the king on g2.",
+    "An invader needs targets: with no pawns to take and a free enemy king it is just stranded."
+  ],
+  "plans": {
+    "white": [
+      "Invade on the seventh through an open file and refuse to leave it.",
+      "Take the unmoved pawns on b7 and a7 while the black king stays cut off on the eighth.",
+      "Avoid trading rooks; the seventh rank, not the material, is the asset."
+    ],
+    "black": [
+      "Challenge the invader by offering a rook trade along the seventh rank.",
+      "Give the king an escape square and push the pawns off the seventh so the rook has no targets.",
+      "Look for counterplay on White's second rank, which only works if the pawns there are loose."
+    ]
+  },
+  "related": [
+    "lucena-position",
+    "philidor-position",
+    "rook-behind-passed-pawn",
+    "checkmate-two-rooks"
+  ],
+  "moves": [
+    {
+      "san": "Rxb7",
+      "from": 11,
+      "to": 9
+    },
+    {
+      "san": "Rc2",
+      "from": 2,
+      "to": 50
+    },
+    {
+      "san": "Rxa7",
+      "from": 9,
+      "to": 8
+    },
+    {
+      "san": "Rb2",
+      "from": 50,
+      "to": 49
+    },
+    {
+      "san": "h4",
+      "from": 55,
+      "to": 39
+    },
+    {
+      "san": "Rb6",
+      "from": 49,
+      "to": 17
+    },
+    {
+      "san": "Rd7",
+      "from": 8,
+      "to": 11
+    },
+    {
+      "san": "Kf8",
+      "from": 6,
+      "to": 5
+    }
+  ],
+  "fen": "5k2/3R2pp/1r6/8/7P/4P1P1/5PK1/8 w - - 3 5"
+}

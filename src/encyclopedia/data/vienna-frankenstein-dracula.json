@@ -10,7 +10,7 @@
   "group": "Open Games (1.e4 e5)",
   "summary": "The Frankenstein-Dracula Variation of the Vienna (1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4), a wild line where White wins a rook and Black gets huge activity.",
   "intro": "The Frankenstein-Dracula Variation is one of the sharpest and most notorious lines in all of opening theory, reached after 1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4. Black boldly grabs the e4-pawn, inviting enormous complications. White's queen and knight go hunting: after 4.Qh5 Nd6 5.Bb3 Nc6 6.Nb5, the knight embarks on a marauding tour to c7 and a8 to win Black's rook in the corner. In return Black obtains a huge lead in development and often traps the wayward knight on a8. The result is a fantastically double-edged, concrete struggle where both kings can come under fire.",
-  "line": "e4 e5 Nc3 Nf6 Bc4 Nxe4 Qh5 Nd6 Bb3 Nc6 Nb5 g6 Qf3 f5 Qd5 Qe7 Nxc7 Kd8 Nxa8 b6",
+  "line": "e4 e5 Nc3 Nf6 Bc4 Nxe4 Qh5 Nd6 Bb3 Nc6 Nb5 g6 Qf3 f5 Qd5 Qe7 Nxc7+ Kd8 Nxa8 b6",
   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
   "moves": [
     {
@@ -94,7 +94,7 @@
       "to": 12
     },
     {
-      "san": "Nxc7",
+      "san": "Nxc7+",
       "from": 25,
       "to": 10
     },

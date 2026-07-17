@@ -38,7 +38,7 @@
   "related": ["double-check", "back-rank-mate", "fork", "legals-mate"],
   "moves": [
     {
-      "san": "Nf7",
+      "san": "Nf7+",
       "from": 30,
       "to": 13
     },
@@ -48,7 +48,7 @@
       "to": 6
     },
     {
-      "san": "Nh6",
+      "san": "Nh6+",
       "from": 13,
       "to": 23
     },
@@ -58,7 +58,7 @@
       "to": 7
     },
     {
-      "san": "Qg8",
+      "san": "Qg8+",
       "from": 20,
       "to": 6
     },
@@ -68,7 +68,7 @@
       "to": 6
     },
     {
-      "san": "Nf7",
+      "san": "Nf7#",
       "from": 23,
       "to": 13
     }

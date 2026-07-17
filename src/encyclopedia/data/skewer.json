@@ -2,7 +2,6 @@
   "slug": "skewer",
   "category": "tactic",
   "name": "The Skewer",
-  "aka": ["The X-Ray Attack"],
   "tag": "Fundamental Tactic",
   "group": "Fundamental Tactics",
   "order": 4,
@@ -45,7 +44,7 @@
   "related": ["pin", "double-attack", "fork", "queen-versus-pawn"],
   "moves": [
     {
-      "san": "Ra1",
+      "san": "Ra1+",
       "from": 63,
       "to": 56
     },

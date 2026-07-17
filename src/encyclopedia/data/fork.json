@@ -45,7 +45,7 @@
   "related": ["double-attack", "smothered-mate", "pin", "checkmate-king-queen"],
   "moves": [
     {
-      "san": "Nc7",
+      "san": "Nc7+",
       "from": 25,
       "to": 10
     },

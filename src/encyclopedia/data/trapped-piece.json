@@ -1,0 +1,78 @@
+{
+  "slug": "trapped-piece",
+  "category": "tactic",
+  "name": "The Trapped Piece",
+  "aka": ["Trapping", "The Poisoned Pawn"],
+  "tag": "Fundamental Tactic",
+  "group": "Fundamental Tactics",
+  "order": 11,
+  "summary": "A greedy bishop grabs the a2-pawn, runs out of squares after b3, and is rounded up by the knight and rook.",
+  "intro": "A piece is trapped when it has no safe square left. There is no fork, no pin, no clever geometry: the piece has simply run out of room, and attacking it once is enough to win it. The classic victim is a bishop or knight that wandered off to eat a pawn on the rim and found the door shut behind it.",
+  "boardCaption": "Black to move; the a2-pawn looks free, but taking it walks the bishop into a cage.",
+  "startFen": "6k1/pp3ppp/4b3/8/8/8/PPP1NPPP/2R3K1 b - - 0 1",
+  "line": "Bxa2 b3 a5 Nc3 Bb1 Rxb1",
+  "sections": [
+    {
+      "heading": "The Idea",
+      "paragraphs": [
+        "Trapping is a two-part operation, and the order is everything. First you build the cage: a pawn move or a piece placement quietly takes away the escape squares. Only then do you attack the piece. Because it has nowhere to run, the attack is not a threat it can answer, it is a collection notice. Attack first and the piece walks away; cage first and it never leaves.",
+        "Bishops are the easiest pieces to trap because they travel on one colour and a single pawn can seal a diagonal. A bishop sitting on a2 or h2 has only two squares in front of it. Knights are trapped by taking away their handful of exits, and even queens can be caught when they wander into a crowded corner to snack on a pawn."
+      ]
+    },
+    {
+      "heading": "The Line",
+      "paragraphs": [
+        "Black is tempted by the loose pawn on a2 and plays 1...Bxa2, apparently a free pawn. White replies 2.b3, and the cage snaps shut. The bishop on a2 now has exactly two squares on its diagonal: b3, occupied by a pawn that the c2-pawn defends, and b1, covered by the rook on c1. The greedy grab 2...Bxb3 only invites 3.cxb3, a whole bishop for two pawns.",
+        "Black tries 2...a5, hoping to follow with ...a4 to undermine the b3-pawn and reopen the diagonal. There is no time for it. White plays 3.Nc3, arriving with tempo: the knight attacks the bishop on a2 and simultaneously guards b1, its only flight square. From a2 the bishop now has exactly two moves and both lose it. The last hop 3...Bb1 lands on a square defended by the rook and the knight together, and 4.Rxb1 picks it up; 3...Bxb3 is answered by 4.cxb3 just as it was a move earlier. Pressing on with 3...a4 is a move too slow, since 4.Nxa2 ends the discussion first."
+      ]
+    },
+    {
+      "heading": "How To Spot It",
+      "paragraphs": [
+        "Before you take a pawn on the edge of the board, count the escape squares of the piece that takes it. If the answer is one or two, ask whether the opponent has a pawn move that removes them, and whether the pawn making that move will be defended. A pawn you can win but not survive winning is not a free pawn, it is bait.",
+        "From the attacker's side, the second half of the technique is the tempo. A cage is worthless if the opponent gets a free move to walk the piece out or to prepare a break such as ...a4 that reopens the diagonal. Look for an attacker that arrives with a threat, as the knight does on c3 here, hitting the trapped piece while it also covers the last exit. When one move does both jobs, the hunt is over."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A trapped piece has no safe square, so a single attack wins it outright.",
+    "Build the cage first with 2.b3, and only then attack with 3.Nc3.",
+    "The c2-pawn covers b3 and the c1-rook covers b1, sealing both exits.",
+    "Black's 2...a5 is too slow: the knight arrives with tempo before ...a4.",
+    "Grabbing a rim pawn is the classic way a bishop traps itself."
+  ],
+  "related": ["desperado", "double-attack", "fork", "decoy"],
+  "moves": [
+    {
+      "san": "Bxa2",
+      "from": 20,
+      "to": 48
+    },
+    {
+      "san": "b3",
+      "from": 49,
+      "to": 41
+    },
+    {
+      "san": "a5",
+      "from": 8,
+      "to": 24
+    },
+    {
+      "san": "Nc3",
+      "from": 52,
+      "to": 42
+    },
+    {
+      "san": "Bb1",
+      "from": 48,
+      "to": 57
+    },
+    {
+      "san": "Rxb1",
+      "from": 58,
+      "to": 57
+    }
+  ],
+  "fen": "6k1/1p3ppp/8/p7/8/1PN5/2P2PPP/1R4K1 b - - 0 4"
+}

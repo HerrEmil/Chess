@@ -38,7 +38,7 @@
   "related": ["smothered-mate", "deflection", "overloading", "arabian-mate"],
   "moves": [
     {
-      "san": "Rd8",
+      "san": "Rd8+",
       "from": 51,
       "to": 3
     },
@@ -48,7 +48,7 @@
       "to": 3
     },
     {
-      "san": "Rxd8",
+      "san": "Rxd8#",
       "from": 59,
       "to": 3
     }

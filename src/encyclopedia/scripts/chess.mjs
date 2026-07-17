@@ -368,9 +368,21 @@ const leavesKingSafe = (pos, from, to, promo) => {
   );
 };
 
+// A move only promotes when a pawn actually reaches the far rank. Passing a
+// blanket 'q' here would make makeMove drop a queen on `to` for EVERY move --
+// erasing a moving king from the board, so kingIndex returns -1 and isAttacked
+// probes nonsense coordinates. King-move legality then comes back arbitrary.
+const promoFor = (pos, from, to) => {
+  const p = pos.board[from];
+  if (p === null || p.toLowerCase() !== 'p') return null;
+  return rankRowOf(to) === (colorOf(p) === 'w' ? 0 : 7) ? 'q' : null;
+};
+
 // Legal destinations from `from` for the side to move.
 export const legalMovesFrom = (pos, from) =>
-  pseudoMoves(pos, from).filter((to) => leavesKingSafe(pos, from, to, 'q'));
+  pseudoMoves(pos, from).filter((to) =>
+    leavesKingSafe(pos, from, to, promoFor(pos, from, to)),
+  );
 
 // Parse one SAN token against `pos`, returning { from, to, promo, san }.
 export const sanToMove = (pos, rawSan) => {
@@ -437,6 +449,28 @@ export const sanToMove = (pos, rawSan) => {
   };
 };
 
+const hasAnyLegalMove = (pos) => {
+  for (let i = 0; i < 64; i += 1) {
+    const p = pos.board[i];
+    if (p === null || colorOf(p) !== pos.active) continue;
+    if (legalMovesFrom(pos, i).length > 0) return true;
+  }
+  return false;
+};
+
+// The '+' / '#' a move earns in `pos` (the position it produces). Derived, not
+// transcribed: the suffix is what the pages print, so it is computed here and
+// re-verified against the game's own engine by the vitest gate.
+export const checkSuffix = (pos) => {
+  const checked = isAttacked(
+    pos.board,
+    kingIndex(pos.board, pos.active),
+    pos.active === 'w' ? 'b' : 'w',
+  );
+  if (!checked) return '';
+  return hasAnyLegalMove(pos) ? '+' : '#';
+};
+
 // Replay a whitespace-separated SAN line (no move numbers) from startFen.
 // Returns { moves: [{ san, from, to, promo? }], fen }.
 export const applyLine = (startFen, line) => {
@@ -445,10 +479,14 @@ export const applyLine = (startFen, line) => {
   const moves = [];
   for (const tok of tokens) {
     const mv = sanToMove(pos, tok);
-    const entry = { san: mv.san, from: mv.from, to: mv.to };
+    pos = makeMove(pos, mv.from, mv.to, mv.promo);
+    const entry = {
+      san: `${mv.san}${checkSuffix(pos)}`,
+      from: mv.from,
+      to: mv.to,
+    };
     if (mv.promo) entry.promo = mv.promo;
     moves.push(entry);
-    pos = makeMove(pos, mv.from, mv.to, mv.promo);
   }
   return { moves, fen: positionToFen(pos) };
 };

@@ -1,0 +1,81 @@
+{
+  "slug": "connected-passed-pawns",
+  "category": "endgame",
+  "name": "Connected Passed Pawns",
+  "tag": "Pawn Endgame",
+  "group": "Pawn Endgames",
+  "order": 7,
+  "summary": "Two connected passed pawns on the sixth support each other so that a single rook cannot stop both — one attacks the blockader, the other queens",
+  "intro": "Connected passed pawns are two passers on adjacent files, side by side, each covering the square in front of its neighbour. That mutual cover is their strength: a lone blockading piece can only sit on one of them at a time. In the diagram White has pawns on b6 and c6 against a black rook on c8 that guards both queening squares, while the black king is marooned on h8. White plays a single pawn push to attack the rook, and whichever pawn the rook takes, the other one promotes. The pawns overwhelm the rook because one piece cannot be in two places.",
+  "boardCaption": "Connected passers on b6 and c6 versus a rook on c8: 1.b7 attacks the rook, and after 1...Rxc6 the c-pawn falls but 2.b8=Q queens.",
+  "startFen": "2r4k/8/1PP5/8/8/8/8/7K w - - 0 50",
+  "line": "b7 Rxc6 b8=Q+",
+  "sections": [
+    {
+      "heading": "The strength of connected passers",
+      "paragraphs": [
+        "Two passed pawns on adjacent files, standing side by side, defend one another's advance. The b6 pawn covers a7 and c7; the c6 pawn covers b7 and d7. Because each guards the square in front of its partner, a single enemy piece can blockade or capture only one of them, leaving the other free to run. This mutual support is exactly what makes connected passers so much stronger than two isolated pawns.",
+        "In the diagram the black rook on c8 is doing its best, sitting on the c-file and eyeing both b8 and c8, the two queening squares. But a rook is only one piece. The moment White forces it to commit to stopping one pawn, the second pawn slips through. The far-off black king on h8 is powerless to help — this ending is decided entirely by the two pawns against the lone rook."
+      ]
+    },
+    {
+      "heading": "The line move by move",
+      "paragraphs": [
+        "1.b7 is the key move. The pawn steps to b7, where it attacks the rook on c8 — a pawn on b7 covers both a8 and c8 — and from c8 that rook was doing two jobs at once: sitting on the c-pawn's queening square and covering b8 along the eighth rank. Attacked, it must move, and the moment it leaves c8 it can no longer hold both pawns back.",
+        "1...Rxc6 snatches a pawn, the best practical try, removing one of the passers. But this is precisely the trade the connected pawns are built to survive: with the rook now on c6, the b-pawn's path is clear. 2.b8=Q promotes safely, because the black king on h8 is far too distant to interfere and the rook cannot both capture on c6 and cover b8. White emerges with a queen against a rook — a decisive material edge."
+      ]
+    },
+    {
+      "heading": "Using and defending against them",
+      "paragraphs": [
+        "To win with connected passers, keep them side by side and push the pawn that attacks the blockading piece, not the one it is already watching. Advancing them in tandem, so each keeps guarding the square ahead of the other, is what makes them impossible for a single defender to hold. When the enemy is reduced to one piece trying to cover both, force it to choose: it can stop one pawn, never both.",
+        "The defender's task is to break the connection before the pawns reach the seventh. A rook that can win one pawn while still restraining the other, or a king that reaches them before they are so far advanced, may hold the balance. Once the pawns sit abreast on the sixth and shield each other, a lone rook is lost — split the phalanx earlier, or blockade with the king backed by pieces, rather than letting them march in step."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Connected passed pawns stand on adjacent files and each covers the square in front of its partner.",
+    "A single piece can blockade or capture only one pawn, so the other promotes.",
+    "1.b7 attacks the rook on c8 and drives it off the one square that covered both queening squares.",
+    "After 1...Rxc6 the b-pawn queens with 2.b8=Q, reaching queen versus rook.",
+    "Here the lesson is specific: connected passers on the sixth overwhelm a rook.",
+    "Keep the pawns side by side; a split phalanx can be rounded up piece by piece."
+  ],
+  "plans": {
+    "white": [
+      "Advance the pawn that attacks the blockading rook, keeping both passers connected.",
+      "When the rook captures one pawn, promote the other on its freed queening square.",
+      "Convert the resulting queen-versus-rook material edge into the win."
+    ],
+    "black": [
+      "Try to break the pawns' connection before they reach the seventh rank.",
+      "Use the rook to win one pawn while still restraining the second if possible.",
+      "Bring the king toward the pawns early, since from h8 it arrives far too late."
+    ]
+  },
+  "related": [
+    "pawn-breakthrough",
+    "outside-passed-pawn",
+    "rook-behind-passed-pawn",
+    "rule-of-the-square"
+  ],
+  "moves": [
+    {
+      "san": "b7",
+      "from": 17,
+      "to": 9
+    },
+    {
+      "san": "Rxc6",
+      "from": 2,
+      "to": 18
+    },
+    {
+      "san": "b8=Q+",
+      "from": 9,
+      "to": 1,
+      "promo": "q"
+    }
+  ],
+  "fen": "1Q5k/8/2r5/8/8/8/8/7K b - - 0 51"
+}

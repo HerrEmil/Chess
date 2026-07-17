@@ -10,7 +10,7 @@
   "intro": "Key squares are the squares a king must occupy to guarantee that its pawn will promote, no matter who holds the opposition or whose turn it is to move. For a pawn on the fourth rank or lower they lie two ranks ahead of the pawn; once the pawn reaches the fifth or sixth rank they are the three squares directly in front of and beside it. In the diagram White's king already stands on f7, a key square for the e5-pawn, so the win needs no further finesse. Wherever the black king turns, the pawn marches through under the shelter of its own king. Reaching a key square, rather than winning the opposition, is the real goal.",
   "boardCaption": "White's king stands on a key square (f7) for the e5-pawn — the pawn now promotes by force, whoever is to move.",
   "startFen": "4k3/5K2/8/4P3/8/8/8/8 b - - 0 1",
-  "line": "Kd7 e6 Kd6 e7 Kd7 e8=Q",
+  "line": "Kd7 e6+ Kd6 e7 Kd7 e8=Q+",
   "sections": [
     {
       "heading": "What a key square is",
@@ -62,7 +62,7 @@
       "to": 11
     },
     {
-      "san": "e6",
+      "san": "e6+",
       "from": 28,
       "to": 20
     },
@@ -82,7 +82,7 @@
       "to": 11
     },
     {
-      "san": "e8=Q",
+      "san": "e8=Q+",
       "from": 12,
       "to": 4,
       "promo": "q"

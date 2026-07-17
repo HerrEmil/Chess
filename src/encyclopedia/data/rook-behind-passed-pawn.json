@@ -1,0 +1,110 @@
+{
+  "slug": "rook-behind-passed-pawn",
+  "category": "endgame",
+  "name": "Rook Behind the Passed Pawn",
+  "aka": ["Tarrasch's Rule"],
+  "tag": "Rook Endgame",
+  "group": "Rook Endgames",
+  "order": 4,
+  "summary": "Tarrasch's rule: rooks belong behind passed pawns. White's rook holds the a5-pawn from a1 while the king marches up to b7, and White wins",
+  "intro": "Tarrasch's rule says rooks belong behind passed pawns, both your own and the enemy's. Here White's rook sits on a1 behind its a5-pawn, Black's rook is stuck in front of it on a8, and White's king already stands on c4. White wins. The reason is not that the rook behind is the more active piece, since it too must stay on the a-file. It is that the pawn's advance costs the rook behind nothing while the blockader in front only waits, and that frees White's king to walk to b7 and finish the job.",
+  "boardCaption": "White to move: the rook on a1 stands behind its own a5-pawn, Black's rook blockades on a8, and the white king is already on c4. White wins with 1.a6 and a king march to b7.",
+  "startFen": "r7/6k1/8/P7/2K5/8/8/R7 w - - 0 1",
+  "line": "a6 Rc8+ Kb5 Rb8+ Kc6 Rc8+ Kb7 Rd8 a7",
+  "sections": [
+    {
+      "heading": "What the rule really says",
+      "paragraphs": [
+        "Tarrasch's rule holds that rooks belong behind passed pawns, your own and your opponent's. This position shows both halves at once: White's rook on a1 sits behind the a5-pawn, Black's rook on a8 in front of it. White wins. But it is worth being precise about why, because the usual shorthand misleads. The rook on a1 is not the free, active one; it is tied to the a-file exactly as Black's is. Step off to b1 or e1 and Black answers Rxa5, and the position is a dead draw.",
+        "The real difference is prospects. White's rook supports the pawn from behind and never has to move for it to advance; each square the pawn leaves is one the rook keeps in reserve. Black's rook is a pure blockader with no future: it guards the queening square, has no second job, and cannot improve. Both rooks are pinned to the same file, but only one is tied to something that is getting better."
+      ]
+    },
+    {
+      "heading": "The line move by move",
+      "paragraphs": [
+        "1.a6 pushes the pawn, and Black, having nothing constructive, starts checking: 1...Rc8+. The rook slides along the eighth rank and checks down whichever file the white king occupies. White does not dodge. 2.Kb5 Rb8+ 3.Kc6 Rc8+ walks the king straight up the board, treating each check as a signal. Throughout, the rook on a1 never moves; it does its whole job standing still, and the pawn on a6 is safe because of it.",
+        "3...Rc8+ is the last check Black gets. 4.Kb7 steps alongside the rook, attacking it and, more to the point, standing where no check can land. The rook must give way with 4...Rd8, and 5.a7 settles matters: the pawn stands one square from promotion, the white king guards a8, and if the rook ever grabs on a8 the king recaptures. The checks have run out, and the blockade has been broken by a king, not by a rook."
+      ]
+    },
+    {
+      "heading": "Using and defending",
+      "paragraphs": [
+        "For the attacker: keep the rook behind the passer and win with something else. Leave it on a1, where it holds the pawn unaided, and march the king toward the queening corner, walking into side checks rather than avoiding them. The king is the converter. Take this same picture but leave White's king back near g1 and there is no win at all: Black's king reaches c7 in time, covers b7 and b8 forever, and the game is a draw. The rook behind the pawn is necessary but not sufficient.",
+        "As the defender, apply Tarrasch's rule earlier. Aim to get your rook behind the enemy passer, where it attacks from the rear and keeps a future; once it is planted in front, as on a8, there is no way back. Failing that, the defence is the king. Black's king on g7 is too far away, and the checks expire once White's king finds shelter. Bring the king to the queening corner in time and the same structure holds."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Tarrasch's rule: place your rook behind a passed pawn, your own or your opponent's.",
+    "Both rooks are tied to the a-file here; the one behind is not the more active piece.",
+    "The asymmetry is prospects: the pawn's advance costs the rook behind nothing, while the blockader in front only waits.",
+    "The king march 2.Kb5, 3.Kc6 and 4.Kb7 is what converts; on b7 no check lands and the king guards a8.",
+    "With White's king far from the pawn the same structure is only a draw, so the rook behind is necessary but not sufficient."
+  ],
+  "plans": {
+    "white": [
+      "Keep the rook on a1 behind the pawn; stepping off the a-file allows Rxa5 and throws away the win.",
+      "March the king up with Kb5, Kc6 and Kb7, walking into the checks instead of avoiding them.",
+      "Reach b7, where no check lands and the king guards a8, then push a7 and queen the pawn."
+    ],
+    "black": [
+      "Check the white king from the eighth rank to delay the march, knowing the checks expire once it reaches b7.",
+      "Try to bring the king back toward c7, which would cover b7 and b8; from g7 it arrives far too late.",
+      "Earlier in the game, put the rook behind the enemy passer instead of in front, since the a8 blockade has no way back."
+    ]
+  },
+  "related": [
+    "lucena-position",
+    "philidor-position",
+    "rook-versus-pawn",
+    "outside-passed-pawn"
+  ],
+  "moves": [
+    {
+      "san": "a6",
+      "from": 24,
+      "to": 16
+    },
+    {
+      "san": "Rc8+",
+      "from": 0,
+      "to": 2
+    },
+    {
+      "san": "Kb5",
+      "from": 34,
+      "to": 25
+    },
+    {
+      "san": "Rb8+",
+      "from": 2,
+      "to": 1
+    },
+    {
+      "san": "Kc6",
+      "from": 25,
+      "to": 18
+    },
+    {
+      "san": "Rc8+",
+      "from": 1,
+      "to": 2
+    },
+    {
+      "san": "Kb7",
+      "from": 18,
+      "to": 9
+    },
+    {
+      "san": "Rd8",
+      "from": 2,
+      "to": 3
+    },
+    {
+      "san": "a7",
+      "from": 16,
+      "to": 8
+    }
+  ],
+  "fen": "3r4/PK4k1/8/8/8/8/8/R7 b - - 0 5"
+}

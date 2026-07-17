@@ -1,0 +1,63 @@
+{
+  "slug": "clearance-sacrifice",
+  "category": "tactic",
+  "name": "The Clearance Sacrifice",
+  "aka": ["Line Clearance", "Vacating Sacrifice"],
+  "tag": "Combination",
+  "group": "Combinations & Sacrifices",
+  "order": 7,
+  "summary": "White's rook throws itself onto d8 with check for one reason only: to vacate the diagonal so the queen can mate on g7.",
+  "intro": "A clearance sacrifice is a piece giving itself away for nothing at all. It captures nothing, it drags no defender off its post, it lures no king. Its only job is to get out of the way, so that a teammate standing behind it can use the square, file, or diagonal it was occupying. The material is simply the rent paid for the vacancy.",
+  "boardCaption": "White to move; the queen on a1 is attacked and her path to g7 is blocked by White's own rook on d4.",
+  "startFen": "r5k1/1b3p1p/8/5N2/3R4/8/6PP/Q6K w - - 0 1",
+  "line": "Rd8+ Rxd8 Qg7#",
+  "sections": [
+    {
+      "heading": "The Idea",
+      "paragraphs": [
+        "Most sacrifices buy something you can point at: a shattered pawn shelter, an exposed king, a defender dragged away. A clearance sacrifice buys empty space. You have a long-range piece with a perfect line, and the only thing spoiling it is one of your own men standing in the middle. So you get rid of him, and the price does not matter, because what stands behind him is decisive.",
+        "Since the move wins no material, it has to win time instead. A clearing move that hands the opponent a free tempo is not a sacrifice, it is a blunder. That is why the clearing piece almost always leaves with check, or with a threat so large that the opponent cannot pause to count material. Tempo is the whole mechanism."
+      ]
+    },
+    {
+      "heading": "The Line",
+      "paragraphs": [
+        "Look at what White already has. The queen on a1 owns the long diagonal, the knight on f5 covers g7, and the black king sits on g8 boxed in by its own pawns on f7 and h7. Mate on g7 is one move away. The only problem is White's own rook on d4, planted squarely in the queen's path. And there is no time to reposition it politely: the black rook on a8 is attacking the queen, so 1.Rd1 loses at once to 1...Rxa1. Grabbing first with 1.Qxa8+ Bxa8 hands over a queen for a rook.",
+        "The answer is 1.Rd8+, tossing the rook onto the eighth rank for the sole purpose of emptying d4. Black's king has no answer: f7 and h7 are its own pawns, g7 is covered by the knight, and f8 and h8 are still on the checked rank. The bishop on b7 cannot reach d8, so 1...Rxd8 is the only legal move on the board. The rook is gone, the diagonal is bare, and 2.Qg7 is mate, the knight on f5 protecting the queen so the king cannot take."
+      ]
+    },
+    {
+      "heading": "How To Spot It",
+      "paragraphs": [
+        "The trigger is a strong piece with a beautiful line spoiled by one of your own units. Do not ask where that unit belongs. Ask what happens if it simply vanishes. If the answer is mate or a decisive threat, stop looking for good squares and start looking for forcing ones, and take the loudest move that gets the piece out of the way. A check is best, since it removes the opponent's chance to reply.",
+        "Keep clearance separate from its cousins. Deflection and decoy both move an enemy piece; interference plants something in the enemy's line. In a clearance sacrifice the piece you give up is your own, and the line it leaves behind does the work. The clue that you have found the real thing is that after the smoke clears you have gained no material at all, only an open road."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A clearance sacrifice vacates a square, file, or diagonal for a teammate.",
+    "It wins no material, so it must gain time: 1.Rd8+ arrives with check.",
+    "The rook on d4 is the only piece between the queen on a1 and mate on g7.",
+    "Black's king has no flight, so 1...Rxd8 is his only legal reply.",
+    "Deflection and decoy move enemy pieces; clearance sacrifices your own."
+  ],
+  "related": ["deflection", "decoy", "discovered-attack", "exchange-sacrifice"],
+  "moves": [
+    {
+      "san": "Rd8+",
+      "from": 35,
+      "to": 3
+    },
+    {
+      "san": "Rxd8",
+      "from": 0,
+      "to": 3
+    },
+    {
+      "san": "Qg7#",
+      "from": 56,
+      "to": 14
+    }
+  ],
+  "fen": "3r2k1/1b3pQp/8/5N2/8/8/6PP/7K b - - 1 2"
+}

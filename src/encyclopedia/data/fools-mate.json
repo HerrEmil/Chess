@@ -1,0 +1,54 @@
+{
+  "slug": "fools-mate",
+  "category": "tactic",
+  "name": "Fool's Mate",
+  "aka": ["The Two-Move Checkmate"],
+  "tag": "Mating Pattern",
+  "group": "Mating Patterns",
+  "order": 8,
+  "summary": "Fool's Mate is the fastest checkmate in chess: White's f- and g-pawn moves open the diagonal to the king, and Qh4 mates in two",
+  "intro": "Fool's Mate is the fastest checkmate possible: Black delivers it on the second move, and it can only ever occur through gross carelessness by White. The recipe is two hasty kingside pawn moves that tear open the diagonal leading to White's own king. With the f- and g-pawns advanced, the h4-g3-f2-e1 diagonal lies bare, and the black queen sweeps down to h4 to end the game before it has begun. In the diagram it is Black to move, poised to strike.",
+  "boardCaption": "Black to move after White's f3 and g4: the e1-h4 diagonal is stripped bare, and Qh4 delivers Fool's Mate, the fastest checkmate in chess.",
+  "startFen": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b - g3 0 2",
+  "line": "Qh4#",
+  "sections": [
+    {
+      "heading": "What Fool's Mate is",
+      "paragraphs": [
+        "Fool's Mate is checkmate delivered on Black's second move, the quickest finish the rules allow. It is not an opening or a trap you can steer toward; it happens only when White voluntarily wrecks the shelter around the king. The culprits are the two pawn moves f2-f3 (or f4) and g2-g4, which vacate f2 and g2 and lay open the diagonal running h4-g3-f2-e1 straight to White's king.",
+        "With that diagonal cleared and the white king still sitting on e1 behind its undeveloped pieces, a single long queen move ends the game. The pattern is worth knowing less as an attack to aim for than as a stark warning: pushing the f- and g-pawns in front of your own king rips holes that the enemy queen can exploit at once. The fool in the name is the side that gets mated."
+      ]
+    },
+    {
+      "heading": "The line move by move",
+      "paragraphs": [
+        "The diagram arises after 1.f3 e5 2.g4, and it is Black to move with one crushing reply: 2...Qh4#. The queen travels from d8 all the way to h4 in a single move, arriving on the newly opened diagonal. From h4 it looks straight down the h4-g3-f2-e1 line, every square of which is empty because the f- and g-pawns have marched away from f2 and g2.",
+        "The queen on h4 gives check to the king on e1, and White has no answer. The king cannot move: d1 and f1 hold its own queen and bishop, d2 and e2 hold its own pawns, and f2 is covered by the checking queen. Nothing can capture the queen on h4, and no piece can interpose on g3 or f2 to block the check. With capture, block, and flight all impossible, 2...Qh4 is checkmate in just two moves."
+      ]
+    },
+    {
+      "heading": "The lesson to take away",
+      "paragraphs": [
+        "You will almost never get to play Fool's Mate against a real opponent, because no one advances both kingside pawns so recklessly in front of an uncastled king. Its value is entirely instructive. It shows in the crudest possible form why the squares f2 and g2 (f7 and g7 for Black) are sensitive: they shield the king, and moving the pawns that stand on them opens direct lines to it.",
+        "Carry the principle into your own games. Be wary of early f- and g-pawn advances, especially before the king has castled to safety, and when an opponent plays them, look at once for a way to exploit the diagonal they have opened. The same weakness exists in mirror image for Black around f7 and g7. Above all, treat the pawns directly in front of your king as part of its armour, not to be moved without good reason."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Fool's Mate is the fastest possible checkmate, delivered by Black on the second move.",
+    "It occurs only when White carelessly pushes both the f- and g-pawns in front of the king.",
+    "Those pawn moves vacate f2 and g2 and open the h4-g3-f2-e1 diagonal to the white king on e1.",
+    "Qh4 mates because the queen checks along the open diagonal and every escape and block fails.",
+    "The king cannot flee: its own queen, bishop, and pawns block d1, f1, d2, and e2, and f2 is covered.",
+    "The lesson: moving the pawns in front of your king opens dangerous lines and should not be done lightly."
+  ],
+  "related": ["scholars-mate", "back-rank-mate", "smothered-mate"],
+  "moves": [
+    {
+      "san": "Qh4#",
+      "from": 3,
+      "to": 39
+    }
+  ],
+  "fen": "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w - - 1 3"
+}

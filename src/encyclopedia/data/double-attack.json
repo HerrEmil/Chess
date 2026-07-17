@@ -44,7 +44,7 @@
   "related": ["fork", "skewer", "discovered-attack", "deflection"],
   "moves": [
     {
-      "san": "Qd5",
+      "san": "Qd5+",
       "from": 59,
       "to": 27
     },

@@ -10,7 +10,7 @@
   "intro": "Zugzwang, German for \"compulsion to move,\" describes a position in which a player would prefer to do nothing but is forced by the rules to move — and every legal move makes matters worse. It is one of the defining ideas of the endgame, above all in king-and-pawn play, where the side compelled to move must give ground and surrender the opposition. In the diagram the kings face each other on the g-file with Black to move, and Black has no move that does not lose the race for the g-pawn. Because passing is illegal, Black must step aside and let the white king and pawn through. The same mechanism, harnessed deliberately, is how the stronger side converts many simplified positions.",
   "boardCaption": "The kings stand in opposition with Black to move — Black is in zugzwang and any move loses the g-pawn race.",
   "startFen": "6k1/8/6K1/6P1/8/8/8/8 b - - 0 1",
-  "line": "Kf8 Kh7 Kf7 g6 Kf6 g7 Kf7 g8=Q",
+  "line": "Kf8 Kh7 Kf7 g6+ Kf6 g7 Kf7 g8=Q+",
   "sections": [
     {
       "heading": "A position where every move loses",
@@ -72,7 +72,7 @@
       "to": 13
     },
     {
-      "san": "g6",
+      "san": "g6+",
       "from": 30,
       "to": 22
     },
@@ -92,7 +92,7 @@
       "to": 13
     },
     {
-      "san": "g8=Q",
+      "san": "g8=Q+",
       "from": 14,
       "to": 6,
       "promo": "q"

@@ -44,7 +44,7 @@
   "related": ["fork", "double-attack", "stalemate", "queen-versus-pawn"],
   "moves": [
     {
-      "san": "e8=N",
+      "san": "e8=N+",
       "from": 12,
       "to": 4,
       "promo": "n"

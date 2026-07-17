@@ -7,7 +7,7 @@
   "group": "Semi-Open Games (1.e4)",
   "summary": "Caro-Kann Defense Bronstein-Larsen Variation: 1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Nxf6 gxf6, Black shatters the kingside for the open g-file.",
   "intro": "The Bronstein-Larsen Variation arises after 1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Nxf6+ gxf6. Instead of the safe recapture, Black takes with the g-pawn, deliberately shattering the kingside in return for the open g-file, the bishop pair, and a dynamic, unbalanced game. It is a provocative, fighting choice associated with David Bronstein and Bent Larsen. Black typically castles queenside, hurls the h- and g-pawns forward, and attacks, while White targets the ruptured kingside and doubled f-pawns, aiming for a safe structural edge that tells in the endgame.",
-  "line": "e4 c6 d4 d5 Nc3 dxe4 Nxe4 Nf6 Nxf6 gxf6 c3 Bf5 Nf3 Nd7 Bd3",
+  "line": "e4 c6 d4 d5 Nc3 dxe4 Nxe4 Nf6 Nxf6+ gxf6 c3 Bf5 Nf3 Nd7 Bd3",
   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
   "moves": [
     {
@@ -51,7 +51,7 @@
       "to": 21
     },
     {
-      "san": "Nxf6",
+      "san": "Nxf6+",
       "from": 36,
       "to": 21
     },

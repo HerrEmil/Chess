@@ -7,7 +7,7 @@
   "group": "Closed & Flank Openings",
   "summary": "The Sämisch Variation (4.a3) forces ...Bxc3+ bxc3, handing White doubled c-pawns and a broad centre with the bishop pair against Black's structural pressure.",
   "intro": "The Sämisch Variation is White's most uncompromising answer to the Nimzo-Indian, playing 4.a3 to force the immediate exchange 4...Bxc3+ 5.bxc3. White voluntarily accepts doubled c-pawns in return for the bishop pair and a broad pawn centre, pawns on c3 and d4 that can be reinforced by f3 and e4, promising a powerful space advantage and attacking chances. Black's counterplay is aimed squarely at that structure: with ...c5, ...d5, ...Nc6, ...b6 and ...Ba6, Black blockades the centre, pressures the weak doubled c-pawns, and tries to prove that White's ambitious pawns are more target than strength. The traditional main battleground runs 5...c5 6.f3 d5, when both sides' plans collide head-on.",
-  "line": "d4 Nf6 c4 e6 Nc3 Bb4 a3 Bxc3 bxc3 c5 f3 d5",
+  "line": "d4 Nf6 c4 e6 Nc3 Bb4 a3 Bxc3+ bxc3 c5 f3 d5",
   "sections": [
     {
       "heading": "Strategic ideas",
@@ -99,7 +99,7 @@
       "to": 40
     },
     {
-      "san": "Bxc3",
+      "san": "Bxc3+",
       "from": 33,
       "to": 42
     },

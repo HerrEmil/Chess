@@ -45,7 +45,7 @@
   "related": ["deflection", "overloading", "pin", "decoy"],
   "moves": [
     {
-      "san": "Bxc6",
+      "san": "Bxc6+",
       "from": 25,
       "to": 18
     },

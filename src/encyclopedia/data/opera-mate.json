@@ -1,0 +1,53 @@
+{
+  "slug": "opera-mate",
+  "category": "tactic",
+  "name": "Opera Mate",
+  "tag": "Mating Pattern",
+  "group": "Mating Patterns",
+  "order": 10,
+  "summary": "A rook mates on the back rank while a bishop guards the rook and the king is walled in by its own bishop and pawn",
+  "intro": "The Opera Mate is a back-rank checkmate in which a rook delivers the blow while a friendly bishop both defends the rook and seals off the king's escape. It takes its name from Paul Morphy's celebrated 1858 Opera Game against the Duke of Brunswick and Count Isouard. In the diagram White's rook stands on d1 and the bishop on g5 rakes the d8-h4 diagonal; with the black king boxed in by its own pieces on e8, a single rook lift ends the game.",
+  "boardCaption": "White to move: the rook swings from d1 to d8, mating the king on e8, with the g5 bishop guarding the rook and covering the e7 flight.",
+  "startFen": "1n2kb1r/p1p2p1p/8/6B1/8/8/P6P/3R2K1 w - - 4 24",
+  "line": "Rd8#",
+  "sections": [
+    {
+      "heading": "What the Opera Mate is",
+      "paragraphs": [
+        "The Opera Mate is a checkmating picture built from a rook and a supporting bishop working against a king stuck on its back rank. The rook checks along the eighth rank, and a bishop on the long diagonal guards the mating square so the king cannot simply capture the rook. Because the check comes from an adjacent square, no piece can be interposed to block it, and the king's own men take away its remaining flight squares.",
+        "In this position the ingredients are all present. White's rook waits on d1 with a clear path up the d-file, and the black king on e8 is hemmed in by its own bishop on f8 and pawn on f7. The bishop on g5 eyes the d8 square through f6 and e7, ready both to protect the rook once it arrives and to deny the king a step to e7. Everything is prepared for a one-move finish."
+      ]
+    },
+    {
+      "heading": "The mating move",
+      "paragraphs": [
+        "White plays Rd8#, lifting the rook from d1 all the way to d8 to give check on the back rank. The obvious reply, taking the rook with the king, is impossible: the bishop on g5 guards d8 along the g5-f6-e7-d8 diagonal, so a capture would walk the king straight into the bishop. The check is delivered from the square right next to the king, which means no black piece can be placed in between to shield it.",
+        "With capture and interposition ruled out, the king must find a flight square, and there is none. The e7 square is covered by the same g5 bishop, and d7 is controlled by the rook now planted on the d-file. The two natural retreats toward the kingside are blocked by Black's own army: the bishop sits on f8 and the pawn on f7. The king on e8 has nowhere to go, so Rd8 is checkmate."
+      ]
+    },
+    {
+      "heading": "How to use it",
+      "paragraphs": [
+        "To steer toward an Opera Mate, look for an enemy king trapped on its back rank behind its own pieces, then find a bishop that already covers the square where your rook wants to land. The bishop does double duty: it defends the rook against capture and it takes away an escape square next to the king. When you spot a rook lift onto the back rank that lands on a square your bishop protects, check whether every king flight is sealed before playing it.",
+        "As the defender, the warning signs are a cramped king whose escape squares are occupied by its own bishop and pawn and an enemy bishop pointing at the back rank from a distance. Create luft or clear a flight square before the rook and bishop combine, and be wary of leaving the king boxed in on e8 with the f8 and f7 squares clogged. Once the mating net in the diagram is complete, there is no defence, so the time to react is before the rook reaches the eighth rank."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The Opera Mate is a back-rank mate where a rook checks and a bishop guards the mating square.",
+    "The g5 bishop protects the rook on d8, so the king on e8 cannot capture it.",
+    "The check comes from an adjacent square, so no piece can be interposed to block it.",
+    "The bishop also covers e7 while the rook controls d7 down the d-file.",
+    "The king's own bishop on f8 and pawn on f7 remove its last flight squares.",
+    "Hunt for this pattern when a bishop already guards the square your rook wants to reach."
+  ],
+  "related": ["back-rank-mate", "damiano-mate", "pin", "epaulette-mate"],
+  "moves": [
+    {
+      "san": "Rd8#",
+      "from": 59,
+      "to": 3
+    }
+  ],
+  "fen": "1n1Rkb1r/p1p2p1p/8/6B1/8/8/P6P/6K1 b - - 5 24"
+}

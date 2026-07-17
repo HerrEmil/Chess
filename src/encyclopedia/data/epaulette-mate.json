@@ -1,0 +1,54 @@
+{
+  "slug": "epaulette-mate",
+  "category": "tactic",
+  "name": "Epaulette Mate",
+  "aka": ["Epaulette Checkmate", "Epaulet Mate"],
+  "tag": "Mating Pattern",
+  "group": "Mating Patterns",
+  "order": 11,
+  "summary": "The king is flanked by its own two rooks that block every side-step, and a pawn-protected queen delivers a short-range mate",
+  "intro": "The Epaulette Mate is a checkmate in which the king is trapped by two of its own pieces standing on either side of it, like the epaulettes on a soldier's shoulders. Robbed of its side-steps, the king falls to a short-range blow that it cannot escape. In the diagram the black king on e8 is flanked by its own rooks on d8 and f8, and White's queen on h4 needs only a single move to exploit that self-imposed cage.",
+  "boardCaption": "White to move: the queen slides from h4 to e7, mating the king on e8 that is boxed in by its own rooks on d8 and f8.",
+  "startFen": "3rkr2/pp4pp/3P4/8/7Q/8/P6P/6K1 w - - 6 28",
+  "line": "Qe7#",
+  "sections": [
+    {
+      "heading": "What the Epaulette Mate is",
+      "paragraphs": [
+        "An Epaulette Mate happens when a king is flanked by two of its own pieces, typically rooks, that occupy the squares to its immediate left and right. Those pieces act like military epaulettes worn on the shoulders, and they take away the very flight squares the king would use to run. With the sideways escapes gone, a single attacker delivered from close range can finish the king off, because the king has boxed itself in.",
+        "In this position the pattern is textbook. The black king stands on e8 with a rook on d8 and a rook on f8, one to each side. Those rooks block d8 and f8 completely, so the only squares the king could flee to are on the seventh rank in front of it. White also has a pawn advanced to d6, a small but decisive detail that lets the queen deliver the mate from a square the king cannot answer."
+      ]
+    },
+    {
+      "heading": "The mating move",
+      "paragraphs": [
+        "White plays Qe7#, bringing the queen from h4 to e7 directly in front of the black king. The king cannot capture the queen even though it stands right next to it, because the pawn on d6 guards e7. Kxe7 would put the king on a square the pawn covers — moving into check — so the capture is illegal. The queen has arrived on a square that is both giving check and fully protected.",
+        "With capture ruled out, the king looks for a flight and finds none. The queen on e7 also covers d7 and f7, the two squares in front of the king, sweeping away its forward escapes. The squares to either side, d8 and f8, are still occupied by the black rooks themselves. Trapped between its own men and unable to touch the protected queen, the king on e8 is checkmated."
+      ]
+    },
+    {
+      "heading": "How to use it",
+      "paragraphs": [
+        "To land an Epaulette Mate, look for an enemy king whose neighbours on the same rank are its own pieces, so that only the squares straight in front remain. Then find a way to attack those forward squares and the king at once, ideally with a piece that is defended so it cannot be captured. Here the pawn on d6 is what makes the queen's arrival on e7 safe; without a protector, the queen could simply be taken.",
+        "On defence, the lesson is to avoid burying your own king behind a wall of your own pieces. A king wedged between two rooks has lost its lateral escapes and is one tempo from disaster if the forward squares can be covered. When you notice your king boxed in like this, create an escape by moving one of the flanking pieces or by advancing a pawn, before an enemy queen or rook arrives to seal the forward squares."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The Epaulette Mate traps the king between two of its own pieces that block its side-steps.",
+    "The black king on e8 is flanked by its own rooks on d8 and f8.",
+    "Qe7 mates because the pawn on d6 defends the queen, so the king cannot capture it.",
+    "The queen also covers d7 and f7, taking away the king's forward flight squares.",
+    "A king boxed in by its own men is exposed to a short-range mate.",
+    "Keep escape squares clear rather than crowding your king behind its own pieces."
+  ],
+  "related": ["back-rank-mate", "opera-mate", "corner-mate", "smothered-mate"],
+  "moves": [
+    {
+      "san": "Qe7#",
+      "from": 39,
+      "to": 12
+    }
+  ],
+  "fen": "3rkr2/pp2Q1pp/3P4/8/8/8/P6P/6K1 b - - 7 28"
+}

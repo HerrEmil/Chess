@@ -1,0 +1,68 @@
+{
+  "slug": "interference",
+  "category": "tactic",
+  "name": "Interference",
+  "aka": ["Obstruction"],
+  "tag": "Fundamental Tactic",
+  "group": "Fundamental Tactics",
+  "order": 10,
+  "summary": "A bishop is planted on e7 to cut the black rook off from g7, and the abandoned square collapses to Qxg7 mate.",
+  "intro": "Interference cuts a defender's line by standing in the middle of it. Instead of chasing an enemy rook, bishop or queen away, you drop a piece onto a square on the line it is guarding along, and the defence simply stops arriving. The blocker is often a sacrifice, offered on a square where the defender cannot profitably take it.",
+  "boardCaption": "White to move; the rook on a7 is the only extra defender of g7, and 1.Be7 slams the door on the seventh rank.",
+  "startFen": "6k1/r5pp/p1bPP3/1pp2N2/1n5B/7P/1Q4PK/8 w - - 0 1",
+  "line": "Be7 Nd3 Qxg7#",
+  "sections": [
+    {
+      "heading": "What Interference Is",
+      "paragraphs": [
+        "A rook, bishop or queen defends at a distance, and that defence travels along a line of squares. Interference attacks the line rather than the piece. You place a unit on one of the squares in between, and the guard, though still alive and still pointing the right way, no longer reaches its charge. Nothing was chased, nothing was traded; the connection was simply broken.",
+        "Because the blocker sits on the defender's own line, the defender can usually capture it and re-establish the guard from the blocking square itself. That is why the interfering piece must be immune: defended, so the capture loses material, or capturable only at the cost of the defender's life. The classic form is a sacrifice on the square where two defending lines cross, so that whichever way the position is untangled, one of them stays cut."
+      ]
+    },
+    {
+      "heading": "The Line Move by Move",
+      "paragraphs": [
+        "White already has two attackers on g7: the queen on b2 down the long diagonal and the knight on f5. Black's king covers g7, so Qxg7 would be mate at once were it not for the rook on a7, which guards g7 along the open seventh rank. That rook is the whole defence, and it is one square too slow to be chased.",
+        "The answer is 1.Be7, dropping the bishop onto the seventh rank between a7 and g7. The rook still points at g7 and now sees nothing. Grabbing the bishop is no escape: 1...Rxe7 2.dxe7 recaptures with the pawn from d6, the rook has left the board, and 3.Qxg7 is mate anyway. In the game line Black counterattacks with 1...Nd3, hitting the queen, but it is far too slow: 2.Qxg7 is mate, since the king cannot take on a square the knight on f5 covers, f8 belongs to the bishop on e7, and the pawn on e6 takes away f7."
+      ]
+    },
+    {
+      "heading": "Not Deflection, Not Overloading",
+      "paragraphs": [
+        "Deflection lures the defender away: it moves, usually because a check or a capture forces it to, and the square it left is then free. Overloading exploits a defender with two jobs and makes it choose which one to fail. Interference does neither. The rook on a7 keeps its post, has exactly one duty, and would carry it out happily. It is the road to g7 that is closed.",
+        "So the search is different too. Instead of hunting for a busy piece, trace the line from each enemy defender to what it defends, and ask what could stand on the squares between. Sacrifices that look absurd, like Be7 here, become obvious once you see them as roadblocks. And check the block is immune before you play it: an interfering piece the defender can safely capture is just a gift."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "Interference blocks the line a long-range defender guards along, instead of moving the defender.",
+    "The interfering piece must be immune, or the defender simply captures it and guards from that square.",
+    "Here 1.Be7 cuts the rook on a7 off from g7 and Qxg7 is mate.",
+    "1...Rxe7 2.dxe7 wins the rook outright and the mate on g7 returns.",
+    "Trace each defender's line and ask what could stand in the middle of it."
+  ],
+  "related": [
+    "deflection",
+    "overloading",
+    "removing-the-defender",
+    "clearance-sacrifice"
+  ],
+  "moves": [
+    {
+      "san": "Be7",
+      "from": 39,
+      "to": 12
+    },
+    {
+      "san": "Nd3",
+      "from": 33,
+      "to": 43
+    },
+    {
+      "san": "Qxg7#",
+      "from": 49,
+      "to": 14
+    }
+  ],
+  "fen": "6k1/r3B1Qp/p1bPP3/1pp2N2/8/3n3P/6PK/8 b - - 0 2"
+}

@@ -7,7 +7,7 @@
   "group": "Closed & Flank Openings",
   "summary": "The Classical Variation (4.Qc2) meets the Nimzo-Indian by avoiding doubled pawns and recapturing on c3 with the queen to keep the bishop pair.",
   "intro": "The Classical or Capablanca Variation answers the Nimzo-Indian with 4.Qc2, the most direct attempt to defuse the point of Black's pin. By defending the c3-knight with the queen, White prepares to recapture on c3 with a piece rather than a pawn, so that if Black plays ...Bxc3 the structure stays intact and White simply gains the bishop pair. A typical continuation is 4...O-O 5.a3 Bxc3+ 6.Qxc3, when White owns two bishops and a healthy pawn structure while Black enjoys a lead in development and clear targets for central counterplay with ...d5, ...b6 and ...Ne4. The trade-off between White's long-term bishops and Black's immediate activity defines the whole variation.",
-  "line": "d4 Nf6 c4 e6 Nc3 Bb4 Qc2 O-O a3 Bxc3 Qxc3",
+  "line": "d4 Nf6 c4 e6 Nc3 Bb4 Qc2 O-O a3 Bxc3+ Qxc3",
   "sections": [
     {
       "heading": "Strategic ideas",
@@ -109,7 +109,7 @@
       "to": 40
     },
     {
-      "san": "Bxc3",
+      "san": "Bxc3+",
       "from": 33,
       "to": 42
     },
