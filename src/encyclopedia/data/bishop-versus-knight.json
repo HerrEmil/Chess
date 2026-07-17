@@ -1,0 +1,90 @@
+{
+  "slug": "bishop-versus-knight",
+  "category": "endgame",
+  "name": "Bishop versus Knight",
+  "tag": "Endgame Concept",
+  "group": "Endgame Concepts",
+  "order": 3,
+  "summary": "Pawns on both wings favor the long-range bishop over the short-legged knight, which cannot defend two flanks at once; closed, single-wing play favors the knight.",
+  "intro": "Bishop or knight? Few questions in chess have generated more debate, and nowhere is the answer clearer than in the endgame. Neither minor piece is better in the abstract; everything depends on the pawn structure and how open the play is. The rule of thumb is simple: pawns on both wings favor the long-range bishop, while a single wing or a closed, locked structure tends to favor the knight. The diagrammed position, with White's bishop commanding the long diagonal and pawns on both flanks, shows the bishop's side of the argument.",
+  "boardCaption": "White to move: with pawns on both wings and the bishop on g2 raking the long light-squared diagonal, White can advance on both flanks at once, a burden the lone knight on f6 cannot share.",
+  "startFen": "8/8/3k1n2/8/P2K3P/8/6B1/8 w - - 0 1",
+  "line": "a5 Nd7 h5 Nb6 a6",
+  "sections": [
+    {
+      "heading": "Two Very Different Pieces",
+      "paragraphs": [
+        "The bishop and the knight are nominally equal in value, yet they could hardly be more different. The bishop is a long-range piece: from a single square it can sweep an entire diagonal, switching its attention from one side of the board to the other in a single move. Its price is permanent color-blindness, since a bishop that travels on light squares can never touch a dark one.",
+        "The knight is the opposite in almost every respect. It is short-legged and slow to travel, needing several moves to cross from one wing to the other, so its influence is intensely local. In return it is the only minor piece that can visit squares of either color, with one curious restriction: a knight never controls or guards a square of the color it currently stands on."
+      ]
+    },
+    {
+      "heading": "When the Bishop Shines",
+      "paragraphs": [
+        "The bishop's ideal habitat is an open position with pawns on both wings, and the diagram is a textbook illustration. White's bishop on g2 rakes the long light-squared diagonal, and the pawns on a4 and h4 stand on opposite flanks. Because the bishop acts at long range, it can watch over both wings on the same move, even supporting the a-pawn's promotion square from the far corner of the board, something a lone knight can never imitate.",
+        "The plan almost plays itself: 1.a5 Nd7 2.h5 Nb6 3.a6, and White pushes the rook's pawns on opposite wings at the same time. While the knight hurries toward the queenside to deal with the a-pawn, the h-pawn keeps rolling on the other flank. The short-legged knight is stretched between two theaters and cannot cover both wings at once, while the g2-bishop supervises the advance from a distance. This is a tendency rather than a forced result, but the strain on the knight is unmistakable."
+      ]
+    },
+    {
+      "heading": "When the Knight Excels",
+      "paragraphs": [
+        "Reverse the conditions and the verdict reverses with them. In closed positions, where locked pawn chains block the diagonals, the bishop's long range counts for little, while the knight simply hops over the barricades. The same is true when the pawns sit on a single wing: with only one theater of play, the knight's slowness stops being a handicap, and its ability to reach every square on the board becomes a real asset.",
+        "The knight has assets of its own as well. It can hop to squares of either color, so it can gang up on pawns fixed on the bishop's color, targets the bishop's owner can never fully shed. Add a strong central outpost, a secure square deep in the position from which the knight is hard to evict, and the short-legged piece becomes the dominant one. The defender's blueprint is to blockade on squares the bishop can never reach."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A bishop's long range lets it influence both wings on the same move; a lone knight cannot.",
+    "Pawns on both wings and open diagonals favor the bishop.",
+    "Closed positions and play confined to a single wing favor the knight.",
+    "The knight reaches squares of either color and can attack pawns fixed on the bishop's color.",
+    "A knight never controls a square of the color it currently stands on.",
+    "A distant bishop can support a passed pawn's promotion square from across the board."
+  ],
+  "plans": {
+    "white": [
+      "Open the game and generate play on both wings at once",
+      "Fix enemy pawns on the bishop's color to create targets",
+      "Support a passed pawn from afar along a long diagonal"
+    ],
+    "black": [
+      "Keep the position closed or confine play to one wing",
+      "Blockade on squares the bishop can never reach",
+      "Plant the knight on a strong central outpost"
+    ]
+  },
+  "related": [
+    "opposite-colored-bishops",
+    "outside-passed-pawn",
+    "wrong-bishop",
+    "zugzwang"
+  ],
+  "moves": [
+    {
+      "san": "a5",
+      "from": 32,
+      "to": 24
+    },
+    {
+      "san": "Nd7",
+      "from": 21,
+      "to": 11
+    },
+    {
+      "san": "h5",
+      "from": 39,
+      "to": 31
+    },
+    {
+      "san": "Nb6",
+      "from": 11,
+      "to": 17
+    },
+    {
+      "san": "a6",
+      "from": 24,
+      "to": 16
+    }
+  ],
+  "fen": "8/8/Pn1k4/7P/3K4/8/6B1/8 b - - 0 3"
+}

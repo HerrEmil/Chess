@@ -1,0 +1,95 @@
+{
+  "slug": "distant-opposition",
+  "category": "endgame",
+  "name": "Distant Opposition",
+  "tag": "Pawn Endgame",
+  "group": "Pawn Endgames",
+  "order": 8,
+  "summary": "The distant opposition places the kings on the same file, rank, or diagonal with an odd number of squares between them, the opponent to move.",
+  "intro": "The distant opposition is the ordinary opposition stretched across the board. Instead of standing a single square apart, the kings face each other along the same file, rank, or diagonal with three or five empty squares between them, and the side that does not have to move holds the advantage. Mastering it lets a king win maneuvering duels long before the armies make contact, because as the monarchs march closer, the distant opposition converts step by step into the direct opposition — the decisive weapon of king-and-pawn endings.",
+  "boardCaption": "The starting position: the kings stand alone on e1 and e8 with six empty squares between them, and White to move can seize the distant opposition with 1.Ke2.",
+  "startFen": "4k3/8/8/8/8/8/8/4K3 w - - 0 1",
+  "line": "Ke2 Kd7 Kd3 Ke7 Ke3 Ke6 Ke4",
+  "sections": [
+    {
+      "heading": "What the Distant Opposition Is",
+      "paragraphs": [
+        "Two kings stand in opposition when they face each other on the same file, rank, or diagonal and the player to move must give ground. In its familiar direct form only one square separates them, but the same logic operates at long range. When the kings are aligned with three or five empty squares between them and the opponent is the one who must move, the quieter king holds the distant opposition.",
+        "The count is everything. In the diagram the kings sit on e1 and e8 with six empty squares between them — an even gap — so with White to move, the position is ripe to be transformed. The rule of thumb: you hold the opposition when it is your opponent's turn and the number of squares separating the kings is odd. Whoever achieves that parity controls the coming king march."
+      ]
+    },
+    {
+      "heading": "Taking and Keeping It",
+      "paragraphs": [
+        "From the diagram, 1.Ke2 does the job. The kings now stand on e2 and e8 with five empty squares between them — e3, e4, e5, e6, and e7 — and it is Black to move. That is the distant opposition in its pure form: same file, odd gap, opponent obliged to step somewhere and reveal his intentions first. White has said nothing about his own plans while forcing Black to commit.",
+        "Keeping the opposition is a matter of mirroring. When Black sidesteps with 1...Kd7, White answers 2.Kd3, restoring the face-off on the d-file with three squares between the kings — again an odd number, again Black to move. Whatever lateral step the defender tries, the attacker copies it, preserving the alignment and the parity. A useful cross-check: you hold the opposition when the rectangle whose corners are the two kings has all four corners on the same color square."
+      ]
+    },
+    {
+      "heading": "Converting to Direct Opposition",
+      "paragraphs": [
+        "The distant opposition is not an end in itself; its purpose is to shrink. After 2...Ke7 White continues 3.Ke3, keeping the kings aligned with Black to move, and when Black comes forward with 3...Ke6, White strides to 4.Ke4. Now only one square separates the kings and it is still Black's turn — the distant opposition has been converted, rank by rank, into the direct opposition on the fourth rank.",
+        "This conversion is the whole point of the technique. In the diagram there are no pawns, so the exercise is pure king play, but in a real king-and-pawn ending the direct opposition is the decisive form: it decides who penetrates and who must yield. A player who understands the odd-gap rule can seize the initiative from across the board, confident that correct mirroring will deliver the close-range opposition when it matters."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "The distant opposition is the ordinary opposition stretched out: kings on the same file, rank, or diagonal with three or five empty squares between them.",
+    "You hold the opposition when the gap between the kings is odd and it is your opponent's turn to move.",
+    "The side that does not have to move holds the opposition and forces the enemy king to commit first.",
+    "Keep the opposition by mirroring the enemy king's steps, as in 1.Ke2 Kd7 2.Kd3.",
+    "As the kings close in, the distant opposition converts into the direct opposition, the decisive form in king-and-pawn endings.",
+    "A quick check: you hold the opposition when the rectangle with the two kings at its corners has all four corners on the same color."
+  ],
+  "plans": {
+    "white": [
+      "Seize the distant opposition with a move like 1.Ke2, leaving an odd gap with Black to move.",
+      "Mirror every sidestep by the enemy king to keep the alignment and the odd count.",
+      "Convert to the direct opposition as the kings close in, then use it to break through."
+    ],
+    "black": [
+      "Contest the opposition by fighting for the correct parity, keeping the gap odd on White's turn.",
+      "Avoid committal king moves that let White mirror and force you to give way.",
+      "Steer toward drawn setups where holding or regaining the opposition denies the enemy king entry."
+    ]
+  },
+  "related": ["opposition", "key-squares", "zugzwang", "rule-of-the-square"],
+  "moves": [
+    {
+      "san": "Ke2",
+      "from": 60,
+      "to": 52
+    },
+    {
+      "san": "Kd7",
+      "from": 4,
+      "to": 11
+    },
+    {
+      "san": "Kd3",
+      "from": 52,
+      "to": 43
+    },
+    {
+      "san": "Ke7",
+      "from": 11,
+      "to": 12
+    },
+    {
+      "san": "Ke3",
+      "from": 43,
+      "to": 44
+    },
+    {
+      "san": "Ke6",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "san": "Ke4",
+      "from": 44,
+      "to": 36
+    }
+  ],
+  "fen": "8/8/4k3/8/4K3/8/8/8 b - - 7 4"
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "protected-passed-pawn",
+  "category": "endgame",
+  "name": "The Protected Passed Pawn",
+  "tag": "Pawn Endgame",
+  "group": "Pawn Endgames",
+  "order": 9,
+  "summary": "A protected passed pawn cannot be captured and ties the enemy king to guard duty, leaving your own king free to win the game elsewhere.",
+  "intro": "A protected passed pawn is a passed pawn defended by a fellow pawn, and it ranks among the most valuable assets in any endgame. The enemy cannot capture it, because taking it would walk into the defender's guard, and the enemy dares not ignore it, because it threatens to run toward promotion. The result is a piece of the opponent's army, very often the king itself, chained permanently to one small corner of the board while your forces operate with total freedom everywhere else.",
+  "boardCaption": "The starting position: White's b5-pawn is passed and defended by the a4-pawn, so Black's king on b6 can neither capture it nor leave its side, while White's king on d4 is free to roam.",
+  "startFen": "8/8/1k6/1P5p/P2K4/8/7P/8 w - - 0 1",
+  "line": "Ke5 Kb7 Kf5 Kb6 Kg5",
+  "sections": [
+    {
+      "heading": "An Immovable Asset",
+      "paragraphs": [
+        "Look at the b5-pawn in the diagram. It is passed, with no black pawn able to stop or capture it on its way forward, and it is defended by the a4-pawn. That combination makes it untouchable. Black's king on b6 stands right next to it, yet playing ...Kxb5 is simply illegal: the king would be moving into the a4-pawn's guard, stepping into check from a pawn.",
+        "Nor can the black king walk away. If it ever abandons its post, White plays b5-b6+ and the pawn marches on toward promotion. So the king is trapped in a cruel dilemma: it cannot take the pawn, and it cannot leave the pawn. It must stand watch, shuffling in place, tied to a single square's worth of duty for as long as the pawn remains on the board."
+      ]
+    },
+    {
+      "heading": "The King's Free March",
+      "paragraphs": [
+        "The illustrative line makes the imbalance vivid. White plays 1.Ke5, and the contrast is immediate: White's king is completely free to roam, while Black's is chained. Black tries 1...Kb7, staying within reach of the passer, and after 2.Kf5 Kb6 3.Kg5 the white king has strolled across the board to the kingside, heading straight for the undefended h5-pawn.",
+        "Notice what Black has been doing in the meantime: nothing. The moves ...Kb7 and ...Kb6 are pure shuffling, back and forth on the same two squares, because leaving the b-pawn's watch would let it advance. White wins the h5-pawn, and with it the game, and Black's king never had a say in the matter. One side played the endgame; the other merely witnessed it."
+      ]
+    },
+    {
+      "heading": "Playing With an Extra Piece",
+      "paragraphs": [
+        "The deeper lesson is why this wins. A protected passed pawn ties down an enemy piece, very often the king, to guarding or blockading it. That means every fight on the rest of the board is contested by fewer defenders. In the diagram, the struggle over the kingside pawns is effectively White's king against nobody, which is why the h5-pawn falls without resistance. You are, in practical terms, playing with an extra piece.",
+        "This is why strong players steer toward pawn structures that can produce a protected passer, and why they value one so highly once it exists. The pawn does not need to promote to earn its keep; its mere presence paralyzes the defense. Use the freedom it grants to win material or break through elsewhere, and let the promotion threat itself do the heavy lifting."
+      ]
+    }
+  ],
+  "keyIdeas": [
+    "A protected passed pawn is a passed pawn defended by a fellow pawn, making it immune to capture.",
+    "The enemy king cannot take it, since capturing would move into the defending pawn's guard.",
+    "The enemy king cannot leave it either, because the pawn would then advance toward promotion.",
+    "A piece tied to watching the passer is a piece removed from the rest of the game.",
+    "The free side's king can march to the other wing and win material unopposed.",
+    "In effect, the side with a protected passer plays with an extra piece elsewhere on the board."
+  ],
+  "plans": {
+    "white": [
+      "Tie the enemy king to the protected passer",
+      "Activate the king on the far wing",
+      "Win material or promote the pawn"
+    ],
+    "black": [
+      "Avoid conceding a protected passed pawn",
+      "Seek counterplay or build a fortress",
+      "Keep the king as active as possible"
+    ]
+  },
+  "related": [
+    "outside-passed-pawn",
+    "connected-passed-pawns",
+    "pawn-breakthrough",
+    "opposition"
+  ],
+  "moves": [
+    {
+      "san": "Ke5",
+      "from": 35,
+      "to": 28
+    },
+    {
+      "san": "Kb7",
+      "from": 17,
+      "to": 9
+    },
+    {
+      "san": "Kf5",
+      "from": 28,
+      "to": 29
+    },
+    {
+      "san": "Kb6",
+      "from": 9,
+      "to": 17
+    },
+    {
+      "san": "Kg5",
+      "from": 29,
+      "to": 30
+    }
+  ],
+  "fen": "8/8/1k6/1P4Kp/P7/8/7P/8 b - - 5 3"
+}
