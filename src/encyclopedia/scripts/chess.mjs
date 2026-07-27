@@ -359,30 +359,29 @@ export const makeMove = (pos, from, to, promo = null) => {
   };
 };
 
-const leavesKingSafe = (pos, from, to, promo) => {
-  const next = makeMove(pos, from, to, promo);
-  return !isAttacked(
-    next.board,
-    kingIndex(next.board, pos.active),
-    next.active,
-  );
-};
+// True when `color`'s king stands attacked on `board`.
+const inCheck = (board, color) =>
+  isAttacked(board, kingIndex(board, color), color === 'w' ? 'b' : 'w');
 
 // A move only promotes when a pawn actually reaches the far rank. Passing a
-// blanket 'q' here would make makeMove drop a queen on `to` for EVERY move --
+// blanket 'q' would make makeMove drop a queen on `to` for EVERY move --
 // erasing a moving king from the board, so kingIndex returns -1 and isAttacked
 // probes nonsense coordinates. King-move legality then comes back arbitrary.
+// Derived from the position so no caller can reintroduce that.
 const promoFor = (pos, from, to) => {
   const p = pos.board[from];
-  if (p === null || p.toLowerCase() !== 'p') return null;
-  return rankRowOf(to) === (colorOf(p) === 'w' ? 0 : 7) ? 'q' : null;
+  return p.toLowerCase() === 'p' &&
+    rankRowOf(to) === (colorOf(p) === 'w' ? 0 : 7)
+    ? 'q'
+    : null;
 };
+
+const leavesKingSafe = (pos, from, to) =>
+  !inCheck(makeMove(pos, from, to, promoFor(pos, from, to)).board, pos.active);
 
 // Legal destinations from `from` for the side to move.
 export const legalMovesFrom = (pos, from) =>
-  pseudoMoves(pos, from).filter((to) =>
-    leavesKingSafe(pos, from, to, promoFor(pos, from, to)),
-  );
+  pseudoMoves(pos, from).filter((to) => leavesKingSafe(pos, from, to));
 
 // Parse one SAN token against `pos`, returning { from, to, promo, san }.
 export const sanToMove = (pos, rawSan) => {
@@ -461,13 +460,8 @@ const hasAnyLegalMove = (pos) => {
 // The '+' / '#' a move earns in `pos` (the position it produces). Derived, not
 // transcribed: the suffix is what the pages print, so it is computed here and
 // re-verified against the game's own engine by the vitest gate.
-export const checkSuffix = (pos) => {
-  const checked = isAttacked(
-    pos.board,
-    kingIndex(pos.board, pos.active),
-    pos.active === 'w' ? 'b' : 'w',
-  );
-  if (!checked) return '';
+const checkSuffix = (pos) => {
+  if (!inCheck(pos.board, pos.active)) return '';
   return hasAnyLegalMove(pos) ? '+' : '#';
 };
 

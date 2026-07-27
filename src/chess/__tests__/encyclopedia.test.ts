@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { getValid, isInCheck } from '../moveGen.js';
-import { getPiecesOfColor } from '../util.js';
+import { getAllValidMoves, getPiecesOfColor } from '../util.js';
 import {
   applyMove,
   mailboxIndex,
@@ -137,10 +137,18 @@ const repoToStandardFen = (st: RepoState): string => {
 // moves that would leave the king in check, so "no valid move anywhere" is
 // exactly stalemate-or-mate depending on whether the king is currently checked.
 const hasLegalMove = (game: GlobalChess, color: 'white' | 'black'): boolean =>
-  getPiecesOfColor(game.board, color).some(
-    (piece) =>
-      getValid(piece, game.board, game.enPassantTarget, game.castle).length > 0,
-  );
+  getAllValidMoves(
+    game.board,
+    getPiecesOfColor(game.board, color),
+    game.enPassantTarget,
+    game.castle,
+  ).some((moves) => moves.length > 0);
+
+// What a SAN token claims about the position it produces, ignoring !/? marks.
+const claimOf = (san: string): string => {
+  const t = san.replace(/[!?]+$/u, '');
+  return t.endsWith('#') ? 'mate' : t.endsWith('+') ? 'check' : 'quiet';
+};
 
 const makeGame = (st: RepoState): GlobalChess => ({
   board: st.board,
@@ -216,24 +224,20 @@ describe('encyclopedia data', () => {
         // it and chess.mjs re-derives it into `san`; hold BOTH to this engine's
         // verdict, so neither a bad line nor a bad derivation can ship.
         const opponent = active === 'w' ? 'white' : 'black';
-        const checked = isInCheck(game.board, opponent);
-        const verdict = checked
+        const verdict = isInCheck(game.board, opponent)
           ? hasLegalMove(game, opponent)
             ? 'check'
             : 'mate'
           : 'quiet';
-        const claimOf = (san: string): string => {
-          const t = san.replace(/[!?]+$/u, '');
-          return t.endsWith('#') ? 'mate' : t.endsWith('+') ? 'check' : 'quiet';
-        };
-        for (const [source, san] of [
-          ['authored line', sanTokens[ply]],
-          ['derived san', mv.san],
-        ] as const) {
-          expect(`${san} (${source}) is ${claimOf(san)}`).toBe(
-            `${san} (${source}) is ${verdict}`,
-          );
-        }
+        const authored = sanTokens[ply];
+        expect(
+          claimOf(authored),
+          `authored line ply ${String(ply + 1)} "${authored}"`,
+        ).toBe(verdict);
+        expect(
+          claimOf(mv.san),
+          `derived san ply ${String(ply + 1)} "${mv.san}"`,
+        ).toBe(verdict);
       }
 
       const finalFen = repoToStandardFen({
