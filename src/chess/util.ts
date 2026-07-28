@@ -23,3 +23,16 @@ export const getAllValidMoves = (
   castle: CastleState,
 ): readonly (readonly number[])[] =>
   pieces.map((piece) => getValid(piece, board, enPassantTarget, castle));
+
+// True when `color` has at least one legal move. getValid already discards
+// moves that would leave the king in check, so "no legal move anywhere" is
+// exactly stalemate-or-mate depending on whether the king is currently checked.
+export const sideHasLegalMove = (
+  board: readonly string[],
+  color: ChessColor,
+  enPassantTarget: number | null,
+  castle: CastleState,
+): boolean =>
+  getPiecesOfColor(board, color).some(
+    (piece) => getValid(piece, board, enPassantTarget, castle).length > 0,
+  );

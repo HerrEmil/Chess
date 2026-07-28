@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { getValid, isInCheck } from '../moveGen.js';
-import { getAllValidMoves, getPiecesOfColor } from '../util.js';
+import { sideHasLegalMove } from '../util.js';
 import {
   applyMove,
   mailboxIndex,
@@ -133,16 +133,8 @@ const repoToStandardFen = (st: RepoState): string => {
   return `${rows.join('/')} ${st.active} ${castle} ${ep} ${String(st.half)} ${String(st.full)}`;
 };
 
-// True when `color` has at least one legal move. getValid already discards
-// moves that would leave the king in check, so "no valid move anywhere" is
-// exactly stalemate-or-mate depending on whether the king is currently checked.
 const hasLegalMove = (game: GlobalChess, color: 'white' | 'black'): boolean =>
-  getAllValidMoves(
-    game.board,
-    getPiecesOfColor(game.board, color),
-    game.enPassantTarget,
-    game.castle,
-  ).some((moves) => moves.length > 0);
+  sideHasLegalMove(game.board, color, game.enPassantTarget, game.castle);
 
 // What a SAN token claims about the position it produces, ignoring !/? marks.
 const claimOf = (san: string): string => {

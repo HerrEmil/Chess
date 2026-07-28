@@ -370,10 +370,8 @@ const inCheck = (board, color) =>
 // Derived from the position so no caller can reintroduce that.
 const promoFor = (pos, from, to) => {
   const p = pos.board[from];
-  return p.toLowerCase() === 'p' &&
-    rankRowOf(to) === (colorOf(p) === 'w' ? 0 : 7)
-    ? 'q'
-    : null;
+  if (p === null || p.toLowerCase() !== 'p') return null;
+  return rankRowOf(to) === (colorOf(p) === 'w' ? 0 : 7) ? 'q' : null;
 };
 
 const leavesKingSafe = (pos, from, to) =>

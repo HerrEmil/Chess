@@ -7,7 +7,7 @@ import {
   setLabels,
 } from './board.js';
 import { convertPawn, endGame, startGame } from './panels.js';
-import { getAllValidMoves, getPiecesOfColor } from './util.js';
+import { sideHasLegalMove } from './util.js';
 import { isInCheck } from './moveGen.js';
 
 export type GameResult =
@@ -594,15 +594,9 @@ export const checkTurnEnd = (
     };
   }
 
-  // Check if the next player has any valid moves
-  const currentPlayerValids = getAllValidMoves(
-    game.board,
-    getPiecesOfColor(game.board, newTurn),
-    game.enPassantTarget,
-    game.castle,
-  ).flat();
-
-  if (!currentPlayerValids.length) {
+  if (
+    !sideHasLegalMove(game.board, newTurn, game.enPassantTarget, game.castle)
+  ) {
     const result = isInCheck(game.board, newTurn) ? 'checkmate' : 'stalemate';
     return { gameEnd: result, newTurn, positionEntry, shouldTriggerAI: false };
   }
