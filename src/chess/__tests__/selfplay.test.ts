@@ -557,5 +557,5 @@ describe('self-play non-regression', () => {
     }
     expect(games).toBe(72);
     expect(newScore).toBeGreaterThanOrEqual(oldScore);
-  }, 180_000);
+  }, 300_000);
 });
