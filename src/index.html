@@ -1,21 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      // SPA fallback router. CloudFront serves this app shell for any path
-      // missing from S3 (its 403 -> /index.html rewrite), including static
-      // subdirectories such as /encyclopedia/. Forward a bare directory
-      // request to that directory's real static index.html before the app
-      // boots, so clean URLs like /encyclopedia/ resolve to their page.
-      (function () {
-        var path = location.pathname;
-        if (path !== '/' && path.charAt(path.length - 1) === '/') {
-          location.replace(
-            path + 'index.html' + location.search + location.hash,
-          );
-        }
-      })();
-    </script>
     <title>Chess!</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -126,7 +111,6 @@
         <button type="button" id="playChessBtn" onclick="startGame()">
           Play Chess!
         </button>
-        <a id="encyclopediaLink" href="encyclopedia/">Chess encyclopedia</a>
       </div>
     </div>
   </body>
