@@ -93,6 +93,7 @@ td {
   text-align: center;
   width: var(--cell-size, 80px);
   height: var(--cell-size, 80px);
+  padding: 0;
   border: none;
   position: relative;
 }

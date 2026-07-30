@@ -181,18 +181,18 @@ export const setLabels = (): void => {
   const firstCell = document.getElementById('0')!;
   const { scrollX, scrollY } = window;
   const firstRect = firstCell.getBoundingClientRect();
-  const cellSize = firstRect.height;
+  const cellWidth = firstRect.width;
+  const cellHeight = firstRect.height;
   const borderWidth = parseInt(
     document.documentElement.style.getPropertyValue('--border-width'),
     10,
   );
   const leftPos = firstRect.left + scrollX;
+  const rightPos =
+    document.getElementById('7')!.getBoundingClientRect().right + scrollX;
   const topPosLet1 = firstRect.top + scrollY;
   const topPosLet2 =
-    document.getElementById('56')!.getBoundingClientRect().top +
-    scrollY +
-    cellSize +
-    1;
+    document.getElementById('56')!.getBoundingClientRect().bottom + scrollY;
   const fontSize = borderWidth / 25;
 
   const mainEl = document.getElementById('main')!;
@@ -211,22 +211,20 @@ export const setLabels = (): void => {
       'beforeend',
       `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:${borderWidth}px;top:${topPos}px;left:${
         leftPos - borderWidth
-      }px;line-height:${cellSize}px;font-size:${fontSize}em">${
+      }px;line-height:${cellHeight}px;font-size:${fontSize}em">${
         9 - (index + 1)
       }</p>`,
     );
     mainEl.insertAdjacentHTML(
       'beforeend',
-      `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:${borderWidth}px;top:${topPos}px;left:${
-        leftPos + cellSize * 8
-      }px;line-height:${cellSize}px;font-size:${fontSize}em">${
+      `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:${borderWidth}px;top:${topPos}px;left:${rightPos}px;line-height:${cellHeight}px;font-size:${fontSize}em">${
         9 - (index + 1)
       }</p>`,
     );
     // Set the two lettered rows
     mainEl.insertAdjacentHTML(
       'beforeend',
-      `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:${borderWidth}px;top:${topPosLet2}px;left:${leftPosLet}px;line-height:${borderWidth}px;font-size:${fontSize}em;width:${cellSize}px">${intToCol(
+      `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:${borderWidth}px;top:${topPosLet2}px;left:${leftPosLet}px;line-height:${borderWidth}px;font-size:${fontSize}em;width:${cellWidth}px">${intToCol(
         index,
       )}</p>`,
     );
@@ -234,7 +232,7 @@ export const setLabels = (): void => {
       'beforeend',
       `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:${borderWidth}px;top:${
         topPosLet1 - borderWidth
-      }px;left:${leftPosLet}px;line-height:${borderWidth}px;font-size:${fontSize}em;width:${cellSize}px">${intToCol(
+      }px;left:${leftPosLet}px;line-height:${borderWidth}px;font-size:${fontSize}em;width:${cellWidth}px">${intToCol(
         index,
       )}</p>`,
     );
