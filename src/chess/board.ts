@@ -173,70 +173,52 @@ const markValids = (array: readonly number[]): void => {
   }
 };
 
-// Horribly long function for creating and positioning the A-H and 1-8 Labels
+// Creates and positions the A-H and 1-8 labels along the board borders
 export const setLabels = (): void => {
   // Delete old edgeLabels (for resize)
   document.querySelectorAll('.edgeLabel').forEach((el) => el.remove());
 
-  const firstCell = document.getElementById('0')!;
   const { scrollX, scrollY } = window;
-  const firstRect = firstCell.getBoundingClientRect();
-  const cellWidth = firstRect.width;
-  const cellHeight = firstRect.height;
+  const boardRect = document.getElementById('board')!.getBoundingClientRect();
+  const cellWidth = boardRect.width / 8;
+  const cellHeight = boardRect.height / 8;
   const borderWidth = parseInt(
     document.documentElement.style.getPropertyValue('--border-width'),
     10,
   );
-  const leftPos = firstRect.left + scrollX;
-  const rightPos =
-    document.getElementById('7')!.getBoundingClientRect().right + scrollX;
-  const topPosLet1 = firstRect.top + scrollY;
-  const topPosLet2 =
-    document.getElementById('56')!.getBoundingClientRect().bottom + scrollY;
+  const leftPos = boardRect.left + scrollX;
+  const rightPos = boardRect.right + scrollX;
+  const topPos = boardRect.top + scrollY;
+  const bottomPos = boardRect.bottom + scrollY;
   const fontSize = borderWidth / 25;
 
-  const mainEl = document.getElementById('main')!;
+  const labels: string[] = [];
+  const addLabel = (name: string, pos: string): void => {
+    labels.push(
+      `<p class="invis label${name} edgeLabel" style="text-align:center;font-size:${fontSize}em;${pos}">${name}</p>`,
+    );
+  };
 
   for (let index = 0; index < 8; index += 1) {
-    const topPos =
-      document.getElementById(`${index * 8}`)!.getBoundingClientRect().top +
-      scrollY;
-    const leftPosLet =
-      document.getElementById(`${index}`)!.getBoundingClientRect().left +
-      scrollX;
-    const numLabel = `label${9 - (index + 1)}`;
-    const letterLabel = `label${intToCol(index)}`;
-    // Set the two numbered cols
-    mainEl.insertAdjacentHTML(
-      'beforeend',
-      `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:${borderWidth}px;top:${topPos}px;left:${
-        leftPos - borderWidth
-      }px;line-height:${cellHeight}px;font-size:${fontSize}em">${
-        9 - (index + 1)
-      }</p>`,
-    );
-    mainEl.insertAdjacentHTML(
-      'beforeend',
-      `<p class="invis ${numLabel} edgeLabel" style="text-align:center;width:${borderWidth}px;top:${topPos}px;left:${rightPos}px;line-height:${cellHeight}px;font-size:${fontSize}em">${
-        9 - (index + 1)
-      }</p>`,
-    );
-    // Set the two lettered rows
-    mainEl.insertAdjacentHTML(
-      'beforeend',
-      `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:${borderWidth}px;top:${topPosLet2}px;left:${leftPosLet}px;line-height:${borderWidth}px;font-size:${fontSize}em;width:${cellWidth}px">${intToCol(
-        index,
-      )}</p>`,
-    );
-    mainEl.insertAdjacentHTML(
-      'beforeend',
-      `<p class="invis ${letterLabel} edgeLabel" style="text-align:center;height:${borderWidth}px;top:${
-        topPosLet1 - borderWidth
-      }px;left:${leftPosLet}px;line-height:${borderWidth}px;font-size:${fontSize}em;width:${cellWidth}px">${intToCol(
-        index,
-      )}</p>`,
-    );
+    const num = `${8 - index}`;
+    const letter = intToCol(index);
+    const numStyle = `width:${borderWidth}px;line-height:${cellHeight}px;top:${
+      topPos + index * cellHeight
+    }px`;
+    const letterStyle = `height:${borderWidth}px;line-height:${borderWidth}px;width:${cellWidth}px;left:${
+      leftPos + index * cellWidth
+    }px`;
+    // Numbered labels on the left and right borders
+    addLabel(num, `${numStyle};left:${leftPos - borderWidth}px`);
+    addLabel(num, `${numStyle};left:${rightPos}px`);
+    // Lettered labels on the bottom and top borders
+    addLabel(letter, `${letterStyle};top:${bottomPos}px`);
+    addLabel(letter, `${letterStyle};top:${topPos - borderWidth}px`);
   }
+
+  document
+    .getElementById('main')!
+    .insertAdjacentHTML('beforeend', labels.join(''));
 };
 
 export const bindEvents = (): void => {
