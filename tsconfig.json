@@ -6,7 +6,8 @@
     "strict": true,
     "target": "esnext",
     "moduleResolution": "bundler",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["node"]
   },
-  "include": ["global.d.ts", "./src/chess/**/*"]
+  "include": ["global.d.ts", "./src/chess/**/*", "./tools/**/*.ts"]
 }

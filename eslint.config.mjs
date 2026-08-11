@@ -41,6 +41,35 @@ export default tseslint.config(
       "no-loop-func": "error",
     },
   },
+  // Config and build scripts: outside tsconfig's include. Type-aware rules
+  // need a TS program these files aren't part of, so lint them syntactically
+  // instead of pulling vitest's declaration tree into the app's program.
+  {
+    files: ["**/*.mjs", "**/*.cjs", "vitest.config.ts"],
+    extends: [tseslint.configs.disableTypeChecked],
+    languageOptions: {
+      globals: globals.node,
+    },
+    rules: {
+      "no-console": "off",
+      "prefer-destructuring": "off",
+      "prefer-named-capture-group": "off",
+      "require-unicode-regexp": "off",
+      "sort-keys": "off",
+    },
+  },
+  // Node-side TS tooling, type-checked like src.
+  {
+    files: ["tools/**/*.ts"],
+    rules: {
+      "no-bitwise": "off",
+      "no-console": "off",
+      "no-continue": "off",
+      "no-undefined": "off",
+      "prefer-destructuring": "off",
+      "sort-keys": "off",
+    },
+  },
   {
     files: ["src/chess/__tests__/**/*.ts"],
     rules: {
