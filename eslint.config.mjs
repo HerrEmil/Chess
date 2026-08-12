@@ -34,6 +34,8 @@ export default tseslint.config(
       "max-params": "off",
       "max-statements": "off",
       "sort-imports": "off",
+      "sort-keys": "off",
+      "prefer-destructuring": "off",
       "one-var": "off",
       "prefer-const": "error",
       "no-var": "error",
@@ -41,34 +43,26 @@ export default tseslint.config(
       "no-loop-func": "error",
     },
   },
-  // Config and build scripts: outside tsconfig's include. Type-aware rules
-  // need a TS program these files aren't part of, so lint them syntactically
-  // instead of pulling vitest's declaration tree into the app's program.
+  // Node-side code: build scripts, config files, and the engine lab tooling.
   {
-    files: ["**/*.mjs", "**/*.cjs", "vitest.config.ts"],
-    extends: [tseslint.configs.disableTypeChecked],
+    files: ["**/*.mjs", "**/*.cjs", "**/*.config.ts", "tools/**/*.ts"],
     languageOptions: {
       globals: globals.node,
     },
-    rules: {
-      "no-console": "off",
-      "prefer-destructuring": "off",
-      "prefer-named-capture-group": "off",
-      "require-unicode-regexp": "off",
-      "sort-keys": "off",
-    },
-  },
-  // Node-side TS tooling, type-checked like src.
-  {
-    files: ["tools/**/*.ts"],
     rules: {
       "no-bitwise": "off",
       "no-console": "off",
       "no-continue": "off",
       "no-undefined": "off",
-      "prefer-destructuring": "off",
-      "sort-keys": "off",
+      "prefer-named-capture-group": "off",
+      "require-unicode-regexp": "off",
     },
+  },
+  // Of those, only tools/ is in tsconfig's include. The rest have no TS
+  // program, so type-aware rules have nothing to run against.
+  {
+    files: ["**/*.mjs", "**/*.cjs", "**/*.config.ts"],
+    extends: [tseslint.configs.disableTypeChecked],
   },
   {
     files: ["src/chess/__tests__/**/*.ts"],
@@ -77,8 +71,6 @@ export default tseslint.config(
       "no-duplicate-imports": "off",
       "no-inline-comments": "off",
       "no-plusplus": "off",
-      "prefer-destructuring": "off",
-      "sort-keys": "off",
     },
   },
   {
