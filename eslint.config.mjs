@@ -3,6 +3,9 @@ import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
 import globals from "globals";
 
+// Outside tsconfig's include, so type-aware rules have no program to run against.
+const filesWithoutTsProgram = ["**/*.mjs", "**/*.cjs", "**/*.config.ts"];
+
 export default tseslint.config(
   {
     ignores: ["build/**"],
@@ -45,7 +48,7 @@ export default tseslint.config(
   },
   // Node-side code: build scripts, config files, and the engine lab tooling.
   {
-    files: ["**/*.mjs", "**/*.cjs", "**/*.config.ts", "tools/**/*.ts"],
+    files: [...filesWithoutTsProgram, "tools/**/*.ts"],
     languageOptions: {
       globals: globals.node,
     },
@@ -58,10 +61,9 @@ export default tseslint.config(
       "require-unicode-regexp": "off",
     },
   },
-  // Of those, only tools/ is in tsconfig's include. The rest have no TS
-  // program, so type-aware rules have nothing to run against.
+  // Of those, only tools/ is type-checked.
   {
-    files: ["**/*.mjs", "**/*.cjs", "**/*.config.ts"],
+    files: filesWithoutTsProgram,
     extends: [tseslint.configs.disableTypeChecked],
   },
   {
