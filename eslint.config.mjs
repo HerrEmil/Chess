@@ -3,7 +3,7 @@ import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
 import globals from "globals";
 
-// Outside tsconfig's include, so type-aware rules have no program to run against.
+// Outside every tsconfig include, so type-aware rules have no program to run against.
 const filesWithoutTsProgram = ["**/*.mjs", "**/*.cjs", "**/*.config.ts"];
 
 export default tseslint.config(
@@ -15,11 +15,7 @@ export default tseslint.config(
   eslintConfigPrettier,
   {
     languageOptions: {
-      globals: {
-        ...globals.browser,
-        $: "readonly",
-        jQuery: "readonly",
-      },
+      globals: globals.browser,
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
@@ -73,21 +69,6 @@ export default tseslint.config(
       "no-duplicate-imports": "off",
       "no-inline-comments": "off",
       "no-plusplus": "off",
-    },
-  },
-  {
-    files: ["src/chess/__tests__/setup.ts"],
-    rules: {
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unsafe-assignment": "off",
-      "@typescript-eslint/no-unsafe-member-access": "off",
-      "@typescript-eslint/no-unsafe-return": "off",
-      "@typescript-eslint/no-unused-vars": "off",
-      "func-names": "off",
-      "no-empty-function": "off",
-      "no-undefined": "off",
-      "no-use-before-define": "off",
-      "prefer-arrow-callback": "off",
     },
   },
 );
