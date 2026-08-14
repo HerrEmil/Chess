@@ -1,4 +1,9 @@
 [
   { "name": "JS", "path": "build/**/*.js", "limit": "45 KB", "brotli": true },
-  { "name": "HTML+inlined CSS", "path": "build/index.html", "limit": "20 KB", "brotli": true }
+  {
+    "name": "HTML+inlined CSS",
+    "path": "build/index.html",
+    "limit": "20 KB",
+    "brotli": true
+  }
 ]

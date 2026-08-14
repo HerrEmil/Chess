@@ -26,14 +26,14 @@ yarn install
 
 ### Scripts
 
-| Command            | Description                    |
-| ------------------ | ------------------------------ |
-| `yarn build`       | Compile TypeScript and bundle  |
-| `yarn start`       | Build and serve locally        |
-| `yarn lint`        | Run ESLint                     |
-| `yarn format`      | Format code with Prettier      |
-| `yarn format:check`| Check formatting               |
-| `yarn test`        | Run tests                      |
+| Command             | Description                   |
+| ------------------- | ----------------------------- |
+| `yarn build`        | Compile TypeScript and bundle |
+| `yarn start`        | Build and serve locally       |
+| `yarn lint`         | Run ESLint                    |
+| `yarn format`       | Format code with Prettier     |
+| `yarn format:check` | Check formatting              |
+| `yarn test`         | Run tests                     |
 
 ## Contributors
 

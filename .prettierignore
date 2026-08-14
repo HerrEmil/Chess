@@ -1,0 +1,4 @@
+# Mirrors eslint.config.mjs's ignores so `format` and `lint` cover the same tree.
+build/
+_CWS/
+yarn.lock

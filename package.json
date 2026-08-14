@@ -4,8 +4,8 @@
   "scripts": {
     "build": "rm -rf build && mkdir -p build/chess && esbuild src/chess/main.ts --bundle --minify --format=esm --target=es2022 --outfile=build/chess/main.js && cp src/index.html src/default.css src/favicon.ico src/robots.txt build/ && node scripts/inline-css.mjs",
     "typecheck": "tsc --noEmit && tsc --noEmit -p tools",
-    "format": "prettier --write src/",
-    "format:check": "prettier --check src/",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "eslint .",
     "serve": "npx -y http-server build",
     "start": "npm run build && npm run serve",
