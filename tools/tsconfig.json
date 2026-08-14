@@ -1,0 +1,16 @@
+/*
+ * Node-side project. Kept separate from the root config so `process` and the
+ * rest of the Node typings stay out of the browser program — the engine in
+ * src/chess must not compile against globals the page doesn't have.
+ *
+ * The DOM lib is still in scope here: engine-lab imports src/chess/main.js.
+ */
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": "..",
+    "types": ["node"]
+  },
+  "include": ["../global.d.ts", "./**/*.ts"]
+}

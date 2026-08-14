@@ -7,7 +7,7 @@
     "target": "esnext",
     "moduleResolution": "bundler",
     "skipLibCheck": true,
-    "types": ["node"]
+    "types": []
   },
-  "include": ["global.d.ts", "./src/chess/**/*", "./tools/**/*.ts"]
+  "include": ["global.d.ts", "./src/chess/**/*"]
 }
